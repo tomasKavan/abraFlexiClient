@@ -1,0 +1,48 @@
+{
+  "name": "abra-flexi",
+  "version": "0.0.1",
+  "description": "ABRA Flexi API Typescript client. Automaticly generated from API json annotations.",
+  "main": "index.ts",
+  "scripts": {
+    "build:lib": "tsc --project tsconfig.src.json",
+    "build:cli": "tsc --project tsconfig.generator.json",
+    "build": "npm run build:lib && npm run build:cli",
+    "clean": "rimraf ./dist/* ./tsconfig.tsbuildInfo ./bin/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomasKavan/abraFlexiClient.git"
+  },
+  "keywords": [
+    "ABRA Flexi",
+    "ABRA API",
+    "ABRA Flexi API",
+    "ABRA API Client"
+  ],
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  },
+  "bin": {
+    "generator": "./bin/index.js"
+  },
+  "author": "Tomas Kavan",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tomasKavan/abraFlexiClient/issues"
+  },
+  "homepage": "https://github.com/tomasKavan/abraFlexiClient#readme",
+  "devDependencies": {
+    "@types/big.js": "^6.2.2",
+    "@types/node": "^22.13.0",
+    "@types/yargs": "^17.0.33",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "tsc-watch": "^6.2.1",
+    "typescript": "^5.7.2",
+    "yargs": "^17.7.2"
+  },
+  "dependencies": {
+    "big.js": "^6.2.2"
+  }
+}

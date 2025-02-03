@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "bin",
+    "module": "CommonJS",
+    "noEmitOnError": true
+  },
+  "include": ["generator/**/*"],
+  "exclude": ["node_modules", "bin"]
+}
