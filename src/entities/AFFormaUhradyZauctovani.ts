@@ -1,28 +1,67 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFFormaUhrady } from './AFFormaUhrady'
 import { AFTypDokladu } from './AFTypDokladu'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
+
+
 export class AFFormaUhradyZauctovani extends AFEntity {
+  static EntityPath: string = 'forma-uhrady-zauctovani'
+  static EntityName: string = 'Zaúčtování formy úhrady'
+  static EntityType: string = 'FORMA_UHRADY_ZAUCTOVANI'
 
-    // ID (db: IdFormaUhradyZauc) - ID)
-    id?: number
+  // ID (db: IdFormaUhradyZauc) - ID)
+  id?: number
+  // Poslední změna (db: lastUpdate) - Poslední změna)
+  lastUpdate?: Date
+  // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
+  formaUhradyCis?: AFFormaUhrady
+  // Typ dokladu (db: IdTypDokl) - Typ dokladu)
+  typDokl?: AFTypDokladu
+  // Prodejní kasa (db: IdKasa) - Prodejní kasa)
+  kasa?: AFTypDokladu
 
-    // Poslední změna (db: lastUpdate) - Poslední změna)
-    lastUpdate?: Date
-
-    // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
-    formaUhradyCis?: AFFormaUhrady
-
-    // Typ dokladu (db: IdTypDokl) - Typ dokladu)
-    typDokl?: AFTypDokladu
-
-    // Prodejní kasa (db: IdKasa) - Prodejní kasa)
-    kasa?: AFTypDokladu
+  // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
+  uzivatelskeVazby?: AFUzivatelskaVazba[]
 
 
-    // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-    uzivatelskeVazby?: Promise<AFUzivatelskaVazba[]>
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    id : {
+      key: 'id',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    formaUhradyCis : {
+      key: 'formaUhradyCis',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFFormaUhrady,
+      
+    },    typDokl : {
+      key: 'typDokl',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFTypDokladu,
+      
+    },    kasa : {
+      key: 'kasa',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFTypDokladu,
+      
+    },
+    uzivatelskeVazby : {
+      key: 'uzivatelskeVazby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: AFUzivatelskaVazba
+    },
 
+  }
 }

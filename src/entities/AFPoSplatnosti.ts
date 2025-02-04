@@ -1,23 +1,56 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFAdresar } from './AFAdresar'
 
 
+
+
 export class AFPoSplatnosti extends AFEntity {
+  static EntityPath: string = 'po-splatnosti'
+  static EntityName: string = 'Neuhrazené pohledávky/závazky po splatnosti'
+  static EntityType: string = 'PO_SPLATNOSTI'
 
-    //  (db: undefined) - )
-    fakturovano?: Big
-
-    //  (db: undefined) - )
-    sumCelkemAkt?: Big
-
-    //  (db: undefined) - )
-    uhrazeno?: Big
-
-    //  (db: undefined) - )
-    symbolSplatnostiK?: any
-
-    // Zkratka firmy (db: undefined) - Zkratka firmy)
-    firma?: AFAdresar
+  //  (db: ) - )
+  fakturovano?: Big
+  //  (db: ) - )
+  sumCelkemAkt?: Big
+  //  (db: ) - )
+  uhrazeno?: Big
+  //  (db: ) - )
+  symbolSplatnostiK?: any
+  // Zkratka firmy (db: ) - Zkratka firmy)
+  firma?: AFAdresar
 
 
+
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    fakturovano : {
+      key: 'fakturovano',
+      type: PropertyType.Numeric,
+      isArray: false,
+      
+    },    sumCelkemAkt : {
+      key: 'sumCelkemAkt',
+      type: PropertyType.Numeric,
+      isArray: false,
+      
+    },    uhrazeno : {
+      key: 'uhrazeno',
+      type: PropertyType.Numeric,
+      isArray: false,
+      
+    },    symbolSplatnostiK : {
+      key: 'symbolSplatnostiK',
+      type: PropertyType.Select,
+      isArray: false,
+      
+    },    firma : {
+      key: 'firma',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFAdresar,
+      maxLength: 20,
+      
+    },
+
+  }
 }

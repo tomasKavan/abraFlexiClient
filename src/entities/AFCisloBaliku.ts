@@ -1,34 +1,83 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFFormaDopravy } from './AFFormaDopravy'
 import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
+
+
 export class AFCisloBaliku extends AFEntity {
+  static EntityPath: string = 'cislo-baliku'
+  static EntityName: string = 'Čísla balíků'
+  static EntityType: string = 'CISLO_BALIKU'
 
-    // ID (db: IdCisloBal) - ID)
-    id?: number
+  // ID (db: IdCisloBal) - ID)
+  id?: number
+  // Poslední změna (db: lastUpdate) - Poslední změna)
+  lastUpdate?: Date
+  // Číslo (db: Cislo) - Číslo)
+  cislo?: string
+  // Forma dopravy (db: IdFormaDopravy) - Forma dopravy)
+  formaDopravy?: AFFormaDopravy
+  // Doklad faktury (db: IdDoklFak) - Doklad faktury)
+  doklFak?: any
+  // Příjemka/výdejka (db: IdDoklSklad) - Příjemka/výdejka)
+  doklSklad?: AFSkladovyPohyb
+  // Obchodní doklad (db: IdDoklObch) - Obchodní doklad)
+  doklObch?: any
 
-    // Poslední změna (db: lastUpdate) - Poslední změna)
-    lastUpdate?: Date
-
-    // Číslo (db: Cislo) - Číslo)
-    cislo?: string
-
-    // Forma dopravy (db: IdFormaDopravy) - Forma dopravy)
-    formaDopravy?: AFFormaDopravy
-
-    // Doklad faktury (db: IdDoklFak) - Doklad faktury)
-    doklFak?: any
-
-    // Příjemka/výdejka (db: IdDoklSklad) - Příjemka/výdejka)
-    doklSklad?: AFSkladovyPohyb
-
-    // Obchodní doklad (db: IdDoklObch) - Obchodní doklad)
-    doklObch?: any
+  // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
+  uzivatelskeVazby?: AFUzivatelskaVazba[]
 
 
-    // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-    uzivatelskeVazby?: Promise<AFUzivatelskaVazba[]>
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    id : {
+      key: 'id',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    cislo : {
+      key: 'cislo',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 100,
+      
+    },    formaDopravy : {
+      key: 'formaDopravy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFFormaDopravy,
+      
+    },    doklFak : {
+      key: 'doklFak',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFEntity,
+      
+    },    doklSklad : {
+      key: 'doklSklad',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFSkladovyPohyb,
+      
+    },    doklObch : {
+      key: 'doklObch',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFEntity,
+      
+    },
+    uzivatelskeVazby : {
+      key: 'uzivatelskeVazby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: AFUzivatelskaVazba
+    },
 
+  }
 }

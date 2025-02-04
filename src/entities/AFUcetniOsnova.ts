@@ -1,78 +1,146 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFTypOrganizace } from './AFTypOrganizace'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
-export enum AFUcetniOsnovaDruhUctuK {
-  aktivni = 'druhUctu.aktivni', //aktivní
-  aktpasvo = 'druhUctu.aktpasvo', //aktivní+pasivní (volba)
-  aktpasvy = 'druhUctu.aktpasvy', //aktivní/pasivní (dle výsledku)
-  pasivni = 'druhUctu.pasivni', //pasivní
-  pasivhvy = 'druhUctu.pasivhvy', //pasivní - h. výsledek
-  naklady = 'druhUctu.naklady', //náklady
-  vynosy = 'druhUctu.vynosy', //výnosy
-  otevknih = 'druhUctu.otevknih', //otevření knihy
-  uzavknih = 'druhUctu.uzavknih', //uzavření knihy
-  prhosvys = 'druhUctu.prhosvys', //převod hospodářského výsledku
-}
 
-export enum AFUcetniOsnovaTypUctuK {
-  rozvahovy = 'typUctu.rozvahovy', //rozvahový
-  vysledkovy = 'typUctu.vysledkovy', //výsledkový
-  podrozvahovy = 'typUctu.podrozvahovy', //podrozvahový
-  zaverkovy = 'typUctu.zaverkovy', //závěrkový
-  vnitropodnikovy = 'typUctu.vnitropodnikovy', //vnitropodnikový
-}
-
+import { DruhUctu, TypUctu } from './AFEntityEnums'
 
 export class AFUcetniOsnova extends AFEntity {
+  static EntityPath: string = 'ucetni-osnova'
+  static EntityName: string = 'Standardní účetní osnova'
+  static EntityType: string = 'UCETNI_OSNOVA'
 
-    // ID (db: IdStdUcet) - ID)
-    id?: number
+  // ID (db: IdStdUcet) - ID)
+  id?: number
+  // Poslední změna (db: lastUpdate) - Poslední změna)
+  lastUpdate?: Date
+  // Účet (db: Kod) - Syntetický účet)
+  kod?: string
+  // Název (db: Nazev) - Název)
+  nazev?: string
+  // Název EN (db: NazevA) - Název EN)
+  nazevA?: string
+  // Název DE (db: NazevB) - Název DE)
+  nazevB?: string
+  // Název FR (db: NazevC) - Název FR)
+  nazevC?: string
+  // Poznámka (db: Poznam) - Poznámka)
+  poznam?: string
+  // Popis (db: Popis) - Popis)
+  popis?: string
+  // Platí od (db: PlatiOd) - Platí od)
+  platiOd?: number
+  // Platí do (db: PlatiDo) - Platí do)
+  platiDo?: number
+  // Druh účtu (db: DruhUctuK) - Druh účtu)
+  druhUctuK?: DruhUctu
+  // Typ účtu (db: TypUctuK) - Typ účtu)
+  typUctuK?: TypUctu
+  // Sledovat saldo (db: Saldo) - Sledovat saldo)
+  saldo?: boolean
+  // Typ organizace (db: IdTypOrg) - Typ organizace)
+  typOrganizace?: AFTypOrganizace
 
-    // Poslední změna (db: lastUpdate) - Poslední změna)
-    lastUpdate?: Date
-
-    // Účet (db: Kod) - Syntetický účet)
-    kod?: string
-
-    // Název (db: Nazev) - Název)
-    nazev?: string
-
-    // Název EN (db: NazevA) - Název EN)
-    nazevA?: string
-
-    // Název DE (db: NazevB) - Název DE)
-    nazevB?: string
-
-    // Název FR (db: NazevC) - Název FR)
-    nazevC?: string
-
-    // Poznámka (db: Poznam) - Poznámka)
-    poznam?: string
-
-    // Popis (db: Popis) - Popis)
-    popis?: string
-
-    // Platí od (db: PlatiOd) - Platí od)
-    platiOd?: number
-
-    // Platí do (db: PlatiDo) - Platí do)
-    platiDo?: number
-
-    // Druh účtu (db: DruhUctuK) - Druh účtu)
-    druhUctuK?: any
-
-    // Typ účtu (db: TypUctuK) - Typ účtu)
-    typUctuK?: any
-
-    // Sledovat saldo (db: Saldo) - Sledovat saldo)
-    saldo?: boolean
-
-    // Typ organizace (db: IdTypOrg) - Typ organizace)
-    typOrganizace?: AFTypOrganizace
+  // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
+  uzivatelskeVazby?: AFUzivatelskaVazba[]
 
 
-    // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-    uzivatelskeVazby?: Promise<AFUzivatelskaVazba[]>
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    id : {
+      key: 'id',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    kod : {
+      key: 'kod',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 3,
+      
+    },    nazev : {
+      key: 'nazev',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },    nazevA : {
+      key: 'nazevA',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },    nazevB : {
+      key: 'nazevB',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },    nazevC : {
+      key: 'nazevC',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },    poznam : {
+      key: 'poznam',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    popis : {
+      key: 'popis',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    platiOd : {
+      key: 'platiOd',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    platiDo : {
+      key: 'platiDo',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    druhUctuK : {
+      key: 'druhUctuK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'DruhUctu',
+      enum: DruhUctu,
+      
+    },    typUctuK : {
+      key: 'typUctuK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'TypUctu',
+      enum: TypUctu,
+      
+    },    saldo : {
+      key: 'saldo',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },    typOrganizace : {
+      key: 'typOrganizace',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFTypOrganizace,
+      maxLength: 20,
+      
+    },
+    uzivatelskeVazby : {
+      key: 'uzivatelskeVazby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: AFUzivatelskaVazba
+    },
 
+  }
 }

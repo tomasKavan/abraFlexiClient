@@ -1,30 +1,75 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFCenik } from './AFCenik'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
+
+
 export class AFSadyAKomplety extends AFEntity {
+  static EntityPath: string = 'sady-a-komplety'
+  static EntityName: string = 'Sady'
+  static EntityType: string = 'SADY_A_KOMPLETY'
 
-    // ID (db: IdSady) - ID)
-    id?: number
+  // ID (db: IdSady) - ID)
+  id?: number
+  // Poslední změna (db: lastUpdate) - Poslední změna)
+  lastUpdate?: Date
+  // Množství (db: MnozMj) - Množství)
+  mnozMj?: Big
+  // Poznámka (db: Poznam) - Poznámka)
+  poznam?: string
+  // Sada (db: IdCenikSada) - Sada)
+  cenikSada?: AFCenik
+  // Ceníková položka (db: IdCenik) - Ceníková položka)
+  cenik?: AFCenik
 
-    // Poslední změna (db: lastUpdate) - Poslední změna)
-    lastUpdate?: Date
-
-    // Množství (db: MnozMj) - Množství)
-    mnozMj?: Big
-
-    // Poznámka (db: Poznam) - Poznámka)
-    poznam?: string
-
-    // Sada (db: IdCenikSada) - Sada)
-    cenikSada?: AFCenik
-
-    // Ceníková položka (db: IdCenik) - Ceníková položka)
-    cenik?: AFCenik
+  // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
+  uzivatelskeVazby?: AFUzivatelskaVazba[]
 
 
-    // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-    uzivatelskeVazby?: Promise<AFUzivatelskaVazba[]>
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    id : {
+      key: 'id',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    mnozMj : {
+      key: 'mnozMj',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 19,
+      
+    },    poznam : {
+      key: 'poznam',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    cenikSada : {
+      key: 'cenikSada',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFCenik,
+      maxLength: 64,
+      
+    },    cenik : {
+      key: 'cenik',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFCenik,
+      maxLength: 64,
+      
+    },
+    uzivatelskeVazby : {
+      key: 'uzivatelskeVazby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: AFUzivatelskaVazba
+    },
 
+  }
 }

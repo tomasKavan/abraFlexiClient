@@ -1,44 +1,98 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
-export enum AFCertifikatFinbricksUcelCertK {
-  osobni = 'ucelCertK.osobni', //Osobní certifikát
-  eet = 'ucelCertK.eet', //Certifikát pro EET
-  finbricks = 'ucelCertK.finbricks', //Privátní klíč pro Finbricks
-}
 
+import { UcelCertK } from './AFEntityEnums'
 
 export class AFCertifikatFinbricks extends AFEntity {
+  static EntityPath: string = 'certifikat-finbricks'
+  static EntityName: string = 'Klíče Finbricks'
+  static EntityType: string = 'CERTIFIKAT_FINBRICKS'
 
-    // ID (db: IdOsCert) - ID)
-    id?: number
+  // ID (db: IdOsCert) - ID)
+  id?: number
+  // Poslední změna (db: lastUpdate) - Poslední změna)
+  lastUpdate?: Date
+  // Poznámka (db: UzivNazev) - Poznámka)
+  uzivNazev?: string
+  // Název certifikátu (db: CertNazev) - Název certifikátu)
+  certNazev?: string
+  // Organizace certifikátu (db: CertOrgan) - Organizace certifikátu)
+  certOrgan?: string
+  // Platí od (db: PlatiOd) - Platí od)
+  platiOd?: Date
+  // Platí do (db: PlatiDo) - Platí do)
+  platiDo?: Date
+  // Uživatel (db: IdUzivatel) - Uživatel)
+  uzivatel?: any
+  // Účel certifikátu (db: UcelCertK) - Účel certifikátu)
+  ucelCertK?: UcelCertK
 
-    // Poslední změna (db: lastUpdate) - Poslední změna)
-    lastUpdate?: Date
-
-    // Poznámka (db: UzivNazev) - Poznámka)
-    uzivNazev?: string
-
-    // Název certifikátu (db: CertNazev) - Název certifikátu)
-    certNazev?: string
-
-    // Organizace certifikátu (db: CertOrgan) - Organizace certifikátu)
-    certOrgan?: string
-
-    // Platí od (db: PlatiOd) - Platí od)
-    platiOd?: Date
-
-    // Platí do (db: PlatiDo) - Platí do)
-    platiDo?: Date
-
-    // Uživatel (db: IdUzivatel) - Uživatel)
-    uzivatel?: any
-
-    // Účel certifikátu (db: UcelCertK) - Účel certifikátu)
-    ucelCertK?: any
+  // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
+  uzivatelskeVazby?: AFUzivatelskaVazba[]
 
 
-    // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-    uzivatelskeVazby?: Promise<AFUzivatelskaVazba[]>
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    id : {
+      key: 'id',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    uzivNazev : {
+      key: 'uzivNazev',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },    certNazev : {
+      key: 'certNazev',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },    certOrgan : {
+      key: 'certOrgan',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },    platiOd : {
+      key: 'platiOd',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    platiDo : {
+      key: 'platiDo',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    uzivatel : {
+      key: 'uzivatel',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFEntity,
+      maxLength: 254,
+      
+    },    ucelCertK : {
+      key: 'ucelCertK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'UcelCertK',
+      enum: UcelCertK,
+      
+    },
+    uzivatelskeVazby : {
+      key: 'uzivatelskeVazby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: AFUzivatelskaVazba
+    },
 
+  }
 }

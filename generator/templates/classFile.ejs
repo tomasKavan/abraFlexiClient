@@ -1,0 +1,19 @@
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
+<% imports.forEach(imp => { %><%- include('./import.ejs', { tsClassName: imp }) %><% }) %>
+
+<% if (importEnums.length) { 
+%>import { <%= importEnums.join(', ') %> } from './<%= enumFile %>'<% } %>
+
+export class <%= tsClassName %> extends AFEntity {
+  static EntityPath: string = '<%= evidencePath %>'
+  static EntityName: string = '<%= evidenceName %>'
+  static EntityType: string = '<%= evidenceType %>'
+
+<% properties.forEach(property => { %><%- include('./classProperty.ejs', property) %><% }) %>
+<% relations.forEach(relation => { %><%- include('./classRelation.ejs', relation) %><% }) %>
+
+  static propAnnotations: Record<string, TypeAnnotation> = {
+<% properties.forEach(annotation => { %><%- include('./classPropertyAnnotation.ejs', annotation) %><% }) %>
+<% relations.forEach(annotation => { %><%- include('./classRelationAnnotation.ejs', annotation) %><% }) %>
+  }
+}

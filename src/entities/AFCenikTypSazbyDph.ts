@@ -1,65 +1,95 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFCenik } from './AFCenik'
 import { AFStatDph } from './AFStatDph'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
-export enum AFCenikTypSazbyDphTypSzbDphK {
-  dphOsv = 'typSzbDph.dphOsv', //osvobozeno
-  dphSniz = 'typSzbDph.dphSniz', //snížená
-  dphSniz2 = 'typSzbDph.dphSniz2', //2. snížená
-  dphZakl = 'typSzbDph.dphZakl', //základní
-}
 
-export enum AFCenikTypSazbyDphKodPlneniK {
-  bezVlivu = 'kodPlneni.bezVlivu', //Bez vlivu na DPH
-  zbozi = 'kodPlneni.zbozi', //Dodání zboží
-  doprProstr = 'kodPlneni.doprProstr', //Dopravní prostředek
-  majetek = 'kodPlneni.majetek', //Obchodní majetek
-  tristran = 'kodPlneni.tristran', //Třístranný obchod
-  sluzby = 'kodPlneni.sluzby', //Dodání služby
-  osv = 'kodPlneni.osv', //Osvobozeno
-  prenDanPov = 'kodPlneni.prenDanPov', //Přenesená daňová povinnost
-  prenDanPovOprava = 'kodPlneni.prenDanPovOprava', //Přenesená daňová povinnost - volba uživatele
-  ostatni = 'kodPlneni.ostatni', //Ostatní
-  nespec = 'kodPlneni.nespec', //Nespecifikováno
-  sluzbyMOSS = 'kodPlneni.sluzbyMOSS', //Zvláštní režim jednoho správního místa (Mini One Stop Shop)
-  sluzbyOSS = 'kodPlneni.sluzbyOSS', //OSS - EU služby
-  zboziOSS = 'kodPlneni.zboziOSS', //OSS - EU zboží
-  mimoEuOSS = 'kodPlneni.mimoEuOSS', //OSS - mimo EU
-  dovozOSS = 'kodPlneni.dovozOSS', //OSS - dovozní režim
-  oprava = 'kodPlneni.oprava', //Oprava plnění
-  knihy = 'kodPlneni.knihy', //Dodání knih a obdobné služby
-}
-
+import { TypSzbDph, KodPlneni } from './AFEntityEnums'
 
 export class AFCenikTypSazbyDph extends AFEntity {
+  static EntityPath: string = 'cenik-typ-sazby-dph'
+  static EntityName: string = 'Typ sazby DPH'
+  static EntityType: string = 'TYP_SAZBY_DPH'
 
-    // ID (db: IdTypSazbyDph) - ID)
-    id?: number
+  // ID (db: IdTypSazbyDph) - ID)
+  id?: number
+  // Poslední změna (db: lastUpdate) - Poslední změna)
+  lastUpdate?: Date
+  // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)
+  typSzbDphK?: TypSzbDph
+  // Kód plnění pro DPH (db: KodPlneniK) - Kód plnění pro DPH)
+  kodPlneniK?: KodPlneni
+  // Platí od (db: PlatiOd) - Platí od)
+  platiOd?: Date
+  // Platí do (db: PlatiDo) - Platí do)
+  platiDo?: Date
+  // Ceník (db: IdCenik) - Ceník)
+  cenik?: AFCenik
+  // Stát (db: IdStatu) - Stát)
+  stat?: AFStatDph
 
-    // Poslední změna (db: lastUpdate) - Poslední změna)
-    lastUpdate?: Date
-
-    // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)
-    typSzbDphK?: any
-
-    // Kód plnění pro DPH (db: KodPlneniK) - Kód plnění pro DPH)
-    kodPlneniK?: any
-
-    // Platí od (db: PlatiOd) - Platí od)
-    platiOd?: Date
-
-    // Platí do (db: PlatiDo) - Platí do)
-    platiDo?: Date
-
-    // Ceník (db: IdCenik) - Ceník)
-    cenik?: AFCenik
-
-    // Stát (db: IdStatu) - Stát)
-    stat?: AFStatDph
+  // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
+  uzivatelskeVazby?: AFUzivatelskaVazba[]
 
 
-    // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-    uzivatelskeVazby?: Promise<AFUzivatelskaVazba[]>
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    id : {
+      key: 'id',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    typSzbDphK : {
+      key: 'typSzbDphK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'TypSzbDph',
+      enum: TypSzbDph,
+      
+    },    kodPlneniK : {
+      key: 'kodPlneniK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'KodPlneni',
+      enum: KodPlneni,
+      
+    },    platiOd : {
+      key: 'platiOd',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },    platiDo : {
+      key: 'platiDo',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },    cenik : {
+      key: 'cenik',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFCenik,
+      maxLength: 64,
+      
+    },    stat : {
+      key: 'stat',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFStatDph,
+      maxLength: 3,
+      
+    },
+    uzivatelskeVazby : {
+      key: 'uzivatelskeVazby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: AFUzivatelskaVazba
+    },
 
+  }
 }

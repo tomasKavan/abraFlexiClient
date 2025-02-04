@@ -2,13 +2,20 @@ import fs from 'fs'
 import path from 'path'
 import yargs from 'yargs'
 import { hideBin } from "yargs/helpers"
+import ejs from 'ejs'
+import { FixProperties } from './fix'
 
 const EVIDENCE_LIST_FILE = 'evidence-list.json'
 const PROPERTIES_FILE = 'properties.json'
 const RELATIONS_FILE = 'relations.json'
 const DEFAULT_DIR = './src/entities'
 
-import { EvidenceDef, PropertyDef, PropertyType, RelationDef, ValueObj } from './types'
+const MAIN_TEMPLATE_CLASS_FILE = __dirname + '/templates/classFile.ejs'
+const MAIN_TEMPLATE_ENUM_FILE = __dirname + '/templates/enumFile.ejs'
+
+const ENUM_FILE_OUT = 'AFEntityEnums'
+
+import { EnumDef, EvidenceDef, PropertyDef, PropertyType, RelationDef, ValueObj } from './types'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. With company path component, trailed by /.', demandOption: true})
@@ -53,6 +60,7 @@ function parseEvidences(input: any, filter: (string | number)[] | undefined): Ev
       evidenceType: evIn.evidenceType,
       evidencePath: evIn.evidencePath,
       formCode: evIn.formCode,
+      enumFile: ENUM_FILE_OUT,
       beanKey: evIn.beanKey,
       className: evIn.className,
       extIdSupported: parseBool(evIn.extIdSupported),
@@ -209,69 +217,107 @@ function generateTsClassName(input: string): string {
   return 'AF' + input.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')
 }
 
-function generateEntityClass(
-  evidence: EvidenceDef, 
-  properties: PropertyDef[], 
-  relations: RelationDef[]
-): string {
-
-  // Imports
-  const imported: string[] = []
-  const importBase = `import { AFEntity } from '../AFEntity'\n`
-  let importPorps = properties.map(p => {
-    if (!p.tsClassName) return ''
-    if (p.type === PropertyType.Relation && p.tsClassName !== 'any' && !imported.includes(p.tsClassName)) {
-      imported.push(p.tsClassName)
-      return `import { ${p.tsClassName} } from './${p.tsClassName}'\n`
-    }
-    return ''
-  }).join('')
-  importPorps += relations.map(r => {
-    if (r.tsClassName !== 'any' && !imported.includes(r.tsClassName)) {
-      imported.push(r.tsClassName)
-      return `import { ${r.tsClassName} } from './${r.tsClassName}'\n`
-    }
-    return ''
-  }).join('')
-
-  // Enums 
-  const enums = properties.map(p => {
-    if (p.values && p.values.value && p.values.value.length) {
-      const en = generateEnum(evidence, p)
-      if (en) return en + '\n\n'
-    }
-    return ''
-  }).join('')
-
-  const header = `export class ${evidence.tsClassName} extends AFEntity {\n`
-  const footer = `\n}`
-
-  const props = properties.map(pr => {
-    return `
-    // ${pr.name} (db: ${pr.dbName}) - ${pr.title})
-    ${pr.propertyName}?: ${generateType(pr)}\n`
-  }).join('')
-
-  const rels = relations.map(re => {
-    return `
-    // ${re.name} (type: ${re.evidenceType}) - ${re.url})
-    ${re.relationName}?: Promise<${re.tsClassName}[]>\n`
-  }).join('')
-
-  return importBase + importPorps + '\n' + enums + '\n' + header + props + '\n' + rels + footer
+function getEnumKey<T extends Record<string, string>>(enumObj: T, value: string): string | undefined {
+  return Object.keys(enumObj).find((key) => enumObj[key] === value);
 }
 
-function generateEnum(ev: EvidenceDef, pDef: PropertyDef): string | undefined {
-  if (pDef.type !== PropertyType.Select || !pDef.values || !pDef.values.value || !pDef.values.value.length) {
-    return undefined
-  }
-  const uprop = pDef.propertyName.charAt(0).toUpperCase() + pDef.propertyName.slice(1)
-  
-  const header = `export enum ${ev.tsClassName}${uprop} {\n`
-  const options = pDef.values.value.map(i => `  ${i['@key'].split('.')[1]} = '${i['@key']}', //${i['$']}\n`).join('')
-  const footer = `}`
+async function generateEntityClass(
+  evidence: EvidenceDef, 
+  properties: PropertyDef[], 
+  relations: RelationDef[],
+  enumList: EnumDef[]
+): Promise<string> {
 
-  return header + options + footer
+  // Generate type
+  properties.forEach(p => p.genType = generateType(p))
+  properties.forEach(p => p.typeName = getEnumKey(PropertyType, p.type))
+
+  const vars: any = {
+    imports: [],
+    importEnums: [],
+    properties: properties,
+    relations: relations,
+    enumFile: ENUM_FILE_OUT,
+    tsClassName: evidence.tsClassName,
+    evidencePath: evidence.evidencePath,
+    evidenceType: evidence.evidenceType,
+    evidenceName: evidence.evidenceName
+  }
+
+  // Imports
+  for (const p of properties) {
+    if (
+      p.tsClassName && 
+      p.type === PropertyType.Relation && 
+      p.tsClassName !== 'any' && 
+      !vars.imports.includes(p.tsClassName) &&
+      p.tsClassName !== evidence.tsClassName
+    ) {
+      vars.imports.push(p.tsClassName)
+    }
+  }
+  for (const r of relations) {
+    if (
+      r.tsClassName && 
+      r.tsClassName !== 'any' && 
+      !vars.imports.includes(r.tsClassName) &&
+      r.tsClassName !== evidence.tsClassName
+    ) {
+      vars.imports.push(r.tsClassName)
+    }
+  }
+
+  // Enums
+  for (const p of properties) {
+    if (p.values && p.values.value && p.values.value.length) {
+      let enumKey = p.values.value[0]['@key'].split('.')[0]
+      enumKey = enumKey.charAt(0).toUpperCase() + enumKey.slice(1)
+      p.enumName = enumKey
+      p.genType = generateType(p)
+      if (enumList.find(le => le.key === enumKey)) {
+        // TODO check if options mateches
+      } else {
+        const uprop = p.propertyName.charAt(0).toUpperCase() + p.propertyName.slice(1)
+        enumList.push({
+          key: enumKey,
+          file: ENUM_FILE_OUT,
+          options: p.values.value.map(i => {
+            let key = i['@key'].split('.')[1].replace(/-/g, "_")
+            if (!(/^[a-zA-Z_]/.test(key))){
+              key = '_' + key
+            } 
+            return {
+              key: key,
+              value: i['@key'],
+              comment: i['$']
+            }
+          })
+        })
+      }
+      if (!vars.importEnums.includes(enumKey)) vars.importEnums.push(enumKey)
+    }
+  }
+
+  FixProperties(evidence, vars.properties)
+  
+  // Generate class
+  const p = new Promise<string>((resolve, reject) => {
+    ejs.renderFile(MAIN_TEMPLATE_CLASS_FILE, vars, (err, str) => {
+      if (err) { reject(err) } else { resolve(str) }
+    })
+  })
+
+  return p
+}
+
+function generateEnumClass(enumList: EnumDef[]): Promise<string> {
+  // Generate enums
+  const p = new Promise<string>((resolve, reject) => {
+    ejs.renderFile(MAIN_TEMPLATE_ENUM_FILE, { enumList }, (err, str) => {
+      if (err) { reject(err) } else { resolve(str) }
+    })
+  })
+  return p
 }
 
 function generateType(def: PropertyDef): string {
@@ -321,6 +367,8 @@ export async function main() {
   console.log(`Parsing evidences definition`)
   const evidences = parseEvidences(evidencesIn, argv.e)
 
+  const enumList: EnumDef[] = []
+
   for (const ev of evidences) {
     console.log(`Processing evidence: ${ev.evidenceName} ...`)
     
@@ -335,10 +383,17 @@ export async function main() {
     const refs = parseRelations(relsIn, evidences)
 
     console.log(`- Generating class ...`)
-    const classCode = generateEntityClass(ev, props, refs)
-    fs.writeFileSync(path.join(outDir, ev.tsClassName + '.ts'), classCode)
+    const classCode = generateEntityClass(ev, props, refs, enumList)
+    fs.writeFileSync(path.join(outDir, ev.tsClassName + '.ts'), await classCode)
     console.log(`Generated: ${ev.tsClassName + '.ts'}`)
     console.log(` `)
   }
+
+  console.log(`Generating Enum file ${ENUM_FILE_OUT}`)
+  const enumCode = generateEnumClass(enumList)
+  fs.writeFileSync(path.join(outDir, ENUM_FILE_OUT + '.ts'), await enumCode)
+  console.log(`Enum file generated`)
+  console.log(` `)
+
   console.log(`Done`)
 }

@@ -1,36 +1,86 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFTypDokladu } from './AFTypDokladu'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
+
+
 export class AFAutotisk extends AFEntity {
+  static EntityPath: string = 'autotisk'
+  static EntityName: string = 'Automatický tisk'
+  static EntityType: string = 'AUTOTISK'
 
-    // ID (db: IdAutoTisk) - ID)
-    id?: number
+  // ID (db: IdAutoTisk) - ID)
+  id?: number
+  // Poslední změna (db: lastUpdate) - Poslední změna)
+  lastUpdate?: Date
+  // Kopií (db: Pocet) - Kopií)
+  pocet?: number
+  // Tisknout doklad (db: TypTiskDoklK) - Tisknout doklad)
+  typTiskDoklK?: any
+  // Report (db: Report) - Report)
+  report?: string
+  // Sumovaný (db: Sumovany) - Sumovaný)
+  sumovany?: boolean
+  // Rozšířený (db: Rozsireny) - Rozšířený)
+  rozsireny?: boolean
+  // Typ dokladu (db: IdTypDokl) - Typ dokladu)
+  typDokl?: AFTypDokladu
 
-    // Poslední změna (db: lastUpdate) - Poslední změna)
-    lastUpdate?: Date
-
-    // Kopií (db: Pocet) - Kopií)
-    pocet?: number
-
-    // Tisknout doklad (db: TypTiskDoklK) - Tisknout doklad)
-    typTiskDoklK?: any
-
-    // Report (db: Report) - Report)
-    report?: string
-
-    // Sumovaný (db: Sumovany) - Sumovaný)
-    sumovany?: boolean
-
-    // Rozšířený (db: Rozsireny) - Rozšířený)
-    rozsireny?: boolean
-
-    // Typ dokladu (db: IdTypDokl) - Typ dokladu)
-    typDokl?: AFTypDokladu
+  // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
+  uzivatelskeVazby?: AFUzivatelskaVazba[]
 
 
-    // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-    uzivatelskeVazby?: Promise<AFUzivatelskaVazba[]>
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    id : {
+      key: 'id',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },    pocet : {
+      key: 'pocet',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    typTiskDoklK : {
+      key: 'typTiskDoklK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      
+    },    report : {
+      key: 'report',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    sumovany : {
+      key: 'sumovany',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },    rozsireny : {
+      key: 'rozsireny',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },    typDokl : {
+      key: 'typDokl',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFTypDokladu,
+      
+    },
+    uzivatelskeVazby : {
+      key: 'uzivatelskeVazby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: AFUzivatelskaVazba
+    },
 
+  }
 }

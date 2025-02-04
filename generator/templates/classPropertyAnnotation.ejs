@@ -1,0 +1,12 @@
+    <%= propertyName %> : {
+      key: '<%= propertyName %>',
+      type: PropertyType.<%= typeName %>,
+      isArray: false,
+      <% if (type === 'relation') { %>afClass: <%= tsClassName === 'any' ? 'AFEntity' : tsClassName %>,
+      <% } %><% if (typeof digits !== 'undefined') { %>digits: <%= digits %>,
+      <% } %><% if (typeof decimals !== 'undefined') { %>decimals: <%= decimals %>,
+      <% } %><% if (typeof maxLength !== 'undefined') { %>maxLength: <%= maxLength %>,
+      <% } %><% if (typeof enumName !== 'undefined') { %>enumName: '<%= enumName %>',
+      <% } %><% if (typeof enumName !== 'undefined') { %>enum: <%= enumName %>,
+      <% } %><% if (typeof itemType !== 'undefined') { %>itemType: PropertyType.<%= itemType %><% } %>
+    },

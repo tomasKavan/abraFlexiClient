@@ -1,4 +1,4 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFAdresar } from './AFAdresar'
 import { AFMena } from './AFMena'
@@ -7,133 +7,258 @@ import { AFUcet } from './AFUcet'
 import { AFZakazka } from './AFZakazka'
 import { AFCinnost } from './AFCinnost'
 
-export enum AFUcetniDenikModulK {
-  FAP = 'modulUcetni.FAP', //Faktury přijaté
-  FAV = 'modulUcetni.FAV', //Faktury vydané
-  BAN = 'modulUcetni.BAN', //Banka
-  POK = 'modulUcetni.POK', //Pokladna
-  SKL = 'modulUcetni.SKL', //Sklad
-  INT = 'modulUcetni.INT', //Interní doklady
-  PHL = 'modulUcetni.PHL', //Pohledávky
-  ZAV = 'modulUcetni.ZAV', //Závazky
-  MAJ = 'modulUcetni.MAJ', //Majetek
-  LEA = 'modulUcetni.LEA', //Leasing
-}
 
-export enum AFUcetniDenikTypSzbDphK {
-  dphOsv = 'typSzbDph.dphOsv', //osvobozeno
-  dphSniz = 'typSzbDph.dphSniz', //snížená
-  dphSniz2 = 'typSzbDph.dphSniz2', //2. snížená
-  dphZakl = 'typSzbDph.dphZakl', //základní
-}
-
-export enum AFUcetniDenikStavUzivK {
-  bezPrikazu = 'stavUziv.bezPrikazu', //Bez příkazu
-  obsaPrikaz = 'stavUziv.obsaPrikaz', //Obsažen v příkazu
-  castPrikaz = 'stavUziv.castPrikaz', //Odeslán částečný příkaz
-  celPrikaz = 'stavUziv.celPrikaz', //Odeslán příkaz
-  nactenoEl = 'stavUziv.nactenoEl', //Načteno elektronicky
-  nactenoElPosledni = 'stavUziv.nactenoElPosledni', //Naposledy načteno elektronicky
-  genKasa = 'stavUziv.genKasa', //Vygenerován z kasy
-  zauctovano = 'stavUziv.zauctovano', //Zaúčtováno do pokladny
-  zaucZmena = 'stavUziv.zaucZmena', //Změněno po zaúčtování
-}
-
+import { ModulUcetni, TypSzbDph, StavUziv } from './AFEntityEnums'
 
 export class AFUcetniDenik extends AFEntity {
+  static EntityPath: string = 'ucetni-denik'
+  static EntityName: string = 'Účetní deník'
+  static EntityType: string = 'UCETNI_DENIK'
 
-    // ID (db: undefined) - ID)
-    idUcetniDenik?: number
-
-    // Řádky DPH (db: undefined) - Řádky DPH)
-    clenDph?: AFCleneniDph
-
-    // Datum splatnosti (db: undefined) - Datum splatnosti)
-    datSplat?: Date
-
-    // Datum úhrady (db: undefined) - Datum úhrady)
-    datUhr?: Date
-
-    // Dat. vyst. dokladu (db: undefined) - Datum vystavení dokladu)
-    datVyst?: Date
-
-    // Datum zaúčt. (db: undefined) - Datum zaúčtování)
-    datUcto?: Date
-
-    // Int.čís.dokladu (db: undefined) - Interní číslo dokladu)
-    doklad?: string
-
-    // Datum zdan. plnění (db: undefined) - Datum zdan. plnění)
-    duzpUcto?: Date
-
-    // Zkratka firmy (db: undefined) - Zkratka firmy)
-    firma?: AFAdresar
-
-    // Kurz (db: undefined) - Kurz)
-    kurz?: Big
-
-    // Měna (db: undefined) - Měna)
-    mena?: AFMena
-
-    // Modul (db: undefined) - Modul)
-    modul?: string
-
-    // Název modulu (db: undefined) - Název modulu)
-    modulK?: any
-
-    // Název firmy (db: undefined) - Název firmy)
-    nazFirmy?: string
-
-    // Popis (db: undefined) - Popis)
-    popis?: string
-
-    // Variabilní symbol (db: undefined) - Variabilní symbol)
-    varSym?: string
-
-    // Sazba DPH (db: undefined) - Sazba DPH)
-    typSzbDphK?: any
-
-    // Hodnota DPH (db: undefined) - Hodnota DPH)
-    szbDph?: Big
-
-    // Částka v Kč (db: undefined) - Částka v Kč)
-    sumTuz?: Big
-
-    // Částka v měně (db: undefined) - Částka v měně)
-    sumMen?: Big
-
-    // Stav dokladu (db: undefined) - Stav dokladu)
-    stavUzivK?: any
-
-    // Středisko (db: undefined) - Středisko)
-    stredisko?: AFStredisko
-
-    // Účet MD (db: undefined) - Účet MD)
-    mdUcet?: AFUcet
-
-    // Účet DAL (db: undefined) - Účet DAL)
-    dalUcet?: AFUcet
-
-    // ID dokladu (db: undefined) - ID dokladu)
-    idDokl?: number
-
-    // Zaúčtováno (db: undefined) - Stav zaúčtování)
-    zuctovano?: boolean
-
-    // Zakázka (db: undefined) - Zakázka)
-    zakazka?: AFZakazka
-
-    // Párovací symbol (db: undefined) - Párovací symbol)
-    parSymbol?: string
-
-    // Činnost (db: undefined) - Činnost)
-    cinnost?: AFCinnost
-
-    // Seznam ID položek (db: undefined) - Seznam ID položek)
-    idPolozek?: any
-
-    // Bezpol. dokl. (db: undefined) - bezpoložkový doklad)
-    bezPolozek?: boolean
+  // ID (db: ) - ID)
+  idUcetniDenik?: number
+  // Řádky DPH (db: ) - Řádky DPH)
+  clenDph?: AFCleneniDph
+  // Datum splatnosti (db: ) - Datum splatnosti)
+  datSplat?: Date
+  // Datum úhrady (db: ) - Datum úhrady)
+  datUhr?: Date
+  // Dat. vyst. dokladu (db: ) - Datum vystavení dokladu)
+  datVyst?: Date
+  // Datum zaúčt. (db: ) - Datum zaúčtování)
+  datUcto?: Date
+  // Int.čís.dokladu (db: ) - Interní číslo dokladu)
+  doklad?: string
+  // Datum zdan. plnění (db: ) - Datum zdan. plnění)
+  duzpUcto?: Date
+  // Zkratka firmy (db: ) - Zkratka firmy)
+  firma?: AFAdresar
+  // Kurz (db: ) - Kurz)
+  kurz?: Big
+  // Měna (db: ) - Měna)
+  mena?: AFMena
+  // Modul (db: ) - Modul)
+  modul?: string
+  // Název modulu (db: ) - Název modulu)
+  modulK?: ModulUcetni
+  // Název firmy (db: ) - Název firmy)
+  nazFirmy?: string
+  // Popis (db: ) - Popis)
+  popis?: string
+  // Variabilní symbol (db: ) - Variabilní symbol)
+  varSym?: string
+  // Sazba DPH (db: ) - Sazba DPH)
+  typSzbDphK?: TypSzbDph
+  // Hodnota DPH (db: ) - Hodnota DPH)
+  szbDph?: Big
+  // Částka v Kč (db: ) - Částka v Kč)
+  sumTuz?: Big
+  // Částka v měně (db: ) - Částka v měně)
+  sumMen?: Big
+  // Stav dokladu (db: ) - Stav dokladu)
+  stavUzivK?: StavUziv
+  // Středisko (db: ) - Středisko)
+  stredisko?: AFStredisko
+  // Účet MD (db: ) - Účet MD)
+  mdUcet?: AFUcet
+  // Účet DAL (db: ) - Účet DAL)
+  dalUcet?: AFUcet
+  // ID dokladu (db: ) - ID dokladu)
+  idDokl?: number
+  // Zaúčtováno (db: ) - Stav zaúčtování)
+  zuctovano?: boolean
+  // Zakázka (db: ) - Zakázka)
+  zakazka?: AFZakazka
+  // Párovací symbol (db: ) - Párovací symbol)
+  parSymbol?: string
+  // Činnost (db: ) - Činnost)
+  cinnost?: AFCinnost
+  // Seznam ID položek (db: ) - Seznam ID položek)
+  idPolozek?: any
+  // Bezpol. dokl. (db: ) - bezpoložkový doklad)
+  bezPolozek?: boolean
 
 
+
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    idUcetniDenik : {
+      key: 'idUcetniDenik',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    clenDph : {
+      key: 'clenDph',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFCleneniDph,
+      
+    },    datSplat : {
+      key: 'datSplat',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },    datUhr : {
+      key: 'datUhr',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },    datVyst : {
+      key: 'datVyst',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },    datUcto : {
+      key: 'datUcto',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },    doklad : {
+      key: 'doklad',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    duzpUcto : {
+      key: 'duzpUcto',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },    firma : {
+      key: 'firma',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFAdresar,
+      maxLength: 20,
+      
+    },    kurz : {
+      key: 'kurz',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 19,
+      
+    },    mena : {
+      key: 'mena',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFMena,
+      
+    },    modul : {
+      key: 'modul',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    modulK : {
+      key: 'modulK',
+      type: PropertyType.Select,
+      isArray: false,
+      enumName: 'ModulUcetni',
+      enum: ModulUcetni,
+      
+    },    nazFirmy : {
+      key: 'nazFirmy',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    popis : {
+      key: 'popis',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    varSym : {
+      key: 'varSym',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    typSzbDphK : {
+      key: 'typSzbDphK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'TypSzbDph',
+      enum: TypSzbDph,
+      
+    },    szbDph : {
+      key: 'szbDph',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 15,
+      
+    },    sumTuz : {
+      key: 'sumTuz',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 15,
+      
+    },    sumMen : {
+      key: 'sumMen',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 15,
+      
+    },    stavUzivK : {
+      key: 'stavUzivK',
+      type: PropertyType.Select,
+      isArray: false,
+      enumName: 'StavUziv',
+      enum: StavUziv,
+      
+    },    stredisko : {
+      key: 'stredisko',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFStredisko,
+      maxLength: 20,
+      
+    },    mdUcet : {
+      key: 'mdUcet',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFUcet,
+      
+    },    dalUcet : {
+      key: 'dalUcet',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFUcet,
+      
+    },    idDokl : {
+      key: 'idDokl',
+      type: PropertyType.Integer,
+      isArray: false,
+      
+    },    zuctovano : {
+      key: 'zuctovano',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },    zakazka : {
+      key: 'zakazka',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFZakazka,
+      maxLength: 30,
+      
+    },    parSymbol : {
+      key: 'parSymbol',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },    cinnost : {
+      key: 'cinnost',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFCinnost,
+      
+    },    idPolozek : {
+      key: 'idPolozek',
+      type: PropertyType.Array,
+      isArray: false,
+      
+    },    bezPolozek : {
+      key: 'bezPolozek',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+
+  }
 }

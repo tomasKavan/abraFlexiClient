@@ -39,6 +39,7 @@ export interface PropertyDef {
   name: string,
   title: string,
   type: PropertyType,
+  typeName?: string,
 
   // Visibility
   isVisible: boolean,
@@ -78,6 +79,8 @@ export interface PropertyDef {
   fkEvidenceType?: string,
   url?: string,
   tsClassName?: string,
+
+  genType?: string
 }
 
 export interface RelationDef {
@@ -87,4 +90,16 @@ export interface RelationDef {
 
   tsClassName: string,
   relationName: string
+}
+
+export type EnumOptionDef = {
+  key: string,
+  value: string,
+  comment: string
+}
+
+export interface EnumDef {
+  key: string,
+  file: string
+  options: EnumOptionDef[]
 }

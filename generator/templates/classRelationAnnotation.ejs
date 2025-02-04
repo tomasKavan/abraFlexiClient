@@ -1,0 +1,6 @@
+    <%= relationName %> : {
+      key: '<%= relationName %>',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: <%= tsClassName === 'any' ? 'AFEntity' : tsClassName %>
+    },

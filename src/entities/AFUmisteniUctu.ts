@@ -1,15 +1,36 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
 import { AFUcet } from './AFUcet'
 import { AFRadekSestavy } from './AFRadekSestavy'
 
 
+
+
 export class AFUmisteniUctu extends AFEntity {
+  static EntityPath: string = 'umisteni-uctu'
+  static EntityName: string = 'Upřesnění umístění účtu'
+  static EntityType: string = 'UMISTENI_UCTU'
 
-    // Účet (db: undefined) - Účet)
-    ucet?: AFUcet
+  // Účet (db: ) - Účet)
+  ucet?: AFUcet
+  // Vybraný řádek (db: ) - Vybraný řádek)
+  vybranyRadek?: AFRadekSestavy
 
-    // Vybraný řádek (db: undefined) - Vybraný řádek)
-    vybranyRadek?: AFRadekSestavy
 
 
+  static propAnnotations: Record<string, TypeAnnotation> = {
+    ucet : {
+      key: 'ucet',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFUcet,
+      
+    },    vybranyRadek : {
+      key: 'vybranyRadek',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: AFRadekSestavy,
+      
+    },
+
+  }
 }
