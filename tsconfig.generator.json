@@ -2,8 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "bin",
+    "rootDir": "generator",
     "module": "CommonJS",
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "tsBuildInfoFile": "./bin/.tsbuildinfo"
   },
   "include": ["generator/**/*"],
   "exclude": ["node_modules", "bin"]

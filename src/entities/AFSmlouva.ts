@@ -1,4 +1,5 @@
-import { AFEntity, TypeAnnotation, PropertyType } from '../AFEntity'
+import { TypeAnnotation, PropertyType } from '../AFTypes'
+import { AFEntity } from '../AFEntity'
 import { AFTypSmlouvy } from './AFTypSmlouvy'
 import { AFAdresar } from './AFAdresar'
 import { AFZakazka } from './AFZakazka'

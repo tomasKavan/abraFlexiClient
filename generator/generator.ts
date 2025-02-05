@@ -12,8 +12,12 @@ const DEFAULT_DIR = './src/entities'
 
 const MAIN_TEMPLATE_CLASS_FILE = __dirname + '/templates/classFile.ejs'
 const MAIN_TEMPLATE_ENUM_FILE = __dirname + '/templates/enumFile.ejs'
+const MAIN_TEMPLATE_REGISTRY_FILE = __dirname + '/templates/registryFile.ejs'
+const MAIN_TEMPLATE_INDEX_FILE = __dirname + '/templates/classIndexFile.ejs'
 
 const ENUM_FILE_OUT = 'AFEntityEnums'
+const REGISTRY_FILE_OUT = 'AFEntityRegistry'
+const INDEX_FILE_OUT = 'index'
 
 import { EnumDef, EvidenceDef, PropertyDef, PropertyType, RelationDef, ValueObj } from './types'
 
@@ -310,10 +314,30 @@ async function generateEntityClass(
   return p
 }
 
-function generateEnumClass(enumList: EnumDef[]): Promise<string> {
+function generateEnumModule(enumList: EnumDef[]): Promise<string> {
   // Generate enums
   const p = new Promise<string>((resolve, reject) => {
     ejs.renderFile(MAIN_TEMPLATE_ENUM_FILE, { enumList }, (err, str) => {
+      if (err) { reject(err) } else { resolve(str) }
+    })
+  })
+  return p
+}
+
+function generateRegistryModule(evidences: EvidenceDef[]): Promise<string> {
+  // Generate enums
+  const p = new Promise<string>((resolve, reject) => {
+    ejs.renderFile(MAIN_TEMPLATE_REGISTRY_FILE, { evidences }, (err, str) => {
+      if (err) { reject(err) } else { resolve(str) }
+    })
+  })
+  return p
+}
+
+function generateClassIndex(evidences: EvidenceDef[]): Promise<string> {
+  // Generate enums
+  const p = new Promise<string>((resolve, reject) => {
+    ejs.renderFile(MAIN_TEMPLATE_INDEX_FILE, { evidences }, (err, str) => {
       if (err) { reject(err) } else { resolve(str) }
     })
   })
@@ -390,9 +414,21 @@ export async function main() {
   }
 
   console.log(`Generating Enum file ${ENUM_FILE_OUT}`)
-  const enumCode = generateEnumClass(enumList)
+  const enumCode = generateEnumModule(enumList)
   fs.writeFileSync(path.join(outDir, ENUM_FILE_OUT + '.ts'), await enumCode)
   console.log(`Enum file generated`)
+  console.log(` `)
+
+  console.log(`Generating Registry file ${REGISTRY_FILE_OUT}`)
+  const registryCode = generateRegistryModule(evidences)
+  fs.writeFileSync(path.join(outDir, REGISTRY_FILE_OUT + '.ts'), await registryCode)
+  console.log(`Registry file generated`)
+  console.log(` `)
+
+  console.log(`Generating index file ${INDEX_FILE_OUT}`)
+  const classIndex = generateClassIndex(evidences)
+  fs.writeFileSync(path.join(outDir, INDEX_FILE_OUT + '.ts'), await classIndex)
+  console.log(`Index file generated`)
   console.log(` `)
 
   console.log(`Done`)

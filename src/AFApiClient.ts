@@ -1,56 +1,20 @@
-import { AFEntity, PropertyType, TypeAnnotation } from "./AFEntity"
+import { EntityByName } from "."
+import { parsePropertyValue } from "./AFDataType"
+import { AFEntity, GetPropertyTypeAnnotation } from "./AFEntity"
 import { AFError, AFErrorCode } from "./AFError"
-import { AFFilter } from "./AFFilter"
-import Big from 'big.js'
+import { 
+  AFApiConfig, 
+  AFApiFetch, 
+  PropertyType, 
+  TypeAnnotation, 
+  AFQueryDetail,
+  AFQueryResponse,
+  AFQueryOptions,
+  AFQueryStatus,
+  NestedDetail
+} from "./AFTypes"
 
 const ABRA_API_FORMAT = 'json'
-
-export type AFApiFetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
-
-export type AFApiConfig = {
-  url: string,
-  company?: string,
-  fetch?: AFApiFetch
-}
-
-export type NO_LIMIT = 0
-
-export enum AFQueryDetail {
-  FULL = 'full',
-  ID = 'id',
-  SUMMARY = 'summary'
-}
-
-type UnwrapPromise<T> = T extends Promise<infer U> ? U : T
-type NestedDetail<T> = (keyof T | [keyof T, NestedDetail<UnwrapPromise<T[keyof T]>>[]])[] | AFQueryDetail
-type AFQueryOptions<T extends AFEntity> = { 
-  detail?: NestedDetail<T>,
-  filter?: AFFilter,
-  limit?: number | NO_LIMIT,
-  start?: number,
-  addRowCount?: boolean,
-  onlyExtIds?: boolean,
-  noExtIds?: boolean,
-  noIds?: boolean,
-  codeAsId?: boolean,
-  dryRun?: boolean,
-  noSimpleMode?: boolean,
-  noValidityCheck?: boolean
-}
-
-export enum AFQueryStatus {
-  LOADING = 'loading',
-  OK = 'ok',
-  ERROR = 'error'
-}
-
-export type AFQueryResponse<T> = {
-  data: Promise<T[] | T | undefined>,
-  status: AFQueryStatus,
-  error: AFError | null,
-  cancel: () => void,
-  rawResponse?: Response
-}
 
 export class AFApiClient {
   private _url: string
@@ -59,27 +23,33 @@ export class AFApiClient {
 
   constructor(config: AFApiConfig) {
     this._url = config.url
+    this.company = config.company
     this._fetch = config.fetch || fetch
   }
 
-  query<T extends typeof AFEntity>(
+  query<T extends typeof AFEntity, IS extends boolean = true>(
     entity: T, 
-    options: AFQueryOptions<InstanceType<T>>
+    options: AFQueryOptions<InstanceType<T>, IS>
   ): AFQueryResponse<InstanceType<T>> {
+    if (!this.company || !this.company.length) {
+      throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `[AFError].MISSING_ABRA_COMPANY - Can't query AFApiClient without providing company path component first.`)
+    }
 
     const detail = options.detail || AFQueryDetail.SUMMARY
 
     let url = this._url + '/c/' + this.company + '/' + entity.EntityPath
     url += options.filter ? options.filter.toUrlComponent() : ''
     url += '.' + ABRA_API_FORMAT
-    this._addParamToUrl(url, 'detail', this._composeDetail(detail))
-    this._addParamToUrl(url, 'includes', this._composeIncludes(detail))
-    this._addParamToUrl(url, 'relations', this._composeRelations(detail))
+    url = this._addParamToUrl(url, 'detail', this._composeDetail(detail))
+    url = this._addParamToUrl(url, 'includes', this._composeIncludes(detail, entity))
+    url = this._addParamToUrl(url, 'relations', this._composeRelations(detail))
 
     const res: Partial<AFQueryResponse<InstanceType<T>>> = {
       status : AFQueryStatus.LOADING,
       error: null
     }
+
+    console.log(url)
 
     const ac = new AbortController()
     const run = async (): Promise<InstanceType<T>[]> => {
@@ -98,6 +68,7 @@ export class AFApiClient {
         return Promise.resolve(data)
       } catch (e) {
         if (!(e instanceof AFError)) {
+          console.log(e)
           e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
         }
         res.error = e as AFError
@@ -111,28 +82,81 @@ export class AFApiClient {
     return res as AFQueryResponse<InstanceType<T>>
   }
 
-  private _composeDetail<T>(level: NestedDetail<T>): string | null{
-    return null
-  }
-
-  private _composeIncludes<T>(level: NestedDetail<T>): string | null {
-    return null
-  }
-
-  private _composeRelations<T>(level: NestedDetail<T>): string | null {
-    return null
-  }
-
-  private _addParamToUrl(url: string, key: string, value: string | null) {
-    const isFirst = url.includes('?')
-    if (!value || !key.length) {
-      return
+  private _composeDetail<T, IS extends boolean>(level: NestedDetail<T, IS>[] | AFQueryDetail): string | null{
+    if (level === AFQueryDetail.FULL) return 'full'
+    if (level === AFQueryDetail.ID) return 'id'
+    if (level === AFQueryDetail.SUMMARY) return null
+    
+    const levProc = (inp: NestedDetail<T, IS>[]): string => {
+      let out = ''
+      for (const ndi of inp) {
+        if (out.length) out += ','
+        if (typeof ndi === 'string') {
+          out += ndi
+        } else if (ndi instanceof Array) {
+          out += ndi[0] as string + '(' + levProc(ndi[1] as NestedDetail<T, IS>[]) + ')'
+        }
+      }
+      return out
     }
-    url += (isFirst ? '?' : '&') + key + '=' + value
+    
+    const out = 'custom:' + levProc(level)
+    return out
+  }
+
+  private _composeIncludes<T, IS extends boolean>(level: NestedDetail<T, IS>[] | AFQueryDetail, entity: typeof AFEntity): string | null {
+    if (level === AFQueryDetail.FULL) return null
+    if (level === AFQueryDetail.ID) return null
+    if (level === AFQueryDetail.SUMMARY) return null
+
+    const includes: string[] = []
+
+    const levProc = (inp: NestedDetail<T, IS>[], base:string, evidence: typeof AFEntity) => {
+      for (const ndi of inp) {
+        if (typeof ndi === 'string') continue
+        if (ndi instanceof Array) {
+          const key = ndi[0] as string
+          const list = ndi[1] as NestedDetail<T, IS>[]
+          const annot = GetPropertyTypeAnnotation(evidence, key)
+          if (!annot || !annot.afClass) throw new AFError(AFErrorCode.QUERY_DETAIL_UNKNOWN_KEY, `[AFError].QUERY_DETAIL_UNKNOWN_KEY: Requested unknown key ${key} on entity ${(typeof evidence)}. Or it has't type annotation set.`)
+          const relEnt = annot.afClass as typeof AFEntity
+          const thisIncl = base + '/' + key + '/' + relEnt.EntityPath
+          includes.push(thisIncl)
+          levProc(list, thisIncl, relEnt)
+        }
+      }
+    }
+    levProc(level, entity.EntityPath, entity)
+
+    return includes.join(',')
+  }
+
+  private _composeRelations<T, IS extends boolean>(level: NestedDetail<T, IS>[] | AFQueryDetail): string | null {
+    if (level === AFQueryDetail.FULL) return null
+    if (level === AFQueryDetail.ID) return null
+    if (level === AFQueryDetail.SUMMARY) return null
+
+    return null
+  }
+
+  private _addParamToUrl(url: string, key: string, value: string | null): string {
+    const isFirst = !url.includes('?')
+    if (!value || !key.length) {
+      return url
+    }
+    return url + (isFirst ? '?' : '&') + key + '=' + value
   }
 
   private _processEntityObj<T extends typeof AFEntity>(entity: T, obj: any): InstanceType<T>[] {
     if (!obj) return []
+    if (typeof obj === 'string') {
+      if (obj.slice(0,5) === 'code:') {
+        obj = {
+          kod: obj.slice(5)
+        }
+      }
+    }
+
     if (!(obj instanceof Array)) {
       obj = [obj]
     }
@@ -167,6 +191,7 @@ export class AFApiClient {
       if (propOut.length) {
         (entity as any)[key] = propOut[0]
       }
+      return
     }
 
     // Else set it as scalar type
@@ -174,67 +199,10 @@ export class AFApiClient {
   }
 
   private _setScalar<T extends AFEntity>(entity: T, annot: TypeAnnotation, obj: any) {
-    (entity as any)[annot.key] = parsePropertyValue(annot.type, annot, obj)
+    if (!obj) return
+    (entity as any)[annot.key] = parsePropertyValue(annot.type, annot, obj[annot.key])
   }
 }
 
-type PropertyTypeMap = {
-  [PropertyType.Integer]: number;
-  [PropertyType.String]: string;
-  [PropertyType.Select]: string; // Enum conversion happens outside
-  [PropertyType.DateTime]: Date;
-  [PropertyType.Date]: Date;
-  [PropertyType.Numeric]: Big;
-  [PropertyType.Logic]: boolean;
-  [PropertyType.Blob]: Buffer;
-  [PropertyType.Array]: any[]; // Must be inferred from typeAnnotation
-}
-
-type ParsedType<T extends PropertyType> = T extends keyof PropertyTypeMap ? PropertyTypeMap[T] : never
-
-function parsePropertyValue<T extends PropertyType>(
-  propertyType: T,
-  annot: TypeAnnotation,
-  obj: any
-): ParsedType<T> | undefined {
-  if (obj === null || obj === undefined) return undefined
-
-  switch (propertyType) {
-    case PropertyType.Integer:
-      return parseInt(obj, 10) as ParsedType<T>;
-
-    case PropertyType.String:
-      return (annot?.maxLength ? obj.slice(0, annot.maxLength) : obj) as ParsedType<T>;
-
-    case PropertyType.Select:
-      if (!annot?.enum) throw new Error(`Enum typeAnnotation is required for Select (property ${annot.key})`);
-      return (annot.enum[obj] ?? obj) as ParsedType<T>;
-
-    case PropertyType.DateTime:
-    case PropertyType.Date:
-      return new Date(obj) as ParsedType<T>;
-
-    case PropertyType.Numeric:
-      return new Big(obj).round(annot?.decimals ?? 2) as ParsedType<T>;
-
-    case PropertyType.Logic:
-      return (obj.toLowerCase() === "true") as ParsedType<T>;
-
-    case PropertyType.Blob:
-      return Buffer.from(obj, "base64") as ParsedType<T>;
-
-    case PropertyType.Array:
-      if (!annot?.itemType) throw new Error("itemType is required for Array");
-      const myAnnot = { ...annot }
-      myAnnot.type = annot.itemType
-      return (Array.isArray(obj)
-        ? obj.map((item) => parsePropertyValue(annot.itemType!, myAnnot, item))
-        : []) as ParsedType<T>;
-
-    default:
-      throw new Error(`Unknown PropertyType: ${propertyType} of property ${annot.key}`);
-  }
-
-}
 
 

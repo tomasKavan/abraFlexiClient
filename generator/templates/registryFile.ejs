@@ -1,0 +1,14 @@
+import { AFEntity } from '../AFEntity'
+
+<% evidences.forEach(ev => { %>import { <%= ev.tsClassName %> } from './<%= ev.tsClassName %>'
+<% }) %>
+
+const AFEntityRegistry: Record<string, new () => AFEntity> = {
+<% evidences.forEach(ev => { %>  <%= ev.tsClassName %>,
+<% }) %>}
+
+export function EntityByName(name: string): typeof AFEntity {
+  const cls = AFEntityRegistry[name]
+  if (!cls) throw new Error(`Unknown AFEntity class ${name}`)
+  return cls as typeof AFEntity
+}

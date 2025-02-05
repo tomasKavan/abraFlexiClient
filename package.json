@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build:lib": "tsc --project tsconfig.src.json",
-    "build:cli": "tsc --project tsconfig.generator.json && cp -r ./generator/templates bin/generator/",
+    "build:cli": "tsc --project tsconfig.generator.json && cp -r ./generator/templates bin/",
     "build": "npm run build:lib && npm run build:cli",
     "clean": "rimraf ./dist/* ./tsconfig.tsbuildInfo ./bin/*"
   },
