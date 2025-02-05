@@ -87,89 +87,105 @@ export class AFUcetniDenik extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    clenDph : {
+    },
+    clenDph : {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCleneniDph,
       
-    },    datSplat : {
+    },
+    datSplat : {
       key: 'datSplat',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datUhr : {
+    },
+    datUhr : {
       key: 'datUhr',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datUcto : {
+    },
+    datUcto : {
       key: 'datUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    doklad : {
+    },
+    doklad : {
       key: 'doklad',
       type: PropertyType.String,
       isArray: false,
       
-    },    duzpUcto : {
+    },
+    duzpUcto : {
       key: 'duzpUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    kurz : {
+    },
+    kurz : {
       key: 'kurz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    modulK : {
+    },
+    modulK : {
       key: 'modulK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'ModulUcetni',
       enum: ModulUcetni,
       
-    },    nazFirmy : {
+    },
+    nazFirmy : {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -177,89 +193,104 @@ export class AFUcetniDenik extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    szbDph : {
+    },
+    szbDph : {
       key: 'szbDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumTuz : {
+    },
+    sumTuz : {
       key: 'sumTuz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMen : {
+    },
+    sumMen : {
       key: 'sumMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavUzivK : {
+    },
+    stavUzivK : {
       key: 'stavUzivK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'StavUziv',
       enum: StavUziv,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    mdUcet : {
+    },
+    mdUcet : {
       key: 'mdUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       
-    },    dalUcet : {
+    },
+    dalUcet : {
       key: 'dalUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       
-    },    idDokl : {
+    },
+    idDokl : {
       key: 'idDokl',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    zuctovano : {
+    },
+    zuctovano : {
       key: 'zuctovano',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    parSymbol : {
+    },
+    parSymbol : {
       key: 'parSymbol',
       type: PropertyType.String,
       isArray: false,
       
-    },    cinnost : {
+    },
+    cinnost : {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCinnost,
       
-    },    idPolozek : {
+    },
+    idPolozek : {
       key: 'idPolozek',
       type: PropertyType.Array,
       isArray: false,
       
-    },    bezPolozek : {
+    },
+    bezPolozek : {
       key: 'bezPolozek',
       type: PropertyType.Logic,
       isArray: false,
       
     },
+
 
   }
 }

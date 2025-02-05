@@ -39,7 +39,8 @@ export class AFKusovnik extends AFEntity {
   otec?: AFKusovnik
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -48,71 +49,83 @@ export class AFKusovnik extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mnoz : {
+    },
+    mnoz : {
       key: 'mnoz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    hladina : {
+    },
+    hladina : {
       key: 'hladina',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    poradi : {
+    },
+    poradi : {
       key: 'poradi',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cesta : {
+    },
+    cesta : {
       key: 'cesta',
       type: PropertyType.String,
       isArray: false,
       
-    },    otecCenik : {
+    },
+    otecCenik : {
       key: 'otecCenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    otec : {
+    },
+    otec : {
       key: 'otec',
       type: PropertyType.Relation,
       isArray: false,
@@ -120,8 +133,9 @@ export class AFKusovnik extends AFEntity {
       maxLength: 20,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

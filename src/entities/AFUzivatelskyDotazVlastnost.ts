@@ -47,7 +47,8 @@ export class AFUzivatelskyDotazVlastnost extends AFEntity {
   dotaz?: AFUzivatelskyDotaz
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -56,57 +57,67 @@ export class AFUzivatelskyDotazVlastnost extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    cisRad : {
+    },
+    cisRad : {
       key: 'cisRad',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typPropK : {
+    },
+    typPropK : {
       key: 'typPropK',
       type: PropertyType.Select,
       isArray: false,
@@ -114,43 +125,50 @@ export class AFUzivatelskyDotazVlastnost extends AFEntity {
       enumName: 'DatazTypParam',
       enum: DatazTypParam,
       
-    },    hideColumn : {
+    },
+    hideColumn : {
       key: 'hideColumn',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    beanKeyOpen : {
+    },
+    beanKeyOpen : {
       key: 'beanKeyOpen',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    width : {
+    },
+    width : {
       key: 'width',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    resourceBeanKey : {
+    },
+    resourceBeanKey : {
       key: 'resourceBeanKey',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    resourcePropName : {
+    },
+    resourcePropName : {
       key: 'resourcePropName',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    dotaz : {
+    },
+    dotaz : {
       key: 'dotaz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUzivatelskyDotaz,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

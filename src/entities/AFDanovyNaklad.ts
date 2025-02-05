@@ -46,7 +46,8 @@ export class AFDanovyNaklad extends AFEntity {
   zakazka?: AFZakazka
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -55,83 +56,97 @@ export class AFDanovyNaklad extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    ucetni : {
+    },
+    ucetni : {
       key: 'ucetni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    sumZkl : {
+    },
+    sumZkl : {
       key: 'sumZkl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklMen : {
+    },
+    sumZklMen : {
       key: 'sumZklMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    datUcto : {
+    },
+    datUcto : {
       key: 'datUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    leasing : {
+    },
+    leasing : {
       key: 'leasing',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFLeasing,
       maxLength: 20,
       
-    },    zklMdUcet : {
+    },
+    zklMdUcet : {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    zklDalUcet : {
+    },
+    zklDalUcet : {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
@@ -139,8 +154,9 @@ export class AFDanovyNaklad extends AFEntity {
       maxLength: 30,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -146,11 +146,14 @@ export class AFSestava extends AFEntity {
   radkaZaokr2?: AFRadekSestavy
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Řádky pro přičtení rozdílu (type: PRICTENI_ROZDILU) - pricteni-rozdilu)
-  pricteniRozdilu?: AFPricteniRozdilu[]
+  'pricteni-rozdilu'?: AFPricteniRozdilu[]
+  get pricteniRozdilu(): AFPricteniRozdilu[] | undefined { return this['pricteni-rozdilu']}
   // Upřesnění umístění účtu (type: UMISTENI_UCTU) - umisteni-uctu)
-  umisteniUctu?: AFUmisteniUctu[]
+  'umisteni-uctu'?: AFUmisteniUctu[]
+  get umisteniUctu(): AFUmisteniUctu[] | undefined { return this['umisteni-uctu']}
   // Řádky sestavy (type: RADEK_SESTAVY) - radkySestavy)
   radkySestavy?: AFRadekSestavy[]
 
@@ -161,62 +164,73 @@ export class AFSestava extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typSesK : {
+    },
+    typSesK : {
       key: 'typSesK',
       type: PropertyType.Select,
       isArray: false,
@@ -224,246 +238,290 @@ export class AFSestava extends AFEntity {
       enumName: 'TypSestavy',
       enum: TypSestavy,
       
-    },    standard : {
+    },
+    standard : {
       key: 'standard',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vypMinObd : {
+    },
+    vypMinObd : {
       key: 'vypMinObd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    nazevSloup1 : {
+    },
+    nazevSloup1 : {
       key: 'nazevSloup1',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupA1 : {
+    },
+    nazevSloupA1 : {
       key: 'nazevSloupA1',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupB1 : {
+    },
+    nazevSloupB1 : {
       key: 'nazevSloupB1',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupC1 : {
+    },
+    nazevSloupC1 : {
       key: 'nazevSloupC1',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zobrazit1 : {
+    },
+    zobrazit1 : {
       key: 'zobrazit1',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    nazevSloup2 : {
+    },
+    nazevSloup2 : {
       key: 'nazevSloup2',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupA2 : {
+    },
+    nazevSloupA2 : {
       key: 'nazevSloupA2',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupB2 : {
+    },
+    nazevSloupB2 : {
       key: 'nazevSloupB2',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupC2 : {
+    },
+    nazevSloupC2 : {
       key: 'nazevSloupC2',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zobrazit2 : {
+    },
+    zobrazit2 : {
       key: 'zobrazit2',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    nazevSloup3 : {
+    },
+    nazevSloup3 : {
       key: 'nazevSloup3',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupA3 : {
+    },
+    nazevSloupA3 : {
       key: 'nazevSloupA3',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupB3 : {
+    },
+    nazevSloupB3 : {
       key: 'nazevSloupB3',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupC3 : {
+    },
+    nazevSloupC3 : {
       key: 'nazevSloupC3',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zobrazit3 : {
+    },
+    zobrazit3 : {
       key: 'zobrazit3',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    nazevSloup4 : {
+    },
+    nazevSloup4 : {
       key: 'nazevSloup4',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupA4 : {
+    },
+    nazevSloupA4 : {
       key: 'nazevSloupA4',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupB4 : {
+    },
+    nazevSloupB4 : {
       key: 'nazevSloupB4',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupC4 : {
+    },
+    nazevSloupC4 : {
       key: 'nazevSloupC4',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zobrazit4 : {
+    },
+    zobrazit4 : {
       key: 'zobrazit4',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    nazevSloup5 : {
+    },
+    nazevSloup5 : {
       key: 'nazevSloup5',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupA5 : {
+    },
+    nazevSloupA5 : {
       key: 'nazevSloupA5',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupB5 : {
+    },
+    nazevSloupB5 : {
       key: 'nazevSloupB5',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupC5 : {
+    },
+    nazevSloupC5 : {
       key: 'nazevSloupC5',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zobrazit5 : {
+    },
+    zobrazit5 : {
       key: 'zobrazit5',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    nazevSloup6 : {
+    },
+    nazevSloup6 : {
       key: 'nazevSloup6',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupA6 : {
+    },
+    nazevSloupA6 : {
       key: 'nazevSloupA6',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupB6 : {
+    },
+    nazevSloupB6 : {
       key: 'nazevSloupB6',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevSloupC6 : {
+    },
+    nazevSloupC6 : {
       key: 'nazevSloupC6',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zobrazit6 : {
+    },
+    zobrazit6 : {
       key: 'zobrazit6',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    sloupec3Sum12 : {
+    },
+    sloupec3Sum12 : {
       key: 'sloupec3Sum12',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    sloupec6Sum45 : {
+    },
+    sloupec6Sum45 : {
       key: 'sloupec6Sum45',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    rokOd : {
+    },
+    rokOd : {
       key: 'rokOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    rokDo : {
+    },
+    rokDo : {
       key: 'rokDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesicOd : {
+    },
+    mesicOd : {
       key: 'mesicOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesicDo : {
+    },
+    mesicDo : {
       key: 'mesicDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    predRokOd : {
+    },
+    predRokOd : {
       key: 'predRokOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    predRokDo : {
+    },
+    predRokDo : {
       key: 'predRokDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    predMesicOd : {
+    },
+    predMesicOd : {
       key: 'predMesicOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    predMesicDo : {
+    },
+    predMesicDo : {
       key: 'predMesicDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datVypocet : {
+    },
+    datVypocet : {
       key: 'datVypocet',
       type: PropertyType.Date,
       isArray: false,
       
-    },    typVypSestavyK : {
+    },
+    typVypSestavyK : {
       key: 'typVypSestavyK',
       type: PropertyType.Select,
       isArray: false,
@@ -471,75 +529,85 @@ export class AFSestava extends AFEntity {
       enumName: 'TypVypSestavy',
       enum: TypVypSestavy,
       
-    },    typJednotkyMikro : {
+    },
+    typJednotkyMikro : {
       key: 'typJednotkyMikro',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typOrganizace : {
+    },
+    typOrganizace : {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypOrganizace,
       maxLength: 6,
       
-    },    radkaCil : {
+    },
+    radkaCil : {
       key: 'radkaCil',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       
-    },    sestavaZdroj : {
+    },
+    sestavaZdroj : {
       key: 'sestavaZdroj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSestava,
       
-    },    radkaZdroj : {
+    },
+    radkaZdroj : {
       key: 'radkaZdroj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       
-    },    radkaRozdil1 : {
+    },
+    radkaRozdil1 : {
       key: 'radkaRozdil1',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       
-    },    radkaRozdil2 : {
+    },
+    radkaRozdil2 : {
       key: 'radkaRozdil2',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       
-    },    radkaZaokr1 : {
+    },
+    radkaZaokr1 : {
       key: 'radkaZaokr1',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       
-    },    radkaZaokr2 : {
+    },
+    radkaZaokr2 : {
       key: 'radkaZaokr2',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba
     },
-    pricteniRozdilu : {
-      key: 'pricteniRozdilu',
+    'pricteni-rozdilu' : {
+      key: 'pricteni-rozdilu',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFPricteniRozdilu
     },
-    umisteniUctu : {
-      key: 'umisteniUctu',
+    'umisteni-uctu' : {
+      key: 'umisteni-uctu',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUmisteniUctu

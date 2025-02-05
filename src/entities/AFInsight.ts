@@ -38,7 +38,8 @@ export class AFInsight extends AFEntity {
   state?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -47,76 +48,89 @@ export class AFInsight extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    data : {
+    },
+    data : {
       key: 'data',
       type: PropertyType.String,
       isArray: false,
       
-    },    lastRun : {
+    },
+    lastRun : {
       key: 'lastRun',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    resultKey : {
+    },
+    resultKey : {
       key: 'resultKey',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    state : {
+    },
+    state : {
       key: 'state',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -89,7 +89,8 @@ export interface RelationDef {
   name: string,
 
   tsClassName: string,
-  relationName: string
+  relationName: string,
+  getter?: string | null
 }
 
 export type EnumOptionDef = {

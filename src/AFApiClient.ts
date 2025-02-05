@@ -44,6 +44,18 @@ export class AFApiClient {
     url = this._addParamToUrl(url, 'includes', this._composeIncludes(detail, entity))
     url = this._addParamToUrl(url, 'relations', this._composeRelations(detail))
 
+    url = this._addParamToUrl(url, 'limit', options.limit)
+    url = this._addParamToUrl(url, 'start', options.start)
+
+    url = this._addParamToUrl(url, 'addRowCount', options.addRowCount)
+    url = this._addParamToUrl(url, 'onlyExtIds', options.onlyExtIds)
+    url = this._addParamToUrl(url, 'noExtIds', options.noExtIds)
+    url = this._addParamToUrl(url, 'noIds', options.noIds)
+    url = this._addParamToUrl(url, 'codeAsId', options.codeAsId)
+    url = this._addParamToUrl(url, 'dryRun', options.dryRun)
+    url = this._addParamToUrl(url, 'noSimpleMode', options.noSimpleMode)
+    url = this._addParamToUrl(url, 'noValidityCheck', options.noValidityCheck)
+
     const res: Partial<AFQueryResponse<InstanceType<T>>> = {
       status : AFQueryStatus.LOADING,
       error: null
@@ -136,15 +148,43 @@ export class AFApiClient {
     if (level === AFQueryDetail.ID) return null
     if (level === AFQueryDetail.SUMMARY) return null
 
-    return null
+    const relations: string[] = []
+
+    const levProc = (inp: NestedDetail<T, IS>[]) => {
+      for (const ndi of inp) {
+        if (typeof ndi === 'string') continue
+        const key = ndi[0] as string
+        const list = ndi[1] as NestedDetail<T, IS>[]
+        //console.log(key)
+        if (!relations.includes(key)) relations.push(key)
+        levProc(list)
+      }
+    }
+    levProc(level)
+
+    return relations.length ? relations.join(',') : null
   }
 
-  private _addParamToUrl(url: string, key: string, value: string | null): string {
+  private _addParamToUrl<T>(url: string, key: string, value: T | null | undefined): string {
     const isFirst = !url.includes('?')
-    if (!value || !key.length) {
+    if (!value) {
       return url
     }
-    return url + (isFirst ? '?' : '&') + key + '=' + value
+
+    let out = ''
+    if (typeof value === 'string' && value.length) {
+      out = (isFirst ? '?' : '&') + key + '=' + value
+    }
+
+    if (typeof value === 'number') {
+      out = (isFirst ? '?' : '&') + key + '=' + value.toString()
+    }
+
+    if (typeof value === 'boolean') {
+      out = (isFirst ? '?' : '&') + key + '=' + (value ? 'true' : 'false')
+    }
+
+    return url + out
   }
 
   private _processEntityObj<T extends typeof AFEntity>(entity: T, obj: any): InstanceType<T>[] {

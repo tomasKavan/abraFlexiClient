@@ -28,7 +28,8 @@ export class AFMapovaniSkladu extends AFEntity {
   sklad?: AFSklad
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -37,40 +38,46 @@ export class AFMapovaniSkladu extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    skupZboz : {
+    },
+    skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaZbozi,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

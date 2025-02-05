@@ -24,7 +24,8 @@ export class AFFormaUhradyZauctovani extends AFEntity {
   kasa?: AFTypDokladu
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -33,32 +34,37 @@ export class AFFormaUhradyZauctovani extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    formaUhradyCis : {
+    },
+    formaUhradyCis : {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFFormaUhrady,
       
-    },    typDokl : {
+    },
+    typDokl : {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    kasa : {
+    },
+    kasa : {
       key: 'kasa',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

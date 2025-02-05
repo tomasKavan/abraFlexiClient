@@ -47,7 +47,8 @@ export class AFTypAtributu extends AFEntity {
   mj?: AFMernaJednotka
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -56,67 +57,79 @@ export class AFTypAtributu extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    visible : {
+    },
+    visible : {
       key: 'visible',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typAtributK : {
+    },
+    typAtributK : {
       key: 'typAtributK',
       type: PropertyType.Select,
       isArray: false,
@@ -124,31 +137,36 @@ export class AFTypAtributu extends AFEntity {
       enumName: 'TypAtribut',
       enum: TypAtribut,
       
-    },    beanKeysA : {
+    },
+    beanKeysA : {
       key: 'beanKeysA',
       type: PropertyType.String,
       isArray: false,
       
-    },    standard : {
+    },
+    standard : {
       key: 'standard',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    uuid : {
+    },
+    uuid : {
       key: 'uuid',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    mj : {
+    },
+    mj : {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

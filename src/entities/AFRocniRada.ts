@@ -34,7 +34,8 @@ export class AFRocniRada extends AFEntity {
   ucetObdobi?: AFUcetniObdobi
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -43,50 +44,59 @@ export class AFRocniRada extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    cisDelka : {
+    },
+    cisDelka : {
       key: 'cisDelka',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    zobrazNuly : {
+    },
+    zobrazNuly : {
       key: 'zobrazNuly',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    cisAkt : {
+    },
+    cisAkt : {
       key: 'cisAkt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisPoc : {
+    },
+    cisPoc : {
       key: 'cisPoc',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    prefix : {
+    },
+    prefix : {
       key: 'prefix',
       type: PropertyType.String,
       isArray: false,
       maxLength: 8,
       
-    },    postfix : {
+    },
+    postfix : {
       key: 'postfix',
       type: PropertyType.String,
       isArray: false,
       maxLength: 8,
       
-    },    rada : {
+    },
+    rada : {
       key: 'rada',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRada,
       
-    },    ucetObdobi : {
+    },
+    ucetObdobi : {
       key: 'ucetObdobi',
       type: PropertyType.Relation,
       isArray: false,
@@ -94,8 +104,9 @@ export class AFRocniRada extends AFEntity {
       maxLength: 20,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

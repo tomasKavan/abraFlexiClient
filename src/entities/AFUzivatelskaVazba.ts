@@ -43,67 +43,79 @@ export class AFUzivatelskaVazba extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    vazbaTyp : {
+    },
+    vazbaTyp : {
       key: 'vazbaTyp',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypUzivatelskeVazby,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    castka : {
+    },
+    castka : {
       key: 'castka',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    datum : {
+    },
+    datum : {
       key: 'datum',
       type: PropertyType.Date,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    evidenceType : {
+    },
+    evidenceType : {
       key: 'evidenceType',
       type: PropertyType.String,
       isArray: false,
       
-    },    objectId : {
+    },
+    objectId : {
       key: 'objectId',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    object : {
+    },
+    object : {
       key: 'object',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
     },
+
 
   }
 }

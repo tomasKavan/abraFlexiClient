@@ -43,7 +43,8 @@ export class AFUcetniOsnova extends AFEntity {
   typOrganizace?: AFTypOrganizace
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -52,62 +53,73 @@ export class AFUcetniOsnova extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    druhUctuK : {
+    },
+    druhUctuK : {
       key: 'druhUctuK',
       type: PropertyType.Select,
       isArray: false,
@@ -115,7 +127,8 @@ export class AFUcetniOsnova extends AFEntity {
       enumName: 'DruhUctu',
       enum: DruhUctu,
       
-    },    typUctuK : {
+    },
+    typUctuK : {
       key: 'typUctuK',
       type: PropertyType.Select,
       isArray: false,
@@ -123,12 +136,14 @@ export class AFUcetniOsnova extends AFEntity {
       enumName: 'TypUctu',
       enum: TypUctu,
       
-    },    saldo : {
+    },
+    saldo : {
       key: 'saldo',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typOrganizace : {
+    },
+    typOrganizace : {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
@@ -136,8 +151,9 @@ export class AFUcetniOsnova extends AFEntity {
       maxLength: 20,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -56,7 +56,8 @@ export class AFOdpisovaSkupina extends AFEntity {
   zmena?: boolean
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -65,62 +66,73 @@ export class AFOdpisovaSkupina extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typOdpK : {
+    },
+    typOdpK : {
       key: 'typOdpK',
       type: PropertyType.Select,
       isArray: false,
@@ -128,67 +140,78 @@ export class AFOdpisovaSkupina extends AFEntity {
       enumName: 'TypOdp',
       enum: TypOdp,
       
-    },    dobaOdp : {
+    },
+    dobaOdp : {
       key: 'dobaOdp',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    minDobaOdp : {
+    },
+    minDobaOdp : {
       key: 'minDobaOdp',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    koefZrOdp1 : {
+    },
+    koefZrOdp1 : {
       key: 'koefZrOdp1',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    koefZrOdpDalsi : {
+    },
+    koefZrOdpDalsi : {
       key: 'koefZrOdpDalsi',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    koefZrOdpZvCeny : {
+    },
+    koefZrOdpZvCeny : {
       key: 'koefZrOdpZvCeny',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    prcRoOdp1 : {
+    },
+    prcRoOdp1 : {
       key: 'prcRoOdp1',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    prcRoOdpDalsi : {
+    },
+    prcRoOdpDalsi : {
       key: 'prcRoOdpDalsi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    prcRoOdpZvCeny : {
+    },
+    prcRoOdpZvCeny : {
       key: 'prcRoOdpZvCeny',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    zamek : {
+    },
+    zamek : {
       key: 'zamek',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zmena : {
+    },
+    zmena : {
       key: 'zmena',
       type: PropertyType.Logic,
       isArray: false,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

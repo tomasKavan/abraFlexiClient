@@ -44,74 +44,87 @@ export class AFDoklad extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    idDokl : {
+    },
+    idDokl : {
       key: 'idDokl',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    sumCelkem : {
+    },
+    sumCelkem : {
       key: 'sumCelkem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    nazFirmy : {
+    },
+    nazFirmy : {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    ic : {
+    },
+    ic : {
       key: 'ic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    dic : {
+    },
+    dic : {
       key: 'dic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    faNazev : {
+    },
+    faNazev : {
       key: 'faNazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    evdName : {
+    },
+    evdName : {
       key: 'evdName',
       type: PropertyType.String,
       isArray: false,
       
-    },    subModul : {
+    },
+    subModul : {
       key: 'subModul',
       type: PropertyType.Logic,
       isArray: false,
       
     },
+
 
   }
 }

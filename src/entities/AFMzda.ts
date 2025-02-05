@@ -200,453 +200,541 @@ export class AFMzda extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    rok : {
+    },
+    rok : {
       key: 'rok',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesic : {
+    },
+    mesic : {
       key: 'mesic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datumVypocet : {
+    },
+    datumVypocet : {
       key: 'datumVypocet',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datum : {
+    },
+    datum : {
       key: 'datum',
       type: PropertyType.Date,
       isArray: false,
       
-    },    osbCis : {
+    },
+    osbCis : {
       key: 'osbCis',
       type: PropertyType.String,
       isArray: false,
       
-    },    jmeno : {
+    },
+    jmeno : {
       key: 'jmeno',
       type: PropertyType.String,
       isArray: false,
       
-    },    osobaHlav : {
+    },
+    osobaHlav : {
       key: 'osobaHlav',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsobaHlavicka,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsoba,
       
-    },    skupOsob : {
+    },
+    skupOsob : {
       key: 'skupOsob',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaOsob,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    zdravPoj : {
+    },
+    zdravPoj : {
       key: 'zdravPoj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    pracPom : {
+    },
+    pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPracovniPomer,
       
-    },    dobaFond : {
+    },
+    dobaFond : {
       key: 'dobaFond',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaNeodpr : {
+    },
+    dobaNeodpr : {
       key: 'dobaNeodpr',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaOdpr : {
+    },
+    dobaOdpr : {
       key: 'dobaOdpr',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaOdprDny : {
+    },
+    dobaOdprDny : {
       key: 'dobaOdprDny',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    nemoc : {
+    },
+    nemoc : {
       key: 'nemoc',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaDovol : {
+    },
+    dobaDovol : {
       key: 'dobaDovol',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaDovolCastka : {
+    },
+    dobaDovolCastka : {
       key: 'dobaDovolCastka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dovolVybrano : {
+    },
+    dovolVybrano : {
       key: 'dovolVybrano',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dovolZbyva : {
+    },
+    dovolZbyva : {
       key: 'dovolZbyva',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dovolZbyvaPoKraceni : {
+    },
+    dovolZbyvaPoKraceni : {
       key: 'dovolZbyvaPoKraceni',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaVolnoPlac : {
+    },
+    dobaVolnoPlac : {
       key: 'dobaVolnoPlac',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaVolnoPlacCastka : {
+    },
+    dobaVolnoPlacCastka : {
       key: 'dobaVolnoPlacCastka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    nepritCelk : {
+    },
+    nepritCelk : {
       key: 'nepritCelk',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    prescasHodiny : {
+    },
+    prescasHodiny : {
       key: 'prescasHodiny',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    svatekHodiny : {
+    },
+    svatekHodiny : {
       key: 'svatekHodiny',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    weekendHodiny : {
+    },
+    weekendHodiny : {
       key: 'weekendHodiny',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    mzdaMesicni : {
+    },
+    mzdaMesicni : {
       key: 'mzdaMesicni',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    svatekCastka : {
+    },
+    svatekCastka : {
       key: 'svatekCastka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    weekendCastka : {
+    },
+    weekendCastka : {
       key: 'weekendCastka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    prescasCastka : {
+    },
+    prescasCastka : {
       key: 'prescasCastka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    prescasPripl : {
+    },
+    prescasPripl : {
       key: 'prescasPripl',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    nocniPripl : {
+    },
+    nocniPripl : {
       key: 'nocniPripl',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    svatekNahrada : {
+    },
+    svatekNahrada : {
       key: 'svatekNahrada',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    svatekNahradaHodiny : {
+    },
+    svatekNahradaHodiny : {
       key: 'svatekNahradaHodiny',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    premieProc : {
+    },
+    premieProc : {
       key: 'premieProc',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    premiePevna : {
+    },
+    premiePevna : {
       key: 'premiePevna',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    premieProcUkaz : {
+    },
+    premieProcUkaz : {
       key: 'premieProcUkaz',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    podilNaZisku : {
+    },
+    podilNaZisku : {
       key: 'podilNaZisku',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    pracPracPrum : {
+    },
+    pracPracPrum : {
       key: 'pracPracPrum',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    nepenezPrijmy : {
+    },
+    nepenezPrijmy : {
       key: 'nepenezPrijmy',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    bezneNahrady : {
+    },
+    bezneNahrady : {
       key: 'bezneNahrady',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    odmeny : {
+    },
+    odmeny : {
       key: 'odmeny',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    hrubaPrumer : {
+    },
+    hrubaPrumer : {
       key: 'hrubaPrumer',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    cistaMzda : {
+    },
+    cistaMzda : {
       key: 'cistaMzda',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    hrubaMzda : {
+    },
+    hrubaMzda : {
       key: 'hrubaMzda',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    superhrubaMzda : {
+    },
+    superhrubaMzda : {
       key: 'superhrubaMzda',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    mzdaNahrada : {
+    },
+    mzdaNahrada : {
       key: 'mzdaNahrada',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    prispIzolacka : {
+    },
+    prispIzolacka : {
       key: 'prispIzolacka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    slevaSpFirma : {
+    },
+    slevaSpFirma : {
       key: 'slevaSpFirma',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    dan : {
+    },
+    dan : {
       key: 'dan',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danBonus : {
+    },
+    danBonus : {
       key: 'danBonus',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danSlevPrac : {
+    },
+    danSlevPrac : {
       key: 'danSlevPrac',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danSlevSum : {
+    },
+    danSlevSum : {
       key: 'danSlevSum',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danZaklSraz : {
+    },
+    danZaklSraz : {
       key: 'danZaklSraz',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danZaklSrazSum : {
+    },
+    danZaklSrazSum : {
       key: 'danZaklSrazSum',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danZaklSum : {
+    },
+    danZaklSum : {
       key: 'danZaklSum',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danZaloha : {
+    },
+    danZaloha : {
       key: 'danZaloha',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danSrazka : {
+    },
+    danSrazka : {
       key: 'danSrazka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danRezident : {
+    },
+    danRezident : {
       key: 'danRezident',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    danVypocet : {
+    },
+    danVypocet : {
       key: 'danVypocet',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    slevaDeti : {
+    },
+    slevaDeti : {
       key: 'slevaDeti',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojCelk : {
+    },
+    socPojCelk : {
       key: 'socPojCelk',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojCelkSniz : {
+    },
+    socPojCelkSniz : {
       key: 'socPojCelkSniz',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojZakl : {
+    },
+    socPojZakl : {
       key: 'socPojZakl',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojZaklSniz : {
+    },
+    socPojZaklSniz : {
       key: 'socPojZaklSniz',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojFirma : {
+    },
+    socPojFirma : {
       key: 'socPojFirma',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    socPojFirmaSniz : {
+    },
+    socPojFirmaSniz : {
       key: 'socPojFirmaSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    socPojFirmaSnizZap : {
+    },
+    socPojFirmaSnizZap : {
       key: 'socPojFirmaSnizZap',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    socPojPrac : {
+    },
+    socPojPrac : {
       key: 'socPojPrac',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojZaklDp : {
+    },
+    socPojZaklDp : {
       key: 'socPojZaklDp',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojCelkDp : {
+    },
+    socPojCelkDp : {
       key: 'socPojCelkDp',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojSleva : {
+    },
+    socPojSleva : {
       key: 'socPojSleva',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    nahradaNeschop : {
+    },
+    nahradaNeschop : {
       key: 'nahradaNeschop',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    refundNeschop : {
+    },
+    refundNeschop : {
       key: 'refundNeschop',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zdravPojCelk : {
+    },
+    zdravPojCelk : {
       key: 'zdravPojCelk',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zdravPojZakl : {
+    },
+    zdravPojZakl : {
       key: 'zdravPojZakl',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zdravPojFirma : {
+    },
+    zdravPojFirma : {
       key: 'zdravPojFirma',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zdravPojPrac : {
+    },
+    zdravPojPrac : {
       key: 'zdravPojPrac',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    srazkaSporeni : {
+    },
+    srazkaSporeni : {
       key: 'srazkaSporeni',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zalohaRadna : {
+    },
+    zalohaRadna : {
       key: 'zalohaRadna',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobirka : {
+    },
+    dobirka : {
       key: 'dobirka',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zalohaMimoradna : {
+    },
+    zalohaMimoradna : {
       key: 'zalohaMimoradna',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    socPojCelkSpada : {
+    },
+    socPojCelkSpada : {
       key: 'socPojCelkSpada',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    duchodSpor : {
+    },
+    duchodSpor : {
       key: 'duchodSpor',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    prostrediPripl : {
+    },
+    prostrediPripl : {
       key: 'prostrediPripl',
       type: PropertyType.Numeric,
       isArray: false,
       
     },
+
 
   }
 }

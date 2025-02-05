@@ -31,7 +31,8 @@ export class AFSazbaDph extends AFEntity {
   stat?: AFStat
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -40,12 +41,14 @@ export class AFSazbaDph extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -53,33 +56,39 @@ export class AFSazbaDph extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    szbDph : {
+    },
+    szbDph : {
       key: 'szbDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    platiOdData : {
+    },
+    platiOdData : {
       key: 'platiOdData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDoData : {
+    },
+    platiDoData : {
       key: 'platiDoData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
@@ -87,8 +96,9 @@ export class AFSazbaDph extends AFEntity {
       maxLength: 3,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

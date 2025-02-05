@@ -46,72 +46,84 @@ export class AFZalohaKOdpoctu extends AFEntity {
       isArray: false,
       afClass: AFEntity,
       
-    },    ucetni : {
+    },
+    ucetni : {
       key: 'ucetni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    sumOsv : {
+    },
+    sumOsv : {
       key: 'sumOsv',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklZakl : {
+    },
+    sumZklZakl : {
       key: 'sumZklZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklSniz : {
+    },
+    sumZklSniz : {
       key: 'sumZklSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklSniz2 : {
+    },
+    sumZklSniz2 : {
       key: 'sumZklSniz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphZakl : {
+    },
+    sumDphZakl : {
       key: 'sumDphZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphSniz : {
+    },
+    sumDphSniz : {
       key: 'sumDphSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphSniz2 : {
+    },
+    sumDphSniz2 : {
       key: 'sumDphSniz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkZakl : {
+    },
+    sumCelkZakl : {
       key: 'sumCelkZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkSniz : {
+    },
+    sumCelkSniz : {
       key: 'sumCelkSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkSniz2 : {
+    },
+    sumCelkSniz2 : {
       key: 'sumCelkSniz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
     },
+
     doporuceni : {
       key: 'doporuceni',
       type: PropertyType.Relation,

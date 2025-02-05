@@ -75,7 +75,8 @@ export class AFStitek extends AFEntity {
   skupVybKlic?: AFSkupinaStitku
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -84,165 +85,196 @@ export class AFStitek extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    vsbAdr : {
+    },
+    vsbAdr : {
       key: 'vsbAdr',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbKatalog : {
+    },
+    vsbKatalog : {
       key: 'vsbKatalog',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbSkl : {
+    },
+    vsbSkl : {
       key: 'vsbSkl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbFav : {
+    },
+    vsbFav : {
       key: 'vsbFav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPhl : {
+    },
+    vsbPhl : {
       key: 'vsbPhl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbFap : {
+    },
+    vsbFap : {
       key: 'vsbFap',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbZav : {
+    },
+    vsbZav : {
       key: 'vsbZav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbBan : {
+    },
+    vsbBan : {
       key: 'vsbBan',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPok : {
+    },
+    vsbPok : {
       key: 'vsbPok',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbInt : {
+    },
+    vsbInt : {
       key: 'vsbInt',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbMaj : {
+    },
+    vsbMaj : {
       key: 'vsbMaj',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbObp : {
+    },
+    vsbObp : {
       key: 'vsbObp',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbNav : {
+    },
+    vsbNav : {
       key: 'vsbNav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPpp : {
+    },
+    vsbPpp : {
       key: 'vsbPpp',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbObv : {
+    },
+    vsbObv : {
       key: 'vsbObv',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbNap : {
+    },
+    vsbNap : {
       key: 'vsbNap',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPpv : {
+    },
+    vsbPpv : {
       key: 'vsbPpv',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbMzd : {
+    },
+    vsbMzd : {
       key: 'vsbMzd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbCis : {
+    },
+    vsbCis : {
       key: 'vsbCis',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    skupVybKlic : {
+    },
+    skupVybKlic : {
       key: 'skupVybKlic',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaStitku,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

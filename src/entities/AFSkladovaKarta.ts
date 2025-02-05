@@ -103,9 +103,11 @@ export class AFSkladovaKarta extends AFEntity {
   police?: AFUmisteniVeSkladu
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Položky příjemky/výdejky (type: SKLADOVY_POHYB_POLOZKA) - skladovy-pohyb-polozky)
-  skladovyPohybPolozky?: AFSkladovyPohybPolozka[]
+  'skladovy-pohyb-polozky'?: AFSkladovyPohybPolozka[]
+  get skladovyPohybPolozky(): AFSkladovyPohybPolozka[] | undefined { return this['skladovy-pohyb-polozky']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -114,253 +116,296 @@ export class AFSkladovaKarta extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    prumCenaTuz : {
+    },
+    prumCenaTuz : {
       key: 'prumCenaTuz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    prumCenaMen : {
+    },
+    prumCenaMen : {
       key: 'prumCenaMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    stavMJ : {
+    },
+    stavMJ : {
       key: 'stavMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    stavTuz : {
+    },
+    stavTuz : {
       key: 'stavTuz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMen : {
+    },
+    stavMen : {
       key: 'stavMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    datPosl : {
+    },
+    datPosl : {
       key: 'datPosl',
       type: PropertyType.Date,
       isArray: false,
       
-    },    pocatMJ : {
+    },
+    pocatMJ : {
       key: 'pocatMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    pocatTuz : {
+    },
+    pocatTuz : {
       key: 'pocatTuz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    pocatMen : {
+    },
+    pocatMen : {
       key: 'pocatMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    minMJ : {
+    },
+    minMJ : {
       key: 'minMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    maxMJ : {
+    },
+    maxMJ : {
       key: 'maxMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    rezervMJ : {
+    },
+    rezervMJ : {
       key: 'rezervMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    datStavMJ : {
+    },
+    datStavMJ : {
       key: 'datStavMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    datStavTuz : {
+    },
+    datStavTuz : {
       key: 'datStavTuz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    datStavMen : {
+    },
+    datStavMen : {
       key: 'datStavMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    poslCenaTuz : {
+    },
+    poslCenaTuz : {
       key: 'poslCenaTuz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    poslCenaMen : {
+    },
+    poslCenaMen : {
       key: 'poslCenaMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    vydExpir : {
+    },
+    vydExpir : {
       key: 'vydExpir',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    popisA : {
+    },
+    popisA : {
       key: 'popisA',
       type: PropertyType.String,
       isArray: false,
       
-    },    popisB : {
+    },
+    popisB : {
       key: 'popisB',
       type: PropertyType.String,
       isArray: false,
       
-    },    popisC : {
+    },
+    popisC : {
       key: 'popisC',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznamVelka : {
+    },
+    poznamVelka : {
       key: 'poznamVelka',
       type: PropertyType.String,
       isArray: false,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    cenPopis : {
+    },
+    cenPopis : {
       key: 'cenPopis',
       type: PropertyType.String,
       isArray: false,
       
-    },    cenPopisA : {
+    },
+    cenPopisA : {
       key: 'cenPopisA',
       type: PropertyType.String,
       isArray: false,
       
-    },    cenPopisB : {
+    },
+    cenPopisB : {
       key: 'cenPopisB',
       type: PropertyType.String,
       isArray: false,
       
-    },    cenPopisC : {
+    },
+    cenPopisC : {
       key: 'cenPopisC',
       type: PropertyType.String,
       isArray: false,
       
-    },    cenPoznam : {
+    },
+    cenPoznam : {
       key: 'cenPoznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    pozadavkyMj : {
+    },
+    pozadavkyMj : {
       key: 'pozadavkyMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    stavMjSPozadavky : {
+    },
+    stavMjSPozadavky : {
       key: 'stavMjSPozadavky',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    dostupMj : {
+    },
+    dostupMj : {
       key: 'dostupMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    ucetObdobi : {
+    },
+    ucetObdobi : {
       key: 'ucetObdobi',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    mistnost : {
+    },
+    mistnost : {
       key: 'mistnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUmisteniVeSkladu,
       
-    },    regal : {
+    },
+    regal : {
       key: 'regal',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUmisteniVeSkladu,
       
-    },    police : {
+    },
+    police : {
       key: 'police',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUmisteniVeSkladu,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba
     },
-    skladovyPohybPolozky : {
-      key: 'skladovyPohybPolozky',
+    'skladovy-pohyb-polozky' : {
+      key: 'skladovy-pohyb-polozky',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFSkladovyPohybPolozka

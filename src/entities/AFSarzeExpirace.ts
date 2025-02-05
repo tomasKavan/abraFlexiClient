@@ -44,50 +44,59 @@ export class AFSarzeExpirace extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    pocet : {
+    },
+    pocet : {
       key: 'pocet',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cenaMj : {
+    },
+    cenaMj : {
       key: 'cenaMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datSklad : {
+    },
+    datSklad : {
       key: 'datSklad',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datTrvan : {
+    },
+    datTrvan : {
       key: 'datTrvan',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datVyroby : {
+    },
+    datVyroby : {
       key: 'datVyroby',
       type: PropertyType.Date,
       isArray: false,
       
-    },    expirace : {
+    },
+    expirace : {
       key: 'expirace',
       type: PropertyType.Date,
       isArray: false,
       
-    },    sarze : {
+    },
+    sarze : {
       key: 'sarze',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    typPohybuK : {
+    },
+    typPohybuK : {
       key: 'typPohybuK',
       type: PropertyType.Select,
       isArray: false,
@@ -95,13 +104,15 @@ export class AFSarzeExpirace extends AFEntity {
       enumName: 'TypPohybu',
       enum: TypPohybu,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
@@ -109,6 +120,7 @@ export class AFSarzeExpirace extends AFEntity {
       maxLength: 64,
       
     },
+
 
   }
 }

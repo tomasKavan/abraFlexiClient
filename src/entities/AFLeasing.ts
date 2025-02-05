@@ -116,13 +116,16 @@ export class AFLeasing extends AFEntity {
   uzivatel?: any
 
   // Splátkový kalendář (type: SPLATKOVY_KALENDAR) - splatkove-kalendare)
-  splatkoveKalendare?: AFSplatkovyKalendar[]
+  'splatkove-kalendare'?: AFSplatkovyKalendar[]
+  get splatkoveKalendare(): AFSplatkovyKalendar[] | undefined { return this['splatkove-kalendare']}
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Daňové náklady (type: DANOVY_NAKLAD) - danove-naklady)
-  danoveNaklady?: AFDanovyNaklad[]
+  'danove-naklady'?: AFDanovyNaklad[]
+  get danoveNaklady(): AFDanovyNaklad[] | undefined { return this['danove-naklady']}
   // Zápůjčky/odpovědná osoba (type: ZAPUJCKA) - zapujcky)
   zapujcky?: AFZapujcka[]
 
@@ -133,68 +136,80 @@ export class AFLeasing extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    eanKod : {
+    },
+    eanKod : {
       key: 'eanKod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    druhK : {
+    },
+    druhK : {
       key: 'druhK',
       type: PropertyType.Select,
       isArray: false,
@@ -202,35 +217,41 @@ export class AFLeasing extends AFEntity {
       enumName: 'DruhLeas',
       enum: DruhLeas,
       
-    },    cena : {
+    },
+    cena : {
       key: 'cena',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    cidPoriz : {
+    },
+    cidPoriz : {
       key: 'cidPoriz',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datKoupe : {
+    },
+    datKoupe : {
       key: 'datKoupe',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datVyroby : {
+    },
+    datVyroby : {
       key: 'datVyroby',
       type: PropertyType.Date,
       isArray: false,
       
-    },    vyrCis : {
+    },
+    vyrCis : {
       key: 'vyrCis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mjZarukyK : {
+    },
+    mjZarukyK : {
       key: 'mjZarukyK',
       type: PropertyType.Select,
       isArray: false,
@@ -238,30 +259,35 @@ export class AFLeasing extends AFEntity {
       enumName: 'MjZaruky',
       enum: MjZaruky,
       
-    },    zaruka : {
+    },
+    zaruka : {
       key: 'zaruka',
       type: PropertyType.Integer,
       isArray: false,
       maxLength: 2,
       
-    },    zamek : {
+    },
+    zamek : {
       key: 'zamek',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    pocetSplatek : {
+    },
+    pocetSplatek : {
       key: 'pocetSplatek',
       type: PropertyType.Integer,
       isArray: false,
       maxLength: 2,
       
-    },    pocetDanNakl : {
+    },
+    pocetDanNakl : {
       key: 'pocetDanNakl',
       type: PropertyType.Integer,
       isArray: false,
       maxLength: 2,
       
-    },    frekDanNaklK : {
+    },
+    frekDanNaklK : {
       key: 'frekDanNaklK',
       type: PropertyType.Select,
       isArray: false,
@@ -269,147 +295,170 @@ export class AFLeasing extends AFEntity {
       enumName: 'FrDanNakl',
       enum: FrDanNakl,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    vozCislo : {
+    },
+    vozCislo : {
       key: 'vozCislo',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozSpz : {
+    },
+    vozSpz : {
       key: 'vozSpz',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozZnacka : {
+    },
+    vozZnacka : {
       key: 'vozZnacka',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozModel : {
+    },
+    vozModel : {
       key: 'vozModel',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozTyp : {
+    },
+    vozTyp : {
       key: 'vozTyp',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozObjem : {
+    },
+    vozObjem : {
       key: 'vozObjem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    vozHavar : {
+    },
+    vozHavar : {
       key: 'vozHavar',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozHavarVyse : {
+    },
+    vozHavarVyse : {
       key: 'vozHavarVyse',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    vozVybava : {
+    },
+    vozVybava : {
       key: 'vozVybava',
       type: PropertyType.String,
       isArray: false,
       
-    },    typLeasingu : {
+    },
+    typLeasingu : {
       key: 'typLeasingu',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypLeasingu,
       maxLength: 20,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       maxLength: 20,
       
-    },    casUcet : {
+    },
+    casUcet : {
       key: 'casUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    zavazUcet : {
+    },
+    zavazUcet : {
       key: 'zavazUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    naklUcet : {
+    },
+    naklUcet : {
       key: 'naklUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphZaklUcet : {
+    },
+    dphZaklUcet : {
       key: 'dphZaklUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphSnizUcet : {
+    },
+    dphSnizUcet : {
       key: 'dphSnizUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dodavatel : {
+    },
+    dodavatel : {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    vyrobce : {
+    },
+    vyrobce : {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
@@ -417,8 +466,9 @@ export class AFLeasing extends AFEntity {
       maxLength: 254,
       
     },
-    splatkoveKalendare : {
-      key: 'splatkoveKalendare',
+
+    'splatkove-kalendare' : {
+      key: 'splatkove-kalendare',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFSplatkovyKalendar
@@ -429,14 +479,14 @@ export class AFLeasing extends AFEntity {
       isArray: true,
       afClass: AFPriloha
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba
     },
-    danoveNaklady : {
-      key: 'danoveNaklady',
+    'danove-naklady' : {
+      key: 'danove-naklady',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFDanovyNaklad

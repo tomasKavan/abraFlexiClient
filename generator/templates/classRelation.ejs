@@ -1,2 +1,3 @@
   // <%= name %> (type: <%= evidenceType %>) - <%= url %>)
-  <%= relationName %>?: <%= tsClassName %>[]
+  <% if (getter) { %>'<% } %><%= relationName %><% if (getter) { %>'<% } %>?: <%= tsClassName %>[]<% if (getter) { %>
+  get <%= getter %>(): <%= tsClassName %>[] | undefined { return this['<%= relationName %>']}<% } %>

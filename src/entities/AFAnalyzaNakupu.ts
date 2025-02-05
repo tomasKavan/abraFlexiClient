@@ -130,308 +130,358 @@ export class AFAnalyzaNakupu extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazFirmy : {
+    },
+    nazFirmy : {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    sumMnozMj : {
+    },
+    sumMnozMj : {
       key: 'sumMnozMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl : {
+    },
+    sumSumZkl : {
       key: 'sumSumZkl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZklPredSlevou : {
+    },
+    sumSumZklPredSlevou : {
       key: 'sumSumZklPredSlevou',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZklProdej : {
+    },
+    sumSumZklProdej : {
       key: 'sumSumZklProdej',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSlevaKc : {
+    },
+    sumSlevaKc : {
       key: 'sumSlevaKc',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSlevaProc : {
+    },
+    sumSlevaProc : {
       key: 'sumSlevaProc',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    cenaZakl : {
+    },
+    cenaZakl : {
       key: 'cenaZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj1 : {
+    },
+    sumMnozMj1 : {
       key: 'sumMnozMj1',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj2 : {
+    },
+    sumMnozMj2 : {
       key: 'sumMnozMj2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj3 : {
+    },
+    sumMnozMj3 : {
       key: 'sumMnozMj3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj4 : {
+    },
+    sumMnozMj4 : {
       key: 'sumMnozMj4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj5 : {
+    },
+    sumMnozMj5 : {
       key: 'sumMnozMj5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj6 : {
+    },
+    sumMnozMj6 : {
       key: 'sumMnozMj6',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj7 : {
+    },
+    sumMnozMj7 : {
       key: 'sumMnozMj7',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj8 : {
+    },
+    sumMnozMj8 : {
       key: 'sumMnozMj8',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj9 : {
+    },
+    sumMnozMj9 : {
       key: 'sumMnozMj9',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj10 : {
+    },
+    sumMnozMj10 : {
       key: 'sumMnozMj10',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj11 : {
+    },
+    sumMnozMj11 : {
       key: 'sumMnozMj11',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMnozMj12 : {
+    },
+    sumMnozMj12 : {
       key: 'sumMnozMj12',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl1 : {
+    },
+    sumSumZkl1 : {
       key: 'sumSumZkl1',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl2 : {
+    },
+    sumSumZkl2 : {
       key: 'sumSumZkl2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl3 : {
+    },
+    sumSumZkl3 : {
       key: 'sumSumZkl3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl4 : {
+    },
+    sumSumZkl4 : {
       key: 'sumSumZkl4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl5 : {
+    },
+    sumSumZkl5 : {
       key: 'sumSumZkl5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl6 : {
+    },
+    sumSumZkl6 : {
       key: 'sumSumZkl6',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl7 : {
+    },
+    sumSumZkl7 : {
       key: 'sumSumZkl7',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl8 : {
+    },
+    sumSumZkl8 : {
       key: 'sumSumZkl8',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl9 : {
+    },
+    sumSumZkl9 : {
       key: 'sumSumZkl9',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl10 : {
+    },
+    sumSumZkl10 : {
       key: 'sumSumZkl10',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl11 : {
+    },
+    sumSumZkl11 : {
       key: 'sumSumZkl11',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumSumZkl12 : {
+    },
+    sumSumZkl12 : {
       key: 'sumSumZkl12',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    adresar : {
+    },
+    adresar : {
       key: 'adresar',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    mistUrc : {
+    },
+    mistUrc : {
       key: 'mistUrc',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMistoUrceni,
       
-    },    skupFir : {
+    },
+    skupFir : {
       key: 'skupFir',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaFirem,
       
-    },    skupCen : {
+    },
+    skupCen : {
       key: 'skupCen',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenikovaSkupina,
       
-    },    skupZboz : {
+    },
+    skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaZbozi,
       
-    },    vyrobce : {
+    },
+    vyrobce : {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    mj : {
+    },
+    mj : {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       maxLength: 20,
       
-    },    zodpOsoba : {
+    },
+    zodpOsoba : {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    zodpOsobaAdresar : {
+    },
+    zodpOsobaAdresar : {
       key: 'zodpOsobaAdresar',
       type: PropertyType.Relation,
       isArray: false,
@@ -439,6 +489,7 @@ export class AFAnalyzaNakupu extends AFEntity {
       maxLength: 254,
       
     },
+
 
   }
 }

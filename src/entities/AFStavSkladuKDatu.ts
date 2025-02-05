@@ -44,67 +44,78 @@ export class AFStavSkladuKDatu extends AFEntity {
       isArray: false,
       digits: 19,
       
-    },    stavMJPozad : {
+    },
+    stavMJPozad : {
       key: 'stavMJPozad',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    pozadavkyMJ : {
+    },
+    pozadavkyMJ : {
       key: 'pozadavkyMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    tuz : {
+    },
+    tuz : {
       key: 'tuz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    eanKod : {
+    },
+    eanKod : {
       key: 'eanKod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    prumCena : {
+    },
+    prumCena : {
       key: 'prumCena',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    mj1 : {
+    },
+    mj1 : {
       key: 'mj1',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    skupZboz : {
+    },
+    skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaZbozi,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
     },
+
 
   }
 }

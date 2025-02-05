@@ -58,7 +58,8 @@ export class AFDodavatel extends AFEntity {
   mena?: AFMena
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -67,127 +68,148 @@ export class AFDodavatel extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kodIndi : {
+    },
+    kodIndi : {
       key: 'kodIndi',
       type: PropertyType.String,
       isArray: false,
       maxLength: 64,
       
-    },    nakupCena : {
+    },
+    nakupCena : {
       key: 'nakupCena',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    primarni : {
+    },
+    primarni : {
       key: 'primarni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stavMJ : {
+    },
+    stavMJ : {
       key: 'stavMJ',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    dodaciLhuta : {
+    },
+    dodaciLhuta : {
       key: 'dodaciLhuta',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    limMnoz2 : {
+    },
+    limMnoz2 : {
       key: 'limMnoz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz3 : {
+    },
+    limMnoz3 : {
       key: 'limMnoz3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz4 : {
+    },
+    limMnoz4 : {
       key: 'limMnoz4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz5 : {
+    },
+    limMnoz5 : {
       key: 'limMnoz5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    nakupCena2 : {
+    },
+    nakupCena2 : {
       key: 'nakupCena2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    nakupCena3 : {
+    },
+    nakupCena3 : {
       key: 'nakupCena3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    nakupCena4 : {
+    },
+    nakupCena4 : {
       key: 'nakupCena4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    nakupCena5 : {
+    },
+    nakupCena5 : {
       key: 'nakupCena5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    mjDodaciLhuta : {
+    },
+    mjDodaciLhuta : {
       key: 'mjDodaciLhuta',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

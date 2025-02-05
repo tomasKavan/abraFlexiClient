@@ -54,7 +54,8 @@ export class AFTypUzivatelskeVazby extends AFEntity {
   stitky?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -63,119 +64,140 @@ export class AFTypUzivatelskeVazby extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    automaticka : {
+    },
+    automaticka : {
       key: 'automaticka',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    beanKeysA : {
+    },
+    beanKeysA : {
       key: 'beanKeysA',
       type: PropertyType.String,
       isArray: false,
       
-    },    beanKeysB : {
+    },
+    beanKeysB : {
       key: 'beanKeysB',
       type: PropertyType.String,
       isArray: false,
       
-    },    visibleB : {
+    },
+    visibleB : {
       key: 'visibleB',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    fkNameB : {
+    },
+    fkNameB : {
       key: 'fkNameB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    tableNameB : {
+    },
+    tableNameB : {
       key: 'tableNameB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    fkDbNameB : {
+    },
+    fkDbNameB : {
       key: 'fkDbNameB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    pkDbNameB : {
+    },
+    pkDbNameB : {
       key: 'pkDbNameB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    modulB : {
+    },
+    modulB : {
       key: 'modulB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

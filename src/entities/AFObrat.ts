@@ -53,87 +53,102 @@ export class AFObrat extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    obdobi : {
+    },
+    obdobi : {
       key: 'obdobi',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    rok : {
+    },
+    rok : {
       key: 'rok',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    obrDal : {
+    },
+    obrDal : {
       key: 'obrDal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obrMd : {
+    },
+    obrMd : {
       key: 'obrMd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obrDalBck : {
+    },
+    obrDalBck : {
       key: 'obrDalBck',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obrMdBck : {
+    },
+    obrMdBck : {
       key: 'obrMdBck',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    uzivNastav : {
+    },
+    uzivNastav : {
       key: 'uzivNastav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    rokMesic : {
+    },
+    rokMesic : {
       key: 'rokMesic',
       type: PropertyType.Date,
       isArray: false,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    ucet : {
+    },
+    ucet : {
       key: 'ucet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       
-    },    cinnost : {
+    },
+    cinnost : {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCinnost,
       
-    },    ucetniObdobi : {
+    },
+    ucetniObdobi : {
       key: 'ucetniObdobi',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
     },
+
 
   }
 }

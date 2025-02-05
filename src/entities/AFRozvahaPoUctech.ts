@@ -270,744 +270,868 @@ export class AFRozvahaPoUctech extends AFEntity {
       isArray: false,
       afClass: AFUcet,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    ucetniObdobi : {
+    },
+    ucetniObdobi : {
       key: 'ucetniObdobi',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    nazevUctu : {
+    },
+    nazevUctu : {
       key: 'nazevUctu',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocatek : {
+    },
+    pocatek : {
       key: 'pocatek',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    pocatekMD : {
+    },
+    pocatekMD : {
       key: 'pocatekMD',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    pocatekDal : {
+    },
+    pocatekDal : {
       key: 'pocatekDal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zustatekMD : {
+    },
+    zustatekMD : {
       key: 'zustatekMD',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zustatekDal : {
+    },
+    zustatekDal : {
       key: 'zustatekDal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd01 : {
+    },
+    obratMd01 : {
       key: 'obratMd01',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal01 : {
+    },
+    obratDal01 : {
       key: 'obratDal01',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd01 : {
+    },
+    stavMd01 : {
       key: 'stavMd01',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal01 : {
+    },
+    stavDal01 : {
       key: 'stavDal01',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav01 : {
+    },
+    stav01 : {
       key: 'stav01',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd02 : {
+    },
+    obratMd02 : {
       key: 'obratMd02',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal02 : {
+    },
+    obratDal02 : {
       key: 'obratDal02',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd02 : {
+    },
+    stavMd02 : {
       key: 'stavMd02',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal02 : {
+    },
+    stavDal02 : {
       key: 'stavDal02',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav02 : {
+    },
+    stav02 : {
       key: 'stav02',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd03 : {
+    },
+    obratMd03 : {
       key: 'obratMd03',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal03 : {
+    },
+    obratDal03 : {
       key: 'obratDal03',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd03 : {
+    },
+    stavMd03 : {
       key: 'stavMd03',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal03 : {
+    },
+    stavDal03 : {
       key: 'stavDal03',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav03 : {
+    },
+    stav03 : {
       key: 'stav03',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd04 : {
+    },
+    obratMd04 : {
       key: 'obratMd04',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal04 : {
+    },
+    obratDal04 : {
       key: 'obratDal04',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd04 : {
+    },
+    stavMd04 : {
       key: 'stavMd04',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal04 : {
+    },
+    stavDal04 : {
       key: 'stavDal04',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav04 : {
+    },
+    stav04 : {
       key: 'stav04',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd05 : {
+    },
+    obratMd05 : {
       key: 'obratMd05',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal05 : {
+    },
+    obratDal05 : {
       key: 'obratDal05',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd05 : {
+    },
+    stavMd05 : {
       key: 'stavMd05',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal05 : {
+    },
+    stavDal05 : {
       key: 'stavDal05',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav05 : {
+    },
+    stav05 : {
       key: 'stav05',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd06 : {
+    },
+    obratMd06 : {
       key: 'obratMd06',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal06 : {
+    },
+    obratDal06 : {
       key: 'obratDal06',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd06 : {
+    },
+    stavMd06 : {
       key: 'stavMd06',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal06 : {
+    },
+    stavDal06 : {
       key: 'stavDal06',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav06 : {
+    },
+    stav06 : {
       key: 'stav06',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd07 : {
+    },
+    obratMd07 : {
       key: 'obratMd07',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal07 : {
+    },
+    obratDal07 : {
       key: 'obratDal07',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd07 : {
+    },
+    stavMd07 : {
       key: 'stavMd07',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal07 : {
+    },
+    stavDal07 : {
       key: 'stavDal07',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav07 : {
+    },
+    stav07 : {
       key: 'stav07',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd08 : {
+    },
+    obratMd08 : {
       key: 'obratMd08',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal08 : {
+    },
+    obratDal08 : {
       key: 'obratDal08',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd08 : {
+    },
+    stavMd08 : {
       key: 'stavMd08',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal08 : {
+    },
+    stavDal08 : {
       key: 'stavDal08',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav08 : {
+    },
+    stav08 : {
       key: 'stav08',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd09 : {
+    },
+    obratMd09 : {
       key: 'obratMd09',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal09 : {
+    },
+    obratDal09 : {
       key: 'obratDal09',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd09 : {
+    },
+    stavMd09 : {
       key: 'stavMd09',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal09 : {
+    },
+    stavDal09 : {
       key: 'stavDal09',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav09 : {
+    },
+    stav09 : {
       key: 'stav09',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd10 : {
+    },
+    obratMd10 : {
       key: 'obratMd10',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal10 : {
+    },
+    obratDal10 : {
       key: 'obratDal10',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd10 : {
+    },
+    stavMd10 : {
       key: 'stavMd10',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal10 : {
+    },
+    stavDal10 : {
       key: 'stavDal10',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav10 : {
+    },
+    stav10 : {
       key: 'stav10',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd11 : {
+    },
+    obratMd11 : {
       key: 'obratMd11',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal11 : {
+    },
+    obratDal11 : {
       key: 'obratDal11',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd11 : {
+    },
+    stavMd11 : {
       key: 'stavMd11',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal11 : {
+    },
+    stavDal11 : {
       key: 'stavDal11',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav11 : {
+    },
+    stav11 : {
       key: 'stav11',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd12 : {
+    },
+    obratMd12 : {
       key: 'obratMd12',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal12 : {
+    },
+    obratDal12 : {
       key: 'obratDal12',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd12 : {
+    },
+    stavMd12 : {
       key: 'stavMd12',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal12 : {
+    },
+    stavDal12 : {
       key: 'stavDal12',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav12 : {
+    },
+    stav12 : {
       key: 'stav12',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd13 : {
+    },
+    obratMd13 : {
       key: 'obratMd13',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal13 : {
+    },
+    obratDal13 : {
       key: 'obratDal13',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd13 : {
+    },
+    stavMd13 : {
       key: 'stavMd13',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal13 : {
+    },
+    stavDal13 : {
       key: 'stavDal13',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav13 : {
+    },
+    stav13 : {
       key: 'stav13',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd14 : {
+    },
+    obratMd14 : {
       key: 'obratMd14',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal14 : {
+    },
+    obratDal14 : {
       key: 'obratDal14',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd14 : {
+    },
+    stavMd14 : {
       key: 'stavMd14',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal14 : {
+    },
+    stavDal14 : {
       key: 'stavDal14',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav14 : {
+    },
+    stav14 : {
       key: 'stav14',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd15 : {
+    },
+    obratMd15 : {
       key: 'obratMd15',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal15 : {
+    },
+    obratDal15 : {
       key: 'obratDal15',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd15 : {
+    },
+    stavMd15 : {
       key: 'stavMd15',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal15 : {
+    },
+    stavDal15 : {
       key: 'stavDal15',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav15 : {
+    },
+    stav15 : {
       key: 'stav15',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd16 : {
+    },
+    obratMd16 : {
       key: 'obratMd16',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal16 : {
+    },
+    obratDal16 : {
       key: 'obratDal16',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd16 : {
+    },
+    stavMd16 : {
       key: 'stavMd16',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal16 : {
+    },
+    stavDal16 : {
       key: 'stavDal16',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav16 : {
+    },
+    stav16 : {
       key: 'stav16',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd17 : {
+    },
+    obratMd17 : {
       key: 'obratMd17',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal17 : {
+    },
+    obratDal17 : {
       key: 'obratDal17',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd17 : {
+    },
+    stavMd17 : {
       key: 'stavMd17',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal17 : {
+    },
+    stavDal17 : {
       key: 'stavDal17',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav17 : {
+    },
+    stav17 : {
       key: 'stav17',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd18 : {
+    },
+    obratMd18 : {
       key: 'obratMd18',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal18 : {
+    },
+    obratDal18 : {
       key: 'obratDal18',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd18 : {
+    },
+    stavMd18 : {
       key: 'stavMd18',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal18 : {
+    },
+    stavDal18 : {
       key: 'stavDal18',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav18 : {
+    },
+    stav18 : {
       key: 'stav18',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd19 : {
+    },
+    obratMd19 : {
       key: 'obratMd19',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal19 : {
+    },
+    obratDal19 : {
       key: 'obratDal19',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd19 : {
+    },
+    stavMd19 : {
       key: 'stavMd19',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal19 : {
+    },
+    stavDal19 : {
       key: 'stavDal19',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav19 : {
+    },
+    stav19 : {
       key: 'stav19',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd20 : {
+    },
+    obratMd20 : {
       key: 'obratMd20',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal20 : {
+    },
+    obratDal20 : {
       key: 'obratDal20',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd20 : {
+    },
+    stavMd20 : {
       key: 'stavMd20',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal20 : {
+    },
+    stavDal20 : {
       key: 'stavDal20',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav20 : {
+    },
+    stav20 : {
       key: 'stav20',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd21 : {
+    },
+    obratMd21 : {
       key: 'obratMd21',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal21 : {
+    },
+    obratDal21 : {
       key: 'obratDal21',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd21 : {
+    },
+    stavMd21 : {
       key: 'stavMd21',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal21 : {
+    },
+    stavDal21 : {
       key: 'stavDal21',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav21 : {
+    },
+    stav21 : {
       key: 'stav21',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd22 : {
+    },
+    obratMd22 : {
       key: 'obratMd22',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal22 : {
+    },
+    obratDal22 : {
       key: 'obratDal22',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd22 : {
+    },
+    stavMd22 : {
       key: 'stavMd22',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal22 : {
+    },
+    stavDal22 : {
       key: 'stavDal22',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav22 : {
+    },
+    stav22 : {
       key: 'stav22',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMd23 : {
+    },
+    obratMd23 : {
       key: 'obratMd23',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDal23 : {
+    },
+    obratDal23 : {
       key: 'obratDal23',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavMd23 : {
+    },
+    stavMd23 : {
       key: 'stavMd23',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stavDal23 : {
+    },
+    stavDal23 : {
       key: 'stavDal23',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stav23 : {
+    },
+    stav23 : {
       key: 'stav23',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
     },
+
 
   }
 }

@@ -36,7 +36,8 @@ export class AFFiltr extends AFEntity {
   uzivatel?: any
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -45,60 +46,71 @@ export class AFFiltr extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    beanKey : {
+    },
+    beanKey : {
       key: 'beanKey',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    obsahFiltru : {
+    },
+    obsahFiltru : {
       key: 'obsahFiltru',
       type: PropertyType.String,
       isArray: false,
       
-    },    privatni : {
+    },
+    privatni : {
       key: 'privatni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    navrhar : {
+    },
+    navrhar : {
       key: 'navrhar',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    saveColumns : {
+    },
+    saveColumns : {
       key: 'saveColumns',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    lastUsage : {
+    },
+    lastUsage : {
       key: 'lastUsage',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    usageCnt : {
+    },
+    usageCnt : {
       key: 'usageCnt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
@@ -106,8 +118,9 @@ export class AFFiltr extends AFEntity {
       maxLength: 254,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

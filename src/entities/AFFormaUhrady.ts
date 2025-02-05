@@ -60,7 +60,8 @@ export class AFFormaUhrady extends AFEntity {
   // Zaúčtování (type: FORMA_UHRADY_ZAUCTOVANI) - zauctovani)
   zauctovani?: AFFormaUhradyZauctovani[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -69,102 +70,120 @@ export class AFFormaUhrady extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    formaUhrK : {
+    },
+    formaUhrK : {
       key: 'formaUhrK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'FormaUhr',
       enum: FormaUhr,
       
-    },    kurz : {
+    },
+    kurz : {
       key: 'kurz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    kurzMnozstvi : {
+    },
+    kurzMnozstvi : {
       key: 'kurzMnozstvi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limitVratky : {
+    },
+    limitVratky : {
       key: 'limitVratky',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    vsbFak : {
+    },
+    vsbFak : {
       key: 'vsbFak',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPok : {
+    },
+    vsbPok : {
       key: 'vsbPok',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbKasa : {
+    },
+    vsbKasa : {
       key: 'vsbKasa',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    metodaZaokrDoklK : {
+    },
+    metodaZaokrDoklK : {
       key: 'metodaZaokrDoklK',
       type: PropertyType.Select,
       isArray: false,
@@ -172,7 +191,8 @@ export class AFFormaUhrady extends AFEntity {
       enumName: 'MetodaZaokr',
       enum: MetodaZaokr,
       
-    },    zaokrNaSumK : {
+    },
+    zaokrNaSumK : {
       key: 'zaokrNaSumK',
       type: PropertyType.Select,
       isArray: false,
@@ -180,26 +200,29 @@ export class AFFormaUhrady extends AFEntity {
       enumName: 'ZaokrNa',
       enum: ZaokrNa,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
     },
+
     zauctovani : {
       key: 'zauctovani',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFFormaUhradyZauctovani
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

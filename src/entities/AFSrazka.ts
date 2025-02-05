@@ -67,7 +67,8 @@ export class AFSrazka extends AFEntity {
   typIntDokl?: AFTypInternihoDokladu
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -76,39 +77,46 @@ export class AFSrazka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    prednostni : {
+    },
+    prednostni : {
       key: 'prednostni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    poradi : {
+    },
+    poradi : {
       key: 'poradi',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    typSlozkyK : {
+    },
+    typSlozkyK : {
       key: 'typSlozkyK',
       type: PropertyType.Select,
       isArray: false,
@@ -116,7 +124,8 @@ export class AFSrazka extends AFEntity {
       enumName: 'TypSlozky',
       enum: TypSlozky,
       
-    },    skupSlozkyK : {
+    },
+    skupSlozkyK : {
       key: 'skupSlozkyK',
       type: PropertyType.Select,
       isArray: false,
@@ -124,28 +133,33 @@ export class AFSrazka extends AFEntity {
       enumName: 'SkupinaSlozky',
       enum: SkupinaSlozky,
       
-    },    srazkaOd : {
+    },
+    srazkaOd : {
       key: 'srazkaOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    srazkaDo : {
+    },
+    srazkaDo : {
       key: 'srazkaDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    deponovatDo : {
+    },
+    deponovatDo : {
       key: 'deponovatDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    procMzd : {
+    },
+    procMzd : {
       key: 'procMzd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 10,
       
-    },    zpusobPlatbyK : {
+    },
+    zpusobPlatbyK : {
       key: 'zpusobPlatbyK',
       type: PropertyType.Select,
       isArray: false,
@@ -153,73 +167,85 @@ export class AFSrazka extends AFEntity {
       enumName: 'ZpusobPlatby',
       enum: ZpusobPlatby,
       
-    },    castka : {
+    },
+    castka : {
       key: 'castka',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    pocatek : {
+    },
+    pocatek : {
       key: 'pocatek',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    celkem : {
+    },
+    celkem : {
       key: 'celkem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zbyva : {
+    },
+    zbyva : {
       key: 'zbyva',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    kdatu : {
+    },
+    kdatu : {
       key: 'kdatu',
       type: PropertyType.Date,
       isArray: false,
       
-    },    splatnost : {
+    },
+    splatnost : {
       key: 'splatnost',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsobaHlavicka,
       
-    },    cisMzdSloz : {
+    },
+    cisMzdSloz : {
       key: 'cisMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCiselnikMzdovychSlozek,
       
-    },    banSpoj : {
+    },
+    banSpoj : {
       key: 'banSpoj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMzdyBankovniSpojeni,
       
-    },    typOstZav : {
+    },
+    typOstZav : {
       key: 'typOstZav',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypZavazku,
       
-    },    typIntDokl : {
+    },
+    typIntDokl : {
       key: 'typIntDokl',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypInternihoDokladu,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

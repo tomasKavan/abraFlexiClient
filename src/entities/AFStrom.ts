@@ -60,100 +60,118 @@ export class AFStrom extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    strobr : {
+    },
+    strobr : {
       key: 'strobr',
       type: PropertyType.String,
       isArray: false,
       
-    },    hladina : {
+    },
+    hladina : {
       key: 'hladina',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    poradi : {
+    },
+    poradi : {
       key: 'poradi',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cesta : {
+    },
+    cesta : {
       key: 'cesta',
       type: PropertyType.String,
       isArray: false,
       
-    },    kratkyPopis : {
+    },
+    kratkyPopis : {
       key: 'kratkyPopis',
       type: PropertyType.String,
       isArray: false,
       
-    },    klicSlova : {
+    },
+    klicSlova : {
       key: 'klicSlova',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    txtNad : {
+    },
+    txtNad : {
       key: 'txtNad',
       type: PropertyType.String,
       isArray: false,
       
-    },    txtPod : {
+    },
+    txtPod : {
       key: 'txtPod',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    strom : {
+    },
+    strom : {
       key: 'strom',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStromKoren,
       maxLength: 20,
       
-    },    otec : {
+    },
+    otec : {
       key: 'otec',
       type: PropertyType.Relation,
       isArray: false,
@@ -161,6 +179,7 @@ export class AFStrom extends AFEntity {
       maxLength: 20,
       
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,

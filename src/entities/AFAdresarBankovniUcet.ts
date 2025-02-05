@@ -57,7 +57,8 @@ export class AFAdresarBankovniUcet extends AFEntity {
   registered?: boolean
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -66,121 +67,141 @@ export class AFAdresarBankovniUcet extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    ulice : {
+    },
+    ulice : {
       key: 'ulice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mesto : {
+    },
+    mesto : {
       key: 'mesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    psc : {
+    },
+    psc : {
       key: 'psc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    region : {
+    },
+    region : {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRegion,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    nazBanky : {
+    },
+    nazBanky : {
       key: 'nazBanky',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    buc : {
+    },
+    buc : {
       key: 'buc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    iban : {
+    },
+    iban : {
       key: 'iban',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    bic : {
+    },
+    bic : {
       key: 'bic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    specSym : {
+    },
+    specSym : {
       key: 'specSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    primarni : {
+    },
+    primarni : {
       key: 'primarni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    smerKod : {
+    },
+    smerKod : {
       key: 'smerKod',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPenezniUstav,
       maxLength: 20,
       
-    },    konSym : {
+    },
+    konSym : {
       key: 'konSym',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFKonstSymbol,
       maxLength: 20,
       
-    },    registered : {
+    },
+    registered : {
       key: 'registered',
       type: PropertyType.Logic,
       isArray: false,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

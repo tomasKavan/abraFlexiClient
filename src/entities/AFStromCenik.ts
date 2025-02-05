@@ -27,17 +27,20 @@ export class AFStromCenik extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    idZaznamu : {
+    },
+    idZaznamu : {
       key: 'idZaznamu',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    uzel : {
+    },
+    uzel : {
       key: 'uzel',
       type: PropertyType.Relation,
       isArray: false,
@@ -45,6 +48,7 @@ export class AFStromCenik extends AFEntity {
       maxLength: 20,
       
     },
+
 
   }
 }

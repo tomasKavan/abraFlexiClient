@@ -29,7 +29,8 @@ export class AFAutotisk extends AFEntity {
   typDokl?: AFTypDokladu
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -38,46 +39,54 @@ export class AFAutotisk extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    pocet : {
+    },
+    pocet : {
       key: 'pocet',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typTiskDoklK : {
+    },
+    typTiskDoklK : {
       key: 'typTiskDoklK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    report : {
+    },
+    report : {
       key: 'report',
       type: PropertyType.String,
       isArray: false,
       
-    },    sumovany : {
+    },
+    sumovany : {
       key: 'sumovany',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    rozsireny : {
+    },
+    rozsireny : {
       key: 'rozsireny',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typDokl : {
+    },
+    typDokl : {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

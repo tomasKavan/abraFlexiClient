@@ -65,7 +65,8 @@ export class AFInventuraPolozka extends AFEntity {
   mj3?: AFMernaJednotka
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -74,145 +75,169 @@ export class AFInventuraPolozka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    mnozMjReal : {
+    },
+    mnozMjReal : {
       key: 'mnozMjReal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjKarta : {
+    },
+    mnozMjKarta : {
       key: 'mnozMjKarta',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal2 : {
+    },
+    mnozMjReal2 : {
       key: 'mnozMjReal2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal3 : {
+    },
+    mnozMjReal3 : {
       key: 'mnozMjReal3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjRealVlna2 : {
+    },
+    mnozMjRealVlna2 : {
       key: 'mnozMjRealVlna2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal2Vlna2 : {
+    },
+    mnozMjReal2Vlna2 : {
       key: 'mnozMjReal2Vlna2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal3Vlna2 : {
+    },
+    mnozMjReal3Vlna2 : {
       key: 'mnozMjReal3Vlna2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjRealVlna3 : {
+    },
+    mnozMjRealVlna3 : {
       key: 'mnozMjRealVlna3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal2Vlna3 : {
+    },
+    mnozMjReal2Vlna3 : {
       key: 'mnozMjReal2Vlna3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal3Vlna3 : {
+    },
+    mnozMjReal3Vlna3 : {
       key: 'mnozMjReal3Vlna3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjRealVlna4 : {
+    },
+    mnozMjRealVlna4 : {
       key: 'mnozMjRealVlna4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal2Vlna4 : {
+    },
+    mnozMjReal2Vlna4 : {
       key: 'mnozMjReal2Vlna4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMjReal3Vlna4 : {
+    },
+    mnozMjReal3Vlna4 : {
       key: 'mnozMjReal3Vlna4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    sarze : {
+    },
+    sarze : {
       key: 'sarze',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    expirace : {
+    },
+    expirace : {
       key: 'expirace',
       type: PropertyType.Date,
       isArray: false,
       
-    },    skladKarta : {
+    },
+    skladKarta : {
       key: 'skladKarta',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovaKarta,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    inventura : {
+    },
+    inventura : {
       key: 'inventura',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFInventura,
       
-    },    mj : {
+    },
+    mj : {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    mj2 : {
+    },
+    mj2 : {
       key: 'mj2',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    mj3 : {
+    },
+    mj3 : {
       key: 'mj3',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -44,7 +44,8 @@ export class AFParametr extends AFEntity {
   zakazka?: AFZakazka
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -53,74 +54,86 @@ export class AFParametr extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    paramK : {
+    },
+    paramK : {
       key: 'paramK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    hodnota : {
+    },
+    hodnota : {
       key: 'hodnota',
       type: PropertyType.String,
       isArray: false,
       
-    },    kodReportu : {
+    },
+    kodReportu : {
       key: 'kodReportu',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    role : {
+    },
+    role : {
       key: 'role',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    bsp : {
+    },
+    bsp : {
       key: 'bsp',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFBankovniUcetSkladPokladna,
       
-    },    typDokl : {
+    },
+    typDokl : {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    skupFir : {
+    },
+    skupFir : {
       key: 'skupFir',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaFirem,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
@@ -128,8 +141,9 @@ export class AFParametr extends AFEntity {
       maxLength: 30,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -25,7 +25,8 @@ export class AFIntrastatKurz extends AFEntity {
   mena?: AFMena
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -34,37 +35,43 @@ export class AFIntrastatKurz extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    platiOdData : {
+    },
+    platiOdData : {
       key: 'platiOdData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    nbStred : {
+    },
+    nbStred : {
       key: 'nbStred',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    kurzMnozstvi : {
+    },
+    kurzMnozstvi : {
       key: 'kurzMnozstvi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

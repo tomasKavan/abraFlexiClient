@@ -70,7 +70,8 @@ export class AFPredpisZauctovani extends AFEntity {
   dphZaklUcet?: AFUcet
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -79,119 +80,141 @@ export class AFPredpisZauctovani extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    ucetObdobiOd : {
+    },
+    ucetObdobiOd : {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    ucetObdobiDo : {
+    },
+    ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    modulFav : {
+    },
+    modulFav : {
       key: 'modulFav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulFap : {
+    },
+    modulFap : {
       key: 'modulFap',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulPhl : {
+    },
+    modulPhl : {
       key: 'modulPhl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulZav : {
+    },
+    modulZav : {
       key: 'modulZav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulBanP : {
+    },
+    modulBanP : {
       key: 'modulBanP',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulBanV : {
+    },
+    modulBanV : {
       key: 'modulBanV',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulPokP : {
+    },
+    modulPokP : {
       key: 'modulPokP',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulPokV : {
+    },
+    modulPokV : {
       key: 'modulPokV',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulSklP : {
+    },
+    modulSklP : {
       key: 'modulSklP',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulSklV : {
+    },
+    modulSklV : {
       key: 'modulSklV',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    modulInt : {
+    },
+    modulInt : {
       key: 'modulInt',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    kodPlneniK : {
+    },
+    kodPlneniK : {
       key: 'kodPlneniK',
       type: PropertyType.Select,
       isArray: false,
@@ -199,35 +222,40 @@ export class AFPredpisZauctovani extends AFEntity {
       enumName: 'KodPlneni',
       enum: KodPlneni,
       
-    },    protiUcetPrijem : {
+    },
+    protiUcetPrijem : {
       key: 'protiUcetPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    protiUcetVydej : {
+    },
+    protiUcetVydej : {
       key: 'protiUcetVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphSnizUcet : {
+    },
+    dphSnizUcet : {
       key: 'dphSnizUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphSniz2Ucet : {
+    },
+    dphSniz2Ucet : {
       key: 'dphSniz2Ucet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphZaklUcet : {
+    },
+    dphZaklUcet : {
       key: 'dphZaklUcet',
       type: PropertyType.Relation,
       isArray: false,
@@ -235,8 +263,9 @@ export class AFPredpisZauctovani extends AFEntity {
       maxLength: 6,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

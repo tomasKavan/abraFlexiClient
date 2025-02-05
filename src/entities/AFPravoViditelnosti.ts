@@ -30,34 +30,40 @@ export class AFPravoViditelnosti extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    idUzivatel : {
+    },
+    idUzivatel : {
       key: 'idUzivatel',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typDatK : {
+    },
+    typDatK : {
       key: 'typDatK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    modulK : {
+    },
+    modulK : {
       key: 'modulK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    idObjektu : {
+    },
+    idObjektu : {
       key: 'idObjektu',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    editovat : {
+    },
+    editovat : {
       key: 'editovat',
       type: PropertyType.Logic,
       isArray: false,
       
     },
+
 
   }
 }

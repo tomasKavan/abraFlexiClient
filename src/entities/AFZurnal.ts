@@ -38,57 +38,67 @@ export class AFZurnal extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    tabulka : {
+    },
+    tabulka : {
       key: 'tabulka',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    idZaznamu : {
+    },
+    idZaznamu : {
       key: 'idZaznamu',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    sloupec : {
+    },
+    sloupec : {
       key: 'sloupec',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    novaHod : {
+    },
+    novaHod : {
       key: 'novaHod',
       type: PropertyType.String,
       isArray: false,
       
-    },    staraHod : {
+    },
+    staraHod : {
       key: 'staraHod',
       type: PropertyType.String,
       isArray: false,
       
-    },    op : {
+    },
+    op : {
       key: 'op',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    transakceK : {
+    },
+    transakceK : {
       key: 'transakceK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    uziv : {
+    },
+    uziv : {
       key: 'uziv',
       type: PropertyType.String,
       isArray: false,
       maxLength: 63,
       
-    },    datCas : {
+    },
+    datCas : {
       key: 'datCas',
       type: PropertyType.DateTime,
       isArray: false,
       
     },
+
 
   }
 }

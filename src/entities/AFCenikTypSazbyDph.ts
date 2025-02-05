@@ -30,7 +30,8 @@ export class AFCenikTypSazbyDph extends AFEntity {
   stat?: AFStatDph
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -39,12 +40,14 @@ export class AFCenikTypSazbyDph extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -52,7 +55,8 @@ export class AFCenikTypSazbyDph extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    kodPlneniK : {
+    },
+    kodPlneniK : {
       key: 'kodPlneniK',
       type: PropertyType.Select,
       isArray: false,
@@ -60,24 +64,28 @@ export class AFCenikTypSazbyDph extends AFEntity {
       enumName: 'KodPlneni',
       enum: KodPlneni,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
@@ -85,8 +93,9 @@ export class AFCenikTypSazbyDph extends AFEntity {
       maxLength: 3,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

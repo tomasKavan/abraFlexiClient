@@ -64,7 +64,8 @@ export class AFMajetekUdalost extends AFEntity {
   dphDalUcet?: AFUcet
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -73,17 +74,20 @@ export class AFMajetekUdalost extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    ucetni : {
+    },
+    ucetni : {
       key: 'ucetni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typUdalostiK : {
+    },
+    typUdalostiK : {
       key: 'typUdalostiK',
       type: PropertyType.Select,
       isArray: false,
@@ -91,120 +95,140 @@ export class AFMajetekUdalost extends AFEntity {
       enumName: 'TypUdal',
       enum: TypUdal,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    sumZkl : {
+    },
+    sumZkl : {
       key: 'sumZkl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklMen : {
+    },
+    sumZklMen : {
       key: 'sumZklMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDph : {
+    },
+    sumDph : {
       key: 'sumDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphMen : {
+    },
+    sumDphMen : {
       key: 'sumDphMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zamek : {
+    },
+    zamek : {
       key: 'zamek',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    zmenaDobyOdpis : {
+    },
+    zmenaDobyOdpis : {
       key: 'zmenaDobyOdpis',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datUcto : {
+    },
+    datUcto : {
       key: 'datUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    zmena : {
+    },
+    zmena : {
       key: 'zmena',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    sumDphDanove : {
+    },
+    sumDphDanove : {
       key: 'sumDphDanove',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    majetek : {
+    },
+    majetek : {
       key: 'majetek',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMajetek,
       maxLength: 20,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    dphMdUcet : {
+    },
+    dphMdUcet : {
       key: 'dphMdUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    zklMdUcet : {
+    },
+    zklMdUcet : {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    zklDalUcet : {
+    },
+    zklDalUcet : {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphDalUcet : {
+    },
+    dphDalUcet : {
       key: 'dphDalUcet',
       type: PropertyType.Relation,
       isArray: false,
@@ -212,8 +236,9 @@ export class AFMajetekUdalost extends AFEntity {
       maxLength: 6,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

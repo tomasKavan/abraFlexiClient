@@ -56,7 +56,8 @@ export class AFNepritomnost extends AFEntity {
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -65,50 +66,59 @@ export class AFNepritomnost extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    trvani : {
+    },
+    trvani : {
       key: 'trvani',
       type: PropertyType.Date,
       isArray: false,
       
-    },    hodin1Den : {
+    },
+    hodin1Den : {
       key: 'hodin1Den',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    hodinXDen : {
+    },
+    hodinXDen : {
       key: 'hodinXDen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    cisloRozhodnuti : {
+    },
+    cisloRozhodnuti : {
       key: 'cisloRozhodnuti',
       type: PropertyType.String,
       isArray: false,
       maxLength: 18,
       
-    },    csszDuvodOsetrovneK : {
+    },
+    csszDuvodOsetrovneK : {
       key: 'csszDuvodOsetrovneK',
       type: PropertyType.Select,
       isArray: false,
@@ -116,19 +126,22 @@ export class AFNepritomnost extends AFEntity {
       enumName: 'CsszDuvodOsetrovne',
       enum: CsszDuvodOsetrovne,
       
-    },    csszNazevSkoly : {
+    },
+    csszNazevSkoly : {
       key: 'csszNazevSkoly',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    csszIcSkoly : {
+    },
+    csszIcSkoly : {
       key: 'csszIcSkoly',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    csszDuvodOtcovskeK : {
+    },
+    csszDuvodOtcovskeK : {
       key: 'csszDuvodOtcovskeK',
       type: PropertyType.Select,
       isArray: false,
@@ -136,7 +149,8 @@ export class AFNepritomnost extends AFEntity {
       enumName: 'CsszDuvodOtcovske',
       enum: CsszDuvodOtcovske,
       
-    },    csszDuvodPrevzetiPpmK : {
+    },
+    csszDuvodPrevzetiPpmK : {
       key: 'csszDuvodPrevzetiPpmK',
       type: PropertyType.Select,
       isArray: false,
@@ -144,43 +158,49 @@ export class AFNepritomnost extends AFEntity {
       enumName: 'CsszDuvodPrevzeti',
       enum: CsszDuvodPrevzeti,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsobaHlavicka,
       
-    },    cisMzdSloz : {
+    },
+    cisMzdSloz : {
       key: 'cisMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCiselnikMzdovychSlozek,
       
-    },    pracPom : {
+    },
+    pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPracovniPomerHlavicka,
       
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFPriloha
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

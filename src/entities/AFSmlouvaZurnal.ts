@@ -34,17 +34,20 @@ export class AFSmlouvaZurnal extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    datCas : {
+    },
+    datCas : {
       key: 'datCas',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    transakceK : {
+    },
+    transakceK : {
       key: 'transakceK',
       type: PropertyType.Select,
       isArray: false,
@@ -52,22 +55,26 @@ export class AFSmlouvaZurnal extends AFEntity {
       enumName: 'OperaceZurnalSmlouvy',
       enum: OperaceZurnalSmlouvy,
       
-    },    pocetOk : {
+    },
+    pocetOk : {
       key: 'pocetOk',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    pocetErr : {
+    },
+    pocetErr : {
       key: 'pocetErr',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    chyby : {
+    },
+    chyby : {
       key: 'chyby',
       type: PropertyType.String,
       isArray: false,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
@@ -75,6 +82,7 @@ export class AFSmlouvaZurnal extends AFEntity {
       maxLength: 254,
       
     },
+
 
   }
 }

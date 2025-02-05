@@ -44,7 +44,8 @@ export class AFOsobaBlizka extends AFEntity {
   vztah?: AFVztah
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -53,29 +54,34 @@ export class AFOsobaBlizka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    prijmeni : {
+    },
+    prijmeni : {
       key: 'prijmeni',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    jmeno : {
+    },
+    jmeno : {
       key: 'jmeno',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datNaroz : {
+    },
+    datNaroz : {
       key: 'datNaroz',
       type: PropertyType.Date,
       isArray: false,
       
-    },    pohlaviK : {
+    },
+    pohlaviK : {
       key: 'pohlaviK',
       type: PropertyType.Select,
       isArray: false,
@@ -83,57 +89,67 @@ export class AFOsobaBlizka extends AFEntity {
       enumName: 'Pohlavi',
       enum: Pohlavi,
       
-    },    rodCis : {
+    },
+    rodCis : {
       key: 'rodCis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    ztp_P : {
+    },
+    ztp_P : {
       key: 'ztp_P',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    ztp_POd : {
+    },
+    ztp_POd : {
       key: 'ztp_POd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    ztp_PDo : {
+    },
+    ztp_PDo : {
       key: 'ztp_PDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    dite : {
+    },
+    dite : {
       key: 'dite',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsobaHlavicka,
       
-    },    vztah : {
+    },
+    vztah : {
       key: 'vztah',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFVztah,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

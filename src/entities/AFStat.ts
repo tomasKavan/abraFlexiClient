@@ -54,7 +54,8 @@ export class AFStat extends AFEntity {
   fuUzPrac?: AFAdresar
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -63,117 +64,137 @@ export class AFStat extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kodDph : {
+    },
+    kodDph : {
       key: 'kodDph',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    kodNum : {
+    },
+    kodNum : {
       key: 'kodNum',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    kodAlpha3 : {
+    },
+    kodAlpha3 : {
       key: 'kodAlpha3',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    nazZemeC25 : {
+    },
+    nazZemeC25 : {
       key: 'nazZemeC25',
       type: PropertyType.String,
       isArray: false,
       maxLength: 25,
       
-    },    clenEu : {
+    },
+    clenEu : {
       key: 'clenEu',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    telPredvolba : {
+    },
+    telPredvolba : {
       key: 'telPredvolba',
       type: PropertyType.String,
       isArray: false,
       maxLength: 10,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    fuKraj : {
+    },
+    fuKraj : {
       key: 'fuKraj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    fuUzPrac : {
+    },
+    fuUzPrac : {
       key: 'fuUzPrac',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

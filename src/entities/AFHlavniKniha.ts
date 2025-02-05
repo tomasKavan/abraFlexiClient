@@ -53,96 +53,112 @@ export class AFHlavniKniha extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    ucet : {
+    },
+    ucet : {
       key: 'ucet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    ucetniObdobi : {
+    },
+    ucetniObdobi : {
       key: 'ucetniObdobi',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    nazevUctu : {
+    },
+    nazevUctu : {
       key: 'nazevUctu',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocatek : {
+    },
+    pocatek : {
       key: 'pocatek',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    pocatekMd : {
+    },
+    pocatekMd : {
       key: 'pocatekMd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    pocatekDal : {
+    },
+    pocatekDal : {
       key: 'pocatekDal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    pocatekMesic : {
+    },
+    pocatekMesic : {
       key: 'pocatekMesic',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zustatek : {
+    },
+    zustatek : {
       key: 'zustatek',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zustatekMd : {
+    },
+    zustatekMd : {
       key: 'zustatekMd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zustatekDal : {
+    },
+    zustatekDal : {
       key: 'zustatekDal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMdVse : {
+    },
+    obratMdVse : {
       key: 'obratMdVse',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDalVse : {
+    },
+    obratDalVse : {
       key: 'obratDalVse',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratMdVyb : {
+    },
+    obratMdVyb : {
       key: 'obratMdVyb',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    obratDalVyb : {
+    },
+    obratDalVyb : {
       key: 'obratDalVyb',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
     },
+
 
   }
 }

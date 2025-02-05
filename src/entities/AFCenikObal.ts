@@ -57,7 +57,8 @@ export class AFCenikObal extends AFEntity {
   cenik?: AFCenik
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -66,128 +67,149 @@ export class AFCenikObal extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    hmotnost : {
+    },
+    hmotnost : {
       key: 'hmotnost',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mjHmotK : {
+    },
+    mjHmotK : {
       key: 'mjHmotK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'MjHmot',
       enum: MjHmot,
       
-    },    typObaluK : {
+    },
+    typObaluK : {
       key: 'typObaluK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'TypObalu',
       enum: TypObalu,
       
-    },    typVznikuK : {
+    },
+    typVznikuK : {
       key: 'typVznikuK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'TypVzniku',
       enum: TypVzniku,
       
-    },    typPouzitiK : {
+    },
+    typPouzitiK : {
       key: 'typPouzitiK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'TypPouziti',
       enum: TypPouziti,
       
-    },    materialK : {
+    },
+    materialK : {
       key: 'materialK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'Material',
       enum: Material,
       
-    },    surovinaK : {
+    },
+    surovinaK : {
       key: 'surovinaK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'Surovina',
       enum: Surovina,
       
-    },    barvaMaterialuK : {
+    },
+    barvaMaterialuK : {
       key: 'barvaMaterialuK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'BarvaMaterialu',
       enum: BarvaMaterialu,
       
-    },    obsahujeNapoje : {
+    },
+    obsahujeNapoje : {
       key: 'obsahujeNapoje',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    litterObalK : {
+    },
+    litterObalK : {
       key: 'litterObalK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'LitterObal',
       enum: LitterObal,
       
-    },    litterObalHmotnostPlast : {
+    },
+    litterObalHmotnostPlast : {
       key: 'litterObalHmotnostPlast',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
@@ -195,8 +217,9 @@ export class AFCenikObal extends AFEntity {
       maxLength: 64,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

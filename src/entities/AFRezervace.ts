@@ -39,7 +39,8 @@ export class AFRezervace extends AFEntity {
   uzivatel?: any
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -48,64 +49,75 @@ export class AFRezervace extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    datumOd : {
+    },
+    datumOd : {
       key: 'datumOd',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    datumDo : {
+    },
+    datumDo : {
       key: 'datumDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    mnozstvi : {
+    },
+    mnozstvi : {
       key: 'mnozstvi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    skladMj : {
+    },
+    skladMj : {
       key: 'skladMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    poznamka : {
+    },
+    poznamka : {
       key: 'poznamka',
       type: PropertyType.String,
       isArray: false,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    polObch : {
+    },
+    polObch : {
       key: 'polObch',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
@@ -113,8 +125,9 @@ export class AFRezervace extends AFEntity {
       maxLength: 254,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

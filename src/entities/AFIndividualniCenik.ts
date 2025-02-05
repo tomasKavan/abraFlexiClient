@@ -61,122 +61,142 @@ export class AFIndividualniCenik extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    cenaZakl : {
+    },
+    cenaZakl : {
       key: 'cenaZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cena2 : {
+    },
+    cena2 : {
       key: 'cena2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cena3 : {
+    },
+    cena3 : {
       key: 'cena3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cena4 : {
+    },
+    cena4 : {
       key: 'cena4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cena5 : {
+    },
+    cena5 : {
       key: 'cena5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz2 : {
+    },
+    limMnoz2 : {
       key: 'limMnoz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz3 : {
+    },
+    limMnoz3 : {
       key: 'limMnoz3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz4 : {
+    },
+    limMnoz4 : {
       key: 'limMnoz4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz5 : {
+    },
+    limMnoz5 : {
       key: 'limMnoz5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    typCenyDphK : {
+    },
+    typCenyDphK : {
       key: 'typCenyDphK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    cenHlad : {
+    },
+    cenHlad : {
       key: 'cenHlad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenovaUroven,
       
-    },    skupZboz : {
+    },
+    skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaZbozi,
       
     },
+
 
   }
 }

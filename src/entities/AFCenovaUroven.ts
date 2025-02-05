@@ -89,7 +89,8 @@ export class AFCenovaUroven extends AFEntity {
   // Ceníkové skupiny (type: CENIKOVA_SKUPINA) - skupinyCen)
   skupinyCen?: AFCenikovaSkupina[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Ceníky (type: CENIK) - ceniky)
   ceniky?: AFCenik[]
   // Skupiny zboží (type: SKUPINA_ZBOZI) - skupinyZbozi)
@@ -102,77 +103,91 @@ export class AFCenovaUroven extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    docasnost : {
+    },
+    docasnost : {
       key: 'docasnost',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    platiOdData : {
+    },
+    platiOdData : {
       key: 'platiOdData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDoData : {
+    },
+    platiDoData : {
       key: 'platiDoData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    typCenyVychoziK : {
+    },
+    typCenyVychoziK : {
       key: 'typCenyVychoziK',
       type: PropertyType.Select,
       isArray: false,
@@ -180,7 +195,8 @@ export class AFCenovaUroven extends AFEntity {
       enumName: 'TypCenyVychozi',
       enum: TypCenyVychozi,
       
-    },    typVypCenyK : {
+    },
+    typVypCenyK : {
       key: 'typVypCenyK',
       type: PropertyType.Select,
       isArray: false,
@@ -188,13 +204,15 @@ export class AFCenovaUroven extends AFEntity {
       enumName: 'TypVypCeny',
       enum: TypVypCeny,
       
-    },    procZakl : {
+    },
+    procZakl : {
       key: 'procZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    typCenyVychozi25K : {
+    },
+    typCenyVychozi25K : {
       key: 'typCenyVychozi25K',
       type: PropertyType.Select,
       isArray: false,
@@ -202,7 +220,8 @@ export class AFCenovaUroven extends AFEntity {
       enumName: 'TypCenyVychozi',
       enum: TypCenyVychozi,
       
-    },    typVypCeny25K : {
+    },
+    typVypCeny25K : {
       key: 'typVypCeny25K',
       type: PropertyType.Select,
       isArray: false,
@@ -210,60 +229,70 @@ export class AFCenovaUroven extends AFEntity {
       enumName: 'TypVypCeny',
       enum: TypVypCeny,
       
-    },    limMnoz2 : {
+    },
+    limMnoz2 : {
       key: 'limMnoz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz3 : {
+    },
+    limMnoz3 : {
       key: 'limMnoz3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz4 : {
+    },
+    limMnoz4 : {
       key: 'limMnoz4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz5 : {
+    },
+    limMnoz5 : {
       key: 'limMnoz5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    procento2 : {
+    },
+    procento2 : {
       key: 'procento2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento3 : {
+    },
+    procento3 : {
       key: 'procento3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento4 : {
+    },
+    procento4 : {
       key: 'procento4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento5 : {
+    },
+    procento5 : {
       key: 'procento5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    rucneVybrat : {
+    },
+    rucneVybrat : {
       key: 'rucneVybrat',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zaokrJakK : {
+    },
+    zaokrJakK : {
       key: 'zaokrJakK',
       type: PropertyType.Select,
       isArray: false,
@@ -271,7 +300,8 @@ export class AFCenovaUroven extends AFEntity {
       enumName: 'ZaokrJak',
       enum: ZaokrJak,
       
-    },    zaokrNaK : {
+    },
+    zaokrNaK : {
       key: 'zaokrNaK',
       type: PropertyType.Select,
       isArray: false,
@@ -279,22 +309,26 @@ export class AFCenovaUroven extends AFEntity {
       enumName: 'ZaokrNa',
       enum: ZaokrNa,
       
-    },    vsechnySkupZboz : {
+    },
+    vsechnySkupZboz : {
       key: 'vsechnySkupZboz',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsechnyFirmy : {
+    },
+    vsechnyFirmy : {
       key: 'vsechnyFirmy',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zakazSlevaDokl : {
+    },
+    zakazSlevaDokl : {
       key: 'zakazSlevaDokl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
@@ -302,6 +336,7 @@ export class AFCenovaUroven extends AFEntity {
       maxLength: 20,
       
     },
+
     firmy : {
       key: 'firmy',
       type: PropertyType.Relation,
@@ -314,8 +349,8 @@ export class AFCenovaUroven extends AFEntity {
       isArray: true,
       afClass: AFCenikovaSkupina
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

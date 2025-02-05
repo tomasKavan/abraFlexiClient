@@ -252,13 +252,16 @@ export class AFCenik extends AFEntity {
   // Prodejní ceny (type: ODBERATEL) - odberatele)
   odberatele?: AFOdberatel[]
   // Evidence obalů EkoKom (type: CENIK_OBAL) - cenik-obaly)
-  cenikObaly?: AFCenikObal[]
+  'cenik-obaly'?: AFCenikObal[]
+  get cenikObaly(): AFCenikObal[] | undefined { return this['cenik-obaly']}
   // Atributy (type: ATRIBUT) - atributy)
   atributy?: AFAtribut[]
   // Skladová karta (type: SKLADOVA_KARTA) - sklad-karty)
-  skladKarty?: AFSkladovaKarta[]
+  'sklad-karty'?: AFSkladovaKarta[]
+  get skladKarty(): AFSkladovaKarta[] | undefined { return this['sklad-karty']}
   // Sady a komplety (type: SADY_A_KOMPLETY) - sady-a-komplety)
-  sadyAKomplety?: AFSadyAKomplety[]
+  'sady-a-komplety'?: AFSadyAKomplety[]
+  get sadyAKomplety(): AFSadyAKomplety[] | undefined { return this['sady-a-komplety']}
   // Příslušenství (type: PRISLUSENSTVI) - prislustenstvi)
   prislustenstvi?: AFPrislustenstvi[]
   // Přílohy (type: PRILOHA) - prilohy)
@@ -268,19 +271,23 @@ export class AFCenik extends AFEntity {
   // Nákupní ceny (type: DODAVATEL) - dodavatele)
   dodavatele?: AFDodavatel[]
   // Výrobní čísla (type: VYROBNI_CISLA) - vyrobni-cisla)
-  vyrobniCisla?: AFVyrobniCislo[]
+  'vyrobni-cisla'?: AFVyrobniCislo[]
+  get vyrobniCisla(): AFVyrobniCislo[] | undefined { return this['vyrobni-cisla']}
   // Stavy položky ceníku (type: STAV_CENIKU) - stavy)
   stavy?: AFStavCeniku[]
   // Události (type: ADR_UDALOST) - udalosti)
   udalosti?: AFUdalost[]
   // Podobné zboží (type: PODOBNE_ZBOZI) - podobne-zbozi)
-  podobneZbozi?: AFPodobneZbozi[]
+  'podobne-zbozi'?: AFPodobneZbozi[]
+  get podobneZbozi(): AFPodobneZbozi[] | undefined { return this['podobne-zbozi']}
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Cenové úrovně (type: CENOVA_UROVEN) - cenHladiny)
   cenHladiny?: AFCenovaUroven[]
   // Typy sazeb DPH (type: TYP_SAZBY_DPH) - typy-sazeb-dph)
-  typySazebDph?: AFCenikTypSazbyDph[]
+  'typy-sazeb-dph'?: AFCenikTypSazbyDph[]
+  get typySazebDph(): AFCenikTypSazbyDph[] | undefined { return this['typy-sazeb-dph']}
   // Rezervace (type: REZERVACE) - rezervace)
   rezervace?: AFRezervace[]
 
@@ -291,74 +298,87 @@ export class AFCenik extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 64,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    eanKod : {
+    },
+    eanKod : {
       key: 'eanKod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    kodPlu : {
+    },
+    kodPlu : {
       key: 'kodPlu',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    typCenyDphK : {
+    },
+    typCenyDphK : {
       key: 'typCenyDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -366,90 +386,105 @@ export class AFCenik extends AFEntity {
       enumName: 'TypCeny',
       enum: TypCeny,
       
-    },    procZakl : {
+    },
+    procZakl : {
       key: 'procZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    individCena : {
+    },
+    individCena : {
       key: 'individCena',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    limMnoz2 : {
+    },
+    limMnoz2 : {
       key: 'limMnoz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz3 : {
+    },
+    limMnoz3 : {
       key: 'limMnoz3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz4 : {
+    },
+    limMnoz4 : {
       key: 'limMnoz4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz5 : {
+    },
+    limMnoz5 : {
       key: 'limMnoz5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    procento2 : {
+    },
+    procento2 : {
       key: 'procento2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento3 : {
+    },
+    procento3 : {
       key: 'procento3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento4 : {
+    },
+    procento4 : {
       key: 'procento4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento5 : {
+    },
+    procento5 : {
       key: 'procento5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    cena2 : {
+    },
+    cena2 : {
       key: 'cena2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cena3 : {
+    },
+    cena3 : {
       key: 'cena3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cena4 : {
+    },
+    cena4 : {
       key: 'cena4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cena5 : {
+    },
+    cena5 : {
       key: 'cena5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    zaokrJakK : {
+    },
+    zaokrJakK : {
       key: 'zaokrJakK',
       type: PropertyType.Select,
       isArray: false,
@@ -457,7 +492,8 @@ export class AFCenik extends AFEntity {
       enumName: 'ZaokrJak',
       enum: ZaokrJak,
       
-    },    zaokrNaK : {
+    },
+    zaokrNaK : {
       key: 'zaokrNaK',
       type: PropertyType.Select,
       isArray: false,
@@ -465,7 +501,8 @@ export class AFCenik extends AFEntity {
       enumName: 'ZaokrNa',
       enum: ZaokrNa,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -473,24 +510,28 @@ export class AFCenik extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    desetinMj : {
+    },
+    desetinMj : {
       key: 'desetinMj',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    nakupCena : {
+    },
+    nakupCena : {
       key: 'nakupCena',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cenJednotka : {
+    },
+    cenJednotka : {
       key: 'cenJednotka',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    typCenyVychoziK : {
+    },
+    typCenyVychoziK : {
       key: 'typCenyVychoziK',
       type: PropertyType.Select,
       isArray: false,
@@ -498,7 +539,8 @@ export class AFCenik extends AFEntity {
       enumName: 'TypCenyVychozi',
       enum: TypCenyVychozi,
       
-    },    typVypCenyK : {
+    },
+    typVypCenyK : {
       key: 'typVypCenyK',
       type: PropertyType.Select,
       isArray: false,
@@ -506,7 +548,8 @@ export class AFCenik extends AFEntity {
       enumName: 'TypVypCeny',
       enum: TypVypCeny,
       
-    },    typCenyVychozi25K : {
+    },
+    typCenyVychozi25K : {
       key: 'typCenyVychozi25K',
       type: PropertyType.Select,
       isArray: false,
@@ -514,7 +557,8 @@ export class AFCenik extends AFEntity {
       enumName: 'TypCenyVychozi',
       enum: TypCenyVychozi,
       
-    },    typVypCeny25K : {
+    },
+    typVypCeny25K : {
       key: 'typVypCeny25K',
       type: PropertyType.Select,
       isArray: false,
@@ -522,22 +566,26 @@ export class AFCenik extends AFEntity {
       enumName: 'TypVypCeny',
       enum: TypVypCeny,
       
-    },    evidVyrCis : {
+    },
+    evidVyrCis : {
       key: 'evidVyrCis',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    unikVyrCis : {
+    },
+    unikVyrCis : {
       key: 'unikVyrCis',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zaruka : {
+    },
+    zaruka : {
       key: 'zaruka',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mjZarukyK : {
+    },
+    mjZarukyK : {
       key: 'mjZarukyK',
       type: PropertyType.Select,
       isArray: false,
@@ -545,397 +593,464 @@ export class AFCenik extends AFEntity {
       enumName: 'MjZaruky',
       enum: MjZaruky,
       
-    },    mjKoef2 : {
+    },
+    mjKoef2 : {
       key: 'mjKoef2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mjKoef3 : {
+    },
+    mjKoef3 : {
       key: 'mjKoef3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    prodejMj : {
+    },
+    prodejMj : {
       key: 'prodejMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    hmotMj : {
+    },
+    hmotMj : {
       key: 'hmotMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    hmotObal : {
+    },
+    hmotObal : {
       key: 'hmotObal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    objem : {
+    },
+    objem : {
       key: 'objem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    zatrid : {
+    },
+    zatrid : {
       key: 'zatrid',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    skladove : {
+    },
+    skladove : {
       key: 'skladove',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typZasobyK : {
+    },
+    typZasobyK : {
       key: 'typZasobyK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'TypZasoby',
       enum: TypZasoby,
       
-    },    baleniNazev1 : {
+    },
+    baleniNazev1 : {
       key: 'baleniNazev1',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    baleniNazev2 : {
+    },
+    baleniNazev2 : {
       key: 'baleniNazev2',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    baleniNazev3 : {
+    },
+    baleniNazev3 : {
       key: 'baleniNazev3',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    baleniNazev4 : {
+    },
+    baleniNazev4 : {
       key: 'baleniNazev4',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    baleniNazev5 : {
+    },
+    baleniNazev5 : {
       key: 'baleniNazev5',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    baleniMj1 : {
+    },
+    baleniMj1 : {
       key: 'baleniMj1',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    baleniMj2 : {
+    },
+    baleniMj2 : {
       key: 'baleniMj2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    baleniMj3 : {
+    },
+    baleniMj3 : {
       key: 'baleniMj3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    baleniMj4 : {
+    },
+    baleniMj4 : {
       key: 'baleniMj4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    baleniMj5 : {
+    },
+    baleniMj5 : {
       key: 'baleniMj5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    baleniEan1 : {
+    },
+    baleniEan1 : {
       key: 'baleniEan1',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    baleniEan2 : {
+    },
+    baleniEan2 : {
       key: 'baleniEan2',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    baleniEan3 : {
+    },
+    baleniEan3 : {
       key: 'baleniEan3',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    baleniEan4 : {
+    },
+    baleniEan4 : {
       key: 'baleniEan4',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    baleniEan5 : {
+    },
+    baleniEan5 : {
       key: 'baleniEan5',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    inEvid : {
+    },
+    inEvid : {
       key: 'inEvid',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    inKoefMj : {
+    },
+    inKoefMj : {
       key: 'inKoefMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    inKoefStat : {
+    },
+    inKoefStat : {
       key: 'inKoefStat',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    inKodSled : {
+    },
+    inKodSled : {
       key: 'inKodSled',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    popisA : {
+    },
+    popisA : {
       key: 'popisA',
       type: PropertyType.String,
       isArray: false,
       
-    },    popisB : {
+    },
+    popisB : {
       key: 'popisB',
       type: PropertyType.String,
       isArray: false,
       
-    },    popisC : {
+    },
+    popisC : {
       key: 'popisC',
       type: PropertyType.String,
       isArray: false,
       
-    },    cenaBezna : {
+    },
+    cenaBezna : {
       key: 'cenaBezna',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    exportNaEshop : {
+    },
+    exportNaEshop : {
       key: 'exportNaEshop',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    minMarzeCenik : {
+    },
+    minMarzeCenik : {
       key: 'minMarzeCenik',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    minMarze : {
+    },
+    minMarze : {
       key: 'minMarze',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    evidSarze : {
+    },
+    evidSarze : {
       key: 'evidSarze',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    evidExpir : {
+    },
+    evidExpir : {
       key: 'evidExpir',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    sada : {
+    },
+    sada : {
       key: 'sada',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    dnyTrvanPoExpir : {
+    },
+    dnyTrvanPoExpir : {
       key: 'dnyTrvanPoExpir',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    neseskupovatObj : {
+    },
+    neseskupovatObj : {
       key: 'neseskupovatObj',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    kratkyPopis : {
+    },
+    kratkyPopis : {
       key: 'kratkyPopis',
       type: PropertyType.String,
       isArray: false,
       
-    },    klicSlova : {
+    },
+    klicSlova : {
       key: 'klicSlova',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    techParam : {
+    },
+    techParam : {
       key: 'techParam',
       type: PropertyType.String,
       isArray: false,
       
-    },    dodaciLhuta : {
+    },
+    dodaciLhuta : {
       key: 'dodaciLhuta',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    prodejKasa : {
+    },
+    prodejKasa : {
       key: 'prodejKasa',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    skupZboz : {
+    },
+    skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkupinaZbozi,
       
-    },    mj1 : {
+    },
+    mj1 : {
       key: 'mj1',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    mj2 : {
+    },
+    mj2 : {
       key: 'mj2',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    mj3 : {
+    },
+    mj3 : {
       key: 'mj3',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    mjHmot : {
+    },
+    mjHmot : {
       key: 'mjHmot',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    mjObj : {
+    },
+    mjObj : {
       key: 'mjObj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    nomen : {
+    },
+    nomen : {
       key: 'nomen',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFIntrastatKodNomenklatury,
       maxLength: 20,
       
-    },    dodavatel : {
+    },
+    dodavatel : {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    vyrobce : {
+    },
+    vyrobce : {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    dphPren : {
+    },
+    dphPren : {
       key: 'dphPren',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPreneseniDph,
       
-    },    mjDodaciLhuta : {
+    },
+    mjDodaciLhuta : {
       key: 'mjDodaciLhuta',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMernaJednotka,
       
-    },    sumStavMj : {
+    },
+    sumStavMj : {
       key: 'sumStavMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    sumRezerMj : {
+    },
+    sumRezerMj : {
       key: 'sumRezerMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    sumPozadavkyMj : {
+    },
+    sumPozadavkyMj : {
       key: 'sumPozadavkyMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    sumDostupMj : {
+    },
+    sumDostupMj : {
       key: 'sumDostupMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cenaZaklBezDph : {
+    },
+    cenaZaklBezDph : {
       key: 'cenaZaklBezDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cenaZaklVcDph : {
+    },
+    cenaZaklVcDph : {
       key: 'cenaZaklVcDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cenaZakl : {
+    },
+    cenaZakl : {
       key: 'cenaZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
     },
+
     odberatele : {
       key: 'odberatele',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFOdberatel
     },
-    cenikObaly : {
-      key: 'cenikObaly',
+    'cenik-obaly' : {
+      key: 'cenik-obaly',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFCenikObal
@@ -946,14 +1061,14 @@ export class AFCenik extends AFEntity {
       isArray: true,
       afClass: AFAtribut
     },
-    skladKarty : {
-      key: 'skladKarty',
+    'sklad-karty' : {
+      key: 'sklad-karty',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFSkladovaKarta
     },
-    sadyAKomplety : {
-      key: 'sadyAKomplety',
+    'sady-a-komplety' : {
+      key: 'sady-a-komplety',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFSadyAKomplety
@@ -982,8 +1097,8 @@ export class AFCenik extends AFEntity {
       isArray: true,
       afClass: AFDodavatel
     },
-    vyrobniCisla : {
-      key: 'vyrobniCisla',
+    'vyrobni-cisla' : {
+      key: 'vyrobni-cisla',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFVyrobniCislo
@@ -1000,14 +1115,14 @@ export class AFCenik extends AFEntity {
       isArray: true,
       afClass: AFUdalost
     },
-    podobneZbozi : {
-      key: 'podobneZbozi',
+    'podobne-zbozi' : {
+      key: 'podobne-zbozi',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFPodobneZbozi
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba
@@ -1018,8 +1133,8 @@ export class AFCenik extends AFEntity {
       isArray: true,
       afClass: AFCenovaUroven
     },
-    typySazebDph : {
-      key: 'typySazebDph',
+    'typy-sazeb-dph' : {
+      key: 'typy-sazeb-dph',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFCenikTypSazbyDph

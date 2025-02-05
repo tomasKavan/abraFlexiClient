@@ -39,7 +39,8 @@ export class AFNaklad extends AFEntity {
   adrUdalost?: AFUdalost
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -48,73 +49,85 @@ export class AFNaklad extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    faktMnoz : {
+    },
+    faktMnoz : {
       key: 'faktMnoz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    fakturovat : {
+    },
+    fakturovat : {
       key: 'fakturovat',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    fakturovano : {
+    },
+    fakturovano : {
       key: 'fakturovano',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    realMnoz : {
+    },
+    realMnoz : {
       key: 'realMnoz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    termin : {
+    },
+    termin : {
       key: 'termin',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    typNaklAkt : {
+    },
+    typNaklAkt : {
       key: 'typNaklAkt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypNakladu,
       maxLength: 20,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    zodpPrac : {
+    },
+    zodpPrac : {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    adrUdalost : {
+    },
+    adrUdalost : {
       key: 'adrUdalost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUdalost,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

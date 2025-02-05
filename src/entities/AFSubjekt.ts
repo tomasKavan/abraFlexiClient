@@ -31,7 +31,8 @@ export class AFSubjekt extends AFEntity {
   definiceUcel?: any
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -40,17 +41,20 @@ export class AFSubjekt extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    typVztahuK : {
+    },
+    typVztahuK : {
       key: 'typVztahuK',
       type: PropertyType.Select,
       isArray: false,
@@ -58,36 +62,42 @@ export class AFSubjekt extends AFEntity {
       enumName: 'GdprTypVztahu',
       enum: GdprTypVztahu,
       
-    },    definice : {
+    },
+    definice : {
       key: 'definice',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    tretiZeme : {
+    },
+    tretiZeme : {
       key: 'tretiZeme',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    adresar : {
+    },
+    adresar : {
       key: 'adresar',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    definiceUcel : {
+    },
+    definiceUcel : {
       key: 'definiceUcel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

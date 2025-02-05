@@ -29,7 +29,8 @@ export class AFPoplatek extends AFEntity {
   cenik?: AFCenik
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -38,23 +39,27 @@ export class AFPoplatek extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    mnozMj : {
+    },
+    mnozMj : {
       key: 'mnozMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    typPoplatkuK : {
+    },
+    typPoplatkuK : {
       key: 'typPoplatkuK',
       type: PropertyType.Select,
       isArray: false,
@@ -62,19 +67,22 @@ export class AFPoplatek extends AFEntity {
       enumName: 'TypPoplatku',
       enum: TypPoplatku,
       
-    },    parentTypSzbDph : {
+    },
+    parentTypSzbDph : {
       key: 'parentTypSzbDph',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    cenikOtec : {
+    },
+    cenikOtec : {
       key: 'cenikOtec',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
@@ -82,8 +90,9 @@ export class AFPoplatek extends AFEntity {
       maxLength: 64,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

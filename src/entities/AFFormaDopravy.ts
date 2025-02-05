@@ -73,7 +73,8 @@ export class AFFormaDopravy extends AFEntity {
   dopravne?: AFCenik
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -82,168 +83,198 @@ export class AFFormaDopravy extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    exportEshop : {
+    },
+    exportEshop : {
       key: 'exportEshop',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    cisBal : {
+    },
+    cisBal : {
       key: 'cisBal',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    cisBalPrefix : {
+    },
+    cisBalPrefix : {
       key: 'cisBalPrefix',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    cisBalPostfix : {
+    },
+    cisBalPostfix : {
       key: 'cisBalPostfix',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    cisBalCislic : {
+    },
+    cisBalCislic : {
       key: 'cisBalCislic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisBalOd : {
+    },
+    cisBalOd : {
       key: 'cisBalOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisBalDo : {
+    },
+    cisBalDo : {
       key: 'cisBalDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisBalAkt : {
+    },
+    cisBalAkt : {
       key: 'cisBalAkt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisBalOdBud : {
+    },
+    cisBalOdBud : {
       key: 'cisBalOdBud',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisBalDoBud : {
+    },
+    cisBalDoBud : {
       key: 'cisBalDoBud',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisBalKodZak : {
+    },
+    cisBalKodZak : {
       key: 'cisBalKodZak',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    cisBalDepo : {
+    },
+    cisBalDepo : {
       key: 'cisBalDepo',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    formaDopravyK : {
+    },
+    formaDopravyK : {
       key: 'formaDopravyK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'FormaDopravy',
       enum: FormaDopravy,
       
-    },    specialniSluzby : {
+    },
+    specialniSluzby : {
       key: 'specialniSluzby',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    cisBalIdZak : {
+    },
+    cisBalIdZak : {
       key: 'cisBalIdZak',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    poradoveCislo : {
+    },
+    poradoveCislo : {
       key: 'poradoveCislo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisBalKonCis : {
+    },
+    cisBalKonCis : {
       key: 'cisBalKonCis',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    dopravne : {
+    },
+    dopravne : {
       key: 'dopravne',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

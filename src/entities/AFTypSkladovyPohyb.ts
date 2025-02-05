@@ -117,7 +117,8 @@ export class AFTypSkladovyPohyb extends AFEntity {
   // Automatický tisk (type: AUTOTISK) - autoTisky)
   autoTisky?: AFAutotisk[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -126,84 +127,99 @@ export class AFTypSkladovyPohyb extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    ucetObdobiOd : {
+    },
+    ucetObdobiOd : {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    ucetObdobiDo : {
+    },
+    ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    ucetni : {
+    },
+    ucetni : {
       key: 'ucetni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typPohybuK : {
+    },
+    typPohybuK : {
       key: 'typPohybuK',
       type: PropertyType.Select,
       isArray: false,
@@ -211,7 +227,8 @@ export class AFTypSkladovyPohyb extends AFEntity {
       enumName: 'TypPohybu',
       enum: TypPohybu,
       
-    },    typPohybuSkladK : {
+    },
+    typPohybuSkladK : {
       key: 'typPohybuSkladK',
       type: PropertyType.Select,
       isArray: false,
@@ -219,138 +236,161 @@ export class AFTypSkladovyPohyb extends AFEntity {
       enumName: 'TypPohybuSklad',
       enum: TypPohybuSklad,
       
-    },    doprava : {
+    },
+    doprava : {
       key: 'doprava',
       type: PropertyType.String,
       isArray: false,
       
-    },    popisDoklad : {
+    },
+    popisDoklad : {
       key: 'popisDoklad',
       type: PropertyType.String,
       isArray: false,
       
-    },    uvodTxt : {
+    },
+    uvodTxt : {
       key: 'uvodTxt',
       type: PropertyType.String,
       isArray: false,
       
-    },    zavTxt : {
+    },
+    zavTxt : {
       key: 'zavTxt',
       type: PropertyType.String,
       isArray: false,
       
-    },    radaPrijem : {
+    },
+    radaPrijem : {
       key: 'radaPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadaSkladovyPohyb,
       
-    },    radaVydej : {
+    },
+    radaVydej : {
       key: 'radaVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadaSkladovyPohyb,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    cinnost : {
+    },
+    cinnost : {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCinnost,
       
-    },    bsp : {
+    },
+    bsp : {
       key: 'bsp',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    typProtiDokladuPrijem : {
+    },
+    typProtiDokladuPrijem : {
       key: 'typProtiDokladuPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypSkladovyPohyb,
       
-    },    typProtiDokladuVydej : {
+    },
+    typProtiDokladuVydej : {
       key: 'typProtiDokladuVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypSkladovyPohyb,
       
-    },    typUcOpPrijem : {
+    },
+    typUcOpPrijem : {
       key: 'typUcOpPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    typUcOpVydej : {
+    },
+    typUcOpVydej : {
       key: 'typUcOpVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    tiskAutomat : {
+    },
+    tiskAutomat : {
       key: 'tiskAutomat',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    statOdesl : {
+    },
+    statOdesl : {
       key: 'statOdesl',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    statUrc : {
+    },
+    statUrc : {
       key: 'statUrc',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    statPuvod : {
+    },
+    statPuvod : {
       key: 'statPuvod',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    dodPodm : {
+    },
+    dodPodm : {
       key: 'dodPodm',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFIntrastatDodaciPodminky,
       
-    },    zvlPoh : {
+    },
+    zvlPoh : {
       key: 'zvlPoh',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFIntrastatZvlastniPohyb,
       
-    },    obchTrans : {
+    },
+    obchTrans : {
       key: 'obchTrans',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFIntrastatObchodniTransakce,
       
-    },    druhDopr : {
+    },
+    druhDopr : {
       key: 'druhDopr',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFIntrastatDruhDopravy,
       
-    },    krajUrc : {
+    },
+    krajUrc : {
       key: 'krajUrc',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFIntrastatKrajUrceni,
       
-    },    razeniProTiskK : {
+    },
+    razeniProTiskK : {
       key: 'razeniProTiskK',
       type: PropertyType.Select,
       isArray: false,
@@ -358,37 +398,42 @@ export class AFTypSkladovyPohyb extends AFEntity {
       enumName: 'RazeniProTisk',
       enum: RazeniProTisk,
       
-    },    primarni : {
+    },
+    primarni : {
       key: 'primarni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    formaDopravy : {
+    },
+    formaDopravy : {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFFormaDopravy,
       
-    },    emailTxt : {
+    },
+    emailTxt : {
       key: 'emailTxt',
       type: PropertyType.String,
       isArray: false,
       
-    },    sablonaMail : {
+    },
+    sablonaMail : {
       key: 'sablonaMail',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSablonaMail,
       
     },
+
     autoTisky : {
       key: 'autoTisky',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFAutotisk
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -208,8 +208,12 @@ function bindRelationTypeToRelation(input: Partial<RelationDef>, evidences: Evid
   }
 
   if (input.url) {
-    input.relationName = input.url.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')
-    input.relationName = input.relationName.charAt(0).toLowerCase() + input.relationName.slice(1)
+    input.getter = null
+    input.relationName = input.url
+    if (input.url.split('-').length > 1) {
+      input.getter = input.url.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('')
+      input.getter = input.getter.charAt(0).toLowerCase() + input.getter.slice(1)
+    }
   } else {
     throw new Error(`Relation ${input.name} missing url.`)
   }

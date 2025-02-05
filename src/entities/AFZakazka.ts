@@ -102,7 +102,8 @@ export class AFZakazka extends AFEntity {
   // Události (type: ADR_UDALOST) - udalosti)
   udalosti?: AFUdalost[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -111,219 +112,257 @@ export class AFZakazka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datZahaj : {
+    },
+    datZahaj : {
       key: 'datZahaj',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datKonec : {
+    },
+    datKonec : {
       key: 'datKonec',
       type: PropertyType.Date,
       isArray: false,
       
-    },    procVyh : {
+    },
+    procVyh : {
       key: 'procVyh',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    termin : {
+    },
+    termin : {
       key: 'termin',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    splatDny : {
+    },
+    splatDny : {
       key: 'splatDny',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    rozsah : {
+    },
+    rozsah : {
       key: 'rozsah',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    nakladyPredpoklad : {
+    },
+    nakladyPredpoklad : {
       key: 'nakladyPredpoklad',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    ziskPredpoklad : {
+    },
+    ziskPredpoklad : {
       key: 'ziskPredpoklad',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    cisObj : {
+    },
+    cisObj : {
       key: 'cisObj',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    cisSml : {
+    },
+    cisSml : {
       key: 'cisSml',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    datZahajPlan : {
+    },
+    datZahajPlan : {
       key: 'datZahajPlan',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datPredaniPlan : {
+    },
+    datPredaniPlan : {
       key: 'datPredaniPlan',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datPredani : {
+    },
+    datPredani : {
       key: 'datPredani',
       type: PropertyType.Date,
       isArray: false,
       
-    },    zaruka : {
+    },
+    zaruka : {
       key: 'zaruka',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datZaruky : {
+    },
+    datZaruky : {
       key: 'datZaruky',
       type: PropertyType.Date,
       isArray: false,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    mistUrc : {
+    },
+    mistUrc : {
       key: 'mistUrc',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMistoUrceni,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    stavZakazky : {
+    },
+    stavZakazky : {
       key: 'stavZakazky',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStavZakazky,
       maxLength: 20,
       
-    },    typZakazky : {
+    },
+    typZakazky : {
       key: 'typZakazky',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypZakazky,
       maxLength: 20,
       
-    },    zodpPrac : {
+    },
+    zodpPrac : {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    vyhZakazky : {
+    },
+    vyhZakazky : {
       key: 'vyhZakazky',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFHodnoceniZakazky,
       maxLength: 20,
       
-    },    kontaktOsoba : {
+    },
+    kontaktOsoba : {
       key: 'kontaktOsoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFKontakt,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
@@ -336,8 +375,8 @@ export class AFZakazka extends AFEntity {
       isArray: true,
       afClass: AFUdalost
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

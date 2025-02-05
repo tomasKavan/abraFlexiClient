@@ -38,9 +38,11 @@ export class AFInventura extends AFEntity {
   sklad?: AFSklad
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Položka inventury (type: INVENTURA_POLOZKA) - inventura-polozky)
-  inventuraPolozky?: AFInventuraPolozka[]
+  'inventura-polozky'?: AFInventuraPolozka[]
+  get inventuraPolozky(): AFInventuraPolozka[] | undefined { return this['inventura-polozky']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -49,54 +51,64 @@ export class AFInventura extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    popisInventury : {
+    },
+    popisInventury : {
       key: 'popisInventury',
       type: PropertyType.String,
       isArray: false,
       
-    },    typInventury : {
+    },
+    typInventury : {
       key: 'typInventury',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datZahaj : {
+    },
+    datZahaj : {
       key: 'datZahaj',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datKonec : {
+    },
+    datKonec : {
       key: 'datKonec',
       type: PropertyType.Date,
       isArray: false,
       
-    },    vedouci : {
+    },
+    vedouci : {
       key: 'vedouci',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    osoby : {
+    },
+    osoby : {
       key: 'osoby',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    stavK : {
+    },
+    stavK : {
       key: 'stavK',
       type: PropertyType.Select,
       isArray: false,
@@ -104,21 +116,23 @@ export class AFInventura extends AFEntity {
       enumName: 'StavInventury',
       enum: StavInventury,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba
     },
-    inventuraPolozky : {
-      key: 'inventuraPolozky',
+    'inventura-polozky' : {
+      key: 'inventura-polozky',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFInventuraPolozka

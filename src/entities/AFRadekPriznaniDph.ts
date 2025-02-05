@@ -37,7 +37,8 @@ export class AFRadekPriznaniDph extends AFEntity {
   clenDph?: AFCleneniDph
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -46,32 +47,38 @@ export class AFRadekPriznaniDph extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    rok : {
+    },
+    rok : {
       key: 'rok',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesic : {
+    },
+    mesic : {
       key: 'mesic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    ctvrtleti : {
+    },
+    ctvrtleti : {
       key: 'ctvrtleti',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datum : {
+    },
+    datum : {
       key: 'datum',
       type: PropertyType.Date,
       isArray: false,
       
-    },    stavK : {
+    },
+    stavK : {
       key: 'stavK',
       type: PropertyType.Select,
       isArray: false,
@@ -79,19 +86,22 @@ export class AFRadekPriznaniDph extends AFEntity {
       enumName: 'StavPriznaniDph',
       enum: StavPriznaniDph,
       
-    },    zaklad : {
+    },
+    zaklad : {
       key: 'zaklad',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    dph : {
+    },
+    dph : {
       key: 'dph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -99,22 +109,25 @@ export class AFRadekPriznaniDph extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    clenDph : {
+    },
+    clenDph : {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCleneniDph,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

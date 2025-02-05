@@ -23,7 +23,8 @@ export class AFDashboardSharing extends AFEntity {
   dashboardpanel?: AFDashboardPanel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -32,32 +33,37 @@ export class AFDashboardSharing extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    hidden : {
+    },
+    hidden : {
       key: 'hidden',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    priority : {
+    },
+    priority : {
       key: 'priority',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    user : {
+    },
+    user : {
       key: 'user',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    dashboardpanel : {
+    },
+    dashboardpanel : {
       key: 'dashboardpanel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFDashboardPanel,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

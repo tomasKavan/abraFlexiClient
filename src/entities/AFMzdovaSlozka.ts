@@ -107,7 +107,8 @@ export class AFMzdovaSlozka extends AFEntity {
   odmena?: AFMzdovaSlozka
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -116,34 +117,40 @@ export class AFMzdovaSlozka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    cisRad : {
+    },
+    cisRad : {
       key: 'cisRad',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    typSlozkyK : {
+    },
+    typSlozkyK : {
       key: 'typSlozkyK',
       type: PropertyType.Select,
       isArray: false,
@@ -151,7 +158,8 @@ export class AFMzdovaSlozka extends AFEntity {
       enumName: 'TypSlozky',
       enum: TypSlozky,
       
-    },    skupSlozkyK : {
+    },
+    skupSlozkyK : {
       key: 'skupSlozkyK',
       type: PropertyType.Select,
       isArray: false,
@@ -159,213 +167,250 @@ export class AFMzdovaSlozka extends AFEntity {
       enumName: 'SkupinaSlozky',
       enum: SkupinaSlozky,
       
-    },    rok : {
+    },
+    rok : {
       key: 'rok',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesic : {
+    },
+    mesic : {
       key: 'mesic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datumOd : {
+    },
+    datumOd : {
       key: 'datumOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datumDo : {
+    },
+    datumDo : {
       key: 'datumDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    dnyPrac : {
+    },
+    dnyPrac : {
       key: 'dnyPrac',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    dnyKal : {
+    },
+    dnyKal : {
       key: 'dnyKal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    dnyKalReal : {
+    },
+    dnyKalReal : {
       key: 'dnyKalReal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    dnySvatek : {
+    },
+    dnySvatek : {
       key: 'dnySvatek',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hodiny : {
+    },
+    hodiny : {
       key: 'hodiny',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hodinySvatek : {
+    },
+    hodinySvatek : {
       key: 'hodinySvatek',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    castkaHod : {
+    },
+    castkaHod : {
       key: 'castkaHod',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    castkaDen : {
+    },
+    castkaDen : {
       key: 'castkaDen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    procMzd : {
+    },
+    procMzd : {
       key: 'procMzd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zaklMzd : {
+    },
+    zaklMzd : {
       key: 'zaklMzd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zaklJeKracen : {
+    },
+    zaklJeKracen : {
       key: 'zaklJeKracen',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    castMzd : {
+    },
+    castMzd : {
       key: 'castMzd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zmenaCastMzd : {
+    },
+    zmenaCastMzd : {
       key: 'zmenaCastMzd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zmenaCasu : {
+    },
+    zmenaCasu : {
       key: 'zmenaCasu',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    pocetMes : {
+    },
+    pocetMes : {
       key: 'pocetMes',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisDoklNem : {
+    },
+    cisDoklNem : {
       key: 'cisDoklNem',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    prumNaDenNem : {
+    },
+    prumNaDenNem : {
       key: 'prumNaDenNem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    prumNaHodNem : {
+    },
+    prumNaHodNem : {
       key: 'prumNaHodNem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    doplatZdravK : {
+    },
+    doplatZdravK : {
       key: 'doplatZdravK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    pracovni : {
+    },
+    pracovni : {
       key: 'pracovni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datumDoklad : {
+    },
+    datumDoklad : {
       key: 'datumDoklad',
       type: PropertyType.Date,
       isArray: false,
       
-    },    rokPlatba : {
+    },
+    rokPlatba : {
       key: 'rokPlatba',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesicPlatba : {
+    },
+    mesicPlatba : {
       key: 'mesicPlatba',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    doubleX : {
+    },
+    doubleX : {
       key: 'doubleX',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsobaHlavicka,
       
-    },    pracPom : {
+    },
+    pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPracovniPomerHlavicka,
       
-    },    cisMzdSloz : {
+    },
+    cisMzdSloz : {
       key: 'cisMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCiselnikMzdovychSlozek,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    stalaMzdSloz : {
+    },
+    stalaMzdSloz : {
       key: 'stalaMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStalaMzdovaSlozka,
       
-    },    srazka : {
+    },
+    srazka : {
       key: 'srazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSrazka,
       
-    },    nepritomnost : {
+    },
+    nepritomnost : {
       key: 'nepritomnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFNepritomnost,
       
-    },    odmena : {
+    },
+    odmena : {
       key: 'odmena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMzdovaSlozka,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

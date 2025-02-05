@@ -143,7 +143,8 @@ export class AFSmlouva extends AFEntity {
   // Události (type: ADR_UDALOST) - udalosti)
   udalosti?: AFUdalost[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -152,92 +153,109 @@ export class AFSmlouva extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    sablona : {
+    },
+    sablona : {
       key: 'sablona',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    smlouvaOd : {
+    },
+    smlouvaOd : {
       key: 'smlouvaOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    smlouvaDo : {
+    },
+    smlouvaDo : {
       key: 'smlouvaDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datumPodepsani : {
+    },
+    datumPodepsani : {
       key: 'datumPodepsani',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datumUcinnosti : {
+    },
+    datumUcinnosti : {
       key: 'datumUcinnosti',
       type: PropertyType.Date,
       isArray: false,
       
-    },    frekFakt : {
+    },
+    frekFakt : {
       key: 'frekFakt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    den : {
+    },
+    den : {
       key: 'den',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesic : {
+    },
+    mesic : {
       key: 'mesic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    zpusFaktK : {
+    },
+    zpusFaktK : {
       key: 'zpusFaktK',
       type: PropertyType.Select,
       isArray: false,
@@ -245,212 +263,250 @@ export class AFSmlouva extends AFEntity {
       enumName: 'ZpusobFakt',
       enum: ZpusobFakt,
       
-    },    dnyFakt : {
+    },
+    dnyFakt : {
       key: 'dnyFakt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    cisDosle : {
+    },
+    cisDosle : {
       key: 'cisDosle',
       type: PropertyType.String,
       isArray: false,
       maxLength: 40,
       
-    },    cisSmlProti : {
+    },
+    cisSmlProti : {
       key: 'cisSmlProti',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    autoGen : {
+    },
+    autoGen : {
       key: 'autoGen',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    autoMail : {
+    },
+    autoMail : {
       key: 'autoMail',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    autoProdl : {
+    },
+    autoProdl : {
       key: 'autoProdl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    autoProlong : {
+    },
+    autoProlong : {
       key: 'autoProlong',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    autoZakazka : {
+    },
+    autoZakazka : {
       key: 'autoZakazka',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datVystZDuzp : {
+    },
+    datVystZDuzp : {
       key: 'datVystZDuzp',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    generovatNuloveFaktury : {
+    },
+    generovatNuloveFaktury : {
       key: 'generovatNuloveFaktury',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    ignorovatTypSml : {
+    },
+    ignorovatTypSml : {
       key: 'ignorovatTypSml',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    preplatky : {
+    },
+    preplatky : {
       key: 'preplatky',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    varSymFakt : {
+    },
+    varSymFakt : {
       key: 'varSymFakt',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    katastrUzemi : {
+    },
+    katastrUzemi : {
       key: 'katastrUzemi',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    parcela : {
+    },
+    parcela : {
       key: 'parcela',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vypovedniLhuta : {
+    },
+    vypovedniLhuta : {
       key: 'vypovedniLhuta',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datZaloz : {
+    },
+    datZaloz : {
       key: 'datZaloz',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datVypoz : {
+    },
+    datVypoz : {
       key: 'datVypoz',
       type: PropertyType.Date,
       isArray: false,
       
-    },    typDoklFakSplatDny : {
+    },
+    typDoklFakSplatDny : {
       key: 'typDoklFakSplatDny',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    poslDatSplat : {
+    },
+    poslDatSplat : {
       key: 'poslDatSplat',
       type: PropertyType.Date,
       isArray: false,
       
-    },    firma_nazev : {
+    },
+    firma_nazev : {
       key: 'firma_nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    typSml : {
+    },
+    typSml : {
       key: 'typSml',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypSmlouvy,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    firmaFakt : {
+    },
+    firmaFakt : {
       key: 'firmaFakt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       
-    },    typDoklFak : {
+    },
+    typDoklFak : {
       key: 'typDoklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypFakturyVydane,
       
-    },    konSym : {
+    },
+    konSym : {
       key: 'konSym',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFKonstSymbol,
       
-    },    stavSml : {
+    },
+    stavSml : {
       key: 'stavSml',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStavSmlouvy,
       
-    },    typDoklFakStredisko : {
+    },
+    typDoklFakStredisko : {
       key: 'typDoklFakStredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       
-    },    typDoklFakCinnost : {
+    },
+    typDoklFakCinnost : {
       key: 'typDoklFakCinnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCinnost,
       
-    },    typDoklFakBspBan : {
+    },
+    typDoklFakBspBan : {
       key: 'typDoklFakBspBan',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFBankovniUcet,
       
-    },    zodpOsoba : {
+    },
+    zodpOsoba : {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    kontaktOsoba : {
+    },
+    kontaktOsoba : {
       key: 'kontaktOsoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFKontakt,
       
     },
+
     polozkySmlouvy : {
       key: 'polozkySmlouvy',
       type: PropertyType.Relation,
@@ -475,8 +531,8 @@ export class AFSmlouva extends AFEntity {
       isArray: true,
       afClass: AFUdalost
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -57,7 +57,8 @@ export class AFPrikazKUhrade extends AFEntity {
   faRegion?: AFRegion
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Položky (type: PRIKAZ_K_UHRADE_POLOZKA) - polozky)
   polozky?: AFPrikazKUhradePolozka[]
 
@@ -68,40 +69,47 @@ export class AFPrikazKUhrade extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    datVytvor : {
+    },
+    datVytvor : {
       key: 'datVytvor',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datSplat : {
+    },
+    datSplat : {
       key: 'datSplat',
       type: PropertyType.Date,
       isArray: false,
       
-    },    celCastka : {
+    },
+    celCastka : {
       key: 'celCastka',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    jmenoSoub : {
+    },
+    jmenoSoub : {
       key: 'jmenoSoub',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poradiPrikaz : {
+    },
+    poradiPrikaz : {
       key: 'poradiPrikaz',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    stavPrikazK : {
+    },
+    stavPrikazK : {
       key: 'stavPrikazK',
       type: PropertyType.Select,
       isArray: false,
@@ -109,79 +117,92 @@ export class AFPrikazKUhrade extends AFEntity {
       enumName: 'ElPrikazStav',
       enum: ElPrikazStav,
       
-    },    nazFirmy : {
+    },
+    nazFirmy : {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faUlice : {
+    },
+    faUlice : {
       key: 'faUlice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faMesto : {
+    },
+    faMesto : {
       key: 'faMesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faPsc : {
+    },
+    faPsc : {
       key: 'faPsc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    konSym : {
+    },
+    konSym : {
       key: 'konSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    zahranicni : {
+    },
+    zahranicni : {
       key: 'zahranicni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    bezPopisu : {
+    },
+    bezPopisu : {
       key: 'bezPopisu',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datSplatZHlavicky : {
+    },
+    datSplatZHlavicky : {
       key: 'datSplatZHlavicky',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    banka : {
+    },
+    banka : {
       key: 'banka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFBankovniUcet,
       
-    },    faStat : {
+    },
+    faStat : {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    faRegion : {
+    },
+    faRegion : {
       key: 'faRegion',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRegion,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

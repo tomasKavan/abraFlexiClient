@@ -27,7 +27,8 @@ export class AFOsobaHlavicka extends AFEntity {
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -36,43 +37,49 @@ export class AFOsobaHlavicka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    osbCis : {
+    },
+    osbCis : {
       key: 'osbCis',
       type: PropertyType.String,
       isArray: false,
       
-    },    prijmeni : {
+    },
+    prijmeni : {
       key: 'prijmeni',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    jmeno : {
+    },
+    jmeno : {
       key: 'jmeno',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    titul : {
+    },
+    titul : {
       key: 'titul',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFPriloha
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -38,53 +38,63 @@ export class AFUcetniObdobi extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    platiOdData : {
+    },
+    platiOdData : {
       key: 'platiOdData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDoData : {
+    },
+    platiDoData : {
       key: 'platiDoData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    zmenaZaver : {
+    },
+    zmenaZaver : {
       key: 'zmenaZaver',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    chybaPreceneni : {
+    },
+    chybaPreceneni : {
       key: 'chybaPreceneni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    rokProRadu : {
+    },
+    rokProRadu : {
       key: 'rokProRadu',
       type: PropertyType.Integer,
       isArray: false,
       
     },
+
 
   }
 }

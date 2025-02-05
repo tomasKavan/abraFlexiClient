@@ -63,112 +63,133 @@ export class AFPrehledZamestnancu extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    rok : {
+    },
+    rok : {
       key: 'rok',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    osbCis : {
+    },
+    osbCis : {
       key: 'osbCis',
       type: PropertyType.String,
       isArray: false,
       
-    },    jmeno : {
+    },
+    jmeno : {
       key: 'jmeno',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    funkce : {
+    },
+    funkce : {
       key: 'funkce',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datNaroz : {
+    },
+    datNaroz : {
       key: 'datNaroz',
       type: PropertyType.Date,
       isArray: false,
       
-    },    odpocetDeti : {
+    },
+    odpocetDeti : {
       key: 'odpocetDeti',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    zacatek : {
+    },
+    zacatek : {
       key: 'zacatek',
       type: PropertyType.Date,
       isArray: false,
       
-    },    konecPomeru : {
+    },
+    konecPomeru : {
       key: 'konecPomeru',
       type: PropertyType.Date,
       isArray: false,
       
-    },    konecZkusDoby : {
+    },
+    konecZkusDoby : {
       key: 'konecZkusDoby',
       type: PropertyType.Date,
       isArray: false,
       
-    },    konecUrciteDoby : {
+    },
+    konecUrciteDoby : {
       key: 'konecUrciteDoby',
       type: PropertyType.Date,
       isArray: false,
       
-    },    uvazHodTydne : {
+    },
+    uvazHodTydne : {
       key: 'uvazHodTydne',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    uvazKoef : {
+    },
+    uvazKoef : {
       key: 'uvazKoef',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dovolPocatek : {
+    },
+    dovolPocatek : {
       key: 'dovolPocatek',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dovolVybrano : {
+    },
+    dovolVybrano : {
       key: 'dovolVybrano',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dovolZbyva : {
+    },
+    dovolZbyva : {
       key: 'dovolZbyva',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    pracPravPrum : {
+    },
+    pracPravPrum : {
       key: 'pracPravPrum',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    dobaOdpr : {
+    },
+    dobaOdpr : {
       key: 'dobaOdpr',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsoba,
       
-    },    pracPom : {
+    },
+    pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPracovniPomer,
       
-    },    typPracPom : {
+    },
+    typPracPom : {
       key: 'typPracPom',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypPracovnihoPomeru,
       
     },
+
 
   }
 }

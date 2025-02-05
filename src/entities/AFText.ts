@@ -62,7 +62,8 @@ export class AFText extends AFEntity {
   vsbPoznamPol?: boolean
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -71,130 +72,155 @@ export class AFText extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vsbFav : {
+    },
+    vsbFav : {
       key: 'vsbFav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPhl : {
+    },
+    vsbPhl : {
       key: 'vsbPhl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbFap : {
+    },
+    vsbFap : {
       key: 'vsbFap',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbZav : {
+    },
+    vsbZav : {
       key: 'vsbZav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbSkl : {
+    },
+    vsbSkl : {
       key: 'vsbSkl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbBan : {
+    },
+    vsbBan : {
       key: 'vsbBan',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPok : {
+    },
+    vsbPok : {
       key: 'vsbPok',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbInt : {
+    },
+    vsbInt : {
       key: 'vsbInt',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbObp : {
+    },
+    vsbObp : {
       key: 'vsbObp',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbNav : {
+    },
+    vsbNav : {
       key: 'vsbNav',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPpp : {
+    },
+    vsbPpp : {
       key: 'vsbPpp',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbObv : {
+    },
+    vsbObv : {
       key: 'vsbObv',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbNap : {
+    },
+    vsbNap : {
       key: 'vsbNap',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPpv : {
+    },
+    vsbPpv : {
       key: 'vsbPpv',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPopis : {
+    },
+    vsbPopis : {
       key: 'vsbPopis',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPoznamka : {
+    },
+    vsbPoznamka : {
       key: 'vsbPoznamka',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbDoprava : {
+    },
+    vsbDoprava : {
       key: 'vsbDoprava',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbUvod : {
+    },
+    vsbUvod : {
       key: 'vsbUvod',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbZaver : {
+    },
+    vsbZaver : {
       key: 'vsbZaver',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbNazevPol : {
+    },
+    vsbNazevPol : {
       key: 'vsbNazevPol',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsbPoznamPol : {
+    },
+    vsbPoznamPol : {
       key: 'vsbPoznamPol',
       type: PropertyType.Logic,
       isArray: false,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

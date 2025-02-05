@@ -50,88 +50,103 @@ export class AFProdejkaPlatba extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kurz : {
+    },
+    kurz : {
       key: 'kurz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    kurzMnozstvi : {
+    },
+    kurzMnozstvi : {
       key: 'kurzMnozstvi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    castka : {
+    },
+    castka : {
       key: 'castka',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    castkaMen : {
+    },
+    castkaMen : {
       key: 'castkaMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    mnozCenin : {
+    },
+    mnozCenin : {
       key: 'mnozCenin',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    castkaCenin : {
+    },
+    castkaCenin : {
       key: 'castkaCenin',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    strojParamUhr : {
+    },
+    strojParamUhr : {
       key: 'strojParamUhr',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    cisloKarty : {
+    },
+    cisloKarty : {
       key: 'cisloKarty',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    vratit : {
+    },
+    vratit : {
       key: 'vratit',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    formaUhradyCis : {
+    },
+    formaUhradyCis : {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFFormaUhrady,
       
-    },    doklFak : {
+    },
+    doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
     },
+
 
   }
 }

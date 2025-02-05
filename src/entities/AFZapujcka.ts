@@ -53,7 +53,8 @@ export class AFZapujcka extends AFEntity {
   stat?: AFStat
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -62,108 +63,126 @@ export class AFZapujcka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    jmeno : {
+    },
+    jmeno : {
       key: 'jmeno',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    prijmeni : {
+    },
+    prijmeni : {
       key: 'prijmeni',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    ulice : {
+    },
+    ulice : {
       key: 'ulice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mesto : {
+    },
+    mesto : {
       key: 'mesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    psc : {
+    },
+    psc : {
       key: 'psc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    www : {
+    },
+    www : {
       key: 'www',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    email : {
+    },
+    email : {
       key: 'email',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    fax : {
+    },
+    fax : {
       key: 'fax',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mobil : {
+    },
+    mobil : {
       key: 'mobil',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    tel : {
+    },
+    tel : {
       key: 'tel',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datZahaj : {
+    },
+    datZahaj : {
       key: 'datZahaj',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datKonec : {
+    },
+    datKonec : {
       key: 'datKonec',
       type: PropertyType.Date,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    majetek : {
+    },
+    majetek : {
       key: 'majetek',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMajetek,
       maxLength: 20,
       
-    },    leasing : {
+    },
+    leasing : {
       key: 'leasing',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFLeasing,
       maxLength: 20,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
@@ -171,8 +190,9 @@ export class AFZapujcka extends AFEntity {
       maxLength: 3,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

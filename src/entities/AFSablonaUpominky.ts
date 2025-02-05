@@ -74,7 +74,8 @@ export class AFSablonaUpominky extends AFEntity {
   typSablonyK?: TypSablony
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -83,160 +84,190 @@ export class AFSablonaUpominky extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    datum : {
+    },
+    datum : {
       key: 'datum',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datuma : {
+    },
+    datuma : {
       key: 'datuma',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datumb : {
+    },
+    datumb : {
       key: 'datumb',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datumc : {
+    },
+    datumc : {
       key: 'datumc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    hlavicka : {
+    },
+    hlavicka : {
       key: 'hlavicka',
       type: PropertyType.String,
       isArray: false,
       
-    },    hlavickaa : {
+    },
+    hlavickaa : {
       key: 'hlavickaa',
       type: PropertyType.String,
       isArray: false,
       
-    },    hlavickab : {
+    },
+    hlavickab : {
       key: 'hlavickab',
       type: PropertyType.String,
       isArray: false,
       
-    },    hlavickac : {
+    },
+    hlavickac : {
       key: 'hlavickac',
       type: PropertyType.String,
       isArray: false,
       
-    },    odberatel : {
+    },
+    odberatel : {
       key: 'odberatel',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    odberatela : {
+    },
+    odberatela : {
       key: 'odberatela',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    odberatelb : {
+    },
+    odberatelb : {
       key: 'odberatelb',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    odberatelc : {
+    },
+    odberatelc : {
       key: 'odberatelc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    uvod : {
+    },
+    uvod : {
       key: 'uvod',
       type: PropertyType.String,
       isArray: false,
       
-    },    uvoda : {
+    },
+    uvoda : {
       key: 'uvoda',
       type: PropertyType.String,
       isArray: false,
       
-    },    uvodb : {
+    },
+    uvodb : {
       key: 'uvodb',
       type: PropertyType.String,
       isArray: false,
       
-    },    uvodc : {
+    },
+    uvodc : {
       key: 'uvodc',
       type: PropertyType.String,
       isArray: false,
       
-    },    textNad : {
+    },
+    textNad : {
       key: 'textNad',
       type: PropertyType.String,
       isArray: false,
       
-    },    textNada : {
+    },
+    textNada : {
       key: 'textNada',
       type: PropertyType.String,
       isArray: false,
       
-    },    textNadb : {
+    },
+    textNadb : {
       key: 'textNadb',
       type: PropertyType.String,
       isArray: false,
       
-    },    textNadc : {
+    },
+    textNadc : {
       key: 'textNadc',
       type: PropertyType.String,
       isArray: false,
       
-    },    textPod : {
+    },
+    textPod : {
       key: 'textPod',
       type: PropertyType.String,
       isArray: false,
       
-    },    textPoda : {
+    },
+    textPoda : {
       key: 'textPoda',
       type: PropertyType.String,
       isArray: false,
       
-    },    textPodb : {
+    },
+    textPodb : {
       key: 'textPodb',
       type: PropertyType.String,
       isArray: false,
       
-    },    textPodc : {
+    },
+    textPodc : {
       key: 'textPodc',
       type: PropertyType.String,
       isArray: false,
       
-    },    zapati : {
+    },
+    zapati : {
       key: 'zapati',
       type: PropertyType.String,
       isArray: false,
       
-    },    zapatia : {
+    },
+    zapatia : {
       key: 'zapatia',
       type: PropertyType.String,
       isArray: false,
       
-    },    zapatib : {
+    },
+    zapatib : {
       key: 'zapatib',
       type: PropertyType.String,
       isArray: false,
       
-    },    zapatic : {
+    },
+    zapatic : {
       key: 'zapatic',
       type: PropertyType.String,
       isArray: false,
       
-    },    typSablonyK : {
+    },
+    typSablonyK : {
       key: 'typSablonyK',
       type: PropertyType.Select,
       isArray: false,
@@ -245,8 +276,9 @@ export class AFSablonaUpominky extends AFEntity {
       enum: TypSablony,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

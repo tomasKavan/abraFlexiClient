@@ -23,7 +23,8 @@ export class AFSumaceSestavy extends AFEntity {
   radekSum?: AFRadekSestavy
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -32,24 +33,28 @@ export class AFSumaceSestavy extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    prevratZnam : {
+    },
+    prevratZnam : {
       key: 'prevratZnam',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    radek : {
+    },
+    radek : {
       key: 'radek',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       maxLength: 20,
       
-    },    radekSum : {
+    },
+    radekSum : {
       key: 'radekSum',
       type: PropertyType.Relation,
       isArray: false,
@@ -57,8 +62,9 @@ export class AFSumaceSestavy extends AFEntity {
       maxLength: 20,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

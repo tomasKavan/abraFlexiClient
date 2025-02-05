@@ -26,7 +26,8 @@ export class AFCertifikacniAutorita extends AFEntity {
   platiDo?: Date
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -35,42 +36,49 @@ export class AFCertifikacniAutorita extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    uzivNazev : {
+    },
+    uzivNazev : {
       key: 'uzivNazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    certNazev : {
+    },
+    certNazev : {
       key: 'certNazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    certOrgan : {
+    },
+    certOrgan : {
       key: 'certOrgan',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Date,
       isArray: false,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

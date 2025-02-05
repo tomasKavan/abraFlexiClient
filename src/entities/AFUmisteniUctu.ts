@@ -25,13 +25,15 @@ export class AFUmisteniUctu extends AFEntity {
       isArray: false,
       afClass: AFUcet,
       
-    },    vybranyRadek : {
+    },
+    vybranyRadek : {
       key: 'vybranyRadek',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadekSestavy,
       
     },
+
 
   }
 }

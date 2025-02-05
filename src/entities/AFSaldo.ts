@@ -97,150 +97,175 @@ export class AFSaldo extends AFEntity {
       isArray: false,
       afClass: AFCleneniDph,
       
-    },    datSplat : {
+    },
+    datSplat : {
       key: 'datSplat',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datUhr : {
+    },
+    datUhr : {
       key: 'datUhr',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    doklad : {
+    },
+    doklad : {
       key: 'doklad',
       type: PropertyType.String,
       isArray: false,
       
-    },    duzpUcto : {
+    },
+    duzpUcto : {
       key: 'duzpUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datUcto : {
+    },
+    datUcto : {
       key: 'datUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    idUcetniDenik : {
+    },
+    idUcetniDenik : {
       key: 'idUcetniDenik',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kurz : {
+    },
+    kurz : {
       key: 'kurz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       maxLength: 20,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    nazFirmy : {
+    },
+    nazFirmy : {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    protiUcet : {
+    },
+    protiUcet : {
       key: 'protiUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    statDph : {
+    },
+    statDph : {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStatDph,
       maxLength: 20,
       
-    },    stavUhrK : {
+    },
+    stavUhrK : {
       key: 'stavUhrK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'StavUhr',
       enum: StavUhr,
       
-    },    stavUzivK : {
+    },
+    stavUzivK : {
       key: 'stavUzivK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'StavUziv',
       enum: StavUziv,
       
-    },    modulK : {
+    },
+    modulK : {
       key: 'modulK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'ModulUcetni',
       enum: ModulUcetni,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    sumMenDal : {
+    },
+    sumMenDal : {
       key: 'sumMenDal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumMenMd : {
+    },
+    sumMenMd : {
       key: 'sumMenMd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumTuzDal : {
+    },
+    sumTuzDal : {
       key: 'sumTuzDal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumTuzMd : {
+    },
+    sumTuzMd : {
       key: 'sumTuzMd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    szbDph : {
+    },
+    szbDph : {
       key: 'szbDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -248,58 +273,68 @@ export class AFSaldo extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    ucet : {
+    },
+    ucet : {
       key: 'ucet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    idDokl : {
+    },
+    idDokl : {
       key: 'idDokl',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    zuctovano : {
+    },
+    zuctovano : {
       key: 'zuctovano',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    parSymbol : {
+    },
+    parSymbol : {
       key: 'parSymbol',
       type: PropertyType.String,
       isArray: false,
       
-    },    cinnost : {
+    },
+    cinnost : {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCinnost,
       
-    },    nazevUctu : {
+    },
+    nazevUctu : {
       key: 'nazevUctu',
       type: PropertyType.String,
       isArray: false,
       
-    },    vyloucitSaldo : {
+    },
+    vyloucitSaldo : {
       key: 'vyloucitSaldo',
       type: PropertyType.Logic,
       isArray: false,
       
     },
+
 
   }
 }

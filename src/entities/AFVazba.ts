@@ -26,7 +26,8 @@ export class AFVazba extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typVazbyK : {
+    },
+    typVazbyK : {
       key: 'typVazbyK',
       type: PropertyType.Select,
       isArray: false,
@@ -34,18 +35,21 @@ export class AFVazba extends AFEntity {
       enumName: 'TypVazbyDokl',
       enum: TypVazbyDokl,
       
-    },    castka : {
+    },
+    castka : {
       key: 'castka',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    storno : {
+    },
+    storno : {
       key: 'storno',
       type: PropertyType.Logic,
       isArray: false,
       
     },
+
 
   }
 }

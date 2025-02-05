@@ -73,7 +73,8 @@ export class AFSkupinaOsob extends AFEntity {
   tdZavPrispevky?: AFTypDokladu
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -82,62 +83,73 @@ export class AFSkupinaOsob extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    tydenPracDobaK : {
+    },
+    tydenPracDobaK : {
       key: 'tydenPracDobaK',
       type: PropertyType.Select,
       isArray: false,
@@ -145,110 +157,128 @@ export class AFSkupinaOsob extends AFEntity {
       enumName: 'TydenPracDoba',
       enum: TydenPracDoba,
       
-    },    workFlow : {
+    },
+    workFlow : {
       key: 'workFlow',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    tdIntHruba : {
+    },
+    tdIntHruba : {
       key: 'tdIntHruba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypInternihoDokladu,
       
-    },    tdIntNahrad : {
+    },
+    tdIntNahrad : {
       key: 'tdIntNahrad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypInternihoDokladu,
       
-    },    tdIntCestDoLim : {
+    },
+    tdIntCestDoLim : {
       key: 'tdIntCestDoLim',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypInternihoDokladu,
       
-    },    tdIntCestNadLim : {
+    },
+    tdIntCestNadLim : {
       key: 'tdIntCestNadLim',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    tdIntStravPausDoLim : {
+    },
+    tdIntStravPausDoLim : {
       key: 'tdIntStravPausDoLim',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypInternihoDokladu,
       
-    },    tdIntStravPausNadLim : {
+    },
+    tdIntStravPausNadLim : {
       key: 'tdIntStravPausNadLim',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    tdIntHomeofficeDoLim : {
+    },
+    tdIntHomeofficeDoLim : {
       key: 'tdIntHomeofficeDoLim',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    tdIntHomeofficeNadLim : {
+    },
+    tdIntHomeofficeNadLim : {
       key: 'tdIntHomeofficeNadLim',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    tuoZavSocZam : {
+    },
+    tuoZavSocZam : {
       key: 'tuoZavSocZam',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    tuoZavSocFir : {
+    },
+    tuoZavSocFir : {
       key: 'tuoZavSocFir',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    tuoZavZdrZam : {
+    },
+    tuoZavZdrZam : {
       key: 'tuoZavZdrZam',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    tuoZavZdrFir : {
+    },
+    tuoZavZdrFir : {
       key: 'tuoZavZdrFir',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    tuoZavDan : {
+    },
+    tuoZavDan : {
       key: 'tuoZavDan',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    tdSrazkaStrav : {
+    },
+    tdSrazkaStrav : {
       key: 'tdSrazkaStrav',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    tdIntPrispevky : {
+    },
+    tdIntPrispevky : {
       key: 'tdIntPrispevky',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    tdZavPrispevky : {
+    },
+    tdZavPrispevky : {
       key: 'tdZavPrispevky',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

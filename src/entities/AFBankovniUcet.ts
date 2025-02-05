@@ -132,7 +132,8 @@ export class AFBankovniUcet extends AFEntity {
   stat?: AFStat
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -141,155 +142,182 @@ export class AFBankovniUcet extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    ucetObdobiOd : {
+    },
+    ucetObdobiOd : {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    ucetObdobiDo : {
+    },
+    ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcetniObdobi,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    buc : {
+    },
+    buc : {
       key: 'buc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    specSym : {
+    },
+    specSym : {
       key: 'specSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    iban : {
+    },
+    iban : {
       key: 'iban',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    bic : {
+    },
+    bic : {
       key: 'bic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazBanky : {
+    },
+    nazBanky : {
       key: 'nazBanky',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zkrKlienta : {
+    },
+    zkrKlienta : {
       key: 'zkrKlienta',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    sloVypis : {
+    },
+    sloVypis : {
       key: 'sloVypis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    sloPrikaz : {
+    },
+    sloPrikaz : {
       key: 'sloPrikaz',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    priVypis : {
+    },
+    priVypis : {
       key: 'priVypis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    priPrikaz : {
+    },
+    priPrikaz : {
       key: 'priPrikaz',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    priPrikazZahr : {
+    },
+    priPrikazZahr : {
       key: 'priPrikazZahr',
       type: PropertyType.String,
       isArray: false,
       maxLength: 3,
       
-    },    prikPopKlient : {
+    },
+    prikPopKlient : {
       key: 'prikPopKlient',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    prikPopPopis : {
+    },
+    prikPopPopis : {
       key: 'prikPopPopis',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vypisDuplicitaK : {
+    },
+    vypisDuplicitaK : {
       key: 'vypisDuplicitaK',
       type: PropertyType.Select,
       isArray: false,
@@ -297,163 +325,190 @@ export class AFBankovniUcet extends AFEntity {
       enumName: 'ElVypisDuplicita',
       enum: ElVypisDuplicita,
       
-    },    tokenPrikaz : {
+    },
+    tokenPrikaz : {
       key: 'tokenPrikaz',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    tokenPrikazPlatiDo : {
+    },
+    tokenPrikazPlatiDo : {
       key: 'tokenPrikazPlatiDo',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    tokenVypis : {
+    },
+    tokenVypis : {
       key: 'tokenVypis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    tokenVypisPlatiDo : {
+    },
+    tokenVypisPlatiDo : {
       key: 'tokenVypisPlatiDo',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    bucPrimarni : {
+    },
+    bucPrimarni : {
       key: 'bucPrimarni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    ulice : {
+    },
+    ulice : {
       key: 'ulice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mesto : {
+    },
+    mesto : {
       key: 'mesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    region : {
+    },
+    region : {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRegion,
       
-    },    psc : {
+    },
+    psc : {
       key: 'psc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    tel : {
+    },
+    tel : {
       key: 'tel',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mobil : {
+    },
+    mobil : {
       key: 'mobil',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    fax : {
+    },
+    fax : {
       key: 'fax',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    email : {
+    },
+    email : {
       key: 'email',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    www : {
+    },
+    www : {
       key: 'www',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vytvaretPreceneni : {
+    },
+    vytvaretPreceneni : {
       key: 'vytvaretPreceneni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    radaPrijem : {
+    },
+    radaPrijem : {
       key: 'radaPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadaBanka,
       
-    },    radaVydej : {
+    },
+    radaVydej : {
       key: 'radaVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadaBanka,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    smerKod : {
+    },
+    smerKod : {
       key: 'smerKod',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPenezniUstav,
       maxLength: 20,
       
-    },    primUcet : {
+    },
+    primUcet : {
       key: 'primUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    elBanFormatVypis : {
+    },
+    elBanFormatVypis : {
       key: 'elBanFormatVypis',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFFormatElektronickehoBankovnictvi,
       maxLength: 3,
       
-    },    elBanFormatPrikaz : {
+    },
+    elBanFormatPrikaz : {
       key: 'elBanFormatPrikaz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFFormatElektronickehoPrikazu,
       maxLength: 3,
       
-    },    stahovatVypisOd : {
+    },
+    stahovatVypisOd : {
       key: 'stahovatVypisOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    menaBanky : {
+    },
+    menaBanky : {
       key: 'menaBanky',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       maxLength: 20,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
@@ -461,8 +516,9 @@ export class AFBankovniUcet extends AFEntity {
       maxLength: 3,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -46,7 +46,8 @@ export class AFUzivatelskyDotaz extends AFEntity {
   uzivatel?: any
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Parametry (type: UZIVATELSKY_DOTAZ_PARAMETR) - params)
   params?: AFUzivatelskyDotazParametr[]
   // Vlastnosti (type: UZIVATELSKY_DOTAZ_VLASTNOST) - props)
@@ -59,85 +60,100 @@ export class AFUzivatelskyDotaz extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    dotaz : {
+    },
+    dotaz : {
       key: 'dotaz',
       type: PropertyType.String,
       isArray: false,
       
-    },    masterBeanKey : {
+    },
+    masterBeanKey : {
       key: 'masterBeanKey',
       type: PropertyType.String,
       isArray: false,
       maxLength: 100,
       
-    },    privatni : {
+    },
+    privatni : {
       key: 'privatni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    report : {
+    },
+    report : {
       key: 'report',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    uuid : {
+    },
+    uuid : {
       key: 'uuid',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    masterFormId : {
+    },
+    masterFormId : {
       key: 'masterFormId',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
@@ -145,8 +161,9 @@ export class AFUzivatelskyDotaz extends AFEntity {
       maxLength: 254,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -24,18 +24,21 @@ export class AFGlobalStore extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    klic : {
+    },
+    klic : {
       key: 'klic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    hodnota : {
+    },
+    hodnota : {
       key: 'hodnota',
       type: PropertyType.String,
       isArray: false,
       
     },
+
 
   }
 }

@@ -48,7 +48,8 @@ export class AFAtribut extends AFEntity {
   typAtributu?: AFTypAtributu
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -57,84 +58,99 @@ export class AFAtribut extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    valBoolean : {
+    },
+    valBoolean : {
       key: 'valBoolean',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    valInteger : {
+    },
+    valInteger : {
       key: 'valInteger',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    valNumeric : {
+    },
+    valNumeric : {
       key: 'valNumeric',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    valString : {
+    },
+    valString : {
       key: 'valString',
       type: PropertyType.String,
       isArray: false,
       
-    },    valDatCas : {
+    },
+    valDatCas : {
       key: 'valDatCas',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    hodnota : {
+    },
+    hodnota : {
       key: 'hodnota',
       type: PropertyType.String,
       isArray: false,
       
-    },    mj : {
+    },
+    mj : {
       key: 'mj',
       type: PropertyType.String,
       isArray: false,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    doklObch : {
+    },
+    doklObch : {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklFak : {
+    },
+    doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklSklad : {
+    },
+    doklSklad : {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovyPohyb,
       
-    },    doklInt : {
+    },
+    doklInt : {
       key: 'doklInt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    adresar : {
+    },
+    adresar : {
       key: 'adresar',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    typAtributu : {
+    },
+    typAtributu : {
       key: 'typAtributu',
       type: PropertyType.Relation,
       isArray: false,
@@ -142,8 +158,9 @@ export class AFAtribut extends AFEntity {
       maxLength: 20,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -3,7 +3,8 @@ import { hideBin } from 'yargs/helpers'
 import { addBasicAtuh } from './helpers/basciAuth'
 
 import { AFApiClient, AFApiConfig, AFFakturaPrijata, AFQueryOptions, EntityByName } from '../dist'
-import { AFEntity } from '../src'
+import { AFEntity, AFInterniDoklad } from '../src'
+import { AFFilter } from '../dist/AFFilter'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. Without! company path component.', demandOption: true})
@@ -25,9 +26,12 @@ if (argv.u && argv.p) {
   }
 }
 
+//['id', 'varSym', 'popis', ['uzivatelskeVazby', ['id', 'kod', 'vazbaTyp']], ['typDokl', ['id', 'kod', 'nazev', ['radaVydej', ['nazev', 'id', 'kod']]]]],
+
 const cls = EntityByName(argv.e || 'AFFakturaPriajata')
 const lQuery: AFQueryOptions<AFEntity, false> = {
-  detail: ['id', 'varSym', 'popis', ['typDokl', ['id', 'kod', 'nazev', ['radaVydej', ['nazev', 'id', 'kod']]]]]
+  detail: ['id', 'varSym', 'popis', ['uzivatelske-vazby', ['id', 'kod', 'vazbaTyp', 'modul', 'evidenceType', 'objectId', 'object']], ['typDokl', ['id', 'kod', 'nazev']]],
+  filter: new AFFilter("typDokl = '::td'", { td: 'INT.ICO.REVAL.IN'})
 } 
 
 const api = new AFApiClient(apiOpts)
@@ -35,7 +39,7 @@ const { data } = api.query(cls, lQuery)
 
 data.then((d) => {
   console.log('Done')
-  console.log((d as AFEntity[])[0])
+  console.log((d as AFInterniDoklad[])[0].uzivatelskeVazby)
 }).catch((e) => {
   console.error(e)
 })

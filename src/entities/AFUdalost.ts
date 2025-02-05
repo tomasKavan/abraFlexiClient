@@ -89,7 +89,8 @@ export class AFUdalost extends AFEntity {
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Náklady aktivity (type: NAKLAD) - naklady)
   naklady?: AFNaklad[]
   // Kontakty (type: ADR_KONTAKT) - kontakty)
@@ -102,38 +103,45 @@ export class AFUdalost extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    celodenni : {
+    },
+    celodenni : {
       key: 'celodenni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    dokonceni : {
+    },
+    dokonceni : {
       key: 'dokonceni',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    predmet : {
+    },
+    predmet : {
       key: 'predmet',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    prioritaK : {
+    },
+    prioritaK : {
       key: 'prioritaK',
       type: PropertyType.Select,
       isArray: false,
@@ -141,7 +149,8 @@ export class AFUdalost extends AFEntity {
       enumName: 'Priorita',
       enum: Priorita,
       
-    },    stavUdalK : {
+    },
+    stavUdalK : {
       key: 'stavUdalK',
       type: PropertyType.Select,
       isArray: false,
@@ -149,142 +158,165 @@ export class AFUdalost extends AFEntity {
       enumName: 'StavUdal',
       enum: StavUdal,
       
-    },    termin : {
+    },
+    termin : {
       key: 'termin',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    umisteni : {
+    },
+    umisteni : {
       key: 'umisteni',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    volno : {
+    },
+    volno : {
       key: 'volno',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zahajeni : {
+    },
+    zahajeni : {
       key: 'zahajeni',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    firmaExterni : {
+    },
+    firmaExterni : {
       key: 'firmaExterni',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    typAkt : {
+    },
+    typAkt : {
       key: 'typAkt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypAktivity,
       maxLength: 20,
       
-    },    zodpPrac : {
+    },
+    zodpPrac : {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    doklFak : {
+    },
+    doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklInt : {
+    },
+    doklInt : {
       key: 'doklInt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklObch : {
+    },
+    doklObch : {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklSklad : {
+    },
+    doklSklad : {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovyPohyb,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    kontakt : {
+    },
+    kontakt : {
       key: 'kontakt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFKontakt,
       
-    },    konektor : {
+    },
+    konektor : {
       key: 'konektor',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    report : {
+    },
+    report : {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    smlouva : {
+    },
+    smlouva : {
       key: 'smlouva',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSmlouva,
       maxLength: 20,
       
-    },    polSmlouvy : {
+    },
+    polSmlouvy : {
       key: 'polSmlouvy',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSmlouvaPolozka,
       maxLength: 64,
       
-    },    majetek : {
+    },
+    majetek : {
       key: 'majetek',
       type: PropertyType.Relation,
       isArray: false,
@@ -292,14 +324,15 @@ export class AFUdalost extends AFEntity {
       maxLength: 20,
       
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFPriloha
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

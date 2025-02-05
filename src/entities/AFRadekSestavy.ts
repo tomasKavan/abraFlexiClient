@@ -55,7 +55,8 @@ export class AFRadekSestavy extends AFEntity {
   // Standardní předpis sestavy (type: STD_PREDPIS_SESTAVY) - stdPredpisy)
   stdPredpisy?: AFStandardniPredpis[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Sumace v sestavách (type: SUMACE_SESTAVY) - sumace)
   sumace?: AFSumaceSestavy[]
 
@@ -66,106 +67,124 @@ export class AFRadekSestavy extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    cisRad : {
+    },
+    cisRad : {
       key: 'cisRad',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    kodRad : {
+    },
+    kodRad : {
       key: 'kodRad',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    cisRadXml : {
+    },
+    cisRadXml : {
       key: 'cisRadXml',
       type: PropertyType.Integer,
       isArray: false,
       digits: 4,
       
-    },    oznaceni : {
+    },
+    oznaceni : {
       key: 'oznaceni',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    hod1 : {
+    },
+    hod1 : {
       key: 'hod1',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hod2 : {
+    },
+    hod2 : {
       key: 'hod2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hod3 : {
+    },
+    hod3 : {
       key: 'hod3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hod4 : {
+    },
+    hod4 : {
       key: 'hod4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hod5 : {
+    },
+    hod5 : {
       key: 'hod5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hod6 : {
+    },
+    hod6 : {
       key: 'hod6',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    ucetniSestava : {
+    },
+    ucetniSestava : {
       key: 'ucetniSestava',
       type: PropertyType.Relation,
       isArray: false,
@@ -173,14 +192,15 @@ export class AFRadekSestavy extends AFEntity {
       maxLength: 6,
       
     },
+
     stdPredpisy : {
       key: 'stdPredpisy',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFStandardniPredpis
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

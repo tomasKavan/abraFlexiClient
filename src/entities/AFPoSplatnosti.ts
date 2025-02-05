@@ -29,22 +29,26 @@ export class AFPoSplatnosti extends AFEntity {
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    sumCelkemAkt : {
+    },
+    sumCelkemAkt : {
       key: 'sumCelkemAkt',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    uhrazeno : {
+    },
+    uhrazeno : {
       key: 'uhrazeno',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    symbolSplatnostiK : {
+    },
+    symbolSplatnostiK : {
       key: 'symbolSplatnostiK',
       type: PropertyType.Select,
       isArray: false,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
@@ -52,6 +56,7 @@ export class AFPoSplatnosti extends AFEntity {
       maxLength: 20,
       
     },
+
 
   }
 }

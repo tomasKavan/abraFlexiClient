@@ -82,7 +82,8 @@ export class AFPrikazKInkasuPolozka extends AFEntity {
   doklFak?: any
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -91,122 +92,145 @@ export class AFPrikazKInkasuPolozka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    buc : {
+    },
+    buc : {
       key: 'buc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    bic : {
+    },
+    bic : {
       key: 'bic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    iban : {
+    },
+    iban : {
       key: 'iban',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazBanky : {
+    },
+    nazBanky : {
       key: 'nazBanky',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mestoBanky : {
+    },
+    mestoBanky : {
       key: 'mestoBanky',
       type: PropertyType.String,
       isArray: false,
       
-    },    pscBanky : {
+    },
+    pscBanky : {
       key: 'pscBanky',
       type: PropertyType.String,
       isArray: false,
       
-    },    uliceBanky : {
+    },
+    uliceBanky : {
       key: 'uliceBanky',
       type: PropertyType.String,
       isArray: false,
       
-    },    nazPrijem : {
+    },
+    nazPrijem : {
       key: 'nazPrijem',
       type: PropertyType.String,
       isArray: false,
       
-    },    mestoPrijem : {
+    },
+    mestoPrijem : {
       key: 'mestoPrijem',
       type: PropertyType.String,
       isArray: false,
       
-    },    pscPrijem : {
+    },
+    pscPrijem : {
       key: 'pscPrijem',
       type: PropertyType.String,
       isArray: false,
       
-    },    ulicePrijem : {
+    },
+    ulicePrijem : {
       key: 'ulicePrijem',
       type: PropertyType.String,
       isArray: false,
       
-    },    castka : {
+    },
+    castka : {
       key: 'castka',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    varSymPrijem : {
+    },
+    varSymPrijem : {
       key: 'varSymPrijem',
       type: PropertyType.String,
       isArray: false,
       
-    },    specSymPrijem : {
+    },
+    specSymPrijem : {
       key: 'specSymPrijem',
       type: PropertyType.String,
       isArray: false,
       
-    },    varSymPrikaz : {
+    },
+    varSymPrikaz : {
       key: 'varSymPrikaz',
       type: PropertyType.String,
       isArray: false,
       
-    },    specSymPrikaz : {
+    },
+    specSymPrikaz : {
       key: 'specSymPrikaz',
       type: PropertyType.String,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       
-    },    datSplat : {
+    },
+    datSplat : {
       key: 'datSplat',
       type: PropertyType.Date,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    kontakt : {
+    },
+    kontakt : {
       key: 'kontakt',
       type: PropertyType.String,
       isArray: false,
       
-    },    poplatekK : {
+    },
+    poplatekK : {
       key: 'poplatekK',
       type: PropertyType.Select,
       isArray: false,
@@ -214,64 +238,74 @@ export class AFPrikazKInkasuPolozka extends AFEntity {
       enumName: 'ElPrikazPoplatek',
       enum: ElPrikazPoplatek,
       
-    },    konSym : {
+    },
+    konSym : {
       key: 'konSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    transakceVBanceId : {
+    },
+    transakceVBanceId : {
       key: 'transakceVBanceId',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    datSplatPrik : {
+    },
+    datSplatPrik : {
       key: 'datSplatPrik',
       type: PropertyType.Date,
       isArray: false,
       
-    },    prikaz : {
+    },
+    prikaz : {
       key: 'prikaz',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPrikazKUhrade,
       
-    },    faStat : {
+    },
+    faStat : {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    baStat : {
+    },
+    baStat : {
       key: 'baStat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    smerKod : {
+    },
+    smerKod : {
       key: 'smerKod',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPenezniUstav,
       maxLength: 20,
       
-    },    doklFak : {
+    },
+    doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

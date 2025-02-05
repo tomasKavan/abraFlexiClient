@@ -90,7 +90,8 @@ export class AFSkupinaZbozi extends AFEntity {
   typOrganizace?: AFTypOrganizace
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -99,62 +100,73 @@ export class AFSkupinaZbozi extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typCenyDphK : {
+    },
+    typCenyDphK : {
       key: 'typCenyDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -162,7 +174,8 @@ export class AFSkupinaZbozi extends AFEntity {
       enumName: 'TypCeny',
       enum: TypCeny,
       
-    },    typCenyVychoziK : {
+    },
+    typCenyVychoziK : {
       key: 'typCenyVychoziK',
       type: PropertyType.Select,
       isArray: false,
@@ -170,7 +183,8 @@ export class AFSkupinaZbozi extends AFEntity {
       enumName: 'TypCenyVychozi',
       enum: TypCenyVychozi,
       
-    },    typVypCenyK : {
+    },
+    typVypCenyK : {
       key: 'typVypCenyK',
       type: PropertyType.Select,
       isArray: false,
@@ -178,13 +192,15 @@ export class AFSkupinaZbozi extends AFEntity {
       enumName: 'TypVypCeny',
       enum: TypVypCeny,
       
-    },    procZakl : {
+    },
+    procZakl : {
       key: 'procZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    typCenyVychozi25K : {
+    },
+    typCenyVychozi25K : {
       key: 'typCenyVychozi25K',
       type: PropertyType.Select,
       isArray: false,
@@ -192,7 +208,8 @@ export class AFSkupinaZbozi extends AFEntity {
       enumName: 'TypCenyVychozi',
       enum: TypCenyVychozi,
       
-    },    typVypCeny25K : {
+    },
+    typVypCeny25K : {
       key: 'typVypCeny25K',
       type: PropertyType.Select,
       isArray: false,
@@ -200,55 +217,64 @@ export class AFSkupinaZbozi extends AFEntity {
       enumName: 'TypVypCeny',
       enum: TypVypCeny,
       
-    },    limMnoz2 : {
+    },
+    limMnoz2 : {
       key: 'limMnoz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz3 : {
+    },
+    limMnoz3 : {
       key: 'limMnoz3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz4 : {
+    },
+    limMnoz4 : {
       key: 'limMnoz4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    limMnoz5 : {
+    },
+    limMnoz5 : {
       key: 'limMnoz5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    procento2 : {
+    },
+    procento2 : {
       key: 'procento2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento3 : {
+    },
+    procento3 : {
       key: 'procento3',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento4 : {
+    },
+    procento4 : {
       key: 'procento4',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    procento5 : {
+    },
+    procento5 : {
       key: 'procento5',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    zaokrJakK : {
+    },
+    zaokrJakK : {
       key: 'zaokrJakK',
       type: PropertyType.Select,
       isArray: false,
@@ -256,7 +282,8 @@ export class AFSkupinaZbozi extends AFEntity {
       enumName: 'ZaokrJak',
       enum: ZaokrJak,
       
-    },    zaokrNaK : {
+    },
+    zaokrNaK : {
       key: 'zaokrNaK',
       type: PropertyType.Select,
       isArray: false,
@@ -264,70 +291,81 @@ export class AFSkupinaZbozi extends AFEntity {
       enumName: 'ZaokrNa',
       enum: ZaokrNa,
       
-    },    hlidatMinMarzi : {
+    },
+    hlidatMinMarzi : {
       key: 'hlidatMinMarzi',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    minMarze : {
+    },
+    minMarze : {
       key: 'minMarze',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    workFlow : {
+    },
+    workFlow : {
       key: 'workFlow',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    ucetProtiPfa : {
+    },
+    ucetProtiPfa : {
       key: 'ucetProtiPfa',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    ucetProtiVfa : {
+    },
+    ucetProtiVfa : {
       key: 'ucetProtiVfa',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    ucetProtiSklp : {
+    },
+    ucetProtiSklp : {
       key: 'ucetProtiSklp',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    ucetProtiSklv : {
+    },
+    ucetProtiSklv : {
       key: 'ucetProtiSklv',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    ucetProtiSklHolyv : {
+    },
+    ucetProtiSklHolyv : {
       key: 'ucetProtiSklHolyv',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    ucetProtiSklPrevv : {
+    },
+    ucetProtiSklPrevv : {
       key: 'ucetProtiSklPrevv',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    typOrganizace : {
+    },
+    typOrganizace : {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
@@ -335,8 +373,9 @@ export class AFSkupinaZbozi extends AFEntity {
       maxLength: 20,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -89,7 +89,8 @@ export class AFKontakt extends AFEntity {
   // Události (type: ADR_UDALOST) - udalosti)
   udalosti?: AFUdalost[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -98,185 +99,218 @@ export class AFKontakt extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    ulice : {
+    },
+    ulice : {
       key: 'ulice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mesto : {
+    },
+    mesto : {
       key: 'mesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    psc : {
+    },
+    psc : {
       key: 'psc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    region : {
+    },
+    region : {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRegion,
       
-    },    tel : {
+    },
+    tel : {
       key: 'tel',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mobil : {
+    },
+    mobil : {
       key: 'mobil',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    fax : {
+    },
+    fax : {
       key: 'fax',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    email : {
+    },
+    email : {
       key: 'email',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    www : {
+    },
+    www : {
       key: 'www',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    prijmeni : {
+    },
+    prijmeni : {
       key: 'prijmeni',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    jmeno : {
+    },
+    jmeno : {
       key: 'jmeno',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    osloveni : {
+    },
+    osloveni : {
       key: 'osloveni',
       type: PropertyType.String,
       isArray: false,
       
-    },    titul : {
+    },
+    titul : {
       key: 'titul',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    titulZa : {
+    },
+    titulZa : {
       key: 'titulZa',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    funkce : {
+    },
+    funkce : {
       key: 'funkce',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    oddeleni : {
+    },
+    oddeleni : {
       key: 'oddeleni',
       type: PropertyType.String,
       isArray: false,
       
-    },    primarni : {
+    },
+    primarni : {
       key: 'primarni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    odesilatFak : {
+    },
+    odesilatFak : {
       key: 'odesilatFak',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    odesilatObj : {
+    },
+    odesilatObj : {
       key: 'odesilatObj',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    odesilatNab : {
+    },
+    odesilatNab : {
       key: 'odesilatNab',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    odesilatPpt : {
+    },
+    odesilatPpt : {
       key: 'odesilatPpt',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    odesilatSkl : {
+    },
+    odesilatSkl : {
       key: 'odesilatSkl',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    odesilatPok : {
+    },
+    odesilatPok : {
       key: 'odesilatPok',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datNaroz : {
+    },
+    datNaroz : {
       key: 'datNaroz',
       type: PropertyType.Date,
       isArray: false,
       
-    },    rodCis : {
+    },
+    rodCis : {
       key: 'rodCis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    username : {
+    },
+    username : {
       key: 'username',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
@@ -284,6 +318,7 @@ export class AFKontakt extends AFEntity {
       maxLength: 20,
       
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
@@ -296,8 +331,8 @@ export class AFKontakt extends AFEntity {
       isArray: true,
       afClass: AFUdalost
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

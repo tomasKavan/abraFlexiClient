@@ -39,7 +39,8 @@ export class AFPracovniPomerHlavicka extends AFEntity {
   osoba?: AFOsobaHlavicka
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -48,72 +49,85 @@ export class AFPracovniPomerHlavicka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    aktivniOd : {
+    },
+    aktivniOd : {
       key: 'aktivniOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    aktivniDo : {
+    },
+    aktivniDo : {
       key: 'aktivniDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    hlavni : {
+    },
+    hlavni : {
       key: 'hlavni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zacatek : {
+    },
+    zacatek : {
       key: 'zacatek',
       type: PropertyType.Date,
       isArray: false,
       
-    },    skutecnyNastup : {
+    },
+    skutecnyNastup : {
       key: 'skutecnyNastup',
       type: PropertyType.Date,
       isArray: false,
       
-    },    konecPomeru : {
+    },
+    konecPomeru : {
       key: 'konecPomeru',
       type: PropertyType.Date,
       isArray: false,
       
-    },    konecZkusDoby : {
+    },
+    konecZkusDoby : {
       key: 'konecZkusDoby',
       type: PropertyType.Date,
       isArray: false,
       
-    },    konecUrciteDoby : {
+    },
+    konecUrciteDoby : {
       key: 'konecUrciteDoby',
       type: PropertyType.Date,
       isArray: false,
       
-    },    osoba : {
+    },
+    osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOsobaHlavicka,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

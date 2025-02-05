@@ -72,12 +72,14 @@ export class AFVazebniDoklad extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    idVazby : {
+    },
+    idVazby : {
       key: 'idVazby',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typVazbyK : {
+    },
+    typVazbyK : {
       key: 'typVazbyK',
       type: PropertyType.Select,
       isArray: false,
@@ -85,134 +87,158 @@ export class AFVazebniDoklad extends AFEntity {
       enumName: 'TypVazbyDokl',
       enum: TypVazbyDokl,
       
-    },    storno : {
+    },
+    storno : {
       key: 'storno',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    idDokl : {
+    },
+    idDokl : {
       key: 'idDokl',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    modulK : {
+    },
+    modulK : {
       key: 'modulK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'ModulUcetni',
       enum: ModulUcetni,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datUcto : {
+    },
+    datUcto : {
       key: 'datUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    sumCelkem : {
+    },
+    sumCelkem : {
       key: 'sumCelkem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkemMen : {
+    },
+    sumCelkemMen : {
       key: 'sumCelkemMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    uroven : {
+    },
+    uroven : {
       key: 'uroven',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    stavK : {
+    },
+    stavK : {
       key: 'stavK',
       type: PropertyType.Select,
       isArray: false,
       
-    },    typDokl : {
+    },
+    typDokl : {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypDokladu,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    nazFirmy : {
+    },
+    nazFirmy : {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mesto : {
+    },
+    mesto : {
       key: 'mesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    juhSum : {
+    },
+    juhSum : {
       key: 'juhSum',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    juhSumMen : {
+    },
+    juhSumMen : {
       key: 'juhSumMen',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zbyvaUhradit : {
+    },
+    zbyvaUhradit : {
       key: 'zbyvaUhradit',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    zbyvaUhraditMen : {
+    },
+    zbyvaUhraditMen : {
       key: 'zbyvaUhraditMen',
       type: PropertyType.Numeric,
       isArray: false,
       
     },
+
 
   }
 }

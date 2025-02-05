@@ -56,105 +56,122 @@ export class AFVyrobniCislo extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    vyrobniCisloHlav : {
+    },
+    vyrobniCisloHlav : {
       key: 'vyrobniCisloHlav',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 20,
       
-    },    doklFakPrijem : {
+    },
+    doklFakPrijem : {
       key: 'doklFakPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklFakVydej : {
+    },
+    doklFakVydej : {
       key: 'doklFakVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklIntPrijem : {
+    },
+    doklIntPrijem : {
       key: 'doklIntPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklIntVydej : {
+    },
+    doklIntVydej : {
       key: 'doklIntVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklSkladPrijem : {
+    },
+    doklSkladPrijem : {
       key: 'doklSkladPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovyPohyb,
       
-    },    doklSkladVydej : {
+    },
+    doklSkladVydej : {
       key: 'doklSkladVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovyPohyb,
       
-    },    idPolFakPrijem : {
+    },
+    idPolFakPrijem : {
       key: 'idPolFakPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    idPolFakVydej : {
+    },
+    idPolFakVydej : {
       key: 'idPolFakVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    idPolIntPrijem : {
+    },
+    idPolIntPrijem : {
       key: 'idPolIntPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    idPolIntVydej : {
+    },
+    idPolIntVydej : {
       key: 'idPolIntVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    idPolSkladPrijem : {
+    },
+    idPolSkladPrijem : {
       key: 'idPolSkladPrijem',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovyPohybPolozka,
       
-    },    idPolSkladVydej : {
+    },
+    idPolSkladVydej : {
       key: 'idPolSkladVydej',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovyPohybPolozka,
       
     },
+
 
   }
 }

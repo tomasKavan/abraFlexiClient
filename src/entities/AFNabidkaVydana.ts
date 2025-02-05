@@ -212,7 +212,8 @@ export class AFNabidkaVydana extends AFEntity {
   stavDoklObch?: AFStavObchodnihoDokladu
 
   // Navázané doklady (type: VAZEBNI_DOKLAD) - vazebni-doklady)
-  vazebniDoklady?: AFVazebniDoklad[]
+  'vazebni-doklady'?: AFVazebniDoklad[]
+  get vazebniDoklady(): AFVazebniDoklad[] | undefined { return this['vazebni-doklady']}
   // Položky nabídky vydané (type: NABIDKA_OUT_POLOZKA) - polozkyDokladu)
   polozkyDokladu?: AFNabidkaVydanaPolozka[]
   // Přílohy (type: PRILOHA) - prilohy)
@@ -220,7 +221,8 @@ export class AFNabidkaVydana extends AFEntity {
   // Události (type: ADR_UDALOST) - udalosti)
   udalosti?: AFUdalost[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Vazby mezi doklady (type: VAZBA_MEZI_DOKLADY) - vazby)
   vazby?: AFVazba[]
 
@@ -231,18 +233,21 @@ export class AFNabidkaVydana extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    zamekK : {
+    },
+    zamekK : {
       key: 'zamekK',
       type: PropertyType.Select,
       isArray: false,
@@ -250,233 +255,273 @@ export class AFNabidkaVydana extends AFEntity {
       enumName: 'Zamek',
       enum: Zamek,
       
-    },    cisSml : {
+    },
+    cisSml : {
       key: 'cisSml',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    doprava : {
+    },
+    doprava : {
       key: 'doprava',
       type: PropertyType.String,
       isArray: false,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datTermin : {
+    },
+    datTermin : {
       key: 'datTermin',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datSazbyDph : {
+    },
+    datSazbyDph : {
       key: 'datSazbyDph',
       type: PropertyType.Date,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    uvodTxt : {
+    },
+    uvodTxt : {
       key: 'uvodTxt',
       type: PropertyType.String,
       isArray: false,
       
-    },    zavTxt : {
+    },
+    zavTxt : {
       key: 'zavTxt',
       type: PropertyType.String,
       isArray: false,
       
-    },    sumOsv : {
+    },
+    sumOsv : {
       key: 'sumOsv',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklSniz : {
+    },
+    sumZklSniz : {
       key: 'sumZklSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklSniz2 : {
+    },
+    sumZklSniz2 : {
       key: 'sumZklSniz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklZakl : {
+    },
+    sumZklZakl : {
       key: 'sumZklZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklCelkem : {
+    },
+    sumZklCelkem : {
       key: 'sumZklCelkem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphSniz : {
+    },
+    sumDphSniz : {
       key: 'sumDphSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphSniz2 : {
+    },
+    sumDphSniz2 : {
       key: 'sumDphSniz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphZakl : {
+    },
+    sumDphZakl : {
       key: 'sumDphZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphCelkem : {
+    },
+    sumDphCelkem : {
       key: 'sumDphCelkem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkSniz : {
+    },
+    sumCelkSniz : {
       key: 'sumCelkSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkSniz2 : {
+    },
+    sumCelkSniz2 : {
       key: 'sumCelkSniz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkZakl : {
+    },
+    sumCelkZakl : {
       key: 'sumCelkZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkem : {
+    },
+    sumCelkem : {
       key: 'sumCelkem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumOsvMen : {
+    },
+    sumOsvMen : {
       key: 'sumOsvMen',
       type: PropertyType.Numeric,
       isArray: false,
       
-    },    sumZklSnizMen : {
+    },
+    sumZklSnizMen : {
       key: 'sumZklSnizMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklSniz2Men : {
+    },
+    sumZklSniz2Men : {
       key: 'sumZklSniz2Men',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklZaklMen : {
+    },
+    sumZklZaklMen : {
       key: 'sumZklZaklMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklCelkemMen : {
+    },
+    sumZklCelkemMen : {
       key: 'sumZklCelkemMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphZaklMen : {
+    },
+    sumDphZaklMen : {
       key: 'sumDphZaklMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphSnizMen : {
+    },
+    sumDphSnizMen : {
       key: 'sumDphSnizMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphSniz2Men : {
+    },
+    sumDphSniz2Men : {
       key: 'sumDphSniz2Men',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphCelkemMen : {
+    },
+    sumDphCelkemMen : {
       key: 'sumDphCelkemMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkSnizMen : {
+    },
+    sumCelkSnizMen : {
       key: 'sumCelkSnizMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkSniz2Men : {
+    },
+    sumCelkSniz2Men : {
       key: 'sumCelkSniz2Men',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkZaklMen : {
+    },
+    sumCelkZaklMen : {
       key: 'sumCelkZaklMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumCelkemMen : {
+    },
+    sumCelkemMen : {
       key: 'sumCelkemMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumNaklady : {
+    },
+    sumNaklady : {
       key: 'sumNaklady',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    slevaDokl : {
+    },
+    slevaDokl : {
       key: 'slevaDokl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    kurz : {
+    },
+    kurz : {
       key: 'kurz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    kurzMnozstvi : {
+    },
+    kurzMnozstvi : {
       key: 'kurzMnozstvi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    stavUzivK : {
+    },
+    stavUzivK : {
       key: 'stavUzivK',
       type: PropertyType.Select,
       isArray: false,
@@ -484,288 +529,335 @@ export class AFNabidkaVydana extends AFEntity {
       enumName: 'StavDoklObch',
       enum: StavDoklObch,
       
-    },    nazFirmy : {
+    },
+    nazFirmy : {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    ulice : {
+    },
+    ulice : {
       key: 'ulice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    mesto : {
+    },
+    mesto : {
       key: 'mesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    psc : {
+    },
+    psc : {
       key: 'psc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    eanKod : {
+    },
+    eanKod : {
       key: 'eanKod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    ic : {
+    },
+    ic : {
       key: 'ic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    dic : {
+    },
+    dic : {
       key: 'dic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    postovniShodna : {
+    },
+    postovniShodna : {
       key: 'postovniShodna',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    faNazev : {
+    },
+    faNazev : {
       key: 'faNazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faNazev2 : {
+    },
+    faNazev2 : {
       key: 'faNazev2',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faUlice : {
+    },
+    faUlice : {
       key: 'faUlice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faMesto : {
+    },
+    faMesto : {
       key: 'faMesto',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faPsc : {
+    },
+    faPsc : {
       key: 'faPsc',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    faEanKod : {
+    },
+    faEanKod : {
       key: 'faEanKod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    bezPolozek : {
+    },
+    bezPolozek : {
       key: 'bezPolozek',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    szbDphSniz : {
+    },
+    szbDphSniz : {
       key: 'szbDphSniz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    szbDphSniz2 : {
+    },
+    szbDphSniz2 : {
       key: 'szbDphSniz2',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    szbDphZakl : {
+    },
+    szbDphZakl : {
       key: 'szbDphZakl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    storno : {
+    },
+    storno : {
       key: 'storno',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    typDokl : {
+    },
+    typDokl : {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypNabidkyVydane,
       
-    },    mena : {
+    },
+    mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMena,
       
-    },    firma : {
+    },
+    firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    stat : {
+    },
+    stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    faStat : {
+    },
+    faStat : {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStat,
       maxLength: 3,
       
-    },    region : {
+    },
+    region : {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRegion,
       
-    },    faRegion : {
+    },
+    faRegion : {
       key: 'faRegion',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRegion,
       
-    },    mistUrc : {
+    },
+    mistUrc : {
       key: 'mistUrc',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMistoUrceni,
       
-    },    statDph : {
+    },
+    statDph : {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStatDph,
       maxLength: 3,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    cinnost : {
+    },
+    cinnost : {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCinnost,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    zodpOsoba : {
+    },
+    zodpOsoba : {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    kontaktOsoba : {
+    },
+    kontaktOsoba : {
       key: 'kontaktOsoba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFKontakt,
       
-    },    kontaktJmeno : {
+    },
+    kontaktJmeno : {
       key: 'kontaktJmeno',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    kontaktEmail : {
+    },
+    kontaktEmail : {
       key: 'kontaktEmail',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    kontaktTel : {
+    },
+    kontaktTel : {
       key: 'kontaktTel',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    rada : {
+    },
+    rada : {
       key: 'rada',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFRadaNabidkyVydane,
       
-    },    formaDopravy : {
+    },
+    formaDopravy : {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFFormaDopravy,
       
-    },    uuid : {
+    },
+    uuid : {
       key: 'uuid',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    source : {
+    },
+    source : {
       key: 'source',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    procReal : {
+    },
+    procReal : {
       key: 'procReal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    typDoklNabFak : {
+    },
+    typDoklNabFak : {
       key: 'typDoklNabFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypObjednavkyPrijate,
       
-    },    stavDoklObch : {
+    },
+    stavDoklObch : {
       key: 'stavDoklObch',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStavObchodnihoDokladu,
       
     },
-    vazebniDoklady : {
-      key: 'vazebniDoklady',
+
+    'vazebni-doklady' : {
+      key: 'vazebni-doklady',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFVazebniDoklad
@@ -788,8 +880,8 @@ export class AFNabidkaVydana extends AFEntity {
       isArray: true,
       afClass: AFUdalost
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

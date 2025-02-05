@@ -1,4 +1,4 @@
-    <%= relationName %> : {
+    <% if (getter) { %>'<% } %><%= relationName %><% if (getter) { %>'<% } %> : {
       key: '<%= relationName %>',
       type: PropertyType.Relation,
       isArray: true,

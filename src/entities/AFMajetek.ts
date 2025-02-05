@@ -161,15 +161,19 @@ export class AFMajetek extends AFEntity {
   uzivatel?: any
 
   // Daňové odpisy (type: DANOVY_ODPIS) - danove-odpisy)
-  danoveOdpisy?: AFDanovyOdpis[]
+  'danove-odpisy'?: AFDanovyOdpis[]
+  get danoveOdpisy(): AFDanovyOdpis[] | undefined { return this['danove-odpisy']}
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Účetní odpisy (type: UCETNI_ODPIS) - ucetni-odpisy)
-  ucetniOdpisy?: AFUcetniOdpis[]
+  'ucetni-odpisy'?: AFUcetniOdpis[]
+  get ucetniOdpisy(): AFUcetniOdpis[] | undefined { return this['ucetni-odpisy']}
   // Události (type: MAJETEK_UDALOST) - majetek-udalosti)
-  majetekUdalosti?: AFMajetekUdalost[]
+  'majetek-udalosti'?: AFMajetekUdalost[]
+  get majetekUdalosti(): AFMajetekUdalost[] | undefined { return this['majetek-udalosti']}
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Zápůjčky/odpovědná osoba (type: ZAPUJCKA) - zapujcky)
   zapujcky?: AFZapujcka[]
 
@@ -180,73 +184,86 @@ export class AFMajetek extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cena : {
+    },
+    cena : {
       key: 'cena',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    kusySoubor : {
+    },
+    kusySoubor : {
       key: 'kusySoubor',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    druhK : {
+    },
+    druhK : {
       key: 'druhK',
       type: PropertyType.Select,
       isArray: false,
@@ -254,35 +271,41 @@ export class AFMajetek extends AFEntity {
       enumName: 'DruhMaj',
       enum: DruhMaj,
       
-    },    cidPoriz : {
+    },
+    cidPoriz : {
       key: 'cidPoriz',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    zpusPor : {
+    },
+    zpusPor : {
       key: 'zpusPor',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    datKoupe : {
+    },
+    datKoupe : {
       key: 'datKoupe',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datVyroby : {
+    },
+    datVyroby : {
       key: 'datVyroby',
       type: PropertyType.Date,
       isArray: false,
       
-    },    vyrCis : {
+    },
+    vyrCis : {
       key: 'vyrCis',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    mjZarukyK : {
+    },
+    mjZarukyK : {
       key: 'mjZarukyK',
       type: PropertyType.Select,
       isArray: false,
@@ -290,49 +313,58 @@ export class AFMajetek extends AFEntity {
       enumName: 'MjZaruky',
       enum: MjZaruky,
       
-    },    zaruka : {
+    },
+    zaruka : {
       key: 'zaruka',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datZar : {
+    },
+    datZar : {
       key: 'datZar',
       type: PropertyType.Date,
       isArray: false,
       
-    },    stariPor : {
+    },
+    stariPor : {
       key: 'stariPor',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    zustUcet : {
+    },
+    zustUcet : {
       key: 'zustUcet',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zustDan : {
+    },
+    zustDan : {
       key: 'zustDan',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    techZhod : {
+    },
+    techZhod : {
       key: 'techZhod',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datZacDan : {
+    },
+    datZacDan : {
       key: 'datZacDan',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datZacUcet : {
+    },
+    datZacUcet : {
       key: 'datZacUcet',
       type: PropertyType.Date,
       isArray: false,
       
-    },    zpusOdpK : {
+    },
+    zpusOdpK : {
       key: 'zpusOdpK',
       type: PropertyType.Select,
       isArray: false,
@@ -340,7 +372,8 @@ export class AFMajetek extends AFEntity {
       enumName: 'ZpusobOdp',
       enum: ZpusobOdp,
       
-    },    zvysZrychK : {
+    },
+    zvysZrychK : {
       key: 'zvysZrychK',
       type: PropertyType.Select,
       isArray: false,
@@ -348,7 +381,8 @@ export class AFMajetek extends AFEntity {
       enumName: 'ZvysZrych',
       enum: ZvysZrych,
       
-    },    nahrUcetOdpK : {
+    },
+    nahrUcetOdpK : {
       key: 'nahrUcetOdpK',
       type: PropertyType.Select,
       isArray: false,
@@ -356,39 +390,46 @@ export class AFMajetek extends AFEntity {
       enumName: 'NahrUcet',
       enum: NahrUcet,
       
-    },    predpisUcetOdp : {
+    },
+    predpisUcetOdp : {
       key: 'predpisUcetOdp',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 12,
       
-    },    eanKod : {
+    },
+    eanKod : {
       key: 'eanKod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    uctovatZar : {
+    },
+    uctovatZar : {
       key: 'uctovatZar',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    stariTechZhod : {
+    },
+    stariTechZhod : {
       key: 'stariTechZhod',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    datUdalZar : {
+    },
+    datUdalZar : {
       key: 'datUdalZar',
       type: PropertyType.Date,
       isArray: false,
       
-    },    datUdalVyr : {
+    },
+    datUdalVyr : {
       key: 'datUdalVyr',
       type: PropertyType.Date,
       isArray: false,
       
-    },    zamekK : {
+    },
+    zamekK : {
       key: 'zamekK',
       type: PropertyType.Select,
       isArray: false,
@@ -396,191 +437,221 @@ export class AFMajetek extends AFEntity {
       enumName: 'Zamek',
       enum: Zamek,
       
-    },    skp : {
+    },
+    skp : {
       key: 'skp',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    katastrUzemi : {
+    },
+    katastrUzemi : {
       key: 'katastrUzemi',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    parcela : {
+    },
+    parcela : {
       key: 'parcela',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozCislo : {
+    },
+    vozCislo : {
       key: 'vozCislo',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozSpz : {
+    },
+    vozSpz : {
       key: 'vozSpz',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozZnacka : {
+    },
+    vozZnacka : {
       key: 'vozZnacka',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozModel : {
+    },
+    vozModel : {
       key: 'vozModel',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozTyp : {
+    },
+    vozTyp : {
       key: 'vozTyp',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozObjem : {
+    },
+    vozObjem : {
       key: 'vozObjem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    vozHavar : {
+    },
+    vozHavar : {
       key: 'vozHavar',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    vozHavarVyse : {
+    },
+    vozHavarVyse : {
       key: 'vozHavarVyse',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    vozVybava : {
+    },
+    vozVybava : {
       key: 'vozVybava',
       type: PropertyType.String,
       isArray: false,
       
-    },    sazba : {
+    },
+    sazba : {
       key: 'sazba',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFOdpisovaSkupina,
       maxLength: 20,
       
-    },    mistnost : {
+    },
+    mistnost : {
       key: 'mistnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUmisteni,
       maxLength: 20,
       
-    },    sekce : {
+    },
+    sekce : {
       key: 'sekce',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUmisteni,
       maxLength: 20,
       
-    },    objekt : {
+    },
+    objekt : {
       key: 'objekt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUmisteni,
       maxLength: 20,
       
-    },    typMajetku : {
+    },
+    typMajetku : {
       key: 'typMajetku',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypMajetku,
       maxLength: 20,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    doklFak : {
+    },
+    doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFFakturaPrijata,
       
-    },    dodavatel : {
+    },
+    dodavatel : {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    vyrobce : {
+    },
+    vyrobce : {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       maxLength: 20,
       
-    },    primarniUcet : {
+    },
+    primarniUcet : {
       key: 'primarniUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    protiUcetZarazeni : {
+    },
+    protiUcetZarazeni : {
       key: 'protiUcetZarazeni',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    opravnyUcet : {
+    },
+    opravnyUcet : {
       key: 'opravnyUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    odpisovyUcet : {
+    },
+    odpisovyUcet : {
       key: 'odpisovyUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    zustVyrazUcet : {
+    },
+    zustVyrazUcet : {
       key: 'zustVyrazUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
@@ -588,8 +659,9 @@ export class AFMajetek extends AFEntity {
       maxLength: 254,
       
     },
-    danoveOdpisy : {
-      key: 'danoveOdpisy',
+
+    'danove-odpisy' : {
+      key: 'danove-odpisy',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFDanovyOdpis
@@ -600,20 +672,20 @@ export class AFMajetek extends AFEntity {
       isArray: true,
       afClass: AFPriloha
     },
-    ucetniOdpisy : {
-      key: 'ucetniOdpisy',
+    'ucetni-odpisy' : {
+      key: 'ucetni-odpisy',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUcetniOdpis
     },
-    majetekUdalosti : {
-      key: 'majetekUdalosti',
+    'majetek-udalosti' : {
+      key: 'majetek-udalosti',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFMajetekUdalost
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

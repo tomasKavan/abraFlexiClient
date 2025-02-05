@@ -61,7 +61,8 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
   typDoklFak?: AFTypFakturyPrijate
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -70,82 +71,97 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    autoGen : {
+    },
+    autoGen : {
       key: 'autoGen',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    den : {
+    },
+    den : {
       key: 'den',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesic : {
+    },
+    mesic : {
       key: 'mesic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    preplatky : {
+    },
+    preplatky : {
       key: 'preplatky',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    zpusFaktK : {
+    },
+    zpusFaktK : {
       key: 'zpusFaktK',
       type: PropertyType.Select,
       isArray: false,
@@ -153,32 +169,38 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
       enumName: 'ZpusobFakt',
       enum: ZpusobFakt,
       
-    },    dnyFakt : {
+    },
+    dnyFakt : {
       key: 'dnyFakt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    varSymFakt : {
+    },
+    varSymFakt : {
       key: 'varSymFakt',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datVystZDuzp : {
+    },
+    datVystZDuzp : {
       key: 'datVystZDuzp',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    generovatNuloveFaktury : {
+    },
+    generovatNuloveFaktury : {
       key: 'generovatNuloveFaktury',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    workFlow : {
+    },
+    workFlow : {
       key: 'workFlow',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typPohybuK : {
+    },
+    typPohybuK : {
       key: 'typPohybuK',
       type: PropertyType.Select,
       isArray: false,
@@ -186,20 +208,23 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
       enumName: 'TypPohybu',
       enum: TypPohybu,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    typDoklFak : {
+    },
+    typDoklFak : {
       key: 'typDoklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypFakturyPrijate,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -34,45 +34,53 @@ export class AFDoporuceni extends AFEntity {
       type: PropertyType.String,
       isArray: false,
       
-    },    doporucenaHodnota : {
+    },
+    doporucenaHodnota : {
       key: 'doporucenaHodnota',
       type: PropertyType.String,
       isArray: false,
       
-    },    typHodnoty : {
+    },
+    typHodnoty : {
       key: 'typHodnoty',
       type: PropertyType.String,
       isArray: false,
       
-    },    vlastnost : {
+    },
+    vlastnost : {
       key: 'vlastnost',
       type: PropertyType.String,
       isArray: false,
       
-    },    automaticky : {
+    },
+    automaticky : {
       key: 'automaticky',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    doporuceniCilK : {
+    },
+    doporuceniCilK : {
       key: 'doporuceniCilK',
       type: PropertyType.Select,
       isArray: false,
       enumName: 'DoporuceniCil',
       enum: DoporuceniCil,
       
-    },    doklad : {
+    },
+    doklad : {
       key: 'doklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
     },
+
 
   }
 }

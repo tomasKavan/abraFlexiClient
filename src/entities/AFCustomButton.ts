@@ -28,7 +28,8 @@ export class AFCustomButton extends AFEntity {
   browser?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -37,45 +38,53 @@ export class AFCustomButton extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    url : {
+    },
+    url : {
       key: 'url',
       type: PropertyType.String,
       isArray: false,
       
-    },    title : {
+    },
+    title : {
       key: 'title',
       type: PropertyType.String,
       isArray: false,
       
-    },    description : {
+    },
+    description : {
       key: 'description',
       type: PropertyType.String,
       isArray: false,
       
-    },    evidence : {
+    },
+    evidence : {
       key: 'evidence',
       type: PropertyType.String,
       isArray: false,
       
-    },    location : {
+    },
+    location : {
       key: 'location',
       type: PropertyType.String,
       isArray: false,
       
-    },    browser : {
+    },
+    browser : {
       key: 'browser',
       type: PropertyType.String,
       isArray: false,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

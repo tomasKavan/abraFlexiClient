@@ -30,34 +30,40 @@ export class AFSouhrnneHlaseniDph extends AFEntity {
       type: PropertyType.String,
       isArray: false,
       
-    },    kodDphStatu : {
+    },
+    kodDphStatu : {
       key: 'kodDphStatu',
       type: PropertyType.String,
       isArray: false,
       
-    },    dic : {
+    },
+    dic : {
       key: 'dic',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    kodPlneni : {
+    },
+    kodPlneni : {
       key: 'kodPlneni',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocetPlneni : {
+    },
+    pocetPlneni : {
       key: 'pocetPlneni',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    sumZkl : {
+    },
+    sumZkl : {
       key: 'sumZkl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
     },
+
 
   }
 }

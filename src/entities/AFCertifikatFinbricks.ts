@@ -30,7 +30,8 @@ export class AFCertifikatFinbricks extends AFEntity {
   ucelCertK?: UcelCertK
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -39,47 +40,55 @@ export class AFCertifikatFinbricks extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    uzivNazev : {
+    },
+    uzivNazev : {
       key: 'uzivNazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    certNazev : {
+    },
+    certNazev : {
       key: 'certNazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    certOrgan : {
+    },
+    certOrgan : {
       key: 'certOrgan',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    ucelCertK : {
+    },
+    ucelCertK : {
       key: 'ucelCertK',
       type: PropertyType.Select,
       isArray: false,
@@ -88,8 +97,9 @@ export class AFCertifikatFinbricks extends AFEntity {
       enum: UcelCertK,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

@@ -121,7 +121,8 @@ export class AFSmlouvaPolozka extends AFEntity {
   // Události (type: ADR_UDALOST) - udalosti)
   udalosti?: AFUdalost[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -130,82 +131,97 @@ export class AFSmlouvaPolozka extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 64,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    cisRad : {
+    },
+    cisRad : {
       key: 'cisRad',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    platiOdData : {
+    },
+    platiOdData : {
       key: 'platiOdData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDoData : {
+    },
+    platiDoData : {
       key: 'platiDoData',
       type: PropertyType.Date,
       isArray: false,
       
-    },    frekFakt : {
+    },
+    frekFakt : {
       key: 'frekFakt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    den : {
+    },
+    den : {
       key: 'den',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    mesic : {
+    },
+    mesic : {
       key: 'mesic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    zpusFaktK : {
+    },
+    zpusFaktK : {
       key: 'zpusFaktK',
       type: PropertyType.Select,
       isArray: false,
@@ -213,46 +229,54 @@ export class AFSmlouvaPolozka extends AFEntity {
       enumName: 'ZpusobFakt',
       enum: ZpusobFakt,
       
-    },    dnyFakt : {
+    },
+    dnyFakt : {
       key: 'dnyFakt',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    varSym : {
+    },
+    varSym : {
       key: 'varSym',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    cenaRucne : {
+    },
+    cenaRucne : {
       key: 'cenaRucne',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    cenaMj : {
+    },
+    cenaMj : {
       key: 'cenaMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    mnozMj : {
+    },
+    mnozMj : {
       key: 'mnozMj',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
       
-    },    cenaCelkem : {
+    },
+    cenaCelkem : {
       key: 'cenaCelkem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    dphRucne : {
+    },
+    dphRucne : {
       key: 'dphRucne',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    typCenyDphK : {
+    },
+    typCenyDphK : {
       key: 'typCenyDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -260,7 +284,8 @@ export class AFSmlouvaPolozka extends AFEntity {
       enumName: 'TypCeny',
       enum: TypCeny,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -268,127 +293,149 @@ export class AFSmlouvaPolozka extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    sleva : {
+    },
+    sleva : {
       key: 'sleva',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    extGener : {
+    },
+    extGener : {
       key: 'extGener',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    datPoslFaktObd : {
+    },
+    datPoslFaktObd : {
       key: 'datPoslFaktObd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    autoGen : {
+    },
+    autoGen : {
       key: 'autoGen',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    valorizovat : {
+    },
+    valorizovat : {
       key: 'valorizovat',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    valorizovatMesic : {
+    },
+    valorizovatMesic : {
       key: 'valorizovatMesic',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    stitky : {
+    },
+    stitky : {
       key: 'stitky',
       type: PropertyType.String,
       isArray: false,
       
-    },    pocetPriloh : {
+    },
+    pocetPriloh : {
       key: 'pocetPriloh',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisDosle : {
+    },
+    cisDosle : {
       key: 'cisDosle',
       type: PropertyType.String,
       isArray: false,
       maxLength: 40,
       
-    },    smlouva : {
+    },
+    smlouva : {
       key: 'smlouva',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSmlouva,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       
-    },    sklad : {
+    },
+    sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSklad,
       
-    },    misto : {
+    },
+    misto : {
       key: 'misto',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFMistoUrceni,
       
-    },    typUcOp : {
+    },
+    typUcOp : {
       key: 'typUcOp',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFPredpisZauctovani,
       
-    },    typDoklFak : {
+    },
+    typDoklFak : {
       key: 'typDoklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFTypFakturyVydane,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       
-    },    cinnost : {
+    },
+    cinnost : {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCinnost,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    banSpoj : {
+    },
+    banSpoj : {
       key: 'banSpoj',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresarBankovniUcet,
       
-    },    firmaFakt : {
+    },
+    firmaFakt : {
       key: 'firmaFakt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    valorPolSml : {
+    },
+    valorPolSml : {
       key: 'valorPolSml',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSmlouvaPolozka,
       
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
@@ -401,8 +448,8 @@ export class AFSmlouvaPolozka extends AFEntity {
       isArray: true,
       afClass: AFUdalost
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

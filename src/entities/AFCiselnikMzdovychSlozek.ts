@@ -128,7 +128,8 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
   uuid?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -137,67 +138,79 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
       
-    },    nazev : {
+    },
+    nazev : {
       key: 'nazev',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevA : {
+    },
+    nazevA : {
       key: 'nazevA',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevB : {
+    },
+    nazevB : {
       key: 'nazevB',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    nazevC : {
+    },
+    nazevC : {
       key: 'nazevC',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    popis : {
+    },
+    popis : {
       key: 'popis',
       type: PropertyType.String,
       isArray: false,
       
-    },    platiOd : {
+    },
+    platiOd : {
       key: 'platiOd',
       type: PropertyType.Date,
       isArray: false,
       
-    },    platiDo : {
+    },
+    platiDo : {
       key: 'platiDo',
       type: PropertyType.Date,
       isArray: false,
       
-    },    cisRad : {
+    },
+    cisRad : {
       key: 'cisRad',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    typSlozkyK : {
+    },
+    typSlozkyK : {
       key: 'typSlozkyK',
       type: PropertyType.Select,
       isArray: false,
@@ -205,7 +218,8 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
       enumName: 'TypSlozky',
       enum: TypSlozky,
       
-    },    skupSlozkyK : {
+    },
+    skupSlozkyK : {
       key: 'skupSlozkyK',
       type: PropertyType.Select,
       isArray: false,
@@ -213,107 +227,128 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
       enumName: 'SkupinaSlozky',
       enum: SkupinaSlozky,
       
-    },    naOsobu : {
+    },
+    naOsobu : {
       key: 'naOsobu',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsDatOd : {
+    },
+    vsDatOd : {
       key: 'vsDatOd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsDatDo : {
+    },
+    vsDatDo : {
       key: 'vsDatDo',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsDnyKal : {
+    },
+    vsDnyKal : {
       key: 'vsDnyKal',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsDnyPrac : {
+    },
+    vsDnyPrac : {
       key: 'vsDnyPrac',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsDnySvatek : {
+    },
+    vsDnySvatek : {
       key: 'vsDnySvatek',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsHodiny : {
+    },
+    vsHodiny : {
       key: 'vsHodiny',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsHodinySvatek : {
+    },
+    vsHodinySvatek : {
       key: 'vsHodinySvatek',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsCastNaHod : {
+    },
+    vsCastNaHod : {
       key: 'vsCastNaHod',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsCastNaDen : {
+    },
+    vsCastNaDen : {
       key: 'vsCastNaDen',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsProcMzd : {
+    },
+    vsProcMzd : {
       key: 'vsProcMzd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsZaklMzd : {
+    },
+    vsZaklMzd : {
       key: 'vsZaklMzd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsZaklJeKracen : {
+    },
+    vsZaklJeKracen : {
       key: 'vsZaklJeKracen',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsCastMzd : {
+    },
+    vsCastMzd : {
       key: 'vsCastMzd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsZmenaCastMzd : {
+    },
+    vsZmenaCastMzd : {
       key: 'vsZmenaCastMzd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsPocetMes : {
+    },
+    vsPocetMes : {
       key: 'vsPocetMes',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsCisDoklNem : {
+    },
+    vsCisDoklNem : {
       key: 'vsCisDoklNem',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsDoplatZdrPoj : {
+    },
+    vsDoplatZdrPoj : {
       key: 'vsDoplatZdrPoj',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsPrumNaDenNem : {
+    },
+    vsPrumNaDenNem : {
       key: 'vsPrumNaDenNem',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vsPrumNaHodNem : {
+    },
+    vsPrumNaHodNem : {
       key: 'vsPrumNaHodNem',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    vyznamK : {
+    },
+    vyznamK : {
       key: 'vyznamK',
       type: PropertyType.Select,
       isArray: false,
@@ -321,138 +356,162 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
       enumName: 'VyznamSlozky',
       enum: VyznamSlozky,
       
-    },    dnyPrac : {
+    },
+    dnyPrac : {
       key: 'dnyPrac',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    dnyKal : {
+    },
+    dnyKal : {
       key: 'dnyKal',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    dnySvatek : {
+    },
+    dnySvatek : {
       key: 'dnySvatek',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    hodiny : {
+    },
+    hodiny : {
       key: 'hodiny',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    castkaHod : {
+    },
+    castkaHod : {
       key: 'castkaHod',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    castkaDen : {
+    },
+    castkaDen : {
       key: 'castkaDen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    procMzd : {
+    },
+    procMzd : {
       key: 'procMzd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zaklMzd : {
+    },
+    zaklMzd : {
       key: 'zaklMzd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zaklJeKracen : {
+    },
+    zaklJeKracen : {
       key: 'zaklJeKracen',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    castMzd : {
+    },
+    castMzd : {
       key: 'castMzd',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    zmenaCastMzd : {
+    },
+    zmenaCastMzd : {
       key: 'zmenaCastMzd',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    pocetMes : {
+    },
+    pocetMes : {
       key: 'pocetMes',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    cisDoklNem : {
+    },
+    cisDoklNem : {
       key: 'cisDoklNem',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    prumNaDenNem : {
+    },
+    prumNaDenNem : {
       key: 'prumNaDenNem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    prumNaHodNem : {
+    },
+    prumNaHodNem : {
       key: 'prumNaHodNem',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    doplatZdravK : {
+    },
+    doplatZdravK : {
       key: 'doplatZdravK',
       type: PropertyType.Select,
       isArray: false,
       maxLength: 50,
       
-    },    pracovni : {
+    },
+    pracovni : {
       key: 'pracovni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    ukladatNulove : {
+    },
+    ukladatNulove : {
       key: 'ukladatNulove',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    paskaMala : {
+    },
+    paskaMala : {
       key: 'paskaMala',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    paskaVelka : {
+    },
+    paskaVelka : {
       key: 'paskaVelka',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    paskaPole : {
+    },
+    paskaPole : {
       key: 'paskaPole',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    zapoctovyList : {
+    },
+    zapoctovyList : {
       key: 'zapoctovyList',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    uuid : {
+    },
+    uuid : {
       key: 'uuid',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

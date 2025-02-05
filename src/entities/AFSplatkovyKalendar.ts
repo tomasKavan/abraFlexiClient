@@ -72,7 +72,8 @@ export class AFSplatkovyKalendar extends AFEntity {
   statDph?: AFStatDph
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -81,17 +82,20 @@ export class AFSplatkovyKalendar extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    ucetni : {
+    },
+    ucetni : {
       key: 'ucetni',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    clenSplK : {
+    },
+    clenSplK : {
       key: 'clenSplK',
       type: PropertyType.Select,
       isArray: false,
@@ -99,7 +103,8 @@ export class AFSplatkovyKalendar extends AFEntity {
       enumName: 'ClenSpl',
       enum: ClenSpl,
       
-    },    typSplK : {
+    },
+    typSplK : {
       key: 'typSplK',
       type: PropertyType.Select,
       isArray: false,
@@ -107,35 +112,41 @@ export class AFSplatkovyKalendar extends AFEntity {
       enumName: 'TypSpl',
       enum: TypSpl,
       
-    },    datVyst : {
+    },
+    datVyst : {
       key: 'datVyst',
       type: PropertyType.Date,
       isArray: false,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    sumDph : {
+    },
+    sumDph : {
       key: 'sumDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumDphMen : {
+    },
+    sumDphMen : {
       key: 'sumDphMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    szbDph : {
+    },
+    szbDph : {
       key: 'szbDph',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    typSzbDphK : {
+    },
+    typSzbDphK : {
       key: 'typSzbDphK',
       type: PropertyType.Select,
       isArray: false,
@@ -143,103 +154,119 @@ export class AFSplatkovyKalendar extends AFEntity {
       enumName: 'TypSzbDph',
       enum: TypSzbDph,
       
-    },    sumZkl : {
+    },
+    sumZkl : {
       key: 'sumZkl',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    sumZklMen : {
+    },
+    sumZklMen : {
       key: 'sumZklMen',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 15,
       
-    },    modul : {
+    },
+    modul : {
       key: 'modul',
       type: PropertyType.String,
       isArray: false,
       
-    },    kod : {
+    },
+    kod : {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
       
-    },    datUcto : {
+    },
+    datUcto : {
       key: 'datUcto',
       type: PropertyType.Date,
       isArray: false,
       
-    },    cisRad : {
+    },
+    cisRad : {
       key: 'cisRad',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    leasing : {
+    },
+    leasing : {
       key: 'leasing',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFLeasing,
       maxLength: 20,
       
-    },    zklMdUcet : {
+    },
+    zklMdUcet : {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    zklDalUcet : {
+    },
+    zklDalUcet : {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphMdUcet : {
+    },
+    dphMdUcet : {
       key: 'dphMdUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    dphDalUcet : {
+    },
+    dphDalUcet : {
       key: 'dphDalUcet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUcet,
       maxLength: 6,
       
-    },    clenDph : {
+    },
+    clenDph : {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCleneniDph,
       maxLength: 20,
       
-    },    stredisko : {
+    },
+    stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStredisko,
       maxLength: 20,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    zavazek : {
+    },
+    zavazek : {
       key: 'zavazek',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 6,
       
-    },    statDph : {
+    },
+    statDph : {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
@@ -247,8 +274,9 @@ export class AFSplatkovyKalendar extends AFEntity {
       maxLength: 3,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba

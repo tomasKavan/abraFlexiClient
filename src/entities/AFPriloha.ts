@@ -90,7 +90,8 @@ export class AFPriloha extends AFEntity {
   content?: Buffer
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
-  uzivatelskeVazby?: AFUzivatelskaVazba[]
+  'uzivatelske-vazby'?: AFUzivatelskaVazba[]
+  get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -99,29 +100,34 @@ export class AFPriloha extends AFEntity {
       type: PropertyType.Integer,
       isArray: false,
       
-    },    lastUpdate : {
+    },
+    lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
       
-    },    nazSoub : {
+    },
+    nazSoub : {
       key: 'nazSoub',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
       
-    },    poznam : {
+    },
+    poznam : {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
       
-    },    contentType : {
+    },
+    contentType : {
       key: 'contentType',
       type: PropertyType.String,
       isArray: false,
       maxLength: 127,
       
-    },    typK : {
+    },
+    typK : {
       key: 'typK',
       type: PropertyType.Select,
       isArray: false,
@@ -129,173 +135,202 @@ export class AFPriloha extends AFEntity {
       enumName: 'TypPrilohy',
       enum: TypPrilohy,
       
-    },    prilozit : {
+    },
+    prilozit : {
       key: 'prilozit',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    pictureRate : {
+    },
+    pictureRate : {
       key: 'pictureRate',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
       
-    },    dataSize : {
+    },
+    dataSize : {
       key: 'dataSize',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    exportNaEshop : {
+    },
+    exportNaEshop : {
       key: 'exportNaEshop',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    link : {
+    },
+    link : {
       key: 'link',
       type: PropertyType.String,
       isArray: false,
       
-    },    linkPicture : {
+    },
+    linkPicture : {
       key: 'linkPicture',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    mainAttachment : {
+    },
+    mainAttachment : {
       key: 'mainAttachment',
       type: PropertyType.Logic,
       isArray: false,
       
-    },    dataHash : {
+    },
+    dataHash : {
       key: 'dataHash',
       type: PropertyType.String,
       isArray: false,
       maxLength: 50,
       
-    },    pictureWidth : {
+    },
+    pictureWidth : {
       key: 'pictureWidth',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    pictureHeight : {
+    },
+    pictureHeight : {
       key: 'pictureHeight',
       type: PropertyType.Integer,
       isArray: false,
       
-    },    uzivatel : {
+    },
+    uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       maxLength: 254,
       
-    },    doklFak : {
+    },
+    doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklInt : {
+    },
+    doklInt : {
       key: 'doklInt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklObch : {
+    },
+    doklObch : {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    doklSklad : {
+    },
+    doklSklad : {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSkladovyPohyb,
       
-    },    nastaveni : {
+    },
+    nastaveni : {
       key: 'nastaveni',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFNastaveni,
       
-    },    cenik : {
+    },
+    cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFCenik,
       maxLength: 64,
       
-    },    adresar : {
+    },
+    adresar : {
       key: 'adresar',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFAdresar,
       
-    },    kontakt : {
+    },
+    kontakt : {
       key: 'kontakt',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFKontakt,
       
-    },    konektor : {
+    },
+    konektor : {
       key: 'konektor',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    report : {
+    },
+    report : {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    zakazka : {
+    },
+    zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFZakazka,
       maxLength: 30,
       
-    },    smlouva : {
+    },
+    smlouva : {
       key: 'smlouva',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSmlouva,
       maxLength: 20,
       
-    },    polSmlouvy : {
+    },
+    polSmlouvy : {
       key: 'polSmlouvy',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFSmlouvaPolozka,
       maxLength: 64,
       
-    },    uzel : {
+    },
+    uzel : {
       key: 'uzel',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFStrom,
       
-    },    pozadavek : {
+    },
+    pozadavek : {
       key: 'pozadavek',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFEntity,
       
-    },    adrUdalost : {
+    },
+    adrUdalost : {
       key: 'adrUdalost',
       type: PropertyType.Relation,
       isArray: false,
       afClass: AFUdalost,
       
-    },    content : {
+    },
+    content : {
       key: 'content',
       type: PropertyType.Blob,
       isArray: false,
       
     },
-    uzivatelskeVazby : {
-      key: 'uzivatelskeVazby',
+
+    'uzivatelske-vazby' : {
+      key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: AFUzivatelskaVazba
