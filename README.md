@@ -55,7 +55,7 @@ V návodu se používají pojmy
 
 ### Import a inicializace knihovny
 
-```
+```typescript 
 import { AFApiClient } from 'aftc'
 
 const apiOpts: AFApiConfig = {
@@ -77,7 +77,7 @@ Filtrování je možné vkládat pomocí metod `Filter`, `ID` nebo `CODE`. Metod
 - `::mujKod` se nahradí textovou hodnotou klíče `mujKod` ve druhém argumentu a prefixuje se předponou `code:`,
 - `:...kolekce` očekává, že klíč `kolekce` bude typu `Array`. Návěstí se nahradí výsledkem `kolekce.join(',')`. 
 
-```
+```typescript 
 import { AFInterniDoklad, Filter } from 'aftc'
 
 const queryOpts: AFQueryOptions = {
@@ -103,7 +103,7 @@ run()
 
 Pro načtení většího detailu či aktualizaci dříve načtených instancí můžete použít metody `populate` a `populateOne`. Detailem požadované vlastnosti se aktualizují na původní instanci.
 
-```
+```typescript 
 const loadedEntity // Zde máme uloženou dříve načtenou instanci entity AFInterniDoklad
 
 const options = {
@@ -131,7 +131,7 @@ Instance entit odkazované pomocí uživatelských vazeb je možné načíst met
 
 Načteny jsou pouze instance vazeb, které se již vyskytují ve zdrojové kolekci! Metoda `queryURel` tedy sama uživatelské vazby na jednotlivých zdrojových instancích nenačítá. Načítá pouze instance, na které vazba odkazuje.
 
-```
+```typescript 
 const soureEntities // Zde máme kolekci entit, pro které načítáme instance odkazované uživatelskou vazbou
 
 const { data: pairs } = api.queryURels(AFInterniDoklad, soureEntities, {
