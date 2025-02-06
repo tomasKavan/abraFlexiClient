@@ -8,13 +8,14 @@ import { FixProperties } from './fix'
 const EVIDENCE_LIST_FILE = 'evidence-list.json'
 const PROPERTIES_FILE = 'properties.json'
 const RELATIONS_FILE = 'relations.json'
-const DEFAULT_DIR = './src/entities'
+const DEFAULT_DIR = './src/generated'
 
 const MAIN_TEMPLATE_CLASS_FILE = __dirname + '/templates/classFile.ejs'
 const MAIN_TEMPLATE_ENUM_FILE = __dirname + '/templates/enumFile.ejs'
 const MAIN_TEMPLATE_REGISTRY_FILE = __dirname + '/templates/registryFile.ejs'
 const MAIN_TEMPLATE_INDEX_FILE = __dirname + '/templates/classIndexFile.ejs'
 
+const CLASS_DIR_OUT = 'entities'
 const ENUM_FILE_OUT = 'AFEntityEnums'
 const REGISTRY_FILE_OUT = 'AFEntityRegistry'
 const INDEX_FILE_OUT = 'index'
@@ -383,8 +384,13 @@ export async function main() {
   if (!fs.existsSync(outDir)) {
     throw new Error(`Output directory ${outDir} doesnt exists`)
   }
+  
   if (argv.c) {
     clearDir(outDir)
+  }
+
+  if (!fs.existsSync(path.join(outDir, CLASS_DIR_OUT))) {
+    fs.mkdirSync(path.join(outDir, CLASS_DIR_OUT), { recursive: false })
   }
 
   const urlBase = argv.s.charAt(argv.s.length - 1) === '/' ? argv.s : argv.s + '/'
@@ -412,7 +418,7 @@ export async function main() {
 
     console.log(`- Generating class ...`)
     const classCode = generateEntityClass(ev, props, refs, enumList)
-    fs.writeFileSync(path.join(outDir, ev.tsClassName + '.ts'), await classCode)
+    fs.writeFileSync(path.join(outDir, CLASS_DIR_OUT, ev.tsClassName + '.ts'), await classCode)
     console.log(`Generated: ${ev.tsClassName + '.ts'}`)
     console.log(` `)
   }
@@ -431,7 +437,7 @@ export async function main() {
 
   console.log(`Generating index file ${INDEX_FILE_OUT}`)
   const classIndex = generateClassIndex(evidences)
-  fs.writeFileSync(path.join(outDir, INDEX_FILE_OUT + '.ts'), await classIndex)
+  fs.writeFileSync(path.join(outDir, CLASS_DIR_OUT, INDEX_FILE_OUT + '.ts'), await classIndex)
   console.log(`Index file generated`)
   console.log(` `)
 

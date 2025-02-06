@@ -4,7 +4,7 @@ import { addBasicAtuh } from './helpers/basciAuth'
 
 import { AFApiClient, AFApiConfig, AFFakturaPrijata, AFQueryOptions, EntityByName } from '../dist'
 import { AFEntity, AFInterniDoklad } from '../src'
-import { AFFilter } from '../dist/AFFilter'
+import { AFFilter, CODE, ID } from '../dist/abra/AFFilter'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. Without! company path component.', demandOption: true})
@@ -12,6 +12,10 @@ const argv = yargs(hideBin(process.argv))
 .option('u', { alias: 'user', type: 'string', description: 'Username. Enables BASIC auth', demandOption: false})
 .option('p', { alias: 'password', type: 'string', description: 'Password. Enables BASIC auth', demandOption: false})
 .option('e', { alias: 'evidence', type: 'string', description: 'Evidence to fetch.', demandOption: true})
+.option('l', { alias: 'limit', type: 'number', description: 'Limit of fetched items. 0 means all. Not present means ABRA FLexi native, which is 20', demandOption: false})
+.option('t', { alias: 'start', type: 'number', description: 'starting index. Not preset means 0.', demandOption: false})
+.option('d', { alias: 'code', type: 'string', description: 'Code-like ID of the requested entry. If present only 1 record is selected, limit and start are ignored.', demandOption: false})
+.option('i', { alias: 'id', type: 'number', description: 'ABRA ID of the requested entry. If present only 1 record is selected, limit and start are ignored.', demandOption: false})
 .help().alias('h', 'help')
 .parseSync()
 
@@ -26,20 +30,24 @@ if (argv.u && argv.p) {
   }
 }
 
-//['id', 'varSym', 'popis', ['uzivatelskeVazby', ['id', 'kod', 'vazbaTyp']], ['typDokl', ['id', 'kod', 'nazev', ['radaVydej', ['nazev', 'id', 'kod']]]]],
-
 const cls = EntityByName(argv.e || 'AFFakturaPriajata')
-const lQuery: AFQueryOptions<AFEntity, false> = {
-  detail: ['id', 'varSym', 'popis', ['uzivatelske-vazby', ['id', 'kod', 'vazbaTyp', 'modul', 'evidenceType', 'objectId', 'object']], ['typDokl', ['id', 'kod', 'nazev']]],
-  filter: new AFFilter("typDokl = '::td'", { td: 'INT.ICO.REVAL.IN'})
+
+const queryOpts: AFQueryOptions<AFEntity, false> = {
+  limit: argv.l,
+  start: argv.t
 } 
+if (argv.d) {
+  queryOpts.filter = CODE(argv.d)
+} else if (argv.i) {
+  queryOpts.filter = ID(argv.i)
+}
 
 const api = new AFApiClient(apiOpts)
-const { data } = api.query(cls, lQuery)
+const { data } = api.query(cls, queryOpts)
 
 data.then((d) => {
+  console.log(d)
   console.log('Done')
-  console.log((d as AFInterniDoklad[])[0].uzivatelskeVazby)
 }).catch((e) => {
   console.error(e)
 })

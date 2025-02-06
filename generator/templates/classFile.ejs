@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../AFTypes'
-import { AFEntity } from '../AFEntity'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 <% imports.forEach(imp => { %><%- include('./import.ejs', { tsClassName: imp }) %><% }) %>
 
 <% if (importEnums.length) { 
-%>import { <%= importEnums.join(', ') %> } from './<%= enumFile %>'<% } %>
+%>import { <%= importEnums.join(', ') %> } from '../<%= enumFile %>'<% } %>
 
 export class <%= tsClassName %> extends AFEntity {
   static EntityPath: string = '<%= evidencePath %>'

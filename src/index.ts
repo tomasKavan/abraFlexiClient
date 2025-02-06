@@ -1,12 +1,16 @@
-export { AFApiClient } from './AFApiClient'
+export { AFApiClient } from './abra/AFApiClient'
 export { 
   AFApiConfig, 
   NO_LIMIT, 
   AFQueryDetail, 
   AFQueryOptions, 
-  AFQueryResponse 
-} from './AFTypes'
-export * from './entities/index'
+  AFQueryResponse,
+  AFURelOptions,
+  AFPopulateOptions,
+  AFURelResult 
+} from './abra/AFTypes'
+export { AFFilter, Filter, ID, CODE } from './abra/AFFilter'
 
-export { AFEntity } from './AFEntity'
-export { EntityByName } from './entities/AFEntityRegistry'
+export * from './generated/entities/index'
+export { AFEntity } from './abra/AFEntity'
+export { EntityByName } from './generated/AFEntityRegistry'

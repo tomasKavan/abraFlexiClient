@@ -1,14 +1,22 @@
-import { AFEntity } from '../AFEntity'
+import { AFEntity } from '../abra/AFEntity'
 
-<% evidences.forEach(ev => { %>import { <%= ev.tsClassName %> } from './<%= ev.tsClassName %>'
+<% evidences.forEach(ev => { %>import { <%= ev.tsClassName %> } from './entities/<%= ev.tsClassName %>'
 <% }) %>
 
-const AFEntityRegistry: Record<string, new () => AFEntity> = {
+const AFEntityRegistry: Record<string, typeof AFEntity> = {
 <% evidences.forEach(ev => { %>  <%= ev.tsClassName %>,
 <% }) %>}
 
 export function EntityByName(name: string): typeof AFEntity {
   const cls = AFEntityRegistry[name]
   if (!cls) throw new Error(`Unknown AFEntity class ${name}`)
-  return cls as typeof AFEntity
+  return cls
+}
+
+export function EntityByPath(path: string): typeof AFEntity {
+  const cls = Object.values(AFEntityRegistry).find(
+    (EntityClass ) => EntityClass.EntityPath === path
+  )
+  if (!cls) throw new Error(`Unknown AFEntity class with path ${path}`)
+  return cls
 }
