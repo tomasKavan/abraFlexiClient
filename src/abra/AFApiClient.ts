@@ -14,7 +14,7 @@ import {
   AFURelResult,
   AFPopulateOptions,
   AFURelMinimal,
-  AFQueryResponseOne,
+  AFQueryResponseOne
 } from "./AFTypes"
 import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry"
 import { addParamToUrl } from "../helpers/urlHelper"
@@ -128,6 +128,19 @@ export class AFApiClient {
     res.data = run()
 
     return res as AFQueryResponse<InstanceType<T>>
+  }
+
+  queryOne<T extends typeof AFEntity>(
+    entity: T, 
+    options: AFQueryOptions
+  ): AFQueryResponseOne<InstanceType<T>> {
+    const res = this.query(entity, options)
+    const out = res as AFQueryResponseOne<InstanceType<T>>
+    out.data = res.data.then((d) => {
+      if (!d || d.length) return
+      return d[0]
+    })
+    return out
   }
 
   public queryURels<T extends typeof AFEntity = typeof AFEntity>(
@@ -296,6 +309,19 @@ export class AFApiClient {
     res.data = run()
     return res as AFQueryResponse<InstanceType<T>>
     
+  }
+
+  public populateOne<T extends typeof AFEntity = typeof AFEntity>(
+    entity: InstanceType<T>, 
+    options: AFPopulateOptions
+  ): AFQueryResponseOne<InstanceType<T>> {
+    const res = this.populate([entity], options)
+    const out = res as AFQueryResponseOne<InstanceType<T>>
+    out.data = res.data.then((d) => {
+      if (!d || !d.length) return
+      return d[0]
+    })
+    return out
   }
 
   private _processEntityObj<T extends typeof AFEntity>(entity: T, obj: any): InstanceType<T>[] {
