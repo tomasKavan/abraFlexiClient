@@ -175,21 +175,21 @@ export class AFPrikazKUhrade extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     banka : {
       key: 'banka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFBankovniUcet,
+      afClass: 'AFBankovniUcet',
       
     },
     faStat : {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -197,7 +197,7 @@ export class AFPrikazKUhrade extends AFEntity {
       key: 'faRegion',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
 
@@ -205,13 +205,13 @@ export class AFPrikazKUhrade extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     polozky : {
       key: 'polozky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPrikazKUhradePolozka
+      afClass: 'AFPrikazKUhradePolozka'
     },
 
   }

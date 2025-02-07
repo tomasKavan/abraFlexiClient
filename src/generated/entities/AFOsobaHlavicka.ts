@@ -76,13 +76,13 @@ export class AFOsobaHlavicka extends AFEntity {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

@@ -2,7 +2,9 @@
   "name": "abra-flexi",
   "version": "0.0.1",
   "description": "ABRA Flexi API Typescript client. Automaticly generated from API json annotations.",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build:lib": "tsc --project tsconfig.src.json",
     "build:cli": "tsc --project tsconfig.generator.json && cp -r ./generator/templates bin/",
@@ -21,7 +23,7 @@
   ],
   "exports": {
     "import": "./dist/index.js",
-    "require": "./dist/index.cjs"
+    "require": "./dist/index.js"
   },
   "bin": {
     "generator": "./bin/index.js"

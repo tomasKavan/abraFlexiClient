@@ -241,28 +241,28 @@ export class AFMzda extends AFEntity {
       key: 'osobaHlav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsoba,
+      afClass: 'AFOsoba',
       
     },
     skupOsob : {
       key: 'skupOsob',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaOsob,
+      afClass: 'AFSkupinaOsob',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -270,14 +270,14 @@ export class AFMzda extends AFEntity {
       key: 'zdravPoj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomer,
+      afClass: 'AFPracovniPomer',
       
     },
     dobaFond : {

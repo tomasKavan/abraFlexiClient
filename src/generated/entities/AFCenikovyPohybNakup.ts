@@ -228,7 +228,7 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'firmaDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     ucetni : {
@@ -645,14 +645,14 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -660,21 +660,21 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     typUcOp : {
       key: 'typUcOp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     zklMdUcet : {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -682,7 +682,7 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -690,7 +690,7 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'dphMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -698,7 +698,7 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'dphDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -706,14 +706,14 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'cenHlad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenovaUroven,
+      afClass: 'AFCenovaUroven',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -721,21 +721,21 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     clenDph : {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniDph,
+      afClass: 'AFCleneniDph',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -743,28 +743,28 @@ export class AFCenikovyPohybNakup extends AFEntity {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mjObjem : {
       key: 'mjObjem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     sazbaDph : {
       key: 'sazbaDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSazbaDph,
+      afClass: 'AFSazbaDph',
       
     },
     cinnost : {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
 

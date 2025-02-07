@@ -109,14 +109,14 @@ export class AFSarzeExpirace extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },

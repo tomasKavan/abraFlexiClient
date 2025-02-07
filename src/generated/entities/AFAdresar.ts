@@ -315,7 +315,7 @@ export class AFAdresar extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -323,7 +323,7 @@ export class AFAdresar extends AFEntity {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     eanKod : {
@@ -574,14 +574,14 @@ export class AFAdresar extends AFEntity {
       key: 'skupFir',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaFirem,
+      afClass: 'AFSkupinaFirem',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -589,7 +589,7 @@ export class AFAdresar extends AFEntity {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -597,14 +597,14 @@ export class AFAdresar extends AFEntity {
       key: 'faRegion',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     zodpOsoba : {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -612,14 +612,14 @@ export class AFAdresar extends AFEntity {
       key: 'skupCen',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenikovaSkupina,
+      afClass: 'AFCenikovaSkupina',
       
     },
     formaUhradyCis : {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaUhrady,
+      afClass: 'AFFormaUhrady',
       
     },
 
@@ -627,73 +627,73 @@ export class AFAdresar extends AFEntity {
       key: 'odberatele',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFOdberatel
+      afClass: 'AFOdberatel'
     },
     atributy : {
       key: 'atributy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAtribut
+      afClass: 'AFAtribut'
     },
     bankovniSpojeni : {
       key: 'bankovniSpojeni',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAdresarBankovniUcet
+      afClass: 'AFAdresarBankovniUcet'
     },
     udalosti : {
       key: 'udalosti',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUdalost
+      afClass: 'AFUdalost'
     },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     cenHladiny : {
       key: 'cenHladiny',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCenovaUroven
+      afClass: 'AFCenovaUroven'
     },
     smlouvy : {
       key: 'smlouvy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSmlouva
+      afClass: 'AFSmlouva'
     },
     dodavatele : {
       key: 'dodavatele',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFDodavatel
+      afClass: 'AFDodavatel'
     },
     mistaUrceni : {
       key: 'mistaUrceni',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFMistoUrceni
+      afClass: 'AFMistoUrceni'
     },
     rezervace : {
       key: 'rezervace',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFRezervace
+      afClass: 'AFRezervace'
     },
     kontakty : {
       key: 'kontakty',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFKontakt
+      afClass: 'AFKontakt'
     },
 
   }

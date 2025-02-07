@@ -95,7 +95,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniDph,
+      afClass: 'AFCleneniDph',
       
     },
     datSplat : {
@@ -138,7 +138,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -159,7 +159,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       maxLength: 20,
       
     },
@@ -186,7 +186,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'protiUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -194,7 +194,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStatDph,
+      afClass: 'AFStatDph',
       maxLength: 20,
       
     },
@@ -226,7 +226,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -278,7 +278,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'ucet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -293,7 +293,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -319,7 +319,7 @@ export class AFAnalyzaZakazky extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     nazevUctu : {

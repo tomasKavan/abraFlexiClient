@@ -200,14 +200,14 @@ export class AFBankovniUcet extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     platiOd : {
@@ -376,7 +376,7 @@ export class AFBankovniUcet extends AFEntity {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     psc : {
@@ -437,21 +437,21 @@ export class AFBankovniUcet extends AFEntity {
       key: 'radaPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaBanka,
+      afClass: 'AFRadaBanka',
       
     },
     radaVydej : {
       key: 'radaVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaBanka,
+      afClass: 'AFRadaBanka',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -459,7 +459,7 @@ export class AFBankovniUcet extends AFEntity {
       key: 'smerKod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPenezniUstav,
+      afClass: 'AFPenezniUstav',
       maxLength: 20,
       
     },
@@ -467,7 +467,7 @@ export class AFBankovniUcet extends AFEntity {
       key: 'primUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -475,14 +475,14 @@ export class AFBankovniUcet extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     elBanFormatVypis : {
       key: 'elBanFormatVypis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormatElektronickehoBankovnictvi,
+      afClass: 'AFFormatElektronickehoBankovnictvi',
       maxLength: 3,
       
     },
@@ -490,7 +490,7 @@ export class AFBankovniUcet extends AFEntity {
       key: 'elBanFormatPrikaz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormatElektronickehoPrikazu,
+      afClass: 'AFFormatElektronickehoPrikazu',
       maxLength: 3,
       
     },
@@ -504,7 +504,7 @@ export class AFBankovniUcet extends AFEntity {
       key: 'menaBanky',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       maxLength: 20,
       
     },
@@ -512,7 +512,7 @@ export class AFBankovniUcet extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -521,7 +521,7 @@ export class AFBankovniUcet extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

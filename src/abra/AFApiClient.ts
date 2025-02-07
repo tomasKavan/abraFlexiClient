@@ -361,7 +361,8 @@ export class AFApiClient {
     // If it's relation, recursively call _processEntityObj
     if (annot.type === PropertyType.Relation) {
       if (!annot.afClass) return 
-      const propOut = this._processEntityObj(annot.afClass, v)
+      const cls = typeof annot.afClass === 'string' ? EntityByName(annot.afClass) : annot.afClass
+      const propOut = this._processEntityObj(cls, v)
       if (!propOut) return
       if (annot.isArray) {
         (entity as any)[key] = propOut

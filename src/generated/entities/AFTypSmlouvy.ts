@@ -263,14 +263,14 @@ export class AFTypSmlouvy extends AFEntity {
       key: 'typDoklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyVydane,
+      afClass: 'AFTypFakturyVydane',
       
     },
     typDoklFakPenale : {
       key: 'typDoklFakPenale',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
 
@@ -278,7 +278,7 @@ export class AFTypSmlouvy extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

@@ -129,14 +129,14 @@ export class AFSklad extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     platiOd : {
@@ -180,21 +180,21 @@ export class AFSklad extends AFEntity {
       key: 'radaPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaSkladovyPohyb,
+      afClass: 'AFRadaSkladovyPohyb',
       
     },
     radaVydej : {
       key: 'radaVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaSkladovyPohyb,
+      afClass: 'AFRadaSkladovyPohyb',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -202,7 +202,7 @@ export class AFSklad extends AFEntity {
       key: 'primUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -210,7 +210,7 @@ export class AFSklad extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
 
@@ -218,7 +218,7 @@ export class AFSklad extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

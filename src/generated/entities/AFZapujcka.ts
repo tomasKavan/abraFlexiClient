@@ -162,7 +162,7 @@ export class AFZapujcka extends AFEntity {
       key: 'majetek',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMajetek,
+      afClass: 'AFMajetek',
       maxLength: 20,
       
     },
@@ -170,7 +170,7 @@ export class AFZapujcka extends AFEntity {
       key: 'leasing',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFLeasing,
+      afClass: 'AFLeasing',
       maxLength: 20,
       
     },
@@ -178,7 +178,7 @@ export class AFZapujcka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -186,7 +186,7 @@ export class AFZapujcka extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -195,7 +195,7 @@ export class AFZapujcka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

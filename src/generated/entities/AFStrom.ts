@@ -167,7 +167,7 @@ export class AFStrom extends AFEntity {
       key: 'strom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStromKoren,
+      afClass: 'AFStromKoren',
       maxLength: 20,
       
     },
@@ -175,7 +175,7 @@ export class AFStrom extends AFEntity {
       key: 'otec',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStrom,
+      afClass: 'AFStrom',
       maxLength: 20,
       
     },
@@ -184,7 +184,7 @@ export class AFStrom extends AFEntity {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
 
   }

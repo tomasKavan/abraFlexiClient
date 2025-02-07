@@ -321,7 +321,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'ucetProtiPfa',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -329,7 +329,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'ucetProtiVfa',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -337,7 +337,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'ucetProtiSklp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -345,7 +345,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'ucetProtiSklv',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -353,7 +353,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'ucetProtiSklHolyv',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -361,7 +361,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'ucetProtiSklPrevv',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -369,7 +369,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypOrganizace,
+      afClass: 'AFTypOrganizace',
       maxLength: 20,
       
     },
@@ -378,7 +378,7 @@ export class AFSkupinaZbozi extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

@@ -113,7 +113,7 @@ export class AFTypOrganizace extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       
     },
 

@@ -496,14 +496,14 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -511,28 +511,28 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     typUcOp : {
       key: 'typUcOp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     zklMdUcet : {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -540,7 +540,7 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -548,7 +548,7 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -556,14 +556,14 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -571,21 +571,21 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'cenHlad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenovaUroven,
+      afClass: 'AFCenovaUroven',
       
     },
     mj : {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mjObjem : {
       key: 'mjObjem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     vyrobniCislaOk : {
@@ -645,14 +645,14 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkladovyPohyb,
+      afClass: 'AFSkladovyPohyb',
       
     },
     skladovaKarta : {
       key: 'skladovaKarta',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkladovaKarta,
+      afClass: 'AFSkladovaKarta',
       
     },
     prevodka : {
@@ -706,19 +706,19 @@ export class AFSkladovyPohybPolozka extends AFEntity {
       key: 'vyrobniCislaVydana',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVyrobniCislo
+      afClass: 'AFVyrobniCislo'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     vyrobniCislaPrijata : {
       key: 'vyrobniCislaPrijata',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVyrobniCislo
+      afClass: 'AFVyrobniCislo'
     },
 
   }

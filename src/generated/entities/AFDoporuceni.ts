@@ -77,7 +77,7 @@ export class AFDoporuceni extends AFEntity {
       key: 'doklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
 

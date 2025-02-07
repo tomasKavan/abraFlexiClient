@@ -90,14 +90,14 @@ export class AFStandardniPredpis extends AFEntity {
       key: 'radek',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       
     },
     cisloUctuSyn : {
       key: 'cisloUctuSyn',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniOsnova,
+      afClass: 'AFUcetniOsnova',
       maxLength: 6,
       
     },
@@ -106,7 +106,7 @@ export class AFStandardniPredpis extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

@@ -120,14 +120,14 @@ export class AFUcet extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     danovy : {
@@ -164,14 +164,14 @@ export class AFUcet extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     stdUcet : {
       key: 'stdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniOsnova,
+      afClass: 'AFUcetniOsnova',
       maxLength: 3,
       
     },
@@ -179,7 +179,7 @@ export class AFUcet extends AFEntity {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypOrganizace,
+      afClass: 'AFTypOrganizace',
       maxLength: 20,
       
     },
@@ -188,7 +188,7 @@ export class AFUcet extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

@@ -117,14 +117,14 @@ export class AFBankovniUcetSkladPokladna extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     platiOd : {
@@ -155,7 +155,7 @@ export class AFBankovniUcetSkladPokladna extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -163,7 +163,7 @@ export class AFBankovniUcetSkladPokladna extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
 
@@ -171,7 +171,7 @@ export class AFBankovniUcetSkladPokladna extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

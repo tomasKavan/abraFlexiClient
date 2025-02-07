@@ -885,49 +885,49 @@ export class AFOsoba extends AFEntity {
       key: 'osobaHlav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     skupOsob : {
       key: 'skupOsob',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaOsob,
+      afClass: 'AFSkupinaOsob',
       
     },
     nadzizeny : {
       key: 'nadzizeny',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     statNaroz : {
       key: 'statNaroz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       
     },
     statObcan : {
       key: 'statObcan',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       
     },
     stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -935,56 +935,56 @@ export class AFOsoba extends AFEntity {
       key: 'statKon',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       
     },
     statKonTuz : {
       key: 'statKonTuz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       
     },
     zdravPoj : {
       key: 'zdravPoj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     cizPojStat : {
       key: 'cizPojStat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       
     },
     tdDobirka : {
       key: 'tdDobirka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     tdZaloha : {
       key: 'tdZaloha',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     diteOdpoc1 : {
       key: 'diteOdpoc1',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFDite,
+      afClass: 'AFDite',
       
     },
     diteOdpoc2 : {
       key: 'diteOdpoc2',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFDite,
+      afClass: 'AFDite',
       
     },
 
@@ -992,13 +992,13 @@ export class AFOsoba extends AFEntity {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

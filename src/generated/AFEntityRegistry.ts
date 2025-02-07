@@ -263,6 +263,7 @@ import { AFZurnal } from './entities/AFZurnal'
 
 
 const AFEntityRegistry: Record<string, typeof AFEntity> = {
+  AFEntity,
   AFKontakt,
   AFAdresar,
   AFUdalost,

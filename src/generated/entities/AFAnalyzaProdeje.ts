@@ -421,7 +421,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'adresar',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -429,7 +429,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -437,42 +437,42 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     mistUrc : {
       key: 'mistUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMistoUrceni,
+      afClass: 'AFMistoUrceni',
       
     },
     skupFir : {
       key: 'skupFir',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaFirem,
+      afClass: 'AFSkupinaFirem',
       
     },
     skupCen : {
       key: 'skupCen',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenikovaSkupina,
+      afClass: 'AFCenikovaSkupina',
       
     },
     skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaZbozi,
+      afClass: 'AFSkupinaZbozi',
       
     },
     vyrobce : {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -480,7 +480,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -488,7 +488,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -496,7 +496,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       maxLength: 20,
       
     },
@@ -504,7 +504,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -512,7 +512,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'zodpOsobaAdresar',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

@@ -44,7 +44,7 @@ export class AFStromCenik extends AFEntity {
       key: 'uzel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStrom,
+      afClass: 'AFStrom',
       maxLength: 20,
       
     },

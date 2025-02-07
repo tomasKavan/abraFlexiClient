@@ -45,21 +45,21 @@ export class AFFormaUhradyZauctovani extends AFEntity {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaUhrady,
+      afClass: 'AFFormaUhrady',
       
     },
     typDokl : {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     kasa : {
       key: 'kasa',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
 
@@ -67,7 +67,7 @@ export class AFFormaUhradyZauctovani extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

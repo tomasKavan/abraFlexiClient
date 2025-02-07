@@ -85,21 +85,21 @@ export class AFPraceMesic extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomerHlavicka,
+      afClass: 'AFPracovniPomerHlavicka',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -107,7 +107,7 @@ export class AFPraceMesic extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -115,7 +115,7 @@ export class AFPraceMesic extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
 
@@ -123,7 +123,7 @@ export class AFPraceMesic extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

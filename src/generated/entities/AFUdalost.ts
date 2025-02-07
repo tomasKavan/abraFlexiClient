@@ -200,7 +200,7 @@ export class AFUdalost extends AFEntity {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -208,14 +208,14 @@ export class AFUdalost extends AFEntity {
       key: 'firmaExterni',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     typAkt : {
       key: 'typAkt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypAktivity,
+      afClass: 'AFTypAktivity',
       maxLength: 20,
       
     },
@@ -223,7 +223,7 @@ export class AFUdalost extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -231,7 +231,7 @@ export class AFUdalost extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -239,7 +239,7 @@ export class AFUdalost extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -247,35 +247,35 @@ export class AFUdalost extends AFEntity {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklInt : {
       key: 'doklInt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklObch : {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklSklad : {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkladovyPohyb,
+      afClass: 'AFSkladovyPohyb',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -283,28 +283,28 @@ export class AFUdalost extends AFEntity {
       key: 'kontakt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKontakt,
+      afClass: 'AFKontakt',
       
     },
     konektor : {
       key: 'konektor',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     report : {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     smlouva : {
       key: 'smlouva',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSmlouva,
+      afClass: 'AFSmlouva',
       maxLength: 20,
       
     },
@@ -312,7 +312,7 @@ export class AFUdalost extends AFEntity {
       key: 'polSmlouvy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSmlouvaPolozka,
+      afClass: 'AFSmlouvaPolozka',
       maxLength: 64,
       
     },
@@ -320,7 +320,7 @@ export class AFUdalost extends AFEntity {
       key: 'majetek',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMajetek,
+      afClass: 'AFMajetek',
       maxLength: 20,
       
     },
@@ -329,25 +329,25 @@ export class AFUdalost extends AFEntity {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     naklady : {
       key: 'naklady',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFNaklad
+      afClass: 'AFNaklad'
     },
     kontakty : {
       key: 'kontakty',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFKontakt
+      afClass: 'AFKontakt'
     },
 
   }

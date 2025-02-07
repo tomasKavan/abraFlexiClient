@@ -374,7 +374,7 @@ export class AFLeasing extends AFEntity {
       key: 'typLeasingu',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypLeasingu,
+      afClass: 'AFTypLeasingu',
       maxLength: 20,
       
     },
@@ -382,7 +382,7 @@ export class AFLeasing extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       maxLength: 20,
       
     },
@@ -390,7 +390,7 @@ export class AFLeasing extends AFEntity {
       key: 'casUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -398,7 +398,7 @@ export class AFLeasing extends AFEntity {
       key: 'zavazUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -406,7 +406,7 @@ export class AFLeasing extends AFEntity {
       key: 'naklUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -414,7 +414,7 @@ export class AFLeasing extends AFEntity {
       key: 'dphZaklUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -422,7 +422,7 @@ export class AFLeasing extends AFEntity {
       key: 'dphSnizUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -430,7 +430,7 @@ export class AFLeasing extends AFEntity {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -438,7 +438,7 @@ export class AFLeasing extends AFEntity {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -446,7 +446,7 @@ export class AFLeasing extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -454,7 +454,7 @@ export class AFLeasing extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -462,7 +462,7 @@ export class AFLeasing extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -471,31 +471,31 @@ export class AFLeasing extends AFEntity {
       key: 'splatkove-kalendare',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSplatkovyKalendar
+      afClass: 'AFSplatkovyKalendar'
     },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     'danove-naklady' : {
       key: 'danove-naklady',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFDanovyNaklad
+      afClass: 'AFDanovyNaklad'
     },
     zapujcky : {
       key: 'zapujcky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFZapujcka
+      afClass: 'AFZapujcka'
     },
 
   }

@@ -163,14 +163,14 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     platiOd : {
@@ -231,21 +231,21 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
       key: 'radaPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaBanka,
+      afClass: 'AFRadaBanka',
       
     },
     radaVydej : {
       key: 'radaVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaBanka,
+      afClass: 'AFRadaBanka',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -253,21 +253,21 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     bsp : {
       key: 'bsp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFBankovniUcet,
+      afClass: 'AFBankovniUcet',
       
     },
     primUcet : {
       key: 'primUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -275,21 +275,21 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
       key: 'typUcOpPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     typUcOpVydej : {
       key: 'typUcOpVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     statDph : {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStatDph,
+      afClass: 'AFStatDph',
       maxLength: 3,
       
     },
@@ -330,14 +330,14 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
       key: 'clenKonVykDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniKontrolniHlaseni,
+      afClass: 'AFCleneniKontrolniHlaseni',
       
     },
     sablonaMail : {
       key: 'sablonaMail',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSablonaMail,
+      afClass: 'AFSablonaMail',
       
     },
 
@@ -345,13 +345,13 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
       key: 'autoTisky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAutotisk
+      afClass: 'AFAutotisk'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

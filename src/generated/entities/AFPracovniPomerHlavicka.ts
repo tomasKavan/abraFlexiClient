@@ -122,7 +122,7 @@ export class AFPracovniPomerHlavicka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
 
@@ -130,7 +130,7 @@ export class AFPracovniPomerHlavicka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

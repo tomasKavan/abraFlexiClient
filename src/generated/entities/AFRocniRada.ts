@@ -93,14 +93,14 @@ export class AFRocniRada extends AFEntity {
       key: 'rada',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRada,
+      afClass: 'AFRada',
       
     },
     ucetObdobi : {
       key: 'ucetObdobi',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       maxLength: 20,
       
     },
@@ -109,7 +109,7 @@ export class AFRocniRada extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

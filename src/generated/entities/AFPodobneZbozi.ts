@@ -50,7 +50,7 @@ export class AFPodobneZbozi extends AFEntity {
       key: 'cenikOtec',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -58,7 +58,7 @@ export class AFPodobneZbozi extends AFEntity {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -67,7 +67,7 @@ export class AFPodobneZbozi extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

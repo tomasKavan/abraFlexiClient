@@ -129,21 +129,21 @@ export class AFProdejkaPlatba extends AFEntity {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaUhrady,
+      afClass: 'AFFormaUhrady',
       
     },
     doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
 

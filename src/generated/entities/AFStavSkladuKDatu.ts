@@ -91,7 +91,7 @@ export class AFStavSkladuKDatu extends AFEntity {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -99,14 +99,14 @@ export class AFStavSkladuKDatu extends AFEntity {
       key: 'mj1',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaZbozi,
+      afClass: 'AFSkupinaZbozi',
       
     },
     stitky : {

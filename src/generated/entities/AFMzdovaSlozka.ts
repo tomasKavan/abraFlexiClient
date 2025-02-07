@@ -355,28 +355,28 @@ export class AFMzdovaSlozka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomerHlavicka,
+      afClass: 'AFPracovniPomerHlavicka',
       
     },
     cisMzdSloz : {
       key: 'cisMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCiselnikMzdovychSlozek,
+      afClass: 'AFCiselnikMzdovychSlozek',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -384,28 +384,28 @@ export class AFMzdovaSlozka extends AFEntity {
       key: 'stalaMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStalaMzdovaSlozka,
+      afClass: 'AFStalaMzdovaSlozka',
       
     },
     srazka : {
       key: 'srazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSrazka,
+      afClass: 'AFSrazka',
       
     },
     nepritomnost : {
       key: 'nepritomnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFNepritomnost,
+      afClass: 'AFNepritomnost',
       
     },
     odmena : {
       key: 'odmena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMzdovaSlozka,
+      afClass: 'AFMzdovaSlozka',
       
     },
 
@@ -413,7 +413,7 @@ export class AFMzdovaSlozka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

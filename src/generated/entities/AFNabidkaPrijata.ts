@@ -656,21 +656,21 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypNabidkyPrijate,
+      afClass: 'AFTypNabidkyPrijate',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -678,7 +678,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -686,7 +686,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -694,21 +694,21 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     faRegion : {
       key: 'faRegion',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -716,14 +716,14 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -731,7 +731,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -739,7 +739,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -747,7 +747,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'kontaktOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKontakt,
+      afClass: 'AFKontakt',
       
     },
     kontaktJmeno : {
@@ -775,14 +775,14 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'rada',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaNabidkyPrijate,
+      afClass: 'AFRadaNabidkyPrijate',
       
     },
     formaDopravy : {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaDopravy,
+      afClass: 'AFFormaDopravy',
       
     },
     uuid : {
@@ -803,28 +803,28 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'dodatNa',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     formaUhradyCis : {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaUhrady,
+      afClass: 'AFFormaUhrady',
       
     },
     typDoklNabFak : {
       key: 'typDoklNabFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypObjednavkyVydane,
+      afClass: 'AFTypObjednavkyVydane',
       
     },
     stavDoklObch : {
       key: 'stavDoklObch',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStavObchodnihoDokladu,
+      afClass: 'AFStavObchodnihoDokladu',
       
     },
 
@@ -832,37 +832,37 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'vazebni-doklady',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVazebniDoklad
+      afClass: 'AFVazebniDoklad'
     },
     polozkyDokladu : {
       key: 'polozkyDokladu',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFNabidkaPrijataPolozka
+      afClass: 'AFNabidkaPrijataPolozka'
     },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     udalosti : {
       key: 'udalosti',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUdalost
+      afClass: 'AFUdalost'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     vazby : {
       key: 'vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVazba
+      afClass: 'AFVazba'
     },
 
   }

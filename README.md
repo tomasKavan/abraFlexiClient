@@ -7,13 +7,29 @@ ABRA Flexi Typescript client (AFTC) je knihovna pro přístup k REST API ABRA Fl
 
 AFTC obsahuje třídu pro každou z evidencí v ABRA Flexi. Vlastnosti těchto tříd zároveň modelují vztahy mezi evidencemi.
 
-**Knihovna je v ranných fázích vývoje a její rozhraní nelze označit jako stabilní**.
+**Knihovna je v rané fázi vývoje a její rozhraní zatím není stabilní**.
 
 ## Instalace
 
 Knihovna je distribuovaná jako npm balíček
 ```
-npm install aftc
+npm install abra-flexi
+```
+
+**!! Zatím nedistribuováno !!**
+Místo npm použíjte přímo git repository a `npm link` (knihovnu mustí nejdříve přeložit).
+```
+git checkout git@github.com:tomasKavan/abraFlexiClient.git
+cd abraFlexiClient
+npm install
+npm run build:lib
+npm link
+```
+
+Ve svém projektu potom:
+
+```
+npm link abra-flexi
 ```
 
 ### Gnerování evidenčních tříd
@@ -164,7 +180,7 @@ run()
 - [ ] Vytváření, mazání a změna záznamů v REST API
 - [ ] Lokální keš a společné instance pro jedno ID
 - [ ] Battle tested - reálné nasazení, úprava rozhraní dle reálného použití
-- [ ] Verzování 
+- [ ] Verzování, npm balíčkování
 - [ ] Kontrola kompatibility při připojování k REST API
 - [ ] English documentation
 

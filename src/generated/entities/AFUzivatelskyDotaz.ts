@@ -157,7 +157,7 @@ export class AFUzivatelskyDotaz extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -166,19 +166,19 @@ export class AFUzivatelskyDotaz extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     params : {
       key: 'params',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskyDotazParametr
+      afClass: 'AFUzivatelskyDotazParametr'
     },
     props : {
       key: 'props',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskyDotazVlastnost
+      afClass: 'AFUzivatelskyDotazVlastnost'
     },
 
   }

@@ -234,14 +234,14 @@ export class AFTypProdejky extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     platiOd : {
@@ -349,7 +349,7 @@ export class AFTypProdejky extends AFEntity {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaUhrady,
+      afClass: 'AFFormaUhrady',
       
     },
     doprava : {
@@ -380,14 +380,14 @@ export class AFTypProdejky extends AFEntity {
       key: 'radaPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaFakturyVydane,
+      afClass: 'AFRadaFakturyVydane',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -395,35 +395,35 @@ export class AFTypProdejky extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     bspBan : {
       key: 'bspBan',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFBankovniUcet,
+      afClass: 'AFBankovniUcet',
       
     },
     typProtiDokladuPrijem : {
       key: 'typProtiDokladuPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       
     },
     typProtiDokladuVydej : {
       key: 'typProtiDokladuVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       
     },
     konSym : {
       key: 'konSym',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKonstSymbol,
+      afClass: 'AFKonstSymbol',
       maxLength: 20,
       
     },
@@ -431,7 +431,7 @@ export class AFTypProdejky extends AFEntity {
       key: 'primUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -439,21 +439,21 @@ export class AFTypProdejky extends AFEntity {
       key: 'typUcOpPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     statDph : {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStatDph,
+      afClass: 'AFStatDph',
       maxLength: 3,
       
     },
@@ -467,7 +467,7 @@ export class AFTypProdejky extends AFEntity {
       key: 'statOdesl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -475,7 +475,7 @@ export class AFTypProdejky extends AFEntity {
       key: 'statUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -483,7 +483,7 @@ export class AFTypProdejky extends AFEntity {
       key: 'statPuvod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -491,35 +491,35 @@ export class AFTypProdejky extends AFEntity {
       key: 'dodPodm',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatDodaciPodminky,
+      afClass: 'AFIntrastatDodaciPodminky',
       
     },
     zvlPoh : {
       key: 'zvlPoh',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatZvlastniPohyb,
+      afClass: 'AFIntrastatZvlastniPohyb',
       
     },
     obchTrans : {
       key: 'obchTrans',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatObchodniTransakce,
+      afClass: 'AFIntrastatObchodniTransakce',
       
     },
     druhDopr : {
       key: 'druhDopr',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatDruhDopravy,
+      afClass: 'AFIntrastatDruhDopravy',
       
     },
     krajUrc : {
       key: 'krajUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatKrajUrceni,
+      afClass: 'AFIntrastatKrajUrceni',
       
     },
     generovatSkl : {
@@ -553,21 +553,21 @@ export class AFTypProdejky extends AFEntity {
       key: 'typDoklPok',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyVydane,
+      afClass: 'AFTypFakturyVydane',
       
     },
     bspSkl : {
       key: 'bspSkl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     formaDopravy : {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaDopravy,
+      afClass: 'AFFormaDopravy',
       
     },
     emailTxt : {
@@ -600,14 +600,14 @@ export class AFTypProdejky extends AFEntity {
       key: 'clenKonVykDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniKontrolniHlaseni,
+      afClass: 'AFCleneniKontrolniHlaseni',
       
     },
     sablonaMail : {
       key: 'sablonaMail',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSablonaMail,
+      afClass: 'AFSablonaMail',
       
     },
     generovatRecyklacniPoplatky : {
@@ -621,13 +621,13 @@ export class AFTypProdejky extends AFEntity {
       key: 'autoTisky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAutotisk
+      afClass: 'AFAutotisk'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

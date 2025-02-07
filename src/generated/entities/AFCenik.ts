@@ -911,49 +911,49 @@ export class AFCenik extends AFEntity {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaZbozi,
+      afClass: 'AFSkupinaZbozi',
       
     },
     mj1 : {
       key: 'mj1',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mj2 : {
       key: 'mj2',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mj3 : {
       key: 'mj3',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mjHmot : {
       key: 'mjHmot',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mjObj : {
       key: 'mjObj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     stat : {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -961,7 +961,7 @@ export class AFCenik extends AFEntity {
       key: 'nomen',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatKodNomenklatury,
+      afClass: 'AFIntrastatKodNomenklatury',
       maxLength: 20,
       
     },
@@ -969,28 +969,28 @@ export class AFCenik extends AFEntity {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     vyrobce : {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     dphPren : {
       key: 'dphPren',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPreneseniDph,
+      afClass: 'AFPreneseniDph',
       
     },
     mjDodaciLhuta : {
       key: 'mjDodaciLhuta',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     sumStavMj : {
@@ -1047,103 +1047,103 @@ export class AFCenik extends AFEntity {
       key: 'odberatele',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFOdberatel
+      afClass: 'AFOdberatel'
     },
     'cenik-obaly' : {
       key: 'cenik-obaly',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCenikObal
+      afClass: 'AFCenikObal'
     },
     atributy : {
       key: 'atributy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAtribut
+      afClass: 'AFAtribut'
     },
     'sklad-karty' : {
       key: 'sklad-karty',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSkladovaKarta
+      afClass: 'AFSkladovaKarta'
     },
     'sady-a-komplety' : {
       key: 'sady-a-komplety',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSadyAKomplety
+      afClass: 'AFSadyAKomplety'
     },
     prislustenstvi : {
       key: 'prislustenstvi',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPrislustenstvi
+      afClass: 'AFPrislustenstvi'
     },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     poplatky : {
       key: 'poplatky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPoplatek
+      afClass: 'AFPoplatek'
     },
     dodavatele : {
       key: 'dodavatele',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFDodavatel
+      afClass: 'AFDodavatel'
     },
     'vyrobni-cisla' : {
       key: 'vyrobni-cisla',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVyrobniCislo
+      afClass: 'AFVyrobniCislo'
     },
     stavy : {
       key: 'stavy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFStavCeniku
+      afClass: 'AFStavCeniku'
     },
     udalosti : {
       key: 'udalosti',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUdalost
+      afClass: 'AFUdalost'
     },
     'podobne-zbozi' : {
       key: 'podobne-zbozi',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPodobneZbozi
+      afClass: 'AFPodobneZbozi'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     cenHladiny : {
       key: 'cenHladiny',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCenovaUroven
+      afClass: 'AFCenovaUroven'
     },
     'typy-sazeb-dph' : {
       key: 'typy-sazeb-dph',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCenikTypSazbyDph
+      afClass: 'AFCenikTypSazbyDph'
     },
     rezervace : {
       key: 'rezervace',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFRezervace
+      afClass: 'AFRezervace'
     },
 
   }

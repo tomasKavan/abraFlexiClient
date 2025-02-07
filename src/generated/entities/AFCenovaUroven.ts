@@ -332,7 +332,7 @@ export class AFCenovaUroven extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -341,31 +341,31 @@ export class AFCenovaUroven extends AFEntity {
       key: 'firmy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAdresar
+      afClass: 'AFAdresar'
     },
     skupinyCen : {
       key: 'skupinyCen',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCenikovaSkupina
+      afClass: 'AFCenikovaSkupina'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     ceniky : {
       key: 'ceniky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCenik
+      afClass: 'AFCenik'
     },
     skupinyZbozi : {
       key: 'skupinyZbozi',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSkupinaZbozi
+      afClass: 'AFSkupinaZbozi'
     },
 
   }

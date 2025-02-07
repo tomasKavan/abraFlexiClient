@@ -198,7 +198,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'leasing',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFLeasing,
+      afClass: 'AFLeasing',
       maxLength: 20,
       
     },
@@ -206,7 +206,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -214,7 +214,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -222,7 +222,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'dphMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -230,7 +230,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'dphDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -238,7 +238,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniDph,
+      afClass: 'AFCleneniDph',
       maxLength: 20,
       
     },
@@ -246,7 +246,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -254,7 +254,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -262,7 +262,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'zavazek',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 6,
       
     },
@@ -270,7 +270,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStatDph,
+      afClass: 'AFStatDph',
       maxLength: 3,
       
     },
@@ -279,7 +279,7 @@ export class AFSplatkovyKalendar extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

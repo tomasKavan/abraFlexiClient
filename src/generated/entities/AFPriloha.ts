@@ -202,7 +202,7 @@ export class AFPriloha extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -210,42 +210,42 @@ export class AFPriloha extends AFEntity {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklInt : {
       key: 'doklInt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklObch : {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklSklad : {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkladovyPohyb,
+      afClass: 'AFSkladovyPohyb',
       
     },
     nastaveni : {
       key: 'nastaveni',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFNastaveni,
+      afClass: 'AFNastaveni',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -253,35 +253,35 @@ export class AFPriloha extends AFEntity {
       key: 'adresar',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     kontakt : {
       key: 'kontakt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKontakt,
+      afClass: 'AFKontakt',
       
     },
     konektor : {
       key: 'konektor',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     report : {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -289,7 +289,7 @@ export class AFPriloha extends AFEntity {
       key: 'smlouva',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSmlouva,
+      afClass: 'AFSmlouva',
       maxLength: 20,
       
     },
@@ -297,7 +297,7 @@ export class AFPriloha extends AFEntity {
       key: 'polSmlouvy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSmlouvaPolozka,
+      afClass: 'AFSmlouvaPolozka',
       maxLength: 64,
       
     },
@@ -305,21 +305,21 @@ export class AFPriloha extends AFEntity {
       key: 'uzel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStrom,
+      afClass: 'AFStrom',
       
     },
     pozadavek : {
       key: 'pozadavek',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     adrUdalost : {
       key: 'adrUdalost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUdalost,
+      afClass: 'AFUdalost',
       
     },
     content : {
@@ -333,7 +333,7 @@ export class AFPriloha extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

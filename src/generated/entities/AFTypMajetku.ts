@@ -129,14 +129,14 @@ export class AFTypMajetku extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     jeOdpis : {
@@ -164,7 +164,7 @@ export class AFTypMajetku extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -172,7 +172,7 @@ export class AFTypMajetku extends AFEntity {
       key: 'primarniUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -180,7 +180,7 @@ export class AFTypMajetku extends AFEntity {
       key: 'protiUcetZarazeni',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -188,7 +188,7 @@ export class AFTypMajetku extends AFEntity {
       key: 'opravnyUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -196,7 +196,7 @@ export class AFTypMajetku extends AFEntity {
       key: 'odpisovyUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -204,14 +204,14 @@ export class AFTypMajetku extends AFEntity {
       key: 'zustVyrazUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -219,7 +219,7 @@ export class AFTypMajetku extends AFEntity {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypOrganizace,
+      afClass: 'AFTypOrganizace',
       maxLength: 20,
       
     },
@@ -228,7 +228,7 @@ export class AFTypMajetku extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

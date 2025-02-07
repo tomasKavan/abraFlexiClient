@@ -664,14 +664,14 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -679,28 +679,28 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     typUcOp : {
       key: 'typUcOp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     zklMdUcet : {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -708,7 +708,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -716,7 +716,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'dphMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -724,7 +724,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'dphDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -732,7 +732,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -740,28 +740,28 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     clenDph : {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniDph,
+      afClass: 'AFCleneniDph',
       
     },
     dphPren : {
       key: 'dphPren',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPreneseniDph,
+      afClass: 'AFPreneseniDph',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -769,28 +769,28 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mjObjem : {
       key: 'mjObjem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     sazbaDph : {
       key: 'sazbaDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSazbaDph,
+      afClass: 'AFSazbaDph',
       
     },
     sazbaDphPuv : {
       key: 'sazbaDphPuv',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSazbaDph,
+      afClass: 'AFSazbaDph',
       
     },
     vyrobniCislaOk : {
@@ -809,7 +809,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'skupPlneni',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaPlneni,
+      afClass: 'AFSkupinaPlneni',
       
     },
     stitky : {
@@ -843,7 +843,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'clenKonVykDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniKontrolniHlaseni,
+      afClass: 'AFCleneniKontrolniHlaseni',
       
     },
     kopClenKonVykDph : {
@@ -898,14 +898,14 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFakturaPrijata,
+      afClass: 'AFFakturaPrijata',
       
     },
     poplatekParentPolFak : {
       key: 'poplatekParentPolFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFakturaPrijataPolozka,
+      afClass: 'AFFakturaPrijataPolozka',
       
     },
     zdrojProSkl : {
@@ -932,19 +932,19 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'vyrobniCislaVydana',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVyrobniCislo
+      afClass: 'AFVyrobniCislo'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     vyrobniCislaPrijata : {
       key: 'vyrobniCislaPrijata',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVyrobniCislo
+      afClass: 'AFVyrobniCislo'
     },
 
   }

@@ -219,7 +219,7 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
       key: 'typDoklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyPrijate,
+      afClass: 'AFTypFakturyPrijate',
       
     },
 
@@ -227,7 +227,7 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

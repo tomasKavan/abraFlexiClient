@@ -4,6 +4,7 @@ import { AFEntity } from '../abra/AFEntity'
 <% }) %>
 
 const AFEntityRegistry: Record<string, typeof AFEntity> = {
+  AFEntity,
 <% evidences.forEach(ev => { %>  <%= ev.tsClassName %>,
 <% }) %>}
 

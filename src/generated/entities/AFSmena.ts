@@ -78,21 +78,21 @@ export class AFSmena extends AFEntity {
       key: 'skupOsob',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaOsob,
+      afClass: 'AFSkupinaOsob',
       
     },
     osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomerHlavicka,
+      afClass: 'AFPracovniPomerHlavicka',
       
     },
 
@@ -100,7 +100,7 @@ export class AFSmena extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

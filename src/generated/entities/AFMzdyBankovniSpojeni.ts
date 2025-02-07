@@ -100,7 +100,7 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -108,7 +108,7 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     popis : {
@@ -175,7 +175,7 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -183,7 +183,7 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
       key: 'smerKod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPenezniUstav,
+      afClass: 'AFPenezniUstav',
       maxLength: 20,
       
     },
@@ -191,14 +191,14 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
       key: 'konSym',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKonstSymbol,
+      afClass: 'AFKonstSymbol',
       
     },
     osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
 
@@ -206,7 +206,7 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

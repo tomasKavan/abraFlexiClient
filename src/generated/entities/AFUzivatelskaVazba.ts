@@ -48,7 +48,7 @@ export class AFUzivatelskaVazba extends AFEntity {
       key: 'vazbaTyp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypUzivatelskeVazby,
+      afClass: 'AFTypUzivatelskeVazby',
       
     },
     modul : {
@@ -112,7 +112,7 @@ export class AFUzivatelskaVazba extends AFEntity {
       key: 'object',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
 

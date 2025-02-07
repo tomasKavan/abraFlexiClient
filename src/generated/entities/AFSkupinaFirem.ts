@@ -122,7 +122,7 @@ export class AFSkupinaFirem extends AFEntity {
       key: 'ucetPrimVfa',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -130,7 +130,7 @@ export class AFSkupinaFirem extends AFEntity {
       key: 'ucetPrimPfa',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -138,7 +138,7 @@ export class AFSkupinaFirem extends AFEntity {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypOrganizace,
+      afClass: 'AFTypOrganizace',
       maxLength: 20,
       
     },
@@ -147,7 +147,7 @@ export class AFSkupinaFirem extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

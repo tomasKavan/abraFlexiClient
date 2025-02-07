@@ -52,7 +52,7 @@ export class AFPoSplatnosti extends AFEntity {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },

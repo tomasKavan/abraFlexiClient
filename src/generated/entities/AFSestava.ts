@@ -540,7 +540,7 @@ export class AFSestava extends AFEntity {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypOrganizace,
+      afClass: 'AFTypOrganizace',
       maxLength: 6,
       
     },
@@ -548,49 +548,49 @@ export class AFSestava extends AFEntity {
       key: 'radkaCil',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       
     },
     sestavaZdroj : {
       key: 'sestavaZdroj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSestava,
+      afClass: 'AFSestava',
       
     },
     radkaZdroj : {
       key: 'radkaZdroj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       
     },
     radkaRozdil1 : {
       key: 'radkaRozdil1',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       
     },
     radkaRozdil2 : {
       key: 'radkaRozdil2',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       
     },
     radkaZaokr1 : {
       key: 'radkaZaokr1',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       
     },
     radkaZaokr2 : {
       key: 'radkaZaokr2',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       
     },
 
@@ -598,25 +598,25 @@ export class AFSestava extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     'pricteni-rozdilu' : {
       key: 'pricteni-rozdilu',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPricteniRozdilu
+      afClass: 'AFPricteniRozdilu'
     },
     'umisteni-uctu' : {
       key: 'umisteni-uctu',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUmisteniUctu
+      afClass: 'AFUmisteniUctu'
     },
     radkySestavy : {
       key: 'radkySestavy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFRadekSestavy
+      afClass: 'AFRadekSestavy'
     },
 
   }

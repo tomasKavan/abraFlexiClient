@@ -147,13 +147,13 @@ export class AFMena extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     kurzy : {
       key: 'kurzy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFKurz
+      afClass: 'AFKurz'
     },
 
   }

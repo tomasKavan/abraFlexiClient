@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",
-    "module": "CommonJS",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "tsBuildInfoFile": "./dist/.tsbuildinfo"

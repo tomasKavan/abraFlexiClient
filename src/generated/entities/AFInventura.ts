@@ -121,7 +121,7 @@ export class AFInventura extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
 
@@ -129,13 +129,13 @@ export class AFInventura extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     'inventura-polozky' : {
       key: 'inventura-polozky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFInventuraPolozka
+      afClass: 'AFInventuraPolozka'
     },
 
   }

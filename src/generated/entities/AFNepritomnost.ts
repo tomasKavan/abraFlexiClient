@@ -175,21 +175,21 @@ export class AFNepritomnost extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     cisMzdSloz : {
       key: 'cisMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCiselnikMzdovychSlozek,
+      afClass: 'AFCiselnikMzdovychSlozek',
       
     },
     pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomerHlavicka,
+      afClass: 'AFPracovniPomerHlavicka',
       
     },
 
@@ -197,13 +197,13 @@ export class AFNepritomnost extends AFEntity {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

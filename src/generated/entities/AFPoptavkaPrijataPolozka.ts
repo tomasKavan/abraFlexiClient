@@ -440,14 +440,14 @@ export class AFPoptavkaPrijataPolozka extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -455,21 +455,21 @@ export class AFPoptavkaPrijataPolozka extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -477,14 +477,14 @@ export class AFPoptavkaPrijataPolozka extends AFEntity {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -492,28 +492,28 @@ export class AFPoptavkaPrijataPolozka extends AFEntity {
       key: 'cenHlad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenovaUroven,
+      afClass: 'AFCenovaUroven',
       
     },
     mj : {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mjObjem : {
       key: 'mjObjem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     sazbaDph : {
       key: 'sazbaDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSazbaDph,
+      afClass: 'AFSazbaDph',
       
     },
     idPolObchZdroj : {
@@ -560,14 +560,14 @@ export class AFPoptavkaPrijataPolozka extends AFEntity {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPoptavkaPrijata,
+      afClass: 'AFPoptavkaPrijata',
       
     },
     poplatekParentPolObch : {
       key: 'poplatekParentPolObch',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPoptavkaPrijataPolozka,
+      afClass: 'AFPoptavkaPrijataPolozka',
       
     },
     neseskupovatObj : {
@@ -593,7 +593,7 @@ export class AFPoptavkaPrijataPolozka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

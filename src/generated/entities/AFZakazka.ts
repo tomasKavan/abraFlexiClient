@@ -297,7 +297,7 @@ export class AFZakazka extends AFEntity {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -305,14 +305,14 @@ export class AFZakazka extends AFEntity {
       key: 'mistUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMistoUrceni,
+      afClass: 'AFMistoUrceni',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -320,7 +320,7 @@ export class AFZakazka extends AFEntity {
       key: 'stavZakazky',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStavZakazky,
+      afClass: 'AFStavZakazky',
       maxLength: 20,
       
     },
@@ -328,7 +328,7 @@ export class AFZakazka extends AFEntity {
       key: 'typZakazky',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZakazky,
+      afClass: 'AFTypZakazky',
       maxLength: 20,
       
     },
@@ -336,7 +336,7 @@ export class AFZakazka extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -344,7 +344,7 @@ export class AFZakazka extends AFEntity {
       key: 'vyhZakazky',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFHodnoceniZakazky,
+      afClass: 'AFHodnoceniZakazky',
       maxLength: 20,
       
     },
@@ -352,14 +352,14 @@ export class AFZakazka extends AFEntity {
       key: 'kontaktOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKontakt,
+      afClass: 'AFKontakt',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
 
@@ -367,19 +367,19 @@ export class AFZakazka extends AFEntity {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     udalosti : {
       key: 'udalosti',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUdalost
+      afClass: 'AFUdalost'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

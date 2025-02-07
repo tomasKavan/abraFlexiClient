@@ -595,7 +595,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -603,28 +603,28 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     typUcOp : {
       key: 'typUcOp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     zklMdUcet : {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -632,7 +632,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -640,7 +640,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'dphMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -648,7 +648,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'dphDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -656,7 +656,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -664,42 +664,42 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     clenDph : {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniDph,
+      afClass: 'AFCleneniDph',
       
     },
     dphPren : {
       key: 'dphPren',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPreneseniDph,
+      afClass: 'AFPreneseniDph',
       
     },
     mj : {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mjObjem : {
       key: 'mjObjem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     sazbaDph : {
       key: 'sazbaDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSazbaDph,
+      afClass: 'AFSazbaDph',
       
     },
     idPolObchZdroj : {
@@ -725,7 +725,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'clenKonVykDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniKontrolniHlaseni,
+      afClass: 'AFCleneniKontrolniHlaseni',
       
     },
     kopClenKonVykDph : {
@@ -766,7 +766,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZavazek,
+      afClass: 'AFZavazek',
       
     },
     sumVedlNaklIntrMen : {
@@ -781,7 +781,7 @@ export class AFZavazekPolozka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

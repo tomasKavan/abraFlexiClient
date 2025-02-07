@@ -137,14 +137,14 @@ export class AFOsobaBlizka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     vztah : {
       key: 'vztah',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFVztah,
+      afClass: 'AFVztah',
       
     },
 
@@ -152,7 +152,7 @@ export class AFOsobaBlizka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

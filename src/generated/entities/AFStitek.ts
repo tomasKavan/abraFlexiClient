@@ -269,7 +269,7 @@ export class AFStitek extends AFEntity {
       key: 'skupVybKlic',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaStitku,
+      afClass: 'AFSkupinaStitku',
       
     },
 
@@ -277,7 +277,7 @@ export class AFStitek extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

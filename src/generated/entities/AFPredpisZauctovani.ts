@@ -138,14 +138,14 @@ export class AFPredpisZauctovani extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     modulFav : {
@@ -227,7 +227,7 @@ export class AFPredpisZauctovani extends AFEntity {
       key: 'protiUcetPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -235,7 +235,7 @@ export class AFPredpisZauctovani extends AFEntity {
       key: 'protiUcetVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -243,7 +243,7 @@ export class AFPredpisZauctovani extends AFEntity {
       key: 'dphSnizUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -251,7 +251,7 @@ export class AFPredpisZauctovani extends AFEntity {
       key: 'dphSniz2Ucet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -259,7 +259,7 @@ export class AFPredpisZauctovani extends AFEntity {
       key: 'dphZaklUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -268,7 +268,7 @@ export class AFPredpisZauctovani extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

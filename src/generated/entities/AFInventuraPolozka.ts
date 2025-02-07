@@ -190,49 +190,49 @@ export class AFInventuraPolozka extends AFEntity {
       key: 'skladKarta',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkladovaKarta,
+      afClass: 'AFSkladovaKarta',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       
     },
     sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     inventura : {
       key: 'inventura',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFInventura,
+      afClass: 'AFInventura',
       
     },
     mj : {
       key: 'mj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mj2 : {
       key: 'mj2',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
     mj3 : {
       key: 'mj3',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMernaJednotka,
+      afClass: 'AFMernaJednotka',
       
     },
 
@@ -240,7 +240,7 @@ export class AFInventuraPolozka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

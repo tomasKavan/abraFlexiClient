@@ -211,7 +211,7 @@ export class AFFormaUhrady extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
 
@@ -219,13 +219,13 @@ export class AFFormaUhrady extends AFEntity {
       key: 'zauctovani',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFFormaUhradyZauctovani
+      afClass: 'AFFormaUhradyZauctovani'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

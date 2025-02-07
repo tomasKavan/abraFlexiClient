@@ -163,7 +163,7 @@ export class AFUzivatelskyDotazVlastnost extends AFEntity {
       key: 'dotaz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUzivatelskyDotaz,
+      afClass: 'AFUzivatelskyDotaz',
       
     },
 
@@ -171,7 +171,7 @@ export class AFUzivatelskyDotazVlastnost extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

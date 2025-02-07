@@ -41,7 +41,7 @@ export class AFCastkyKOdpoctu extends AFEntity {
       key: 'zaloha',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     ucetni : {

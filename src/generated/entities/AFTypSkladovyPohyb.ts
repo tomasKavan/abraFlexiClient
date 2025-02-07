@@ -185,14 +185,14 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     platiOd : {
@@ -265,21 +265,21 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'radaPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaSkladovyPohyb,
+      afClass: 'AFRadaSkladovyPohyb',
       
     },
     radaVydej : {
       key: 'radaVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaSkladovyPohyb,
+      afClass: 'AFRadaSkladovyPohyb',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -287,42 +287,42 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     bsp : {
       key: 'bsp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     typProtiDokladuPrijem : {
       key: 'typProtiDokladuPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       
     },
     typProtiDokladuVydej : {
       key: 'typProtiDokladuVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       
     },
     typUcOpPrijem : {
       key: 'typUcOpPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     typUcOpVydej : {
       key: 'typUcOpVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     tiskAutomat : {
@@ -335,7 +335,7 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'statOdesl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -343,7 +343,7 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'statUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -351,7 +351,7 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'statPuvod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -359,35 +359,35 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'dodPodm',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatDodaciPodminky,
+      afClass: 'AFIntrastatDodaciPodminky',
       
     },
     zvlPoh : {
       key: 'zvlPoh',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatZvlastniPohyb,
+      afClass: 'AFIntrastatZvlastniPohyb',
       
     },
     obchTrans : {
       key: 'obchTrans',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatObchodniTransakce,
+      afClass: 'AFIntrastatObchodniTransakce',
       
     },
     druhDopr : {
       key: 'druhDopr',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatDruhDopravy,
+      afClass: 'AFIntrastatDruhDopravy',
       
     },
     krajUrc : {
       key: 'krajUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatKrajUrceni,
+      afClass: 'AFIntrastatKrajUrceni',
       
     },
     razeniProTiskK : {
@@ -409,7 +409,7 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaDopravy,
+      afClass: 'AFFormaDopravy',
       
     },
     emailTxt : {
@@ -422,7 +422,7 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'sablonaMail',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSablonaMail,
+      afClass: 'AFSablonaMail',
       
     },
 
@@ -430,13 +430,13 @@ export class AFTypSkladovyPohyb extends AFEntity {
       key: 'autoTisky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAutotisk
+      afClass: 'AFAutotisk'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

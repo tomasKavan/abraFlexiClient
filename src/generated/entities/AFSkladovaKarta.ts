@@ -359,42 +359,42 @@ export class AFSkladovaKarta extends AFEntity {
       key: 'ucetObdobi',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       
     },
     sklad : {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
     mistnost : {
       key: 'mistnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUmisteniVeSkladu,
+      afClass: 'AFUmisteniVeSkladu',
       
     },
     regal : {
       key: 'regal',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUmisteniVeSkladu,
+      afClass: 'AFUmisteniVeSkladu',
       
     },
     police : {
       key: 'police',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUmisteniVeSkladu,
+      afClass: 'AFUmisteniVeSkladu',
       
     },
 
@@ -402,13 +402,13 @@ export class AFSkladovaKarta extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     'skladovy-pohyb-polozky' : {
       key: 'skladovy-pohyb-polozky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSkladovyPohybPolozka
+      afClass: 'AFSkladovyPohybPolozka'
     },
 
   }

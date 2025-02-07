@@ -49,7 +49,7 @@ export class AFMapovaniSkladu extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -57,14 +57,14 @@ export class AFMapovaniSkladu extends AFEntity {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaZbozi,
+      afClass: 'AFSkupinaZbozi',
       
     },
     cenik : {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -72,7 +72,7 @@ export class AFMapovaniSkladu extends AFEntity {
       key: 'sklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSklad,
+      afClass: 'AFSklad',
       
     },
 
@@ -80,7 +80,7 @@ export class AFMapovaniSkladu extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

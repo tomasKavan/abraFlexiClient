@@ -56,28 +56,28 @@ export class AFCisloBaliku extends AFEntity {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaDopravy,
+      afClass: 'AFFormaDopravy',
       
     },
     doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklSklad : {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkladovyPohyb,
+      afClass: 'AFSkladovyPohyb',
       
     },
     doklObch : {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
 
@@ -85,7 +85,7 @@ export class AFCisloBaliku extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

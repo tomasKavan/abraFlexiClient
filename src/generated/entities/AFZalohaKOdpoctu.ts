@@ -44,7 +44,7 @@ export class AFZalohaKOdpoctu extends AFEntity {
       key: 'zaloha',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     ucetni : {
@@ -128,7 +128,7 @@ export class AFZalohaKOdpoctu extends AFEntity {
       key: 'doporuceni',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFDoporuceni
+      afClass: 'AFDoporuceni'
     },
 
   }

@@ -418,84 +418,84 @@ export class AFSmlouva extends AFEntity {
       key: 'typSml',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSmlouvy,
+      afClass: 'AFTypSmlouvy',
       
     },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     firmaFakt : {
       key: 'firmaFakt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       
     },
     typDoklFak : {
       key: 'typDoklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyVydane,
+      afClass: 'AFTypFakturyVydane',
       
     },
     konSym : {
       key: 'konSym',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKonstSymbol,
+      afClass: 'AFKonstSymbol',
       
     },
     stavSml : {
       key: 'stavSml',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStavSmlouvy,
+      afClass: 'AFStavSmlouvy',
       
     },
     typDoklFakStredisko : {
       key: 'typDoklFakStredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       
     },
     typDoklFakCinnost : {
       key: 'typDoklFakCinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     typDoklFakBspBan : {
       key: 'typDoklFakBspBan',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFBankovniUcet,
+      afClass: 'AFBankovniUcet',
       
     },
     zodpOsoba : {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -503,7 +503,7 @@ export class AFSmlouva extends AFEntity {
       key: 'kontaktOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKontakt,
+      afClass: 'AFKontakt',
       
     },
 
@@ -511,31 +511,31 @@ export class AFSmlouva extends AFEntity {
       key: 'polozkySmlouvy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSmlouvaPolozka
+      afClass: 'AFSmlouvaPolozka'
     },
     polozkySmlouvyExt : {
       key: 'polozkySmlouvyExt',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSmlouvaPolozka
+      afClass: 'AFSmlouvaPolozka'
     },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     udalosti : {
       key: 'udalosti',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUdalost
+      afClass: 'AFUdalost'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

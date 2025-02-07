@@ -50,7 +50,7 @@ export class AFSumaceSestavy extends AFEntity {
       key: 'radek',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       maxLength: 20,
       
     },
@@ -58,7 +58,7 @@ export class AFSumaceSestavy extends AFEntity {
       key: 'radekSum',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadekSestavy,
+      afClass: 'AFRadekSestavy',
       maxLength: 20,
       
     },
@@ -67,7 +67,7 @@ export class AFSumaceSestavy extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

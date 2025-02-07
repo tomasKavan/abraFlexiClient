@@ -157,14 +157,14 @@ export class AFTypObjednavkyVydane extends AFEntity {
       key: 'ucetObdobiOd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     ucetObdobiDo : {
       key: 'ucetObdobiDo',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcetniObdobi,
+      afClass: 'AFUcetniObdobi',
       
     },
     platiOd : {
@@ -189,7 +189,7 @@ export class AFTypObjednavkyVydane extends AFEntity {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaUhrady,
+      afClass: 'AFFormaUhrady',
       
     },
     doprava : {
@@ -220,14 +220,14 @@ export class AFTypObjednavkyVydane extends AFEntity {
       key: 'radaVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaObjednavkyVydane,
+      afClass: 'AFRadaObjednavkyVydane',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -235,21 +235,21 @@ export class AFTypObjednavkyVydane extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     typProtiDokladuPrijem : {
       key: 'typProtiDokladuPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     tiskAutomat : {
@@ -277,14 +277,14 @@ export class AFTypObjednavkyVydane extends AFEntity {
       key: 'typDoklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyPrijate,
+      afClass: 'AFTypFakturyPrijate',
       
     },
     formaDopravy : {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaDopravy,
+      afClass: 'AFFormaDopravy',
       
     },
     emailTxt : {
@@ -297,7 +297,7 @@ export class AFTypObjednavkyVydane extends AFEntity {
       key: 'sablonaMail',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSablonaMail,
+      afClass: 'AFSablonaMail',
       
     },
     generovatRecyklacniPoplatky : {
@@ -311,13 +311,13 @@ export class AFTypObjednavkyVydane extends AFEntity {
       key: 'autoTisky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFAutotisk
+      afClass: 'AFAutotisk'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

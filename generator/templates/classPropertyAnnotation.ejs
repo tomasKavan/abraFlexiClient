@@ -2,7 +2,7 @@
       key: '<%= propertyName %>',
       type: PropertyType.<%= typeName %>,
       isArray: false,
-      <% if (type === 'relation') { %>afClass: <%= tsClassName === 'any' ? 'AFEntity' : tsClassName %>,
+      <% if (type === 'relation') { %>afClass: '<%= tsClassName === 'any' ? 'AFEntity' : tsClassName %>',
       <% } %><% if (typeof digits !== 'undefined') { %>digits: <%= digits %>,
       <% } %><% if (typeof decimals !== 'undefined') { %>decimals: <%= decimals %>,
       <% } %><% if (typeof maxLength !== 'undefined') { %>maxLength: <%= maxLength %>,

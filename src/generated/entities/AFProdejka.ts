@@ -986,28 +986,28 @@ export class AFProdejka extends AFEntity {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypProdejky,
+      afClass: 'AFTypProdejky',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     konSym : {
       key: 'konSym',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKonstSymbol,
+      afClass: 'AFKonstSymbol',
       
     },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -1015,7 +1015,7 @@ export class AFProdejka extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1023,7 +1023,7 @@ export class AFProdejka extends AFEntity {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1031,49 +1031,49 @@ export class AFProdejka extends AFEntity {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     faRegion : {
       key: 'faRegion',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     mistUrc : {
       key: 'mistUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMistoUrceni,
+      afClass: 'AFMistoUrceni',
       
     },
     banSpojDod : {
       key: 'banSpojDod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresarBankovniUcet,
+      afClass: 'AFAdresarBankovniUcet',
       
     },
     bankovniUcet : {
       key: 'bankovniUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFBankovniUcet,
+      afClass: 'AFBankovniUcet',
       
     },
     typUcOp : {
       key: 'typUcOp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     primUcet : {
       key: 'primUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1081,7 +1081,7 @@ export class AFProdejka extends AFEntity {
       key: 'protiUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1089,7 +1089,7 @@ export class AFProdejka extends AFEntity {
       key: 'dphZaklUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1097,7 +1097,7 @@ export class AFProdejka extends AFEntity {
       key: 'dphSnizUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1105,7 +1105,7 @@ export class AFProdejka extends AFEntity {
       key: 'dphSniz2Ucet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1113,7 +1113,7 @@ export class AFProdejka extends AFEntity {
       key: 'smerKod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPenezniUstav,
+      afClass: 'AFPenezniUstav',
       maxLength: 20,
       
     },
@@ -1121,7 +1121,7 @@ export class AFProdejka extends AFEntity {
       key: 'statDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStatDph,
+      afClass: 'AFStatDph',
       maxLength: 3,
       
     },
@@ -1129,14 +1129,14 @@ export class AFProdejka extends AFEntity {
       key: 'clenDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniDph,
+      afClass: 'AFCleneniDph',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -1144,14 +1144,14 @@ export class AFProdejka extends AFEntity {
       key: 'cinnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCinnost,
+      afClass: 'AFCinnost',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -1159,7 +1159,7 @@ export class AFProdejka extends AFEntity {
       key: 'statOdesl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1167,7 +1167,7 @@ export class AFProdejka extends AFEntity {
       key: 'statUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1175,7 +1175,7 @@ export class AFProdejka extends AFEntity {
       key: 'statPuvod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1183,42 +1183,42 @@ export class AFProdejka extends AFEntity {
       key: 'dodPodm',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatDodaciPodminky,
+      afClass: 'AFIntrastatDodaciPodminky',
       
     },
     obchTrans : {
       key: 'obchTrans',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatObchodniTransakce,
+      afClass: 'AFIntrastatObchodniTransakce',
       
     },
     druhDopr : {
       key: 'druhDopr',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatDruhDopravy,
+      afClass: 'AFIntrastatDruhDopravy',
       
     },
     zvlPoh : {
       key: 'zvlPoh',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatZvlastniPohyb,
+      afClass: 'AFIntrastatZvlastniPohyb',
       
     },
     krajUrc : {
       key: 'krajUrc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFIntrastatKrajUrceni,
+      afClass: 'AFIntrastatKrajUrceni',
       
     },
     uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -1226,7 +1226,7 @@ export class AFProdejka extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -1234,7 +1234,7 @@ export class AFProdejka extends AFEntity {
       key: 'kontaktOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFKontakt,
+      afClass: 'AFKontakt',
       
     },
     kontaktJmeno : {
@@ -1262,14 +1262,14 @@ export class AFProdejka extends AFEntity {
       key: 'rada',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRadaFakturyVydane,
+      afClass: 'AFRadaFakturyVydane',
       
     },
     smlouva : {
       key: 'smlouva',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSmlouva,
+      afClass: 'AFSmlouva',
       maxLength: 20,
       
     },
@@ -1277,7 +1277,7 @@ export class AFProdejka extends AFEntity {
       key: 'formaDopravy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaDopravy,
+      afClass: 'AFFormaDopravy',
       
     },
     uuid : {
@@ -1331,14 +1331,14 @@ export class AFProdejka extends AFEntity {
       key: 'clenKonVykDph',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCleneniKontrolniHlaseni,
+      afClass: 'AFCleneniKontrolniHlaseni',
       
     },
     formaUhradyCis : {
       key: 'formaUhradyCis',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFormaUhrady,
+      afClass: 'AFFormaUhrady',
       
     },
     generovatSkl : {
@@ -1381,7 +1381,7 @@ export class AFProdejka extends AFEntity {
       key: 'typDoklSkl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       
     },
 
@@ -1389,55 +1389,55 @@ export class AFProdejka extends AFEntity {
       key: 'vazebni-doklady',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVazebniDoklad
+      afClass: 'AFVazebniDoklad'
     },
     polozkyDokladu : {
       key: 'polozkyDokladu',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFFakturaVydanaPolozka
+      afClass: 'AFFakturaVydanaPolozka'
     },
     'formy-uhrad' : {
       key: 'formy-uhrad',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFFormaUhrady
+      afClass: 'AFFormaUhrady'
     },
     'zalohy-k-odpoctu' : {
       key: 'zalohy-k-odpoctu',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFZalohaKOdpoctu
+      afClass: 'AFZalohaKOdpoctu'
     },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     udalosti : {
       key: 'udalosti',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUdalost
+      afClass: 'AFUdalost'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     vazby : {
       key: 'vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFVazba
+      afClass: 'AFVazba'
     },
     'castky-k-odpoctu' : {
       key: 'castky-k-odpoctu',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCastkyKOdpoctu
+      afClass: 'AFCastkyKOdpoctu'
     },
 
   }

@@ -118,7 +118,7 @@ export class AFDanovyNaklad extends AFEntity {
       key: 'leasing',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFLeasing,
+      afClass: 'AFLeasing',
       maxLength: 20,
       
     },
@@ -126,7 +126,7 @@ export class AFDanovyNaklad extends AFEntity {
       key: 'zklMdUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -134,7 +134,7 @@ export class AFDanovyNaklad extends AFEntity {
       key: 'zklDalUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -142,7 +142,7 @@ export class AFDanovyNaklad extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -150,7 +150,7 @@ export class AFDanovyNaklad extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -159,7 +159,7 @@ export class AFDanovyNaklad extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

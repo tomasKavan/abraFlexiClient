@@ -1470,7 +1470,7 @@ export class AFNastaveni extends AFEntity {
       key: 'statLegislativa',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1478,7 +1478,7 @@ export class AFNastaveni extends AFEntity {
       key: 'typOrganizace',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypOrganizace,
+      afClass: 'AFTypOrganizace',
       maxLength: 20,
       
     },
@@ -1486,14 +1486,14 @@ export class AFNastaveni extends AFEntity {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     tdObchodFav : {
       key: 'tdObchodFav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyVydane,
+      afClass: 'AFTypFakturyVydane',
       maxLength: 20,
       
     },
@@ -1501,7 +1501,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodFavZal',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyVydane,
+      afClass: 'AFTypFakturyVydane',
       maxLength: 20,
       
     },
@@ -1509,7 +1509,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodFap',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyPrijate,
+      afClass: 'AFTypFakturyPrijate',
       maxLength: 20,
       
     },
@@ -1517,7 +1517,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodSklPri',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       maxLength: 20,
       
     },
@@ -1525,7 +1525,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodSklVyd',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       maxLength: 20,
       
     },
@@ -1533,7 +1533,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodNav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypNabidkyVydane,
+      afClass: 'AFTypNabidkyVydane',
       maxLength: 20,
       
     },
@@ -1541,7 +1541,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodObp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypObjednavkyPrijate,
+      afClass: 'AFTypObjednavkyPrijate',
       maxLength: 20,
       
     },
@@ -1549,7 +1549,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodObpEdi',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypObjednavkyPrijate,
+      afClass: 'AFTypObjednavkyPrijate',
       maxLength: 20,
       
     },
@@ -1557,7 +1557,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodPpv',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypPoptavkyVydane,
+      afClass: 'AFTypPoptavkyVydane',
       maxLength: 20,
       
     },
@@ -1565,7 +1565,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodNap',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypNabidkyPrijate,
+      afClass: 'AFTypNabidkyPrijate',
       maxLength: 20,
       
     },
@@ -1573,7 +1573,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdObchodObv',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypObjednavkyVydane,
+      afClass: 'AFTypObjednavkyVydane',
       maxLength: 20,
       
     },
@@ -1581,7 +1581,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdFavZalohovyDanDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyVydane,
+      afClass: 'AFTypFakturyVydane',
       maxLength: 20,
       
     },
@@ -1589,7 +1589,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdFapZalohovyDanDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyPrijate,
+      afClass: 'AFTypFakturyPrijate',
       maxLength: 20,
       
     },
@@ -1597,7 +1597,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdFapEdi',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypFakturyPrijate,
+      afClass: 'AFTypFakturyPrijate',
       maxLength: 20,
       
     },
@@ -1605,7 +1605,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdSklEdi',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypSkladovyPohyb,
+      afClass: 'AFTypSkladovyPohyb',
       maxLength: 20,
       
     },
@@ -1613,7 +1613,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdKurzovyRozdilNaklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       maxLength: 20,
       
     },
@@ -1621,7 +1621,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdKurzovyRozdilVynos',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       maxLength: 20,
       
     },
@@ -1629,7 +1629,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdZbytekNaklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       maxLength: 20,
       
     },
@@ -1637,7 +1637,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdZbytekVynos',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       maxLength: 20,
       
     },
@@ -1645,7 +1645,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdPreplatekPhl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypPohledavky,
+      afClass: 'AFTypPohledavky',
       maxLength: 20,
       
     },
@@ -1653,7 +1653,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdPreplatekZav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       maxLength: 20,
       
     },
@@ -1661,7 +1661,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdEpGeneracePokladnichDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypPokladniPohyb,
+      afClass: 'AFTypPokladniPohyb',
       maxLength: 20,
       
     },
@@ -1669,7 +1669,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdEpGeneraceVydejekZeSkladu',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypPokladniPohyb,
+      afClass: 'AFTypPokladniPohyb',
       maxLength: 20,
       
     },
@@ -1677,7 +1677,7 @@ export class AFNastaveni extends AFEntity {
       key: 'stat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1685,7 +1685,7 @@ export class AFNastaveni extends AFEntity {
       key: 'statFakturacniAdresy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1693,7 +1693,7 @@ export class AFNastaveni extends AFEntity {
       key: 'statPostovniAdresy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -1701,35 +1701,35 @@ export class AFNastaveni extends AFEntity {
       key: 'region',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     regionFakturacniAdresy : {
       key: 'regionFakturacniAdresy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     regionPostovniAdresy : {
       key: 'regionPostovniAdresy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFRegion,
+      afClass: 'AFRegion',
       
     },
     menaDual : {
       key: 'menaDual',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     ucetZaokrNaklad : {
       key: 'ucetZaokrNaklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1737,7 +1737,7 @@ export class AFNastaveni extends AFEntity {
       key: 'ucetZaokrVynos',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1745,7 +1745,7 @@ export class AFNastaveni extends AFEntity {
       key: 'ucetKrOdpoctuNaklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1753,7 +1753,7 @@ export class AFNastaveni extends AFEntity {
       key: 'ucetKrOdpoctuVynos',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -1761,21 +1761,21 @@ export class AFNastaveni extends AFEntity {
       key: 'fuKraj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     fuUzemPrac : {
       key: 'fuUzemPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     tdBanPrijem : {
       key: 'tdBanPrijem',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypBanka,
+      afClass: 'AFTypBanka',
       maxLength: 20,
       
     },
@@ -1783,7 +1783,7 @@ export class AFNastaveni extends AFEntity {
       key: 'tdBanVydej',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypBanka,
+      afClass: 'AFTypBanka',
       maxLength: 20,
       
     },
@@ -1791,224 +1791,224 @@ export class AFNastaveni extends AFEntity {
       key: 'mzdAdrSocPoj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     mzdAdrDan : {
       key: 'mzdAdrDan',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     mzdBanDanZal : {
       key: 'mzdBanDanZal',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresarBankovniUcet,
+      afClass: 'AFAdresarBankovniUcet',
       
     },
     mzdBanDanSra : {
       key: 'mzdBanDanSra',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresarBankovniUcet,
+      afClass: 'AFAdresarBankovniUcet',
       
     },
     mzdBanDanRez : {
       key: 'mzdBanDanRez',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresarBankovniUcet,
+      afClass: 'AFAdresarBankovniUcet',
       
     },
     mzdTdZavSoc : {
       key: 'mzdTdZavSoc',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTuoZavSocZam : {
       key: 'mzdTuoZavSocZam',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mzdTuoZavSocFir : {
       key: 'mzdTuoZavSocFir',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mzdTdZavZdrav : {
       key: 'mzdTdZavZdrav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTuoZavZdrZam : {
       key: 'mzdTuoZavZdrZam',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mzdTuoZavZdrFir : {
       key: 'mzdTuoZavZdrFir',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mzdTdZavDanZal : {
       key: 'mzdTdZavDanZal',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTdZavDanSra : {
       key: 'mzdTdZavDanSra',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTdZavDanRez : {
       key: 'mzdTdZavDanRez',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTdZavZaloha : {
       key: 'mzdTdZavZaloha',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTdZavSrazka : {
       key: 'mzdTdZavSrazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTdZavDobirka : {
       key: 'mzdTdZavDobirka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     mzdTdIntHruba : {
       key: 'mzdTdIntHruba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     mzdTdIntNahrad : {
       key: 'mzdTdIntNahrad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     mzdTdIntCestDoLim : {
       key: 'mzdTdIntCestDoLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     mzdTdIntCestNadLim : {
       key: 'mzdTdIntCestNadLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     mzdTdIntStravPausDoLim : {
       key: 'mzdTdIntStravPausDoLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     mzdTdIntStravPausNadLim : {
       key: 'mzdTdIntStravPausNadLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     mzdTdIntHomeofficeDoLim : {
       key: 'mzdTdIntHomeofficeDoLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     mzdTdIntHomeofficeNadLim : {
       key: 'mzdTdIntHomeofficeNadLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     mzdTdSrazkaStrav : {
       key: 'mzdTdSrazkaStrav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     mzdTdStravenka : {
       key: 'mzdTdStravenka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     mzdTuoStravZam : {
       key: 'mzdTuoStravZam',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mzdTuoStravFirDoLim : {
       key: 'mzdTuoStravFirDoLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mzdTuoStravFirNadLim : {
       key: 'mzdTuoStravFirNadLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     mzdTdIntPrispevky : {
       key: 'mzdTdIntPrispevky',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     mzdTdZavPrispevky : {
       key: 'mzdTdZavPrispevky',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
 

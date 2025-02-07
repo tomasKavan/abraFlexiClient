@@ -263,14 +263,14 @@ export class AFPrikazKUhradePolozka extends AFEntity {
       key: 'prikaz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPrikazKUhrade,
+      afClass: 'AFPrikazKUhrade',
       
     },
     faStat : {
       key: 'faStat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       maxLength: 3,
       
     },
@@ -278,21 +278,21 @@ export class AFPrikazKUhradePolozka extends AFEntity {
       key: 'baStat',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStat,
+      afClass: 'AFStat',
       
     },
     mena : {
       key: 'mena',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMena,
+      afClass: 'AFMena',
       
     },
     smerKod : {
       key: 'smerKod',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPenezniUstav,
+      afClass: 'AFPenezniUstav',
       maxLength: 20,
       
     },
@@ -300,7 +300,7 @@ export class AFPrikazKUhradePolozka extends AFEntity {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
 
@@ -308,7 +308,7 @@ export class AFPrikazKUhradePolozka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

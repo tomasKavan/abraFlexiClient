@@ -111,7 +111,7 @@ export class AFAtribut extends AFEntity {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -119,42 +119,42 @@ export class AFAtribut extends AFEntity {
       key: 'doklObch',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklFak : {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     doklSklad : {
       key: 'doklSklad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkladovyPohyb,
+      afClass: 'AFSkladovyPohyb',
       
     },
     doklInt : {
       key: 'doklInt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     adresar : {
       key: 'adresar',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       
     },
     typAtributu : {
       key: 'typAtributu',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypAtributu,
+      afClass: 'AFTypAtributu',
       maxLength: 20,
       
     },
@@ -163,7 +163,7 @@ export class AFAtribut extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

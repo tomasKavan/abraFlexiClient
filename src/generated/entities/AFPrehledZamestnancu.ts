@@ -172,21 +172,21 @@ export class AFPrehledZamestnancu extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsoba,
+      afClass: 'AFOsoba',
       
     },
     pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomer,
+      afClass: 'AFPracovniPomer',
       
     },
     typPracPom : {
       key: 'typPracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypPracovnihoPomeru,
+      afClass: 'AFTypPracovnihoPomeru',
       
     },
 

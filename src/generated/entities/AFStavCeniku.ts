@@ -142,13 +142,13 @@ export class AFStavCeniku extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     ceniky : {
       key: 'ceniky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFCenik
+      afClass: 'AFCenik'
     },
 
   }

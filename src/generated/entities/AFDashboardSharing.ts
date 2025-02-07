@@ -50,7 +50,7 @@ export class AFDashboardSharing extends AFEntity {
       key: 'user',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -58,7 +58,7 @@ export class AFDashboardSharing extends AFEntity {
       key: 'dashboardpanel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFDashboardPanel,
+      afClass: 'AFDashboardPanel',
       
     },
 
@@ -66,7 +66,7 @@ export class AFDashboardSharing extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

@@ -537,119 +537,119 @@ export class AFPracovniPomer extends AFEntity {
       key: 'pracPomHlav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomerHlavicka,
+      afClass: 'AFPracovniPomerHlavicka',
       
     },
     osoba : {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     typPracPom : {
       key: 'typPracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypPracovnihoPomeru,
+      afClass: 'AFTypPracovnihoPomeru',
       
     },
     tdIntHruba : {
       key: 'tdIntHruba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     tdIntNahrad : {
       key: 'tdIntNahrad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     tdIntCestDoLim : {
       key: 'tdIntCestDoLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     tdIntCestNadLim : {
       key: 'tdIntCestNadLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     tdIntStravPausDoLim : {
       key: 'tdIntStravPausDoLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
     tdIntStravPausNadLim : {
       key: 'tdIntStravPausNadLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     tdIntHomeofficeDoLim : {
       key: 'tdIntHomeofficeDoLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     tdIntHomeofficeNadLim : {
       key: 'tdIntHomeofficeNadLim',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     tuoZavSocZam : {
       key: 'tuoZavSocZam',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     tuoZavSocFir : {
       key: 'tuoZavSocFir',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     tuoZavZdrZam : {
       key: 'tuoZavZdrZam',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     tuoZavZdrFir : {
       key: 'tuoZavZdrFir',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     tuoZavDan : {
       key: 'tuoZavDan',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPredpisZauctovani,
+      afClass: 'AFPredpisZauctovani',
       
     },
     tdSrazkaStrav : {
       key: 'tdSrazkaStrav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
 
@@ -657,7 +657,7 @@ export class AFPracovniPomer extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

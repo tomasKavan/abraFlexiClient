@@ -85,7 +85,7 @@ export class AFParametr extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -93,14 +93,14 @@ export class AFParametr extends AFEntity {
       key: 'role',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -108,21 +108,21 @@ export class AFParametr extends AFEntity {
       key: 'bsp',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFBankovniUcetSkladPokladna,
+      afClass: 'AFBankovniUcetSkladPokladna',
       
     },
     typDokl : {
       key: 'typDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypDokladu,
+      afClass: 'AFTypDokladu',
       
     },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -130,14 +130,14 @@ export class AFParametr extends AFEntity {
       key: 'skupFir',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaFirem,
+      afClass: 'AFSkupinaFirem',
       
     },
     zakazka : {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -146,7 +146,7 @@ export class AFParametr extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

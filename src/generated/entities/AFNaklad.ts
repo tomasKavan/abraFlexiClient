@@ -98,7 +98,7 @@ export class AFNaklad extends AFEntity {
       key: 'typNaklAkt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypNakladu,
+      afClass: 'AFTypNakladu',
       maxLength: 20,
       
     },
@@ -106,7 +106,7 @@ export class AFNaklad extends AFEntity {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -114,7 +114,7 @@ export class AFNaklad extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -122,7 +122,7 @@ export class AFNaklad extends AFEntity {
       key: 'adrUdalost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUdalost,
+      afClass: 'AFUdalost',
       
     },
 
@@ -130,7 +130,7 @@ export class AFNaklad extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

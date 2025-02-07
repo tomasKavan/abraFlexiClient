@@ -275,28 +275,28 @@ export class AFStalaMzdovaSlozka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     pracPom : {
       key: 'pracPom',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFPracovniPomerHlavicka,
+      afClass: 'AFPracovniPomerHlavicka',
       
     },
     cisMzdSloz : {
       key: 'cisMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCiselnikMzdovychSlozek,
+      afClass: 'AFCiselnikMzdovychSlozek',
       
     },
     stredisko : {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -304,7 +304,7 @@ export class AFStalaMzdovaSlozka extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -312,21 +312,21 @@ export class AFStalaMzdovaSlozka extends AFEntity {
       key: 'banSpoj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMzdyBankovniSpojeni,
+      afClass: 'AFMzdyBankovniSpojeni',
       
     },
     typOstZav : {
       key: 'typOstZav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     typIntDokl : {
       key: 'typIntDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
 
@@ -334,7 +334,7 @@ export class AFStalaMzdovaSlozka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

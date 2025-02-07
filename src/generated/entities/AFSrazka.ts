@@ -212,35 +212,35 @@ export class AFSrazka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOsobaHlavicka,
+      afClass: 'AFOsobaHlavicka',
       
     },
     cisMzdSloz : {
       key: 'cisMzdSloz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCiselnikMzdovychSlozek,
+      afClass: 'AFCiselnikMzdovychSlozek',
       
     },
     banSpoj : {
       key: 'banSpoj',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFMzdyBankovniSpojeni,
+      afClass: 'AFMzdyBankovniSpojeni',
       
     },
     typOstZav : {
       key: 'typOstZav',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypZavazku,
+      afClass: 'AFTypZavazku',
       
     },
     typIntDokl : {
       key: 'typIntDokl',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypInternihoDokladu,
+      afClass: 'AFTypInternihoDokladu',
       
     },
 
@@ -248,7 +248,7 @@ export class AFSrazka extends AFEntity {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
 
   }

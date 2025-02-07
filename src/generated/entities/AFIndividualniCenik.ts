@@ -178,7 +178,7 @@ export class AFIndividualniCenik extends AFEntity {
       key: 'cenik',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenik,
+      afClass: 'AFCenik',
       maxLength: 64,
       
     },
@@ -186,14 +186,14 @@ export class AFIndividualniCenik extends AFEntity {
       key: 'cenHlad',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFCenovaUroven,
+      afClass: 'AFCenovaUroven',
       
     },
     skupZboz : {
       key: 'skupZboz',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSkupinaZbozi,
+      afClass: 'AFSkupinaZbozi',
       
     },
 

@@ -188,7 +188,7 @@ export class AFRadekSestavy extends AFEntity {
       key: 'ucetniSestava',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFSestava,
+      afClass: 'AFSestava',
       maxLength: 6,
       
     },
@@ -197,19 +197,19 @@ export class AFRadekSestavy extends AFEntity {
       key: 'stdPredpisy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFStandardniPredpis
+      afClass: 'AFStandardniPredpis'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     sumace : {
       key: 'sumace',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFSumaceSestavy
+      afClass: 'AFSumaceSestavy'
     },
 
   }

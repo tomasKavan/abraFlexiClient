@@ -537,7 +537,7 @@ export class AFMajetek extends AFEntity {
       key: 'sazba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFOdpisovaSkupina,
+      afClass: 'AFOdpisovaSkupina',
       maxLength: 20,
       
     },
@@ -545,7 +545,7 @@ export class AFMajetek extends AFEntity {
       key: 'mistnost',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUmisteni,
+      afClass: 'AFUmisteni',
       maxLength: 20,
       
     },
@@ -553,7 +553,7 @@ export class AFMajetek extends AFEntity {
       key: 'sekce',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUmisteni,
+      afClass: 'AFUmisteni',
       maxLength: 20,
       
     },
@@ -561,7 +561,7 @@ export class AFMajetek extends AFEntity {
       key: 'objekt',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUmisteni,
+      afClass: 'AFUmisteni',
       maxLength: 20,
       
     },
@@ -569,7 +569,7 @@ export class AFMajetek extends AFEntity {
       key: 'typMajetku',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFTypMajetku,
+      afClass: 'AFTypMajetku',
       maxLength: 20,
       
     },
@@ -577,7 +577,7 @@ export class AFMajetek extends AFEntity {
       key: 'zakazka',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFZakazka,
+      afClass: 'AFZakazka',
       maxLength: 30,
       
     },
@@ -585,7 +585,7 @@ export class AFMajetek extends AFEntity {
       key: 'stredisko',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFStredisko,
+      afClass: 'AFStredisko',
       maxLength: 20,
       
     },
@@ -593,14 +593,14 @@ export class AFMajetek extends AFEntity {
       key: 'doklFak',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFFakturaPrijata,
+      afClass: 'AFFakturaPrijata',
       
     },
     dodavatel : {
       key: 'dodavatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -608,7 +608,7 @@ export class AFMajetek extends AFEntity {
       key: 'vyrobce',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFAdresar,
+      afClass: 'AFAdresar',
       maxLength: 20,
       
     },
@@ -616,7 +616,7 @@ export class AFMajetek extends AFEntity {
       key: 'primarniUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -624,7 +624,7 @@ export class AFMajetek extends AFEntity {
       key: 'protiUcetZarazeni',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -632,7 +632,7 @@ export class AFMajetek extends AFEntity {
       key: 'opravnyUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -640,7 +640,7 @@ export class AFMajetek extends AFEntity {
       key: 'odpisovyUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       maxLength: 6,
       
     },
@@ -648,14 +648,14 @@ export class AFMajetek extends AFEntity {
       key: 'zustVyrazUcet',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFUcet,
+      afClass: 'AFUcet',
       
     },
     uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: AFEntity,
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -664,37 +664,37 @@ export class AFMajetek extends AFEntity {
       key: 'danove-odpisy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFDanovyOdpis
+      afClass: 'AFDanovyOdpis'
     },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFPriloha
+      afClass: 'AFPriloha'
     },
     'ucetni-odpisy' : {
       key: 'ucetni-odpisy',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUcetniOdpis
+      afClass: 'AFUcetniOdpis'
     },
     'majetek-udalosti' : {
       key: 'majetek-udalosti',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFMajetekUdalost
+      afClass: 'AFMajetekUdalost'
     },
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFUzivatelskaVazba
+      afClass: 'AFUzivatelskaVazba'
     },
     zapujcky : {
       key: 'zapujcky',
       type: PropertyType.Relation,
       isArray: true,
-      afClass: AFZapujcka
+      afClass: 'AFZapujcka'
     },
 
   }
