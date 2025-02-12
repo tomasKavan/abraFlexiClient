@@ -7,14 +7,11 @@ import {
   AFApiFetch, 
   PropertyType, 
   AFQueryDetail,
-  AFQueryResponse,
   AFQueryOptions,
-  AFQueryStatus,
   AFURelOptions,
   AFURelResult,
   AFPopulateOptions,
-  AFURelMinimal,
-  AFQueryResponseOne
+  AFURelMinimal
 } from "./AFTypes"
 import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry"
 import { addParamToUrl } from "../helpers/urlHelper"
@@ -33,10 +30,10 @@ export class AFApiClient {
     this._fetch = config.fetch || fetch
   }
 
-  queryRaw<T extends typeof AFEntity>(
+  async queryRaw<T extends typeof AFEntity>(
     entityPath: string,
     options: AFQueryOptions
-  ): AFQueryResponse<any> {
+  ): Promise<any> {
     if (!this.company || !this.company.length) {
       throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `Can't query AFApiClient without providing company path component first.`)
     }
@@ -62,92 +59,63 @@ export class AFApiClient {
     url = addParamToUrl(url, 'noSimpleMode', options.noSimpleMode)
     url = addParamToUrl(url, 'noValidityCheck', options.noValidityCheck)
 
-    const res: Partial<AFQueryResponse<InstanceType<T>>> = {
-      status : AFQueryStatus.LOADING,
-      error: null
-    }
-
     // TODO - remove
     console.log(url)
 
-    const ac = new AbortController()
-    const run = async (): Promise<InstanceType<T>[]> => {
-      try {
-        const raw = await this._fetch(url, { signal: ac.signal })
-        res.rawResponse = raw
+    try {
+      const raw = await this._fetch(url, { signal: options.abortController?.signal })
 
-        if (raw.status >= 400 && raw.status < 600) {
-          throw new AFError(AFErrorCode.ABRA_FLEXI_ERROR, `${raw.status} ${raw.statusText}`)
-        }
-
-        const json = await raw.json()
-        let entityObj = json.winstrom[entityPath]
-
-        res.status = AFQueryStatus.OK
-        return Promise.resolve(entityObj)
-      } catch (e) {
-        if (!(e instanceof AFError)) {
-          console.log(e)
-          e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
-        }
-        res.error = e as AFError
-        res.status = AFQueryStatus.ERROR
-        throw e
+      if (raw.status >= 400 && raw.status < 600) {
+        throw new AFError(AFErrorCode.ABRA_FLEXI_ERROR, `${raw.status} ${raw.statusText}`)
       }
+
+      const json = await raw.json()
+      let entityObj = json.winstrom[entityPath]
+
+      return entityObj
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
     }
-
-    res.data = run()
-    res.cancel = () => ac.abort()
-
-    return res as AFQueryResponse<any>
   }
 
-  query<T extends typeof AFEntity>(
+  public async query<T extends typeof AFEntity>(
     entity: T, 
     options: AFQueryOptions
-  ): AFQueryResponse<InstanceType<T>> {
+  ): Promise<InstanceType<T>[]> {
     const res = this.queryRaw(entity.EntityPath, options)
 
-    const run = async (): Promise<InstanceType<T>[]> => {
-      try {
-        const rawData = await res.data
-        const data = this._processEntityObj(entity, rawData)
-        res.status = AFQueryStatus.OK
-        return Promise.resolve(data)
+    try {
+      const rawData = await res
+      const data = this._processEntityObj(entity, rawData)
+      return data
 
-      } catch (e) {
-        if (!(e instanceof AFError)) {
-          console.log(e)
-          e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
-        }
-        res.error = e as AFError
-        res.status = AFQueryStatus.ERROR
-        throw e
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
       }
+      throw e
     }
-    res.data = run()
-
-    return res as AFQueryResponse<InstanceType<T>>
   }
 
-  queryOne<T extends typeof AFEntity>(
+  public async queryOne<T extends typeof AFEntity>(
     entity: T, 
     options: AFQueryOptions
-  ): AFQueryResponseOne<InstanceType<T>> {
-    const res = this.query(entity, options)
-    const out = res as AFQueryResponseOne<InstanceType<T>>
-    out.data = res.data.then((d) => {
-      if (!d || d.length) return
-      return d[0]
-    })
-    return out
+  ): Promise<InstanceType<T>> {
+    const data = await this.query(entity, options)
+    if (!data || !data.length) throw new AFError(AFErrorCode.OBJECT_NOT_FOUND, `${entity} object not found. Query filter: ${options.filter}`)
+    return data[0]
   }
 
-  public queryURels<T extends typeof AFEntity = typeof AFEntity>(
+  public async queryURels<T extends typeof AFEntity = typeof AFEntity>(
     relatedEntity: T,
     forObjects: AFURelMinimal | AFURelMinimal[], 
     options: AFURelOptions = {},
-  ): AFQueryResponse<AFURelResult<InstanceType<T>>> {
+  ): Promise<AFURelResult<InstanceType<T>>[]> {
     if (!(forObjects instanceof Array)) {
       forObjects = [forObjects]
     }
@@ -156,80 +124,68 @@ export class AFApiClient {
       options.vazbaTyp = [options.vazbaTyp]
     }
 
-    const res: Partial<AFQueryResponse<AFURelResult<InstanceType<T>>>> = {
-      status : AFQueryStatus.LOADING,
-      error: null
-    }
+    const out: AFURelResult<InstanceType<T>>[] = []
+    const fetchedList: [string, InstanceType<T>[]][] = []
+    
+    for (const uobj of forObjects) {
+      const uvs = uobj["uzivatelske-vazby"]
+      if (!uvs) continue
+      for (const uv of uvs) {
+        // Check if vazba is properly defined and if it has proper vazbaTyp (if required)
+        if (!uv.evidenceType || !uv.objectId) continue
+        if (options.vazbaTyp && 
+          (!uv.vazbaTyp || 
+            typeof uv.vazbaTyp.kod !== 'string' || 
+            !options.vazbaTyp.includes(uv.vazbaTyp.kod)) 
+        ) continue
 
-    const ac = new AbortController()
-    const run = async (): Promise<AFURelResult<InstanceType<T>>[]> => {
-      const out: AFURelResult<InstanceType<T>>[] = []
-      const fetchedList: [string, InstanceType<T>[]][] = []
-      
-      for (const uobj of forObjects) {
-        const uvs = uobj["uzivatelske-vazby"]
-        if (!uvs) continue
-        for (const uv of uvs) {
-          // Check if vazba is properly defined and if it has proper vazbaTyp (if required)
-          if (!uv.evidenceType || !uv.objectId) continue
-          if (options.vazbaTyp && 
-            (!uv.vazbaTyp || 
-              typeof uv.vazbaTyp.kod !== 'string' || 
-              !options.vazbaTyp.includes(uv.vazbaTyp.kod)) 
-          ) continue
-
-          // Check if related evidence type matches the requested type
-          const cls = EntityByPath(uv.evidenceType)
-          if (cls !== relatedEntity) continue
-          
-          // Get (or create) list of already fetched objects by evidenceType
-          let list = fetchedList.find(fli => fli[0] === uv.evidenceType)
-          if (!list) {
-            list = [uv.evidenceType, []]
-            fetchedList.push(list)
-          }
-          
-          // Load data from cache or fetch it if missing
-          let data = list[1].find(li => li.id === uv.objectId)
-          if (!data) {
-            try {
-              const opts = { detail: options.detail, filter: ID(uv.objectId) }
-              let outInner = await (this.query(relatedEntity, opts)).data
-              if (!outInner || !outInner.length) continue
-              list[1].push(outInner[0])
-              uv.object = outInner[0]
-              const res: AFURelResult<InstanceType<T>> = {
-                entity: uobj,
-                referencedFrom: outInner[0]
-              }
-              out.push(res)
-            } catch (e) {
-              if (!(e instanceof AFError)) {
-                console.log(e)
-                e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
-              }
-              res.status = AFQueryStatus.ERROR
-              res.error = e as AFError
-              throw e
+        // Check if related evidence type matches the requested type
+        const cls = EntityByPath(uv.evidenceType)
+        if (cls !== relatedEntity) continue
+        
+        // Get (or create) list of already fetched objects by evidenceType
+        let list = fetchedList.find(fli => fli[0] === uv.evidenceType)
+        if (!list) {
+          list = [uv.evidenceType, []]
+          fetchedList.push(list)
+        }
+        
+        // Load data from cache or fetch it if missing
+        let data = list[1].find(li => li.id === uv.objectId)
+        if (!data) {
+          try {
+            const opts = { 
+              detail: options.detail, 
+              filter: ID(uv.objectId), 
+              abort: options.abortController 
             }
+            let outInner = await this.query(relatedEntity, opts)
+            if (!outInner || !outInner.length) continue
+            list[1].push(outInner[0])
+            uv.object = outInner[0]
+            const res: AFURelResult<InstanceType<T>> = {
+              entity: uobj,
+              referencedFrom: outInner[0]
+            }
+            out.push(res)
+          } catch (e) {
+            if (!(e instanceof AFError)) {
+              console.log(e)
+              e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+            }
+            throw e
           }
         }
       }
-
-      res.status = AFQueryStatus.OK
-      return out
     }
 
-    res.data = run()
-    res.cancel = () => ac.abort()
-
-    return res as AFQueryResponse<AFURelResult<InstanceType<T>>>
+    return out
   }
 
-  public populate<T extends typeof AFEntity = typeof AFEntity>(
+  public async populate<T extends typeof AFEntity = typeof AFEntity>(
     entities: InstanceType<T>[], 
     options: AFPopulateOptions
-  ): AFQueryResponse<InstanceType<T>> {
+  ): Promise<InstanceType<T>[]> {
     const fetchBy: [string, string][] = []
     for (const en of entities) {
       if (typeof en.id !== 'undefined') {
@@ -243,85 +199,60 @@ export class AFApiClient {
       throw new AFError(AFErrorCode.MISSING_ID_IN_POPULATE, `Can't populate entity withoud id or kod set. It's not possible to fetch data. Entity: ${en}`)
     }
     
-    if (!fetchBy.length) {
-      const res: AFQueryResponse<InstanceType<T>> = {
-        status : AFQueryStatus.OK,
-        error: null,
-        cancel: () => {},
-        data: Promise.resolve([])
-      }
-      return res
-    }
+    // Nothing was requested to populate
+    if (!fetchBy.length) return []
 
     let tplArr: string[] = fetchBy.map(entry => `${entry[0]} = '${entry[1]}'`)
-    if (!options.detail) {
-      options.detail = []
-    }
+    if (!options.detail) options.detail = []
     if (options.detail instanceof Array) {
       if (!options.detail.includes('id')) options.detail.push('id')
       if (!options.detail.includes('kod')) options.detail.push('kod')
     }
     const opts: AFQueryOptions = {
       filter: Filter(tplArr.join(' or ')),
-      detail: options.detail 
+      detail: options.detail,
+      abortController: options.abortController
     }
 
-    const res: Partial<AFQueryResponse<InstanceType<T>>> = {
-      status : AFQueryStatus.LOADING,
-      error: null
-    }
+    try { 
+      const cls = EntityByName(entities[0].constructor.name)
+      const resQRaw = this.queryRaw(cls.EntityPath, opts)
+      
+      let dataQ = await resQRaw
+      if (!dataQ) throw new AFError(AFErrorCode.UNKNOWN, 'Unable to fetch data to populate')
+      if (!(dataQ instanceof Array)) dataQ = [dataQ]
 
-    const run = async (): Promise<InstanceType<T>[]> => {
-      try { 
-        const cls = EntityByName(entities[0].constructor.name)
-        const resQRaw = this.queryRaw(cls.EntityPath, opts)
-        res.cancel = resQRaw.cancel 
+      for (const enQ of dataQ) {
+        const en = entities.find(e => {
+          if (typeof e.id !== 'undefined') return enQ.id === String(e.id)
+          if (typeof e.kod !== 'undefined') return enQ.kod === String(e.kod)
+          return false
+        })
+        if (!en) continue
         
-        let dataQ = await resQRaw.data
-        if (!dataQ) throw new AFError(AFErrorCode.UNKNOWN, 'Unable to fetch data to populate')
-        if (!(dataQ instanceof Array)) dataQ = [dataQ]
-
-        for (const enQ of dataQ) {
-          const en = entities.find(e => {
-            if (typeof e.id !== 'undefined') return enQ.id === String(e.id)
-            if (typeof e.kod !== 'undefined') return enQ.kod === String(e.kod)
-            return false
-          })
-          if (!en) continue
-          
-          const oKeys = Object.keys(enQ)
-          for (const okey of oKeys) {
-            this._setProperty(en, okey, enQ)        
-          }
+        const oKeys = Object.keys(enQ)
+        for (const okey of oKeys) {
+          this._setProperty(en, okey, enQ)        
         }
-
-        return entities
-      } catch (e) {
-        if (!(e instanceof AFError)) {
-          console.log(e)
-          e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
-        }
-        res.error = e as AFError
-        throw e
       }
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
     }
 
-    res.data = run()
-    return res as AFQueryResponse<InstanceType<T>>
-    
+    return entities
   }
 
-  public populateOne<T extends typeof AFEntity = typeof AFEntity>(
+  public async populateOne<T extends typeof AFEntity = typeof AFEntity>(
     entity: InstanceType<T>, 
     options: AFPopulateOptions
-  ): AFQueryResponseOne<InstanceType<T>> {
-    const res = this.populate([entity], options)
-    const out = res as AFQueryResponseOne<InstanceType<T>>
-    out.data = res.data.then((d) => {
-      if (!d || !d.length) return
-      return d[0]
-    })
-    return out
+  ): Promise<InstanceType<T>> {
+    const res = await this.populate([entity], options)
+    if (!res || !res.length) throw new AFError(AFErrorCode.OBJECT_NOT_FOUND, `${entity} object not found. Kod / ID: ${entity.kod} / ${entity.id}`)
+    return res[0]
   }
 
   private _processEntityObj<T extends typeof AFEntity>(entity: T, obj: any): InstanceType<T>[] {

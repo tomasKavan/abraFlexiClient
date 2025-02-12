@@ -44,12 +44,6 @@ export enum AFQueryDetail {
   SUMMARY = 'summary'
 }
 
-export enum AFQueryStatus {
-  LOADING = 'loading',
-  OK = 'ok',
-  ERROR = 'error'
-}
-
 export type NestedDetail = (string | [string, NestedDetail])[]
 
 export type AFQueryOptions = { 
@@ -64,32 +58,21 @@ export type AFQueryOptions = {
   codeAsId?: boolean,
   dryRun?: boolean,
   noSimpleMode?: boolean,
-  noValidityCheck?: boolean
-}
+  noValidityCheck?: boolean,
 
-export type AFQueryResponse<T> = {
-  data: Promise<T[] | undefined>,
-  status: AFQueryStatus,
-  error: AFError | null,
-  cancel: () => void,
-  rawResponse?: Response
-}
-
-export type AFQueryResponseOne<T> = {
-  data: Promise<T | undefined>,
-  status: AFQueryStatus,
-  error: AFError | null,
-  cancel: () => void,
-  rawResponse?: Response
+  abortController?: AbortController
 }
 
 export type AFURelOptions = {
   detail?: NestedDetail | AFQueryDetail,
-  vazbaTyp?: string | string[]
+  vazbaTyp?: string | string[],
+
+  abortController?: AbortController
 }
 
 export type AFPopulateOptions = {
-  detail?: NestedDetail | AFQueryDetail
+  detail?: NestedDetail | AFQueryDetail,
+  abortController?: AbortController
 }
 
 export type AFURelResult<T> = {

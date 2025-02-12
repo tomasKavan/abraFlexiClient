@@ -2,9 +2,14 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { addBasicAtuh } from './helpers/basciAuth'
 
-import { AFApiClient, AFApiConfig, AFFakturaPrijata, AFQueryOptions, EntityByName } from '../dist'
-import { AFEntity, AFInterniDoklad } from '../src'
-import { AFFilter, CODE, ID } from '../dist/abra/AFFilter'
+import { 
+  AFApiClient, 
+  AFApiConfig, 
+  AFQueryOptions, 
+  EntityByName,
+  CODE,
+  ID
+} from '../src'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. Without! company path component.', demandOption: true})
@@ -32,7 +37,7 @@ if (argv.u && argv.p) {
 
 const cls = EntityByName(argv.e || 'AFFakturaPriajata')
 
-const queryOpts: AFQueryOptions<AFEntity, false> = {
+const queryOpts: AFQueryOptions = {
   limit: argv.l,
   start: argv.t
 } 
@@ -43,7 +48,7 @@ if (argv.d) {
 }
 
 const api = new AFApiClient(apiOpts)
-const { data } = api.query(cls, queryOpts)
+const data = api.query(cls, queryOpts)
 
 data.then((d) => {
   console.log(d)

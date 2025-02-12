@@ -101,12 +101,12 @@ const queryOpts: AFQueryOptions = {
   filter: Filter(`typDokl = '::td'`, { td: 'MUJ_TYP_DOKLADU'})
 } 
 
-const { data } = api.query(AFInterniDoklad, queryOpts)
+const query = api.query(AFInterniDoklad, queryOpts)
 
 const run = async () => {
   try {
-    const loaded = await data
-    console.log(loaded)
+    const data = await query
+    console.log(data)
   } catch (e) {
     console.error(e)
   }
@@ -126,13 +126,13 @@ const options = {
   detail: AFQueryDetail.FULL
 }
 
-const { data: popData } = api.populateOne(loadEntity)
+const populate = api.populateOne(loadEntity)
 
 const run = async () => {
   try {
-    const updatedEntity = await popData
-    console.log(updatedEntity)
-    console.log(updatedEntity === loadedEntity) // Vypíše true
+    const populatedEntity = await populate
+    console.log(populatedEntity)
+    console.log(populatedEntity === loadedEntity) // Vypíše true
   } catch (e) {
     console.error(e)
   }
@@ -150,14 +150,14 @@ Načteny jsou pouze instance vazeb, které se již vyskytují ve zdrojové kolek
 ```typescript 
 const soureEntities // Zde máme kolekci entit, pro které načítáme instance odkazované uživatelskou vazbou
 
-const { data: pairs } = api.queryURels(AFInterniDoklad, soureEntities, {
+const query = api.queryURels(AFInterniDoklad, soureEntities, {
   detail: ['id', 'kod', 'typDokl']
 })
 
 const run = async () => {
   try {
-    const loadedPairs = await paris
-    console.log(loadedPairs)
+    const pairs = await query
+    console.log(pairs)
   } catch (e) {
     console.error(e)
   }

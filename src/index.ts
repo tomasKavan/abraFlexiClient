@@ -3,8 +3,7 @@ export {
   AFApiConfig, 
   NO_LIMIT, 
   AFQueryDetail, 
-  AFQueryOptions, 
-  AFQueryResponse,
+  AFQueryOptions,
   AFURelOptions,
   AFPopulateOptions,
   AFURelResult 

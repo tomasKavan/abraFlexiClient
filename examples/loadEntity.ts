@@ -31,36 +31,32 @@ const queryOpts: AFQueryOptions = {
 } 
 
 const api = new AFApiClient(apiOpts)
-const { data } = api.query(AFInterniDoklad, queryOpts)
 
 const run = async () => {
   try {
-    const fetchedData = await data
-    if (fetchedData) {
-      let fdata = (fetchedData instanceof Array) ? fetchedData : [fetchedData]
-      const filtered = fdata.filter(d => d['uzivatelske-vazby'] && d['uzivatelske-vazby'].length)
+    const data = await api.query(AFInterniDoklad, queryOpts)
+    if (data) {
+      const filtered = data.filter(d => d['uzivatelske-vazby'] && d['uzivatelske-vazby'].length)
       console.log('### With relations: ###')
       console.log(filtered)
       console.log(' ')
       console.log(' ')
 
-      const { data: vazby } = api.queryURels(AFInterniDoklad, filtered, {
+      const vazby = await api.queryURels(AFInterniDoklad, filtered, {
         detail: ['id', 'kod', 'typDokl']
       })
-      const dVazby = await vazby
       console.log('### Fetched relations: ###')
-      console.log(dVazby)
+      console.log(vazby)
       console.log(' ')
       console.log(' ')
 
-      if (dVazby && dVazby instanceof Array && dVazby.length) {
-        const vz = dVazby[0]
-        const { data: populated } = api.populate([vz.referencedFrom], {
+      if (vazby && vazby instanceof Array && vazby.length) {
+        const vz = vazby[0]
+        const populated = await api.populate([vz.referencedFrom], {
           detail: AFQueryDetail.FULL
         })
-        const dPopulated = await populated
         console.log('### Populated: ###')
-        console.log(dPopulated)
+        console.log(populated)
         console.log(' ')
         console.log(' ')
       }
