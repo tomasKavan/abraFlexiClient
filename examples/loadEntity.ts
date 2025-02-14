@@ -2,8 +2,8 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { addBasicAtuh } from './helpers/basciAuth'
 
-import { AFApiClient, AFApiConfig, AFQueryOptions, AFInterniDoklad, AFURelResult, AFQueryDetail } from '../src'
-import { AFFilter, CODE, ID, Filter } from '../src/abra/AFFilter'
+import { AFApiClient, AFApiConfig, AFQueryOptions, AFInterniDoklad, AFQueryDetail } from '../src'
+import { Filter } from '../src/abra/AFFilter'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. Without! company path component.', demandOption: true})

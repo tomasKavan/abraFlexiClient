@@ -4,7 +4,7 @@ export function addParamToUrl<T>(
   value: T | null | undefined
 ): string {
   const isFirst = !url.includes('?')
-  if (!value) {
+  if (typeof value === 'undefined') {
     return url
   }
 

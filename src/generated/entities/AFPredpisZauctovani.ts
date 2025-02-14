@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUcetniObdobi } from './AFUcetniObdobi'
-import { AFUcet } from './AFUcet'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUcetniObdobi } from './AFUcetniObdobi.js'
+import { AFUcet } from './AFUcet.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { KodPlneni } from '../AFEntityEnums'
+import { KodPlneni } from '../AFEntityEnums.js'
 
 export class AFPredpisZauctovani extends AFEntity {
   static EntityPath: string = 'predpis-zauctovani'

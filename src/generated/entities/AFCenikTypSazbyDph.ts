@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFCenik } from './AFCenik'
-import { AFStatDph } from './AFStatDph'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFCenik } from './AFCenik.js'
+import { AFStatDph } from './AFStatDph.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { TypSzbDph, KodPlneni } from '../AFEntityEnums'
+import { TypSzbDph, KodPlneni } from '../AFEntityEnums.js'
 
 export class AFCenikTypSazbyDph extends AFEntity {
   static EntityPath: string = 'cenik-typ-sazby-dph'

@@ -28,15 +28,23 @@ export type TypeAnnotation = {
   itemType?: PropertyType,
 }
 
+export enum StitkyCacheStrategy {
+  None,
+  Lazy, // Default
+  Eager
+}
+
 export type AFApiFetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
 
 export type AFApiConfig = {
   url: string,
-  company?: string,
-  fetch?: AFApiFetch
+  company: string,
+  fetch?: AFApiFetch,
+  stitkyCacheStrategy?: StitkyCacheStrategy
 }
 
-export type NO_LIMIT = 0
+export type NO_LIMIT_T = 0
+export const NO_LIMIT = 0
 
 export enum AFQueryDetail {
   FULL = 'full',
@@ -49,7 +57,7 @@ export type NestedDetail = (string | [string, NestedDetail])[]
 export type AFQueryOptions = { 
   detail?: NestedDetail | AFQueryDetail,
   filter?: AFFilter,
-  limit?: number | NO_LIMIT,
+  limit?: number | NO_LIMIT_T,
   start?: number,
   addRowCount?: boolean,
   onlyExtIds?: boolean,
@@ -59,6 +67,7 @@ export type AFQueryOptions = {
   dryRun?: boolean,
   noSimpleMode?: boolean,
   noValidityCheck?: boolean,
+  noUpdateStitkyCache?: boolean
 
   abortController?: AbortController
 }
@@ -66,13 +75,15 @@ export type AFQueryOptions = {
 export type AFURelOptions = {
   detail?: NestedDetail | AFQueryDetail,
   vazbaTyp?: string | string[],
+  noUpdateStitkyCache?: boolean
 
   abortController?: AbortController
 }
 
 export type AFPopulateOptions = {
   detail?: NestedDetail | AFQueryDetail,
-  abortController?: AbortController
+  abortController?: AbortController,
+  noUpdateStitkyCache?: boolean
 }
 
 export type AFURelResult<T> = {

@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFCenik } from './AFCenik'
-import { AFMernaJednotka } from './AFMernaJednotka'
-import { AFSkupinaZbozi } from './AFSkupinaZbozi'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFCenik } from './AFCenik.js'
+import { AFMernaJednotka } from './AFMernaJednotka.js'
+import { AFSkupinaZbozi } from './AFSkupinaZbozi.js'
 
 
 

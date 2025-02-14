@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "build:lib": "tsc --project tsconfig.src.json",
     "build:cli": "tsc --project tsconfig.generator.json && cp -r ./generator/templates bin/",

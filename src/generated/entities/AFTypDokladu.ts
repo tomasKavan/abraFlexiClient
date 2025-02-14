@@ -1,15 +1,15 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUcetniObdobi } from './AFUcetniObdobi'
-import { AFStredisko } from './AFStredisko'
-import { AFCinnost } from './AFCinnost'
-import { AFMena } from './AFMena'
-import { AFSablonaMail } from './AFSablonaMail'
-import { AFAutotisk } from './AFAutotisk'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUcetniObdobi } from './AFUcetniObdobi.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFCinnost } from './AFCinnost.js'
+import { AFMena } from './AFMena.js'
+import { AFSablonaMail } from './AFSablonaMail.js'
+import { AFAutotisk } from './AFAutotisk.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { RazeniProTisk } from '../AFEntityEnums'
+import { RazeniProTisk } from '../AFEntityEnums.js'
 
 export class AFTypDokladu extends AFEntity {
   static EntityPath: string = 'typ-dokladu'

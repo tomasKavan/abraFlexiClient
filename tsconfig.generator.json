@@ -3,7 +3,7 @@
   "compilerOptions": {
     "outDir": "bin",
     "rootDir": "generator",
-    "module": "CommonJS",
+    "module": "ESNext",
     "noEmitOnError": true,
     "tsBuildInfoFile": "./bin/.tsbuildinfo"
   },

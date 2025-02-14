@@ -1,7 +1,7 @@
-import { EntityByPath } from "../generated/AFEntityRegistry"
-import { AFEntity, GetPropertyTypeAnnotation } from "./AFEntity"
-import { AFError, AFErrorCode } from "./AFError"
-import { AFQueryDetail, NestedDetail } from "./AFTypes"
+import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
+import { AFEntity, GetPropertyTypeAnnotation } from "./AFEntity.js"
+import { AFError, AFErrorCode } from "./AFError.js"
+import { AFQueryDetail, NestedDetail } from "./AFTypes.js"
 
 export function composeDetail(
   level: NestedDetail | AFQueryDetail
@@ -46,7 +46,7 @@ export function composeIncludes(
         const list = ndi[1] as NestedDetail
         const annot = GetPropertyTypeAnnotation(entity, key)
         if (!annot || !annot.afClass) throw new AFError(AFErrorCode.QUERY_DETAIL_UNKNOWN_KEY, `[AFError].QUERY_DETAIL_UNKNOWN_KEY: Requested unknown key ${key} on entity ${(typeof entity)}. Or it has't type annotation set.`)
-        const relEnt = annot.afClass as typeof AFEntity
+        const relEnt = EntityByName(annot.afClass)
         const thisIncl = base + '/' + key + '/' + relEnt.EntityPath
         includes.push(thisIncl)
         levProc(list, thisIncl, relEnt)

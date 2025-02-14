@@ -1,7 +1,7 @@
-import { parsePropertyValue } from "./AFDataType"
-import { AFEntity } from "./AFEntity"
-import { AFError, AFErrorCode } from "./AFError"
-import { Filter, ID } from "./AFFilter"
+import { parsePropertyValue } from "./AFDataType.js"
+import { AFEntity } from "./AFEntity.js"
+import { AFError, AFErrorCode } from "./AFError.js"
+import { Filter, ID } from "./AFFilter.js"
 import { 
   AFApiConfig, 
   AFApiFetch, 
@@ -11,24 +11,34 @@ import {
   AFURelOptions,
   AFURelResult,
   AFPopulateOptions,
-  AFURelMinimal
-} from "./AFTypes"
-import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry"
-import { addParamToUrl } from "../helpers/urlHelper"
-import { composeDetail, composeIncludes, composeRelations } from "./AFApiUrlHelper"
+  AFURelMinimal,
+  StitkyCacheStrategy
+} from "./AFTypes.js"
+import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
+import { addParamToUrl } from "../helpers/urlHelper.js"
+import { composeDetail, composeIncludes, composeRelations } from "./AFApiUrlHelper.js"
+import { AFStitkyCache } from "./AFStitkyCache.js"
 
 const ABRA_API_FORMAT = 'json'
 
 export class AFApiClient {
   private _url: string
   private _fetch: AFApiFetch
-  private company?: string
+  private _company: string
+
+  private _stitkyCache: AFStitkyCache
 
   constructor(config: AFApiConfig) {
     this._url = config.url
-    this.company = config.company
+    this._company = config.company
     this._fetch = config.fetch || fetch
+
+    this._stitkyCache = new AFStitkyCache(this, config.stitkyCacheStrategy)
   }
+
+  get url(): string { return this._url }
+  get company(): string { return this._company }
+  get stitkyCacheStrategy(): StitkyCacheStrategy { return this._stitkyCache.strategy }
 
   async queryRaw<T extends typeof AFEntity>(
     entityPath: string,
@@ -91,6 +101,11 @@ export class AFApiClient {
     try {
       const rawData = await res
       const data = this._processEntityObj(entity, rawData)
+      
+      if (!options.noUpdateStitkyCache) {
+        await this._stitkyCache.fetchTick()
+      }
+      
       return data
 
     } catch (e) {
@@ -157,12 +172,13 @@ export class AFApiClient {
             const opts = { 
               detail: options.detail, 
               filter: ID(uv.objectId), 
-              abort: options.abortController 
+              abort: options.abortController,
+              noUpdateStitkyCache: true
             }
             let outInner = await this.query(relatedEntity, opts)
             if (!outInner || !outInner.length) continue
             list[1].push(outInner[0])
-            uv.object = outInner[0]
+            data = outInner[0]
             const res: AFURelResult<InstanceType<T>> = {
               entity: uobj,
               referencedFrom: outInner[0]
@@ -176,7 +192,12 @@ export class AFApiClient {
             throw e
           }
         }
+        uv.object = data
       }
+    }
+
+    if (!options.noUpdateStitkyCache) {
+      await this._stitkyCache.fetchTick()
     }
 
     return out
@@ -235,6 +256,10 @@ export class AFApiClient {
           this._setProperty(en, okey, enQ)        
         }
       }
+
+      if (!options.noUpdateStitkyCache) {
+        await this._stitkyCache.fetchTick()
+      }
     } catch (e) {
       if (!(e instanceof AFError)) {
         console.log(e)
@@ -272,7 +297,7 @@ export class AFApiClient {
     }
     const res: InstanceType<T>[] = []
     for (const o of obj) {
-      const ent = new entity() as InstanceType<T>
+      const ent = new entity(this._stitkyCache) as InstanceType<T>
       const oKeys = Object.keys(o)
       for (const okey of oKeys) {
         this._setProperty(ent, okey, o)        

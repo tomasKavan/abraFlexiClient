@@ -1,6 +1,6 @@
-import { AFEntity } from '../abra/AFEntity'
+import { AFEntity } from '../abra/AFEntity.js'
 
-<% evidences.forEach(ev => { %>import { <%= ev.tsClassName %> } from './entities/<%= ev.tsClassName %>'
+<% evidences.forEach(ev => { %>import { <%= ev.tsClassName %> } from './entities/<%= ev.tsClassName %>.js'
 <% }) %>
 
 const AFEntityRegistry: Record<string, typeof AFEntity> = {

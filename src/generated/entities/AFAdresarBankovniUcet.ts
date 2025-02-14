@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFStat } from './AFStat'
-import { AFRegion } from './AFRegion'
-import { AFAdresar } from './AFAdresar'
-import { AFPenezniUstav } from './AFPenezniUstav'
-import { AFKonstSymbol } from './AFKonstSymbol'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFStat } from './AFStat.js'
+import { AFRegion } from './AFRegion.js'
+import { AFAdresar } from './AFAdresar.js'
+import { AFPenezniUstav } from './AFPenezniUstav.js'
+import { AFKonstSymbol } from './AFKonstSymbol.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
 

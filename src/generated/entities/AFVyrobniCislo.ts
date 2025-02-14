@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFCenik } from './AFCenik'
-import { AFSklad } from './AFSklad'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb'
-import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFCenik } from './AFCenik.js'
+import { AFSklad } from './AFSklad.js'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb.js'
+import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka.js'
 
 
 

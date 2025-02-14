@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFSkupinaOsob } from './AFSkupinaOsob'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFSkupinaOsob } from './AFSkupinaOsob.js'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
 

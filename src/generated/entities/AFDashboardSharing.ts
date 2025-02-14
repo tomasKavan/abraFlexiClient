@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFDashboardPanel } from './AFDashboardPanel'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFDashboardPanel } from './AFDashboardPanel.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
 

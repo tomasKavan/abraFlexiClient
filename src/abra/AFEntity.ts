@@ -1,4 +1,7 @@
-import { TypeAnnotation } from './AFTypes'
+import { AFStitkyCache } from './AFStitkyCache.js'
+import { TypeAnnotation } from './AFTypes.js'
+import type { AFStitek } from '../generated/entities/AFStitek.js'
+import { AFSkupinaStitku } from '../generated/entities/AFSkupinaStitku.js'
 
 export class AFEntity {
   static EntityPath: string = ''
@@ -7,11 +10,26 @@ export class AFEntity {
 
   static propAnnotations: Record<string, TypeAnnotation> = {}
 
+  private _stitkyCache: AFStitkyCache
+
   id?: number
   kod?: string
+  stitky?: string
+
+  constructor(stitkyCache: AFStitkyCache) {
+    this._stitkyCache = stitkyCache
+  }
 
   getPropertyTypeAnnotation(key: string): TypeAnnotation | undefined {
     return (this.constructor as typeof AFEntity).propAnnotations[key]
+  }
+
+  getStitky(): AFStitek[] | undefined {
+    return this._stitkyCache.stitkyWithString(this.stitky)
+  }
+
+  getStitkyBySkupina(skup: string | AFSkupinaStitku): AFStitek[] | undefined {
+    return this._stitkyCache.stitkyWithString(this.stitky, skup)
   }
 }
 

@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFTypDokladu } from './AFTypDokladu'
-import { AFMena } from './AFMena'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFTypDokladu } from './AFTypDokladu.js'
+import { AFMena } from './AFMena.js'
 
 
-import { TypVazbyDokl, ModulUcetni } from '../AFEntityEnums'
+import { TypVazbyDokl, ModulUcetni } from '../AFEntityEnums.js'
 
 export class AFVazebniDoklad extends AFEntity {
   static EntityPath: string = 'vazebni-doklad'
