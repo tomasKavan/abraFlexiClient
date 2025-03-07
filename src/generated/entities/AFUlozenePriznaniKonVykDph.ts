@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { StavPriznaniKonVykDph } from '../AFEntityEnums.js'
+import { StavPriznaniKonVykDph } from '../AFEntityEnums'
 
 export class AFUlozenePriznaniKonVykDph extends AFEntity {
   static EntityPath: string = 'ulozene-priznani-kon-vyk-dph'

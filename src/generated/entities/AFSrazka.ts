@@ -1,14 +1,14 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek.js'
-import { AFMzdyBankovniSpojeni } from './AFMzdyBankovniSpojeni.js'
-import { AFTypZavazku } from './AFTypZavazku.js'
-import { AFTypInternihoDokladu } from './AFTypInternihoDokladu.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek'
+import { AFMzdyBankovniSpojeni } from './AFMzdyBankovniSpojeni'
+import { AFTypZavazku } from './AFTypZavazku'
+import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSlozky, SkupinaSlozky, ZpusobPlatby } from '../AFEntityEnums.js'
+import { TypSlozky, SkupinaSlozky, ZpusobPlatby } from '../AFEntityEnums'
 
 export class AFSrazka extends AFEntity {
   static EntityPath: string = 'srazka'

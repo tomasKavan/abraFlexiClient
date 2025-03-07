@@ -2,19 +2,24 @@
   "name": "abra-flexi",
   "version": "0.0.1",
   "description": "ABRA Flexi API Typescript client. Automaticly generated from API json annotations.",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "type": "module",
+  "types": "build/index.d.ts",
   "scripts": {
     "build:lib": "tsc --project tsconfig.src.json",
     "build:cli": "tsc --project tsconfig.generator.json && cp -r ./generator/templates bin/",
-    "build": "npm run build:lib && npm run build:cli",
-    "clean": "rimraf ./dist/* ./tsconfig.tsbuildInfo ./bin/*"
+    "build": "tsc",
+    "clean": "rimraf ./dist/* ./tsconfig.tsbuildInfo ./bin/*",
+    "test": "jest --config jestconfig.json --passWithNoTests",
+    "dev": "npm run start:dev",
+    "start:dev": "npm run build:dev",
+    "build:dev": "nodemon 'src/index.ts' --exec 'ts-node' src/index.ts -e ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tomasKavan/abraFlexiClient.git"
+  },
+  "exports": {
+    "import": "./build/src/index.js",
+    "require": "./build/src/index.js"
   },
   "keywords": [
     "ABRA Flexi",
@@ -22,10 +27,6 @@
     "ABRA Flexi API",
     "ABRA API Client"
   ],
-  "exports": {
-    "import": "./dist/index.js",
-    "require": "./dist/index.js"
-  },
   "bin": {
     "generator": "./bin/index.js"
   },
@@ -41,13 +42,18 @@
     "@types/node": "^22.13.0",
     "@types/yargs": "^17.0.33",
     "ejs": "^3.1.10",
+    "nodemon": "^3.1.9",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
     "tsc-watch": "^6.2.1",
     "typescript": "^5.7.2",
     "yargs": "^17.7.2"
   },
   "dependencies": {
     "big.js": "^6.2.2"
+  },
+  "publishConfig": {
+    "@mlwn-npm:registry": "https://gitlab.mlwn.se/api/v4/projects/767/packages/npm/"
   }
 }

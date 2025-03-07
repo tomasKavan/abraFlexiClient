@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFKurz } from './AFKurz.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFKurz } from './AFKurz'
 
 
-import { ZpusobStahKurz } from '../AFEntityEnums.js'
+import { ZpusobStahKurz } from '../AFEntityEnums'
 
 export class AFMena extends AFEntity {
   static EntityPath: string = 'mena'

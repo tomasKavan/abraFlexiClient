@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSlozky, SkupinaSlozky, VyznamSlozky } from '../AFEntityEnums.js'
+import { TypSlozky, SkupinaSlozky, VyznamSlozky } from '../AFEntityEnums'
 
 export class AFCiselnikMzdovychSlozek extends AFEntity {
   static EntityPath: string = 'ciselnik-mzdovych-slozek'

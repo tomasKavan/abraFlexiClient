@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFCenik } from './AFCenik.js'
-import { AFSklad } from './AFSklad.js'
-import { AFUmisteniVeSkladu } from './AFUmisteniVeSkladu.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFCenik } from './AFCenik'
+import { AFSklad } from './AFSklad'
+import { AFUmisteniVeSkladu } from './AFUmisteniVeSkladu'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka'
 
 
 

@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskyDotaz } from './AFUzivatelskyDotaz.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskyDotaz } from './AFUzivatelskyDotaz'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DatazTypParam } from '../AFEntityEnums.js'
+import { DatazTypParam } from '../AFEntityEnums'
 
 export class AFUzivatelskyDotazVlastnost extends AFEntity {
   static EntityPath: string = 'uzivatelsky-dotaz-vlastnost'

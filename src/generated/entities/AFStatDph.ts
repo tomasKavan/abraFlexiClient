@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMena } from './AFMena.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMena } from './AFMena'
+import { AFAdresar } from './AFAdresar'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 

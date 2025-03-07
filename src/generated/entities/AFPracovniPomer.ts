@@ -1,15 +1,15 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFTypPracovnihoPomeru } from './AFTypPracovnihoPomeru.js'
-import { AFTypInternihoDokladu } from './AFTypInternihoDokladu.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFTypPracovnihoPomeru } from './AFTypPracovnihoPomeru'
+import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti } from '../AFEntityEnums.js'
+import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti } from '../AFEntityEnums'
 
 export class AFPracovniPomer extends AFEntity {
   static EntityPath: string = 'pracovni-pomer'

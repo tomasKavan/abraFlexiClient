@@ -1,14 +1,14 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFUcet } from './AFUcet.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFTypOrganizace } from './AFTypOrganizace.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFStredisko } from './AFStredisko'
+import { AFUcet } from './AFUcet'
+import { AFZakazka } from './AFZakazka'
+import { AFTypOrganizace } from './AFTypOrganizace'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DruhMaj } from '../AFEntityEnums.js'
+import { DruhMaj } from '../AFEntityEnums'
 
 export class AFTypMajetku extends AFEntity {
   static EntityPath: string = 'typ-majetku'

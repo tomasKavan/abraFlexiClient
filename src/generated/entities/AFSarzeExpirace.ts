@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFSklad } from './AFSklad.js'
-import { AFCenik } from './AFCenik.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFSklad } from './AFSklad'
+import { AFCenik } from './AFCenik'
 
 
-import { TypPohybu } from '../AFEntityEnums.js'
+import { TypPohybu } from '../AFEntityEnums'
 
 export class AFSarzeExpirace extends AFEntity {
   static EntityPath: string = 'sarze-expirace'

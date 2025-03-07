@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypFakturyPrijate } from './AFTypFakturyPrijate.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypFakturyPrijate } from './AFTypFakturyPrijate'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZpusobFakt, TypPohybu } from '../AFEntityEnums.js'
+import { ZpusobFakt, TypPohybu } from '../AFEntityEnums'
 
 export class AFDodavatelskyTypSmlouvy extends AFEntity {
   static EntityPath: string = 'dodavatelsky-typ-smlouvy'

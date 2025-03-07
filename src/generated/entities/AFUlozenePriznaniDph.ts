@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { StavPriznaniDph } from '../AFEntityEnums.js'
+import { StavPriznaniDph } from '../AFEntityEnums'
 
 export class AFUlozenePriznaniDph extends AFEntity {
   static EntityPath: string = 'ulozene-priznani-dph'

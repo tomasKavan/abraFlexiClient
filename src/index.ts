@@ -1,4 +1,4 @@
-export { AFApiClient } from './abra/AFApiClient.js'
+export { AFApiClient } from './abra/AFApiClient'
 export { 
   AFApiConfig, 
   NO_LIMIT,
@@ -9,10 +9,10 @@ export {
   AFPopulateOptions,
   AFURelResult,
   StitkyCacheStrategy
-} from './abra/AFTypes.js'
-export { AFFilter, Filter, ID, CODE } from './abra/AFFilter.js'
+} from './abra/AFTypes'
+export { AFFilter, Filter, ID, CODE } from './abra/AFFilter'
 
-export * from './generated/entities/index.js'
-export * from './generated/AFEntityEnums.js'
-export { AFEntity } from './abra/AFEntity.js'
-export { EntityByName } from './generated/AFEntityRegistry.js'
+export * from './generated/entities/index'
+export * from './generated/AFEntityEnums'
+export { AFEntity } from './abra/AFEntity'
+export { EntityByName } from './generated/AFEntityRegistry'

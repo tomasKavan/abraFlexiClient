@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
-import { TypVazbyDokl } from '../AFEntityEnums.js'
+import { TypVazbyDokl } from '../AFEntityEnums'
 
 export class AFVazba extends AFEntity {
   static EntityPath: string = 'vazba'

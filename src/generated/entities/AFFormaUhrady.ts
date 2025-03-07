@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMena } from './AFMena.js'
-import { AFFormaUhradyZauctovani } from './AFFormaUhradyZauctovani.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMena } from './AFMena'
+import { AFFormaUhradyZauctovani } from './AFFormaUhradyZauctovani'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { FormaUhr, MetodaZaokr, ZaokrNa } from '../AFEntityEnums.js'
+import { FormaUhr, MetodaZaokr, ZaokrNa } from '../AFEntityEnums'
 
 export class AFFormaUhrady extends AFEntity {
   static EntityPath: string = 'forma-uhrady'

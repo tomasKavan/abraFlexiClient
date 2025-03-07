@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 

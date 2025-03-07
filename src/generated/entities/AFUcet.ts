@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFMena } from './AFMena.js'
-import { AFUcetniOsnova } from './AFUcetniOsnova.js'
-import { AFTypOrganizace } from './AFTypOrganizace.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFMena } from './AFMena'
+import { AFUcetniOsnova } from './AFUcetniOsnova'
+import { AFTypOrganizace } from './AFTypOrganizace'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypUctu, DruhUctu } from '../AFEntityEnums.js'
+import { TypUctu, DruhUctu } from '../AFEntityEnums'
 
 export class AFUcet extends AFEntity {
   static EntityPath: string = 'ucet'

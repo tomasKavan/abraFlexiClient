@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
-import { OperaceZurnalSmlouvy } from '../AFEntityEnums.js'
+import { OperaceZurnalSmlouvy } from '../AFEntityEnums'
 
 export class AFSmlouvaZurnal extends AFEntity {
   static EntityPath: string = 'smlouva-zurnal'

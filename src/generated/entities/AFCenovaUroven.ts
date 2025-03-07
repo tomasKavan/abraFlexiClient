@@ -1,14 +1,14 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFCenikovaSkupina } from './AFCenikovaSkupina.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFCenik } from './AFCenik.js'
-import { AFSkupinaZbozi } from './AFSkupinaZbozi.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStredisko } from './AFStredisko'
+import { AFAdresar } from './AFAdresar'
+import { AFCenikovaSkupina } from './AFCenikovaSkupina'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFCenik } from './AFCenik'
+import { AFSkupinaZbozi } from './AFSkupinaZbozi'
 
 
-import { TypCenyVychozi, TypVypCeny, ZaokrJak, ZaokrNa } from '../AFEntityEnums.js'
+import { TypCenyVychozi, TypVypCeny, ZaokrJak, ZaokrNa } from '../AFEntityEnums'
 
 export class AFCenovaUroven extends AFEntity {
   static EntityPath: string = 'cenova-uroven'

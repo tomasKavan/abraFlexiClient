@@ -1,4 +1,4 @@
-import { EvidenceDef, PropertyDef } from "./types.js";
+import { EvidenceDef, PropertyDef } from "./types";
 
 export function FixProperties(ev: EvidenceDef, inp: PropertyDef[]) {
   if (ev.tsClassName === 'AFCenik') {

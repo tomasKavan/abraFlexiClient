@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFSklad } from './AFSklad.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFInventuraPolozka } from './AFInventuraPolozka.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFSklad } from './AFSklad'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFInventuraPolozka } from './AFInventuraPolozka'
 
 
-import { StavInventury } from '../AFEntityEnums.js'
+import { StavInventury } from '../AFEntityEnums'
 
 export class AFInventura extends AFEntity {
   static EntityPath: string = 'inventura'

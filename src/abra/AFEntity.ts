@@ -1,7 +1,7 @@
-import { AFStitkyCache } from './AFStitkyCache.js'
-import { TypeAnnotation } from './AFTypes.js'
-import type { AFStitek } from '../generated/entities/AFStitek.js'
-import { AFSkupinaStitku } from '../generated/entities/AFSkupinaStitku.js'
+import { AFStitkyCache } from './AFStitkyCache'
+import { TypeAnnotation } from './AFTypes'
+import type { AFStitek } from '../generated/entities/AFStitek'
+import { AFSkupinaStitku } from '../generated/entities/AFSkupinaStitku'
 
 export class AFEntity {
   static EntityPath: string = ''

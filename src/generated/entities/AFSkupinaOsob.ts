@@ -1,12 +1,12 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypInternihoDokladu } from './AFTypInternihoDokladu.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TydenPracDoba } from '../AFEntityEnums.js'
+import { TydenPracDoba } from '../AFEntityEnums'
 
 export class AFSkupinaOsob extends AFEntity {
   static EntityPath: string = 'skupina-osob'

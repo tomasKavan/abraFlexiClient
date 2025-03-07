@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { MjHmot, TypObalu, TypVzniku, TypPouziti, Material, Surovina, BarvaMaterialu, LitterObal } from '../AFEntityEnums.js'
+import { MjHmot, TypObalu, TypVzniku, TypPouziti, Material, Surovina, BarvaMaterialu, LitterObal } from '../AFEntityEnums'
 
 export class AFCenikObal extends AFEntity {
   static EntityPath: string = 'cenik-obal'

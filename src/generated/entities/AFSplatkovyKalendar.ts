@@ -1,15 +1,15 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFLeasing } from './AFLeasing.js'
-import { AFUcet } from './AFUcet.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFLeasing } from './AFLeasing'
+import { AFUcet } from './AFUcet'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFStredisko } from './AFStredisko'
+import { AFZakazka } from './AFZakazka'
+import { AFStatDph } from './AFStatDph'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ClenSpl, TypSpl, TypSzbDph } from '../AFEntityEnums.js'
+import { ClenSpl, TypSpl, TypSzbDph } from '../AFEntityEnums'
 
 export class AFSplatkovyKalendar extends AFEntity {
   static EntityPath: string = 'splatkovy-kalendar'

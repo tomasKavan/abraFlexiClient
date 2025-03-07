@@ -1,14 +1,14 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMena } from './AFMena.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFPrikazKInkasuPolozka } from './AFPrikazKInkasuPolozka.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMena } from './AFMena'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFPrikazKInkasuPolozka } from './AFPrikazKInkasuPolozka'
 
 
-import { ElPrikazStav } from '../AFEntityEnums.js'
+import { ElPrikazStav } from '../AFEntityEnums'
 
 export class AFPrikazKInkasu extends AFEntity {
   static EntityPath: string = 'prikaz-k-inkasu'
