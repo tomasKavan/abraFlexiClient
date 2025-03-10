@@ -27,14 +27,14 @@
     "ABRA Flexi API",
     "ABRA API Client"
   ],
-  "bin": {
-    "generator": "./bin/index.js"
-  },
   "author": "Tomas Kavan",
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/tomasKavan/abraFlexiClient/issues"
   },
+  "files": [
+    "build"
+  ],
   "homepage": "https://github.com/tomasKavan/abraFlexiClient#readme",
   "devDependencies": {
     "@types/big.js": "^6.2.2",
@@ -54,6 +54,6 @@
     "big.js": "^6.2.2"
   },
   "publishConfig": {
-    "@mlwn-npm:registry": "https://gitlab.mlwn.se/api/v4/projects/767/packages/npm/"
+    "directory": "build"
   }
 }
