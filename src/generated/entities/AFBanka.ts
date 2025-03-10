@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypBanka } from './AFTypBanka'
 import { AFBankovniUcet } from './AFBankovniUcet'
 import { AFMena } from './AFMena'
@@ -16,6 +16,7 @@ import { AFCleneniDph } from './AFCleneniDph'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
 import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaBanka } from './AFRadaBanka'
 import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
@@ -28,7 +29,7 @@ import { AFVazba } from './AFVazba'
 import { AFDokladKUhrade } from './AFDokladKUhrade'
 
 
-import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums'
+import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums.js'
 
 export class AFBanka extends AFEntity {
   static EntityPath: string = 'banka'
@@ -208,9 +209,9 @@ export class AFBanka extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -871,7 +872,7 @@ export class AFBanka extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -879,7 +880,7 @@ export class AFBanka extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

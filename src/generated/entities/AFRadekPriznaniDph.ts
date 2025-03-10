@@ -1,10 +1,11 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { StavPriznaniDph, TypSzbDph } from '../AFEntityEnums'
+import { StavPriznaniDph, TypSzbDph } from '../AFEntityEnums.js'
 
 export class AFRadekPriznaniDph extends AFEntity {
   static EntityPath: string = 'radek-priznani-dph'
@@ -32,7 +33,7 @@ export class AFRadekPriznaniDph extends AFEntity {
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
   typSzbDphK?: TypSzbDph
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Řádky DPH (db: IdClenDph) - Řádky DPH)
   clenDph?: AFCleneniDph
 
@@ -114,7 +115,7 @@ export class AFRadekPriznaniDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

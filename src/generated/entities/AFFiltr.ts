@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -33,7 +34,7 @@ export class AFFiltr extends AFEntity {
   // Počet použití (db: UsageCnt) - Počet použití)
   usageCnt?: number
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -114,7 +115,7 @@ export class AFFiltr extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

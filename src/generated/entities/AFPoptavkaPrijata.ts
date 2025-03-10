@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypPoptavkyPrijate } from './AFTypPoptavkyPrijate'
 import { AFMena } from './AFMena'
 import { AFAdresar } from './AFAdresar'
@@ -10,6 +10,7 @@ import { AFStatDph } from './AFStatDph'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
 import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaPoptavkyPrijate } from './AFRadaPoptavkyPrijate'
 import { AFFormaDopravy } from './AFFormaDopravy'
@@ -23,7 +24,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavDoklObch } from '../AFEntityEnums'
+import { Zamek, StavDoklObch } from '../AFEntityEnums.js'
 
 export class AFPoptavkaPrijata extends AFEntity {
   static EntityPath: string = 'poptavka-prijata'
@@ -183,9 +184,9 @@ export class AFPoptavkaPrijata extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -758,7 +759,7 @@ export class AFPoptavkaPrijata extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -766,7 +767,7 @@ export class AFPoptavkaPrijata extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

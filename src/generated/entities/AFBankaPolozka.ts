@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
 import { AFMena } from './AFMena'
@@ -14,7 +14,7 @@ import { AFPreneseniDph } from './AFPreneseniDph'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSzbDph } from '../AFEntityEnums'
+import { TypSzbDph } from '../AFEntityEnums.js'
 
 export class AFBankaPolozka extends AFEntity {
   static EntityPath: string = 'banka-polozka'

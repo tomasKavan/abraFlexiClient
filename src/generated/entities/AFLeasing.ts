@@ -1,11 +1,12 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypLeasingu } from './AFTypLeasingu'
 import { AFMena } from './AFMena'
 import { AFUcet } from './AFUcet'
 import { AFAdresar } from './AFAdresar'
 import { AFStredisko } from './AFStredisko'
 import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
 import { AFSplatkovyKalendar } from './AFSplatkovyKalendar'
 import { AFPriloha } from './AFPriloha'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
@@ -13,7 +14,7 @@ import { AFDanovyNaklad } from './AFDanovyNaklad'
 import { AFZapujcka } from './AFZapujcka'
 
 
-import { DruhLeas, MjZaruky, FrDanNakl } from '../AFEntityEnums'
+import { DruhLeas, MjZaruky, FrDanNakl } from '../AFEntityEnums.js'
 
 export class AFLeasing extends AFEntity {
   static EntityPath: string = 'leasing'
@@ -113,7 +114,7 @@ export class AFLeasing extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Splátkový kalendář (type: SPLATKOVY_KALENDAR) - splatkove-kalendare)
   'splatkove-kalendare'?: AFSplatkovyKalendar[]
@@ -462,7 +463,7 @@ export class AFLeasing extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

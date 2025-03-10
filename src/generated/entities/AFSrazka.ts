@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFOsobaHlavicka } from './AFOsobaHlavicka'
 import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek'
 import { AFMzdyBankovniSpojeni } from './AFMzdyBankovniSpojeni'
@@ -8,7 +8,7 @@ import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSlozky, SkupinaSlozky, ZpusobPlatby } from '../AFEntityEnums'
+import { TypSlozky, SkupinaSlozky, ZpusobPlatby } from '../AFEntityEnums.js'
 
 export class AFSrazka extends AFEntity {
   static EntityPath: string = 'srazka'

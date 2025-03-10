@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUcetniObdobi } from './AFUcetniObdobi'
 import { AFFormaUhrady } from './AFFormaUhrady'
 import { AFRadaFakturyVydane } from './AFRadaFakturyVydane'
@@ -27,7 +27,7 @@ import { AFAutotisk } from './AFAutotisk'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZaokrJak, ZaokrNa, MetodaZaokr, RazeniProTisk, Ekokom } from '../AFEntityEnums'
+import { ZaokrJak, ZaokrNa, MetodaZaokr, RazeniProTisk, Ekokom } from '../AFEntityEnums.js'
 
 export class AFTypProdejky extends AFEntity {
   static EntityPath: string = 'typ-prodejky'

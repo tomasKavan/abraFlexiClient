@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFSklad } from './AFSklad'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
@@ -20,7 +20,7 @@ import { AFVyrobniCislo } from './AFVyrobniCislo'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPolozky, TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv, Ekokom } from '../AFEntityEnums'
+import { TypPolozky, TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv, Ekokom } from '../AFEntityEnums.js'
 
 export class AFFakturaPrijataPolozka extends AFEntity {
   static EntityPath: string = 'faktura-prijata-polozka'

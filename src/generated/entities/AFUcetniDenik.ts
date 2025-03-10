@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFAdresar } from './AFAdresar'
 import { AFMena } from './AFMena'
@@ -9,7 +9,7 @@ import { AFZakazka } from './AFZakazka'
 import { AFCinnost } from './AFCinnost'
 
 
-import { ModulUcetni, TypSzbDph, StavUziv } from '../AFEntityEnums'
+import { ModulUcetni, TypSzbDph, StavUziv } from '../AFEntityEnums.js'
 
 export class AFUcetniDenik extends AFEntity {
   static EntityPath: string = 'ucetni-denik'

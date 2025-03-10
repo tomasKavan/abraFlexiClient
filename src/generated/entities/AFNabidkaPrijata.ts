@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypNabidkyPrijate } from './AFTypNabidkyPrijate'
 import { AFMena } from './AFMena'
 import { AFAdresar } from './AFAdresar'
@@ -8,6 +8,7 @@ import { AFRegion } from './AFRegion'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
 import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaNabidkyPrijate } from './AFRadaNabidkyPrijate'
 import { AFFormaDopravy } from './AFFormaDopravy'
@@ -22,7 +23,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavDoklObch } from '../AFEntityEnums'
+import { Zamek, StavDoklObch } from '../AFEntityEnums.js'
 
 export class AFNabidkaPrijata extends AFEntity {
   static EntityPath: string = 'nabidka-prijata'
@@ -176,9 +177,9 @@ export class AFNabidkaPrijata extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -731,7 +732,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -739,7 +740,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

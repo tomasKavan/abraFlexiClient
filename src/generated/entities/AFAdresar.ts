@@ -1,9 +1,10 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFStat } from './AFStat'
 import { AFRegion } from './AFRegion'
 import { AFSkupinaFirem } from './AFSkupinaFirem'
 import { AFStredisko } from './AFStredisko'
+import { AFUzivatel } from './AFUzivatel'
 import { AFCenikovaSkupina } from './AFCenikovaSkupina'
 import { AFFormaUhrady } from './AFFormaUhrady'
 import { AFOdberatel } from './AFOdberatel'
@@ -20,7 +21,7 @@ import { AFRezervace } from './AFRezervace'
 import { AFKontakt } from './AFKontakt'
 
 
-import { FormExport, TypVztahu, IsdocPrilohaMailu } from '../AFEntityEnums'
+import { FormExport, TypVztahu, IsdocPrilohaMailu } from '../AFEntityEnums.js'
 
 export class AFAdresar extends AFEntity {
   static EntityPath: string = 'adresar'
@@ -150,7 +151,7 @@ export class AFAdresar extends AFEntity {
   // Pošt. kraj (db: Idfaregion) - Kraj)
   faRegion?: AFRegion
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Ceníková skupina (db: IdSkupCen) - Ceníková skupina)
   skupCen?: AFCenikovaSkupina
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
@@ -604,7 +605,7 @@ export class AFAdresar extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

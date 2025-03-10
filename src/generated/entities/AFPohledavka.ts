@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypPohledavky } from './AFTypPohledavky'
 import { AFMena } from './AFMena'
 import { AFKonstSymbol } from './AFKonstSymbol'
@@ -21,6 +21,7 @@ import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
 import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
 import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
 import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaPohledavky } from './AFRadaPohledavky'
 import { AFSmlouva } from './AFSmlouva'
@@ -35,7 +36,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavUziv, StavUhr, StavOdp } from '../AFEntityEnums'
+import { Zamek, StavUziv, StavUhr, StavOdp } from '../AFEntityEnums.js'
 
 export class AFPohledavka extends AFEntity {
   static EntityPath: string = 'pohledavka'
@@ -245,9 +246,9 @@ export class AFPohledavka extends AFEntity {
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -1042,7 +1043,7 @@ export class AFPohledavka extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1050,7 +1051,7 @@ export class AFPohledavka extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

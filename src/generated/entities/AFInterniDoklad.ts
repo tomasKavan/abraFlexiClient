@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
 import { AFMena } from './AFMena'
 import { AFAdresar } from './AFAdresar'
@@ -13,6 +13,7 @@ import { AFCleneniDph } from './AFCleneniDph'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
 import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaInternihoDokladu } from './AFRadaInternihoDokladu'
 import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
@@ -24,7 +25,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavUziv } from '../AFEntityEnums'
+import { Zamek, StavUziv } from '../AFEntityEnums.js'
 
 export class AFInterniDoklad extends AFEntity {
   static EntityPath: string = 'interni-doklad'
@@ -192,9 +193,9 @@ export class AFInterniDoklad extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -791,7 +792,7 @@ export class AFInterniDoklad extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -799,7 +800,7 @@ export class AFInterniDoklad extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

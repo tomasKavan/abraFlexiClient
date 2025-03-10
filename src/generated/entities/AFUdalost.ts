@@ -1,11 +1,13 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFAdresar } from './AFAdresar'
 import { AFTypAktivity } from './AFTypAktivity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFZakazka } from './AFZakazka'
 import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFCenik } from './AFCenik'
 import { AFKontakt } from './AFKontakt'
+import { AFReport } from './AFReport'
 import { AFSmlouva } from './AFSmlouva'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
 import { AFMajetek } from './AFMajetek'
@@ -14,7 +16,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFNaklad } from './AFNaklad'
 
 
-import { Priorita, StavUdal } from '../AFEntityEnums'
+import { Priorita, StavUdal } from '../AFEntityEnums.js'
 
 export class AFUdalost extends AFEntity {
   static EntityPath: string = 'udalost'
@@ -58,9 +60,9 @@ export class AFUdalost extends AFEntity {
   // Typ aktivity (db: IdTypAkt) - Typ aktivity)
   typAkt?: AFTypAktivity
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any
+  zodpPrac?: AFUzivatel
   // Uživatel (db: IdUzivatelVytvoril) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
@@ -78,7 +80,7 @@ export class AFUdalost extends AFEntity {
   // Konektor (db: IdKonektor) - Konektor)
   konektor?: any
   // Report (db: IdReport) - Report)
-  report?: any
+  report?: AFReport
   // Smlouva (db: IdSmlouvy) - Smlouva)
   smlouva?: AFSmlouva
   // Pol. smlouvy (db: IdPolSml) - Pol. smlouvy)
@@ -86,6 +88,8 @@ export class AFUdalost extends AFEntity {
   // Majetek (db: IdMajetek) - Majetek)
   majetek?: AFMajetek
 
+  // Uživatelé (type: UZIVATELE) - osoby)
+  osoby?: AFUzivatel[]
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
@@ -223,7 +227,7 @@ export class AFUdalost extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -231,7 +235,7 @@ export class AFUdalost extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -297,7 +301,7 @@ export class AFUdalost extends AFEntity {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFReport',
       
     },
     smlouva : {
@@ -325,6 +329,12 @@ export class AFUdalost extends AFEntity {
       
     },
 
+    osoby : {
+      key: 'osoby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: 'AFUzivatel'
+    },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,

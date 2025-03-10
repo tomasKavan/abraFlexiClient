@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypPokladniPohyb } from './AFTypPokladniPohyb'
 import { AFPokladna } from './AFPokladna'
 import { AFMena } from './AFMena'
@@ -18,6 +18,7 @@ import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
 import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
 import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
 import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaPokladniPohyb } from './AFRadaPokladniPohyb'
 import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
@@ -32,7 +33,7 @@ import { AFVazba } from './AFVazba'
 import { AFDokladKUhrade } from './AFDokladKUhrade'
 
 
-import { Zamek, TypPohybu, StavUziv, ZaokrJak, ZaokrNa, MetodaZaokr, Ekokom, JakUhrazeno } from '../AFEntityEnums'
+import { Zamek, TypPohybu, StavUziv, ZaokrJak, ZaokrNa, MetodaZaokr, Ekokom, JakUhrazeno } from '../AFEntityEnums.js'
 
 export class AFPokladniPohyb extends AFEntity {
   static EntityPath: string = 'pokladni-pohyb'
@@ -228,9 +229,9 @@ export class AFPokladniPohyb extends AFEntity {
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -960,7 +961,7 @@ export class AFPokladniPohyb extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -968,7 +969,7 @@ export class AFPokladniPohyb extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

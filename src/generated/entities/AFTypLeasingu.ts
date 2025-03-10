@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUcetniObdobi } from './AFUcetniObdobi'
 import { AFUcet } from './AFUcet'
 import { AFStredisko } from './AFStredisko'
@@ -8,7 +8,7 @@ import { AFTypOrganizace } from './AFTypOrganizace'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DruhLeas } from '../AFEntityEnums'
+import { DruhLeas } from '../AFEntityEnums.js'
 
 export class AFTypLeasingu extends AFEntity {
   static EntityPath: string = 'typ-leasingu'

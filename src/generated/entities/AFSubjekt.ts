@@ -1,10 +1,10 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFAdresar } from './AFAdresar'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { GdprTypVztahu } from '../AFEntityEnums'
+import { GdprTypVztahu } from '../AFEntityEnums.js'
 
 export class AFSubjekt extends AFEntity {
   static EntityPath: string = 'subjekt'

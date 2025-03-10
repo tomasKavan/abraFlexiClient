@@ -1,9 +1,10 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { StavPriznaniDph } from '../AFEntityEnums'
+import { StavPriznaniDph } from '../AFEntityEnums.js'
 
 export class AFUlozenePriznaniDph extends AFEntity {
   static EntityPath: string = 'ulozene-priznani-dph'
@@ -25,7 +26,7 @@ export class AFUlozenePriznaniDph extends AFEntity {
   // Typ přiznání DPH (db: StavK) - Typ přiznání DPH)
   stavK?: StavPriznaniDph
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -82,7 +83,7 @@ export class AFUlozenePriznaniDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

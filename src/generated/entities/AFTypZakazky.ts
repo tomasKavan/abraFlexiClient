@@ -1,10 +1,11 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFStredisko } from './AFStredisko'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypZak } from '../AFEntityEnums'
+import { TypZak } from '../AFEntityEnums.js'
 
 export class AFTypZakazky extends AFEntity {
   static EntityPath: string = 'typ-zakazky'
@@ -40,7 +41,7 @@ export class AFTypZakazky extends AFEntity {
   // Středisko (db: IdStred) - Středisko)
   stredisko?: AFStredisko
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any
+  zodpPrac?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -146,7 +147,7 @@ export class AFTypZakazky extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

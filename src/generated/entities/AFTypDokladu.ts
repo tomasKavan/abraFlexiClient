@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUcetniObdobi } from './AFUcetniObdobi'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
@@ -9,7 +9,7 @@ import { AFAutotisk } from './AFAutotisk'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { RazeniProTisk } from '../AFEntityEnums'
+import { RazeniProTisk } from '../AFEntityEnums.js'
 
 export class AFTypDokladu extends AFEntity {
   static EntityPath: string = 'typ-dokladu'

@@ -1,10 +1,11 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { StavPriznaniKonVykDph } from '../AFEntityEnums'
+import { StavPriznaniKonVykDph } from '../AFEntityEnums.js'
 
 export class AFUlozenePriznaniKonVykDph extends AFEntity {
   static EntityPath: string = 'ulozene-priznani-kon-vyk-dph'
@@ -28,7 +29,7 @@ export class AFUlozenePriznaniKonVykDph extends AFEntity {
   // XML (db: Xml) - XML)
   xml?: string
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Stát (db: IdStat) - Stát)
   stat?: AFStat
 
@@ -93,7 +94,7 @@ export class AFUlozenePriznaniKonVykDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

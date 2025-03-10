@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
 import { AFAdresar } from './AFAdresar'
@@ -10,7 +10,7 @@ import { AFStatDph } from './AFStatDph'
 import { AFPredpisZauctovani } from './AFPredpisZauctovani'
 
 
-import { ModulUcetni, TypSzbDph, StavUziv, TypPlneni } from '../AFEntityEnums'
+import { ModulUcetni, TypSzbDph, StavUziv, TypPlneni } from '../AFEntityEnums.js'
 
 export class AFPodkladyDph extends AFEntity {
   static EntityPath: string = 'podklady-dph'

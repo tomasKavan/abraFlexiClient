@@ -1,9 +1,10 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DashboardPanelVisibility } from '../AFEntityEnums'
+import { DashboardPanelVisibility } from '../AFEntityEnums.js'
 
 export class AFDashboardPanel extends AFEntity {
   static EntityPath: string = 'dashboard-panel'
@@ -41,7 +42,7 @@ export class AFDashboardPanel extends AFEntity {
   // Standardní přehled (db: Standard) - Standardní přehled)
   standard?: boolean
   // Vytvořil (db: Idauthor) - Vytvořil)
-  author?: any
+  author?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -151,7 +152,7 @@ export class AFDashboardPanel extends AFEntity {
       key: 'author',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

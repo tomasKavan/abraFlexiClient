@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypSmlouvy } from './AFTypSmlouvy'
 import { AFAdresar } from './AFAdresar'
 import { AFZakazka } from './AFZakazka'
@@ -9,6 +9,7 @@ import { AFKonstSymbol } from './AFKonstSymbol'
 import { AFStavSmlouvy } from './AFStavSmlouvy'
 import { AFCinnost } from './AFCinnost'
 import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
 import { AFPriloha } from './AFPriloha'
@@ -16,7 +17,7 @@ import { AFUdalost } from './AFUdalost'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZpusobFakt } from '../AFEntityEnums'
+import { ZpusobFakt } from '../AFEntityEnums.js'
 
 export class AFSmlouva extends AFEntity {
   static EntityPath: string = 'smlouva'
@@ -130,7 +131,7 @@ export class AFSmlouva extends AFEntity {
   // Typ faktury - Bankovní účet (db: ) - Typ faktury - Bankovní účet)
   typDoklFakBspBan?: AFBankovniUcet
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
 
@@ -495,7 +496,7 @@ export class AFSmlouva extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

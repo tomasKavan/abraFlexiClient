@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUcetniObdobi } from './AFUcetniObdobi'
 import { AFRadaSkladovyPohyb } from './AFRadaSkladovyPohyb'
 import { AFStredisko } from './AFStredisko'
@@ -18,7 +18,7 @@ import { AFAutotisk } from './AFAutotisk'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPohybu, TypPohybuSklad, RazeniProTisk } from '../AFEntityEnums'
+import { TypPohybu, TypPohybuSklad, RazeniProTisk } from '../AFEntityEnums.js'
 
 export class AFTypSkladovyPohyb extends AFEntity {
   static EntityPath: string = 'typ-skladovy-pohyb'

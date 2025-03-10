@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFSmlouva } from './AFSmlouva'
 import { AFCenik } from './AFCenik'
 import { AFSklad } from './AFSklad'
@@ -16,7 +16,7 @@ import { AFUdalost } from './AFUdalost'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZpusobFakt, TypCeny, TypSzbDph } from '../AFEntityEnums'
+import { ZpusobFakt, TypCeny, TypSzbDph } from '../AFEntityEnums.js'
 
 export class AFSmlouvaPolozka extends AFEntity {
   static EntityPath: string = 'smlouva-polozka'

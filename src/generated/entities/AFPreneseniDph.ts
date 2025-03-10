@@ -1,9 +1,9 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { OmezPrenDanPov } from '../AFEntityEnums'
+import { OmezPrenDanPov } from '../AFEntityEnums.js'
 
 export class AFPreneseniDph extends AFEntity {
   static EntityPath: string = 'preneseni-dph'

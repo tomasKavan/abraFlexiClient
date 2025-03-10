@@ -1,10 +1,10 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPohybu } from '../AFEntityEnums'
+import { TypPohybu } from '../AFEntityEnums.js'
 
 export class AFCleneniKontrolniHlaseni extends AFEntity {
   static EntityPath: string = 'cleneni-kontrolni-hlaseni'

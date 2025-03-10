@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFAdresar } from './AFAdresar'
 import { AFMena } from './AFMena'
@@ -10,7 +10,7 @@ import { AFZakazka } from './AFZakazka'
 import { AFCinnost } from './AFCinnost'
 
 
-import { StavUhr, StavUziv, ModulUcetni, TypSzbDph } from '../AFEntityEnums'
+import { StavUhr, StavUziv, ModulUcetni, TypSzbDph } from '../AFEntityEnums.js'
 
 export class AFAnalyzaZakazky extends AFEntity {
   static EntityPath: string = 'analyza-zakazky'

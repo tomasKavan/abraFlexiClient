@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUcetniObdobi } from './AFUcetniObdobi'
 import { AFRegion } from './AFRegion'
 import { AFRadaBanka } from './AFRadaBanka'
@@ -13,7 +13,7 @@ import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ElVypisDuplicita } from '../AFEntityEnums'
+import { ElVypisDuplicita } from '../AFEntityEnums.js'
 
 export class AFBankovniUcet extends AFEntity {
   static EntityPath: string = 'bankovni-ucet'

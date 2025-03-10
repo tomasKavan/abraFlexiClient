@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFMena } from './AFMena'
 import { AFBankovniUcet } from './AFBankovniUcet'
 import { AFStat } from './AFStat'
@@ -8,7 +8,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFPrikazKUhradePolozka } from './AFPrikazKUhradePolozka'
 
 
-import { ElPrikazStav } from '../AFEntityEnums'
+import { ElPrikazStav } from '../AFEntityEnums.js'
 
 export class AFPrikazKUhrade extends AFEntity {
   static EntityPath: string = 'prikaz-k-uhrade'

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 import yargs from 'yargs'
 import { hideBin } from "yargs/helpers"
 import ejs from 'ejs'
-import { FixProperties } from './fix'
+import { FixProperties } from './fix.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -24,7 +24,7 @@ const ENUM_FILE_OUT = 'AFEntityEnums'
 const REGISTRY_FILE_OUT = 'AFEntityRegistry'
 const INDEX_FILE_OUT = 'index'
 
-import { EnumDef, EvidenceDef, PropertyDef, PropertyType, RelationDef, ValueObj } from './types'
+import { EnumDef, EvidenceDef, PropertyDef, PropertyType, RelationDef, ValueObj } from './types.js'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. With company path component, trailed by /.', demandOption: true})

@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFStat } from './AFStat'
 import { AFTypOrganizace } from './AFTypOrganizace'
 import { AFMena } from './AFMena'
@@ -24,7 +24,7 @@ import { AFPredpisZauctovani } from './AFPredpisZauctovani'
 import { AFTypDokladu } from './AFTypDokladu'
 
 
-import { TypUcJednotky, ZobrLogo, Jazyk, LogoPozice, RezimRezervaci, ZastupceTyp, TydenPracDoba, DenniKurz, RocniKurz, JakyTypDokl, PrepocetCen, FapDatProDuzpUctoK, AutoSendMailMod, ZobrazWebKompMod } from '../AFEntityEnums'
+import { TypUcJednotky, ZobrLogo, Jazyk, LogoPozice, RezimRezervaci, ZastupceTyp, TydenPracDoba, DenniKurz, RocniKurz, JakyTypDokl, PrepocetCen, FapDatProDuzpUctoK, AutoSendMailMod, ZobrazWebKompMod } from '../AFEntityEnums.js'
 
 export class AFNastaveni extends AFEntity {
   static EntityPath: string = 'nastaveni'

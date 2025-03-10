@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypDokladu } from './AFTypDokladu'
 import { AFMena } from './AFMena'
 import { AFKonstSymbol } from './AFKonstSymbol'
@@ -21,13 +21,14 @@ import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
 import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
 import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
 import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
 import { AFRada } from './AFRada'
 import { AFRocniRada } from './AFRocniRada'
 import { AFSazbaDph } from './AFSazbaDph'
 import { AFCinnost } from './AFCinnost'
 
 
-import { StavUziv, Zamek, ZaokrJak, ZaokrNa, StavUhr } from '../AFEntityEnums'
+import { StavUziv, Zamek, ZaokrJak, ZaokrNa, StavUhr } from '../AFEntityEnums.js'
 
 export class AFSaldoKDatu extends AFEntity {
   static EntityPath: string = 'saldo-k-datu'
@@ -265,9 +266,9 @@ export class AFSaldoKDatu extends AFEntity {
   // Kraj odesílatele (db: ) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: ) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: ) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Čís. řada (db: ) - Čís. řada)
   rada?: AFRada
   // Pol. dokl. řady (db: ) - Pol. dokl. řady)
@@ -1114,7 +1115,7 @@ export class AFSaldoKDatu extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1122,7 +1123,7 @@ export class AFSaldoKDatu extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

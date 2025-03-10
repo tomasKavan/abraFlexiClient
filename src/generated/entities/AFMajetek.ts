@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFOdpisovaSkupina } from './AFOdpisovaSkupina'
 import { AFUmisteni } from './AFUmisteni'
 import { AFTypMajetku } from './AFTypMajetku'
@@ -8,6 +8,7 @@ import { AFStredisko } from './AFStredisko'
 import { AFFakturaPrijata } from './AFFakturaPrijata'
 import { AFAdresar } from './AFAdresar'
 import { AFUcet } from './AFUcet'
+import { AFUzivatel } from './AFUzivatel'
 import { AFDanovyOdpis } from './AFDanovyOdpis'
 import { AFPriloha } from './AFPriloha'
 import { AFUcetniOdpis } from './AFUcetniOdpis'
@@ -16,7 +17,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFZapujcka } from './AFZapujcka'
 
 
-import { DruhMaj, MjZaruky, ZpusobOdp, ZvysZrych, NahrUcet, Zamek } from '../AFEntityEnums'
+import { DruhMaj, MjZaruky, ZpusobOdp, ZvysZrych, NahrUcet, Zamek } from '../AFEntityEnums.js'
 
 export class AFMajetek extends AFEntity {
   static EntityPath: string = 'majetek'
@@ -158,7 +159,7 @@ export class AFMajetek extends AFEntity {
   // Účet zůstatku vyřazení (db: IdZustVyrazUcet) - Účet zůstatku vyřazení)
   zustVyrazUcet?: AFUcet
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Daňové odpisy (type: DANOVY_ODPIS) - danove-odpisy)
   'danove-odpisy'?: AFDanovyOdpis[]
@@ -655,7 +656,7 @@ export class AFMajetek extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

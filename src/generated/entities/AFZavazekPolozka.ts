@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
 import { AFMena } from './AFMena'
@@ -16,7 +16,7 @@ import { AFZavazek } from './AFZavazek'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv } from '../AFEntityEnums'
+import { TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv } from '../AFEntityEnums.js'
 
 export class AFZavazekPolozka extends AFEntity {
   static EntityPath: string = 'zavazek-polozka'

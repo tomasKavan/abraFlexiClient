@@ -1,7 +1,8 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFMajetek } from './AFMajetek'
 import { AFLeasing } from './AFLeasing'
+import { AFUzivatel } from './AFUzivatel'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -48,7 +49,7 @@ export class AFZapujcka extends AFEntity {
   // Leasing (db: IdLeasing) - Leasing)
   leasing?: AFLeasing
   // Osoba (db: IdOsoby) - Osoba)
-  osoba?: any
+  osoba?: AFUzivatel
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat
 
@@ -178,7 +179,7 @@ export class AFZapujcka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

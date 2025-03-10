@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFPriloha } from './AFPriloha'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 

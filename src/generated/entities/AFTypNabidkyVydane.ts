@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUcetniObdobi } from './AFUcetniObdobi'
 import { AFRadaNabidkyVydane } from './AFRadaNabidkyVydane'
 import { AFStredisko } from './AFStredisko'
@@ -12,7 +12,7 @@ import { AFAutotisk } from './AFAutotisk'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { RazeniProTisk } from '../AFEntityEnums'
+import { RazeniProTisk } from '../AFEntityEnums.js'
 
 export class AFTypNabidkyVydane extends AFEntity {
   static EntityPath: string = 'typ-nabidky-vydane'

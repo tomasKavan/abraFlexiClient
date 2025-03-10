@@ -1,8 +1,8 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 
 
-import { DoporuceniCil } from '../AFEntityEnums'
+import { DoporuceniCil } from '../AFEntityEnums.js'
 
 export class AFDoporuceni extends AFEntity {
   static EntityPath: string = 'doporuceni'

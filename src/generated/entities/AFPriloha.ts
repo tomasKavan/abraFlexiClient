@@ -1,10 +1,12 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFNastaveni } from './AFNastaveni'
 import { AFCenik } from './AFCenik'
 import { AFAdresar } from './AFAdresar'
 import { AFKontakt } from './AFKontakt'
+import { AFReport } from './AFReport'
 import { AFZakazka } from './AFZakazka'
 import { AFSmlouva } from './AFSmlouva'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
@@ -13,7 +15,7 @@ import { AFUdalost } from './AFUdalost'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPrilohy } from '../AFEntityEnums'
+import { TypPrilohy } from '../AFEntityEnums.js'
 
 export class AFPriloha extends AFEntity {
   static EntityPath: string = 'priloha'
@@ -53,7 +55,7 @@ export class AFPriloha extends AFEntity {
   // Výška obrázku (db: PictureHeight) - Výška obrázku)
   pictureHeight?: number
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
   doklFak?: any
   // Interní doklad (db: IdDoklInt) - Interní doklad)
@@ -73,7 +75,7 @@ export class AFPriloha extends AFEntity {
   // Konektor (db: IdKonektor) - Konektor)
   konektor?: any
   // Report (db: IdReport) - Report)
-  report?: any
+  report?: AFReport
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Smlouva (db: IdSmlouvy) - Smlouva)
@@ -202,7 +204,7 @@ export class AFPriloha extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -274,7 +276,7 @@ export class AFPriloha extends AFEntity {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFReport',
       
     },
     zakazka : {

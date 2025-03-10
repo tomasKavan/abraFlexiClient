@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFAdresar } from './AFAdresar'
 import { AFCenik } from './AFCenik'
 import { AFSklad } from './AFSklad'
@@ -10,6 +10,7 @@ import { AFSkupinaZbozi } from './AFSkupinaZbozi'
 import { AFStredisko } from './AFStredisko'
 import { AFZakazka } from './AFZakazka'
 import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFUzivatel } from './AFUzivatel'
 
 
 
@@ -118,9 +119,9 @@ export class AFAnalyzaNakupu extends AFEntity {
   // MJ (db: ) - MJ)
   mj?: AFMernaJednotka
   // Zodpovědná osoba z dokladu (db: ) - Zodpovědná osoba z dokladu)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Zodpovědná osoba z adresáře (db: ) - Zodpovědná osoba z adresáře)
-  zodpOsobaAdresar?: any
+  zodpOsobaAdresar?: AFUzivatel
 
 
 
@@ -477,7 +478,7 @@ export class AFAnalyzaNakupu extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -485,7 +486,7 @@ export class AFAnalyzaNakupu extends AFEntity {
       key: 'zodpOsobaAdresar',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

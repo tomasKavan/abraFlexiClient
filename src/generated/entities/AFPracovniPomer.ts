@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
 import { AFOsobaHlavicka } from './AFOsobaHlavicka'
 import { AFTypPracovnihoPomeru } from './AFTypPracovnihoPomeru'
@@ -9,7 +9,7 @@ import { AFPredpisZauctovani } from './AFPredpisZauctovani'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti } from '../AFEntityEnums'
+import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti } from '../AFEntityEnums.js'
 
 export class AFPracovniPomer extends AFEntity {
   static EntityPath: string = 'pracovni-pomer'

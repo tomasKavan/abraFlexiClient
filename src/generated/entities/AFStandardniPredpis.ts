@@ -1,11 +1,11 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFRadekSestavy } from './AFRadekSestavy'
 import { AFUcetniOsnova } from './AFUcetniOsnova'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DruhUctu, ZpusobVypo } from '../AFEntityEnums'
+import { DruhUctu, ZpusobVypo } from '../AFEntityEnums.js'
 
 export class AFStandardniPredpis extends AFEntity {
   static EntityPath: string = 'standardni-predpis'

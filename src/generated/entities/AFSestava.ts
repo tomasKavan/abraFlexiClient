@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypOrganizace } from './AFTypOrganizace'
 import { AFRadekSestavy } from './AFRadekSestavy'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
@@ -7,7 +7,7 @@ import { AFPricteniRozdilu } from './AFPricteniRozdilu'
 import { AFUmisteniUctu } from './AFUmisteniUctu'
 
 
-import { TypSestavy, TypVypSestavy } from '../AFEntityEnums'
+import { TypSestavy, TypVypSestavy } from '../AFEntityEnums.js'
 
 export class AFSestava extends AFEntity {
   static EntityPath: string = 'sestava'

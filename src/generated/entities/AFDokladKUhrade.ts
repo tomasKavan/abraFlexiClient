@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypDokladu } from './AFTypDokladu'
 import { AFMena } from './AFMena'
 import { AFKonstSymbol } from './AFKonstSymbol'
@@ -22,6 +22,7 @@ import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
 import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
 import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
 import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRada } from './AFRada'
 import { AFRocniRada } from './AFRocniRada'
@@ -38,7 +39,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFVazba } from './AFVazba'
 
 
-import { TypPohybu, StavUziv, Zamek, ZaokrJak, ZaokrNa, Ekokom, StavUhr, StavOdp, StavMail, EetTyp, EetStav, MetodaZaokr } from '../AFEntityEnums'
+import { TypPohybu, StavUziv, Zamek, ZaokrJak, ZaokrNa, Ekokom, StavUhr, StavOdp, StavMail, EetTyp, EetStav, MetodaZaokr } from '../AFEntityEnums.js'
 
 export class AFDokladKUhrade extends AFEntity {
   static EntityPath: string = 'doklad-k-uhrade'
@@ -310,9 +311,9 @@ export class AFDokladKUhrade extends AFEntity {
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Čís. řada (db: IdRady) - Čís. řada)
@@ -1377,7 +1378,7 @@ export class AFDokladKUhrade extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1385,7 +1386,7 @@ export class AFDokladKUhrade extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

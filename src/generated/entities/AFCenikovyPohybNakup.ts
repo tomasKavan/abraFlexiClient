@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFAdresar } from './AFAdresar'
 import { AFSklad } from './AFSklad'
 import { AFStredisko } from './AFStredisko'
@@ -15,7 +15,7 @@ import { AFSazbaDph } from './AFSazbaDph'
 import { AFCinnost } from './AFCinnost'
 
 
-import { ModulUcetni, TypPolozky, TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, Objednat } from '../AFEntityEnums'
+import { ModulUcetni, TypPolozky, TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, Objednat } from '../AFEntityEnums.js'
 
 export class AFCenikovyPohybNakup extends AFEntity {
   static EntityPath: string = 'cenikovy-pohyb-nakup'

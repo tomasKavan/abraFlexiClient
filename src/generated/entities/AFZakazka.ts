@@ -1,10 +1,11 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFAdresar } from './AFAdresar'
 import { AFMistoUrceni } from './AFMistoUrceni'
 import { AFStredisko } from './AFStredisko'
 import { AFStavZakazky } from './AFStavZakazky'
 import { AFTypZakazky } from './AFTypZakazky'
+import { AFUzivatel } from './AFUzivatel'
 import { AFHodnoceniZakazky } from './AFHodnoceniZakazky'
 import { AFKontakt } from './AFKontakt'
 import { AFMena } from './AFMena'
@@ -89,7 +90,7 @@ export class AFZakazka extends AFEntity {
   // Typ zakázky (db: Idtypzakazky) - Typ zakázky)
   typZakazky?: AFTypZakazky
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any
+  zodpPrac?: AFUzivatel
   // Vyhodnocení zakázky (db: IdVyhZakazky) - Vyhodnocení zakázky)
   vyhZakazky?: AFHodnoceniZakazky
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
@@ -336,7 +337,7 @@ export class AFZakazka extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

@@ -1,8 +1,9 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 
 
-import { OperaceZurnalSmlouvy } from '../AFEntityEnums'
+import { OperaceZurnalSmlouvy } from '../AFEntityEnums.js'
 
 export class AFSmlouvaZurnal extends AFEntity {
   static EntityPath: string = 'smlouva-zurnal'
@@ -24,7 +25,7 @@ export class AFSmlouvaZurnal extends AFEntity {
   // Seznam chyb (db: Chyby) - Seznam chyb)
   chyby?: string
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
 
 
@@ -78,7 +79,7 @@ export class AFSmlouvaZurnal extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFMajetek } from './AFMajetek'
 import { AFStredisko } from './AFStredisko'
 import { AFUcet } from './AFUcet'
@@ -7,7 +7,7 @@ import { AFZakazka } from './AFZakazka'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypUdal } from '../AFEntityEnums'
+import { TypUdal } from '../AFEntityEnums.js'
 
 export class AFMajetekUdalost extends AFEntity {
   static EntityPath: string = 'majetek-udalost'

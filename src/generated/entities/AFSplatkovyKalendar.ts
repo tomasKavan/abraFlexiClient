@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFLeasing } from './AFLeasing'
 import { AFUcet } from './AFUcet'
 import { AFCleneniDph } from './AFCleneniDph'
@@ -9,7 +9,7 @@ import { AFStatDph } from './AFStatDph'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ClenSpl, TypSpl, TypSzbDph } from '../AFEntityEnums'
+import { ClenSpl, TypSpl, TypSzbDph } from '../AFEntityEnums.js'
 
 export class AFSplatkovyKalendar extends AFEntity {
   static EntityPath: string = 'splatkovy-kalendar'

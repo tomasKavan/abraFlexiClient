@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFSkupinaZbozi } from './AFSkupinaZbozi'
 import { AFMernaJednotka } from './AFMernaJednotka'
 import { AFStat } from './AFStat'
@@ -25,7 +25,7 @@ import { AFCenikTypSazbyDph } from './AFCenikTypSazbyDph'
 import { AFRezervace } from './AFRezervace'
 
 
-import { TypCeny, ZaokrJak, ZaokrNa, TypSzbDph, TypCenyVychozi, TypVypCeny, MjZaruky, TypZasoby } from '../AFEntityEnums'
+import { TypCeny, ZaokrJak, ZaokrNa, TypSzbDph, TypCenyVychozi, TypVypCeny, MjZaruky, TypZasoby } from '../AFEntityEnums.js'
 
 export class AFCenik extends AFEntity {
   static EntityPath: string = 'cenik'

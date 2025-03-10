@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFOsobaHlavicka } from './AFOsobaHlavicka'
 import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
 import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek'
@@ -11,7 +11,7 @@ import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSlozky, SkupinaSlozky } from '../AFEntityEnums'
+import { TypSlozky, SkupinaSlozky } from '../AFEntityEnums.js'
 
 export class AFStalaMzdovaSlozka extends AFEntity {
   static EntityPath: string = 'stala-mzdova-slozka'

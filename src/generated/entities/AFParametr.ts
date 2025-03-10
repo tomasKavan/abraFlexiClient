@@ -1,5 +1,7 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
+import { AFRole } from './AFRole'
 import { AFStredisko } from './AFStredisko'
 import { AFBankovniUcetSkladPokladna } from './AFBankovniUcetSkladPokladna'
 import { AFTypDokladu } from './AFTypDokladu'
@@ -27,9 +29,9 @@ export class AFParametr extends AFEntity {
   // Kód reportu (db: KodReportu) - Kód reportu)
   kodReportu?: string
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Role uživatele (db: IdRole) - Role uživatele)
-  role?: any
+  role?: AFRole
   // Středisko (db: IdStred) - Středisko)
   stredisko?: AFStredisko
   // Banka/pokladna/sklad (db: IdBsp) - Banka/pokladna/sklad)
@@ -85,7 +87,7 @@ export class AFParametr extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -93,7 +95,7 @@ export class AFParametr extends AFEntity {
       key: 'role',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFRole',
       
     },
     stredisko : {

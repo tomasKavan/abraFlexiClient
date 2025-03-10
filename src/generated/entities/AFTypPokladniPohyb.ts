@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUcetniObdobi } from './AFUcetniObdobi'
 import { AFFormaUhrady } from './AFFormaUhrady'
 import { AFRadaPokladniPohyb } from './AFRadaPokladniPohyb'
@@ -21,7 +21,7 @@ import { AFAutotisk } from './AFAutotisk'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPohybu, ZaokrJak, ZaokrNa, MetodaZaokr, RazeniProTisk, Ekokom } from '../AFEntityEnums'
+import { TypPohybu, ZaokrJak, ZaokrNa, MetodaZaokr, RazeniProTisk, Ekokom } from '../AFEntityEnums.js'
 
 export class AFTypPokladniPohyb extends AFEntity {
   static EntityPath: string = 'typ-pokladni-pohyb'

@@ -1,9 +1,10 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { UcelCertK } from '../AFEntityEnums'
+import { UcelCertK } from '../AFEntityEnums.js'
 
 export class AFCertifikatFinbricks extends AFEntity {
   static EntityPath: string = 'certifikat-finbricks'
@@ -25,7 +26,7 @@ export class AFCertifikatFinbricks extends AFEntity {
   // Platí do (db: PlatiDo) - Platí do)
   platiDo?: Date
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Účel certifikátu (db: UcelCertK) - Účel certifikátu)
   ucelCertK?: UcelCertK
 
@@ -84,7 +85,7 @@ export class AFCertifikatFinbricks extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

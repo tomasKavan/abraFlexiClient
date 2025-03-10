@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFTypVzajemnychZapoctu } from './AFTypVzajemnychZapoctu'
 import { AFMena } from './AFMena'
 import { AFKonstSymbol } from './AFKonstSymbol'
@@ -15,6 +15,7 @@ import { AFCleneniDph } from './AFCleneniDph'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
 import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaBanka } from './AFRadaBanka'
 import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
@@ -26,7 +27,7 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFVazba } from './AFVazba'
 
 
-import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums'
+import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums.js'
 
 export class AFVzajemnyZapocet extends AFEntity {
   static EntityPath: string = 'vzajemny-zapocet'
@@ -204,9 +205,9 @@ export class AFVzajemnyZapocet extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -854,7 +855,7 @@ export class AFVzajemnyZapocet extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -862,7 +863,7 @@ export class AFVzajemnyZapocet extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

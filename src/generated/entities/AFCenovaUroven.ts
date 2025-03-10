@@ -1,5 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
+import { AFEntity } from '../../abra/AFEntity.js'
 import { AFStredisko } from './AFStredisko'
 import { AFAdresar } from './AFAdresar'
 import { AFCenikovaSkupina } from './AFCenikovaSkupina'
@@ -8,7 +8,7 @@ import { AFCenik } from './AFCenik'
 import { AFSkupinaZbozi } from './AFSkupinaZbozi'
 
 
-import { TypCenyVychozi, TypVypCeny, ZaokrJak, ZaokrNa } from '../AFEntityEnums'
+import { TypCenyVychozi, TypVypCeny, ZaokrJak, ZaokrNa } from '../AFEntityEnums.js'
 
 export class AFCenovaUroven extends AFEntity {
   static EntityPath: string = 'cenova-uroven'
