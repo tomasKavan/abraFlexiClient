@@ -1,20 +1,20 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFRadaInternihoDokladu } from './AFRadaInternihoDokladu.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFUcet } from './AFUcet.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFMena } from './AFMena.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFSablonaMail } from './AFSablonaMail.js'
-import { AFAutotisk } from './AFAutotisk.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFRadaInternihoDokladu } from './AFRadaInternihoDokladu'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFUcet } from './AFUcet'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFMena } from './AFMena'
+import { AFStatDph } from './AFStatDph'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFSablonaMail } from './AFSablonaMail'
+import { AFAutotisk } from './AFAutotisk'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypDokladu, RazeniProTisk } from '../AFEntityEnums.js'
+import { TypDokladu, RazeniProTisk } from '../AFEntityEnums'
 
 export class AFTypInternihoDokladu extends AFEntity {
   static EntityPath: string = 'typ-interniho-dokladu'
@@ -22,11 +22,11 @@ export class AFTypInternihoDokladu extends AFEntity {
   static EntityType: string = 'INTERNI_DOKLAD_TYP'
 
   // ID (db: IdTypDokl) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

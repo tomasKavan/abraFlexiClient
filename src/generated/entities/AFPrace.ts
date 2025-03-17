@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
+import { AFStredisko } from './AFStredisko'
+import { AFZakazka } from './AFZakazka'
+import { AFCinnost } from './AFCinnost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -16,7 +16,7 @@ export class AFPrace extends AFEntity {
   static EntityType: string = 'PRACE'
 
   // ID (db: IdPraceStred) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Datum od (db: DatumOd) - Datum od)

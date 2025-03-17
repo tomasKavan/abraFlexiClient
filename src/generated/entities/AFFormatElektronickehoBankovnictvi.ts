@@ -1,5 +1,5 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
 
@@ -10,11 +10,11 @@ export class AFFormatElektronickehoBankovnictvi extends AFEntity {
   static EntityType: string = 'FORMAT_ELEKTRONICKEHO_BANKOVNICTVI'
 
   // ID (db: IdElbanFormat) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

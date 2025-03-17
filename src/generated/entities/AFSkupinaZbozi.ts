@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcet } from './AFUcet.js'
-import { AFTypOrganizace } from './AFTypOrganizace.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcet } from './AFUcet'
+import { AFTypOrganizace } from './AFTypOrganizace'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypCeny, TypCenyVychozi, TypVypCeny, ZaokrJak, ZaokrNa } from '../AFEntityEnums.js'
+import { TypCeny, TypCenyVychozi, TypVypCeny, ZaokrJak, ZaokrNa } from '../AFEntityEnums'
 
 export class AFSkupinaZbozi extends AFEntity {
   static EntityPath: string = 'skupina-zbozi'
@@ -13,11 +13,11 @@ export class AFSkupinaZbozi extends AFEntity {
   static EntityType: string = 'SKUPINA_ZBOZI'
 
   // ID (db: IdSkupZboz) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -73,7 +73,7 @@ export class AFSkupinaZbozi extends AFEntity {
   // Zahájit workflow při založení dokladu (db: WorkFlow) - Zahájit workflow při založení dokladu)
   workFlow?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // účet přijaté f. (db: IdProtiUcetPfa) - pro přijaté faktury / pokladna - výdej)
   ucetProtiPfa?: AFUcet
   // účet vydané f. (db: IdProtiUcetVfa) - pro vydané faktury / pokladna - příjem)

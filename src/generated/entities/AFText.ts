@@ -1,6 +1,6 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -11,7 +11,7 @@ export class AFText extends AFEntity {
   static EntityType: string = 'TEXT'
 
   // ID (db: IdText) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Text (db: Popis) - Text)

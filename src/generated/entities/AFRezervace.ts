@@ -1,9 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFCenik } from './AFCenik.js'
-import { AFSklad } from './AFSklad.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFAdresar } from './AFAdresar'
+import { AFCenik } from './AFCenik'
+import { AFSklad } from './AFSklad'
+import { AFUzivatel } from './AFUzivatel'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -14,7 +15,7 @@ export class AFRezervace extends AFEntity {
   static EntityType: string = 'REZERVACE'
 
   // ID (db: IdRezervace) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Datum vzniku (db: DatumOd) - Datum vzniku)
@@ -36,7 +37,7 @@ export class AFRezervace extends AFEntity {
   // Obchodní položka (db: IdPolObch) - Obchodní položka)
   polObch?: any
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -121,7 +122,7 @@ export class AFRezervace extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

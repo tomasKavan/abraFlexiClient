@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFCenikovaSkupina } from './AFCenikovaSkupina.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFMena } from './AFMena.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFAdresar } from './AFAdresar'
+import { AFCenikovaSkupina } from './AFCenikovaSkupina'
+import { AFStredisko } from './AFStredisko'
+import { AFMena } from './AFMena'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -16,7 +16,7 @@ export class AFOdberatel extends AFEntity {
   static EntityType: string = 'ODBERATEL'
 
   // ID (db: IdOdberatel) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Kód zboží/materiálu (db: KodIndi) - Kód zboží/materiálu)

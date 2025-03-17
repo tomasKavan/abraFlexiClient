@@ -1,12 +1,12 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFPenezniUstav } from './AFPenezniUstav.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFAdresar } from './AFAdresar'
+import { AFPenezniUstav } from './AFPenezniUstav'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -17,7 +17,7 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
   static EntityType: string = 'MZDY_BANKOVNI_SPOJENI'
 
   // ID (db: IdBanSpoj) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Ulice (db: Ulice) - Ulice)

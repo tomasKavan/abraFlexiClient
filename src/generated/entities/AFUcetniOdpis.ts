@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMajetek } from './AFMajetek.js'
-import { AFUcet } from './AFUcet.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMajetek } from './AFMajetek'
+import { AFUcet } from './AFUcet'
+import { AFStredisko } from './AFStredisko'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -15,7 +15,7 @@ export class AFUcetniOdpis extends AFEntity {
   static EntityType: string = 'UCETNI_ODPIS'
 
   // ID (db: IdUcetOdpisu) - ID)
-  id?: number
+  declare id?: number
   // Je účetní (db: Ucetni) - Doklad je účetní)
   ucetni?: boolean
   // Uživ. změn. (db: Zmena) - Uživatelsky změněno)
@@ -27,7 +27,7 @@ export class AFUcetniOdpis extends AFEntity {
   // Poznámka (db: Poznam) - Poznámka)
   poznam?: string
   // Číslo dokladu (db: Kod) - Číslo dokladu)
-  kod?: string
+  declare kod?: string
   // Modul (db: Modul) - Modul)
   modul?: string
   // Zámek (db: Zamek) - Zámek)

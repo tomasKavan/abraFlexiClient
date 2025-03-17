@@ -1,5 +1,5 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
 
@@ -10,7 +10,7 @@ export class AFUcetniObdobi extends AFEntity {
   static EntityType: string = 'UCETNI_OBDOBI'
 
   // ID (db: IdUcetObdobi) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Platí od data (db: PlatiOdData) - Platí od data)
@@ -22,7 +22,7 @@ export class AFUcetniObdobi extends AFEntity {
   // Poznámka (db: Poznam) - Poznámka)
   poznam?: string
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Změna po uzávěrce (db: ZmenaZaver) - Změna po uzávěrce)
   zmenaZaver?: boolean
   // Chyba při přecenění (db: ChybaPreceneni) - Chyba při přecenění)

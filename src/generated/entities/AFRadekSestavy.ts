@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFSestava } from './AFSestava.js'
-import { AFStandardniPredpis } from './AFStandardniPredpis.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFSumaceSestavy } from './AFSumaceSestavy.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFSestava } from './AFSestava'
+import { AFStandardniPredpis } from './AFStandardniPredpis'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFSumaceSestavy } from './AFSumaceSestavy'
 
 
 
@@ -14,7 +14,7 @@ export class AFRadekSestavy extends AFEntity {
   static EntityType: string = 'RADEK_SESTAVY'
 
   // ID (db: IdSesRadky) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Číslo řádku (db: CisRad) - Číslo řádku)

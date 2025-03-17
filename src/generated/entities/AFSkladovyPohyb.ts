@@ -1,35 +1,36 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFRegion } from './AFRegion.js'
-import { AFStat } from './AFStat.js'
-import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb.js'
-import { AFSklad } from './AFSklad.js'
-import { AFMena } from './AFMena.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFMistoUrceni } from './AFMistoUrceni.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky.js'
-import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce.js'
-import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy.js'
-import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb.js'
-import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFRadaSkladovyPohyb } from './AFRadaSkladovyPohyb.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFInventura } from './AFInventura.js'
-import { AFVazebniDoklad } from './AFVazebniDoklad.js'
-import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFVazba } from './AFVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFRegion } from './AFRegion'
+import { AFStat } from './AFStat'
+import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb'
+import { AFSklad } from './AFSklad'
+import { AFMena } from './AFMena'
+import { AFAdresar } from './AFAdresar'
+import { AFMistoUrceni } from './AFMistoUrceni'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky'
+import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
+import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
+import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
+import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFRadaSkladovyPohyb } from './AFRadaSkladovyPohyb'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFInventura } from './AFInventura'
+import { AFVazebniDoklad } from './AFVazebniDoklad'
+import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFVazba } from './AFVazba'
 
 
-import { Zamek, TypPohybu, StavSklad, TypPohybuSklad } from '../AFEntityEnums.js'
+import { Zamek, TypPohybu, StavSklad, TypPohybuSklad } from '../AFEntityEnums'
 
 export class AFSkladovyPohyb extends AFEntity {
   static EntityPath: string = 'skladovy-pohyb'
@@ -37,11 +38,11 @@ export class AFSkladovyPohyb extends AFEntity {
   static EntityType: string = 'SKLADOVY_POHYB'
 
   // ID (db: IdDoklSklad) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Interní číslo (db: Kod) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Zámek (db: ZamekK) - Zámek)
   zamekK?: Zamek
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
@@ -127,7 +128,7 @@ export class AFSkladovyPohyb extends AFEntity {
   // Storno (db: Storno) - Storno)
   storno?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Hrom. fakturace (db: HromFakt) - Hrom. fakturace)
   hromFakt?: boolean
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
@@ -171,9 +172,9 @@ export class AFSkladovyPohyb extends AFEntity {
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -691,7 +692,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -699,7 +700,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

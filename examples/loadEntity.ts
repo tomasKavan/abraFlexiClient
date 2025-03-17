@@ -2,7 +2,7 @@ import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { addBasicAtuh } from './helpers/basciAuth'
 
-import { AFApiClient, AFApiConfig, AFQueryOptions, AFInterniDoklad, AFQueryDetail } from '../src'
+import { AFApiClient, AFApiConfig, AFQueryOptions, AFInterniDoklad, AFQueryDetail } from '../src/index'
 import { Filter } from '../src/abra/AFFilter'
 
 const argv = yargs(hideBin(process.argv))

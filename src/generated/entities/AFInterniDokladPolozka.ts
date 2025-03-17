@@ -1,22 +1,22 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFMena } from './AFMena.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFPreneseniDph } from './AFPreneseniDph.js'
-import { AFMernaJednotka } from './AFMernaJednotka.js'
-import { AFSazbaDph } from './AFSazbaDph.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFInterniDoklad } from './AFInterniDoklad.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFMena } from './AFMena'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFZakazka } from './AFZakazka'
+import { AFAdresar } from './AFAdresar'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFPreneseniDph } from './AFPreneseniDph'
+import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFSazbaDph } from './AFSazbaDph'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFInterniDoklad } from './AFInterniDoklad'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv } from '../AFEntityEnums.js'
+import { TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv } from '../AFEntityEnums'
 
 export class AFInterniDokladPolozka extends AFEntity {
   static EntityPath: string = 'interni-doklad-polozka'
@@ -24,13 +24,13 @@ export class AFInterniDokladPolozka extends AFEntity {
   static EntityType: string = 'INTERNI_DOKLAD_POLOZKA'
 
   // ID (db: IdPolInt) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Úč. pol. (db: Ucetni) - Položka je účetní)
   ucetni?: boolean
   // Označení (db: Kod) - Označení)
-  kod?: string
+  declare kod?: string
   // EAN (db: EanKod) - EAN)
   eanKod?: string
   // Název (db: Nazev) - Název)
@@ -174,7 +174,7 @@ export class AFInterniDokladPolozka extends AFEntity {
   // Zdrojová položka objednávky (db: IdPolObchZdroj) - Zdrojová položka objednávky)
   idPolObchZdroj?: number
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Zdroj (db: Source) - Zdroj)
   source?: string
   // Řádek kontrolního hlášení DPH (db: IdClenKonVykDph) - Řádek kontrolního hlášení DPH)

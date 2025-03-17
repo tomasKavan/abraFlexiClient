@@ -1,8 +1,0 @@
-examples/
-node_modules/
-src/
-generator/
-tsconfig.json
-tsconfig.src.json
-tsconfig.generator.json
-.gitignore

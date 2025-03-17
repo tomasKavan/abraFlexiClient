@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypFakturyVydane } from './AFTypFakturyVydane.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypFakturyVydane } from './AFTypFakturyVydane'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZpusobFakt, TypPohybu } from '../AFEntityEnums.js'
+import { ZpusobFakt, TypPohybu } from '../AFEntityEnums'
 
 export class AFTypSmlouvy extends AFEntity {
   static EntityPath: string = 'typ-smlouvy'
@@ -13,11 +13,11 @@ export class AFTypSmlouvy extends AFEntity {
   static EntityType: string = 'TYP_SMLOUVY'
 
   // ID (db: IdTypSml) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -67,7 +67,7 @@ export class AFTypSmlouvy extends AFEntity {
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
   typPohybuK?: TypPohybu
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ faktury (db: IdTypDokl) - Typ faktury)
   typDoklFak?: AFTypFakturyVydane
   // Typ penalizační faktury (db: IdTypDoklPenale) - Typ penalizační faktury)

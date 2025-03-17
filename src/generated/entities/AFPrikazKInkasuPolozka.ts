@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFPrikazKUhrade } from './AFPrikazKUhrade.js'
-import { AFStat } from './AFStat.js'
-import { AFMena } from './AFMena.js'
-import { AFPenezniUstav } from './AFPenezniUstav.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFPrikazKUhrade } from './AFPrikazKUhrade'
+import { AFStat } from './AFStat'
+import { AFMena } from './AFMena'
+import { AFPenezniUstav } from './AFPenezniUstav'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ElPrikazPoplatek } from '../AFEntityEnums.js'
+import { ElPrikazPoplatek } from '../AFEntityEnums'
 
 export class AFPrikazKInkasuPolozka extends AFEntity {
   static EntityPath: string = 'prikaz-k-inkasu-polozka'
@@ -15,7 +15,7 @@ export class AFPrikazKInkasuPolozka extends AFEntity {
   static EntityType: string = 'PRIKAZ_K_INKASU_POLOZKA'
 
   // ID (db: IdPolPrikazUhr) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Číslo účtu příjemce (db: Buc) - Číslo účtu příjemce)
@@ -51,7 +51,7 @@ export class AFPrikazKInkasuPolozka extends AFEntity {
   // Specif. symbol příkazce (db: SpecSymPrikaz) - Specif. symbol příkazce)
   specSymPrikaz?: string
   // Kód / číslo dokladu (db: Kod) - Kód / číslo dokladu)
-  kod?: string
+  declare kod?: string
   // Splatnost (db: DatSplat) - Splatnost)
   datSplat?: Date
   // Popis (db: Popis) - Popis)

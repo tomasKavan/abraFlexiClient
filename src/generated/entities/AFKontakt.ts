@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFAdresar } from './AFAdresar'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -16,7 +16,7 @@ export class AFKontakt extends AFEntity {
   static EntityType: string = 'ADR_KONTAKT'
 
   // ID (db: IdKontakt) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Ulice (db: Ulice) - Ulice)
@@ -76,7 +76,7 @@ export class AFKontakt extends AFEntity {
   // Rodné číslo (db: RodCis) - Rodné číslo)
   rodCis?: string
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Přílohy (db: PocetPriloh) - Přílohy)
   pocetPriloh?: number
   // Uživatelské jméno (db: Username) - Uživatelské jméno)

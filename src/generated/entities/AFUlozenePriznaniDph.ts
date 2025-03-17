@@ -1,9 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { StavPriznaniDph } from '../AFEntityEnums.js'
+import { StavPriznaniDph } from '../AFEntityEnums'
 
 export class AFUlozenePriznaniDph extends AFEntity {
   static EntityPath: string = 'ulozene-priznani-dph'
@@ -11,7 +12,7 @@ export class AFUlozenePriznaniDph extends AFEntity {
   static EntityType: string = 'ULOZENE_PRIZNANI_DPH'
 
   // ID (db: IdRadekPriznaniDph) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Rok (db: Rok) - Rok)
@@ -25,7 +26,7 @@ export class AFUlozenePriznaniDph extends AFEntity {
   // Typ přiznání DPH (db: StavK) - Typ přiznání DPH)
   stavK?: StavPriznaniDph
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -82,7 +83,7 @@ export class AFUlozenePriznaniDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

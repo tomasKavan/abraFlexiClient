@@ -1,7 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFDashboardPanel } from './AFDashboardPanel.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
+import { AFDashboardPanel } from './AFDashboardPanel'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -12,13 +13,13 @@ export class AFDashboardSharing extends AFEntity {
   static EntityType: string = 'DASHBOARD_SHARING'
 
   // ID (db: Idwdashboardsharing) - ID)
-  id?: number
+  declare id?: number
   // Skrytý (db: Hidden) - Skrytý)
   hidden?: boolean
   // Pořadí (db: Priority) - Pořadí)
   priority?: number
   // Uživatel (db: Iduser) - Uživatel)
-  user?: any
+  user?: AFUzivatel
   // Dashboard panel (db: Iddashboardpanel) - Dashboard panel)
   dashboardpanel?: AFDashboardPanel
 
@@ -50,7 +51,7 @@ export class AFDashboardSharing extends AFEntity {
       key: 'user',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

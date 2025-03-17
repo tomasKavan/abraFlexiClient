@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFStatDph } from './AFStatDph'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSzbDph, KodPlneni } from '../AFEntityEnums.js'
+import { TypSzbDph, KodPlneni } from '../AFEntityEnums'
 
 export class AFCenikTypSazbyDph extends AFEntity {
   static EntityPath: string = 'cenik-typ-sazby-dph'
@@ -13,7 +13,7 @@ export class AFCenikTypSazbyDph extends AFEntity {
   static EntityType: string = 'TYP_SAZBY_DPH'
 
   // ID (db: IdTypSazbyDph) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)

@@ -1,12 +1,14 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFBankovniUcetSkladPokladna } from './AFBankovniUcetSkladPokladna.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFSkupinaFirem } from './AFSkupinaFirem.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
+import { AFRole } from './AFRole'
+import { AFStredisko } from './AFStredisko'
+import { AFBankovniUcetSkladPokladna } from './AFBankovniUcetSkladPokladna'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFAdresar } from './AFAdresar'
+import { AFSkupinaFirem } from './AFSkupinaFirem'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -17,7 +19,7 @@ export class AFParametr extends AFEntity {
   static EntityType: string = 'PARAM'
 
   // ID (db: IdParam) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Parametr (db: ParamK) - Parametr)
@@ -27,9 +29,9 @@ export class AFParametr extends AFEntity {
   // Kód reportu (db: KodReportu) - Kód reportu)
   kodReportu?: string
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Role uživatele (db: IdRole) - Role uživatele)
-  role?: any
+  role?: AFRole
   // Středisko (db: IdStred) - Středisko)
   stredisko?: AFStredisko
   // Banka/pokladna/sklad (db: IdBsp) - Banka/pokladna/sklad)
@@ -85,7 +87,7 @@ export class AFParametr extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -93,7 +95,7 @@ export class AFParametr extends AFEntity {
       key: 'role',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFRole',
       
     },
     stredisko : {

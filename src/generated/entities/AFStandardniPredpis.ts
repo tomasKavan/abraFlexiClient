@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFRadekSestavy } from './AFRadekSestavy.js'
-import { AFUcetniOsnova } from './AFUcetniOsnova.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFRadekSestavy } from './AFRadekSestavy'
+import { AFUcetniOsnova } from './AFUcetniOsnova'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DruhUctu, ZpusobVypo } from '../AFEntityEnums.js'
+import { DruhUctu, ZpusobVypo } from '../AFEntityEnums'
 
 export class AFStandardniPredpis extends AFEntity {
   static EntityPath: string = 'standardni-predpis'
@@ -13,7 +13,7 @@ export class AFStandardniPredpis extends AFEntity {
   static EntityType: string = 'STD_PREDPIS_SESTAVY'
 
   // ID (db: IdSesStdPred) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Druh účtu (db: DruhUctuK) - Druh účtu)

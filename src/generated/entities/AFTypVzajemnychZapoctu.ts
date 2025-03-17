@@ -1,20 +1,20 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFRadaBanka } from './AFRadaBanka.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFUcet } from './AFUcet.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFSablonaMail } from './AFSablonaMail.js'
-import { AFAutotisk } from './AFAutotisk.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFRadaBanka } from './AFRadaBanka'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFUcet } from './AFUcet'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFStatDph } from './AFStatDph'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFSablonaMail } from './AFSablonaMail'
+import { AFAutotisk } from './AFAutotisk'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPohybu, TypBanUctu, RazeniProTisk } from '../AFEntityEnums.js'
+import { TypPohybu, TypBanUctu, RazeniProTisk } from '../AFEntityEnums'
 
 export class AFTypVzajemnychZapoctu extends AFEntity {
   static EntityPath: string = 'typ-vzajemnych-zapoctu'
@@ -22,11 +22,11 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
   static EntityType: string = 'VZAJEMNY_ZAPOCET_TYP'
 
   // ID (db: IdTypDokl) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

@@ -1,6 +1,6 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -11,11 +11,11 @@ export class AFPenezniUstav extends AFEntity {
   static EntityType: string = 'PENEZNI_USTAV'
 
   // ID (db: IdSmerKod) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Kód banky (db: Kod) - Kód banky)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

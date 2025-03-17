@@ -1,19 +1,20 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypLeasingu } from './AFTypLeasingu.js'
-import { AFMena } from './AFMena.js'
-import { AFUcet } from './AFUcet.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFSplatkovyKalendar } from './AFSplatkovyKalendar.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFDanovyNaklad } from './AFDanovyNaklad.js'
-import { AFZapujcka } from './AFZapujcka.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypLeasingu } from './AFTypLeasingu'
+import { AFMena } from './AFMena'
+import { AFUcet } from './AFUcet'
+import { AFAdresar } from './AFAdresar'
+import { AFStredisko } from './AFStredisko'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
+import { AFSplatkovyKalendar } from './AFSplatkovyKalendar'
+import { AFPriloha } from './AFPriloha'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFDanovyNaklad } from './AFDanovyNaklad'
+import { AFZapujcka } from './AFZapujcka'
 
 
-import { DruhLeas, MjZaruky, FrDanNakl } from '../AFEntityEnums.js'
+import { DruhLeas, MjZaruky, FrDanNakl } from '../AFEntityEnums'
 
 export class AFLeasing extends AFEntity {
   static EntityPath: string = 'leasing'
@@ -21,11 +22,11 @@ export class AFLeasing extends AFEntity {
   static EntityType: string = 'LEASING'
 
   // ID (db: IdLeasing) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -71,7 +72,7 @@ export class AFLeasing extends AFEntity {
   // Přílohy (db: PocetPriloh) - Přílohy)
   pocetPriloh?: number
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Číslo (db: VozCislo) - Číslo)
   vozCislo?: string
   // SPZ (db: VozSpz) - SPZ)
@@ -113,7 +114,7 @@ export class AFLeasing extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Splátkový kalendář (type: SPLATKOVY_KALENDAR) - splatkove-kalendare)
   'splatkove-kalendare'?: AFSplatkovyKalendar[]
@@ -462,7 +463,7 @@ export class AFLeasing extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

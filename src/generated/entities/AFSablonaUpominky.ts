@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSablony } from '../AFEntityEnums.js'
+import { TypSablony } from '../AFEntityEnums'
 
 export class AFSablonaUpominky extends AFEntity {
   static EntityPath: string = 'sablona-upominky'
@@ -11,7 +11,7 @@ export class AFSablonaUpominky extends AFEntity {
   static EntityType: string = 'UPOMINKA_SABLONA'
 
   // ID (db: IdSablony) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Datum (db: Datum) - Datum)

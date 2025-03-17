@@ -1,0 +1,53 @@
+stages:
+  - build
+  - test
+  - publish
+
+image: docker/compose:latest
+
+services:
+  - name: docker:dind
+    alias: docker
+    command: [ "--tls=false" ]
+
+build:
+  stage: build
+  tags:
+    - dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - mv .env.ci .env
+    - echo "//gitlab.mlwn.se/api/v4/packages/npm/:_authToken=${CI_JOB_TOKEN}">>.npmrc
+    - echo "//gitlab.mlwn.se/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">>.npmrc
+    - docker-compose -f docker-compose.build.yml build 
+
+test:
+  stage: test
+  tags:
+    - dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "//gitlab.mlwn.se/api/v4/packages/npm/:_authToken=${CI_JOB_TOKEN}">>.npmrc
+    - echo "//gitlab.mlwn.se/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">>.npmrc
+    - docker-compose -f docker-compose.test.yml build
+    
+publish:
+  stage: publish
+  tags:
+    - dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_DRIVER: overlay2
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - echo "//gitlab.mlwn.se/api/v4/packages/npm/:_authToken=${CI_JOB_TOKEN}">>.npmrc
+    - echo "//gitlab.mlwn.se/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}">>.npmrc
+    - docker-compose -f docker-compose.publish.yml run abra-flexi npm publish
+  only:
+    - tags

@@ -1,6 +1,6 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -11,7 +11,7 @@ export class AFCertifikacniAutorita extends AFEntity {
   static EntityType: string = 'CERTIFIKACNI_AUTORITA'
 
   // ID (db: IdAutCert) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Poznámka (db: UzivNazev) - Poznámka)

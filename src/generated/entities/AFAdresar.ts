@@ -1,26 +1,27 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFSkupinaFirem } from './AFSkupinaFirem.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCenikovaSkupina } from './AFCenikovaSkupina.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFOdberatel } from './AFOdberatel.js'
-import { AFAtribut } from './AFAtribut.js'
-import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFCenovaUroven } from './AFCenovaUroven.js'
-import { AFSmlouva } from './AFSmlouva.js'
-import { AFDodavatel } from './AFDodavatel.js'
-import { AFMistoUrceni } from './AFMistoUrceni.js'
-import { AFRezervace } from './AFRezervace.js'
-import { AFKontakt } from './AFKontakt.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFSkupinaFirem } from './AFSkupinaFirem'
+import { AFStredisko } from './AFStredisko'
+import { AFUzivatel } from './AFUzivatel'
+import { AFCenikovaSkupina } from './AFCenikovaSkupina'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFOdberatel } from './AFOdberatel'
+import { AFAtribut } from './AFAtribut'
+import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet'
+import { AFUdalost } from './AFUdalost'
+import { AFPriloha } from './AFPriloha'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFCenovaUroven } from './AFCenovaUroven'
+import { AFSmlouva } from './AFSmlouva'
+import { AFDodavatel } from './AFDodavatel'
+import { AFMistoUrceni } from './AFMistoUrceni'
+import { AFRezervace } from './AFRezervace'
+import { AFKontakt } from './AFKontakt'
 
 
-import { FormExport, TypVztahu, IsdocPrilohaMailu } from '../AFEntityEnums.js'
+import { FormExport, TypVztahu, IsdocPrilohaMailu } from '../AFEntityEnums'
 
 export class AFAdresar extends AFEntity {
   static EntityPath: string = 'adresar'
@@ -28,11 +29,11 @@ export class AFAdresar extends AFEntity {
   static EntityType: string = 'ADRESAR'
 
   // ID (db: IdFirmy) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -124,7 +125,7 @@ export class AFAdresar extends AFEntity {
   // Revize (db: Revize) - Revize)
   revize?: number
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Přílohy (db: PocetPriloh) - Přílohy)
   pocetPriloh?: number
   // Katastrální území (db: KatastrUzemi) - Katastrální území)
@@ -150,7 +151,7 @@ export class AFAdresar extends AFEntity {
   // Pošt. kraj (db: Idfaregion) - Kraj)
   faRegion?: AFRegion
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Ceníková skupina (db: IdSkupCen) - Ceníková skupina)
   skupCen?: AFCenikovaSkupina
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
@@ -604,7 +605,7 @@ export class AFAdresar extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

@@ -1,6 +1,6 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypUzivatelskeVazby } from './AFTypUzivatelskeVazby.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypUzivatelskeVazby } from './AFTypUzivatelskeVazby'
 
 
 
@@ -11,13 +11,13 @@ export class AFUzivatelskaVazba extends AFEntity {
   static EntityType: string = 'VAZBA'
 
   // ID (db: IdVazba) - ID)
-  id?: number
+  declare id?: number
   // Typ vazby (db: IdVazbaTyp) - Typ vazby)
   vazbaTyp?: AFTypUzivatelskeVazby
   // Modul (db: ) - Modul)
   modul?: string
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Částka (db: ) - Částka)

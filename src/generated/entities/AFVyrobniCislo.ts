@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFSklad } from './AFSklad.js'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb.js'
-import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFSklad } from './AFSklad'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb'
+import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka'
 
 
 
@@ -14,9 +14,9 @@ export class AFVyrobniCislo extends AFEntity {
   static EntityType: string = 'VYROBNI_CISLA'
 
   // ID (db: Idvyrobnicislo) - ID)
-  id?: number
+  declare id?: number
   // Výrobní číslo (db: Kod) - Výrobní číslo)
-  kod?: string
+  declare kod?: string
   // Ceník (db: IdCenik) - Ceník)
   cenik?: AFCenik
   // Sklad (db: IdSkladu) - Sklad)

@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypOrganizace } from './AFTypOrganizace.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypOrganizace } from './AFTypOrganizace'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DruhUctu, TypUctu } from '../AFEntityEnums.js'
+import { DruhUctu, TypUctu } from '../AFEntityEnums'
 
 export class AFUcetniOsnova extends AFEntity {
   static EntityPath: string = 'ucetni-osnova'
@@ -12,11 +12,11 @@ export class AFUcetniOsnova extends AFEntity {
   static EntityType: string = 'UCETNI_OSNOVA'
 
   // ID (db: IdStdUcet) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Účet (db: Kod) - Syntetický účet)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

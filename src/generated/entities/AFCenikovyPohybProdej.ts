@@ -1,21 +1,21 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFSklad } from './AFSklad.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFMena } from './AFMena.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFCenovaUroven } from './AFCenovaUroven.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFCenik } from './AFCenik.js'
-import { AFMernaJednotka } from './AFMernaJednotka.js'
-import { AFSazbaDph } from './AFSazbaDph.js'
-import { AFCinnost } from './AFCinnost.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFAdresar } from './AFAdresar'
+import { AFSklad } from './AFSklad'
+import { AFStredisko } from './AFStredisko'
+import { AFMena } from './AFMena'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFCenovaUroven } from './AFCenovaUroven'
+import { AFZakazka } from './AFZakazka'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFCenik } from './AFCenik'
+import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFSazbaDph } from './AFSazbaDph'
+import { AFCinnost } from './AFCinnost'
 
 
-import { ModulUcetni, TypPolozky, TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, Objednat } from '../AFEntityEnums.js'
+import { ModulUcetni, TypPolozky, TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, Objednat } from '../AFEntityEnums'
 
 export class AFCenikovyPohybProdej extends AFEntity {
   static EntityPath: string = 'cenikovy-pohyb-prodej'
@@ -39,7 +39,7 @@ export class AFCenikovyPohybProdej extends AFEntity {
   // Modul (db: ) - Modul)
   modul?: string
   // Zkratka (db: ) - Zkratka)
-  kod?: string
+  declare kod?: string
   // EAN (db: ) - EAN)
   eanKod?: string
   // Název (db: ) - Název)

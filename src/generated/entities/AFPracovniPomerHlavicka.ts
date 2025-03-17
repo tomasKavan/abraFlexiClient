@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -12,7 +12,7 @@ export class AFPracovniPomerHlavicka extends AFEntity {
   static EntityType: string = 'PRACOVNI_POMER_HLAVICKA'
 
   // ID (db: IdPracPomHlav) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   //  (db: AktivniOd) - )
@@ -20,7 +20,7 @@ export class AFPracovniPomerHlavicka extends AFEntity {
   //  (db: AktivniDo) - )
   aktivniDo?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   //  (db: Hlavni) - )

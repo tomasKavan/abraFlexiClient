@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFRadaSkladovyPohyb } from './AFRadaSkladovyPohyb.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFUcet } from './AFUcet.js'
-import { AFMena } from './AFMena.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFRadaSkladovyPohyb } from './AFRadaSkladovyPohyb'
+import { AFStredisko } from './AFStredisko'
+import { AFUcet } from './AFUcet'
+import { AFMena } from './AFMena'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -16,11 +16,11 @@ export class AFSklad extends AFEntity {
   static EntityType: string = 'SKLAD'
 
   // ID (db: IdBsp) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -48,7 +48,7 @@ export class AFSklad extends AFEntity {
   // EAN (db: EanKod) - EAN)
   eanKod?: string
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Řada pro příjem (db: IdRadyPrijem) - Řada pro příjem)
   radaPrijem?: AFRadaSkladovyPohyb
   // Řada pro výdej (db: IdRadyVydej) - Řada pro výdej)

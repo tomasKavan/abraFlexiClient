@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -13,7 +13,7 @@ export class AFFormaUhradyZauctovani extends AFEntity {
   static EntityType: string = 'FORMA_UHRADY_ZAUCTOVANI'
 
   // ID (db: IdFormaUhradyZauc) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)

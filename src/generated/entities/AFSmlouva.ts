@@ -1,22 +1,23 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypSmlouvy } from './AFTypSmlouvy.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFTypFakturyVydane } from './AFTypFakturyVydane.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFStavSmlouvy } from './AFStavSmlouvy.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFSmlouvaPolozka } from './AFSmlouvaPolozka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypSmlouvy } from './AFTypSmlouvy'
+import { AFAdresar } from './AFAdresar'
+import { AFZakazka } from './AFZakazka'
+import { AFStredisko } from './AFStredisko'
+import { AFTypFakturyVydane } from './AFTypFakturyVydane'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFStavSmlouvy } from './AFStavSmlouvy'
+import { AFCinnost } from './AFCinnost'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZpusobFakt } from '../AFEntityEnums.js'
+import { ZpusobFakt } from '../AFEntityEnums'
 
 export class AFSmlouva extends AFEntity {
   static EntityPath: string = 'smlouva'
@@ -24,11 +25,11 @@ export class AFSmlouva extends AFEntity {
   static EntityType: string = 'SMLOUVA'
 
   // ID (db: IdSmlouvy) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Číslo smlouvy (db: Kod) - Číslo smlouvy)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -88,7 +89,7 @@ export class AFSmlouva extends AFEntity {
   // Variabilní symbol z faktury (db: VarSymFakt) - Variabilní symbol je generován z čísla faktury)
   varSymFakt?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Přílohy (db: PocetPriloh) - Přílohy)
   pocetPriloh?: number
   // Katastrální území (db: KatastrUzemi) - Katastrální území)
@@ -130,7 +131,7 @@ export class AFSmlouva extends AFEntity {
   // Typ faktury - Bankovní účet (db: ) - Typ faktury - Bankovní účet)
   typDoklFakBspBan?: AFBankovniUcet
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
 
@@ -495,7 +496,7 @@ export class AFSmlouva extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

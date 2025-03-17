@@ -1,10 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFMena } from './AFMena.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFMena } from './AFMena'
+import { AFUzivatel } from './AFUzivatel'
 
 
-import { TypVazbyDokl, ModulUcetni } from '../AFEntityEnums.js'
+import { TypVazbyDokl, ModulUcetni } from '../AFEntityEnums'
 
 export class AFVazebniDoklad extends AFEntity {
   static EntityPath: string = 'vazebni-doklad'
@@ -26,7 +27,7 @@ export class AFVazebniDoklad extends AFEntity {
   // Název modulu (db: ) - Název modulu)
   modulK?: ModulUcetni
   // Interní číslo (db: ) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Variabilní symbol (db: ) - Variabilní symbol)
   varSym?: string
   // Datum vyst. (db: ) - Vystaveno)
@@ -50,7 +51,7 @@ export class AFVazebniDoklad extends AFEntity {
   // Měna (db: ) - Měna)
   mena?: AFMena
   // Uživatel (db: ) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Název firmy nebo jméno osoby (db: ) - Název firmy - jméno)
   nazFirmy?: string
   // Město (db: ) - Město)
@@ -196,7 +197,7 @@ export class AFVazebniDoklad extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
