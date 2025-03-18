@@ -1,6 +1,0 @@
-version: '3'
-services:
-   abra-flexi:
-    build:
-      context: .
-      dockerfile: docker/abra-flexi/test.Dockerfile
