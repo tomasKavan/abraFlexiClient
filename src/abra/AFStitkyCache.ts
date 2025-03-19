@@ -79,7 +79,7 @@ export class AFStitkyCache {
     
     const list: AFStitek[] = []
     if (typeof keys === 'string') {
-      keys = keys.split(',')
+      keys = keys.split(', ')
     }
     if (typeof groupFilter === 'string') {
       groupFilter = this._stitekSkupiny.find(ss => ss.kod === groupFilter)

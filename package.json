@@ -1,6 +1,6 @@
 {
   "name": "abra-flexi",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "ABRA Flexi API Typescript client. Automaticly generated from API json annotations.",
   "types": "build/index.d.ts",
   "scripts": {
