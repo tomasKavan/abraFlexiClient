@@ -1,5 +1,5 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
 
@@ -14,7 +14,7 @@ export class AFDoklad extends AFEntity {
   // ID dokladu (db: ) - ID dokladu)
   idDokl?: number
   // Zkratka (db: ) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Popis (db: ) - Popis)
   popis?: string
   // Variabilní symbol (db: ) - Variabilní symbol)

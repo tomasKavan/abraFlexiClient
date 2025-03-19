@@ -1,19 +1,19 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFSklad } from './AFSklad.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFMena } from './AFMena.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFCenik } from './AFCenik.js'
-import { AFMernaJednotka } from './AFMernaJednotka.js'
-import { AFSazbaDph } from './AFSazbaDph.js'
-import { AFPoptavkaVydana } from './AFPoptavkaVydana.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFSklad } from './AFSklad'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFMena } from './AFMena'
+import { AFZakazka } from './AFZakazka'
+import { AFAdresar } from './AFAdresar'
+import { AFCenik } from './AFCenik'
+import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFSazbaDph } from './AFSazbaDph'
+import { AFPoptavkaVydana } from './AFPoptavkaVydana'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPolozky, TypCeny, TypSzbDph } from '../AFEntityEnums.js'
+import { TypPolozky, TypCeny, TypSzbDph } from '../AFEntityEnums'
 
 export class AFPoptavkaVydanaPolozka extends AFEntity {
   static EntityPath: string = 'poptavka-vydana-polozka'
@@ -21,11 +21,11 @@ export class AFPoptavkaVydanaPolozka extends AFEntity {
   static EntityType: string = 'POPTAVKA_OUT_POLOZKA'
 
   // ID (db: IdPolObch) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Označení (db: Kod) - Označení)
-  kod?: string
+  declare kod?: string
   // EAN (db: EanKod) - EAN)
   eanKod?: string
   // Název (db: Nazev) - Název)
@@ -111,7 +111,7 @@ export class AFPoptavkaVydanaPolozka extends AFEntity {
   // Zdrojová položka objednávky (db: IdPolObchZdroj) - Zdrojová položka objednávky)
   idPolObchZdroj?: number
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Zdroj (db: Source) - Zdroj)
   source?: string
   // Stav skladu (db: ) - Stav skladu)

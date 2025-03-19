@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFAdresar } from './AFAdresar'
+import { AFKontakt } from './AFKontakt'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -15,7 +15,7 @@ export class AFMistoUrceni extends AFEntity {
   static EntityType: string = 'MISTO_URCENI'
 
   // ID (db: IdMur) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Ulice (db: Ulice) - Ulice)
@@ -49,7 +49,7 @@ export class AFMistoUrceni extends AFEntity {
   // Název - druhá řádka (db: Nazev2) - Název - druhá řádka)
   nazev2?: string
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Primární místo určení (db: Primarni) - Primární místo určení)
   primarni?: boolean
   // Místo plnění (db: MistoPlneni) - Místo plnění)

@@ -1,18 +1,18 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFRadaNabidkyPrijate } from './AFRadaNabidkyPrijate.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFMena } from './AFMena.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFSablonaMail } from './AFSablonaMail.js'
-import { AFAutotisk } from './AFAutotisk.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFRadaNabidkyPrijate } from './AFRadaNabidkyPrijate'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFMena } from './AFMena'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFSablonaMail } from './AFSablonaMail'
+import { AFAutotisk } from './AFAutotisk'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { RazeniProTisk } from '../AFEntityEnums.js'
+import { RazeniProTisk } from '../AFEntityEnums'
 
 export class AFTypNabidkyPrijate extends AFEntity {
   static EntityPath: string = 'typ-nabidky-prijate'
@@ -20,11 +20,11 @@ export class AFTypNabidkyPrijate extends AFEntity {
   static EntityType: string = 'NABIDKA_IN_TYP'
 
   // ID (db: IdTypDokl) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

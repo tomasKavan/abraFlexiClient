@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek.js'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
+import { AFPriloha } from './AFPriloha'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { CsszDuvodOsetrovne, CsszDuvodOtcovske, CsszDuvodPrevzeti } from '../AFEntityEnums.js'
+import { CsszDuvodOsetrovne, CsszDuvodOtcovske, CsszDuvodPrevzeti } from '../AFEntityEnums'
 
 export class AFNepritomnost extends AFEntity {
   static EntityPath: string = 'nepritomnost'
@@ -15,7 +15,7 @@ export class AFNepritomnost extends AFEntity {
   static EntityType: string = 'NEPRITOMNOST'
 
   // ID (db: IdNepritomnost) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Začátek (db: PlatiOd) - Začátek)
@@ -45,7 +45,7 @@ export class AFNepritomnost extends AFEntity {
   // Přílohy (db: PocetPriloh) - Přílohy)
   pocetPriloh?: number
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Osoba (db: IdOsoba) - Osoba)
   osoba?: AFOsobaHlavicka
   // Důvod nepřítomnosti (db: IdCisMzdSloz) - Důvod nepřítomnosti)

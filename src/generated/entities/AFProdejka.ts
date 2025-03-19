@@ -1,45 +1,46 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypProdejky } from './AFTypProdejky.js'
-import { AFMena } from './AFMena.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFMistoUrceni } from './AFMistoUrceni.js'
-import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFPenezniUstav } from './AFPenezniUstav.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky.js'
-import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce.js'
-import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy.js'
-import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb.js'
-import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFRadaFakturyVydane } from './AFRadaFakturyVydane.js'
-import { AFSmlouva } from './AFSmlouva.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb.js'
-import { AFVazebniDoklad } from './AFVazebniDoklad.js'
-import { AFFakturaVydanaPolozka } from './AFFakturaVydanaPolozka.js'
-import { AFZalohaKOdpoctu } from './AFZalohaKOdpoctu.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFVazba } from './AFVazba.js'
-import { AFCastkyKOdpoctu } from './AFCastkyKOdpoctu.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypProdejky } from './AFTypProdejky'
+import { AFMena } from './AFMena'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFAdresar } from './AFAdresar'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFMistoUrceni } from './AFMistoUrceni'
+import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFPenezniUstav } from './AFPenezniUstav'
+import { AFStatDph } from './AFStatDph'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky'
+import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
+import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
+import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
+import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFRadaFakturyVydane } from './AFRadaFakturyVydane'
+import { AFSmlouva } from './AFSmlouva'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb'
+import { AFVazebniDoklad } from './AFVazebniDoklad'
+import { AFFakturaVydanaPolozka } from './AFFakturaVydanaPolozka'
+import { AFZalohaKOdpoctu } from './AFZalohaKOdpoctu'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFVazba } from './AFVazba'
+import { AFCastkyKOdpoctu } from './AFCastkyKOdpoctu'
 
 
-import { Zamek, StavUziv, ZaokrJak, ZaokrNa, MetodaZaokr, Ekokom } from '../AFEntityEnums.js'
+import { Zamek, StavUziv, ZaokrJak, ZaokrNa, MetodaZaokr, Ekokom } from '../AFEntityEnums'
 
 export class AFProdejka extends AFEntity {
   static EntityPath: string = 'prodejka'
@@ -47,11 +48,11 @@ export class AFProdejka extends AFEntity {
   static EntityType: string = 'PRODEJKA'
 
   // ID (db: IdDoklFak) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Interní číslo (db: Kod) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Zámek (db: ZamekK) - Zámek)
   zamekK?: Zamek
   // Číslo došlé (db: CisDosle) - Číslo došlé)
@@ -225,7 +226,7 @@ export class AFProdejka extends AFEntity {
   // Korekce DPH (db: VytvaretKorPol) - Korekce DPH)
   vytvaretKorPol?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ faktury (db: IdTypDokl) - Typ faktury)
   typDokl?: AFTypProdejky
   // Měna (db: IdMeny) - Měna)
@@ -289,9 +290,9 @@ export class AFProdejka extends AFEntity {
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -1218,7 +1219,7 @@ export class AFProdejka extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1226,7 +1227,7 @@ export class AFProdejka extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

@@ -1,20 +1,20 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFMena } from './AFMena.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFSazbaDph } from './AFSazbaDph.js'
-import { AFBanka } from './AFBanka.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFPreneseniDph } from './AFPreneseniDph.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFMena } from './AFMena'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFZakazka } from './AFZakazka'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFSazbaDph } from './AFSazbaDph'
+import { AFBanka } from './AFBanka'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFPreneseniDph } from './AFPreneseniDph'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSzbDph } from '../AFEntityEnums.js'
+import { TypSzbDph } from '../AFEntityEnums'
 
 export class AFBankaPolozka extends AFEntity {
   static EntityPath: string = 'banka-polozka'
@@ -22,7 +22,7 @@ export class AFBankaPolozka extends AFEntity {
   static EntityType: string = 'BANKA_POLOZKA'
 
   // ID (db: IdPolInt) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Úč. pol. (db: Ucetni) - Položka je účetní)
@@ -124,7 +124,7 @@ export class AFBankaPolozka extends AFEntity {
   // Kód přenesení DPH (db: IdDphPren) - Kód přenesení DPH)
   dphPren?: AFPreneseniDph
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

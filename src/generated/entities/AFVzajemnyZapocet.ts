@@ -1,32 +1,33 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypVzajemnychZapoctu } from './AFTypVzajemnychZapoctu.js'
-import { AFMena } from './AFMena.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFPenezniUstav } from './AFPenezniUstav.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFRadaBanka } from './AFRadaBanka.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFVazebniDoklad } from './AFVazebniDoklad.js'
-import { AFBankaPolozka } from './AFBankaPolozka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFVazba } from './AFVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypVzajemnychZapoctu } from './AFTypVzajemnychZapoctu'
+import { AFMena } from './AFMena'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFAdresar } from './AFAdresar'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFPenezniUstav } from './AFPenezniUstav'
+import { AFStatDph } from './AFStatDph'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFRadaBanka } from './AFRadaBanka'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFVazebniDoklad } from './AFVazebniDoklad'
+import { AFBankaPolozka } from './AFBankaPolozka'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFVazba } from './AFVazba'
 
 
-import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums.js'
+import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums'
 
 export class AFVzajemnyZapocet extends AFEntity {
   static EntityPath: string = 'vzajemny-zapocet'
@@ -34,11 +35,11 @@ export class AFVzajemnyZapocet extends AFEntity {
   static EntityType: string = 'VZAJEMNY_ZAPOCET'
 
   // ID (db: IdDoklInt) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Interní číslo (db: Kod) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Zámek (db: ZamekK) - Zámek)
   zamekK?: Zamek
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
@@ -164,7 +165,7 @@ export class AFVzajemnyZapocet extends AFEntity {
   // Storno (db: Storno) - Storno)
   storno?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
   typDokl?: AFTypVzajemnychZapoctu
   // Měna (db: IdMeny) - Měna)
@@ -204,9 +205,9 @@ export class AFVzajemnyZapocet extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -854,7 +855,7 @@ export class AFVzajemnyZapocet extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -862,7 +863,7 @@ export class AFVzajemnyZapocet extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

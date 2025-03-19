@@ -1,5 +1,5 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
 
@@ -10,7 +10,7 @@ export class AFZurnal extends AFEntity {
   static EntityType: string = 'ZURNAL'
 
   // ID (db: IdZurnal) - ID)
-  id?: number
+  declare id?: number
   // Tabulka (db: Tabulka) - Tabulka)
   tabulka?: string
   // ID řádky (db: IdZaznamu) - ID řádky)

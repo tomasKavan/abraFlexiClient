@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFMernaJednotka } from './AFMernaJednotka.js'
-import { AFMena } from './AFMena.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFAdresar } from './AFAdresar'
+import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFMena } from './AFMena'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -15,7 +15,7 @@ export class AFDodavatel extends AFEntity {
   static EntityType: string = 'DODAVATEL'
 
   // ID (db: IdDodavatel) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Kód zboží/materiálu (db: KodIndi) - Kód zboží/materiálu)
@@ -31,7 +31,7 @@ export class AFDodavatel extends AFEntity {
   // Dodací lhůta (db: DodaciLhuta) - Dodací lhůta)
   dodaciLhuta?: Big
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Limit MJ 2 (db: LimMnoz2) - Množ. limit 2)
   limMnoz2?: Big
   // Limit MJ 3 (db: LimMnoz3) - Množ. limit 3)

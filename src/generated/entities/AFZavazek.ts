@@ -1,41 +1,42 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypZavazku } from './AFTypZavazku.js'
-import { AFMena } from './AFMena.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFPenezniUstav } from './AFPenezniUstav.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky.js'
-import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce.js'
-import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy.js'
-import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb.js'
-import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFRadaZavazku } from './AFRadaZavazku.js'
-import { AFSmlouva } from './AFSmlouva.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFVazebniDoklad } from './AFVazebniDoklad.js'
-import { AFZavazekPolozka } from './AFZavazekPolozka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFVazba } from './AFVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypZavazku } from './AFTypZavazku'
+import { AFMena } from './AFMena'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFAdresar } from './AFAdresar'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFPenezniUstav } from './AFPenezniUstav'
+import { AFStatDph } from './AFStatDph'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky'
+import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
+import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
+import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
+import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFRadaZavazku } from './AFRadaZavazku'
+import { AFSmlouva } from './AFSmlouva'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFVazebniDoklad } from './AFVazebniDoklad'
+import { AFZavazekPolozka } from './AFZavazekPolozka'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavUziv, StavUhr, StavOdp } from '../AFEntityEnums.js'
+import { Zamek, StavUziv, StavUhr, StavOdp } from '../AFEntityEnums'
 
 export class AFZavazek extends AFEntity {
   static EntityPath: string = 'zavazek'
@@ -43,11 +44,11 @@ export class AFZavazek extends AFEntity {
   static EntityType: string = 'ZAVAZEK'
 
   // ID (db: IdDoklFak) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Interní číslo (db: Kod) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Zámek (db: ZamekK) - Zámek)
   zamekK?: Zamek
   // Číslo došlé (db: CisDosle) - Číslo došlé)
@@ -187,7 +188,7 @@ export class AFZavazek extends AFEntity {
   // Storno (db: Storno) - Storno)
   storno?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ závazku (db: IdTypDokl) - Typ závazku)
   typDokl?: AFTypZavazku
   // Měna (db: IdMeny) - Měna)
@@ -245,9 +246,9 @@ export class AFZavazek extends AFEntity {
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -1042,7 +1043,7 @@ export class AFZavazek extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1050,7 +1051,7 @@ export class AFZavazek extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFMena } from './AFMena.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFMena } from './AFMena'
 
 
 
@@ -12,7 +12,7 @@ export class AFProdejkaPlatba extends AFEntity {
   static EntityType: string = 'PRODEJKA_PLATBA'
 
   // ID (db: IdFormaUhrady) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Kurz (db: Kurz) - Kurz)
@@ -34,7 +34,7 @@ export class AFProdejkaPlatba extends AFEntity {
   // Vrátit (db: Vratit) - Vrátit)
   vratit?: Big
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
   formaUhradyCis?: AFFormaUhrady
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)

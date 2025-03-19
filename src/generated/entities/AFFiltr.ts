@@ -1,6 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -11,11 +12,11 @@ export class AFFiltr extends AFEntity {
   static EntityType: string = 'FILTR'
 
   // ID (db: IdFiltru) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Formulář (db: BeanKey) - Formulář)
@@ -33,7 +34,7 @@ export class AFFiltr extends AFEntity {
   // Počet použití (db: UsageCnt) - Počet použití)
   usageCnt?: number
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -114,7 +115,7 @@ export class AFFiltr extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

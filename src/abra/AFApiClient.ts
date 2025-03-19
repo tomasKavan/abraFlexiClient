@@ -1,7 +1,7 @@
-import { parsePropertyValue } from "./AFDataType.js"
-import { AFEntity } from "./AFEntity.js"
-import { AFError, AFErrorCode } from "./AFError.js"
-import { Filter, ID } from "./AFFilter.js"
+import { parsePropertyValue } from "./AFDataType"
+import { AFEntity } from "./AFEntity"
+import { AFError, AFErrorCode } from "./AFError"
+import { Filter, ID } from "./AFFilter"
 import { 
   AFApiConfig, 
   AFApiFetch, 
@@ -13,11 +13,11 @@ import {
   AFPopulateOptions,
   AFURelMinimal,
   StitkyCacheStrategy
-} from "./AFTypes.js"
-import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
-import { addParamToUrl } from "../helpers/urlHelper.js"
-import { composeDetail, composeIncludes, composeRelations } from "./AFApiUrlHelper.js"
-import { AFStitkyCache } from "./AFStitkyCache.js"
+} from "./AFTypes"
+import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry"
+import { addParamToUrl } from "../helpers/urlHelper"
+import { composeDetail, composeIncludes, composeRelations } from "./AFApiUrlHelper"
+import { AFStitkyCache } from "./AFStitkyCache"
 
 const ABRA_API_FORMAT = 'json'
 

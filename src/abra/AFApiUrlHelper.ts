@@ -1,7 +1,7 @@
-import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
-import { AFEntity, GetPropertyTypeAnnotation } from "./AFEntity.js"
-import { AFError, AFErrorCode } from "./AFError.js"
-import { AFQueryDetail, NestedDetail } from "./AFTypes.js"
+import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry"
+import { AFEntity, GetPropertyTypeAnnotation } from "./AFEntity"
+import { AFError, AFErrorCode } from "./AFError"
+import { AFQueryDetail, NestedDetail } from "./AFTypes"
 
 export function composeDetail(
   level: NestedDetail | AFQueryDetail

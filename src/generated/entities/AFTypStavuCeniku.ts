@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFCenik } from './AFCenik.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFCenik } from './AFCenik'
 
 
 
@@ -12,11 +12,11 @@ export class AFTypStavuCeniku extends AFEntity {
   static EntityType: string = 'TYP_STAVU_CENIKU'
 
   // ID (db: IdStavCen) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -38,7 +38,7 @@ export class AFTypStavuCeniku extends AFEntity {
   // Neprodejné (db: Neprodejne) - Neprodejné)
   neprodejne?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

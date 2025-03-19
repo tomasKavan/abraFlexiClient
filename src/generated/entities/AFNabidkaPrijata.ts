@@ -1,28 +1,29 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypNabidkyPrijate } from './AFTypNabidkyPrijate.js'
-import { AFMena } from './AFMena.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFRadaNabidkyPrijate } from './AFRadaNabidkyPrijate.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFTypObjednavkyVydane } from './AFTypObjednavkyVydane.js'
-import { AFStavObchodnihoDokladu } from './AFStavObchodnihoDokladu.js'
-import { AFVazebniDoklad } from './AFVazebniDoklad.js'
-import { AFNabidkaPrijataPolozka } from './AFNabidkaPrijataPolozka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFVazba } from './AFVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypNabidkyPrijate } from './AFTypNabidkyPrijate'
+import { AFMena } from './AFMena'
+import { AFAdresar } from './AFAdresar'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFRadaNabidkyPrijate } from './AFRadaNabidkyPrijate'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFTypObjednavkyVydane } from './AFTypObjednavkyVydane'
+import { AFStavObchodnihoDokladu } from './AFStavObchodnihoDokladu'
+import { AFVazebniDoklad } from './AFVazebniDoklad'
+import { AFNabidkaPrijataPolozka } from './AFNabidkaPrijataPolozka'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavDoklObch } from '../AFEntityEnums.js'
+import { Zamek, StavDoklObch } from '../AFEntityEnums'
 
 export class AFNabidkaPrijata extends AFEntity {
   static EntityPath: string = 'nabidka-prijata'
@@ -30,11 +31,11 @@ export class AFNabidkaPrijata extends AFEntity {
   static EntityType: string = 'NABIDKA_IN'
 
   // ID (db: IdDoklObch) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Interní číslo (db: Kod) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Zámek (db: ZamekK) - Zámek)
   zamekK?: Zamek
   // Číslo došlé (db: CisDosle) - Číslo došlé)
@@ -154,7 +155,7 @@ export class AFNabidkaPrijata extends AFEntity {
   // Storno (db: Storno) - Storno)
   storno?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
   typDokl?: AFTypNabidkyPrijate
   // Měna (db: IdMeny) - Měna)
@@ -176,9 +177,9 @@ export class AFNabidkaPrijata extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -731,7 +732,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -739,7 +740,7 @@ export class AFNabidkaPrijata extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

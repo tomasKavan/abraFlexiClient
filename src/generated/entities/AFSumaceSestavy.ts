@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFRadekSestavy } from './AFRadekSestavy.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFRadekSestavy } from './AFRadekSestavy'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -12,7 +12,7 @@ export class AFSumaceSestavy extends AFEntity {
   static EntityType: string = 'SUMACE_SESTAVY'
 
   // ID (db: IdSesSumace) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Převrátit znaménko (db: PrevratZnam) - Převrátit znaménko)

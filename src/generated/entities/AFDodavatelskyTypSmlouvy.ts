@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypFakturyPrijate } from './AFTypFakturyPrijate.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypFakturyPrijate } from './AFTypFakturyPrijate'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZpusobFakt, TypPohybu } from '../AFEntityEnums.js'
+import { ZpusobFakt, TypPohybu } from '../AFEntityEnums'
 
 export class AFDodavatelskyTypSmlouvy extends AFEntity {
   static EntityPath: string = 'dodavatelsky-typ-smlouvy'
@@ -12,11 +12,11 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
   static EntityType: string = 'DODAVATELSKY_TYP_SMLOUVY'
 
   // ID (db: IdTypSml) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -56,7 +56,7 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
   typPohybuK?: TypPohybu
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ faktury (db: IdTypDokl) - Typ faktury)
   typDoklFak?: AFTypFakturyPrijate
 

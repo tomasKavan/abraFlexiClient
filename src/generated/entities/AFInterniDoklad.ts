@@ -1,30 +1,31 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypInternihoDokladu } from './AFTypInternihoDokladu.js'
-import { AFMena } from './AFMena.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFBankovniUcetPokladna } from './AFBankovniUcetPokladna.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFRadaInternihoDokladu } from './AFRadaInternihoDokladu.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFVazebniDoklad } from './AFVazebniDoklad.js'
-import { AFInterniDokladPolozka } from './AFInterniDokladPolozka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFVazba } from './AFVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
+import { AFMena } from './AFMena'
+import { AFAdresar } from './AFAdresar'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFBankovniUcetPokladna } from './AFBankovniUcetPokladna'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFStatDph } from './AFStatDph'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFRadaInternihoDokladu } from './AFRadaInternihoDokladu'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFVazebniDoklad } from './AFVazebniDoklad'
+import { AFInterniDokladPolozka } from './AFInterniDokladPolozka'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavUziv } from '../AFEntityEnums.js'
+import { Zamek, StavUziv } from '../AFEntityEnums'
 
 export class AFInterniDoklad extends AFEntity {
   static EntityPath: string = 'interni-doklad'
@@ -32,11 +33,11 @@ export class AFInterniDoklad extends AFEntity {
   static EntityType: string = 'INTERNI_DOKLAD'
 
   // ID (db: IdDoklInt) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Interní číslo (db: Kod) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Zámek (db: ZamekK) - Zámek)
   zamekK?: Zamek
   // Číslo došlé (db: CisDosle) - Číslo došlé)
@@ -156,7 +157,7 @@ export class AFInterniDoklad extends AFEntity {
   // Storno (db: Storno) - Storno)
   storno?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
   typDokl?: AFTypInternihoDokladu
   // Měna (db: IdMeny) - Měna)
@@ -192,9 +193,9 @@ export class AFInterniDoklad extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -791,7 +792,7 @@ export class AFInterniDoklad extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -799,7 +800,7 @@ export class AFInterniDoklad extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

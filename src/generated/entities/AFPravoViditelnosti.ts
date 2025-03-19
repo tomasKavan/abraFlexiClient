@@ -1,5 +1,5 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
 
@@ -10,7 +10,7 @@ export class AFPravoViditelnosti extends AFEntity {
   static EntityType: string = 'PRAVO_VIDITELNOSTI'
 
   // ID (db: IdDataPrava) - ID)
-  id?: number
+  declare id?: number
   // uživatel (db: IdUzivatel) - uživatel)
   idUzivatel?: number
   // typ dat (db: TypDatK) - typ dat)

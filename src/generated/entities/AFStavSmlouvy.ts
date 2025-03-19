@@ -1,6 +1,6 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -11,11 +11,11 @@ export class AFStavSmlouvy extends AFEntity {
   static EntityType: string = 'STAV_SMLOUVY'
 
   // ID (db: IdStavSml) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -33,7 +33,7 @@ export class AFStavSmlouvy extends AFEntity {
   // Platí do (db: PlatiDo) - Platí do)
   platiDo?: number
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -1,9 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { UcelCertK } from '../AFEntityEnums.js'
+import { UcelCertK } from '../AFEntityEnums'
 
 export class AFCertifikat extends AFEntity {
   static EntityPath: string = 'certifikat'
@@ -11,7 +12,7 @@ export class AFCertifikat extends AFEntity {
   static EntityType: string = 'CERTIFIKAT'
 
   // ID (db: IdOsCert) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Poznámka (db: UzivNazev) - Poznámka)
@@ -25,7 +26,7 @@ export class AFCertifikat extends AFEntity {
   // Platí do (db: PlatiDo) - Platí do)
   platiDo?: Date
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Účel certifikátu (db: UcelCertK) - Účel certifikátu)
   ucelCertK?: UcelCertK
 
@@ -84,7 +85,7 @@ export class AFCertifikat extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

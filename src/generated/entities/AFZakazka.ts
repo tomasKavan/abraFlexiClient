@@ -1,16 +1,17 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFMistoUrceni } from './AFMistoUrceni.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFStavZakazky } from './AFStavZakazky.js'
-import { AFTypZakazky } from './AFTypZakazky.js'
-import { AFHodnoceniZakazky } from './AFHodnoceniZakazky.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFMena } from './AFMena.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFAdresar } from './AFAdresar'
+import { AFMistoUrceni } from './AFMistoUrceni'
+import { AFStredisko } from './AFStredisko'
+import { AFStavZakazky } from './AFStavZakazky'
+import { AFTypZakazky } from './AFTypZakazky'
+import { AFUzivatel } from './AFUzivatel'
+import { AFHodnoceniZakazky } from './AFHodnoceniZakazky'
+import { AFKontakt } from './AFKontakt'
+import { AFMena } from './AFMena'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -21,11 +22,11 @@ export class AFZakazka extends AFEntity {
   static EntityType: string = 'ZAKAZKA'
 
   // ID (db: IdZakazky) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -63,7 +64,7 @@ export class AFZakazka extends AFEntity {
   // Variabilní symbol (db: VarSym) - Variabilní symbol)
   varSym?: string
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Číslo objednávky (db: CisObj) - Číslo objednávky)
   cisObj?: string
   // Číslo smlouvy (db: CisSml) - Číslo smlouvy)
@@ -89,7 +90,7 @@ export class AFZakazka extends AFEntity {
   // Typ zakázky (db: Idtypzakazky) - Typ zakázky)
   typZakazky?: AFTypZakazky
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any
+  zodpPrac?: AFUzivatel
   // Vyhodnocení zakázky (db: IdVyhZakazky) - Vyhodnocení zakázky)
   vyhZakazky?: AFHodnoceniZakazky
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
@@ -336,7 +337,7 @@ export class AFZakazka extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

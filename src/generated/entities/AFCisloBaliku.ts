@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -13,7 +13,7 @@ export class AFCisloBaliku extends AFEntity {
   static EntityType: string = 'CISLO_BALIKU'
 
   // ID (db: IdCisloBal) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Číslo (db: Cislo) - Číslo)

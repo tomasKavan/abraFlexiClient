@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPoplatku } from '../AFEntityEnums.js'
+import { TypPoplatku } from '../AFEntityEnums'
 
 export class AFPoplatek extends AFEntity {
   static EntityPath: string = 'poplatek'
@@ -12,7 +12,7 @@ export class AFPoplatek extends AFEntity {
   static EntityType: string = 'POPLATKY'
 
   // ID (db: IdPoplatek) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Množství (db: MnozMj) - Množství)

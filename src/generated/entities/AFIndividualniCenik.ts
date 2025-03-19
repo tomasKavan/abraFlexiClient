@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFCenovaUroven } from './AFCenovaUroven.js'
-import { AFSkupinaZbozi } from './AFSkupinaZbozi.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFCenovaUroven } from './AFCenovaUroven'
+import { AFSkupinaZbozi } from './AFSkupinaZbozi'
 
 
 
@@ -13,9 +13,9 @@ export class AFIndividualniCenik extends AFEntity {
   static EntityType: string = 'INDIVIDUALNI_CENIK'
 
   // ID (db: ) - ID)
-  id?: number
+  declare id?: number
   // Zkratka (db: ) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: ) - Název)
   nazev?: string
   // Název EN (db: ) - Název EN)

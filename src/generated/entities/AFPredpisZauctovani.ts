@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFUcet } from './AFUcet.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFUcet } from './AFUcet'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { KodPlneni } from '../AFEntityEnums.js'
+import { KodPlneni } from '../AFEntityEnums'
 
 export class AFPredpisZauctovani extends AFEntity {
   static EntityPath: string = 'predpis-zauctovani'
@@ -13,11 +13,11 @@ export class AFPredpisZauctovani extends AFEntity {
   static EntityType: string = 'PREDPIS_ZAUCTOVANI'
 
   // ID (db: IdTypUcOp) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

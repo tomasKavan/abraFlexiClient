@@ -9,7 +9,7 @@ import {
   EntityByName,
   CODE,
   ID
-} from '../src'
+} from '../src/index'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. Without! company path component.', demandOption: true})

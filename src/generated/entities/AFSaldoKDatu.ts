@@ -1,33 +1,34 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFMena } from './AFMena.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFMistoUrceni } from './AFMistoUrceni.js'
-import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUcet } from './AFUcet.js'
-import { AFPenezniUstav } from './AFPenezniUstav.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFCleneniDph } from './AFCleneniDph.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky.js'
-import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce.js'
-import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy.js'
-import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb.js'
-import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni.js'
-import { AFRada } from './AFRada.js'
-import { AFRocniRada } from './AFRocniRada.js'
-import { AFSazbaDph } from './AFSazbaDph.js'
-import { AFCinnost } from './AFCinnost.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFMena } from './AFMena'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFAdresar } from './AFAdresar'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFMistoUrceni } from './AFMistoUrceni'
+import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUcet } from './AFUcet'
+import { AFPenezniUstav } from './AFPenezniUstav'
+import { AFStatDph } from './AFStatDph'
+import { AFCleneniDph } from './AFCleneniDph'
+import { AFStredisko } from './AFStredisko'
+import { AFZakazka } from './AFZakazka'
+import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky'
+import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
+import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
+import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
+import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
+import { AFRada } from './AFRada'
+import { AFRocniRada } from './AFRocniRada'
+import { AFSazbaDph } from './AFSazbaDph'
+import { AFCinnost } from './AFCinnost'
 
 
-import { StavUziv, Zamek, ZaokrJak, ZaokrNa, StavUhr } from '../AFEntityEnums.js'
+import { StavUziv, Zamek, ZaokrJak, ZaokrNa, StavUhr } from '../AFEntityEnums'
 
 export class AFSaldoKDatu extends AFEntity {
   static EntityPath: string = 'saldo-k-datu'
@@ -41,7 +42,7 @@ export class AFSaldoKDatu extends AFEntity {
   // Poslední změna (db: ) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: ) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Modul (db: ) - Modul)
   modul?: string
   // Číslo došlé (db: ) - Číslo došlé)
@@ -201,7 +202,7 @@ export class AFSaldoKDatu extends AFEntity {
   // Řád zaokr. DPH (db: ) - DPH (řády))
   zaokrNaDphK?: ZaokrNa
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Přílohy (db: ) - Přílohy)
   pocetPriloh?: number
   // Typ dokladu (db: ) - Typ dokladu)
@@ -265,9 +266,9 @@ export class AFSaldoKDatu extends AFEntity {
   // Kraj odesílatele (db: ) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni
   // Uživatel (db: ) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: ) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Čís. řada (db: ) - Čís. řada)
   rada?: AFRada
   // Pol. dokl. řady (db: ) - Pol. dokl. řady)
@@ -1114,7 +1115,7 @@ export class AFSaldoKDatu extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1122,7 +1123,7 @@ export class AFSaldoKDatu extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

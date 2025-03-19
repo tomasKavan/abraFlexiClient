@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -13,11 +13,11 @@ export class AFStredisko extends AFEntity {
   static EntityType: string = 'STREDISKO'
 
   // ID (db: IdStred) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -65,7 +65,7 @@ export class AFStredisko extends AFEntity {
   // Název - druhá řádka FR (db: Nazev2C) - Název - druhá řádka FR)
   nazev2C?: string
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

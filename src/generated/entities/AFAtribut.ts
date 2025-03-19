@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFTypAtributu } from './AFTypAtributu.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb'
+import { AFAdresar } from './AFAdresar'
+import { AFTypAtributu } from './AFTypAtributu'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -15,7 +15,7 @@ export class AFAtribut extends AFEntity {
   static EntityType: string = 'ATRIBUT'
 
   // ID (db: IdAtribut) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Logická hodnota (db: ValBoolean) - Logická hodnota)

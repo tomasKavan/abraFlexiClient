@@ -1,16 +1,16 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
-import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFStalaMzdovaSlozka } from './AFStalaMzdovaSlozka.js'
-import { AFSrazka } from './AFSrazka.js'
-import { AFNepritomnost } from './AFNepritomnost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
+import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek'
+import { AFZakazka } from './AFZakazka'
+import { AFStalaMzdovaSlozka } from './AFStalaMzdovaSlozka'
+import { AFSrazka } from './AFSrazka'
+import { AFNepritomnost } from './AFNepritomnost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSlozky, SkupinaSlozky } from '../AFEntityEnums.js'
+import { TypSlozky, SkupinaSlozky } from '../AFEntityEnums'
 
 export class AFMzdovaSlozka extends AFEntity {
   static EntityPath: string = 'mzdova-slozka'
@@ -18,13 +18,13 @@ export class AFMzdovaSlozka extends AFEntity {
   static EntityType: string = 'MZDOVA_SLOZKA'
 
   // ID (db: IdMzdSloz) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Pořadí (db: CisRad) - Pořadí)
   cisRad?: number
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Poznámka (db: Poznam) - Poznámka)

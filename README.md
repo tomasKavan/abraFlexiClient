@@ -39,7 +39,7 @@ Součástní repository knihovny je nástroj pro generování evidenčních tř�
 Generátor je třeba přeložit
 ```
 npm run build:cli
-chown a+x ./bin/index.js
+chmod a+x ./bin/index.js
 ```
 
 a následně lze generování spustit například takto:

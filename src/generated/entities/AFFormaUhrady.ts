@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMena } from './AFMena.js'
-import { AFFormaUhradyZauctovani } from './AFFormaUhradyZauctovani.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMena } from './AFMena'
+import { AFFormaUhradyZauctovani } from './AFFormaUhradyZauctovani'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { FormaUhr, MetodaZaokr, ZaokrNa } from '../AFEntityEnums.js'
+import { FormaUhr, MetodaZaokr, ZaokrNa } from '../AFEntityEnums'
 
 export class AFFormaUhrady extends AFEntity {
   static EntityPath: string = 'forma-uhrady'
@@ -13,11 +13,11 @@ export class AFFormaUhrady extends AFEntity {
   static EntityType: string = 'FORMA_UHRADY'
 
   // ID (db: IdFormaUhradyCis) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -53,7 +53,7 @@ export class AFFormaUhrady extends AFEntity {
   // Řád zaokr. Celkem (db: ZaokrNaSumK) - Celkem (řády))
   zaokrNaSumK?: ZaokrNa
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Měna (db: IdMeny) - Měna)
   mena?: AFMena
 

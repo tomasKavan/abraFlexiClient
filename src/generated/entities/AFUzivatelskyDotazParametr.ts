@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskyDotaz } from './AFUzivatelskyDotaz.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatelskyDotaz } from './AFUzivatelskyDotaz'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DatazTypParam } from '../AFEntityEnums.js'
+import { DatazTypParam } from '../AFEntityEnums'
 
 export class AFUzivatelskyDotazParametr extends AFEntity {
   static EntityPath: string = 'uzivatelsky-dotaz-parametr'
@@ -12,11 +12,11 @@ export class AFUzivatelskyDotazParametr extends AFEntity {
   static EntityType: string = 'UZIVATELSKY_DOTAZ_PARAMETR'
 
   // ID (db: IdDotazParam) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

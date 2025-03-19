@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFLeasing } from './AFLeasing.js'
-import { AFUcet } from './AFUcet.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFLeasing } from './AFLeasing'
+import { AFUcet } from './AFUcet'
+import { AFStredisko } from './AFStredisko'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -15,7 +15,7 @@ export class AFDanovyNaklad extends AFEntity {
   static EntityType: string = 'DANOVY_NAKLAD'
 
   // ID (db: IdDanNakl) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Je účetní (db: Ucetni) - Doklad je účetní)
@@ -31,7 +31,7 @@ export class AFDanovyNaklad extends AFEntity {
   // Modul (db: Modul) - Modul)
   modul?: string
   // Číslo dokladu (db: Kod) - Číslo dokladu)
-  kod?: string
+  declare kod?: string
   // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
   datUcto?: Date
   // Leasingový majetek (db: IdLeasing) - Leasingový majetek)

@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSzbDph } from '../AFEntityEnums.js'
+import { TypSzbDph } from '../AFEntityEnums'
 
 export class AFSazbaDph extends AFEntity {
   static EntityPath: string = 'sazba-dph'
@@ -12,7 +12,7 @@ export class AFSazbaDph extends AFEntity {
   static EntityType: string = 'SAZBA_DPH'
 
   // ID (db: IdSazbyDph) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)

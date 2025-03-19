@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFIntrastatMernaJednotka } from './AFIntrastatMernaJednotka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFIntrastatMernaJednotka } from './AFIntrastatMernaJednotka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -12,11 +12,11 @@ export class AFIntrastatKodNomenklatury extends AFEntity {
   static EntityType: string = 'INTRASTAT_KOD_NOMENKLATURY'
 
   // ID (db: IdNomen) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

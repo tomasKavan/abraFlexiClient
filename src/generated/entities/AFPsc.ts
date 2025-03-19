@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStat } from './AFStat.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStat } from './AFStat'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -12,11 +12,11 @@ export class AFPsc extends AFEntity {
   static EntityType: string = 'PSC'
 
   // ID (db: IdPsc) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Pošta (db: Nazev) - Pošta)
   nazev?: string
   // Pošta EN (db: NazevA) - Pošta EN)

@@ -1,19 +1,19 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFRegion } from './AFRegion.js'
-import { AFRadaBanka } from './AFRadaBanka.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFPenezniUstav } from './AFPenezniUstav.js'
-import { AFUcet } from './AFUcet.js'
-import { AFMena } from './AFMena.js'
-import { AFFormatElektronickehoBankovnictvi } from './AFFormatElektronickehoBankovnictvi.js'
-import { AFFormatElektronickehoPrikazu } from './AFFormatElektronickehoPrikazu.js'
-import { AFStat } from './AFStat.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFRegion } from './AFRegion'
+import { AFRadaBanka } from './AFRadaBanka'
+import { AFStredisko } from './AFStredisko'
+import { AFPenezniUstav } from './AFPenezniUstav'
+import { AFUcet } from './AFUcet'
+import { AFMena } from './AFMena'
+import { AFFormatElektronickehoBankovnictvi } from './AFFormatElektronickehoBankovnictvi'
+import { AFFormatElektronickehoPrikazu } from './AFFormatElektronickehoPrikazu'
+import { AFStat } from './AFStat'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ElVypisDuplicita } from '../AFEntityEnums.js'
+import { ElVypisDuplicita } from '../AFEntityEnums'
 
 export class AFBankovniUcet extends AFEntity {
   static EntityPath: string = 'bankovni-ucet'
@@ -21,11 +21,11 @@ export class AFBankovniUcet extends AFEntity {
   static EntityType: string = 'BANKOVNI_UCET'
 
   // ID (db: IdBsp) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -107,7 +107,7 @@ export class AFBankovniUcet extends AFEntity {
   // Vytvářet přecenění (db: VytvaretPreceneni) - Vytvářet přecenění při inicializaci účetního období)
   vytvaretPreceneni?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Řada pro příjem (db: IdRadyPrijem) - Řada pro příjem)
   radaPrijem?: AFRadaBanka
   // Řada pro výdej (db: IdRadyVydej) - Řada pro výdej)

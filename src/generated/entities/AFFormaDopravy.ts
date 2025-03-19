@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFCenik } from './AFCenik.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFCenik } from './AFCenik'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { FormaDopravy } from '../AFEntityEnums.js'
+import { FormaDopravy } from '../AFEntityEnums'
 
 export class AFFormaDopravy extends AFEntity {
   static EntityPath: string = 'forma-dopravy'
@@ -12,11 +12,11 @@ export class AFFormaDopravy extends AFEntity {
   static EntityType: string = 'FORMA_DOPRAVY'
 
   // ID (db: IdFormaDopravy) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -68,7 +68,7 @@ export class AFFormaDopravy extends AFEntity {
   // Kontrolní číslo (db: CisBalKonCis) - Kontrolní číslo)
   cisBalKonCis?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Dopravné (db: IdDopravne) - Dopravné)
   dopravne?: AFCenik
 

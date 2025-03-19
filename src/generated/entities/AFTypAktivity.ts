@@ -1,9 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { DruhUdal } from '../AFEntityEnums.js'
+import { DruhUdal } from '../AFEntityEnums'
 
 export class AFTypAktivity extends AFEntity {
   static EntityPath: string = 'typ-aktivity'
@@ -11,11 +12,11 @@ export class AFTypAktivity extends AFEntity {
   static EntityType: string = 'TYP_AKTIVITY'
 
   // ID (db: IdTypAkt) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -37,9 +38,9 @@ export class AFTypAktivity extends AFEntity {
   // Druh události (db: DruhUdalK) - Druh události)
   druhUdalK?: DruhUdal
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any
+  zodpPrac?: AFUzivatel
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -143,7 +144,7 @@ export class AFTypAktivity extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

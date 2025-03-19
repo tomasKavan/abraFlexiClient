@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMernaJednotka } from './AFMernaJednotka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypAtribut } from '../AFEntityEnums.js'
+import { TypAtribut } from '../AFEntityEnums'
 
 export class AFTypAtributu extends AFEntity {
   static EntityPath: string = 'typ-atributu'
@@ -12,11 +12,11 @@ export class AFTypAtributu extends AFEntity {
   static EntityType: string = 'TYP_ATRIBUTU'
 
   // ID (db: IdTypAtribut) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

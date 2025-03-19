@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFMena } from './AFMena.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFStredisko } from './AFStredisko'
+import { AFMena } from './AFMena'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -14,11 +14,11 @@ export class AFBankovniUcetPokladna extends AFEntity {
   static EntityType: string = 'BANKOVNI_UCET_POKLADNA'
 
   // ID (db: IdBsp) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -42,7 +42,7 @@ export class AFBankovniUcetPokladna extends AFEntity {
   // Modul (db: Modul) - Modul)
   modul?: string
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Středisko (db: IdStred) - Středisko)
   stredisko?: AFStredisko
   // Měna (db: IdMeny) - Měna)

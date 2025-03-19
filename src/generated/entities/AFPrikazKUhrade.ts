@@ -1,14 +1,14 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMena } from './AFMena.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFPrikazKUhradePolozka } from './AFPrikazKUhradePolozka.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMena } from './AFMena'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFPrikazKUhradePolozka } from './AFPrikazKUhradePolozka'
 
 
-import { ElPrikazStav } from '../AFEntityEnums.js'
+import { ElPrikazStav } from '../AFEntityEnums'
 
 export class AFPrikazKUhrade extends AFEntity {
   static EntityPath: string = 'prikaz-k-uhrade'
@@ -16,7 +16,7 @@ export class AFPrikazKUhrade extends AFEntity {
   static EntityType: string = 'PRIKAZ_K_UHRADE'
 
   // ID (db: IdPrikazUhr) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Datum vytvoření (db: DatVytvor) - Datum vytvoření)

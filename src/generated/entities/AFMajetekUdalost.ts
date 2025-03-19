@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMajetek } from './AFMajetek.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFUcet } from './AFUcet.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMajetek } from './AFMajetek'
+import { AFStredisko } from './AFStredisko'
+import { AFUcet } from './AFUcet'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypUdal } from '../AFEntityEnums.js'
+import { TypUdal } from '../AFEntityEnums'
 
 export class AFMajetekUdalost extends AFEntity {
   static EntityPath: string = 'majetek-udalost'
@@ -15,7 +15,7 @@ export class AFMajetekUdalost extends AFEntity {
   static EntityType: string = 'MAJETEK_UDALOST'
 
   // ID (db: IdUdalosti) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Je účetní (db: Ucetni) - Doklad je účetní)
@@ -37,7 +37,7 @@ export class AFMajetekUdalost extends AFEntity {
   // Zámek (db: Zamek) - Zámek)
   zamek?: boolean
   // Číslo dokladu (db: Kod) - Číslo dokladu)
-  kod?: string
+  declare kod?: string
   // Modul (db: Modul) - Modul)
   modul?: string
   // Prodl. úč. odp. (db: ZmenaDobyOdpis) - Prodlouž. účet. odpisů o)

@@ -1,31 +1,31 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcetniObdobi } from './AFUcetniObdobi.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFRadaFakturyVydane } from './AFRadaFakturyVydane.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFUcet } from './AFUcet.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFMena } from './AFMena.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFStat } from './AFStat.js'
-import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky.js'
-import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb.js'
-import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce.js'
-import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy.js'
-import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
-import { AFSablonaMail } from './AFSablonaMail.js'
-import { AFAutotisk } from './AFAutotisk.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFRadaFakturyVydane } from './AFRadaFakturyVydane'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFUcet } from './AFUcet'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFMena } from './AFMena'
+import { AFStatDph } from './AFStatDph'
+import { AFStat } from './AFStat'
+import { AFIntrastatDodaciPodminky } from './AFIntrastatDodaciPodminky'
+import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
+import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
+import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
+import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
+import { AFSablonaMail } from './AFSablonaMail'
+import { AFAutotisk } from './AFAutotisk'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypDokladu, ZaokrJak, ZaokrNa, MetodaZaokr, RazeniProTisk, Ekokom } from '../AFEntityEnums.js'
+import { TypDokladu, ZaokrJak, ZaokrNa, MetodaZaokr, RazeniProTisk, Ekokom } from '../AFEntityEnums'
 
 export class AFTypFakturyVydane extends AFEntity {
   static EntityPath: string = 'typ-faktury-vydane'
@@ -33,11 +33,11 @@ export class AFTypFakturyVydane extends AFEntity {
   static EntityType: string = 'FAKTURA_OUT_TYP'
 
   // ID (db: IdTypDokl) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

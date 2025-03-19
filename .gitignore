@@ -129,3 +129,9 @@ bin
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+build/
+bin/
+publish/
+npm-package/
+.DS_Store

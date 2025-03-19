@@ -1,5 +1,5 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
 
 
 
@@ -10,7 +10,7 @@ export class AFSettingStore extends AFEntity {
   static EntityType: string = 'SETTING'
 
   // ID (db: IdSetting) - ID)
-  id?: number
+  declare id?: number
   // Klíč (db: Klic) - Klíč)
   klic?: string
   // Hodnota (db: Hodnota) - Hodnota)

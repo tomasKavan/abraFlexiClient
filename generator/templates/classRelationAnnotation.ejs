@@ -1,6 +1,0 @@
-    <% if (getter) { %>'<% } %><%= relationName %><% if (getter) { %>'<% } %> : {
-      key: '<%= relationName %>',
-      type: PropertyType.Relation,
-      isArray: true,
-      afClass: '<%= tsClassName === 'any' ? 'AFEntity' : tsClassName %>'
-    },

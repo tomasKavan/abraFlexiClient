@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFVztah } from './AFVztah.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFVztah } from './AFVztah'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { Pohlavi } from '../AFEntityEnums.js'
+import { Pohlavi } from '../AFEntityEnums'
 
 export class AFOsobaBlizka extends AFEntity {
   static EntityPath: string = 'osoba-blizka'
@@ -13,7 +13,7 @@ export class AFOsobaBlizka extends AFEntity {
   static EntityType: string = 'OSOBA_BLIZKA'
 
   // ID (db: IdDite) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Příjmení (db: Prijmeni) - Příjmení)
@@ -37,7 +37,7 @@ export class AFOsobaBlizka extends AFEntity {
   // Dítě (db: Dite) - Dítě)
   dite?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Osoba (db: IdOsoba) - Osoba)
   osoba?: AFOsobaHlavicka
   // Vztah (db: IdVztah) - Vztah)

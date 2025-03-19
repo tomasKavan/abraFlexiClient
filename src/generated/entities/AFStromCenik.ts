@@ -1,6 +1,6 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFStrom } from './AFStrom.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFStrom } from './AFStrom'
 
 
 
@@ -11,7 +11,7 @@ export class AFStromCenik extends AFEntity {
   static EntityType: string = 'STROM_CENIK'
 
   // ID (db: Idvazuzel) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // ID Záznamu (db: Idzaznamu) - ID Záznamu)

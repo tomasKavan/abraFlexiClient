@@ -1,31 +1,31 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFSkupinaZbozi } from './AFSkupinaZbozi.js'
-import { AFMernaJednotka } from './AFMernaJednotka.js'
-import { AFStat } from './AFStat.js'
-import { AFIntrastatKodNomenklatury } from './AFIntrastatKodNomenklatury.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFPreneseniDph } from './AFPreneseniDph.js'
-import { AFOdberatel } from './AFOdberatel.js'
-import { AFCenikObal } from './AFCenikObal.js'
-import { AFAtribut } from './AFAtribut.js'
-import { AFSkladovaKarta } from './AFSkladovaKarta.js'
-import { AFSadyAKomplety } from './AFSadyAKomplety.js'
-import { AFPrislustenstvi } from './AFPrislustenstvi.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFPoplatek } from './AFPoplatek.js'
-import { AFDodavatel } from './AFDodavatel.js'
-import { AFVyrobniCislo } from './AFVyrobniCislo.js'
-import { AFStavCeniku } from './AFStavCeniku.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFPodobneZbozi } from './AFPodobneZbozi.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFCenovaUroven } from './AFCenovaUroven.js'
-import { AFCenikTypSazbyDph } from './AFCenikTypSazbyDph.js'
-import { AFRezervace } from './AFRezervace.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFSkupinaZbozi } from './AFSkupinaZbozi'
+import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFStat } from './AFStat'
+import { AFIntrastatKodNomenklatury } from './AFIntrastatKodNomenklatury'
+import { AFAdresar } from './AFAdresar'
+import { AFPreneseniDph } from './AFPreneseniDph'
+import { AFOdberatel } from './AFOdberatel'
+import { AFCenikObal } from './AFCenikObal'
+import { AFAtribut } from './AFAtribut'
+import { AFSkladovaKarta } from './AFSkladovaKarta'
+import { AFSadyAKomplety } from './AFSadyAKomplety'
+import { AFPrislustenstvi } from './AFPrislustenstvi'
+import { AFPriloha } from './AFPriloha'
+import { AFPoplatek } from './AFPoplatek'
+import { AFDodavatel } from './AFDodavatel'
+import { AFVyrobniCislo } from './AFVyrobniCislo'
+import { AFStavCeniku } from './AFStavCeniku'
+import { AFUdalost } from './AFUdalost'
+import { AFPodobneZbozi } from './AFPodobneZbozi'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFCenovaUroven } from './AFCenovaUroven'
+import { AFCenikTypSazbyDph } from './AFCenikTypSazbyDph'
+import { AFRezervace } from './AFRezervace'
 
 
-import { TypCeny, ZaokrJak, ZaokrNa, TypSzbDph, TypCenyVychozi, TypVypCeny, MjZaruky, TypZasoby } from '../AFEntityEnums.js'
+import { TypCeny, ZaokrJak, ZaokrNa, TypSzbDph, TypCenyVychozi, TypVypCeny, MjZaruky, TypZasoby } from '../AFEntityEnums'
 
 export class AFCenik extends AFEntity {
   static EntityPath: string = 'cenik'
@@ -33,11 +33,11 @@ export class AFCenik extends AFEntity {
   static EntityType: string = 'CENIK'
 
   // ID (db: IdCenik) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Kód/zkratka (db: Kod) - Kód/zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -181,7 +181,7 @@ export class AFCenik extends AFEntity {
   // Běžná cena (db: CenaBezna) - Běžná cena)
   cenaBezna?: Big
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Přílohy (db: PocetPriloh) - Přílohy)
   pocetPriloh?: number
   // Export na E-shop (db: ExportNaEshop) - Exportovat na internetový obchod)

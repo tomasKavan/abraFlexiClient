@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFAdresar } from './AFAdresar'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { GdprTypVztahu } from '../AFEntityEnums.js'
+import { GdprTypVztahu } from '../AFEntityEnums'
 
 export class AFSubjekt extends AFEntity {
   static EntityPath: string = 'subjekt'
@@ -12,7 +12,7 @@ export class AFSubjekt extends AFEntity {
   static EntityType: string = 'SUBJEKT'
 
   // ID (db: Idsubjekt) - ID)
-  id?: number
+  declare id?: number
   // Platí od (db: PlatiOd) - Platí od)
   platiOd?: Date
   // Platí do (db: PlatiDo) - Platí do)

@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFUcet } from './AFUcet.js'
-import { AFTypOrganizace } from './AFTypOrganizace.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUcet } from './AFUcet'
+import { AFTypOrganizace } from './AFTypOrganizace'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -13,11 +13,11 @@ export class AFSkupinaFirem extends AFEntity {
   static EntityType: string = 'SKUPINA_FIREM'
 
   // ID (db: IdSkupFir) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

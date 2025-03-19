@@ -1,19 +1,21 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb.js'
-import { AFNastaveni } from './AFNastaveni.js'
-import { AFCenik } from './AFCenik.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFSmlouva } from './AFSmlouva.js'
-import { AFSmlouvaPolozka } from './AFSmlouvaPolozka.js'
-import { AFStrom } from './AFStrom.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb'
+import { AFNastaveni } from './AFNastaveni'
+import { AFCenik } from './AFCenik'
+import { AFAdresar } from './AFAdresar'
+import { AFKontakt } from './AFKontakt'
+import { AFReport } from './AFReport'
+import { AFZakazka } from './AFZakazka'
+import { AFSmlouva } from './AFSmlouva'
+import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
+import { AFStrom } from './AFStrom'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypPrilohy } from '../AFEntityEnums.js'
+import { TypPrilohy } from '../AFEntityEnums'
 
 export class AFPriloha extends AFEntity {
   static EntityPath: string = 'priloha'
@@ -21,7 +23,7 @@ export class AFPriloha extends AFEntity {
   static EntityType: string = 'PRILOHA'
 
   // ID (db: IdPriloha) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Název souboru (db: NazSoub) - Název souboru)
@@ -53,7 +55,7 @@ export class AFPriloha extends AFEntity {
   // Výška obrázku (db: PictureHeight) - Výška obrázku)
   pictureHeight?: number
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
   doklFak?: any
   // Interní doklad (db: IdDoklInt) - Interní doklad)
@@ -73,7 +75,7 @@ export class AFPriloha extends AFEntity {
   // Konektor (db: IdKonektor) - Konektor)
   konektor?: any
   // Report (db: IdReport) - Report)
-  report?: any
+  report?: AFReport
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Smlouva (db: IdSmlouvy) - Smlouva)
@@ -202,7 +204,7 @@ export class AFPriloha extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -274,7 +276,7 @@ export class AFPriloha extends AFEntity {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFReport',
       
     },
     zakazka : {

@@ -1,22 +1,22 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFSmlouva } from './AFSmlouva.js'
-import { AFCenik } from './AFCenik.js'
-import { AFSklad } from './AFSklad.js'
-import { AFMistoUrceni } from './AFMistoUrceni.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFTypFakturyVydane } from './AFTypFakturyVydane.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFSmlouva } from './AFSmlouva'
+import { AFCenik } from './AFCenik'
+import { AFSklad } from './AFSklad'
+import { AFMistoUrceni } from './AFMistoUrceni'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFTypFakturyVydane } from './AFTypFakturyVydane'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet'
+import { AFAdresar } from './AFAdresar'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { ZpusobFakt, TypCeny, TypSzbDph } from '../AFEntityEnums.js'
+import { ZpusobFakt, TypCeny, TypSzbDph } from '../AFEntityEnums'
 
 export class AFSmlouvaPolozka extends AFEntity {
   static EntityPath: string = 'smlouva-polozka'
@@ -24,11 +24,11 @@ export class AFSmlouvaPolozka extends AFEntity {
   static EntityType: string = 'SMLOUVA_POLOZKA'
 
   // ID (db: IdPolSml) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Označení (db: Kod) - Označení)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)
@@ -86,7 +86,7 @@ export class AFSmlouvaPolozka extends AFEntity {
   // Valorizovat k měsíci (db: ValorizovatMesic) - Valorizovat k měsíci)
   valorizovatMesic?: number
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Přílohy (db: PocetPriloh) - Přílohy)
   pocetPriloh?: number
   // Číslo došlé (db: CisDosle) - Číslo došlé)

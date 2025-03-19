@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMena } from './AFMena.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFMena } from './AFMena'
+import { AFAdresar } from './AFAdresar'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
 
@@ -13,11 +13,11 @@ export class AFStatDph extends AFEntity {
   static EntityType: string = 'STAT_DPH'
 
   // ID (db: IdStatu) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Kód (ISO 3166-1) (db: Kod) - alpha-2)
-  kod?: string
+  declare kod?: string
   // Název státu (db: Nazev) - Název státu)
   nazev?: string
   // Název EN (db: NazevA) - Název EN)

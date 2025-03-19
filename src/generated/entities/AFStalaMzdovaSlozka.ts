@@ -1,17 +1,17 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
-import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFMzdyBankovniSpojeni } from './AFMzdyBankovniSpojeni.js'
-import { AFTypZavazku } from './AFTypZavazku.js'
-import { AFTypInternihoDokladu } from './AFTypInternihoDokladu.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
+import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek'
+import { AFStredisko } from './AFStredisko'
+import { AFZakazka } from './AFZakazka'
+import { AFMzdyBankovniSpojeni } from './AFMzdyBankovniSpojeni'
+import { AFTypZavazku } from './AFTypZavazku'
+import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { TypSlozky, SkupinaSlozky } from '../AFEntityEnums.js'
+import { TypSlozky, SkupinaSlozky } from '../AFEntityEnums'
 
 export class AFStalaMzdovaSlozka extends AFEntity {
   static EntityPath: string = 'stala-mzdova-slozka'
@@ -19,11 +19,11 @@ export class AFStalaMzdovaSlozka extends AFEntity {
   static EntityType: string = 'STALA_MZDOVA_SLOZKA'
 
   // ID (db: IdStalaMzdSloz) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Poznámka (db: Poznam) - Poznámka)
@@ -69,7 +69,7 @@ export class AFStalaMzdovaSlozka extends AFEntity {
   // Typ výpočtu podílu (db: TypPodilK) - Typ výpočtu podílu)
   typPodilK?: any
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Osoba (db: IdOsoba) - Osoba)
   osoba?: AFOsobaHlavicka
   // Pracovní poměr (db: IdPracPom) - Pracovní poměr)

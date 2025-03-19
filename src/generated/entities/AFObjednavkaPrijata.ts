@@ -1,34 +1,35 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFTypObjednavkyPrijate } from './AFTypObjednavkyPrijate.js'
-import { AFMena } from './AFMena.js'
-import { AFKonstSymbol } from './AFKonstSymbol.js'
-import { AFAdresar } from './AFAdresar.js'
-import { AFStat } from './AFStat.js'
-import { AFRegion } from './AFRegion.js'
-import { AFMistoUrceni } from './AFMistoUrceni.js'
-import { AFBankovniUcet } from './AFBankovniUcet.js'
-import { AFStatDph } from './AFStatDph.js'
-import { AFStredisko } from './AFStredisko.js'
-import { AFCinnost } from './AFCinnost.js'
-import { AFZakazka } from './AFZakazka.js'
-import { AFKontakt } from './AFKontakt.js'
-import { AFRadaObjednavkyPrijate } from './AFRadaObjednavkyPrijate.js'
-import { AFSmlouva } from './AFSmlouva.js'
-import { AFFormaDopravy } from './AFFormaDopravy.js'
-import { AFFormaUhrady } from './AFFormaUhrady.js'
-import { AFTypFakturyVydane } from './AFTypFakturyVydane.js'
-import { AFStavObchodnihoDokladu } from './AFStavObchodnihoDokladu.js'
-import { AFSklad } from './AFSklad.js'
-import { AFVazebniDoklad } from './AFVazebniDoklad.js'
-import { AFObjednavkaPrijataPolozka } from './AFObjednavkaPrijataPolozka.js'
-import { AFPriloha } from './AFPriloha.js'
-import { AFUdalost } from './AFUdalost.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
-import { AFVazba } from './AFVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFTypObjednavkyPrijate } from './AFTypObjednavkyPrijate'
+import { AFMena } from './AFMena'
+import { AFKonstSymbol } from './AFKonstSymbol'
+import { AFAdresar } from './AFAdresar'
+import { AFStat } from './AFStat'
+import { AFRegion } from './AFRegion'
+import { AFMistoUrceni } from './AFMistoUrceni'
+import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFStatDph } from './AFStatDph'
+import { AFStredisko } from './AFStredisko'
+import { AFCinnost } from './AFCinnost'
+import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
+import { AFKontakt } from './AFKontakt'
+import { AFRadaObjednavkyPrijate } from './AFRadaObjednavkyPrijate'
+import { AFSmlouva } from './AFSmlouva'
+import { AFFormaDopravy } from './AFFormaDopravy'
+import { AFFormaUhrady } from './AFFormaUhrady'
+import { AFTypFakturyVydane } from './AFTypFakturyVydane'
+import { AFStavObchodnihoDokladu } from './AFStavObchodnihoDokladu'
+import { AFSklad } from './AFSklad'
+import { AFVazebniDoklad } from './AFVazebniDoklad'
+import { AFObjednavkaPrijataPolozka } from './AFObjednavkaPrijataPolozka'
+import { AFPriloha } from './AFPriloha'
+import { AFUdalost } from './AFUdalost'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { AFVazba } from './AFVazba'
 
 
-import { Zamek, StavDoklObch, ZaokrJak, ZaokrNa, MetodaZaokr } from '../AFEntityEnums.js'
+import { Zamek, StavDoklObch, ZaokrJak, ZaokrNa, MetodaZaokr } from '../AFEntityEnums'
 
 export class AFObjednavkaPrijata extends AFEntity {
   static EntityPath: string = 'objednavka-prijata'
@@ -36,11 +37,11 @@ export class AFObjednavkaPrijata extends AFEntity {
   static EntityType: string = 'OBJEDNAVKA_IN'
 
   // ID (db: IdDoklObch) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Interní číslo (db: Kod) - Interní číslo)
-  kod?: string
+  declare kod?: string
   // Zámek (db: ZamekK) - Zámek)
   zamekK?: Zamek
   // Číslo došlé (db: CisDosle) - Číslo došlé)
@@ -186,7 +187,7 @@ export class AFObjednavkaPrijata extends AFEntity {
   // Korekce DPH (db: VytvaretKorPol) - Korekce DPH)
   vytvaretKorPol?: boolean
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
   typDokl?: AFTypObjednavkyPrijate
   // Měna (db: IdMeny) - Měna)
@@ -216,9 +217,9 @@ export class AFObjednavkaPrijata extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any
+  uzivatel?: AFUzivatel
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any
+  zodpOsoba?: AFUzivatel
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -909,7 +910,7 @@ export class AFObjednavkaPrijata extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -917,7 +918,7 @@ export class AFObjednavkaPrijata extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

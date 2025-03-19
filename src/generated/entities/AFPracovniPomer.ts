@@ -1,15 +1,15 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
-import { AFEntity } from '../../abra/AFEntity.js'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
-import { AFTypPracovnihoPomeru } from './AFTypPracovnihoPomeru.js'
-import { AFTypInternihoDokladu } from './AFTypInternihoDokladu.js'
-import { AFTypDokladu } from './AFTypDokladu.js'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
+import { AFEntity } from '../../abra/AFEntity'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka'
+import { AFTypPracovnihoPomeru } from './AFTypPracovnihoPomeru'
+import { AFTypInternihoDokladu } from './AFTypInternihoDokladu'
+import { AFTypDokladu } from './AFTypDokladu'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
-import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti } from '../AFEntityEnums.js'
+import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti } from '../AFEntityEnums'
 
 export class AFPracovniPomer extends AFEntity {
   static EntityPath: string = 'pracovni-pomer'
@@ -17,7 +17,7 @@ export class AFPracovniPomer extends AFEntity {
   static EntityType: string = 'PRACOVNI_POMER'
 
   // ID (db: IdPracPom) - ID)
-  id?: number
+  declare id?: number
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date
   // Platí od (db: PlatiOd) - Platí od)
@@ -25,7 +25,7 @@ export class AFPracovniPomer extends AFEntity {
   // Platí do (db: PlatiDo) - Platí do)
   platiDo?: Date
   // Zkratka (db: Kod) - Zkratka)
-  kod?: string
+  declare kod?: string
   // Název (db: Nazev) - Název)
   nazev?: string
   // Aktivní od (db: AktivniOd) - Aktivní od)
@@ -125,7 +125,7 @@ export class AFPracovniPomer extends AFEntity {
   // Důvod neposkytnutí podkladů (db: DuvodNeposkytnutiCsszK) - Důvod neposkytnutí podkladů)
   duvodNeposkytnutiCsszK?: CsszDuvodNeposkytnuti
   // Štítky (db: ) - Štítky)
-  stitky?: string
+  declare stitky?: string
   // Hlavička pracovního poměru (db: IdPracPomHlav) - Hlavička pracovního poměru)
   pracPomHlav?: AFPracovniPomerHlavicka
   // Osoba (db: IdOsoba) - Osoba)
