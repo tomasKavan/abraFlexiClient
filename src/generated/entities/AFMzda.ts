@@ -189,6 +189,8 @@ export class AFMzda extends AFEntity {
   socPojCelkSpada?: Big
   // Druhý pilíř (db: ) - Druhý pilíř)
   duchodSpor?: Big
+  // Zákl. daně nezaokr. (db: ) - Základ daně nezaokrouhlený)
+  zakladDaneNezaokr?: Big
   // Přípl.prostř. (db: ) - Příplatek za prostředí)
   prostrediPripl?: Big
 
@@ -724,6 +726,12 @@ export class AFMzda extends AFEntity {
     },
     duchodSpor : {
       key: 'duchodSpor',
+      type: PropertyType.Numeric,
+      isArray: false,
+      
+    },
+    zakladDaneNezaokr : {
+      key: 'zakladDaneNezaokr',
       type: PropertyType.Numeric,
       isArray: false,
       
