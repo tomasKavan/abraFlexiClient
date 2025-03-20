@@ -2,7 +2,7 @@
   "name": "abra-flexi",
   "version": "1.0.0-beta.4",
   "description": "ABRA Flexi API Typescript client. Automaticly generated from API json annotations.",
-  "types": "build/index.d.ts",
+  "types": "index.d.ts",
   "scripts": {
     "build": "tsc",
     "build:cli": "rm -rf ./bin && tsc --project tsconfig.generator.json && cp -r ./generator/templates bin/",
@@ -14,7 +14,7 @@
     "start-ts-node": "ts-node src/index.ts",
     "debug": "nodemon --exec 'node --require ts-node/register --inspect=9229 src/index.ts' -e ts,graphql,env --watch .env --watch .",
     "test": "jest --config jestconfig.json --passWithNoTests",
-    "prepare-package": "npm run build && rm -rf npm-package && mkdir npm-package && cp package*.json tsconfig.json LICENSE README.md npm-package/ && cp -r build/* npm-package && rm -rf npm-package/package-lock.json npm-package/tsconfig.json npm-package/tsconfig.json",
+    "prepare-package": "npm run build && rm -rf npm-package && mkdir npm-package && cp package*.json tsconfig.json LICENSE README.md npm-package/ && cp -r build/* npm-package && rm -rf npm-package/package-lock.json npm-package/tsconfig.json",
     "pack": "npm run prepare-package && cd npm-package && npm pack",
     "publish": "npm run prepare-package && cd npm-package && npm publish",
     "clean": "rimraf build && rimraf npm-package"
