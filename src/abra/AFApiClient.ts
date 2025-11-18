@@ -1,4 +1,4 @@
-import { parsePropertyValue } from "./AFDataType"
+import { parsePropertyValue, serializePropertyValue } from "./AFDataType"
 import { AFEntity } from "./AFEntity"
 import { AFError, AFErrorCode } from "./AFError"
 import { Filter, ID } from "./AFFilter"
@@ -12,6 +12,8 @@ import {
   AFURelResult,
   AFPopulateOptions,
   AFURelMinimal,
+  AFSaveOptions,
+  AFDeleteOptions,
   StitkyCacheStrategy
 } from "./AFTypes"
 import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry"
@@ -40,7 +42,7 @@ export class AFApiClient {
   get company(): string { return this._company }
   get stitkyCacheStrategy(): StitkyCacheStrategy { return this._stitkyCache.strategy }
 
-  async queryRaw<T extends typeof AFEntity>(
+  async queryRaw(
     entityPath: string,
     options: AFQueryOptions
   ): Promise<any> {
@@ -100,7 +102,7 @@ export class AFApiClient {
 
     try {
       const rawData = await res
-      const data = this._processEntityObj(entity, rawData)
+      const data = this._decodeEntityObj(entity, rawData)
       
       if (!options.noUpdateStitkyCache) {
         await this._stitkyCache.fetchTick()
@@ -253,7 +255,7 @@ export class AFApiClient {
         
         const oKeys = Object.keys(enQ)
         for (const okey of oKeys) {
-          this._setProperty(en, okey, enQ)        
+          this._decodeProperty(en, okey, enQ)        
         }
       }
 
@@ -280,7 +282,138 @@ export class AFApiClient {
     return res[0]
   }
 
-  private _processEntityObj<T extends typeof AFEntity>(entity: T, obj: any): InstanceType<T>[] {
+  public async create<T extends typeof AFEntity>(
+    entity: T
+  ): Promise<InstanceType<T>> {
+    return new entity(this._stitkyCache) as InstanceType<T>
+  }
+
+  async saveRaw(
+    entityPath: string,
+    data: any,
+    options: AFSaveOptions
+  ): Promise<any> {
+    if (!this.company || !this.company.length) {
+      throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `Can't query AFApiClient without providing company path component first.`)
+    }
+
+    let url = this._url + '/c/' + this.company + '/' + entityPath + '.' + ABRA_API_FORMAT
+
+    console.log(url)
+
+    try {
+      const raw = await this._fetch(url, {
+        signal: options.abortController?.signal,
+        method: 'POST',
+        body: JSON.stringify({
+          winstrom: [{
+            [entityPath] : data
+          }]
+        })
+      })
+
+      if (raw.status >= 400 && raw.status < 600) {
+        throw new AFError(AFErrorCode.ABRA_FLEXI_ERROR, `${raw.status} ${raw.statusText}`)
+      }
+
+      const json = await raw.json()
+      console.log(json)
+
+      const jres = json.winstrom
+      if (jres['success'] === 'true') {
+        // TODO
+      }
+
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
+    }
+  }
+
+  public async save<T extends typeof AFEntity = typeof AFEntity>(
+    entity: InstanceType<T>, 
+    options: AFSaveOptions
+  ): Promise<InstanceType<T>> {
+    const obj = this._encodeEntity(entity)
+    const res = this.saveRaw((entity.constructor as typeof AFEntity).EntityPath, obj, options)
+
+    try {
+      const rawData = await res
+
+      return entity
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
+    }
+  }
+
+  async deleteRaw(
+    entityPath: string,
+    id: string | number,
+    options: AFSaveOptions
+  ): Promise<any> {
+    if (!this.company || !this.company.length) {
+      throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `Can't query AFApiClient without providing company path component first.`)
+    }
+
+    let url = this._url + '/c/' + this.company + '/' + entityPath + '/' + id + '.' + ABRA_API_FORMAT
+
+    console.log(url)
+
+    try {
+      const raw = await this._fetch(url, {
+        signal: options.abortController?.signal,
+        method: 'DELTE'
+      })
+
+      if (raw.status >= 400 && raw.status < 600) {
+        throw new AFError(AFErrorCode.ABRA_FLEXI_ERROR, `${raw.status} ${raw.statusText}`)
+      }
+
+      const json = await raw.json()
+      console.log(json)
+
+      const jres = json.winstrom
+      if (jres['success'] === 'true') {
+        // TODO
+      }
+
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
+    }
+  }
+
+  public async delete<T extends typeof AFEntity = typeof AFEntity>(
+    entity: InstanceType<T>, 
+    options: AFDeleteOptions
+  ): Promise<boolean> {
+    if (entity.isNew) return true
+
+    const res = this.saveRaw((entity.constructor as typeof AFEntity).EntityPath, entity.id, options)
+
+    try {
+      await res
+      return true
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
+    }
+  }
+
+  private _decodeEntityObj<T extends typeof AFEntity>(entity: T, obj: any): InstanceType<T>[] {
     if (!obj) return []
 
     // If there is no detail, prepare stub with code (kod)
@@ -300,14 +433,22 @@ export class AFApiClient {
       const ent = new entity(this._stitkyCache) as InstanceType<T>
       const oKeys = Object.keys(o)
       for (const okey of oKeys) {
-        this._setProperty(ent, okey, o)        
+        this._decodeProperty(ent, okey, o)        
       }
       res.push(ent)
     }
     return res
   }
 
-  private _setProperty<T extends AFEntity>(entity: T, key: string, obj: any) {
+  private _encodeEntity<T extends AFEntity>(entity: T): any {
+    const out = {}
+    const keys = entity.changedKeys()
+    for (const key of keys) {
+      this._encodeProperty(entity, key, out)
+    }
+  }
+
+  private _decodeProperty<T extends AFEntity>(entity: T, key: string, obj: any) {
     const annot = entity.getPropertyTypeAnnotation(key)
     if (!annot) return
 
@@ -318,14 +459,16 @@ export class AFApiClient {
     if (annot.type === PropertyType.Relation) {
       if (!annot.afClass) return 
       const cls = typeof annot.afClass === 'string' ? EntityByName(annot.afClass) : annot.afClass
-      const propOut = this._processEntityObj(cls, v)
+      const propOut = this._decodeEntityObj(cls, v)
       if (!propOut) return
       if (annot.isArray) {
-        (entity as any)[key] = propOut
+        ;(entity as any)[key] = propOut
+        ;(entity as AFEntity)._orig[key] = propOut
         return
       }
       if (propOut.length) {
-        (entity as any)[key] = propOut[0]
+        ;(entity as any)[key] = propOut[0]
+        ;(entity as AFEntity)._orig[key] = propOut[0]
       }
       return
     }
@@ -333,6 +476,48 @@ export class AFApiClient {
     // Else set it as scalar type
     //console.log(obj)
     if (!obj) return
-    (entity as any)[annot.key] = parsePropertyValue(annot.type, annot, obj[annot.key])
+    ;(entity as any)[annot.key] = parsePropertyValue(annot.type, annot, obj[annot.key])
+    ;(entity as AFEntity)._orig[annot.key] = (entity as any)[annot.key]
+  }
+
+  private _encodeProperty<T extends AFEntity>(entity: T, key: string, obj: any) {
+    const annot = entity.getPropertyTypeAnnotation(key)
+    if (!annot) return
+
+    const val = (entity as any)[key]
+
+    // Key wasn't loaded and weren't updated by user - won't be saved
+    if (val === undefined) return
+
+    if (annot.type === PropertyType.Relation) {
+      // It's collection
+      if (annot.isArray) {
+        obj[`${key}@removeAll`] = true
+        obj[key] = []
+        if (val instanceof Array) {
+          for (const a of val) {
+            if (!(a instanceof AFEntity)) {
+              throw new AFError(AFErrorCode.UNKNOWN, `Collection '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) contain's non-AFEntity member ${a}`)
+            }
+            obj[key].push(this._encodeEntity(a as AFEntity))
+          }
+        }
+        return
+      }
+
+      // It's to 1 relation
+      if (!entity.hasChanged(key)) return
+      // If null set to ""
+      if (val === null ) obj[key] = ""
+      if (!(val instanceof AFEntity)) throw new AFError(AFErrorCode.UNKNOWN, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) referencing not AFEntity instance`)
+      // Check if related object has ID, if no - throw
+      if (val.isNew) throw new AFError(AFErrorCode.RELATED_INSTANCE_NOT_SAVED, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) referencing not saved (new) instance - missing 'id' in it`)
+      obj[key] = val.id
+      return
+    }
+
+    // It's scalar
+    if (!obj) return
+    obj[key] = serializePropertyValue(annot.type, annot, val)
   }
 }

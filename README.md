@@ -176,7 +176,8 @@ run()
 - [X] Načítání kolekcí a jednotlivých instancí z REST API
 - [X] Načítání užviatelských relací 
 - [X] Refersh již načtených dat
-- [ ] Pohodlná práce se štítky
+- [X] Pohodlná práce se štítky
+- [ ] Jednotný handling identifikátorů záznamů
 - [ ] Vytváření, mazání a změna záznamů v REST API
 - [ ] Lokální keš a společné instance pro jedno ID
 - [ ] Battle tested - reálné nasazení, úprava rozhraní dle reálného použití

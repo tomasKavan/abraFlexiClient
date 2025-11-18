@@ -34,7 +34,7 @@ export class AFStitkyCache {
     const skupOpts: AFQueryOptions = {
       limit: NO_LIMIT,
       detail: AFQueryDetail.FULL,
-      noUpdateStitkyCache: true, // IMPORTANT! Otherwise possible recurence cycle
+      noUpdateStitkyCache: true, // IMPORTANT! Otherwise possible recurrence cycle
     }
     if (this._lastUpdate) {
       skupOpts.filter = Filter(`lastUpdate > ':date'`, { date: this._lastUpdate })

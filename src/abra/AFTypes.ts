@@ -1,4 +1,3 @@
-import { AFError } from "./AFError"
 import { AFEntity } from "./AFEntity"
 import { AFFilter } from "./AFFilter"
 
@@ -32,6 +31,14 @@ export enum StitkyCacheStrategy {
   None,
   Lazy, // Default
   Eager
+}
+
+export enum UpdateStrategy {
+  Updated,
+  // TODO: Folowing will be added later
+  // Populated,
+  // All,
+  // Custom
 }
 
 export type AFApiFetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
@@ -100,4 +107,13 @@ export type AFURelMinimal = AFEntity & {
       kod?: string
     }
   }[]
+}
+
+export type AFSaveOptions = {
+  updateStrategy?: UpdateStrategy,
+  abortController?: AbortController
+}
+
+export type AFDeleteOptions = {
+  abortController?: AbortController
 }

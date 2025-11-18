@@ -1,5 +1,7 @@
 import { Big } from 'big.js'
 import { PropertyType, TypeAnnotation } from './AFTypes'
+import { AFEntity } from './AFEntity';
+import { AFError, AFErrorCode } from './AFError';
 
 type PropertyTypeMap = {
   [PropertyType.Integer]: number;
@@ -19,8 +21,9 @@ export function parsePropertyValue<T extends PropertyType>(
   propertyType: T,
   annot: TypeAnnotation,
   obj: any
-): ParsedType<T> | undefined {
+): ParsedType<T> | undefined | null {
   if (obj === null || obj === undefined) return undefined
+  if (!obj.length) return null
 
   switch (propertyType) {
     case PropertyType.Integer:
@@ -30,7 +33,7 @@ export function parsePropertyValue<T extends PropertyType>(
       return (annot?.maxLength ? obj.slice(0, annot.maxLength) : obj) as ParsedType<T>;
 
     case PropertyType.Select:
-      if (!annot?.enum) throw new Error(`Enum typeAnnotation is required for Select (property ${annot.key})`);
+      if (!annot?.enum) throw new AFError(AFErrorCode.ENUM_TYPE_MISSING, `Enum typeAnnotation is required for Select (property ${annot.key})`);
       return (annot.enum[obj] ?? obj) as ParsedType<T>;
 
     case PropertyType.DateTime:
@@ -51,7 +54,7 @@ export function parsePropertyValue<T extends PropertyType>(
       return Buffer.from(obj, "base64") as ParsedType<T>;
 
     case PropertyType.Array:
-      if (!annot?.itemType) throw new Error("itemType is required for Array");
+      if (!annot?.itemType) throw new AFError(AFErrorCode.ITEM_TYPE_MISSING, "itemType is required for Array");
       const myAnnot = { ...annot }
       myAnnot.type = annot.itemType
       return (Array.isArray(obj)
@@ -59,14 +62,88 @@ export function parsePropertyValue<T extends PropertyType>(
         : []) as ParsedType<T>;
 
     default:
-      throw new Error(`Unknown PropertyType: ${propertyType} of property ${annot.key}`);
+      throw new AFError(AFErrorCode.UNKNOWN_PROPERTY_TYPE, `Unknown PropertyType: ${propertyType} of property ${annot.key}`);
   }
 }
 
 export function serializePropertyValue<T extends PropertyType>(
   propertyType: T,
-  annotation: TypeAnnotation,
-  property: any
-): string {
-  throw new Error('TODO: serializePropertyValue not implemented yet')
+  annot: TypeAnnotation,
+  val: any
+): string | string[] {
+  if (val === undefined) throw new AFError(AFErrorCode.UNDEFINED_CANT_BE_SERIALIZED, '')
+  if (val === null) return ''
+
+  switch (propertyType) {
+    case PropertyType.Integer:
+    case PropertyType.String:
+      return val
+
+    case PropertyType.Select:
+      if (!annot?.enum) throw new AFError(AFErrorCode.ENUM_TYPE_MISSING, `Enum typeAnnotation is required for Select (property ${annot.key})`)
+      return val
+
+    case PropertyType.Date:
+      const dateStr = dateToLocalIso(val as Date)
+      return dateStr.split('T')[0]
+
+    case PropertyType.DateTime:
+      return dateToLocalIso(val as Date)
+
+    case PropertyType.Numeric:
+      if (val instanceof Big) return val.toString()
+      return val
+
+    case PropertyType.Logic:
+      return !!val ? "true" : "false"
+
+    case PropertyType.Blob:
+      return val.toString('base64')
+
+    case PropertyType.Array:
+      if (!annot?.itemType) throw new AFError(AFErrorCode.ITEM_TYPE_MISSING, "itemType is required for Array");
+      const myAnnot = { ...annot }
+      myAnnot.type = annot.itemType
+      return (Array.isArray(val)
+        ? val.map((item) => {
+            const p = serializePropertyValue(annot.itemType!, myAnnot, item)
+            if (p instanceof Array) return p[0]
+            return p
+          }) 
+        : [])
+
+    default:
+      throw new AFError(AFErrorCode.UNKNOWN_PROPERTY_TYPE, `Unknown PropertyType: ${propertyType} of property ${annot.key}`);
+  }
+}
+
+function dateToLocalIso(date: Date): string {
+  const pad = (n: number) => String(n).padStart(2, '0')
+
+  const yyyy = date.getFullYear()
+  const mm   = pad(date.getMonth() + 1)
+  const dd   = pad(date.getDate())
+
+  const hh   = pad(date.getHours())
+  const mi   = pad(date.getMinutes())
+  const ss   = pad(date.getSeconds())
+  const ms   = String(date.getMilliseconds()).padStart(3, '0')
+
+  // timezone offset
+  const offset = -date.getTimezoneOffset()
+  const sign = offset >= 0 ? '+' : '-'
+  const oh = pad(Math.floor(Math.abs(offset) / 60))
+  const om = pad(Math.abs(offset) % 60)
+
+  return `${yyyy}-${mm}-${dd}T${hh}:${mi}:${ss}.${ms}${sign}${oh}:${om}`
+}
+
+export function arraysEqual<T>(a: T[], b: T[]): boolean {
+  if (a === b) return true
+  if (a.length !== b.length) return false
+
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] !== b[i]) return false
+  }
+  return true
 }
