@@ -7,7 +7,8 @@ export interface Connection {
 }
 
 export enum TabType {
-  Agenda = 'agenda'
+  Agenda = 'agenda',
+  _Special = '_special',
 }
 
 export interface TabMeta {

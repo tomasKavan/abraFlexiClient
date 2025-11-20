@@ -3,6 +3,7 @@ import { useLocalStorage } from './useLocalStorage'
 import { useTabsIndex } from './useTabIndex'
 import { STORAGE_KEYS } from './keys'
 import type { Connection } from '../types/tabs'
+import { clearConnectionRT } from './runtime/useConnectionsRuntime'
 
 export function useConnection() {
   const connections = useLocalStorage<Connection[]>(STORAGE_KEYS.connections, [])
@@ -49,10 +50,13 @@ export function useConnection() {
     if (activeConnectionId.state.value === id) {
       activeConnectionId.state.value = connections.state.value[0]?.id ?? null
     }
+
+    // 4) Remove runtime data - just for safety
+    clearConnectionRT(id)
   }
 
   return {
-    connections,
+    list: connections.state,
     activeConnectionId,
     activeConnection,
     setActiveConnection,
