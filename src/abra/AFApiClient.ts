@@ -211,7 +211,7 @@ export class AFApiClient {
   ): Promise<InstanceType<T>[]> {
     const fetchBy: [string, string][] = []
     for (const en of entities) {
-      if (typeof en.id !== 'undefined') {
+      if (typeof en.id !== 'undefined' && en.id !== null) {
         fetchBy.push(['id', en.id.toString()]) 
         continue
       }

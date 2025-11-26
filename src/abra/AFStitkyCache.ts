@@ -72,7 +72,7 @@ export class AFStitkyCache {
   }
 
   public stitkyWithString(
-    keys?: string | string[], 
+    keys?: string | string[] | null, 
     groupFilter?: string | AFSkupinaStitku
   ): AFStitek[] | undefined {
     if (!keys) return undefined

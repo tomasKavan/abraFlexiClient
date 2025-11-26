@@ -13,9 +13,9 @@ export class AFEntity {
 
   private _stitkyCache: AFStitkyCache
 
-  id?: number
-  kod?: string
-  stitky?: string
+  id?: number | null
+  kod?: string | null
+  stitky?: string | null
 
   _orig: Record<string, any> = {}
 
