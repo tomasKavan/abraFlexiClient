@@ -6,6 +6,7 @@ import { AFMena } from './AFMena'
 import { AFAdresar } from './AFAdresar'
 import { AFStat } from './AFStat'
 import { AFRegion } from './AFRegion'
+import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb'
 import { AFPredpisZauctovani } from './AFPredpisZauctovani'
 import { AFUcet } from './AFUcet'
 import { AFStatDph } from './AFStatDph'
@@ -18,12 +19,11 @@ import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
 import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
 import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
 import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
-import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaPokladniPohyb } from './AFRadaPokladniPohyb'
+import { AFSazbaDph } from './AFSazbaDph'
 import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
 import { AFFormaUhrady } from './AFFormaUhrady'
-import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb'
 import { AFVazebniDoklad } from './AFVazebniDoklad'
 import { AFPokladniPohybPolozka } from './AFPokladniPohybPolozka'
 import { AFPriloha } from './AFPriloha'
@@ -41,229 +41,243 @@ export class AFPokladniPohyb extends AFEntity {
   static EntityType: string = 'POKLADNI_POHYB'
 
   // ID (db: IdDoklInt) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: idUziv) - Vytvořil)
+  createdBy?: any | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Interní číslo (db: Kod) - Interní číslo)
-  declare kod?: string
+  declare kod?: string | null
   // Zámek (db: ZamekK) - Zámek)
-  zamekK?: Zamek
+  zamekK?: Zamek | null
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
-  typPohybuK?: TypPohybu
+  typPohybuK?: TypPohybu | null
   // Číslo došlé (db: CisDosle) - Číslo došlé)
-  cisDosle?: string
+  cisDosle?: string | null
   // Variabilní symbol (db: VarSym) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Vystaveno (db: DatVyst) - Vystaveno)
-  datVyst?: Date
+  datVyst?: Date | null
   // Datum zdaň. plnění (db: DuzpPuv) - Datum zdaň. plnění)
-  duzpPuv?: Date
+  duzpPuv?: Date | null
   // Uplatnit zdaň. plnění (db: DuzpUcto) - Uplatnit zdaň. plnění)
-  duzpUcto?: Date
+  duzpUcto?: Date | null
   // Datum sazeb DPH (db: DatSazbyDph) - Datum sazeb DPH)
-  datSazbyDph?: Date
+  datSazbyDph?: Date | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Osvob., bez DPH [Kč] (db: SumOsv) - 0 %)
-  sumOsv?: Big
+  sumOsv?: Big | null
   // Základ DPH sníž. [Kč] (db: SumZklSniz) - Základ DPH sníž. [Kč])
-  sumZklSniz?: Big
+  sumZklSniz?: Big | null
   // Základ DPH 2. sníž. [Kč] (db: SumZklSniz2) - Základ DPH 2. sníž. [Kč])
-  sumZklSniz2?: Big
+  sumZklSniz2?: Big | null
   // Základ DPH zákl. [Kč] (db: SumZklZakl) - Základ DPH zákl. [Kč])
-  sumZklZakl?: Big
+  sumZklZakl?: Big | null
   // Základ celkem [Kč] (db: sumOsv + sumZklSniz + sumZklSniz2 + sumZklZakl) - Základ)
-  sumZklCelkem?: Big
+  sumZklCelkem?: Big | null
   // DPH snížená [Kč] (db: SumDphSniz) - DPH snížená)
-  sumDphSniz?: Big
+  sumDphSniz?: Big | null
   // DPH 2. snížená [Kč] (db: SumDphSniz2) - DPH 2. snížená)
-  sumDphSniz2?: Big
+  sumDphSniz2?: Big | null
   // DPH základní [Kč] (db: SumDphZakl) - DPH základní)
-  sumDphZakl?: Big
+  sumDphZakl?: Big | null
   // DPH celkem [Kč] (db: sumDphSniz + sumDphSniz2 + sumDphZakl) - DPH)
-  sumDphCelkem?: Big
+  sumDphCelkem?: Big | null
   // Celkem vč. DPH - sníž. [Kč] (db: sumZklSniz + sumDphSniz) - Celkem vč. DPH - sníž. [Kč])
-  sumCelkSniz?: Big
+  sumCelkSniz?: Big | null
   // Celkem vč. DPH - 2. sníž. [Kč] (db: sumZklSniz2 + sumDphSniz2) - Celkem vč. DPH - 2. sníž. [Kč])
-  sumCelkSniz2?: Big
+  sumCelkSniz2?: Big | null
   // Celkem vč. DPH - zákl. [Kč] (db: sumZklZakl + sumDphZakl) - Celkem vč. DPH - zákl. [Kč])
-  sumCelkZakl?: Big
+  sumCelkZakl?: Big | null
   // Celkem [Kč] (db: SumCelkem) - Celkem [Kč])
-  sumCelkem?: Big
+  sumCelkem?: Big | null
   // Osvob., bez DPH [měna] (db: SumOsvMen) - 0 %)
-  sumOsvMen?: Big
+  sumOsvMen?: Big | null
   // Základ DPH sníž. [měna] (db: SumZklSnizMen) - Základ DPH sníž. [měna])
-  sumZklSnizMen?: Big
+  sumZklSnizMen?: Big | null
   // Základ DPH 2. sníž. [měna] (db: SumZklSniz2Men) - Základ DPH 2. sníž. [měna])
-  sumZklSniz2Men?: Big
+  sumZklSniz2Men?: Big | null
   // Základ DPH zákl. [měna] (db: SumZklZaklMen) - Základ DPH zákl. [měna])
-  sumZklZaklMen?: Big
+  sumZklZaklMen?: Big | null
   // Základ celkem [měna] (db: sumOsvMen + sumZklSnizMen + sumZklSniz2Men + sumZklZaklMen) - Základ)
-  sumZklCelkemMen?: Big
+  sumZklCelkemMen?: Big | null
   // DPH základní [měna] (db: SumDphZaklMen) - DPH základní)
-  sumDphZaklMen?: Big
+  sumDphZaklMen?: Big | null
   // DPH snížená [měna] (db: SumDphSnizMen) - DPH snížená)
-  sumDphSnizMen?: Big
+  sumDphSnizMen?: Big | null
   // DPH 2. snížená [měna] (db: SumDphSniz2Men) - DPH 2. snížená)
-  sumDphSniz2Men?: Big
+  sumDphSniz2Men?: Big | null
   // DPH celkem [měna] (db: sumDphSnizMen + sumDphSniz2Men + sumDphZaklMen) - DPH)
-  sumDphCelkemMen?: Big
+  sumDphCelkemMen?: Big | null
   // Celkem vč. DPH - sníž. [měna] (db: sumZklSnizMen + sumDphSnizMen) - Celkem vč. DPH - sníž. [měna])
-  sumCelkSnizMen?: Big
+  sumCelkSnizMen?: Big | null
   // Celkem vč. DPH - 2. sníž. [měna] (db: sumZklSniz2Men + sumDphSniz2Men) - Celkem vč. DPH - 2. sníž. [měna])
-  sumCelkSniz2Men?: Big
+  sumCelkSniz2Men?: Big | null
   // Celkem vč. DPH - zákl. [měna] (db: sumZklZaklMen + sumDphZaklMen) - Celkem vč. DPH - zákl. [měna])
-  sumCelkZaklMen?: Big
+  sumCelkZaklMen?: Big | null
   // Celkem [měna] (db: SumCelkemMen) - Celkem [měna])
-  sumCelkemMen?: Big
+  sumCelkemMen?: Big | null
   // Náklady (db: SumNaklady) - Sumace nákladů)
-  sumNaklady?: Big
+  sumNaklady?: Big | null
   // Sleva [%] (db: SlevaDokl) - Sleva [%])
-  slevaDokl?: Big
+  slevaDokl?: Big | null
   // Kurz (db: Kurz) - Kurz)
-  kurz?: Big
+  kurz?: Big | null
   // Kurz. množství (db: KurzMnozstvi) - Kurz. množství)
-  kurzMnozstvi?: Big
+  kurzMnozstvi?: Big | null
   // Uživatelský stav (db: StavUzivK) - Uživatelský stav)
-  stavUzivK?: StavUziv
+  stavUzivK?: StavUziv | null
   // Název firmy nebo jméno osoby (db: NazFirmy) - Název firmy - jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // IČO (db: Ic) - IČO)
-  ic?: string
+  ic?: string | null
   // DIČ (db: Dic) - DIČ)
-  dic?: string
+  dic?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
-  // Bezpol. dokl. (db: BezPolozek) - bezpoložkový doklad)
-  bezPolozek?: boolean
+  pocetPriloh?: number | null
+  // Bezpoložkový doklad (db: BezPolozek) - bezpoložkový doklad)
+  bezPolozek?: boolean | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Snížená sazba DPH (db: SzbDphSniz) - Snížená)
-  szbDphSniz?: Big
+  szbDphSniz?: Big | null
   // 2. snížená sazba DPH (db: SzbDphSniz2) - 2. snížená)
-  szbDphSniz2?: Big
+  szbDphSniz2?: Big | null
   // Základní sazba DPH (db: SzbDphZakl) - Základní)
-  szbDphZakl?: Big
+  szbDphZakl?: Big | null
   // Místo plnění tuzemsko (db: UzpTuzemsko) - Místo plnění tuzemsko)
-  uzpTuzemsko?: boolean
+  uzpTuzemsko?: boolean | null
   // Zaúčtováno (db: Zuctovano) - Stav zaúčtování)
-  zuctovano?: boolean
-  // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
-  datUcto?: Date
+  zuctovano?: boolean | null
+  // Datum zaúčtování (db: DatUcto) - Datum zaúčtování)
+  datUcto?: Date | null
   // Vynechat ze salda (db: VyloucitSaldo) - Vynechat ze salda)
-  vyloucitSaldo?: boolean
+  vyloucitSaldo?: boolean | null
   // Storno (db: Storno) - Storno)
-  storno?: boolean
-  // Způsob zaokr. Celkem (db: ZaokrJakSumK) - Celkem (způsob))
-  zaokrJakSumK?: ZaokrJak
-  // Řád zaokr. Celkem (db: ZaokrNaSumK) - Celkem (řády))
-  zaokrNaSumK?: ZaokrNa
-  // Způsob zaokr. DPH (db: ZaokrJakDphK) - DPH (způsob))
-  zaokrJakDphK?: ZaokrJak
-  // Řád zaokr. DPH (db: ZaokrNaDphK) - DPH (řády))
-  zaokrNaDphK?: ZaokrNa
+  storno?: boolean | null
+  // Způsob zaokrouhlení - Celkem (db: ZaokrJakSumK) - Celkem (způsob))
+  zaokrJakSumK?: ZaokrJak | null
+  // Řád zaokrouhlení - Celkem (db: ZaokrNaSumK) - Celkem (řády))
+  zaokrNaSumK?: ZaokrNa | null
+  // Způsob zaokrouhlení - DPH (db: ZaokrJakDphK) - DPH (způsob))
+  zaokrJakDphK?: ZaokrJak | null
+  // Řád zaokrouhlení - DPH (db: ZaokrNaDphK) - DPH (řády))
+  zaokrNaDphK?: ZaokrNa | null
   // Metoda zaokrouhlení (db: MetodaZaokrDoklK) - Metoda zaokrouhlení)
-  metodaZaokrDoklK?: MetodaZaokr
+  metodaZaokrDoklK?: MetodaZaokr | null
   // Korekce DPH (db: VytvaretKorPol) - Korekce DPH)
-  vytvaretKorPol?: boolean
+  vytvaretKorPol?: boolean | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
-  typDokl?: AFTypPokladniPohyb
+  typDokl?: AFTypPokladniPohyb | null
   // Pokladna (db: IdBsp) - Pokladna)
-  pokladna?: AFPokladna
+  pokladna?: AFPokladna | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
-  // Předpis zaúčtování (db: IdTypUcOp) - Předpis zaúčtování)
-  typUcOp?: AFPredpisZauctovani
-  // Účet pokladny (db: IdPrimUcet) - Účet pokladny)
-  primUcet?: AFUcet
-  // Protiúčet (db: IdProtiUcet) - Protiúčet)
-  protiUcet?: AFUcet
-  // Účet DPH zákl. (db: IdDphZaklUcet) - DPH základní)
-  dphZaklUcet?: AFUcet
-  // Účet DPH sníž. (db: IdDphSnizUcet) - DPH snížená)
-  dphSnizUcet?: AFUcet
-  // Účet DPH 2. sníž. (db: IdDphSniz2Ucet) - DPH 2. snížená)
-  dphSniz2Ucet?: AFUcet
-  // Stát DPH (db: IdStatDph) - Stát DPH)
-  statDph?: AFStatDph
-  // Řádky DPH (db: IdClenDph) - Řádky DPH)
-  clenDph?: AFCleneniDph
-  // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
-  // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
-  // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
-  // Stát odesl. (db: IdStatOdesl) - Stát odesl.)
-  statOdesl?: AFStat
-  // Stát určení (db: IdStatUrc) - Stát určení)
-  statUrc?: AFStat
-  // Stát původu (db: IdStatPuvod) - Stát původu)
-  statPuvod?: AFStat
-  // Podmínky dodání (db: IdDodPodm) - Podmínky dodání)
-  dodPodm?: AFIntrastatDodaciPodminky
-  // Transakce (db: IdObchTrans) - Transakce)
-  obchTrans?: AFIntrastatObchodniTransakce
-  // Druh dopravy (db: IdDruhDopr) - Druh dopravy)
-  druhDopr?: AFIntrastatDruhDopravy
-  // Zvláštní pohyby (db: IdZvlPoh) - Zvláštní pohyby)
-  zvlPoh?: AFIntrastatZvlastniPohyb
-  // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
-  krajUrc?: AFIntrastatKrajUrceni
-  // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: AFUzivatel
-  // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: AFUzivatel
-  // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
-  kontaktOsoba?: AFKontakt
-  // Kontaktní jméno (db: KontaktJmeno) - Jméno)
-  kontaktJmeno?: string
-  // Kontaktní email (db: KontaktEmail) - Email)
-  kontaktEmail?: string
-  // Kontaktní telefon (db: KontaktTel) - Telefon)
-  kontaktTel?: string
-  // Čís. řada (db: IdRady) - Čís. řada)
-  rada?: AFRadaPokladniPohyb
-  // Uuid (db: Uuid) - Univerzální unikátní identifikátor)
-  uuid?: string
-  // Zdroj (db: Source) - Zdroj)
-  source?: string
-  // Výkaz EkoKom (db: EkokomK) - Výkaz EkoKom)
-  ekokomK?: Ekokom
-  // Řádek kontrolního hlášení DPH (db: IdClenKonVykDph) - Řádek kontrolního hlášení DPH)
-  clenKonVykDph?: AFCleneniKontrolniHlaseni
-  // Jak uhrazeno (db: JakUhrK) - Jak uhrazeno)
-  jakUhrK?: JakUhrazeno
-  // Spárováno (db: Sparovano) - Spárováno)
-  sparovano?: boolean
-  // Generovat sklad. doklady (db: GenerovatSkl) - Generovat sklad. doklady)
-  generovatSkl?: boolean
-  // Zdroj pro sklad. doklady (db: ZdrojProSkl) - Zdroj pro sklad. doklady)
-  zdrojProSkl?: boolean
-  // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
-  formaUhradyCis?: AFFormaUhrady
-  // Souhrnné číslo (db: CisSouhrnne) - Souhrnné číslo)
-  cisSouhrnne?: string
+  region?: AFRegion | null
   // Typ skladového dokladu (db: IdTypDoklSkl) - Typ skladového dokladu)
-  typDoklSkl?: AFTypSkladovyPohyb
+  typDoklSkl?: AFTypSkladovyPohyb | null
+  // Předpis zaúčtování (db: IdTypUcOp) - Předpis zaúčtování)
+  typUcOp?: AFPredpisZauctovani | null
+  // Účet pokladny (db: IdPrimUcet) - Účet pokladny)
+  primUcet?: AFUcet | null
+  // Protiúčet (db: IdProtiUcet) - Protiúčet)
+  protiUcet?: AFUcet | null
+  // Účet DPH základní sazba (db: IdDphZaklUcet) - DPH základní)
+  dphZaklUcet?: AFUcet | null
+  // Účet DPH snížená sazba (db: IdDphSnizUcet) - DPH snížená)
+  dphSnizUcet?: AFUcet | null
+  // Účet DPH 2. snížená sazba (db: IdDphSniz2Ucet) - DPH 2. snížená)
+  dphSniz2Ucet?: AFUcet | null
+  // Stát DPH (db: IdStatDph) - Stát DPH)
+  statDph?: AFStatDph | null
+  // Řádky DPH (db: IdClenDph) - Řádky DPH)
+  clenDph?: AFCleneniDph | null
+  // Středisko (db: IdStred) - Středisko)
+  stredisko?: AFStredisko | null
+  // Činnost (db: IdCinnost) - Činnost)
+  cinnost?: AFCinnost | null
+  // Zakázka (db: IdZakazky) - Zakázka)
+  zakazka?: AFZakazka | null
+  // Stát odesl. (db: IdStatOdesl) - Stát odesl.)
+  statOdesl?: AFStat | null
+  // Stát určení (db: IdStatUrc) - Stát určení)
+  statUrc?: AFStat | null
+  // Stát původu (db: IdStatPuvod) - Stát původu)
+  statPuvod?: AFStat | null
+  // Podmínky dodání (db: IdDodPodm) - Podmínky dodání)
+  dodPodm?: AFIntrastatDodaciPodminky | null
+  // Transakce (db: IdObchTrans) - Transakce)
+  obchTrans?: AFIntrastatObchodniTransakce | null
+  // Druh dopravy (db: IdDruhDopr) - Druh dopravy)
+  druhDopr?: AFIntrastatDruhDopravy | null
+  // Zvláštní pohyby (db: IdZvlPoh) - Zvláštní pohyby)
+  zvlPoh?: AFIntrastatZvlastniPohyb | null
+  // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
+  krajUrc?: AFIntrastatKrajUrceni | null
+  // Uživatel (db: IdUziv) - Uživatel)
+  uzivatel?: any | null
+  // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
+  zodpOsoba?: any | null
+  // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
+  kontaktOsoba?: AFKontakt | null
+  // Kontaktní jméno (db: KontaktJmeno) - Jméno)
+  kontaktJmeno?: string | null
+  // Kontaktní e-mail (db: KontaktEmail) - E-mail)
+  kontaktEmail?: string | null
+  // Kontaktní telefon (db: KontaktTel) - Telefon)
+  kontaktTel?: string | null
+  // Čís. řada (db: IdRady) - Čís. řada)
+  rada?: AFRadaPokladniPohyb | null
+  // Osvobozená sazba DPH (db: IdSazbyDphOsv) - Osvobozená sazba DPH)
+  sazbaDphOsv?: AFSazbaDph | null
+  // Snížená sazba DPH (db: IdSazbyDphSniz) - Snížená sazba DPH)
+  sazbaDphSniz?: AFSazbaDph | null
+  // 2. snížená sazba DPH (db: IdSazbyDphSniz2) - 2. snížená sazba DPH)
+  sazbaDphSniz2?: AFSazbaDph | null
+  // Základní sazba DPH (db: IdSazbyDphZakl) - Základní sazba DPH)
+  sazbaDphZakl?: AFSazbaDph | null
+  // Uuid (db: Uuid) - Univerzální unikátní identifikátor)
+  uuid?: string | null
+  // Zdroj (db: Source) - Zdroj)
+  source?: string | null
+  // Výkaz EkoKom (db: EkokomK) - Výkaz EkoKom)
+  ekokomK?: Ekokom | null
+  // Řádek kontrolního hlášení DPH (db: IdClenKonVykDph) - Řádek kontrolního hlášení DPH)
+  clenKonVykDph?: AFCleneniKontrolniHlaseni | null
+  // Jak uhrazeno (db: JakUhrK) - Jak uhrazeno)
+  jakUhrK?: JakUhrazeno | null
+  // Spárováno (db: Sparovano) - Spárováno)
+  sparovano?: boolean | null
+  // Generovat sklad. doklady (db: GenerovatSkl) - Generovat sklad. doklady)
+  generovatSkl?: boolean | null
+  // Zdroj pro sklad. doklady (db: ZdrojProSkl) - Zdroj pro sklad. doklady)
+  zdrojProSkl?: boolean | null
+  // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
+  formaUhradyCis?: AFFormaUhrady | null
+  // Souhrnné číslo (db: CisSouhrnne) - Souhrnné číslo)
+  cisSouhrnne?: string | null
 
   // Navázané doklady (type: VAZEBNI_DOKLAD) - vazebni-doklady)
   'vazebni-doklady'?: AFVazebniDoklad[]
@@ -296,6 +310,28 @@ export class AFPokladniPohyb extends AFEntity {
     },
     lastUpdate : {
       key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdDate : {
+      key: 'createdDate',
       type: PropertyType.DateTime,
       isArray: false,
       
@@ -813,6 +849,13 @@ export class AFPokladniPohyb extends AFEntity {
       afClass: 'AFRegion',
       
     },
+    typDoklSkl : {
+      key: 'typDoklSkl',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFTypSkladovyPohyb',
+      
+    },
     typUcOp : {
       key: 'typUcOp',
       type: PropertyType.Relation,
@@ -961,7 +1004,7 @@ export class AFPokladniPohyb extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -969,7 +1012,7 @@ export class AFPokladniPohyb extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -1006,6 +1049,34 @@ export class AFPokladniPohyb extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFRadaPokladniPohyb',
+      
+    },
+    sazbaDphOsv : {
+      key: 'sazbaDphOsv',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFSazbaDph',
+      
+    },
+    sazbaDphSniz : {
+      key: 'sazbaDphSniz',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFSazbaDph',
+      
+    },
+    sazbaDphSniz2 : {
+      key: 'sazbaDphSniz2',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFSazbaDph',
+      
+    },
+    sazbaDphZakl : {
+      key: 'sazbaDphZakl',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFSazbaDph',
       
     },
     uuid : {
@@ -1076,13 +1147,6 @@ export class AFPokladniPohyb extends AFEntity {
       type: PropertyType.String,
       isArray: false,
       maxLength: 30,
-      
-    },
-    typDoklSkl : {
-      key: 'typDoklSkl',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFTypSkladovyPohyb',
       
     },
 

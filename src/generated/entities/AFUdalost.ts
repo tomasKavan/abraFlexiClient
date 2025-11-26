@@ -2,12 +2,10 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFAdresar } from './AFAdresar'
 import { AFTypAktivity } from './AFTypAktivity'
-import { AFUzivatel } from './AFUzivatel'
 import { AFZakazka } from './AFZakazka'
 import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFCenik } from './AFCenik'
 import { AFKontakt } from './AFKontakt'
-import { AFReport } from './AFReport'
 import { AFSmlouva } from './AFSmlouva'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
 import { AFMajetek } from './AFMajetek'
@@ -24,72 +22,76 @@ export class AFUdalost extends AFEntity {
   static EntityType: string = 'ADR_UDALOST'
 
   // ID (db: IdUdalost) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Celodenní (db: Celodenni) - Celodenní)
-  celodenni?: boolean
+  celodenni?: boolean | null
   // Čas dokončení (db: Dokonceni) - Čas dokončení)
-  dokonceni?: Date
+  dokonceni?: Date | null
   // Předmět (db: Predmet) - Předmět)
-  predmet?: string
+  predmet?: string | null
   // Priorita (db: PrioritaK) - Priorita)
-  prioritaK?: Priorita
+  prioritaK?: Priorita | null
   // Stav události (db: StavUdalK) - Stav události)
-  stavUdalK?: StavUdal
+  stavUdalK?: StavUdal | null
   // Termín realizace (db: Termin) - Termín realizace)
-  termin?: Date
+  termin?: Date | null
   // Umístění (db: Umisteni) - Umístění)
-  umisteni?: string
+  umisteni?: string | null
   // Volno (db: Volno) - Volno)
-  volno?: boolean
+  volno?: boolean | null
   // Čas zahájení (db: Zahajeni) - Čas zahájení)
-  zahajeni?: Date
+  zahajeni?: Date | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Externí firma (db: IdFirmaExterni) - Externí firma)
-  firmaExterni?: AFAdresar
+  firmaExterni?: AFAdresar | null
   // Typ aktivity (db: IdTypAkt) - Typ aktivity)
-  typAkt?: AFTypAktivity
+  typAkt?: AFTypAktivity | null
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: AFUzivatel
+  zodpPrac?: any | null
   // Uživatel (db: IdUzivatelVytvoril) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
-  doklFak?: any
+  doklFak?: any | null
   // Interní doklad (db: IdDoklInt) - Interní doklad)
-  doklInt?: any
+  doklInt?: any | null
   // Obchodní doklad (db: IdDoklObch) - Obchodní doklad)
-  doklObch?: any
+  doklObch?: any | null
   // Příjemka/výdejka (db: IdDoklSklad) - Příjemka/výdejka)
-  doklSklad?: AFSkladovyPohyb
+  doklSklad?: AFSkladovyPohyb | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Kontakt (db: IdKontakt) - Kontakt)
-  kontakt?: AFKontakt
+  kontakt?: AFKontakt | null
   // Konektor (db: IdKonektor) - Konektor)
-  konektor?: any
+  konektor?: any | null
   // Report (db: IdReport) - Report)
-  report?: AFReport
+  report?: any | null
   // Smlouva (db: IdSmlouvy) - Smlouva)
-  smlouva?: AFSmlouva
+  smlouva?: AFSmlouva | null
   // Pol. smlouvy (db: IdPolSml) - Pol. smlouvy)
-  polSmlouvy?: AFSmlouvaPolozka
+  polSmlouvy?: AFSmlouvaPolozka | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
   // Majetek (db: IdMajetek) - Majetek)
-  majetek?: AFMajetek
+  majetek?: AFMajetek | null
+  // Vytvořil (db: idUzivatelVytvoril) - Vytvořil)
+  createdBy?: any | null
 
-  // Uživatelé (type: UZIVATELE) - osoby)
-  osoby?: AFUzivatel[]
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
@@ -200,6 +202,12 @@ export class AFUdalost extends AFEntity {
       isArray: false,
       
     },
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
@@ -227,7 +235,7 @@ export class AFUdalost extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -235,7 +243,7 @@ export class AFUdalost extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -301,7 +309,7 @@ export class AFUdalost extends AFEntity {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFReport',
+      afClass: 'AFEntity',
       
     },
     smlouva : {
@@ -320,6 +328,14 @@ export class AFUdalost extends AFEntity {
       maxLength: 64,
       
     },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
     majetek : {
       key: 'majetek',
       type: PropertyType.Relation,
@@ -328,13 +344,15 @@ export class AFUdalost extends AFEntity {
       maxLength: 20,
       
     },
-
-    osoby : {
-      key: 'osoby',
+    createdBy : {
+      key: 'createdBy',
       type: PropertyType.Relation,
-      isArray: true,
-      afClass: 'AFUzivatel'
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
     },
+
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,

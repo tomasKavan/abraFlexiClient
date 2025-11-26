@@ -13,253 +13,253 @@ export class AFVysledovkaPoUctech extends AFEntity {
   static EntityType: string = 'VYSLEDOVKA_PO_UCTECH'
 
   // Účet (db: ) - Účet)
-  ucet?: AFUcet
+  ucet?: AFUcet | null
   // Měna (db: ) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Účetní období (db: ) - Účetní období)
-  ucetniObdobi?: AFUcetniObdobi
+  ucetniObdobi?: AFUcetniObdobi | null
   // Název účtu (db: ) - Název účtu)
-  nazevUctu?: string
+  nazevUctu?: string | null
   // Počátek (db: ) - Počátek)
-  pocatek?: Big
+  pocatek?: Big | null
   // Počátek MD (db: ) - Počátek MD)
-  pocatekMD?: Big
+  pocatekMD?: Big | null
   // Počátek Dal (db: ) - Počátek Dal)
-  pocatekDal?: Big
+  pocatekDal?: Big | null
   // Zůstatek MD (db: ) - Zůstatek MD)
-  zustatekMD?: Big
+  zustatekMD?: Big | null
   // Zůstatek Dal (db: ) - Zůstatek Dal)
-  zustatekDal?: Big
+  zustatekDal?: Big | null
   // Obrat MD 01 (db: ) - Obrat MD 01)
-  obratMd01?: Big
+  obratMd01?: Big | null
   // Obrat DAL 01 (db: ) - Obrat DAL 01)
-  obratDal01?: Big
+  obratDal01?: Big | null
   // Stav MD 01 (db: ) - Stav MD 01)
-  stavMd01?: Big
+  stavMd01?: Big | null
   // Stav DAL 01 (db: ) - Stav DAL 01)
-  stavDal01?: Big
+  stavDal01?: Big | null
   // Stav 01 (db: ) - Stav 01)
-  stav01?: Big
+  stav01?: Big | null
   // Obrat MD 02 (db: ) - Obrat MD 02)
-  obratMd02?: Big
+  obratMd02?: Big | null
   // Obrat DAL 02 (db: ) - Obrat DAL 02)
-  obratDal02?: Big
+  obratDal02?: Big | null
   // Stav MD 02 (db: ) - Stav MD 02)
-  stavMd02?: Big
+  stavMd02?: Big | null
   // Stav DAL 02 (db: ) - Stav DAL 02)
-  stavDal02?: Big
+  stavDal02?: Big | null
   // Stav 02 (db: ) - Stav 02)
-  stav02?: Big
+  stav02?: Big | null
   // Obrat MD 03 (db: ) - Obrat MD 03)
-  obratMd03?: Big
+  obratMd03?: Big | null
   // Obrat DAL 03 (db: ) - Obrat DAL 03)
-  obratDal03?: Big
+  obratDal03?: Big | null
   // Stav MD 03 (db: ) - Stav MD 03)
-  stavMd03?: Big
+  stavMd03?: Big | null
   // Stav DAL 03 (db: ) - Stav DAL 03)
-  stavDal03?: Big
+  stavDal03?: Big | null
   // Stav 03 (db: ) - Stav 03)
-  stav03?: Big
+  stav03?: Big | null
   // Obrat MD 04 (db: ) - Obrat MD 04)
-  obratMd04?: Big
+  obratMd04?: Big | null
   // Obrat DAL 04 (db: ) - Obrat DAL 04)
-  obratDal04?: Big
+  obratDal04?: Big | null
   // Stav MD 04 (db: ) - Stav MD 04)
-  stavMd04?: Big
+  stavMd04?: Big | null
   // Stav DAL 04 (db: ) - Stav DAL 04)
-  stavDal04?: Big
+  stavDal04?: Big | null
   // Stav 04 (db: ) - Stav 04)
-  stav04?: Big
+  stav04?: Big | null
   // Obrat MD 05 (db: ) - Obrat MD 05)
-  obratMd05?: Big
+  obratMd05?: Big | null
   // Obrat DAL 05 (db: ) - Obrat DAL 05)
-  obratDal05?: Big
+  obratDal05?: Big | null
   // Stav MD 05 (db: ) - Stav MD 05)
-  stavMd05?: Big
+  stavMd05?: Big | null
   // Stav DAL 05 (db: ) - Stav DAL 05)
-  stavDal05?: Big
+  stavDal05?: Big | null
   // Stav 05 (db: ) - Stav 05)
-  stav05?: Big
+  stav05?: Big | null
   // Obrat MD 06 (db: ) - Obrat MD 06)
-  obratMd06?: Big
+  obratMd06?: Big | null
   // Obrat DAL 06 (db: ) - Obrat DAL 06)
-  obratDal06?: Big
+  obratDal06?: Big | null
   // Stav MD 06 (db: ) - Stav MD 06)
-  stavMd06?: Big
+  stavMd06?: Big | null
   // Stav DAL 06 (db: ) - Stav DAL 06)
-  stavDal06?: Big
+  stavDal06?: Big | null
   // Stav 06 (db: ) - Stav 06)
-  stav06?: Big
+  stav06?: Big | null
   // Obrat MD 07 (db: ) - Obrat MD 07)
-  obratMd07?: Big
+  obratMd07?: Big | null
   // Obrat DAL 07 (db: ) - Obrat DAL 07)
-  obratDal07?: Big
+  obratDal07?: Big | null
   // Stav MD 07 (db: ) - Stav MD 07)
-  stavMd07?: Big
+  stavMd07?: Big | null
   // Stav DAL 07 (db: ) - Stav DAL 07)
-  stavDal07?: Big
+  stavDal07?: Big | null
   // Stav 07 (db: ) - Stav 07)
-  stav07?: Big
+  stav07?: Big | null
   // Obrat MD 08 (db: ) - Obrat MD 08)
-  obratMd08?: Big
+  obratMd08?: Big | null
   // Obrat DAL 08 (db: ) - Obrat DAL 08)
-  obratDal08?: Big
+  obratDal08?: Big | null
   // Stav MD 08 (db: ) - Stav MD 08)
-  stavMd08?: Big
+  stavMd08?: Big | null
   // Stav DAL 08 (db: ) - Stav DAL 08)
-  stavDal08?: Big
+  stavDal08?: Big | null
   // Stav 08 (db: ) - Stav 08)
-  stav08?: Big
+  stav08?: Big | null
   // Obrat MD 09 (db: ) - Obrat MD 09)
-  obratMd09?: Big
+  obratMd09?: Big | null
   // Obrat DAL 09 (db: ) - Obrat DAL 09)
-  obratDal09?: Big
+  obratDal09?: Big | null
   // Stav MD 09 (db: ) - Stav MD 09)
-  stavMd09?: Big
+  stavMd09?: Big | null
   // Stav DAL 09 (db: ) - Stav DAL 09)
-  stavDal09?: Big
+  stavDal09?: Big | null
   // Stav 09 (db: ) - Stav 09)
-  stav09?: Big
+  stav09?: Big | null
   // Obrat MD 10 (db: ) - Obrat MD 10)
-  obratMd10?: Big
+  obratMd10?: Big | null
   // Obrat DAL 10 (db: ) - Obrat DAL 10)
-  obratDal10?: Big
+  obratDal10?: Big | null
   // Stav MD 10 (db: ) - Stav MD 10)
-  stavMd10?: Big
+  stavMd10?: Big | null
   // Stav DAL 10 (db: ) - Stav DAL 10)
-  stavDal10?: Big
+  stavDal10?: Big | null
   // Stav 10 (db: ) - Stav 10)
-  stav10?: Big
+  stav10?: Big | null
   // Obrat MD 11 (db: ) - Obrat MD 11)
-  obratMd11?: Big
+  obratMd11?: Big | null
   // Obrat DAL 11 (db: ) - Obrat DAL 11)
-  obratDal11?: Big
+  obratDal11?: Big | null
   // Stav MD 11 (db: ) - Stav MD 11)
-  stavMd11?: Big
+  stavMd11?: Big | null
   // Stav DAL 11 (db: ) - Stav DAL 11)
-  stavDal11?: Big
+  stavDal11?: Big | null
   // Stav 11 (db: ) - Stav 11)
-  stav11?: Big
+  stav11?: Big | null
   // Obrat MD 12 (db: ) - Obrat MD 12)
-  obratMd12?: Big
+  obratMd12?: Big | null
   // Obrat DAL 12 (db: ) - Obrat DAL 12)
-  obratDal12?: Big
+  obratDal12?: Big | null
   // Stav MD 12 (db: ) - Stav MD 12)
-  stavMd12?: Big
+  stavMd12?: Big | null
   // Stav DAL 12 (db: ) - Stav DAL 12)
-  stavDal12?: Big
+  stavDal12?: Big | null
   // Stav 12 (db: ) - Stav 12)
-  stav12?: Big
+  stav12?: Big | null
   // Obrat MD 13 (db: ) - Obrat MD 13)
-  obratMd13?: Big
+  obratMd13?: Big | null
   // Obrat DAL 13 (db: ) - Obrat DAL 13)
-  obratDal13?: Big
+  obratDal13?: Big | null
   // Stav MD 13 (db: ) - Stav MD 13)
-  stavMd13?: Big
+  stavMd13?: Big | null
   // Stav DAL 13 (db: ) - Stav DAL 13)
-  stavDal13?: Big
+  stavDal13?: Big | null
   // Stav 13 (db: ) - Stav 13)
-  stav13?: Big
+  stav13?: Big | null
   // Obrat MD 14 (db: ) - Obrat MD 14)
-  obratMd14?: Big
+  obratMd14?: Big | null
   // Obrat DAL 14 (db: ) - Obrat DAL 14)
-  obratDal14?: Big
+  obratDal14?: Big | null
   // Stav MD 14 (db: ) - Stav MD 14)
-  stavMd14?: Big
+  stavMd14?: Big | null
   // Stav DAL 14 (db: ) - Stav DAL 14)
-  stavDal14?: Big
+  stavDal14?: Big | null
   // Stav 14 (db: ) - Stav 14)
-  stav14?: Big
+  stav14?: Big | null
   // Obrat MD 15 (db: ) - Obrat MD 15)
-  obratMd15?: Big
+  obratMd15?: Big | null
   // Obrat DAL 15 (db: ) - Obrat DAL 15)
-  obratDal15?: Big
+  obratDal15?: Big | null
   // Stav MD 15 (db: ) - Stav MD 15)
-  stavMd15?: Big
+  stavMd15?: Big | null
   // Stav DAL 15 (db: ) - Stav DAL 15)
-  stavDal15?: Big
+  stavDal15?: Big | null
   // Stav 15 (db: ) - Stav 15)
-  stav15?: Big
+  stav15?: Big | null
   // Obrat MD 16 (db: ) - Obrat MD 16)
-  obratMd16?: Big
+  obratMd16?: Big | null
   // Obrat DAL 16 (db: ) - Obrat DAL 16)
-  obratDal16?: Big
+  obratDal16?: Big | null
   // Stav MD 16 (db: ) - Stav MD 16)
-  stavMd16?: Big
+  stavMd16?: Big | null
   // Stav DAL 16 (db: ) - Stav DAL 16)
-  stavDal16?: Big
+  stavDal16?: Big | null
   // Stav 16 (db: ) - Stav 16)
-  stav16?: Big
+  stav16?: Big | null
   // Obrat MD 17 (db: ) - Obrat MD 17)
-  obratMd17?: Big
+  obratMd17?: Big | null
   // Obrat DAL 17 (db: ) - Obrat DAL 17)
-  obratDal17?: Big
+  obratDal17?: Big | null
   // Stav MD 17 (db: ) - Stav MD 17)
-  stavMd17?: Big
+  stavMd17?: Big | null
   // Stav DAL 17 (db: ) - Stav DAL 17)
-  stavDal17?: Big
+  stavDal17?: Big | null
   // Stav 17 (db: ) - Stav 17)
-  stav17?: Big
+  stav17?: Big | null
   // Obrat MD 18 (db: ) - Obrat MD 18)
-  obratMd18?: Big
+  obratMd18?: Big | null
   // Obrat DAL 18 (db: ) - Obrat DAL 18)
-  obratDal18?: Big
+  obratDal18?: Big | null
   // Stav MD 18 (db: ) - Stav MD 18)
-  stavMd18?: Big
+  stavMd18?: Big | null
   // Stav DAL 18 (db: ) - Stav DAL 18)
-  stavDal18?: Big
+  stavDal18?: Big | null
   // Stav 18 (db: ) - Stav 18)
-  stav18?: Big
+  stav18?: Big | null
   // Obrat MD 19 (db: ) - Obrat MD 19)
-  obratMd19?: Big
+  obratMd19?: Big | null
   // Obrat DAL 19 (db: ) - Obrat DAL 19)
-  obratDal19?: Big
+  obratDal19?: Big | null
   // Stav MD 19 (db: ) - Stav MD 19)
-  stavMd19?: Big
+  stavMd19?: Big | null
   // Stav DAL 19 (db: ) - Stav DAL 19)
-  stavDal19?: Big
+  stavDal19?: Big | null
   // Stav 19 (db: ) - Stav 19)
-  stav19?: Big
+  stav19?: Big | null
   // Obrat MD 20 (db: ) - Obrat MD 20)
-  obratMd20?: Big
+  obratMd20?: Big | null
   // Obrat DAL 20 (db: ) - Obrat DAL 20)
-  obratDal20?: Big
+  obratDal20?: Big | null
   // Stav MD 20 (db: ) - Stav MD 20)
-  stavMd20?: Big
+  stavMd20?: Big | null
   // Stav DAL 20 (db: ) - Stav DAL 20)
-  stavDal20?: Big
+  stavDal20?: Big | null
   // Stav 20 (db: ) - Stav 20)
-  stav20?: Big
+  stav20?: Big | null
   // Obrat MD 21 (db: ) - Obrat MD 21)
-  obratMd21?: Big
+  obratMd21?: Big | null
   // Obrat DAL 21 (db: ) - Obrat DAL 21)
-  obratDal21?: Big
+  obratDal21?: Big | null
   // Stav MD 21 (db: ) - Stav MD 21)
-  stavMd21?: Big
+  stavMd21?: Big | null
   // Stav DAL 21 (db: ) - Stav DAL 21)
-  stavDal21?: Big
+  stavDal21?: Big | null
   // Stav 21 (db: ) - Stav 21)
-  stav21?: Big
+  stav21?: Big | null
   // Obrat MD 22 (db: ) - Obrat MD 22)
-  obratMd22?: Big
+  obratMd22?: Big | null
   // Obrat DAL 22 (db: ) - Obrat DAL 22)
-  obratDal22?: Big
+  obratDal22?: Big | null
   // Stav MD 22 (db: ) - Stav MD 22)
-  stavMd22?: Big
+  stavMd22?: Big | null
   // Stav DAL 22 (db: ) - Stav DAL 22)
-  stavDal22?: Big
+  stavDal22?: Big | null
   // Stav 22 (db: ) - Stav 22)
-  stav22?: Big
+  stav22?: Big | null
   // Obrat MD 23 (db: ) - Obrat MD 23)
-  obratMd23?: Big
+  obratMd23?: Big | null
   // Obrat DAL 23 (db: ) - Obrat DAL 23)
-  obratDal23?: Big
+  obratDal23?: Big | null
   // Stav MD 23 (db: ) - Stav MD 23)
-  stavMd23?: Big
+  stavMd23?: Big | null
   // Stav DAL 23 (db: ) - Stav DAL 23)
-  stavDal23?: Big
+  stavDal23?: Big | null
   // Stav 23 (db: ) - Stav 23)
-  stav23?: Big
+  stav23?: Big | null
 
 
 

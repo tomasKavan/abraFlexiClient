@@ -1,6 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -12,29 +11,29 @@ export class AFFiltr extends AFEntity {
   static EntityType: string = 'FILTR'
 
   // ID (db: IdFiltru) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Formulář (db: BeanKey) - Formulář)
-  beanKey?: string
+  beanKey?: string | null
   // Obsah filtru (db: ObsahFiltru) - Obsah filtru)
-  obsahFiltru?: string
+  obsahFiltru?: string | null
   // Privátní (db: Privatni) - Privátní)
-  privatni?: boolean
+  privatni?: boolean | null
   // Návrhář (db: Navrhar) - Návrhář)
-  navrhar?: boolean
+  navrhar?: boolean | null
   // Uložit nastavení sloupců (db: SaveColumns) - Uložit nastavení sloupců)
-  saveColumns?: boolean
+  saveColumns?: boolean | null
   // Poslední použití (db: LastUsage) - Poslední použití)
-  lastUsage?: Date
+  lastUsage?: Date | null
   // Počet použití (db: UsageCnt) - Počet použití)
-  usageCnt?: number
+  usageCnt?: number | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -115,7 +114,7 @@ export class AFFiltr extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

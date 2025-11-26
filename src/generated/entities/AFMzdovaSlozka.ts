@@ -18,93 +18,93 @@ export class AFMzdovaSlozka extends AFEntity {
   static EntityType: string = 'MZDOVA_SLOZKA'
 
   // ID (db: IdMzdSloz) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Typ složky (db: TypSlozkyK) - Typ složky)
-  typSlozkyK?: TypSlozky
+  typSlozkyK?: TypSlozky | null
   // Skupina složky (db: SkupSlozkyK) - Skupina složky)
-  skupSlozkyK?: SkupinaSlozky
+  skupSlozkyK?: SkupinaSlozky | null
   // Rok (db: Rok) - Rok)
-  rok?: number
+  rok?: number | null
   // Měsíc (db: Mesic) - Měsíc)
-  mesic?: number
+  mesic?: number | null
   // Počáteční datum (db: DatumOd) - Počáteční datum)
-  datumOd?: Date
+  datumOd?: Date | null
   // Koncové datum (db: DatumDo) - Koncové datum)
-  datumDo?: Date
+  datumDo?: Date | null
   // Dny pracovní (db: DnyPrac) - Dny pracovní)
-  dnyPrac?: Big
+  dnyPrac?: Big | null
   // Dny kalendářní (db: DnyKal) - Dny kalendářní)
-  dnyKal?: Big
+  dnyKal?: Big | null
   // Dny kalendářní skutečné (db: DnyKalReal) - Dny kalendářní skutečné)
-  dnyKalReal?: Big
+  dnyKalReal?: Big | null
   // Dny ve svátek (db: DnySvatek) - Dny ve svátek)
-  dnySvatek?: Big
+  dnySvatek?: Big | null
   // Hodiny (db: Hodiny) - Hodiny)
-  hodiny?: Big
+  hodiny?: Big | null
   // Hodiny svátek (db: HodinySvatek) - Hodiny svátek)
-  hodinySvatek?: Big
+  hodinySvatek?: Big | null
   // Částka za hodinu (db: CastkaHod) - Částka za hodinu)
-  castkaHod?: Big
+  castkaHod?: Big | null
   // Částka za den (db: CastkaDen) - Částka za den)
-  castkaDen?: Big
+  castkaDen?: Big | null
   // Procento / konstanta (db: ProcMzd) - Procento / konstanta)
-  procMzd?: Big
+  procMzd?: Big | null
   // Základ (db: ZaklMzd) - Základ)
-  zaklMzd?: Big
+  zaklMzd?: Big | null
   // Základ je krácen úvazkem (db: ZaklJeKracen) - Základ je krácen úvazkem)
-  zaklJeKracen?: boolean
+  zaklJeKracen?: boolean | null
   // Částka (db: CastMzd) - Částka)
-  castMzd?: Big
+  castMzd?: Big | null
   // Uživatelská změna částky (db: ZmenaCastMzd) - Uživatelská změna částky)
-  zmenaCastMzd?: boolean
+  zmenaCastMzd?: boolean | null
   // Uživatelská změna času (db: ZmenaCasu) - Uživatelská změna času)
-  zmenaCasu?: boolean
+  zmenaCasu?: boolean | null
   // Odměna / prémie je za [měsíce] (db: PocetMes) - Odměna / prémie je za [měsíce])
-  pocetMes?: number
+  pocetMes?: number | null
   // Číslo dokladu (pro nemoc) (db: CisDoklNem) - Číslo dokladu (pro nemoc))
-  cisDoklNem?: number
+  cisDoklNem?: number | null
   // Denní průměr (db: PrumNaDenNem) - Denní průměr)
-  prumNaDenNem?: Big
+  prumNaDenNem?: Big | null
   // Hodinový průměr (db: PrumNaHodNem) - Hodinový průměr)
-  prumNaHodNem?: Big
+  prumNaHodNem?: Big | null
   // Doplatek do zdravotního pojištění (db: DoplatZdravK) - Doplatek do zdravotního pojištění)
-  doplatZdravK?: any
+  doplatZdravK?: any | null
   // Pracovní (db: Pracovni) - Pracovní)
-  pracovni?: boolean
+  pracovni?: boolean | null
   // Datum dodání dokladu (db: DatumDoklad) - Datum dodání dokladu)
-  datumDoklad?: Date
+  datumDoklad?: Date | null
   // Rok platby (db: RokPlatba) - Rok platby)
-  rokPlatba?: number
+  rokPlatba?: number | null
   // Měsíc platby (db: MesicPlatba) - Měsíc platby)
-  mesicPlatba?: number
+  mesicPlatba?: number | null
   // Částka přesně (db: DoubleX) - Částka přesně)
-  doubleX?: Big
+  doubleX?: Big | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Pracovní poměr (db: IdPracPom) - Pracovní poměr)
-  pracPom?: AFPracovniPomerHlavicka
+  pracPom?: AFPracovniPomerHlavicka | null
   // Mzdová složka (db: IdCisMzdSloz) - Mzdová složka)
-  cisMzdSloz?: AFCiselnikMzdovychSlozek
+  cisMzdSloz?: AFCiselnikMzdovychSlozek | null
   // Zakázka (db: IdZakazka) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Stálá mzdová složka (db: IdStalaMzdSloz) - Stálá mzdová složka)
-  stalaMzdSloz?: AFStalaMzdovaSlozka
+  stalaMzdSloz?: AFStalaMzdovaSlozka | null
   // Srážka (db: IdSrazka) - Srážka)
-  srazka?: AFSrazka
+  srazka?: AFSrazka | null
   // Nepřítomnost (db: IdNepritomnost) - Nepřítomnost)
-  nepritomnost?: AFNepritomnost
+  nepritomnost?: AFNepritomnost | null
   // Odměna (db: IdOdmena) - Odměna)
-  odmena?: AFMzdovaSlozka
+  odmena?: AFMzdovaSlozka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

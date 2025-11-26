@@ -16,183 +16,183 @@ export class AFMzda extends AFEntity {
   static EntityType: string = 'MZDA'
 
   // ID (db: ) - ID)
-  idAktualMzdy?: number
+  idAktualMzdy?: number | null
   // Rok (db: ) - Rok)
-  rok?: number
+  rok?: number | null
   // Měsíc (db: ) - Měsíc)
-  mesic?: number
+  mesic?: number | null
   // Vypočteno (db: ) - Datum výpočtu)
-  datumVypocet?: Date
+  datumVypocet?: Date | null
   // Datum (db: ) - Datum)
-  datum?: Date
+  datum?: Date | null
   // Osob.č. (db: ) - Osobní číslo)
-  osbCis?: string
+  osbCis?: string | null
   // Příjmení a jméno (db: ) - Příjmení a jméno)
-  jmeno?: string
+  jmeno?: string | null
   // Hlavička osoby (db: ) - Hlavička osoby)
-  osobaHlav?: AFOsobaHlavicka
+  osobaHlav?: AFOsobaHlavicka | null
   // Osoba (db: ) - Osoba)
-  osoba?: AFOsoba
+  osoba?: AFOsoba | null
   // Skupina (db: ) - Skupina osob)
-  skupOsob?: AFSkupinaOsob
+  skupOsob?: AFSkupinaOsob | null
   // Středisko (db: ) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zdr.pojiš. (db: ) - Zdravotní pojišťovna)
-  zdravPoj?: AFAdresar
+  zdravPoj?: AFAdresar | null
   // Pracovní poměr (db: ) - Pracovní poměr)
-  pracPom?: AFPracovniPomer
+  pracPom?: AFPracovniPomer | null
   // Fond (db: ) - Fond pracovní doby)
-  dobaFond?: Big
+  dobaFond?: Big | null
   // Neodp.doba (db: ) - Neodpracovaná doba celkem)
-  dobaNeodpr?: Big
+  dobaNeodpr?: Big | null
   // Odprac.doba (db: ) - Odpracovaná doba celkem)
-  dobaOdpr?: Big
+  dobaOdpr?: Big | null
   // Odprac.dny (db: ) - Odpracované dny celkem)
-  dobaOdprDny?: Big
+  dobaOdprDny?: Big | null
   // Nemoc (db: ) - Nemoc)
-  nemoc?: Big
+  nemoc?: Big | null
   // Dovolená (db: ) - Dovolená)
-  dobaDovol?: Big
+  dobaDovol?: Big | null
   // Dovolená částka (db: ) - Dovolená částka)
-  dobaDovolCastka?: Big
+  dobaDovolCastka?: Big | null
   // Čerp. dov. od poč. roku (db: ) - Čerpaná dovolená od počátku roku - celkem)
-  dovolVybrano?: Big
+  dovolVybrano?: Big | null
   // Zbývá dov. (db: ) - Zbývá dovolené v roce)
-  dovolZbyva?: Big
+  dovolZbyva?: Big | null
   // Zbývá dov. po krácení (db: ) - Zbývá dovolené v roce po krácení)
-  dovolZbyvaPoKraceni?: Big
+  dovolZbyvaPoKraceni?: Big | null
   // Volno placené (db: ) - Volno placené)
-  dobaVolnoPlac?: Big
+  dobaVolnoPlac?: Big | null
   // Volno placené částka (db: ) - Volno placené částka)
-  dobaVolnoPlacCastka?: Big
+  dobaVolnoPlacCastka?: Big | null
   // Nepřít. (db: ) - Neodpracovaná doba - nepřítomnost)
-  nepritCelk?: Big
+  nepritCelk?: Big | null
   // Přesčas hod. (db: ) - Přesčas hod.)
-  prescasHodiny?: Big
+  prescasHodiny?: Big | null
   // Svátek hod. (db: ) - Odpracováno - svátek - hodiny)
-  svatekHodiny?: Big
+  svatekHodiny?: Big | null
   // Weekend hod. (db: ) - Odpracováno - weekend - hodiny)
-  weekendHodiny?: Big
+  weekendHodiny?: Big | null
   // Měs.mzda (db: ) - Měsíční mzda (plat))
-  mzdaMesicni?: Big
+  mzdaMesicni?: Big | null
   // Svátek Kč (db: ) - Odpracováno - svátek - částka)
-  svatekCastka?: Big
-  // Weekend Kč (db: ) - Odpracováno - weekend - částka)
-  weekendCastka?: Big
+  svatekCastka?: Big | null
+  // Víkend Kč (db: ) - Odpracováno - weekend - částka)
+  weekendCastka?: Big | null
   // Přesčas Kč (db: ) - Přesčas - částka)
-  prescasCastka?: Big
+  prescasCastka?: Big | null
   // Přípl.přesčas (db: ) - Příplatek za práci přesčas)
-  prescasPripl?: Big
+  prescasPripl?: Big | null
   // Přípl.noc (db: ) - Příplatek za noční práci)
-  nocniPripl?: Big
+  nocniPripl?: Big | null
   // Náhr.svátek (db: ) - Náhráda za svátek)
-  svatekNahrada?: Big
+  svatekNahrada?: Big | null
   // Hod.náhr.svátek (db: ) - Náhráda za svátek - hodiny)
-  svatekNahradaHodiny?: Big
+  svatekNahradaHodiny?: Big | null
   // Prémie % (db: ) - Prémie % ze základní mzdy)
-  premieProc?: Big
+  premieProc?: Big | null
   // Prémi pev. (db: ) - Prémie pevnou částkou)
-  premiePevna?: Big
+  premiePevna?: Big | null
   // Prémie % ukaz. (db: ) - Prémie % z ukazatele / základu)
-  premieProcUkaz?: Big
+  premieProcUkaz?: Big | null
   // Podíl (db: ) - Podíl na zisku)
-  podilNaZisku?: Big
+  podilNaZisku?: Big | null
   // PPP (db: ) - Pracovněprávní hodinový průměr)
-  pracPracPrum?: Big
+  pracPracPrum?: Big | null
   // Nepeněžní (db: ) - Nepeněžní příjmy)
-  nepenezPrijmy?: Big
+  nepenezPrijmy?: Big | null
   // Běžné náhrady (db: ) - Běžné náhrady)
-  bezneNahrady?: Big
+  bezneNahrady?: Big | null
   // Odměny (db: ) - Odměny)
-  odmeny?: Big
+  odmeny?: Big | null
   // Základ pro průměrný výdělek (db: ) - Základ pro průměrný výdělek)
-  hrubaPrumer?: Big
+  hrubaPrumer?: Big | null
   // Čistá mzda (db: ) - Čistá mzda)
-  cistaMzda?: Big
+  cistaMzda?: Big | null
   // Hrubá m. (db: ) - Hrubá mzda)
-  hrubaMzda?: Big
+  hrubaMzda?: Big | null
   // SHM (db: ) - Superhrubá mzda)
-  superhrubaMzda?: Big
+  superhrubaMzda?: Big | null
   // Náhrady (db: ) - Náhrada mzdy)
-  mzdaNahrada?: Big
+  mzdaNahrada?: Big | null
   // Přisp. izolačka (db: ) - Příspěvek ke karanténě (izolačka))
-  prispIzolacka?: Big
+  prispIzolacka?: Big | null
   // Sleva SP firma (db: ) - Sleva SP firma (krácené úvazky))
-  slevaSpFirma?: Big
+  slevaSpFirma?: Big | null
   // Daň (db: ) - Daň)
-  dan?: Big
+  dan?: Big | null
   // Bonus (db: ) - Daňový bonus)
-  danBonus?: Big
+  danBonus?: Big | null
   // Sleva popl. (db: ) - Sleva - poplatníka)
-  danSlevPrac?: Big
+  danSlevPrac?: Big | null
   // Sleva celk. (db: ) - Sleva na dani celkem)
-  danSlevSum?: Big
+  danSlevSum?: Big | null
   // Základ pro sráž. daň (db: ) - Základ pro sráž. daň)
-  danZaklSraz?: Big
+  danZaklSraz?: Big | null
   // Zákl.sráž.daně (db: ) - Základ pro sráž. daň celkem)
-  danZaklSrazSum?: Big
+  danZaklSrazSum?: Big | null
   // Zákl.daně (db: ) - Základ pro výpočet daně)
-  danZaklSum?: Big
+  danZaklSum?: Big | null
   // Záloha (db: ) - Záloha na daň)
-  danZaloha?: Big
+  danZaloha?: Big | null
   // Srá.daň. (db: ) - Srážková daň)
-  danSrazka?: Big
+  danSrazka?: Big | null
   // Daň rezident (db: ) - Daň rezident)
-  danRezident?: Big
+  danRezident?: Big | null
   // Vypočtená daň (db: ) - Vypočtená daň)
-  danVypocet?: Big
+  danVypocet?: Big | null
   // Sleva děti (db: ) - Sleva děti)
-  slevaDeti?: Big
+  slevaDeti?: Big | null
   // Soc.poj. (db: ) - Sociální poj. celkem)
-  socPojCelk?: Big
+  socPojCelk?: Big | null
   // Soc.poj.sníž. (db: ) - Sociální poj. celkem snížené)
-  socPojCelkSniz?: Big
+  socPojCelkSniz?: Big | null
   // Soc.poj.zákl. (db: ) - Sociální poj. základ)
-  socPojZakl?: Big
+  socPojZakl?: Big | null
   // Soc.poj.zákl.sníž. (db: ) - Soc. poj. základ - snížený)
-  socPojZaklSniz?: Big
+  socPojZaklSniz?: Big | null
   // Soc.poj.firma (db: ) - Sociální poj. firma)
-  socPojFirma?: Big
+  socPojFirma?: Big | null
   // Soc.poj.firma sníž. (db: ) - Sociální poj. firma snížené)
-  socPojFirmaSniz?: Big
+  socPojFirmaSniz?: Big | null
   // Soc.poj.firma sníž.zap. (db: ) - Sociální poj. firma snížené zapnuto)
-  socPojFirmaSnizZap?: Big
+  socPojFirmaSnizZap?: Big | null
   // Soc.poj.prac. (db: ) - Sociální poj. pracovník)
-  socPojPrac?: Big
+  socPojPrac?: Big | null
   // Soc.poj.zákl.DP (db: ) - Soc. poj. základ DP)
-  socPojZaklDp?: Big
+  socPojZaklDp?: Big | null
   // Soc.poj.DP (db: ) - Soc. poj. celkem DP)
-  socPojCelkDp?: Big
+  socPojCelkDp?: Big | null
   // Sociální poj. sleva (db: ) - Sociální poj. sleva)
-  socPojSleva?: Big
+  socPojSleva?: Big | null
   // Náhr.nesch. (db: ) - Náhrada neschopnost)
-  nahradaNeschop?: Big
+  nahradaNeschop?: Big | null
   // Refund.náhr. (db: ) - Refundace neschopnost)
-  refundNeschop?: Big
+  refundNeschop?: Big | null
   // Zdr.poj. (db: ) - Zdravotní poj. celkem)
-  zdravPojCelk?: Big
+  zdravPojCelk?: Big | null
   // Zdr.poj.zákl. (db: ) - Zdravotní poj. základ)
-  zdravPojZakl?: Big
+  zdravPojZakl?: Big | null
   // Zdr.poj.firma (db: ) - Zdravotní poj. firma)
-  zdravPojFirma?: Big
+  zdravPojFirma?: Big | null
   // Zdr.poj.prac. (db: ) - Zdravotní poj. pracovník)
-  zdravPojPrac?: Big
+  zdravPojPrac?: Big | null
   // Srážky (db: ) - Srážky)
-  srazkaSporeni?: Big
+  srazkaSporeni?: Big | null
   // Zál.řádná (db: ) - Zál.řádná)
-  zalohaRadna?: Big
+  zalohaRadna?: Big | null
   // Dobírka (db: ) - Dobírka)
-  dobirka?: Big
+  dobirka?: Big | null
   // Zál.mim. (db: ) - Záloha mimořádná)
-  zalohaMimoradna?: Big
+  zalohaMimoradna?: Big | null
   // Spadá do soc.pojištění (db: ) - Spadá do soc.pojištění)
-  socPojCelkSpada?: Big
+  socPojCelkSpada?: Big | null
   // Druhý pilíř (db: ) - Druhý pilíř)
-  duchodSpor?: Big
+  duchodSpor?: Big | null
   // Zákl. daně nezaokr. (db: ) - Základ daně nezaokrouhlený)
-  zakladDaneNezaokr?: Big
+  zakladDaneNezaokr?: Big | null
   // Přípl.prostř. (db: ) - Příplatek za prostředí)
-  prostrediPripl?: Big
+  prostrediPripl?: Big | null
 
 
 

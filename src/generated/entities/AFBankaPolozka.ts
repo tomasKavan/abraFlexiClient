@@ -22,109 +22,115 @@ export class AFBankaPolozka extends AFEntity {
   static EntityType: string = 'BANKA_POLOZKA'
 
   // ID (db: IdPolInt) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Úč. pol. (db: Ucetni) - Položka je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Typ položky (db: TypPolozkyK) - Typ položky)
-  typPolozkyK?: any
+  typPolozkyK?: any | null
   // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // DPH [%] (db: SzbDph) - DPH [%])
-  szbDph?: Big
+  szbDph?: Big | null
   // Základ [Kč] (db: SumZkl) - Základ [Kč])
-  sumZkl?: Big
+  sumZkl?: Big | null
   // DPH [Kč] (db: SumDph) - DPH [Kč])
-  sumDph?: Big
+  sumDph?: Big | null
   // Celkem [Kč] (db: sumZkl + sumDph) - Celkem [Kč])
-  sumCelkem?: Big
+  sumCelkem?: Big | null
   // Základ [měna] (db: SumZklMen) - Základ [měna])
-  sumZklMen?: Big
+  sumZklMen?: Big | null
   // DPH [měna] (db: SumDphMen) - DPH [měna])
-  sumDphMen?: Big
+  sumDphMen?: Big | null
   // Celkem [měna] (db: sumZklMen + sumDphMen) - Celkem [měna])
-  sumCelkemMen?: Big
+  sumCelkemMen?: Big | null
   // Auto. pol. (db: Autogen) - Autogen)
-  autogen?: boolean
+  autogen?: boolean | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Datum vyst. (db: DatVyst) - Vystaveno)
-  datVyst?: Date
+  datVyst?: Date | null
   // Kopírovat MD účet základu (db: KopZklMdUcet) - Kopírovat MD účet základu)
-  kopZklMdUcet?: boolean
+  kopZklMdUcet?: boolean | null
   // Kopírovat D účet základu (db: KopZklDalUcet) - Kopírovat D účet základu)
-  kopZklDalUcet?: boolean
+  kopZklDalUcet?: boolean | null
   // Kopírovat MD účet DPH (db: KopDphMdUcet) - Kopírovat MD účet DPH)
-  kopDphMdUcet?: boolean
+  kopDphMdUcet?: boolean | null
   // Kopírovat D účet DPH (db: KopDphDalUcet) - Kopírovat D účet DPH)
-  kopDphDalUcet?: boolean
-  // Kopírovat předpis (db: KopTypUcOp) - Kopírovat předpis)
-  kopTypUcOp?: boolean
+  kopDphDalUcet?: boolean | null
+  // Kopírovat předpis zaúčtování (db: KopTypUcOp) - Kopírovat předpis zaúčtování)
+  kopTypUcOp?: boolean | null
   // Kopírovat zakázku (db: KopZakazku) - Kopírovat zakázku)
-  kopZakazku?: boolean
+  kopZakazku?: boolean | null
   // Kopírovat středisko (db: KopStred) - Kopírovat středisko)
-  kopStred?: boolean
+  kopStred?: boolean | null
   // Kopírovat činnost (db: KopCinnost) - Kopírovat činnost)
-  kopCinnost?: boolean
+  kopCinnost?: boolean | null
   // Kopírovat štítky (db: KopKlice) - Kopírovat štítky)
-  kopKlice?: boolean
+  kopKlice?: boolean | null
   // Kopírovat řádek DPH (db: KopClenDph) - Kopírovat řádek DPH z dokladu)
-  kopClenDph?: boolean
+  kopClenDph?: boolean | null
   // Kopírovat dat. zaúčt. (db: KopDatUcto) - Kopírovat dat. zaúčt.)
-  kopDatUcto?: boolean
-  // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
-  datUcto?: Date
+  kopDatUcto?: boolean | null
+  // Datum zaúčtování (db: DatUcto) - Datum zaúčtování)
+  datUcto?: Date | null
   // Storno (db: Storno) - Storno)
-  storno?: boolean
+  storno?: boolean | null
   // Storno položky (db: StornoPol) - Storno položky)
-  stornoPol?: boolean
+  stornoPol?: boolean | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Předpis zaúčtování (db: IdTypUcOp) - Předpis zaúčtování)
-  typUcOp?: AFPredpisZauctovani
-  // Účet MD zákl. (db: IdZklMdUcet) - Má Dáti základu)
-  zklMdUcet?: AFUcet
-  // Účet Dal zákl. (db: IdZklDalUcet) - Dal základu)
-  zklDalUcet?: AFUcet
+  typUcOp?: AFPredpisZauctovani | null
+  // Účet MD základ (db: IdZklMdUcet) - Má Dáti základu)
+  zklMdUcet?: AFUcet | null
+  // Účet Dal základ (db: IdZklDalUcet) - Dal základu)
+  zklDalUcet?: AFUcet | null
   // Účet MD DPH (db: IdDphMdUcet) - Má dáti DPH)
-  dphMdUcet?: AFUcet
+  dphMdUcet?: AFUcet | null
   // Účet Dal DPH (db: IdDphDalUcet) - Dal DPH)
-  dphDalUcet?: AFUcet
+  dphDalUcet?: AFUcet | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Řádky DPH (db: IdClenDph) - Řádky DPH)
-  clenDph?: AFCleneniDph
+  clenDph?: AFCleneniDph | null
   // Sazba DPH (db: IdSazbyDph) - Sazba DPH)
-  sazbaDph?: AFSazbaDph
+  sazbaDph?: AFSazbaDph | null
   // Doklad (db: IdDoklInt) - Bankovní doklad)
-  doklInt?: AFBanka
+  doklInt?: AFBanka | null
   // Zdroj (db: Source) - Zdroj)
-  source?: string
+  source?: string | null
   // Řádek kontrolního hlášení DPH (db: IdClenKonVykDph) - Řádek kontrolního hlášení DPH)
-  clenKonVykDph?: AFCleneniKontrolniHlaseni
+  clenKonVykDph?: AFCleneniKontrolniHlaseni | null
   // Kopírovat řádek kon. hl. DPH (db: KopClenKonVykDph) - Kopírovat řádek kontrolního hlášení DPH z dokladu)
-  kopClenKonVykDph?: boolean
+  kopClenKonVykDph?: boolean | null
   // Kód přenesení DPH (db: IdDphPren) - Kód přenesení DPH)
-  dphPren?: AFPreneseniDph
+  dphPren?: AFPreneseniDph | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -140,6 +146,28 @@ export class AFBankaPolozka extends AFEntity {
     },
     lastUpdate : {
       key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdDate : {
+      key: 'createdDate',
       type: PropertyType.DateTime,
       isArray: false,
       

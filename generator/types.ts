@@ -17,6 +17,7 @@ export enum PropertyType {
   Select = 'select',
   DateTime = 'datetime',
   Date = 'date',
+  YearMonth = 'yearMonth',
   Numeric = 'numeric',
   Logic = 'logic',
   Relation = 'relation',

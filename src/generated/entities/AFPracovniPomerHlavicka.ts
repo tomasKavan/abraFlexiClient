@@ -12,31 +12,31 @@ export class AFPracovniPomerHlavicka extends AFEntity {
   static EntityType: string = 'PRACOVNI_POMER_HLAVICKA'
 
   // ID (db: IdPracPomHlav) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
-  //  (db: AktivniOd) - )
-  aktivniOd?: Date
-  //  (db: AktivniDo) - )
-  aktivniDo?: Date
+  lastUpdate?: Date | null
+  // Aktivní od (db: AktivniOd) - Aktivní od)
+  aktivniOd?: Date | null
+  // Aktivní do (db: AktivniDo) - Aktivní do)
+  aktivniDo?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
-  //  (db: Hlavni) - )
-  hlavni?: boolean
-  //  (db: Zacatek) - )
-  zacatek?: Date
-  //  (db: SkutecnyNastup) - )
-  skutecnyNastup?: Date
-  //  (db: KonecPomeru) - )
-  konecPomeru?: Date
-  //  (db: KonecZkusDoby) - )
-  konecZkusDoby?: Date
-  //  (db: KonecUrciteDoby) - )
-  konecUrciteDoby?: Date
+  nazev?: string | null
+  // Hlavní (db: Hlavni) - Hlavní)
+  hlavni?: boolean | null
+  // Začátek poměru (db: Zacatek) - Začátek poměru)
+  zacatek?: Date | null
+  // Skutečný nástup (db: SkutecnyNastup) - Skutečný nástup)
+  skutecnyNastup?: Date | null
+  // Konec poměru (db: KonecPomeru) - Konec poměru)
+  konecPomeru?: Date | null
+  // Konec zkušební doby (db: KonecZkusDoby) - Konec zkušební doby)
+  konecZkusDoby?: Date | null
+  // Konec určité doby (db: KonecUrciteDoby) - Konec určité doby)
+  konecUrciteDoby?: Date | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

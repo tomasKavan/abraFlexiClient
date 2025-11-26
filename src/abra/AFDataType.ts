@@ -43,6 +43,12 @@ export function parsePropertyValue<T extends PropertyType>(
       const split = obj.split('+')
       const dateStr = split[0] + 'T00:00:00.000+' + split[1]
       return new Date(dateStr) as ParsedType<T>
+    
+    case PropertyType.YearMonth:
+      if (typeof obj !== 'string') return null
+      const s = obj.split('/')
+      if (s.length !== 2) return null
+      return new Date(parseInt(s[0], parseInt(s[1]) - 1)) as ParsedType<T>
 
     case PropertyType.Numeric:
       return new Big(obj).round(annot?.decimals ?? 2) as ParsedType<T>;
@@ -89,6 +95,9 @@ export function serializePropertyValue<T extends PropertyType>(
 
     case PropertyType.DateTime:
       return dateToLocalIso(val as Date)
+
+    case PropertyType.YearMonth:
+      return (val as Date).getFullYear() + '/' + (val as Date).getMonth() + 1
 
     case PropertyType.Numeric:
       if (val instanceof Big) return val.toString()

@@ -4,7 +4,6 @@ import { AFStat } from './AFStat'
 import { AFRegion } from './AFRegion'
 import { AFSkupinaFirem } from './AFSkupinaFirem'
 import { AFStredisko } from './AFStredisko'
-import { AFUzivatel } from './AFUzivatel'
 import { AFCenikovaSkupina } from './AFCenikovaSkupina'
 import { AFFormaUhrady } from './AFFormaUhrady'
 import { AFOdberatel } from './AFOdberatel'
@@ -29,133 +28,139 @@ export class AFAdresar extends AFEntity {
   static EntityType: string = 'ADRESAR'
 
   // ID (db: IdFirmy) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Upozornění (db: Poznam) - Upozornění)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Telefon (db: Tel) - Telefon)
-  tel?: string
+  tel?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
+  email?: string | null
   // WWW (db: Www) - WWW)
-  www?: string
+  www?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // IČO (db: Ic) - IČO)
-  ic?: string
+  ic?: string | null
   // DIČ (db: Dic) - DIČ)
-  dic?: string
+  dic?: string | null
   // Poštovní adresa je shodná se sídlem (db: PostovniShodna) - Poštovní adresa je shodná se sídlem)
-  postovniShodna?: boolean
+  postovniShodna?: boolean | null
   // Pošt. EAN (db: FaEanKod) - EAN)
-  faEanKod?: string
+  faEanKod?: string | null
   // Pošt. jméno firmy (db: FaJmenoFirmy) - Firma)
-  faJmenoFirmy?: string
+  faJmenoFirmy?: string | null
   // Pošt. ulice (db: FaUlice) - Ulice)
-  faUlice?: string
+  faUlice?: string | null
   // Pošt. město (db: FaMesto) - Město)
-  faMesto?: string
+  faMesto?: string | null
   // Pošt. PSČ (db: FaPsc) - PSČ)
-  faPsc?: string
+  faPsc?: string | null
   // Splatnost [dny] (db: SplatDny) - Splatnost [dny])
-  splatDny?: number
+  splatDny?: number | null
   // Limit fakt. (db: LimitFak) - Limit fakturace)
-  limitFak?: Big
+  limitFak?: Big | null
   // Maximální počet dnů po splatnosti (db: LimitPoSplatDny) - Maximální počet dnů po splatnosti)
-  limitPoSplatDny?: number
+  limitPoSplatDny?: number | null
   // Zákaz prodeje po překročení splatnosti (db: LimitPoSplatZakaz) - Zákaz prodeje po překročení splatnosti)
-  limitPoSplatZakaz?: boolean
+  limitPoSplatZakaz?: boolean | null
   // Plátce DPH (db: PlatceDph) - Plátce DPH)
-  platceDph?: boolean
+  platceDph?: boolean | null
   // Formát exportu (db: FormExportK) - Formát exportu)
-  formExportK?: FormExport
+  formExportK?: FormExport | null
   // Typ vztahu (db: TypVztahuK) - Typ vztahu)
-  typVztahuK?: TypVztahu
+  typVztahuK?: TypVztahu | null
   // Kód pro tisky (db: KodPojistovny) - Kód pro tisky)
-  kodPojistovny?: string
+  kodPojistovny?: string | null
   // Název pro tisky (db: NazevPojistovny) - Název pro tisky)
-  nazevPojistovny?: string
+  nazevPojistovny?: string | null
   // Oslovení (db: Osloveni) - Oslovení)
-  osloveni?: string
+  osloveni?: string | null
   // Sleva [%] (db: SlevaDokl) - Sleva [%])
-  slevaDokl?: Big
+  slevaDokl?: Big | null
   // Při částečné fakturaci objednávky označit za hotovou (db: ObpAutomHotovo) - Při částečné fakturaci objednávky označit za hotovou)
-  obpAutomHotovo?: boolean
+  obpAutomHotovo?: boolean | null
   // Název - druhá řádka (db: Nazev2) - Název - druhá řádka)
-  nazev2?: string
+  nazev2?: string | null
   // Název - druhá řádka EN (db: Nazev2A) - Název - druhá řádka EN)
-  nazev2A?: string
+  nazev2A?: string | null
   // Název - druhá řádka DE (db: Nazev2B) - Název - druhá řádka DE)
-  nazev2B?: string
+  nazev2B?: string | null
   // Název - druhá řádka FR (db: Nazev2C) - Název - druhá řádka FR)
-  nazev2C?: string
+  nazev2C?: string | null
   // Nespolehlivý plátce (db: NespolehlivyPlatce) - Nespolehlivý plátce)
-  nespolehlivyPlatce?: boolean
+  nespolehlivyPlatce?: boolean | null
   // Revize (db: Revize) - Revize)
-  revize?: number
+  revize?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Katastrální území (db: KatastrUzemi) - Katastrální území)
-  katastrUzemi?: string
+  katastrUzemi?: string | null
   // Parcela (db: Parcela) - Parcela)
-  parcela?: string
+  parcela?: string | null
   // Datum narození (db: DatNaroz) - Datum narození)
-  datNaroz?: Date
+  datNaroz?: Date | null
   // Rodné číslo (db: RodCis) - Rodné číslo)
-  rodCis?: string
+  rodCis?: string | null
   // Datum založení (db: DatZaloz) - Datum založení)
-  datZaloz?: Date
+  datZaloz?: Date | null
   // Zrušení (db: Canceled) - Zrušení)
-  canceled?: boolean
+  canceled?: boolean | null
   // ISDOC v e-mailu (db: IsdocPrilohaMailuK) - ISDOC v e-mailu)
-  isdocPrilohaMailuK?: IsdocPrilohaMailu
+  isdocPrilohaMailuK?: IsdocPrilohaMailu | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Skupina (db: IdSkupFir) - Skupina)
-  skupFir?: AFSkupinaFirem
+  skupFir?: AFSkupinaFirem | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Pošt. stát (db: IdFaStatu) - Stát)
-  faStat?: AFStat
+  faStat?: AFStat | null
   // Pošt. kraj (db: Idfaregion) - Kraj)
-  faRegion?: AFRegion
+  faRegion?: AFRegion | null
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: AFUzivatel
+  zodpOsoba?: any | null
   // Ceníková skupina (db: IdSkupCen) - Ceníková skupina)
-  skupCen?: AFCenikovaSkupina
+  skupCen?: AFCenikovaSkupina | null
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
-  formaUhradyCis?: AFFormaUhrady
+  formaUhradyCis?: AFFormaUhrady | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
 
   // Prodejní ceny (type: ODBERATEL) - odberatele)
   odberatele?: AFOdberatel[]
@@ -571,6 +576,12 @@ export class AFAdresar extends AFEntity {
       enum: IsdocPrilohaMailu,
       
     },
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
     skupFir : {
       key: 'skupFir',
       type: PropertyType.Relation,
@@ -605,7 +616,7 @@ export class AFAdresar extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -621,6 +632,22 @@ export class AFAdresar extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFFormaUhrady',
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
       
     },
 

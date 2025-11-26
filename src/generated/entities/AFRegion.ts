@@ -8,41 +8,41 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 export class AFRegion extends AFEntity {
   static EntityPath: string = 'region'
-  static EntityName: string = 'Kraj'
+  static EntityName: string = 'Kraje'
   static EntityType: string = 'REGION'
 
   // ID (db: IdRegion) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Zkratka pro tisky (db: KodTisk) - Zkratka pro tisky)
-  kodTisk?: string
+  kodTisk?: string | null
   // Zkratka pro tisky EN (db: KodTiskA) - Zkratka pro tisky EN)
-  kodTiskA?: string
+  kodTiskA?: string | null
   // Zkratka pro tisky DE (db: KodTiskB) - Zkratka pro tisky DE)
-  kodTiskB?: string
+  kodTiskB?: string | null
   // Zkratka pro tisky FR (db: KodTiskC) - Zkratka pro tisky FR)
-  kodTiskC?: string
+  kodTiskC?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

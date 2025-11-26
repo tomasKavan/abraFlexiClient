@@ -13,21 +13,21 @@ export class AFCenikTypSazbyDph extends AFEntity {
   static EntityType: string = 'TYP_SAZBY_DPH'
 
   // ID (db: IdTypSazbyDph) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // Kód plnění pro DPH (db: KodPlneniK) - Kód plnění pro DPH)
-  kodPlneniK?: KodPlneni
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  kodPlneniK?: KodPlneni | null
+  // Platí od data (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do data (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStatDph
+  stat?: AFStatDph | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -12,35 +12,35 @@ export class AFUcetniOsnova extends AFEntity {
   static EntityType: string = 'UCETNI_OSNOVA'
 
   // ID (db: IdStdUcet) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Účet (db: Kod) - Syntetický účet)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Druh účtu (db: DruhUctuK) - Druh účtu)
-  druhUctuK?: DruhUctu
+  druhUctuK?: DruhUctu | null
   // Typ účtu (db: TypUctuK) - Typ účtu)
-  typUctuK?: TypUctu
+  typUctuK?: TypUctu | null
   // Sledovat saldo (db: Saldo) - Sledovat saldo)
-  saldo?: boolean
+  saldo?: boolean | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

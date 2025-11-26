@@ -1,6 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
 
 
 import { OperaceZurnalSmlouvy } from '../AFEntityEnums'
@@ -11,21 +10,21 @@ export class AFSmlouvaZurnal extends AFEntity {
   static EntityType: string = 'SMLOUVA_ZURNAL'
 
   // ID (db: IdZurnalSml) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Datum a čas (db: DatCas) - Datum a čas)
-  datCas?: Date
+  datCas?: Date | null
   // Operace (db: TransakceK) - Operace)
-  transakceK?: OperaceZurnalSmlouvy
+  transakceK?: OperaceZurnalSmlouvy | null
   // Počet vygenerovaných faktur (db: PocetOk) - Počet vygenerovaných faktur)
-  pocetOk?: number
+  pocetOk?: number | null
   // Počet nevygenerovaných faktur (db: PocetErr) - Počet nevygenerovaných faktur)
-  pocetErr?: number
+  pocetErr?: number | null
   // Seznam chyb (db: Chyby) - Seznam chyb)
-  chyby?: string
+  chyby?: string | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
 
 
 
@@ -79,7 +78,7 @@ export class AFSmlouvaZurnal extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

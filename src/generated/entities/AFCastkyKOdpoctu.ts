@@ -10,29 +10,29 @@ export class AFCastkyKOdpoctu extends AFEntity {
   static EntityType: string = 'CASTKY_K_ODPOCTU'
 
   // Záloha (db: ) - Záloha)
-  zaloha?: any
+  zaloha?: any | null
   // Účetní (db: ) - Účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Osvob., bez DPH [Kč] (db: ) - 0 %)
-  sumOsv?: Big
+  sumOsv?: Big | null
   // Základ DPH zákl. [Kč] (db: ) - Základ DPH zákl. [Kč])
-  sumZklZakl?: Big
+  sumZklZakl?: Big | null
   // Základ DPH sníž. [Kč] (db: ) - Základ DPH sníž. [Kč])
-  sumZklSniz?: Big
+  sumZklSniz?: Big | null
   // Základ DPH 2. sníž. [Kč] (db: ) - Základ DPH 2. sníž. [Kč])
-  sumZklSniz2?: Big
+  sumZklSniz2?: Big | null
   // DPH základní [Kč] (db: ) - DPH základní)
-  sumDphZakl?: Big
+  sumDphZakl?: Big | null
   // DPH snížená [Kč] (db: ) - DPH snížená)
-  sumDphSniz?: Big
+  sumDphSniz?: Big | null
   // DPH 2. snížená [Kč] (db: ) - DPH 2. snížená)
-  sumDphSniz2?: Big
+  sumDphSniz2?: Big | null
   // Celkem vč. DPH - zákl. [Kč] (db: ) - Celkem vč. DPH - zákl. [Kč])
-  sumCelkZakl?: Big
+  sumCelkZakl?: Big | null
   // Celkem vč. DPH - sníž. [Kč] (db: ) - Celkem vč. DPH - sníž. [Kč])
-  sumCelkSniz?: Big
+  sumCelkSniz?: Big | null
   // Celkem vč. DPH - 2. sníž. [Kč] (db: ) - Celkem vč. DPH - 2. sníž. [Kč])
-  sumCelkSniz2?: Big
+  sumCelkSniz2?: Big | null
 
 
 

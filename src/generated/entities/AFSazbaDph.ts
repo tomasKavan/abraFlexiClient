@@ -12,23 +12,23 @@ export class AFSazbaDph extends AFEntity {
   static EntityType: string = 'SAZBA_DPH'
 
   // ID (db: IdSazbyDph) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // DPH [%] (db: SzbDph) - DPH [%])
-  szbDph?: Big
+  szbDph?: Big | null
   // Platí od data (db: PlatiOdData) - Platí od data)
-  platiOdData?: Date
+  platiOdData?: Date | null
   // Platí do data (db: PlatiDoData) - Platí do data)
-  platiDoData?: Date
+  platiDoData?: Date | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -12,43 +12,43 @@ export class AFCleneniDph extends AFEntity {
   static EntityType: string = 'CLENENI_DPH'
 
   // ID (db: IdClenDPH) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Typ plnění (db: TypPlneniK) - Typ plnění)
-  typPlneniK?: TypPlneni
+  typPlneniK?: TypPlneni | null
   // Typ obchodu (db: TypObchoduK) - Typ obchodu)
-  typObchoduK?: TypObchodu
+  typObchoduK?: TypObchodu | null
   // Kód plnění (db: KodPlneniK) - Kód plnění)
-  kodPlneniK?: KodPlneni
+  kodPlneniK?: KodPlneni | null
   // Je DPH (db: JeDph) - Je DPH)
-  jeDph?: boolean
+  jeDph?: boolean | null
   // Pořadí (db: Poradi) - Pořadí)
-  poradi?: number
+  poradi?: number | null
   // Kód plnění pro souhrnné hlášení (db: KodPlneniSH) - Kód plnění pro souhrnné hlášení)
-  kodPlneniSH?: string
+  kodPlneniSH?: string | null
   // Typ plnění EET (db: TypPlneniEetK) - Typ plnění EET)
-  typPlneniEetK?: any
+  typPlneniEetK?: any | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

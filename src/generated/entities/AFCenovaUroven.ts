@@ -16,73 +16,73 @@ export class AFCenovaUroven extends AFEntity {
   static EntityType: string = 'CENOVA_UROVEN'
 
   // ID (db: IdCenHlad) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Dočasnost (db: Docasnost) - cenová úroveň je dočasná)
-  docasnost?: boolean
+  docasnost?: boolean | null
   // Platnost od data (db: PlatiOdData) - Platnost od data)
-  platiOdData?: Date
+  platiOdData?: Date | null
   // Platnost do data (db: PlatiDoData) - Platnost do data)
-  platiDoData?: Date
+  platiDoData?: Date | null
   // Výchozí cena (db: TypCenyVychoziK) - Výchozí cena)
-  typCenyVychoziK?: TypCenyVychozi
+  typCenyVychoziK?: TypCenyVychozi | null
   // Způsob výpočtu (db: TypVypCenyK) - Způsob výpočtu)
-  typVypCenyK?: TypVypCeny
-  // Marže / Rabat / Sleva [%] (db: ProcZakl) - Marže / Rabat / Sleva [%])
-  procZakl?: Big
+  typVypCenyK?: TypVypCeny | null
+  // Marže / Přirážka / Rabat / Sleva [%] (db: ProcZakl) - Marže / Přirážka / Rabat / Sleva [%])
+  procZakl?: Big | null
   // Výchozí cena pro množ. slevy (db: TypCenyVychozi25K) - Výchozí cena)
-  typCenyVychozi25K?: TypCenyVychozi
+  typCenyVychozi25K?: TypCenyVychozi | null
   // Způsob výpočtu pro množ. slevy (db: TypVypCeny25K) - Způsob výpočtu)
-  typVypCeny25K?: TypVypCeny
+  typVypCeny25K?: TypVypCeny | null
   // Limit MJ 2 (db: LimMnoz2) - Množ. limit 2)
-  limMnoz2?: Big
+  limMnoz2?: Big | null
   // Limit MJ 3 (db: LimMnoz3) - Množ. limit 3)
-  limMnoz3?: Big
+  limMnoz3?: Big | null
   // Limit MJ 4 (db: LimMnoz4) - Množ. limit 4)
-  limMnoz4?: Big
+  limMnoz4?: Big | null
   // Limit MJ 5 (db: LimMnoz5) - Množ. limit 5)
-  limMnoz5?: Big
+  limMnoz5?: Big | null
   // %2 (db: Procento2) - % 2)
-  procento2?: Big
+  procento2?: Big | null
   // %3 (db: Procento3) - %3)
-  procento3?: Big
+  procento3?: Big | null
   // %4 (db: Procento4) - %4)
-  procento4?: Big
+  procento4?: Big | null
   // %5 (db: Procento5) - %5)
-  procento5?: Big
+  procento5?: Big | null
   // Ručně vybrat (db: RucneVybrat) - Ručně vybrat)
-  rucneVybrat?: boolean
-  // Způsob zaokr. ceny (db: ZaokrJakK) - Způsob)
-  zaokrJakK?: ZaokrJak
-  // Řád zaokr. ceny (db: ZaokrNaK) - Řád)
-  zaokrNaK?: ZaokrNa
+  rucneVybrat?: boolean | null
+  // Způsob zaokrouhlení - Cena (db: ZaokrJakK) - Způsob)
+  zaokrJakK?: ZaokrJak | null
+  // Řád zaokrouhlení - Cena (db: ZaokrNaK) - Řád)
+  zaokrNaK?: ZaokrNa | null
   // Pro všechny skupiny zboží (db: VsechnySkupZboz) - Pro všechny skupiny zboží)
-  vsechnySkupZboz?: boolean
+  vsechnySkupZboz?: boolean | null
   // Platí pro všechny firmy (db: VsechnyFirmy) - Platí pro všechny firmy)
-  vsechnyFirmy?: boolean
+  vsechnyFirmy?: boolean | null
   // Neaplikovat slevu z dokladu (db: ZakazSlevaDokl) - Neaplikovat slevu z dokladu)
-  zakazSlevaDokl?: boolean
+  zakazSlevaDokl?: boolean | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
 
   // Adresář (type: ADRESAR) - firmy)
   firmy?: AFAdresar[]

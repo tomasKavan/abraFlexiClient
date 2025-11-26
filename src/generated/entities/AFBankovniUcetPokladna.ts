@@ -14,39 +14,39 @@ export class AFBankovniUcetPokladna extends AFEntity {
   static EntityType: string = 'BANKOVNI_UCET_POKLADNA'
 
   // ID (db: IdBsp) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Platí od roku (db: PlatiOd) - Platí od roku)
-  platiOd?: number
+  platiOd?: number | null
   // Platí do roku (db: PlatiDo) - Platí do roku)
-  platiDo?: number
+  platiDo?: number | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

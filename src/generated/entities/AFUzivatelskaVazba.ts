@@ -11,29 +11,29 @@ export class AFUzivatelskaVazba extends AFEntity {
   static EntityType: string = 'VAZBA'
 
   // ID (db: IdVazba) - ID)
-  declare id?: number
+  declare id?: number | null
   // Typ vazby (db: IdVazbaTyp) - Typ vazby)
-  vazbaTyp?: AFTypUzivatelskeVazby
+  vazbaTyp?: AFTypUzivatelskeVazby | null
   // Modul (db: ) - Modul)
-  modul?: string
+  modul?: string | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Částka (db: ) - Částka)
-  castka?: Big
+  castka?: Big | null
   // Datum (db: ) - Datum)
-  datum?: Date
+  datum?: Date | null
   // Popis vazby (db: Popis) - Popis vazby)
-  popis?: string
+  popis?: string | null
   // Poznámka k vazbě (db: Poznam) - Poznámka k vazbě)
-  poznam?: string
+  poznam?: string | null
   // Evidence (db: ) - Evidence)
-  evidenceType?: string
+  evidenceType?: string | null
   // ID navázaného objektu (db: ) - ID navázaného objektu)
-  objectId?: number
+  objectId?: number | null
   // Navázaný objekt (db: ) - Navázaný objekt)
-  object?: any
+  object?: any | null
 
 
 

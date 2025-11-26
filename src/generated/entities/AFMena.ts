@@ -12,33 +12,33 @@ export class AFMena extends AFEntity {
   static EntityType: string = 'MENA'
 
   // ID (db: IdMeny) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Symbol (db: Symbol) - Symbol)
-  symbol?: string
+  symbol?: string | null
   // Kurz. množství (db: KurzMnozstvi) - Kurz. množství)
-  kurzMnozstvi?: Big
+  kurzMnozstvi?: Big | null
   // Způsob stahování kurzu (db: ZpusobStahKurzK) - Způsob stahování kurzu)
-  zpusobStahKurzK?: ZpusobStahKurz
+  zpusobStahKurzK?: ZpusobStahKurz | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

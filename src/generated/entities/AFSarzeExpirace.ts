@@ -12,29 +12,29 @@ export class AFSarzeExpirace extends AFEntity {
   static EntityType: string = 'SARZE_EXPIRACE'
 
   // ID (db: IdPolSklad) - ID)
-  declare id?: number
+  declare id?: number | null
   // Množství (db: Pocet) - Množství)
-  pocet?: Big
+  pocet?: Big | null
   // Cena za MJ (db: CenaMj) - Cena za MJ)
-  cenaMj?: Big
+  cenaMj?: Big | null
   // Datum vyst. (db: DatVyst) - Vystaveno)
-  datVyst?: Date
+  datVyst?: Date | null
   // Datum skladového pohybu (db: DatSklad) - Datum skladového pohybu)
-  datSklad?: Date
+  datSklad?: Date | null
   // Trvanlivost (db: DatTrvan) - Trvanlivost)
-  datTrvan?: Date
+  datTrvan?: Date | null
   // Datum výroby (db: DatVyroby) - Datum výroby)
-  datVyroby?: Date
+  datVyroby?: Date | null
   // Expirace (db: Expirace) - Expirace)
-  expirace?: Date
+  expirace?: Date | null
   // Šarže (db: Sarze) - Šarže)
-  sarze?: string
+  sarze?: string | null
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
-  typPohybuK?: TypPohybu
+  typPohybuK?: TypPohybu | null
   // Sklad (db: IdSkladu) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
 
 
 

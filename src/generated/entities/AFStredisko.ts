@@ -13,59 +13,59 @@ export class AFStredisko extends AFEntity {
   static EntityType: string = 'STREDISKO'
 
   // ID (db: IdStred) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Telefon (db: Tel) - Telefon)
-  tel?: string
+  tel?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
+  email?: string | null
   // WWW (db: Www) - WWW)
-  www?: string
+  www?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // Tisknout (db: Tisknout) - Tisknout na doklady)
-  tisknout?: boolean
+  tisknout?: boolean | null
   // Název - druhá řádka (db: Nazev2) - Název - druhá řádka)
-  nazev2?: string
+  nazev2?: string | null
   // Název - druhá řádka EN (db: Nazev2A) - Název - druhá řádka EN)
-  nazev2A?: string
+  nazev2A?: string | null
   // Název - druhá řádka DE (db: Nazev2B) - Název - druhá řádka DE)
-  nazev2B?: string
+  nazev2B?: string | null
   // Název - druhá řádka FR (db: Nazev2C) - Název - druhá řádka FR)
-  nazev2C?: string
+  nazev2C?: string | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

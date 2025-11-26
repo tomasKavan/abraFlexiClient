@@ -5,7 +5,6 @@ import { AFMistoUrceni } from './AFMistoUrceni'
 import { AFStredisko } from './AFStredisko'
 import { AFStavZakazky } from './AFStavZakazky'
 import { AFTypZakazky } from './AFTypZakazky'
-import { AFUzivatel } from './AFUzivatel'
 import { AFHodnoceniZakazky } from './AFHodnoceniZakazky'
 import { AFKontakt } from './AFKontakt'
 import { AFMena } from './AFMena'
@@ -22,81 +21,87 @@ export class AFZakazka extends AFEntity {
   static EntityType: string = 'ZAKAZKA'
 
   // ID (db: IdZakazky) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Datum zahájení (db: DatZahaj) - Datum zahájení)
-  datZahaj?: Date
+  datZahaj?: Date | null
   // Datum ukončení (db: DatKonec) - Datum ukončení)
-  datKonec?: Date
+  datKonec?: Date | null
   // Procento vyhodnocení (db: ProcVyh) - Procento vyhodnocení)
-  procVyh?: Big
+  procVyh?: Big | null
   // Termín realizace (db: Termin) - Termín realizace)
-  termin?: Date
+  termin?: Date | null
   // Splatnost [dny] (db: SplatDny) - Splatnost [dny])
-  splatDny?: number
+  splatDny?: number | null
   // Rozsah zakázky (db: Rozsah) - Rozsah zakázky)
-  rozsah?: Big
+  rozsah?: Big | null
   // Předpokl. náklady (db: NakladyPredpoklad) - Předpokl. náklady)
-  nakladyPredpoklad?: Big
+  nakladyPredpoklad?: Big | null
   // Předpokl. zisk (db: ZiskPredpoklad) - Předpokl. zisk)
-  ziskPredpoklad?: Big
+  ziskPredpoklad?: Big | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Variabilní symbol (db: VarSym) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Číslo objednávky (db: CisObj) - Číslo objednávky)
-  cisObj?: string
+  cisObj?: string | null
   // Číslo smlouvy (db: CisSml) - Číslo smlouvy)
-  cisSml?: string
+  cisSml?: string | null
   // Plánované zahájení (db: DatZahajPlan) - Plánované zahájení)
-  datZahajPlan?: Date
+  datZahajPlan?: Date | null
   // Plánované předání (db: DatPredaniPlan) - Plánované předání)
-  datPredaniPlan?: Date
+  datPredaniPlan?: Date | null
   // Datum předání (db: DatPredani) - Datum předání)
-  datPredani?: Date
+  datPredani?: Date | null
   // Záruka (db: Zaruka) - Záruka)
-  zaruka?: boolean
+  zaruka?: boolean | null
   // Datum záruky (db: DatZaruky) - Datum záruky)
-  datZaruky?: Date
+  datZaruky?: Date | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Místo určení (db: IdMur) - Místo určení)
-  mistUrc?: AFMistoUrceni
+  mistUrc?: AFMistoUrceni | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Stav zakázky (db: IdStavZakazky) - Stav zakázky)
-  stavZakazky?: AFStavZakazky
+  stavZakazky?: AFStavZakazky | null
   // Typ zakázky (db: Idtypzakazky) - Typ zakázky)
-  typZakazky?: AFTypZakazky
+  typZakazky?: AFTypZakazky | null
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: AFUzivatel
+  zodpPrac?: any | null
   // Vyhodnocení zakázky (db: IdVyhZakazky) - Vyhodnocení zakázky)
-  vyhZakazky?: AFHodnoceniZakazky
+  vyhZakazky?: AFHodnoceniZakazky | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
-  kontaktOsoba?: AFKontakt
+  kontaktOsoba?: AFKontakt | null
   // Měna (db: IdMena) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
@@ -294,6 +299,12 @@ export class AFZakazka extends AFEntity {
       isArray: false,
       
     },
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
@@ -337,7 +348,7 @@ export class AFZakazka extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -361,6 +372,22 @@ export class AFZakazka extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFMena',
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
       
     },
 

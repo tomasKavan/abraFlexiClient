@@ -12,39 +12,39 @@ export class AFPsc extends AFEntity {
   static EntityType: string = 'PSC'
 
   // ID (db: IdPsc) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Pošta (db: Nazev) - Pošta)
-  nazev?: string
+  nazev?: string | null
   // Pošta EN (db: NazevA) - Pošta EN)
-  nazevA?: string
+  nazevA?: string | null
   // Pošta DE (db: NazevB) - Pošta DE)
-  nazevB?: string
+  nazevB?: string | null
   // Pošta FR (db: NazevC) - Pošta FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Zobrazovat (db: Show) - Zobrazovat)
-  visible?: boolean
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  visible?: boolean | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Část obce (db: CastObce) - Část obce)
-  castObce?: string
+  castObce?: string | null
   // Kód okresu (db: KodOkresu) - Kód okresu)
-  kodOkresu?: string
+  kodOkresu?: string | null
   // Okres (db: Okres) - Okres)
-  okres?: string
+  okres?: string | null
   // Obec (db: Obec) - Obec)
-  obec?: string
+  obec?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

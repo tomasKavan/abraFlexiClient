@@ -10,21 +10,21 @@ export class AFDoporuceni extends AFEntity {
   static EntityType: string = 'DOPORUCENI'
 
   // Aktuální hodnota (db: ) - Aktuální hodnota)
-  aktualniHodnota?: string
+  aktualniHodnota?: string | null
   // Doporučená hodnota (db: ) - Doporučená hodnota)
-  doporucenaHodnota?: string
+  doporucenaHodnota?: string | null
   // Typ hodnoty (db: ) - Typ hodnoty)
-  typHodnoty?: string
+  typHodnoty?: string | null
   // Název vlastnosti (db: ) - Název vlastnosti)
-  vlastnost?: string
+  vlastnost?: string | null
   // Automaticky (db: ) - Automaticky)
-  automaticky?: boolean
+  automaticky?: boolean | null
   // Popis (db: ) - Popis)
-  popis?: string
+  popis?: string | null
   // Cíl doporučení (db: ) - Cíl doporučení)
-  doporuceniCilK?: DoporuceniCil
+  doporuceniCilK?: DoporuceniCil | null
   // Doklad (db: ) - Doklad)
-  doklad?: any
+  doklad?: any | null
 
 
 

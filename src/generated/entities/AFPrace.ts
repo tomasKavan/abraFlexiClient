@@ -16,27 +16,27 @@ export class AFPrace extends AFEntity {
   static EntityType: string = 'PRACE'
 
   // ID (db: IdPraceStred) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Datum od (db: DatumOd) - Datum od)
-  datumOd?: Date
+  datumOd?: Date | null
   // Datum do (db: DatumDo) - Datum do)
-  datumDo?: Date
+  datumDo?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Procento (db: Procento) - Procento)
-  procento?: Big
+  procento?: Big | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Pracovní poměr (db: IdPracPom) - Pracovní poměr)
-  pracPom?: AFPracovniPomerHlavicka
+  pracPom?: AFPracovniPomerHlavicka | null
   // Středisko (db: IdStredisko) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazka) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

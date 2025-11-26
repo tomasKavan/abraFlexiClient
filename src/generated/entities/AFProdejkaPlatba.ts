@@ -12,35 +12,35 @@ export class AFProdejkaPlatba extends AFEntity {
   static EntityType: string = 'PRODEJKA_PLATBA'
 
   // ID (db: IdFormaUhrady) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Kurz (db: Kurz) - Kurz)
-  kurz?: Big
+  kurz?: Big | null
   // Kurz. množství (db: KurzMnozstvi) - Kurz. množství)
-  kurzMnozstvi?: Big
+  kurzMnozstvi?: Big | null
   // Částka (db: Castka) - Částka)
-  castka?: Big
-  // Částka v měně (db: CastkaMen) - Částka v měně)
-  castkaMen?: Big
+  castka?: Big | null
+  // Částka [měna] (db: CastkaMen) - Částka [měna])
+  castkaMen?: Big | null
   // Množství cenin (db: MnozCenin) - Množství cenin)
-  mnozCenin?: number
+  mnozCenin?: number | null
   // Částka ceniny (db: CastkaCenin) - Částka ceniny)
-  castkaCenin?: Big
+  castkaCenin?: Big | null
   // Strojové parametry úhrady (db: StrojParamUhr) - Strojové parametry úhrady)
-  strojParamUhr?: string
+  strojParamUhr?: string | null
   // Číslo karty (db: CisloKarty) - Číslo karty)
-  cisloKarty?: string
+  cisloKarty?: string | null
   // Vrátit (db: Vratit) - Vrátit)
-  vratit?: Big
+  vratit?: Big | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
-  formaUhradyCis?: AFFormaUhrady
+  formaUhradyCis?: AFFormaUhrady | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
-  doklFak?: any
+  doklFak?: any | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
 
 
 

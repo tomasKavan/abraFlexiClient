@@ -12,21 +12,21 @@ export class AFAutotisk extends AFEntity {
   static EntityType: string = 'AUTOTISK'
 
   // ID (db: IdAutoTisk) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Kopií (db: Pocet) - Kopií)
-  pocet?: number
+  pocet?: number | null
   // Tisknout doklad (db: TypTiskDoklK) - Tisknout doklad)
-  typTiskDoklK?: any
+  typTiskDoklK?: any | null
   // Report (db: Report) - Report)
-  report?: string
+  report?: string | null
   // Sumovaný (db: Sumovany) - Sumovaný)
-  sumovany?: boolean
+  sumovany?: boolean | null
   // Rozšířený (db: Rozsireny) - Rozšířený)
-  rozsireny?: boolean
+  rozsireny?: boolean | null
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
-  typDokl?: AFTypDokladu
+  typDokl?: AFTypDokladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

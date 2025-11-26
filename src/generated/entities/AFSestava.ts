@@ -15,135 +15,135 @@ export class AFSestava extends AFEntity {
   static EntityType: string = 'SESTAVA'
 
   // ID (db: IdSestavy) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Typ sestavy (db: TypSesK) - Typ sestavy)
-  typSesK?: TypSestavy
+  typSesK?: TypSestavy | null
   // Standardní sestava (db: Standard) - Standardní sestava)
-  standard?: boolean
+  standard?: boolean | null
   // Počítat minulé období (db: VypMinObd) - Počítat minulé období)
-  vypMinObd?: boolean
+  vypMinObd?: boolean | null
   // Název sloupce 1 (db: NazevSloup1) - Název sloupce 1)
-  nazevSloup1?: string
+  nazevSloup1?: string | null
   // Název sloupce 1 EN (db: NazevSloupA1) - Název sloupce 1 EN)
-  nazevSloupA1?: string
+  nazevSloupA1?: string | null
   // Název sloupce 1 DE (db: NazevSloupB1) - Název sloupce 1 DE)
-  nazevSloupB1?: string
+  nazevSloupB1?: string | null
   // Název sloupce 1 FR (db: NazevSloupC1) - Název sloupce 1 FR)
-  nazevSloupC1?: string
+  nazevSloupC1?: string | null
   // Zobrazit sloupec 1 (db: Zobrazit1) - Zobrazit)
-  zobrazit1?: boolean
+  zobrazit1?: boolean | null
   // Název sloupce 2 (db: NazevSloup2) - Název sloupce 2)
-  nazevSloup2?: string
+  nazevSloup2?: string | null
   // Název sloupce 2 EN (db: NazevSloupA2) - Název sloupce 2 EN)
-  nazevSloupA2?: string
+  nazevSloupA2?: string | null
   // Název sloupce 2 DE (db: NazevSloupB2) - Název sloupce 2 DE)
-  nazevSloupB2?: string
+  nazevSloupB2?: string | null
   // Název sloupce 2 FR (db: NazevSloupC2) - Název sloupce 2 FR)
-  nazevSloupC2?: string
+  nazevSloupC2?: string | null
   // Zobrazit sloupec 2 (db: Zobrazit2) - Zobrazit)
-  zobrazit2?: boolean
+  zobrazit2?: boolean | null
   // Název sloupce 3 (db: NazevSloup3) - Název sloupce 3)
-  nazevSloup3?: string
+  nazevSloup3?: string | null
   // Název sloupce 3 EN (db: NazevSloupA3) - Název sloupce 3 EN)
-  nazevSloupA3?: string
+  nazevSloupA3?: string | null
   // Název sloupce 3 DE (db: NazevSloupB3) - Název sloupce 3 DE)
-  nazevSloupB3?: string
+  nazevSloupB3?: string | null
   // Název sloupce 3 FR (db: NazevSloupC3) - Název sloupce 3 FR)
-  nazevSloupC3?: string
+  nazevSloupC3?: string | null
   // Zobrazit sloupec 3 (db: Zobrazit3) - Zobrazit)
-  zobrazit3?: boolean
+  zobrazit3?: boolean | null
   // Název sloupce 4 (db: NazevSloup4) - Název sloupce 4)
-  nazevSloup4?: string
+  nazevSloup4?: string | null
   // Název sloupce 4 EN (db: NazevSloupA4) - Název sloupce 4 EN)
-  nazevSloupA4?: string
+  nazevSloupA4?: string | null
   // Název sloupce 4 DE (db: NazevSloupB4) - Název sloupce 4 DE)
-  nazevSloupB4?: string
+  nazevSloupB4?: string | null
   // Název sloupce 4 FR (db: NazevSloupC4) - Název sloupce 4 FR)
-  nazevSloupC4?: string
+  nazevSloupC4?: string | null
   // Zobrazit sloupec 4 (db: Zobrazit4) - Zobrazit)
-  zobrazit4?: boolean
+  zobrazit4?: boolean | null
   // Název sloupce 5 (db: NazevSloup5) - Název sloupce 5)
-  nazevSloup5?: string
+  nazevSloup5?: string | null
   // Název sloupce 5 EN (db: NazevSloupA5) - Název sloupce 5 EN)
-  nazevSloupA5?: string
+  nazevSloupA5?: string | null
   // Název sloupce 5 DE (db: NazevSloupB5) - Název sloupce 5 DE)
-  nazevSloupB5?: string
+  nazevSloupB5?: string | null
   // Název sloupce 5 FR (db: NazevSloupC5) - Název sloupce 5 FR)
-  nazevSloupC5?: string
+  nazevSloupC5?: string | null
   // Zobrazit sloupec 5 (db: Zobrazit5) - Zobrazit)
-  zobrazit5?: boolean
+  zobrazit5?: boolean | null
   // Název sloupce 6 (db: NazevSloup6) - Název sloupce 6)
-  nazevSloup6?: string
+  nazevSloup6?: string | null
   // Název sloupce 6 EN (db: NazevSloupA6) - Název sloupce 6 EN)
-  nazevSloupA6?: string
+  nazevSloupA6?: string | null
   // Název sloupce 6 DE (db: NazevSloupB6) - Název sloupce 6 DE)
-  nazevSloupB6?: string
+  nazevSloupB6?: string | null
   // Název sloupce 6 FR (db: NazevSloupC6) - Název sloupce 6 FR)
-  nazevSloupC6?: string
+  nazevSloupC6?: string | null
   // Zobrazit sloupec 6 (db: Zobrazit6) - Zobrazit)
-  zobrazit6?: boolean
+  zobrazit6?: boolean | null
   // Sloupec 3 je součtem sloupce 1 a 2 (db: Sloupec3Sum12) - Sloupec 3 je součtem sloupce 1 a 2)
-  sloupec3Sum12?: boolean
+  sloupec3Sum12?: boolean | null
   // Sloupec 6 je součtem sloupce 4 a 5 (db: Sloupec6Sum45) - Sloupec 6 je součtem sloupce 4 a 5)
-  sloupec6Sum45?: boolean
+  sloupec6Sum45?: boolean | null
   // Rok od (db: RokOd) - Rok od)
-  rokOd?: number
+  rokOd?: number | null
   // Rok do (db: RokDo) - Rok do)
-  rokDo?: number
+  rokDo?: number | null
   // Měsíc od (db: MesicOd) - Měsíc od)
-  mesicOd?: number
+  mesicOd?: number | null
   // Měsíc do (db: MesicDo) - Měsíc do)
-  mesicDo?: number
+  mesicDo?: number | null
   // Před. rok od (db: PredRokOd) - Před. rok od)
-  predRokOd?: number
+  predRokOd?: number | null
   // Před. rok do (db: PredRokDo) - Před. rok do)
-  predRokDo?: number
+  predRokDo?: number | null
   // Před. měsíc od (db: PredMesicOd) - Před. měsíc od)
-  predMesicOd?: number
+  predMesicOd?: number | null
   // Před. měsíc do (db: PredMesicDo) - Před. měsíc do)
-  predMesicDo?: number
+  predMesicDo?: number | null
   // Datum výpočtu (db: DatVypocet) - Datum výpočtu)
-  datVypocet?: Date
+  datVypocet?: Date | null
   // Typ výpočtu sestavy (db: TypVypSestavyK) - Typ výpočtu sestavy)
-  typVypSestavyK?: TypVypSestavy
+  typVypSestavyK?: TypVypSestavy | null
   // Mikro účetní jednotka (db: TypJednotkyMikro) - Mikro účetní jednotka)
-  typJednotkyMikro?: boolean
+  typJednotkyMikro?: boolean | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
   // Cílová řádka (db: IdRadCil) - Cílová řádka)
-  radkaCil?: AFRadekSestavy
+  radkaCil?: AFRadekSestavy | null
   // Zdrojová sestava (db: IdSesZdroj) - Zdrojová sestava)
-  sestavaZdroj?: AFSestava
+  sestavaZdroj?: AFSestava | null
   // Zdrojová řádka (db: IdRadZdroj) - Zdrojová řádka)
-  radkaZdroj?: AFRadekSestavy
+  radkaZdroj?: AFRadekSestavy | null
   // Řádka rozdílu 1 (db: IdRadRozdil1) - Řádka rozdílu 1)
-  radkaRozdil1?: AFRadekSestavy
+  radkaRozdil1?: AFRadekSestavy | null
   // Řádka rozdílu 2 (db: IdRadRozdil2) - Řádka rozdílu 2)
-  radkaRozdil2?: AFRadekSestavy
+  radkaRozdil2?: AFRadekSestavy | null
   // Kontrola zaokrouhlení 1 (db: IdRadZaokr1) - Kontrola zaokrouhlení 1)
-  radkaZaokr1?: AFRadekSestavy
+  radkaZaokr1?: AFRadekSestavy | null
   // Kontrola zaokrouhlení 2 (db: IdRadZaokr2) - Kontrola zaokrouhlení 2)
-  radkaZaokr2?: AFRadekSestavy
+  radkaZaokr2?: AFRadekSestavy | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

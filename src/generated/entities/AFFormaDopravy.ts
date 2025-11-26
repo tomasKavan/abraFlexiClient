@@ -12,65 +12,65 @@ export class AFFormaDopravy extends AFEntity {
   static EntityType: string = 'FORMA_DOPRAVY'
 
   // ID (db: IdFormaDopravy) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Exportovat na E-Shop (db: ExportEshop) - Exportovat na E-Shop)
-  exportEshop?: boolean
+  exportEshop?: boolean | null
   // Vytvářet čísla balíků (db: CisBal) - Vytvářet čísla balíků)
-  cisBal?: boolean
+  cisBal?: boolean | null
   // Čís.prefix (db: CisBalPrefix) - Tvar čísla - začátek)
-  cisBalPrefix?: string
+  cisBalPrefix?: string | null
   // Čís.postfix (db: CisBalPostfix) - Ukončení)
-  cisBalPostfix?: string
+  cisBalPostfix?: string | null
   // Číslic (db: CisBalCislic) - Číslic)
-  cisBalCislic?: number
+  cisBalCislic?: number | null
   // Čís. od (db: CisBalOd) - Vytvářet od)
-  cisBalOd?: number
+  cisBalOd?: number | null
   // Čís. do (db: CisBalDo) - do)
-  cisBalDo?: number
+  cisBalDo?: number | null
   // Aktuální číslo (db: CisBalAkt) - Aktuální číslo)
-  cisBalAkt?: number
+  cisBalAkt?: number | null
   // Čís.bud. od (db: CisBalOdBud) - Poté vytvářet od)
-  cisBalOdBud?: number
+  cisBalOdBud?: number | null
   // Čís.bud. do (db: CisBalDoBud) - do)
-  cisBalDoBud?: number
+  cisBalDoBud?: number | null
   // Kód zákazníka (db: CisBalKodZak) - Kód zákazníka)
-  cisBalKodZak?: string
+  cisBalKodZak?: string | null
   // Depo zákazníka (db: CisBalDepo) - Depo zákazníka)
-  cisBalDepo?: string
+  cisBalDepo?: string | null
   // Formát exportu (db: FormaDopravyK) - Formát exportu)
-  formaDopravyK?: FormaDopravy
+  formaDopravyK?: FormaDopravy | null
   // Speciální služby (db: SpecialniSluzby) - Speciální služby)
-  specialniSluzby?: string
+  specialniSluzby?: string | null
   // ID/Typ zákazníka (db: CisBalIdZak) - ID/Typ zákazníka)
-  cisBalIdZak?: string
+  cisBalIdZak?: string | null
   // Pořadové číslo souboru (db: PoradoveCislo) - Pořadové číslo souboru)
-  poradoveCislo?: number
+  poradoveCislo?: number | null
   // Kontrolní číslo (db: CisBalKonCis) - Kontrolní číslo)
-  cisBalKonCis?: boolean
+  cisBalKonCis?: boolean | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Dopravné (db: IdDopravne) - Dopravné)
-  dopravne?: AFCenik
+  dopravne?: AFCenik | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

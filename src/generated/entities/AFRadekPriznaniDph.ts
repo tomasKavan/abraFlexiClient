@@ -1,7 +1,7 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
 import { AFCleneniDph } from './AFCleneniDph'
+import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -9,33 +9,35 @@ import { StavPriznaniDph, TypSzbDph } from '../AFEntityEnums'
 
 export class AFRadekPriznaniDph extends AFEntity {
   static EntityPath: string = 'radek-priznani-dph'
-  static EntityName: string = 'Uložené řádky přiznání DPH'
+  static EntityName: string = 'Řádky uloženého přiznání DPH'
   static EntityType: string = 'RADEK_PRIZNANI_DPH'
 
   // ID (db: IdRadekPriznaniDph) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)
-  rok?: number
+  rok?: number | null
   // Měsíc (db: Mesic) - Měsíc)
-  mesic?: number
+  mesic?: number | null
   // Čtvrtletí (db: Ctvrtleti) - Čtvrtletí)
-  ctvrtleti?: number
+  ctvrtleti?: number | null
   // Datum výpočtu (db: Datum) - Datum výpočtu)
-  datum?: Date
+  datum?: Date | null
   // Typ přiznání DPH (db: StavK) - Typ přiznání DPH)
-  stavK?: StavPriznaniDph
+  stavK?: StavPriznaniDph | null
   // Základ (db: Zaklad) - Základ)
-  zaklad?: Big
+  zaklad?: Big | null
   // DPH (db: Dph) - DPH)
-  dph?: Big
+  dph?: Big | null
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Řádky DPH (db: IdClenDph) - Řádky DPH)
-  clenDph?: AFCleneniDph
+  clenDph?: AFCleneniDph | null
+  // Stát (db: IdStat) - Stát)
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -115,7 +117,7 @@ export class AFRadekPriznaniDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -124,6 +126,14 @@ export class AFRadekPriznaniDph extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFCleneniDph',
+      
+    },
+    stat : {
+      key: 'stat',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFStat',
+      maxLength: 3,
       
     },
 

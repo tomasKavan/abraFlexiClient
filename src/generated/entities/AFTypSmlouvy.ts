@@ -13,65 +13,65 @@ export class AFTypSmlouvy extends AFEntity {
   static EntityType: string = 'TYP_SMLOUVY'
 
   // ID (db: IdTypSml) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Automaticky prodlužovat (db: AutoProdl) - Automaticky prodlužovat)
-  autoProdl?: boolean
+  autoProdl?: boolean | null
   // Automaticky vytvářet zakázky (db: AutoZakazka) - Automaticky vytvářet zakázky)
-  autoZakazka?: boolean
+  autoZakazka?: boolean | null
   // Automaticky generovat (db: AutoGen) - Automaticky generovat)
-  autoGen?: boolean
+  autoGen?: boolean | null
   // Obrátkový den (db: Den) - Obrátkový den)
-  den?: number
+  den?: number | null
   // Obrátkový měsíc (db: Mesic) - Obrátkový měsíc)
-  mesic?: number
+  mesic?: number | null
   // Generovat penále (db: GenPenale) - Generovat penále)
-  genPenale?: boolean
+  genPenale?: boolean | null
   // Procento penále (db: ProcPenale) - Procento penále)
-  procPenale?: Big
+  procPenale?: Big | null
   // Řešit přeplatky (db: Preplatky) - Řešit přeplatky)
-  preplatky?: boolean
+  preplatky?: boolean | null
   // Způsob fakturace (db: ZpusFaktK) - Způsob fakturace)
-  zpusFaktK?: ZpusobFakt
+  zpusFaktK?: ZpusobFakt | null
   // Fakturovat dní předem/po (db: DnyFakt) - Fakturovat dní předem/po)
-  dnyFakt?: number
+  dnyFakt?: number | null
   // Automaticky posílat e-mailem klientovi (db: AutoMail) - Automaticky posílat e-mailem klientovi)
-  autoMail?: boolean
+  autoMail?: boolean | null
   // Variabilní symbol z faktury (db: VarSymFakt) - Variabilní symbol je generován z čísla faktury)
-  varSymFakt?: boolean
+  varSymFakt?: boolean | null
   // Dat.vyst. z DUZP (db: DatVystZDuzp) - Dat.vyst. z DUZP)
-  datVystZDuzp?: boolean
+  datVystZDuzp?: boolean | null
   // Generovat i nulové faktury (db: GenerovatNuloveFaktury) - Generovat i nulové faktury)
-  generovatNuloveFaktury?: boolean
+  generovatNuloveFaktury?: boolean | null
   // Zahájit workflow při založení dokladu (db: WorkFlow) - Zahájit workflow při založení dokladu)
-  workFlow?: boolean
+  workFlow?: boolean | null
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
-  typPohybuK?: TypPohybu
+  typPohybuK?: TypPohybu | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Typ faktury (db: IdTypDokl) - Typ faktury)
-  typDoklFak?: AFTypFakturyVydane
+  typDoklFak?: AFTypFakturyVydane | null
   // Typ penalizační faktury (db: IdTypDoklPenale) - Typ penalizační faktury)
-  typDoklFakPenale?: AFTypDokladu
+  typDoklFakPenale?: AFTypDokladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -10,33 +10,33 @@ export class AFFormatElektronickehoBankovnictvi extends AFEntity {
   static EntityType: string = 'FORMAT_ELEKTRONICKEHO_BANKOVNICTVI'
 
   // ID (db: IdElbanFormat) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
-  // Příp. výpisu (db: PriVypis) - přípona)
-  priVypis?: string
-  // Příp. přík. (db: PriPrikaz) - přípona)
-  priPrikaz?: string
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
+  // Přípona výpisu (db: PriVypis) - přípona)
+  priVypis?: string | null
+  // Přípona příkazu (db: PriPrikaz) - přípona)
+  priPrikaz?: string | null
   // Příp. zahr. přík. (db: PriPrikazZahr) - příp.zahr.)
-  priPrikazZahr?: string
+  priPrikazZahr?: string | null
 
 
 

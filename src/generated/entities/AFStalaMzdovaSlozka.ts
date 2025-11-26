@@ -19,73 +19,73 @@ export class AFStalaMzdovaSlozka extends AFEntity {
   static EntityType: string = 'STALA_MZDOVA_SLOZKA'
 
   // ID (db: IdStalaMzdSloz) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Typ složky (db: TypSlozkyK) - Typ složky)
-  typSlozkyK?: TypSlozky
+  typSlozkyK?: TypSlozky | null
   // Skupina složky (db: SkupSlozkyK) - Skupina složky)
-  skupSlozkyK?: SkupinaSlozky
+  skupSlozkyK?: SkupinaSlozky | null
   // Počáteční datum (db: DatumOd) - Počáteční datum)
-  datumOd?: Date
+  datumOd?: Date | null
   // Koncové datum (db: DatumDo) - Koncové datum)
-  datumDo?: Date
+  datumDo?: Date | null
   // Částka za hodinu (db: CastkaHod) - Částka za hodinu)
-  castkaHod?: Big
+  castkaHod?: Big | null
   // Částka za den (db: CastkaDen) - Částka za den)
-  castkaDen?: Big
+  castkaDen?: Big | null
   // Procento / konstanta (db: ProcMzd) - Procento / konstanta)
-  procMzd?: Big
+  procMzd?: Big | null
   // Základ mzdy (db: ZaklMzd) - Základ mzdy)
-  zaklMzd?: Big
+  zaklMzd?: Big | null
   // Částka (db: CastMzd) - Částka)
-  castMzd?: Big
+  castMzd?: Big | null
   // Dny kalendářní (db: DnyKal) - Dny kalendářní)
-  dnyKal?: Big
+  dnyKal?: Big | null
   // Dny pracovní (db: DnyPrac) - Dny pracovní)
-  dnyPrac?: Big
+  dnyPrac?: Big | null
   // Dny ve svátek (db: DnySvatek) - Dny ve svátek)
-  dnySvatek?: Big
+  dnySvatek?: Big | null
   // Hodiny (db: Hodiny) - Hodiny)
-  hodiny?: Big
+  hodiny?: Big | null
   // Hodiny svátek (db: HodinySvatek) - Hodiny svátek)
-  hodinySvatek?: Big
+  hodinySvatek?: Big | null
   // Denní průměr (db: PrumNaDenNem) - Denní průměr)
-  prumNaDenNem?: Big
+  prumNaDenNem?: Big | null
   // Hodinový průměr (db: PrumNaHodNem) - Hodinový průměr)
-  prumNaHodNem?: Big
+  prumNaHodNem?: Big | null
   // Základ je krácen úvazkem (db: ZaklJeKracen) - Základ je krácen úvazkem)
-  zaklJeKracen?: boolean
+  zaklJeKracen?: boolean | null
   // Počet měsíců za které složka platí (db: PocetMes) - Počet měsíců za které složka platí)
-  pocetMes?: number
+  pocetMes?: number | null
   // Podíl složky v měsíci (db: Podil) - Podíl složky v měsíci)
-  podil?: Big
+  podil?: Big | null
   // Typ výpočtu podílu (db: TypPodilK) - Typ výpočtu podílu)
-  typPodilK?: any
+  typPodilK?: any | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Pracovní poměr (db: IdPracPom) - Pracovní poměr)
-  pracPom?: AFPracovniPomerHlavicka
+  pracPom?: AFPracovniPomerHlavicka | null
   // Mzdová složka (db: IdCisMzdSloz) - Mzdová složka)
-  cisMzdSloz?: AFCiselnikMzdovychSlozek
+  cisMzdSloz?: AFCiselnikMzdovychSlozek | null
   // Středisko (db: IdStredisko) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazka) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Bankovní účet (db: IdBanSpoj) - Bankovní účet)
-  banSpoj?: AFMzdyBankovniSpojeni
+  banSpoj?: AFMzdyBankovniSpojeni | null
   // Typ závazku (db: IdTypOstZav) - Typ závazku)
-  typOstZav?: AFTypZavazku
+  typOstZav?: AFTypZavazku | null
   // Typ int. dokladu (db: IdTypIntDokl) - Typ int. dokladu)
-  typIntDokl?: AFTypInternihoDokladu
+  typIntDokl?: AFTypInternihoDokladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

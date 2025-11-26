@@ -15,71 +15,71 @@ export class AFPrikazKInkasuPolozka extends AFEntity {
   static EntityType: string = 'PRIKAZ_K_INKASU_POLOZKA'
 
   // ID (db: IdPolPrikazUhr) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Číslo účtu příjemce (db: Buc) - Číslo účtu příjemce)
-  buc?: string
+  buc?: string | null
   // BIC (db: Bic) - BIC)
-  bic?: string
+  bic?: string | null
   // IBAN (db: Iban) - IBAN)
-  iban?: string
+  iban?: string | null
   // Název banky (db: NazBanky) - Název)
-  nazBanky?: string
+  nazBanky?: string | null
   // Město (db: MestoBanky) - Město)
-  mestoBanky?: string
+  mestoBanky?: string | null
   // PSČ (db: PscBanky) - PSČ)
-  pscBanky?: string
+  pscBanky?: string | null
   // Ulice (db: UliceBanky) - Ulice)
-  uliceBanky?: string
+  uliceBanky?: string | null
   // Název příjemce (db: NazPrijem) - Název příjemce)
-  nazPrijem?: string
+  nazPrijem?: string | null
   // Město (db: MestoPrijem) - Město)
-  mestoPrijem?: string
+  mestoPrijem?: string | null
   // PSČ (db: PscPrijem) - PSČ)
-  pscPrijem?: string
+  pscPrijem?: string | null
   // Ulice (db: UlicePrijem) - Ulice)
-  ulicePrijem?: string
+  ulicePrijem?: string | null
   // Částka (db: Castka) - Částka)
-  castka?: Big
+  castka?: Big | null
   // Var. sym. (db: VarSymPrijem) - Variabilní symbol)
-  varSymPrijem?: string
+  varSymPrijem?: string | null
   // Spec. sym. (db: SpecSymPrijem) - Specifický symbol)
-  specSymPrijem?: string
+  specSymPrijem?: string | null
   // Variab. symbol příkazce (db: VarSymPrikaz) - Variab. symbol příkazce)
-  varSymPrikaz?: string
+  varSymPrikaz?: string | null
   // Specif. symbol příkazce (db: SpecSymPrikaz) - Specif. symbol příkazce)
-  specSymPrikaz?: string
+  specSymPrikaz?: string | null
   // Kód / číslo dokladu (db: Kod) - Kód / číslo dokladu)
-  declare kod?: string
+  declare kod?: string | null
   // Splatnost (db: DatSplat) - Splatnost)
-  datSplat?: Date
+  datSplat?: Date | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Kontakt (db: Kontakt) - Kontakt)
-  kontakt?: string
+  kontakt?: string | null
   // Plátce poplatků (db: PoplatekK) - Plátce poplatků)
-  poplatekK?: ElPrikazPoplatek
+  poplatekK?: ElPrikazPoplatek | null
   // Konst. sym. (db: KonSym) - Konstantní symbol)
-  konSym?: string
+  konSym?: string | null
   // ID transakce v bance (db: TransakceVBanceId) - ID transakce v bance)
-  transakceVBanceId?: string
+  transakceVBanceId?: string | null
   // Dat. splat. příkazu (db: ) - Dat. splat. příkazu)
-  datSplatPrik?: Date
+  datSplatPrik?: Date | null
   // Příkaz (db: IdPrikazUhr) - Příkaz)
-  prikaz?: AFPrikazKUhrade
+  prikaz?: AFPrikazKUhrade | null
   // Pošt. stát (db: IdStatuPrijem) - Stát)
-  faStat?: AFStat
+  faStat?: AFStat | null
   // Stát (db: IdStatuBanky) - Stát)
-  baStat?: AFStat
+  baStat?: AFStat | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Kód banky (db: IdSmerKod) - Kód banky)
-  smerKod?: AFPenezniUstav
+  smerKod?: AFPenezniUstav | null
   // Doklad faktury (db: IdPrimDokl) - Doklad faktury)
-  doklFak?: any
+  doklFak?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

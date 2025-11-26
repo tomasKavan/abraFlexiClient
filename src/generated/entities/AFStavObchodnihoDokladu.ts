@@ -11,45 +11,45 @@ export class AFStavObchodnihoDokladu extends AFEntity {
   static EntityType: string = 'STAV_OBCHODNIHO_DOKLADU'
 
   // ID (db: IdStavDoklObchCis) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Stav dokladu (db: StavUzivK) - Stav dokladu)
-  stavUzivK?: StavDoklObch
+  stavUzivK?: StavDoklObch | null
   // Standard (db: Standard) - Standard)
-  standard?: boolean
+  standard?: boolean | null
   // Pořadí (db: Poradi) - Pořadí)
-  poradi?: number
+  poradi?: number | null
   // Poptávky přijaté (db: ModulPpp) - Poptávky přijaté)
-  modulPpp?: boolean
+  modulPpp?: boolean | null
   // Poptávky vydané (db: ModulPpv) - Poptávky vydané)
-  modulPpv?: boolean
+  modulPpv?: boolean | null
   // Nabídky přijaté (db: ModulNap) - Nabídky přijaté)
-  modulNap?: boolean
+  modulNap?: boolean | null
   // Nabídky vydané (db: ModulNav) - Nabídky vydané)
-  modulNav?: boolean
+  modulNav?: boolean | null
   // Objednávky přijaté (db: ModulObp) - Objednávky přijaté)
-  modulObp?: boolean
+  modulObp?: boolean | null
   // Objednávky vydané (db: ModulObv) - Objednávky vydané)
-  modulObv?: boolean
+  modulObv?: boolean | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

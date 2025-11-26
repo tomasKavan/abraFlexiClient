@@ -11,13 +11,13 @@ export class AFStromCenik extends AFEntity {
   static EntityType: string = 'STROM_CENIK'
 
   // ID (db: Idvazuzel) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // ID Záznamu (db: Idzaznamu) - ID Záznamu)
-  idZaznamu?: number
+  idZaznamu?: number | null
   // Strom (db: Iduzlu) - Strom)
-  uzel?: AFStrom
+  uzel?: AFStrom | null
 
 
 

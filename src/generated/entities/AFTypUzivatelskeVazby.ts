@@ -11,47 +11,47 @@ export class AFTypUzivatelskeVazby extends AFEntity {
   static EntityType: string = 'VAZBA_TYP'
 
   // ID (db: IdVazbaTyp) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Automatická (db: Automaticka) - Automatická)
-  automaticka?: boolean
+  automaticka?: boolean | null
   // Primární místa použití (db: BeanKeysA) - Primární místa použití)
-  beanKeysA?: string
+  beanKeysA?: string | null
   // Sekundární místa použití (db: BeanKeysB) - Sekundární místa použití)
-  beanKeysB?: string
+  beanKeysB?: string | null
   // Viditelná ze sekundárního záznamu (db: VisibleB) - Viditelná ze sekundárního záznamu)
-  visibleB?: boolean
+  visibleB?: boolean | null
   // Vazební sloupec sekundárního záznamu (db: FkNameB) - Vazební sloupec sekundárního záznamu)
-  fkNameB?: string
+  fkNameB?: string | null
   // Tabulka DB (db: TableNameB) - Tabulka DB)
-  tableNameB?: string
+  tableNameB?: string | null
   // Sloupec DB (db: FkDbNameB) - Sloupec DB)
-  fkDbNameB?: string
+  fkDbNameB?: string | null
   // ID DB (db: PkDbNameB) - ID DB)
-  pkDbNameB?: string
+  pkDbNameB?: string | null
   // Modul B (db: ModulB) - Modul B)
-  modulB?: string
+  modulB?: string | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -10,7 +10,6 @@ import { AFSkupinaZbozi } from './AFSkupinaZbozi'
 import { AFStredisko } from './AFStredisko'
 import { AFZakazka } from './AFZakazka'
 import { AFMernaJednotka } from './AFMernaJednotka'
-import { AFUzivatel } from './AFUzivatel'
 
 
 
@@ -21,113 +20,113 @@ export class AFAnalyzaProdeje extends AFEntity {
   static EntityType: string = 'ANALYZA_PRODEJE'
 
   // ID (db: ) - ID)
-  idPrehledu?: number
+  idPrehledu?: number | null
   // Zkratka (db: ) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: ) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: ) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: ) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: ) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Název firmy nebo jméno osoby (db: ) - Název firmy - jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
   // Celkem MJ (db: ) - Celkem MJ)
-  sumMnozMj?: Big
+  sumMnozMj?: Big | null
   // Celkem bez DPH[Kč] (db: ) - Celkem bez DPH[Kč])
-  sumSumZkl?: Big
+  sumSumZkl?: Big | null
   // Celkem bez DPH před slevou [Kč] (db: ) - Celkem bez DPH před slevou [Kč])
-  sumSumZklPredSlevou?: Big
+  sumSumZklPredSlevou?: Big | null
   // Náklady [Kč] (db: ) - Náklady [Kč])
-  sumSumZklNakup?: Big
+  sumSumZklNakup?: Big | null
   // Prodejní cena [Kč] (db: ) - Prodejní cena [Kč])
-  sumSumZklProdej?: Big
+  sumSumZklProdej?: Big | null
   // Sleva [Kč] (db: ) - Sleva [Kč])
-  sumSlevaKc?: Big
+  sumSlevaKc?: Big | null
   // Sleva [%] (db: ) - Sleva [%])
-  sumSlevaProc?: Big
+  sumSlevaProc?: Big | null
   // Obchodní rozpětí [Kč] (db: ) - Obchodní rozpětí [Kč])
-  sumObchodniRozpeti?: Big
+  sumObchodniRozpeti?: Big | null
   // Zisk [%] (db: ) - Zisk [%])
-  procentoZisku?: Big
+  procentoZisku?: Big | null
   // Prodejní cena z ceníku (db: ) - Prodejní cena z ceníku)
-  cenaZakl?: Big
+  cenaZakl?: Big | null
   // MJ poslední měsíc (db: ) - MJ poslední měsíc)
-  sumMnozMj1?: Big
+  sumMnozMj1?: Big | null
   // MJ měsíc -1 (db: ) - MJ měsíc -1)
-  sumMnozMj2?: Big
+  sumMnozMj2?: Big | null
   // MJ měsíc -2 (db: ) - MJ měsíc -2)
-  sumMnozMj3?: Big
+  sumMnozMj3?: Big | null
   // MJ měsíc -3 (db: ) - MJ měsíc -3)
-  sumMnozMj4?: Big
+  sumMnozMj4?: Big | null
   // MJ měsíc -4 (db: ) - MJ měsíc -4)
-  sumMnozMj5?: Big
+  sumMnozMj5?: Big | null
   // MJ měsíc -5 (db: ) - MJ měsíc -5)
-  sumMnozMj6?: Big
+  sumMnozMj6?: Big | null
   // MJ měsíc -6 (db: ) - MJ měsíc -6)
-  sumMnozMj7?: Big
+  sumMnozMj7?: Big | null
   // MJ měsíc -7 (db: ) - MJ měsíc -7)
-  sumMnozMj8?: Big
+  sumMnozMj8?: Big | null
   // MJ měsíc -8 (db: ) - MJ měsíc -8)
-  sumMnozMj9?: Big
+  sumMnozMj9?: Big | null
   // MJ měsíc -9 (db: ) - MJ měsíc -9)
-  sumMnozMj10?: Big
+  sumMnozMj10?: Big | null
   // MJ měsíc -10 (db: ) - MJ měsíc -10)
-  sumMnozMj11?: Big
+  sumMnozMj11?: Big | null
   // MJ měsíc -11 (db: ) - MJ měsíc -11)
-  sumMnozMj12?: Big
+  sumMnozMj12?: Big | null
   // [Kč] poslední měsíc (db: ) - [Kč] poslední měsíc)
-  sumSumZkl1?: Big
+  sumSumZkl1?: Big | null
   // [Kč] měsíc -1 (db: ) - [Kč] měsíc -1)
-  sumSumZkl2?: Big
+  sumSumZkl2?: Big | null
   // [Kč] měsíc -2 (db: ) - [Kč] měsíc -2)
-  sumSumZkl3?: Big
+  sumSumZkl3?: Big | null
   // [Kč] měsíc -3 (db: ) - [Kč] měsíc -3)
-  sumSumZkl4?: Big
+  sumSumZkl4?: Big | null
   // [Kč] měsíc -4 (db: ) - [Kč] měsíc -4)
-  sumSumZkl5?: Big
+  sumSumZkl5?: Big | null
   // [Kč] měsíc -5 (db: ) - [Kč] měsíc -5)
-  sumSumZkl6?: Big
+  sumSumZkl6?: Big | null
   // [Kč] měsíc -6 (db: ) - [Kč] měsíc -6)
-  sumSumZkl7?: Big
+  sumSumZkl7?: Big | null
   // [Kč] měsíc -7 (db: ) - [Kč] měsíc -7)
-  sumSumZkl8?: Big
+  sumSumZkl8?: Big | null
   // [Kč] měsíc -8 (db: ) - [Kč] měsíc -8)
-  sumSumZkl9?: Big
+  sumSumZkl9?: Big | null
   // [Kč] měsíc -9 (db: ) - [Kč] měsíc -9)
-  sumSumZkl10?: Big
+  sumSumZkl10?: Big | null
   // [Kč] měsíc -10 (db: ) - [Kč] měsíc -10)
-  sumSumZkl11?: Big
+  sumSumZkl11?: Big | null
   // [Kč] měsíc -11 (db: ) - [Kč] měsíc -11)
-  sumSumZkl12?: Big
+  sumSumZkl12?: Big | null
   // Firma (db: ) - Firma)
-  adresar?: AFAdresar
+  adresar?: AFAdresar | null
   // Ceník (db: ) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Sklad (db: ) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Místo určení (db: ) - Místo určení)
-  mistUrc?: AFMistoUrceni
+  mistUrc?: AFMistoUrceni | null
   // Skupina firem (db: ) - Skupina firem)
-  skupFir?: AFSkupinaFirem
+  skupFir?: AFSkupinaFirem | null
   // Ceníková skupina (db: ) - Ceníková skupina)
-  skupCen?: AFCenikovaSkupina
+  skupCen?: AFCenikovaSkupina | null
   // Skupina zboží (db: ) - Skupina zboží)
-  skupZboz?: AFSkupinaZbozi
+  skupZboz?: AFSkupinaZbozi | null
   // Výrobce (db: ) - Výrobce)
-  vyrobce?: AFAdresar
+  vyrobce?: AFAdresar | null
   // Středisko (db: ) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: ) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // MJ (db: ) - MJ)
-  mj?: AFMernaJednotka
+  mj?: AFMernaJednotka | null
   // Zodpovědná osoba z dokladu (db: ) - Zodpovědná osoba z dokladu)
-  zodpOsoba?: AFUzivatel
+  zodpOsoba?: any | null
   // Zodpovědná osoba z adresáře (db: ) - Zodpovědná osoba z adresáře)
-  zodpOsobaAdresar?: AFUzivatel
+  zodpOsobaAdresar?: any | null
 
 
 
@@ -505,7 +504,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -513,7 +512,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'zodpOsobaAdresar',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

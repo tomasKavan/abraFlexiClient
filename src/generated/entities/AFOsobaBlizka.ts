@@ -13,35 +13,35 @@ export class AFOsobaBlizka extends AFEntity {
   static EntityType: string = 'OSOBA_BLIZKA'
 
   // ID (db: IdDite) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Příjmení (db: Prijmeni) - Příjmení)
-  prijmeni?: string
+  prijmeni?: string | null
   // Jméno (db: Jmeno) - Jméno)
-  jmeno?: string
+  jmeno?: string | null
   // Datum narození (db: DatNaroz) - Datum narození)
-  datNaroz?: Date
+  datNaroz?: Date | null
   // Pohlaví (db: PohlaviK) - Pohlaví)
-  pohlaviK?: Pohlavi
+  pohlaviK?: Pohlavi | null
   // Rodné číslo (db: RodCis) - Rodné číslo)
-  rodCis?: string
+  rodCis?: string | null
   // ZTP/P (db: Ztp_P) - ZTP/P)
-  ztp_P?: boolean
+  ztp_P?: boolean | null
   // Od (db: Ztp_POd) - Od)
-  ztp_POd?: Date
+  ztp_POd?: Date | null
   // Do (db: Ztp_PDo) - Do)
-  ztp_PDo?: Date
+  ztp_PDo?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Dítě (db: Dite) - Dítě)
-  dite?: boolean
+  dite?: boolean | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Vztah (db: IdVztah) - Vztah)
-  vztah?: AFVztah
+  vztah?: AFVztah | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

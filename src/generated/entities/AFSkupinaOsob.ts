@@ -14,63 +14,63 @@ export class AFSkupinaOsob extends AFEntity {
   static EntityType: string = 'SKUPINA_OSOB'
 
   // ID (db: IdSkupOsob) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  popis?: string | null
+  // Platí od data (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do data (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Tydenní pracovní doba (db: TydenPracDobaK) - Tydenní pracovní doba)
-  tydenPracDobaK?: TydenPracDoba
+  tydenPracDobaK?: TydenPracDoba | null
   // Zahájit workflow při založení dokladu (db: WorkFlow) - Zahájit workflow při založení dokladu)
-  workFlow?: boolean
+  workFlow?: boolean | null
   // Typ hrubé mzdy (db: IdTdIntHruba) - Typ hrubé mzdy)
-  tdIntHruba?: AFTypInternihoDokladu
+  tdIntHruba?: AFTypInternihoDokladu | null
   // Typ náhrady mzdy (db: IdTdIntNahrad) - Typ náhrady mzdy)
-  tdIntNahrad?: AFTypInternihoDokladu
+  tdIntNahrad?: AFTypInternihoDokladu | null
   // Typ pro cestovné do limitu (db: IdTdIntCestDoLim) - do limitu)
-  tdIntCestDoLim?: AFTypInternihoDokladu
+  tdIntCestDoLim?: AFTypInternihoDokladu | null
   // Typ pro cestovné nad limit (db: IdTdIntCestNadLim) - nad limit)
-  tdIntCestNadLim?: AFTypDokladu
+  tdIntCestNadLim?: AFTypDokladu | null
   // Typ pro strav. paušál do limitu (db: IdTdIntStravPausDoLim) - do limitu)
-  tdIntStravPausDoLim?: AFTypInternihoDokladu
+  tdIntStravPausDoLim?: AFTypInternihoDokladu | null
   // Typ pro strav. paušál nad limit (db: IdTdIntStravPausNadLim) - nad limit)
-  tdIntStravPausNadLim?: AFTypDokladu
+  tdIntStravPausNadLim?: AFTypDokladu | null
   // Typ pro homeoffice do limitu (db: IdTdIntHomeofficeDoLim) - do limitu)
-  tdIntHomeofficeDoLim?: AFTypDokladu
+  tdIntHomeofficeDoLim?: AFTypDokladu | null
   // Typ pro homeoffice nad limit (db: IdTdIntHomeofficeNadLim) - nad limit)
-  tdIntHomeofficeNadLim?: AFTypDokladu
+  tdIntHomeofficeNadLim?: AFTypDokladu | null
   // Př. zaúč. soc. zaměst. (db: IdTuoZavSocZam) - Předpis zaúčtování zaměstnanec)
-  tuoZavSocZam?: AFPredpisZauctovani
+  tuoZavSocZam?: AFPredpisZauctovani | null
   // Př. zaúč. soc. firma (db: IdTuoZavSocFir) - Předpis zaúčtování zaměstnavatel)
-  tuoZavSocFir?: AFPredpisZauctovani
+  tuoZavSocFir?: AFPredpisZauctovani | null
   // Př. zaúč. zdr. zaměst. (db: IdTuoZavZdrZam) - Předpis zaúčtování - zaměstnanec)
-  tuoZavZdrZam?: AFPredpisZauctovani
+  tuoZavZdrZam?: AFPredpisZauctovani | null
   // Př. zaúč. zdr. firma (db: IdTuoZavZdrFir) - Předpis zaúčtování - zaměstnavatel)
-  tuoZavZdrFir?: AFPredpisZauctovani
+  tuoZavZdrFir?: AFPredpisZauctovani | null
   // Předpis zaúčtování daň (db: IdTuoZavDan) - Předpis zaúčtování daň)
-  tuoZavDan?: AFPredpisZauctovani
+  tuoZavDan?: AFPredpisZauctovani | null
   // Typ pro srážku stravenek (db: IdTdSrazkaStrav) - Typ pro srážku stravenek)
-  tdSrazkaStrav?: AFTypDokladu
+  tdSrazkaStrav?: AFTypDokladu | null
   // Typ int. dokl. příspěvků (db: IdTdIntPrispevky) - Typ int. dokl. příspěvků)
-  tdIntPrispevky?: AFTypDokladu
+  tdIntPrispevky?: AFTypDokladu | null
   // Typ závazku příspěvků (db: IdTdZavPrispevky) - Typ závazku příspěvků)
-  tdZavPrispevky?: AFTypDokladu
+  tdZavPrispevky?: AFTypDokladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

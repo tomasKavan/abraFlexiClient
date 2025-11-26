@@ -12,49 +12,49 @@ export class AFCenikObal extends AFEntity {
   static EntityType: string = 'CENIK_OBAL'
 
   // ID (db: IdEkoKom) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Hmotnost (db: Hmotnost) - Hmotnost)
-  hmotnost?: Big
+  hmotnost?: Big | null
   // MJ hmotnosti (db: MjHmotK) - MJ hmotnosti)
-  mjHmotK?: MjHmot
+  mjHmotK?: MjHmot | null
   // Typ obalu (db: TypObaluK) - Typ obalu)
-  typObaluK?: TypObalu
+  typObaluK?: TypObalu | null
   // Typ vzniku (db: TypVznikuK) - Typ vzniku)
-  typVznikuK?: TypVzniku
+  typVznikuK?: TypVzniku | null
   // Typ použití (db: TypPouzitiK) - Typ použití)
-  typPouzitiK?: TypPouziti
+  typPouzitiK?: TypPouziti | null
   // Materiál (db: MaterialK) - Materiál)
-  materialK?: Material
+  materialK?: Material | null
   // Surovina (db: SurovinaK) - Surovina)
-  surovinaK?: Surovina
+  surovinaK?: Surovina | null
   // Barva (db: BarvaMaterialuK) - Barva)
-  barvaMaterialuK?: BarvaMaterialu
+  barvaMaterialuK?: BarvaMaterialu | null
   // Obsahuje nápoje (db: ObsahujeNapoje) - Obsahuje nápoje)
-  obsahujeNapoje?: boolean
+  obsahujeNapoje?: boolean | null
   // Typ litteringového obalu (db: LitterObalK) - Typ)
-  litterObalK?: LitterObal
+  litterObalK?: LitterObal | null
   // Hmotnost plastu (db: LitterObalHmotnostPlast) - Hmotnost plastu)
-  litterObalHmotnostPlast?: Big
+  litterObalHmotnostPlast?: Big | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

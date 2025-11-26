@@ -2,8 +2,8 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFCenik } from './AFCenik'
 import { AFSklad } from './AFSklad'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFSkladovyPohybPolozka } from './AFSkladovyPohybPolozka'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 
 
 
@@ -14,39 +14,39 @@ export class AFVyrobniCislo extends AFEntity {
   static EntityType: string = 'VYROBNI_CISLA'
 
   // ID (db: Idvyrobnicislo) - ID)
-  declare id?: number
+  declare id?: number | null
   // Výrobní číslo (db: Kod) - Výrobní číslo)
-  declare kod?: string
+  declare kod?: string | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Sklad (db: IdSkladu) - Sklad)
-  sklad?: AFSklad
-  // Hlavička výrobního čísla (db: IdVyrobniCisloHlav) - Hlavička výrobního čísla)
-  vyrobniCisloHlav?: any
-  // Přijato fakturou (db: ) - Přijato fakturou)
-  doklFakPrijem?: any
-  // Vydáno fakturou (db: ) - Vydáno fakturou)
-  doklFakVydej?: any
-  // Přijato pokl. dokladem (db: ) - Přijato pokl. dokladem)
-  doklIntPrijem?: any
-  // Vydáno pokl. dokladem (db: ) - Vydáno pokl. dokladem)
-  doklIntVydej?: any
-  // Naskladněno dokladem (db: ) - Naskladněno dokladem)
-  doklSkladPrijem?: AFSkladovyPohyb
-  // Vyskladněno dokladem (db: ) - Vyskladněno dokladem)
-  doklSkladVydej?: AFSkladovyPohyb
-  // Položka přijaté faktury (db: IdPolFakPrijem) - Položka přijaté faktury)
-  idPolFakPrijem?: any
-  // Položka vydané faktury (db: IdPolFakVydej) - Položka vydané faktury)
-  idPolFakVydej?: any
-  // Pokladní položka přijímající (db: IdPolIntPrijem) - Pokladní položka přijímající)
-  idPolIntPrijem?: any
-  // Pokladní položka vydávající (db: IdPolIntVydej) - Pokladní položka vydávající)
-  idPolIntVydej?: any
+  sklad?: AFSklad | null
   // Položka příjemky (db: IdPolSkladPrijem) - Položka příjemky)
-  idPolSkladPrijem?: AFSkladovyPohybPolozka
+  idPolSkladPrijem?: AFSkladovyPohybPolozka | null
   // Položka výdejky (db: IdPolSkladVydej) - Položka výdejky)
-  idPolSkladVydej?: AFSkladovyPohybPolozka
+  idPolSkladVydej?: AFSkladovyPohybPolozka | null
+  // Položka přijaté faktury (db: IdPolFakPrijem) - Položka přijaté faktury)
+  idPolFakPrijem?: any | null
+  // Položka vydané faktury (db: IdPolFakVydej) - Položka vydané faktury)
+  idPolFakVydej?: any | null
+  // Pokladní položka přijímající (db: IdPolIntPrijem) - Pokladní položka přijímající)
+  idPolIntPrijem?: any | null
+  // Pokladní položka vydávající (db: IdPolIntVydej) - Pokladní položka vydávající)
+  idPolIntVydej?: any | null
+  // Hlavička výrobního čísla (db: IdVyrobniCisloHlav) - Hlavička výrobního čísla)
+  vyrobniCisloHlav?: any | null
+  // Přijato fakturou (db: ) - Přijato fakturou)
+  doklFakPrijem?: any | null
+  // Vydáno fakturou (db: ) - Vydáno fakturou)
+  doklFakVydej?: any | null
+  // Přijato pokl. dokladem (db: ) - Přijato pokl. dokladem)
+  doklIntPrijem?: any | null
+  // Vydáno pokl. dokladem (db: ) - Vydáno pokl. dokladem)
+  doklIntVydej?: any | null
+  // Naskladněno dokladem (db: ) - Naskladněno dokladem)
+  doklSkladPrijem?: AFSkladovyPohyb | null
+  // Vyskladněno dokladem (db: ) - Vyskladněno dokladem)
+  doklSkladVydej?: AFSkladovyPohyb | null
 
 
 
@@ -77,6 +77,48 @@ export class AFVyrobniCislo extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFSklad',
+      
+    },
+    idPolSkladPrijem : {
+      key: 'idPolSkladPrijem',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFSkladovyPohybPolozka',
+      
+    },
+    idPolSkladVydej : {
+      key: 'idPolSkladVydej',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFSkladovyPohybPolozka',
+      
+    },
+    idPolFakPrijem : {
+      key: 'idPolFakPrijem',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      
+    },
+    idPolFakVydej : {
+      key: 'idPolFakVydej',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      
+    },
+    idPolIntPrijem : {
+      key: 'idPolIntPrijem',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      
+    },
+    idPolIntVydej : {
+      key: 'idPolIntVydej',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
       
     },
     vyrobniCisloHlav : {
@@ -127,48 +169,6 @@ export class AFVyrobniCislo extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFSkladovyPohyb',
-      
-    },
-    idPolFakPrijem : {
-      key: 'idPolFakPrijem',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFEntity',
-      
-    },
-    idPolFakVydej : {
-      key: 'idPolFakVydej',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFEntity',
-      
-    },
-    idPolIntPrijem : {
-      key: 'idPolIntPrijem',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFEntity',
-      
-    },
-    idPolIntVydej : {
-      key: 'idPolIntVydej',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFEntity',
-      
-    },
-    idPolSkladPrijem : {
-      key: 'idPolSkladPrijem',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFSkladovyPohybPolozka',
-      
-    },
-    idPolSkladVydej : {
-      key: 'idPolSkladVydej',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFSkladovyPohybPolozka',
       
     },
 

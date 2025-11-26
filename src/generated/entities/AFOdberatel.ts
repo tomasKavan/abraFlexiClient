@@ -12,51 +12,51 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 export class AFOdberatel extends AFEntity {
   static EntityPath: string = 'odberatel'
-  static EntityName: string = 'Ceny pro odběratele/skupiny odběratelů, speciální kódy'
+  static EntityName: string = 'Prodejní ceny'
   static EntityType: string = 'ODBERATEL'
 
   // ID (db: IdOdberatel) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Kód zboží/materiálu (db: KodIndi) - Kód zboží/materiálu)
-  kodIndi?: string
+  kodIndi?: string | null
   // Prodejní cena (db: ProdejCena) - Prodejní cena)
-  prodejCena?: Big
+  prodejCena?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Platí od data (db: PlatiOdData) - Platí od data)
-  platiOdData?: Date
+  platiOdData?: Date | null
   // Platí do data (db: PlatiDoData) - Platí do data)
-  platiDoData?: Date
+  platiDoData?: Date | null
   // Ručně vybrat (db: RucneVybrat) - Ručně vybrat)
-  rucneVybrat?: boolean
+  rucneVybrat?: boolean | null
   // Limit MJ 2 (db: LimMnoz2) - Množ. limit 2)
-  limMnoz2?: Big
+  limMnoz2?: Big | null
   // Limit MJ 3 (db: LimMnoz3) - Množ. limit 3)
-  limMnoz3?: Big
+  limMnoz3?: Big | null
   // Limit MJ 4 (db: LimMnoz4) - Množ. limit 4)
-  limMnoz4?: Big
+  limMnoz4?: Big | null
   // Limit MJ 5 (db: LimMnoz5) - Množ. limit 5)
-  limMnoz5?: Big
+  limMnoz5?: Big | null
   // Prodejní cena 2 (db: ProdejCena2) - Prodejní cena 2)
-  prodejCena2?: Big
+  prodejCena2?: Big | null
   // Prodejní cena 3 (db: ProdejCena3) - Prodejní cena 3)
-  prodejCena3?: Big
+  prodejCena3?: Big | null
   // Prodejní cena 4 (db: ProdejCena4) - Prodejní cena 4)
-  prodejCena4?: Big
+  prodejCena4?: Big | null
   // Prodejní cena 5 (db: ProdejCena5) - Prodejní cena 5)
-  prodejCena5?: Big
+  prodejCena5?: Big | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Firma (db: IdFirmy) - Firma)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Ceníková skupina (db: IdSkupCen) - Ceníková skupina)
-  skupCen?: AFCenikovaSkupina
+  skupCen?: AFCenikovaSkupina | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

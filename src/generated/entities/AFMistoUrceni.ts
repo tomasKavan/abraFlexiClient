@@ -15,49 +15,55 @@ export class AFMistoUrceni extends AFEntity {
   static EntityType: string = 'MISTO_URCENI'
 
   // ID (db: IdMur) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // Telefon (db: Tel) - Telefon)
-  tel?: string
+  tel?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
+  email?: string | null
   // WWW (db: Www) - WWW)
-  www?: string
+  www?: string | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Název - druhá řádka (db: Nazev2) - Název - druhá řádka)
-  nazev2?: string
+  nazev2?: string | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Primární místo určení (db: Primarni) - Primární místo určení)
-  primarni?: boolean
+  primarni?: boolean | null
   // Místo plnění (db: MistoPlneni) - Místo plnění)
-  mistoPlneni?: boolean
+  mistoPlneni?: boolean | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
-  kontaktOsoba?: AFKontakt
+  kontaktOsoba?: AFKontakt | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -199,6 +205,12 @@ export class AFMistoUrceni extends AFEntity {
       isArray: false,
       
     },
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
@@ -211,6 +223,22 @@ export class AFMistoUrceni extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFKontakt',
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
       
     },
 

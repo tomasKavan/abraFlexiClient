@@ -11,39 +11,39 @@ export class AFMernaJednotka extends AFEntity {
   static EntityType: string = 'MERNA_JEDNOTKA'
 
   // ID (db: IdMj) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Typ (db: TypMjK) - Typ)
-  typMjK?: TypMj
+  typMjK?: TypMj | null
   // Normal. jednotka (db: NormalMjK) - Normal. jednotka)
-  normalMjK?: NormalMj
+  normalMjK?: NormalMj | null
   // Zkratka pro tisky (db: KodTisk) - Zkratka pro tisky)
-  kodTisk?: string
+  kodTisk?: string | null
   // Zkratka pro tisky EN (db: KodTiskA) - Zkratka pro tisky EN)
-  kodTiskA?: string
+  kodTiskA?: string | null
   // Zkratka pro tisky DE (db: KodTiskB) - Zkratka pro tisky DE)
-  kodTiskB?: string
+  kodTiskB?: string | null
   // Zkratka pro tisky FR (db: KodTiskC) - Zkratka pro tisky FR)
-  kodTiskC?: string
+  kodTiskC?: string | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

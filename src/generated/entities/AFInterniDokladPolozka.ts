@@ -24,173 +24,183 @@ export class AFInterniDokladPolozka extends AFEntity {
   static EntityType: string = 'INTERNI_DOKLAD_POLOZKA'
 
   // ID (db: IdPolInt) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Úč. pol. (db: Ucetni) - Položka je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Označení (db: Kod) - Označení)
-  declare kod?: string
+  declare kod?: string | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Typ položky (db: TypPolozkyK) - Typ položky)
-  typPolozkyK?: any
+  typPolozkyK?: any | null
   // Balení (db: BaleniId) - Balení)
-  baleniId?: number
+  baleniId?: number | null
   // Počet balení (db: MnozBaleni) - Počet balení)
-  mnozBaleni?: Big
+  mnozBaleni?: Big | null
   // Množství (db: MnozMj) - Množství)
-  mnozMj?: Big
+  mnozMj?: Big | null
   // Typ ceny (db: TypCenyDphK) - Typ ceny)
-  typCenyDphK?: TypCeny
+  typCenyDphK?: TypCeny | null
   // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // DPH [%] (db: SzbDph) - DPH [%])
-  szbDph?: Big
+  szbDph?: Big | null
   // Cena za MJ (db: CenaMj) - Cena za MJ)
-  cenaMj?: Big
+  cenaMj?: Big | null
   // Základ [Kč] (db: SumZkl) - Základ [Kč])
-  sumZkl?: Big
+  sumZkl?: Big | null
   // DPH [Kč] (db: SumDph) - DPH [Kč])
-  sumDph?: Big
+  sumDph?: Big | null
   // Celkem [Kč] (db: sumZkl + sumDph) - Celkem [Kč])
-  sumCelkem?: Big
+  sumCelkem?: Big | null
   // Základ [měna] (db: SumZklMen) - Základ [měna])
-  sumZklMen?: Big
+  sumZklMen?: Big | null
   // DPH [měna] (db: SumDphMen) - DPH [měna])
-  sumDphMen?: Big
+  sumDphMen?: Big | null
   // Celkem [měna] (db: sumZklMen + sumDphMen) - Celkem [měna])
-  sumCelkemMen?: Big
+  sumCelkemMen?: Big | null
   // Objem (db: Objem) - Objem)
-  objem?: Big
+  objem?: Big | null
   // Cen. jednotka (db: CenJednotka) - Cen. jednotka)
-  cenJednotka?: Big
+  cenJednotka?: Big | null
   // Způsob výpočtu (db: TypVypCenyK) - Způsob výpočtu)
-  typVypCenyK?: TypVypCeny
+  typVypCenyK?: TypVypCeny | null
   // Nákupní cena za MJ z ceníku (db: CenaMjNakup) - Nákupní)
-  cenaMjNakup?: Big
+  cenaMjNakup?: Big | null
   // Prodejní cena za MJ z ceníku (db: CenaMjProdej) - Základní prodejní)
-  cenaMjProdej?: Big
+  cenaMjProdej?: Big | null
   // Ceníková cena [Kč] (db: CenaMjCenikTuz) - Ceníková cena [Kč])
-  cenaMjCenikTuz?: Big
-  // Marže / Rabat / Sleva [%] (db: ProcZakl) - Marže / Rabat / Sleva [%])
-  procZakl?: Big
+  cenaMjCenikTuz?: Big | null
+  // Marže / Přirážka / Rabat / Sleva [%] (db: ProcZakl) - Marže / Přirážka / Rabat / Sleva [%])
+  procZakl?: Big | null
   // Množstevní sleva [%] (db: SlevaMnoz) - Množstevní sleva [%])
-  slevaMnoz?: Big
-  // Způsob zaokr. ceny (db: ZaokrJakK) - Způsob)
-  zaokrJakK?: ZaokrJak
-  // Řád zaokr. ceny (db: ZaokrNaK) - Řád)
-  zaokrNaK?: ZaokrNa
+  slevaMnoz?: Big | null
+  // Způsob zaokrouhlení - Cena (db: ZaokrJakK) - Způsob)
+  zaokrJakK?: ZaokrJak | null
+  // Řád zaokrouhlení - Cena (db: ZaokrNaK) - Řád)
+  zaokrNaK?: ZaokrNa | null
   // Šarže (db: Sarze) - Šarže)
-  sarze?: string
+  sarze?: string | null
   // Expirace (db: Expirace) - Expirace)
-  expirace?: Date
+  expirace?: Date | null
   // Trvanlivost (db: DatTrvan) - Trvanlivost)
-  datTrvan?: Date
+  datTrvan?: Date | null
   // Datum výroby (db: DatVyroby) - Datum výroby)
-  datVyroby?: Date
+  datVyroby?: Date | null
   // Uživatelský stav (db: StavUzivK) - Uživatelský stav)
-  stavUzivK?: StavUziv
+  stavUzivK?: StavUziv | null
   // Plán MJ (db: MnozMjPlan) - Plánované množství)
-  mnozMjPlan?: Big
+  mnozMjPlan?: Big | null
   // Real. MJ (db: MnozMjReal) - Realizované množství)
-  mnozMjReal?: Big
+  mnozMjReal?: Big | null
   // Zaokr. pol. (db: AutoZaokr) - AutoZaokr)
-  autoZaokr?: boolean
+  autoZaokr?: boolean | null
   // Auto. pol. (db: Autogen) - Autogen)
-  autogen?: boolean
+  autogen?: boolean | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Datum vyst. (db: DatVyst) - Vystaveno)
-  datVyst?: Date
+  datVyst?: Date | null
   // Kopírovat MD účet základu (db: KopZklMdUcet) - Kopírovat MD účet základu)
-  kopZklMdUcet?: boolean
+  kopZklMdUcet?: boolean | null
   // Kopírovat D účet základu (db: KopZklDalUcet) - Kopírovat D účet základu)
-  kopZklDalUcet?: boolean
+  kopZklDalUcet?: boolean | null
   // Kopírovat MD účet DPH (db: KopDphMdUcet) - Kopírovat MD účet DPH)
-  kopDphMdUcet?: boolean
+  kopDphMdUcet?: boolean | null
   // Kopírovat D účet DPH (db: KopDphDalUcet) - Kopírovat D účet DPH)
-  kopDphDalUcet?: boolean
-  // Kopírovat předpis (db: KopTypUcOp) - Kopírovat předpis)
-  kopTypUcOp?: boolean
+  kopDphDalUcet?: boolean | null
+  // Kopírovat předpis zaúčtování (db: KopTypUcOp) - Kopírovat předpis zaúčtování)
+  kopTypUcOp?: boolean | null
   // Kopírovat zakázku (db: KopZakazku) - Kopírovat zakázku)
-  kopZakazku?: boolean
+  kopZakazku?: boolean | null
   // Kopírovat středisko (db: KopStred) - Kopírovat středisko)
-  kopStred?: boolean
+  kopStred?: boolean | null
   // Kopírovat činnost (db: KopCinnost) - Kopírovat činnost)
-  kopCinnost?: boolean
+  kopCinnost?: boolean | null
   // Kopírovat štítky (db: KopKlice) - Kopírovat štítky)
-  kopKlice?: boolean
+  kopKlice?: boolean | null
   // Kopírovat řádek DPH (db: KopClenDph) - Kopírovat řádek DPH z dokladu)
-  kopClenDph?: boolean
+  kopClenDph?: boolean | null
   // Kopírovat dat. zaúčt. (db: KopDatUcto) - Kopírovat dat. zaúčt.)
-  kopDatUcto?: boolean
-  // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
-  datUcto?: Date
+  kopDatUcto?: boolean | null
+  // Datum zaúčtování (db: DatUcto) - Datum zaúčtování)
+  datUcto?: Date | null
   // Storno (db: Storno) - Storno)
-  storno?: boolean
+  storno?: boolean | null
   // Storno položky (db: StornoPol) - Storno položky)
-  stornoPol?: boolean
+  stornoPol?: boolean | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Předpis zaúčtování (db: IdTypUcOp) - Předpis zaúčtování)
-  typUcOp?: AFPredpisZauctovani
-  // Účet MD zákl. (db: IdZklMdUcet) - Má Dáti základu)
-  zklMdUcet?: AFUcet
-  // Účet Dal zákl. (db: IdZklDalUcet) - Dal základu)
-  zklDalUcet?: AFUcet
+  typUcOp?: AFPredpisZauctovani | null
+  // Účet MD základ (db: IdZklMdUcet) - Má Dáti základu)
+  zklMdUcet?: AFUcet | null
+  // Účet Dal základ (db: IdZklDalUcet) - Dal základu)
+  zklDalUcet?: AFUcet | null
   // Účet MD DPH (db: IdDphMdUcet) - Má dáti DPH)
-  dphMdUcet?: AFUcet
+  dphMdUcet?: AFUcet | null
   // Účet Dal DPH (db: IdDphDalUcet) - Dal DPH)
-  dphDalUcet?: AFUcet
+  dphDalUcet?: AFUcet | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Dodavatel (db: IdFirmy) - Dodavatel)
-  dodavatel?: AFAdresar
+  dodavatel?: AFAdresar | null
   // Řádky DPH (db: IdClenDph) - Řádky DPH)
-  clenDph?: AFCleneniDph
+  clenDph?: AFCleneniDph | null
   // Kód přenesení DPH (db: IdDphPren) - Kód přenesení DPH)
-  dphPren?: AFPreneseniDph
+  dphPren?: AFPreneseniDph | null
   // MJ (db: IdMj) - MJ)
-  mj?: AFMernaJednotka
+  mj?: AFMernaJednotka | null
   // MJ objemu (db: IdMjObjem) - MJ objemu)
-  mjObjem?: AFMernaJednotka
+  mjObjem?: AFMernaJednotka | null
   // Sazba DPH (db: IdSazbyDph) - Sazba DPH)
-  sazbaDph?: AFSazbaDph
+  sazbaDph?: AFSazbaDph | null
   // Zdrojová položka objednávky (db: IdPolObchZdroj) - Zdrojová položka objednávky)
-  idPolObchZdroj?: number
+  idPolObchZdroj?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Zdroj (db: Source) - Zdroj)
-  source?: string
+  source?: string | null
   // Řádek kontrolního hlášení DPH (db: IdClenKonVykDph) - Řádek kontrolního hlášení DPH)
-  clenKonVykDph?: AFCleneniKontrolniHlaseni
+  clenKonVykDph?: AFCleneniKontrolniHlaseni | null
   // Kopírovat řádek kon. hl. DPH (db: KopClenKonVykDph) - Kopírovat řádek kontrolního hlášení DPH z dokladu)
-  kopClenKonVykDph?: boolean
+  kopClenKonVykDph?: boolean | null
   // Číselný kód zboží (db: CiselnyKodZbozi) - Číselný kód zboží)
-  ciselnyKodZbozi?: string
+  ciselnyKodZbozi?: string | null
   // Druh zboží (db: DruhZbozi) - Druh zboží)
-  druhZbozi?: string
+  druhZbozi?: string | null
   // Marže (db: ) - Marže)
-  marze?: Big
-  // Min. marže (db: ) - Min. marže)
-  minMarze?: Big
+  marze?: Big | null
+  // Přirážka (db: ) - Přirážka)
+  prirazka?: Big | null
+  // Minimální cenový rozdíl (db: ) - Minimální cenový rozdíl)
+  minMarze?: Big | null
+  // Typ min. cen. rozdílu (db: ) - Typ hlídaného minimálního cenového rozdílu)
+  typVypoctuHlidatMinK?: TypVypCeny | null
   // Doklad (db: IdDoklInt) - Interní doklad)
-  doklInt?: AFInterniDoklad
+  doklInt?: AFInterniDoklad | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -206,6 +216,28 @@ export class AFInterniDokladPolozka extends AFEntity {
     },
     lastUpdate : {
       key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdDate : {
+      key: 'createdDate',
       type: PropertyType.DateTime,
       isArray: false,
       
@@ -762,11 +794,27 @@ export class AFInterniDokladPolozka extends AFEntity {
       digits: 12,
       
     },
+    prirazka : {
+      key: 'prirazka',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 12,
+      
+    },
     minMarze : {
       key: 'minMarze',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 12,
+      
+    },
+    typVypoctuHlidatMinK : {
+      key: 'typVypoctuHlidatMinK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'TypVypCeny',
+      enum: TypVypCeny,
       
     },
     doklInt : {

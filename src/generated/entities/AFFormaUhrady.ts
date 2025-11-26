@@ -13,49 +13,49 @@ export class AFFormaUhrady extends AFEntity {
   static EntityType: string = 'FORMA_UHRADY'
 
   // ID (db: IdFormaUhradyCis) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Forma úhrady (db: FormaUhrK) - Forma úhrady)
-  formaUhrK?: FormaUhr
+  formaUhrK?: FormaUhr | null
   // Kurz (db: Kurz) - Kurz)
-  kurz?: Big
+  kurz?: Big | null
   // Kurz. množství (db: KurzMnozstvi) - Kurz. množství)
-  kurzMnozstvi?: Big
+  kurzMnozstvi?: Big | null
   // Limit vrácení (db: LimitVratky) - Limit vrácení)
-  limitVratky?: Big
+  limitVratky?: Big | null
   // Nabízet na fakturách (db: VsbFak) - Nabízet na fakturách)
-  vsbFak?: boolean
+  vsbFak?: boolean | null
   // Nabízet na pokladně (db: VsbPok) - Nabízet na pokladně)
-  vsbPok?: boolean
+  vsbPok?: boolean | null
   // Nabízet na kase (db: VsbKasa) - Nabízet na kase)
-  vsbKasa?: boolean
+  vsbKasa?: boolean | null
   // Metoda zaokrouhlení (db: MetodaZaokrDoklK) - Metoda zaokrouhlení)
-  metodaZaokrDoklK?: MetodaZaokr
-  // Řád zaokr. Celkem (db: ZaokrNaSumK) - Celkem (řády))
-  zaokrNaSumK?: ZaokrNa
+  metodaZaokrDoklK?: MetodaZaokr | null
+  // Řád zaokrouhlení - Celkem (db: ZaokrNaSumK) - Celkem (řády))
+  zaokrNaSumK?: ZaokrNa | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
 
   // Zaúčtování (type: FORMA_UHRADY_ZAUCTOVANI) - zauctovani)
   zauctovani?: AFFormaUhradyZauctovani[]

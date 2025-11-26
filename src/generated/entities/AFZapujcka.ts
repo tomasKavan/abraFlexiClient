@@ -2,7 +2,6 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFMajetek } from './AFMajetek'
 import { AFLeasing } from './AFLeasing'
-import { AFUzivatel } from './AFUzivatel'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -15,43 +14,49 @@ export class AFZapujcka extends AFEntity {
   static EntityType: string = 'ZAPUJCKA'
 
   // ID (db: IdZapujcky) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Jméno (db: Jmeno) - Jméno)
-  jmeno?: string
+  jmeno?: string | null
   // Příjmení (db: Prijmeni) - Příjmení)
-  prijmeni?: string
+  prijmeni?: string | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // WWW (db: Www) - WWW)
-  www?: string
+  www?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
+  email?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Telefon (db: Tel) - Telefon)
-  tel?: string
+  tel?: string | null
   // Od data (db: DatZahaj) - Od data)
-  datZahaj?: Date
+  datZahaj?: Date | null
   // Do data (db: DatKonec) - Do data)
-  datKonec?: Date
+  datKonec?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Majetek (db: IdMajetku) - Majetek)
-  majetek?: AFMajetek
+  majetek?: AFMajetek | null
   // Leasing (db: IdLeasing) - Leasing)
-  leasing?: AFLeasing
+  leasing?: AFLeasing | null
   // Osoba (db: IdOsoby) - Osoba)
-  osoba?: AFUzivatel
+  osoba?: any | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -159,6 +164,12 @@ export class AFZapujcka extends AFEntity {
       isArray: false,
       
     },
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
     majetek : {
       key: 'majetek',
       type: PropertyType.Relation,
@@ -179,7 +190,7 @@ export class AFZapujcka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -189,6 +200,22 @@ export class AFZapujcka extends AFEntity {
       isArray: false,
       afClass: 'AFStat',
       maxLength: 3,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
       
     },
 

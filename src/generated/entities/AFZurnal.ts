@@ -10,25 +10,25 @@ export class AFZurnal extends AFEntity {
   static EntityType: string = 'ZURNAL'
 
   // ID (db: IdZurnal) - ID)
-  declare id?: number
+  declare id?: number | null
   // Tabulka (db: Tabulka) - Tabulka)
-  tabulka?: string
+  tabulka?: string | null
   // ID řádky (db: IdZaznamu) - ID řádky)
-  idZaznamu?: number
+  idZaznamu?: number | null
   // Sloupec (db: Sloupec) - Sloupec)
-  sloupec?: string
+  sloupec?: string | null
   // Nová hodnota (db: NovaHod) - Nová hodnota)
-  novaHod?: string
+  novaHod?: string | null
   // Původní hodnota (db: StaraHod) - Původní hodnota)
-  staraHod?: string
+  staraHod?: string | null
   // Operace (db: Op) - Operace)
-  op?: string
+  op?: string | null
   // Transakce (db: TransakceK) - Transakce)
-  transakceK?: any
+  transakceK?: any | null
   // Uživatel (db: Uziv) - Uživatel)
-  uziv?: string
+  uziv?: string | null
   // Čas změny (db: DatCas) - Čas změny)
-  datCas?: Date
+  datCas?: Date | null
 
 
 

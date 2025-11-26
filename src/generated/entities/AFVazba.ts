@@ -10,13 +10,13 @@ export class AFVazba extends AFEntity {
   static EntityType: string = 'VAZBA_MEZI_DOKLADY'
 
   // ID (db: IdVazby) - ID)
-  declare id?: number
+  declare id?: number | null
   // Typ vazby (db: TypVazbyK) - Typ vazby)
-  typVazbyK?: TypVazbyDokl
+  typVazbyK?: TypVazbyDokl | null
   // Spárovaná částka (db: Castka) - Spárovaná částka)
-  castka?: Big
+  castka?: Big | null
   // Storno (db: Storno) - Storno)
-  storno?: boolean
+  storno?: boolean | null
 
 
 

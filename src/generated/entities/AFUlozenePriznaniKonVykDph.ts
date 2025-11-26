@@ -1,6 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -13,25 +12,25 @@ export class AFUlozenePriznaniKonVykDph extends AFEntity {
   static EntityType: string = 'ULOZENE_PRIZNANI_KON_VYK_DPH'
 
   // ID (db: IdPriznaniKonVykDph) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)
-  rok?: number
+  rok?: number | null
   // Měsíc (db: Mesic) - Měsíc)
-  mesic?: number
+  mesic?: number | null
   // Čtvrtletí (db: Ctvrtleti) - Čtvrtletí)
-  ctvrtleti?: number
+  ctvrtleti?: number | null
   // Datum výpočtu (db: Datum) - Datum výpočtu)
-  datum?: Date
+  datum?: Date | null
   // Typ kontrolního hlášení (db: StavK) - Typ kontrolního hlášení)
-  stavK?: StavPriznaniKonVykDph
+  stavK?: StavPriznaniKonVykDph | null
   // XML (db: Xml) - XML)
-  xml?: string
+  xml?: string | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Stát (db: IdStat) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -94,7 +93,7 @@ export class AFUlozenePriznaniKonVykDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

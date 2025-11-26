@@ -10,17 +10,17 @@ export class AFPravoViditelnosti extends AFEntity {
   static EntityType: string = 'PRAVO_VIDITELNOSTI'
 
   // ID (db: IdDataPrava) - ID)
-  declare id?: number
+  declare id?: number | null
   // uživatel (db: IdUzivatel) - uživatel)
-  idUzivatel?: number
+  idUzivatel?: number | null
   // typ dat (db: TypDatK) - typ dat)
-  typDatK?: any
+  typDatK?: any | null
   // modul (db: ModulK) - modul)
-  modulK?: any
+  modulK?: any | null
   // objekt (db: IdObjektu) - objekt)
-  idObjektu?: number
+  idObjektu?: number | null
   // editovat (db: Editovat) - editovat)
-  editovat?: boolean
+  editovat?: boolean | null
 
 
 

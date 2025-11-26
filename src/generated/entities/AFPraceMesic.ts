@@ -16,27 +16,27 @@ export class AFPraceMesic extends AFEntity {
   static EntityType: string = 'PRACE_MESIC'
 
   // ID (db: IdPraceStred) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)
-  rok?: number
+  rok?: number | null
   // Měsíc (db: Mesic) - Měsíc)
-  mesic?: number
+  mesic?: number | null
   // Hodin (db: Hodin) - Hodin)
-  hodin?: Big
+  hodin?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Pracovní poměr (db: IdPracPom) - Pracovní poměr)
-  pracPom?: AFPracovniPomerHlavicka
+  pracPom?: AFPracovniPomerHlavicka | null
   // Středisko (db: IdStredisko) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazka) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

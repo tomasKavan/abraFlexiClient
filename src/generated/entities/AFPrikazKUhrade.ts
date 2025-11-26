@@ -16,45 +16,45 @@ export class AFPrikazKUhrade extends AFEntity {
   static EntityType: string = 'PRIKAZ_K_UHRADE'
 
   // ID (db: IdPrikazUhr) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Datum vytvoření (db: DatVytvor) - Datum vytvoření)
-  datVytvor?: Date
+  datVytvor?: Date | null
   // Splatnost (db: DatSplat) - Splatnost)
-  datSplat?: Date
+  datSplat?: Date | null
   // Celková částka (db: CelCastka) - Celková částka)
-  celCastka?: Big
+  celCastka?: Big | null
   // Jméno souboru (db: JmenoSoub) - Jméno souboru)
-  jmenoSoub?: string
+  jmenoSoub?: string | null
   // Pořadové číslo ve dni (db: PoradiPrikaz) - Pořadové číslo ve dni)
-  poradiPrikaz?: number
+  poradiPrikaz?: number | null
   // Stav příkazu (db: StavPrikazK) - Stav příkazu)
-  stavPrikazK?: ElPrikazStav
+  stavPrikazK?: ElPrikazStav | null
   // Název firmy nebo jméno osoby (db: NazFirmy) - Název firmy - jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
   // Pošt. ulice (db: FaUlice) - Ulice)
-  faUlice?: string
+  faUlice?: string | null
   // Pošt. město (db: FaMesto) - Město)
-  faMesto?: string
+  faMesto?: string | null
   // Pošt. PSČ (db: FaPsc) - PSČ)
-  faPsc?: string
+  faPsc?: string | null
   // Konstantní symbol (db: KonSym) - Konstantní symbol)
-  konSym?: string
+  konSym?: string | null
   // Zahraniční (db: Zahranicni) - Zahraniční)
-  zahranicni?: boolean
+  zahranicni?: boolean | null
   // Skrýt popis a příjemce platby při exportu (db: BezPopisu) - Skrýt popis a příjemce platby při exportu)
-  bezPopisu?: boolean
+  bezPopisu?: boolean | null
   // Datum splatnosti z hlavičky příkazu (db: DatSplatZHlavicky) - Datum splatnosti z hlavičky příkazu)
-  datSplatZHlavicky?: boolean
+  datSplatZHlavicky?: boolean | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Účet (db: IdBanka) - Účet)
-  banka?: AFBankovniUcet
+  banka?: AFBankovniUcet | null
   // Pošt. stát (db: IdFaStatu) - Stát)
-  faStat?: AFStat
+  faStat?: AFStat | null
   // Pošt. kraj (db: IdFaRegionu) - Kraj)
-  faRegion?: AFRegion
+  faRegion?: AFRegion | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

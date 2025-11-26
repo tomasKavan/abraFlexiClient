@@ -11,55 +11,59 @@ export class AFText extends AFEntity {
   static EntityType: string = 'TEXT'
 
   // ID (db: IdText) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Text (db: Popis) - Text)
-  popis?: string
+  popis?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Vydané faktury (db: VsbFav) - Vydané faktury)
-  vsbFav?: boolean
+  vsbFav?: boolean | null
   // Pohledávky (db: VsbPhl) - Pohledávky)
-  vsbPhl?: boolean
+  vsbPhl?: boolean | null
   // Přijaté faktury (db: VsbFap) - Přijaté faktury)
-  vsbFap?: boolean
+  vsbFap?: boolean | null
   // Závazky (db: VsbZav) - Závazky)
-  vsbZav?: boolean
+  vsbZav?: boolean | null
+  // Uplatnění daně - pohledávky (db: VsbTxp) - Uplatnění daně - pohledávky)
+  vsbTxp?: boolean | null
+  // Uplatnění daně - závazky (db: VsbTxz) - Uplatnění daně - závazky)
+  vsbTxz?: boolean | null
   // Sklad (db: VsbSkl) - Sklad)
-  vsbSkl?: boolean
+  vsbSkl?: boolean | null
   // Banka (db: VsbBan) - Banka)
-  vsbBan?: boolean
+  vsbBan?: boolean | null
   // Pokladna (db: VsbPok) - Pokladna)
-  vsbPok?: boolean
+  vsbPok?: boolean | null
   // Interní doklady (db: VsbInt) - Interní doklady)
-  vsbInt?: boolean
+  vsbInt?: boolean | null
   // Objednávky přijaté (db: VsbObp) - Objednávky přijaté)
-  vsbObp?: boolean
+  vsbObp?: boolean | null
   // Nabídky vydané (db: VsbNav) - Nabídky vydané)
-  vsbNav?: boolean
+  vsbNav?: boolean | null
   // Poptávky přijaté (db: VsbPpp) - Poptávky přijaté)
-  vsbPpp?: boolean
+  vsbPpp?: boolean | null
   // Objednávky vydané (db: VsbObv) - Objednávky vydané)
-  vsbObv?: boolean
+  vsbObv?: boolean | null
   // Nabídky přijaté (db: VsbNap) - Nabídky přijaté)
-  vsbNap?: boolean
+  vsbNap?: boolean | null
   // Poptávky vydané (db: VsbPpv) - Poptávky vydané)
-  vsbPpv?: boolean
+  vsbPpv?: boolean | null
   // Popis (db: VsbPopis) - Popis)
-  vsbPopis?: boolean
+  vsbPopis?: boolean | null
   // Poznámka (db: VsbPoznamka) - Poznámka)
-  vsbPoznamka?: boolean
+  vsbPoznamka?: boolean | null
   // Doprava a vyskladnění (db: VsbDoprava) - Doprava a vyskladnění)
-  vsbDoprava?: boolean
+  vsbDoprava?: boolean | null
   // Úvod (db: VsbUvod) - Úvod)
-  vsbUvod?: boolean
+  vsbUvod?: boolean | null
   // Závěr (db: VsbZaver) - Závěr)
-  vsbZaver?: boolean
+  vsbZaver?: boolean | null
   // Název položky (db: VsbNazevPol) - Název položky)
-  vsbNazevPol?: boolean
+  vsbNazevPol?: boolean | null
   // Poznámka položky (db: VsbPoznamPol) - Poznámka položky)
-  vsbPoznamPol?: boolean
+  vsbPoznamPol?: boolean | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -112,6 +116,18 @@ export class AFText extends AFEntity {
     },
     vsbZav : {
       key: 'vsbZav',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    vsbTxp : {
+      key: 'vsbTxp',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    vsbTxz : {
+      key: 'vsbTxz',
       type: PropertyType.Logic,
       isArray: false,
       

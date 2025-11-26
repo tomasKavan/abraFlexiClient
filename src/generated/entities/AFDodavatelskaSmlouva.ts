@@ -9,7 +9,6 @@ import { AFKonstSymbol } from './AFKonstSymbol'
 import { AFStavSmlouvy } from './AFStavSmlouvy'
 import { AFCinnost } from './AFCinnost'
 import { AFBankovniUcet } from './AFBankovniUcet'
-import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
 import { AFPriloha } from './AFPriloha'
@@ -25,109 +24,109 @@ export class AFDodavatelskaSmlouva extends AFEntity {
   static EntityType: string = 'DODAVATELSKA_SMLOUVA'
 
   // ID (db: IdSmlouvy) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Číslo smlouvy (db: Kod) - Číslo smlouvy)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Šablona (db: Sablona) - Šablona)
-  sablona?: boolean
+  sablona?: boolean | null
   // Platnost od (db: SmlouvaOd) - Platnost od)
-  smlouvaOd?: Date
+  smlouvaOd?: Date | null
   // Platnost do (db: SmlouvaDo) - Platnost do)
-  smlouvaDo?: Date
+  smlouvaDo?: Date | null
   // Datum podepsání (db: DatumPodepsani) - Datum podepsání)
-  datumPodepsani?: Date
+  datumPodepsani?: Date | null
   // Datum účinnosti (db: DatumUcinnosti) - Datum účinnosti)
-  datumUcinnosti?: Date
+  datumUcinnosti?: Date | null
   // Frekvence fakturace (db: FrekFakt) - Frekvence fakturace (měsíců))
-  frekFakt?: number
+  frekFakt?: number | null
   // Obrátkový den (db: Den) - Obrátkový den)
-  den?: number
+  den?: number | null
   // Obrátkový měsíc (db: Mesic) - Obrátkový měsíc)
-  mesic?: number
+  mesic?: number | null
   // Způsob fakturace (db: ZpusFaktK) - Způsob fakturace)
-  zpusFaktK?: ZpusobFakt
+  zpusFaktK?: ZpusobFakt | null
   // Fakturovat dní předem/po (db: DnyFakt) - Fakturovat dní předem/po)
-  dnyFakt?: number
+  dnyFakt?: number | null
   // Variabilní symbol (db: VarSym) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Číslo došlé (db: CisDosle) - Číslo došlé)
-  cisDosle?: string
+  cisDosle?: string | null
   // Číslo smlouvy protistrany (db: CisSmlProti) - Číslo smlouvy protistrany)
-  cisSmlProti?: string
+  cisSmlProti?: string | null
   // Automaticky generovat (db: AutoGen) - Automaticky generovat)
-  autoGen?: boolean
+  autoGen?: boolean | null
   // Automatická prolongace (db: AutoProlong) - Automatická prolongace)
-  autoProlong?: number
+  autoProlong?: number | null
   // Dat.vyst. z DUZP (db: DatVystZDuzp) - Dat.vyst. z DUZP)
-  datVystZDuzp?: boolean
+  datVystZDuzp?: boolean | null
   // Generovat i nulové faktury (db: GenerovatNuloveFaktury) - Generovat i nulové faktury)
-  generovatNuloveFaktury?: boolean
+  generovatNuloveFaktury?: boolean | null
   // Ignorovat nastavení typu smlouvy (db: IgnorovatTypSml) - Ignorovat nastavení typu smlouvy)
-  ignorovatTypSml?: boolean
+  ignorovatTypSml?: boolean | null
   // Řešit přeplatky (db: Preplatky) - Řešit přeplatky)
-  preplatky?: boolean
+  preplatky?: boolean | null
   // Variabilní symbol z faktury (db: VarSymFakt) - Variabilní symbol je generován z čísla faktury)
-  varSymFakt?: boolean
+  varSymFakt?: boolean | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Katastrální území (db: KatastrUzemi) - Katastrální území)
-  katastrUzemi?: string
+  katastrUzemi?: string | null
   // Parcela (db: Parcela) - Parcela)
-  parcela?: string
+  parcela?: string | null
   // Výpovědní lhůta [měsíc] (db: VypovedniLhuta) - Výpovědní lhůta [měsíc])
-  vypovedniLhuta?: number
+  vypovedniLhuta?: number | null
   // Datum založení (db: DatZaloz) - Datum založení)
-  datZaloz?: Date
+  datZaloz?: Date | null
   // Datum vypovězení (db: DatVypoz) - Datum vypovězení)
-  datVypoz?: Date
+  datVypoz?: Date | null
   // Typ faktury - Splatnost ve dnech (db: ) - Typ faktury - Splatnost ve dnech)
-  typDoklFakSplatDny?: number
+  typDoklFakSplatDny?: number | null
   // Datum splatnosti nejstarší neuhrazené faktury u smlouvy (db: ) - Datum splatnosti nejstarší neuhrazené faktury u smlouvy)
-  poslDatSplat?: Date
+  poslDatSplat?: Date | null
   // Název firmy (db: ) - Název firmy)
-  firma_nazev?: string
+  firma_nazev?: string | null
   // Typ smlouvy (db: IdTypSml) - Typ smlouvy)
-  typSml?: AFDodavatelskyTypSmlouvy
+  typSml?: AFDodavatelskyTypSmlouvy | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Fakturovat firmě (db: IdFirmyFakt) - Fakturovat firmě)
-  firmaFakt?: AFAdresar
+  firmaFakt?: AFAdresar | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Typ faktury (db: IdTypDokl) - Typ faktury)
-  typDoklFak?: AFTypFakturyPrijate
+  typDoklFak?: AFTypFakturyPrijate | null
   // Konstantní symbol (db: IdKonSym) - Konstantní symbol)
-  konSym?: AFKonstSymbol
+  konSym?: AFKonstSymbol | null
   // Stav smlouvy (db: IdStavSml) - Stav smlouvy)
-  stavSml?: AFStavSmlouvy
+  stavSml?: AFStavSmlouvy | null
   // Typ faktury - Středisko (db: ) - Typ faktury - Středisko)
-  typDoklFakStredisko?: AFStredisko
+  typDoklFakStredisko?: AFStredisko | null
   // Typ faktury - Činnost (db: ) - Typ faktury - Činnost)
-  typDoklFakCinnost?: AFCinnost
+  typDoklFakCinnost?: AFCinnost | null
   // Typ faktury - Bankovní účet (db: ) - Typ faktury - Bankovní účet)
-  typDoklFakBspBan?: AFBankovniUcet
+  typDoklFakBspBan?: AFBankovniUcet | null
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: AFUzivatel
+  zodpOsoba?: any | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
-  kontaktOsoba?: AFKontakt
+  kontaktOsoba?: AFKontakt | null
 
   // Standardní položky smluv (type: SMLOUVA_POLOZKA) - polozkySmlouvy)
   polozkySmlouvy?: AFSmlouvaPolozka[]
@@ -472,7 +471,7 @@ export class AFDodavatelskaSmlouva extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

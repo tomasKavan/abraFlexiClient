@@ -111,6 +111,10 @@ export enum Objednat {
   objednat = 'objednat.objednat',
   objednano = 'objednat.objednano',
 }
+export enum TypVypCeny {
+  marze = 'typVypCeny.marze',
+  prirazka = 'typVypCeny.prirazka',
+}
 export enum RazeniProTisk {
   poradi = 'razeniProTisk.poradi',
   nazev = 'razeniProTisk.nazev',
@@ -144,12 +148,6 @@ export enum StavOdp {
   komplet = 'stavOdp.komplet',
   vytvZdd = 'stavOdp.vytvZdd',
 }
-export enum TypVypCeny {
-  marze = 'typVypCeny.marze',
-  rabat = 'typVypCeny.rabat',
-  sleva = 'typVypCeny.sleva',
-  neuveden = 'typVypCeny.neuveden',
-}
 export enum TypDokladu {
   faktura = 'typDokladu.faktura',
   dobropis = 'typDokladu.dobropis',
@@ -177,6 +175,7 @@ export enum KodPlneni {
   dovozOSS = 'kodPlneni.dovozOSS',
   oprava = 'kodPlneni.oprava',
   knihy = 'kodPlneni.knihy',
+  neuhrazeneFak = 'kodPlneni.neuhrazeneFak',
 }
 export enum JakUhrazeno {
   rucne1 = 'jakUhrazeno.rucne1',
@@ -259,6 +258,13 @@ export enum TypVazbyDokl {
   uhrazovanaFaktura = 'typVazbyDokl.uhrazovanaFaktura',
   uhrazujiciDoklad = 'typVazbyDokl.uhrazujiciDoklad',
   odpocitavanaFaktura = 'typVazbyDokl.odpocitavanaFaktura',
+  odpocetZddKr = 'typVazbyDokl.odpocetZddKr',
+  zalHlavKr = 'typVazbyDokl.zalHlavKr',
+  zalPolKr = 'typVazbyDokl.zalPolKr',
+  KROdpoctu = 'typVazbyDokl.KROdpoctu',
+  splatVraceniDPH = 'typVazbyDokl.splatVraceniDPH',
+  splatObnovaDph = 'typVazbyDokl.splatObnovaDph',
+  splatObnovaDphUhrada = 'typVazbyDokl.splatObnovaDphUhrada',
 }
 export enum ModulUcetni {
   FAP = 'modulUcetni.FAP',
@@ -269,6 +275,8 @@ export enum ModulUcetni {
   INT = 'modulUcetni.INT',
   PHL = 'modulUcetni.PHL',
   ZAV = 'modulUcetni.ZAV',
+  TXP = 'modulUcetni.TXP',
+  TXZ = 'modulUcetni.TXZ',
   MAJ = 'modulUcetni.MAJ',
   LEA = 'modulUcetni.LEA',
 }
@@ -283,6 +291,16 @@ export enum DoporuceniCil {
   uhrazeno = 'doporuceniCil.uhrazeno',
   zaokrouhleno = 'doporuceniCil.zaokrouhleno',
 }
+export enum TypUcJednotky {
+  mikro = 'typUcJednotky.mikro',
+  mala = 'typUcJednotky.mala',
+  velka = 'typUcJednotky.velka',
+}
+export enum ZobrLogo {
+  zachovVelikost = 'zobrLogo.zachovVelikost',
+  prizFormatPomeryStran = 'zobrLogo.prizFormatPomeryStran',
+  prizFormat = 'zobrLogo.prizFormat',
+}
 export enum Jazyk {
   cs = 'jazyk.cs',
   sk = 'jazyk.sk',
@@ -295,28 +313,6 @@ export enum Jazyk {
   pl = 'jazyk.pl',
   ro = 'jazyk.ro',
   ru = 'jazyk.ru',
-}
-export enum TypPrav {
-  admin = 'typPrav.admin',
-  superUzivatel = 'typPrav.superUzivatel',
-  uzivatel = 'typPrav.uzivatel',
-  obchodnik = 'typPrav.obchodnik',
-  ucetni = 'typPrav.ucetni',
-  mzdovyUcetni = 'typPrav.mzdovyUcetni',
-  skladnik = 'typPrav.skladnik',
-  skladnikSPokladnou = 'typPrav.skladnikSPokladnou',
-  jenCist = 'typPrav.jenCist',
-  zablokovan = 'typPrav.zablokovan',
-}
-export enum TypUcJednotky {
-  mikro = 'typUcJednotky.mikro',
-  mala = 'typUcJednotky.mala',
-  velka = 'typUcJednotky.velka',
-}
-export enum ZobrLogo {
-  zachovVelikost = 'zobrLogo.zachovVelikost',
-  prizFormatPomeryStran = 'zobrLogo.prizFormatPomeryStran',
-  prizFormat = 'zobrLogo.prizFormat',
 }
 export enum LogoPozice {
   nahore = 'logoPozice.nahore',
@@ -371,10 +367,6 @@ export enum AutoSendMailMod {
 export enum ZobrazWebKompMod {
   auto = 'zobrazWebKompMod.auto',
   browser = 'zobrazWebKompMod.browser',
-}
-export enum PredvybranyPocet {
-  aktualni = 'predvybranyPocet.aktualni',
-  vsechny = 'predvybranyPocet.vsechny',
 }
 export enum TypUctu {
   rozvahovy = 'typUctu.rozvahovy',
@@ -813,6 +805,7 @@ export enum SkupinaSlozky {
   nepritNeplac = 'skupinaSlozky.nepritNeplac',
   nepritVolnoPlac = 'skupinaSlozky.nepritVolnoPlac',
   dovolena = 'skupinaSlozky.dovolena',
+  dovolenaKraceni = 'skupinaSlozky.dovolenaKraceni',
   zakladMzda = 'skupinaSlozky.zakladMzda',
   odmeny = 'skupinaSlozky.odmeny',
   priplatky = 'skupinaSlozky.priplatky',

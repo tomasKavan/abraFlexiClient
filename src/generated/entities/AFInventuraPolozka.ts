@@ -16,53 +16,53 @@ export class AFInventuraPolozka extends AFEntity {
   static EntityType: string = 'INVENTURA_POLOZKA'
 
   // ID (db: IdPolInventura) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Reálný stav (db: MnozMjReal) - Reálný stav)
-  mnozMjReal?: Big
+  mnozMjReal?: Big | null
   // Programový stav (db: MnozMjKarta) - Programový stav)
-  mnozMjKarta?: Big
+  mnozMjKarta?: Big | null
   // Reálný stav č. 2 (db: MnozMjReal2) - Reálný stav č. 2)
-  mnozMjReal2?: Big
+  mnozMjReal2?: Big | null
   // Reálný stav č. 3 (db: MnozMjReal3) - Reálný stav č. 3)
-  mnozMjReal3?: Big
+  mnozMjReal3?: Big | null
   // Reálný stav ve 2. vlně (db: MnozMjRealVlna2) - Reálný stav ve 2. vlně)
-  mnozMjRealVlna2?: Big
+  mnozMjRealVlna2?: Big | null
   // Reálný stav č. 2 ve 2. vlně (db: MnozMjReal2Vlna2) - Reálný stav č. 2 ve 2. vlně)
-  mnozMjReal2Vlna2?: Big
+  mnozMjReal2Vlna2?: Big | null
   // Reálný stav č. 3 ve 2. vlně (db: MnozMjReal3Vlna2) - Reálný stav č. 3 ve 2. vlně)
-  mnozMjReal3Vlna2?: Big
+  mnozMjReal3Vlna2?: Big | null
   // Reálný stav ve 3. vlně (db: MnozMjRealVlna3) - Reálný stav ve 3. vlně)
-  mnozMjRealVlna3?: Big
+  mnozMjRealVlna3?: Big | null
   // Reálný stav č. 2 ve 3. vlně (db: MnozMjReal2Vlna3) - Reálný stav č. 2 ve 3. vlně)
-  mnozMjReal2Vlna3?: Big
+  mnozMjReal2Vlna3?: Big | null
   // Reálný stav č. 3 ve 3. vlně (db: MnozMjReal3Vlna3) - Reálný stav č. 3 ve 3. vlně)
-  mnozMjReal3Vlna3?: Big
+  mnozMjReal3Vlna3?: Big | null
   // Reálný stav ve 4. vlně (db: MnozMjRealVlna4) - Reálný stav ve 4. vlně)
-  mnozMjRealVlna4?: Big
+  mnozMjRealVlna4?: Big | null
   // Reálný stav č. 2 ve 4. vlně (db: MnozMjReal2Vlna4) - Reálný stav č. 2 ve 4. vlně)
-  mnozMjReal2Vlna4?: Big
+  mnozMjReal2Vlna4?: Big | null
   // Reálný stav č. 3 ve 4. vlně (db: MnozMjReal3Vlna4) - Reálný stav č. 3 ve 4. vlně)
-  mnozMjReal3Vlna4?: Big
+  mnozMjReal3Vlna4?: Big | null
   // Šarže (db: Sarze) - Šarže)
-  sarze?: string
+  sarze?: string | null
   // Expirace (db: Expirace) - Expirace)
-  expirace?: Date
+  expirace?: Date | null
   // Skladová karta (db: IdKarty) - Skladová karta)
-  skladKarta?: AFSkladovaKarta
+  skladKarta?: AFSkladovaKarta | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Sklad (db: IdSklad) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Hlavička inventury (db: IdInventury) - Hlavička inventury)
-  inventura?: AFInventura
+  inventura?: AFInventura | null
   // MJ (db: IdMj) - MJ)
-  mj?: AFMernaJednotka
+  mj?: AFMernaJednotka | null
   // MJ č. 2 (db: IdMj2) - MJ č. 2)
-  mj2?: AFMernaJednotka
+  mj2?: AFMernaJednotka | null
   // MJ č. 3 (db: IdMj3) - MJ č. 3)
-  mj3?: AFMernaJednotka
+  mj3?: AFMernaJednotka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

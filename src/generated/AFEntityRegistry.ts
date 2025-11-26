@@ -48,6 +48,8 @@ import { AFRada } from './entities/AFRada'
 import { AFRocniRada } from './entities/AFRocniRada'
 import { AFMistoUrceni } from './entities/AFMistoUrceni'
 import { AFText } from './entities/AFText'
+import { AFNeuhrazenePoSplatnosti } from './entities/AFNeuhrazenePoSplatnosti'
+import { AFNeuhrazenePoSplatnosti2 } from './entities/AFNeuhrazenePoSplatnosti2'
 import { AFPokladniPohyb } from './entities/AFPokladniPohyb'
 import { AFPokladniPohybPolozka } from './entities/AFPokladniPohybPolozka'
 import { AFRadaPokladniPohyb } from './entities/AFRadaPokladniPohyb'
@@ -62,6 +64,10 @@ import { AFPohledavka } from './entities/AFPohledavka'
 import { AFPohledavkaPolozka } from './entities/AFPohledavkaPolozka'
 import { AFTypPohledavky } from './entities/AFTypPohledavky'
 import { AFRadaPohledavky } from './entities/AFRadaPohledavky'
+import { AFUplatneniDaneZavazku } from './entities/AFUplatneniDaneZavazku'
+import { AFUplatneniDaneZavazkuPolozka } from './entities/AFUplatneniDaneZavazkuPolozka'
+import { AFTypUplatneniDaneZavazku } from './entities/AFTypUplatneniDaneZavazku'
+import { AFRadaUplatneniDaneZavazku } from './entities/AFRadaUplatneniDaneZavazku'
 import { AFBankovniUcet } from './entities/AFBankovniUcet'
 import { AFPokladna } from './entities/AFPokladna'
 import { AFBankovniUcetPokladna } from './entities/AFBankovniUcetPokladna'
@@ -92,11 +98,8 @@ import { AFRadaFakturyVydane } from './entities/AFRadaFakturyVydane'
 import { AFProdejka } from './entities/AFProdejka'
 import { AFTypProdejky } from './entities/AFTypProdejky'
 import { AFProdejkaPlatba } from './entities/AFProdejkaPlatba'
-import { AFUzivatel } from './entities/AFUzivatel'
-import { AFRole } from './entities/AFRole'
 import { AFPravoViditelnosti } from './entities/AFPravoViditelnosti'
 import { AFNastaveni } from './entities/AFNastaveni'
-import { AFReport } from './entities/AFReport'
 import { AFKurz } from './entities/AFKurz'
 import { AFUcet } from './entities/AFUcet'
 import { AFMena } from './entities/AFMena'
@@ -239,13 +242,12 @@ import { AFHlavniKniha } from './entities/AFHlavniKniha'
 import { AFObratovaPredvaha } from './entities/AFObratovaPredvaha'
 import { AFPodkladyDph } from './entities/AFPodkladyDph'
 import { AFSouhrnneHlaseniDph } from './entities/AFSouhrnneHlaseniDph'
+import { AFKontrolniHlaseniDph } from './entities/AFKontrolniHlaseniDph'
 import { AFAnalyzaZakazky } from './entities/AFAnalyzaZakazky'
 import { AFPohybNaUctech } from './entities/AFPohybNaUctech'
 import { AFUcetniDenik } from './entities/AFUcetniDenik'
 import { AFUmisteniUctu } from './entities/AFUmisteniUctu'
 import { AFPricteniRozdilu } from './entities/AFPricteniRozdilu'
-import { AFUcetniDenikZjednoduseny } from './entities/AFUcetniDenikZjednoduseny'
-import { AFObratPolozky } from './entities/AFObratPolozky'
 import { AFSaldo } from './entities/AFSaldo'
 import { AFRozvahaPoUctech } from './entities/AFRozvahaPoUctech'
 import { AFVysledovkaPoUctech } from './entities/AFVysledovkaPoUctech'
@@ -317,6 +319,8 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFRocniRada,
   AFMistoUrceni,
   AFText,
+  AFNeuhrazenePoSplatnosti,
+  AFNeuhrazenePoSplatnosti2,
   AFPokladniPohyb,
   AFPokladniPohybPolozka,
   AFRadaPokladniPohyb,
@@ -331,6 +335,10 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFPohledavkaPolozka,
   AFTypPohledavky,
   AFRadaPohledavky,
+  AFUplatneniDaneZavazku,
+  AFUplatneniDaneZavazkuPolozka,
+  AFTypUplatneniDaneZavazku,
+  AFRadaUplatneniDaneZavazku,
   AFBankovniUcet,
   AFPokladna,
   AFBankovniUcetPokladna,
@@ -361,11 +369,8 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFProdejka,
   AFTypProdejky,
   AFProdejkaPlatba,
-  AFUzivatel,
-  AFRole,
   AFPravoViditelnosti,
   AFNastaveni,
-  AFReport,
   AFKurz,
   AFUcet,
   AFMena,
@@ -508,13 +513,12 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFObratovaPredvaha,
   AFPodkladyDph,
   AFSouhrnneHlaseniDph,
+  AFKontrolniHlaseniDph,
   AFAnalyzaZakazky,
   AFPohybNaUctech,
   AFUcetniDenik,
   AFUmisteniUctu,
   AFPricteniRozdilu,
-  AFUcetniDenikZjednoduseny,
-  AFObratPolozky,
   AFSaldo,
   AFRozvahaPoUctech,
   AFVysledovkaPoUctech,

@@ -15,35 +15,35 @@ export class AFObrat extends AFEntity {
   static EntityType: string = 'OBRAT'
 
   // ID (db: IdObrat) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Měsíc (db: Obdobi) - Měsíc)
-  obdobi?: number
+  obdobi?: number | null
   // Rok (db: Rok) - Rok)
-  rok?: number
+  rok?: number | null
   // Obrat DAL (db: ObrDal) - Obrat DAL)
-  obrDal?: Big
+  obrDal?: Big | null
   // Obrat MD (db: ObrMd) - Obrat MD)
-  obrMd?: Big
+  obrMd?: Big | null
   // Obrat DAL - původní (db: ObrDalBck) - Obrat DAL - původní)
-  obrDalBck?: Big
+  obrDalBck?: Big | null
   // Obrat MD - původní (db: ObrMdBck) - Obrat MD - původní)
-  obrMdBck?: Big
+  obrMdBck?: Big | null
   // Uživatelská hodnota (db: UzivNastav) - Uživatelská hodnota)
-  uzivNastav?: boolean
+  uzivNastav?: boolean | null
   // Kalendářní měsíc (db: date_trunc(&#39;month&#39;,to_date(rok || &#39;-&#39; || to_char(obdobi, &#39;00&#39;), &#39;YYYY-MM&#39;))) - Kalendářní měsíc)
-  rokMesic?: Date
+  rokMesic?: Date | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Účet (db: IdUcet) - Účet)
-  ucet?: AFUcet
+  ucet?: AFUcet | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Účetní období (db: IdUcetObdobi) - Účetní období)
-  ucetniObdobi?: AFUcetniObdobi
+  ucetniObdobi?: AFUcetniObdobi | null
 
 
 

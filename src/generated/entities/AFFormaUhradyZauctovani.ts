@@ -13,15 +13,15 @@ export class AFFormaUhradyZauctovani extends AFEntity {
   static EntityType: string = 'FORMA_UHRADY_ZAUCTOVANI'
 
   // ID (db: IdFormaUhradyZauc) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
-  formaUhradyCis?: AFFormaUhrady
+  formaUhradyCis?: AFFormaUhrady | null
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
-  typDokl?: AFTypDokladu
+  typDokl?: AFTypDokladu | null
   // Prodejní kasa (db: IdKasa) - Prodejní kasa)
-  kasa?: AFTypDokladu
+  kasa?: AFTypDokladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

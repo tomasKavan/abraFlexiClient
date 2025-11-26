@@ -12,31 +12,31 @@ export class AFKusovnik extends AFEntity {
   static EntityType: string = 'KUSOVNIK'
 
   // ID (db: IdKusovnik) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Množství (db: Mnoz) - Množství)
-  mnoz?: Big
+  mnoz?: Big | null
   // Hladina (db: Hladina) - Hladina)
-  hladina?: number
+  hladina?: number | null
   // Pořadí (db: Poradi) - Pořadí)
-  poradi?: number
+  poradi?: number | null
   // Cesta (db: Cesta) - Cesta)
-  cesta?: string
+  cesta?: string | null
   // Nadřazený ceník (db: IdOtecCenik) - Nadřazený ceník)
-  otecCenik?: AFCenik
+  otecCenik?: AFCenik | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Nadřazený kusovník (db: Idotec) - Nadřazený kusovník)
-  otec?: AFKusovnik
+  otec?: AFKusovnik | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

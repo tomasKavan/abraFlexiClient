@@ -12,21 +12,21 @@ export class AFPoplatek extends AFEntity {
   static EntityType: string = 'POPLATKY'
 
   // ID (db: IdPoplatek) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Množství (db: MnozMj) - Množství)
-  mnozMj?: Big
+  mnozMj?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Typ poplatku (db: TypPoplatkuK) - Typ poplatku)
-  typPoplatkuK?: TypPoplatku
+  typPoplatkuK?: TypPoplatku | null
   // Sazba DPH z nadřazené položky (db: ParentTypSzbDph) - Sazba DPH z nadřazené položky)
-  parentTypSzbDph?: boolean
+  parentTypSzbDph?: boolean | null
   // Ceníková položka (db: IdCenikOtec) - Ceníková položka)
-  cenikOtec?: AFCenik
+  cenikOtec?: AFCenik | null
   // Poplatek (db: IdCenik) - Poplatek)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

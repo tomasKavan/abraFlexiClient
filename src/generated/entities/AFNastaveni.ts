@@ -32,435 +32,437 @@ export class AFNastaveni extends AFEntity {
   static EntityType: string = 'NASTAVENI'
 
   // ID (db: IdNastav) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Změny budou platné od data (db: PlatiOdData) - Změny budou platné od data)
-  platiOdData?: Date
+  platiOdData?: Date | null
   // Jméno (db: NazFirmy) - Jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
   // IČO, DIČ (db: Ic) - IČO, DIČ)
-  ic?: string
+  ic?: string | null
   // DIČ (db: Dic) - DIČ)
-  dic?: string
+  dic?: string | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
-  // Ulice (db: Ulice) - Ulice)
-  uliceNazev?: string
-  // Č. popisné (db: CisPop) - Č.p.)
-  cisPop?: string
-  // Č. orientační (db: CisOr) - Č.o.)
-  cisOr?: string
+  eanKod?: string | null
+  // Ulice - Sídlo/Trv. bydliště (db: Ulice) - Ulice)
+  uliceNazev?: string | null
+  // Č. popisné - Sídlo/Trv. bydliště (db: CisPop) - Č.p.)
+  cisPop?: string | null
+  // Č. orientační - Sídlo/Trv. bydliště (db: CisOr) - Č.o.)
+  cisOr?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // WWW (db: Www) - WWW)
-  www?: string
+  www?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
-  // Datová schránka (db: DatovaSchranka) - Datová schránka)
-  datovaSchranka?: string
+  email?: string | null
+  // Datová schránka - Sídlo/Trv. bydliště (db: DatovaSchranka) - Datová schránka)
+  datovaSchranka?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Telefon (db: Tel) - Telefon)
-  tel?: string
+  tel?: string | null
   // Poštovní adresa je shodná se sídlem (db: PostovniShodna) - Poštovní adresa je shodná se sídlem)
-  postovniShodna?: boolean
-  // Pošt. ulice (db: FaUlice) - Ulice)
-  faUliceNazev?: string
-  // Č. popisné (db: FaCisPop) - Č.p.)
-  faCisPop?: string
-  // Č. orientační (db: FaCisOr) - Č.o.)
-  faCisOr?: string
+  postovniShodna?: boolean | null
+  // Ulice - Fakturační adresa (db: FaUlice) - Ulice)
+  faUliceNazev?: string | null
+  // Č. popisné - Fakturační adresa (db: FaCisPop) - Č.p.)
+  faCisPop?: string | null
+  // Č. orientační - Fakturační adresa (db: FaCisOr) - Č.o.)
+  faCisOr?: string | null
   // Pošt. město (db: FaMesto) - Město)
-  faMesto?: string
+  faMesto?: string | null
   // Pošt. PSČ (db: FaPsc) - PSČ)
-  faPsc?: string
+  faPsc?: string | null
   // Fakturační adresa je shodná se sídlem (db: FakturacniShodna) - Fakturační adresa je shodná se sídlem)
-  fakturacniShodna?: boolean
-  // Pošt. ulice (db: PostUlice) - Ulice)
-  postUliceNazev?: string
-  // Č. popisné (db: PostCisPop) - Č.p.)
-  postCisPop?: string
-  // Č. orientační (db: PostCisOr) - Č.o.)
-  postCisOr?: string
-  // Pošt. město (db: PostMesto) - Město)
-  postMesto?: string
-  // Pošt. PSČ (db: PostPsc) - PSČ)
-  postPsc?: string
+  fakturacniShodna?: boolean | null
+  // Ulice - Poštovní adresa (db: PostUlice) - Ulice)
+  postUliceNazev?: string | null
+  // Č. popisné - Poštovní adresa (db: PostCisPop) - Č.p.)
+  postCisPop?: string | null
+  // Č. orientační - Poštovní adresa (db: PostCisOr) - Č.o.)
+  postCisOr?: string | null
+  // Město - Poštovní adresa (db: PostMesto) - Město)
+  postMesto?: string | null
+  // PSČ - Poštovní adresa (db: PostPsc) - PSČ)
+  postPsc?: string | null
   // Spisová značka (db: SpisZnac) - Spisová značka)
-  spisZnac?: string
+  spisZnac?: string | null
   // Spisová značka EN (db: SpisZnacA) - Spisová značka EN)
-  spisZnacA?: string
+  spisZnacA?: string | null
   // Spisová značka DE (db: SpisZnacB) - Spisová značka DE)
-  spisZnacB?: string
+  spisZnacB?: string | null
   // Spisová značka FR (db: SpisZnacC) - Spisová značka FR)
-  spisZnacC?: string
+  spisZnacC?: string | null
   // Plátce DPH (db: PlatceDph) - Plátce DPH)
-  platceDph?: boolean
+  platceDph?: boolean | null
   // Typ účetní jednotky (db: TypUcJednotkyK) - Typ účetní jednotky)
-  typUcJednotkyK?: TypUcJednotky
+  typUcJednotkyK?: TypUcJednotky | null
   // Zvláštní režim jednoho správního místa (MOSS, platné do 30.6.2021) (db: Moss) - Zvláštní režim jednoho správního místa (MOSS, platné do 30.6.2021))
-  moss?: boolean
+  moss?: boolean | null
   // OSS - režim EU (db: OssEU) - OSS - režim EU)
-  ossEU?: boolean
+  ossEU?: boolean | null
   // OSS - režim mimo EU (db: OssMimoEU) - OSS - režim mimo EU)
-  ossMimoEU?: boolean
+  ossMimoEU?: boolean | null
   // OSS - dovozní režim (db: OssDovoz) - OSS - dovozní režim)
-  ossDovoz?: boolean
-  // Omezovat výběr států DPH (db: OmezovatVyberStatu) - Omezovat výběr států DPH)
-  omezovatVyberStatu?: boolean
+  ossDovoz?: boolean | null
+  // Omezuje výběr států pro DPH v dokladech (db: OmezovatVyberStatu) - Omezovat výběr států DPH)
+  omezovatVyberStatu?: boolean | null
   // Převažující činnost (db: Cinnost) - Převažující činnost)
-  cinnost?: string
+  cinnost?: string | null
   // Fyzická osoba (db: FyzOsoba) - Fyzická osoba)
-  fyzOsoba?: boolean
+  fyzOsoba?: boolean | null
   // Jméno (db: FyzOsJmeno) - Jméno)
-  fyzOsJmeno?: string
+  fyzOsJmeno?: string | null
   // Příjmení (db: FyzOsPrijmeni) - Příjmení)
-  fyzOsPrijmeni?: string
+  fyzOsPrijmeni?: string | null
   // Titul (db: FyzOsTitul) - Titul)
-  fyzOsTitul?: string
+  fyzOsTitul?: string | null
   // Titul za jménem (db: FyzOsTitulZa) - Titul za jménem)
-  fyzOsTitulZa?: string
-  // Postavení (db: OprPostav) - Postavení)
-  oprPostav?: string
-  // Příjmení (db: OprPrijmeni) - Příjmení)
-  oprPrijmeni?: string
+  fyzOsTitulZa?: string | null
+  // Postavení oprávněné osoby (db: OprPostav) - Postavení)
+  oprPostav?: string | null
+  // Příjmení oprávněné osoby (db: OprPrijmeni) - Příjmení)
+  oprPrijmeni?: string | null
   // Jméno (db: OprJmeno) - Jméno)
-  oprJmeno?: string
+  oprJmeno?: string | null
   // Vyžadovat podpis před vystavením příkazu k úhradě (db: PodpisPrik) - Vyžadovat podpis před vystavením příkazu k úhradě)
-  podpisPrik?: boolean
+  podpisPrik?: boolean | null
   // Účetnictví (db: PodvojUcto) - vést účetnictví)
-  podvojUcto?: boolean
+  podvojUcto?: boolean | null
   // Vést Intrastat (db: Intrastat) - Vést Intrastat)
-  intrastat?: boolean
-  // Splatnost ve dnech (db: SplatDny) - Splatnost ve dnech)
-  splatDny?: number
+  intrastat?: boolean | null
+  // Počet dnů splatnosti pro prodejní doklady (db: SplatDny) - Splatnost ve dnech)
+  splatDny?: number | null
   // Výchozí splatnost [dny] (db: SplatDnyNakup) - Výchozí splatnost [dny])
-  splatDnyNakup?: number
-  // Právní forma účet. jednotky (db: PravFormaPodnik) - Právní forma účet. jednotky)
-  pravFormaPodnik?: string
+  splatDnyNakup?: number | null
+  // Právní forma účetní jednotky (db: PravFormaPodnik) - Právní forma účet. jednotky)
+  pravFormaPodnik?: string | null
   // Způsob zobrazení (db: ZobrLogoK) - Způsob zobrazení)
-  zobrLogoK?: ZobrLogo
+  zobrLogoK?: ZobrLogo | null
   // Sklad nahrávat do účetnictví (db: SklUcto) - Sklad nahrávat do účetnictví)
-  sklUcto?: boolean
-  // Sklad je FIFO (db: SklFifo) - Sklad je FIFO)
-  sklFifo?: boolean
+  sklUcto?: boolean | null
+  // Oceňování zásob metodou FIFO (db: SklFifo) - Sklad je FIFO)
+  sklFifo?: boolean | null
   // Umožnit generování požadavků na výdej (db: SklGenerovatPozadavky) - Umožnit generování požadavků na výdej)
-  sklGenerovatPozadavky?: boolean
+  sklGenerovatPozadavky?: boolean | null
   // Kontrolovat firmy a účty při vytváření dokladu (db: AdrKontrolovatFirmy) - Kontrolovat firmy a účty při vytváření dokladu)
-  adrKontrolovatFirmy?: boolean
+  adrKontrolovatFirmy?: boolean | null
   // Při příjmu aktualizovat nákupní cenu v ceníku (db: SklAktualNakupCena) - Při příjmu aktualizovat nákupní cenu v ceníku)
-  sklAktualNakupCena?: boolean
+  sklAktualNakupCena?: boolean | null
   // Automaticky generovat číslo zakázky shodné s objednávkou (db: AutoZakazka) - Automaticky generovat číslo zakázky shodné s objednávkou)
-  autoZakazka?: boolean
+  autoZakazka?: boolean | null
   // Transakční kód (db: AvTranKod) - Transakční kód)
-  avTranKod?: string
+  avTranKod?: string | null
   // Směrový kód (db: AvSmerKod) - Směrový kód)
-  avSmerKod?: string
+  avSmerKod?: string | null
   // ... export z ABRA Flexi (db: ElPokExport) - ... export z ABRA Flexi)
-  elPokExport?: string
+  elPokExport?: string | null
   // ... import do ABRA Flexi (db: ElPokImport) - ... import do ABRA Flexi)
-  elPokImport?: string
+  elPokImport?: string | null
   // ... INI soubor (db: ElPokIni) - ... INI soubor)
-  elPokIni?: string
+  elPokIni?: string | null
   // Kurz duální měny (db: KurzDualMena) - Kurz duální měny)
-  kurzDualMena?: Big
+  kurzDualMena?: Big | null
   // Doplňující text na fakturu (db: DoplnText) - Doplňující text na fakturu)
-  doplnText?: string
+  doplnText?: string | null
   // Jazyk 1 (db: Jazyk1K) - Jazyk 1)
-  jazyk1K?: Jazyk
+  jazyk1K?: Jazyk | null
   // Jazyk 2 (db: Jazyk2K) - Jazyk 2)
-  jazyk2K?: Jazyk
+  jazyk2K?: Jazyk | null
   // Jazyk 3 (db: Jazyk3K) - Jazyk 3)
-  jazyk3K?: Jazyk
+  jazyk3K?: Jazyk | null
   // Jazyk 4 (db: Jazyk4K) - Jazyk 4)
-  jazyk4K?: Jazyk
+  jazyk4K?: Jazyk | null
   // Pozice loga (db: LogoPoziceK) - Pozice loga)
-  logoPoziceK?: LogoPozice
-  // Režim rezervací (db: RezimRezervaciK) - Režim rezervací)
-  rezimRezervaciK?: RezimRezervaci
+  logoPoziceK?: LogoPozice | null
+  // Nastavení režimu rezervací zboží (db: RezimRezervaciK) - Režim rezervací)
+  rezimRezervaciK?: RezimRezervaci | null
   // Postmigrace (db: PostMigrace) - Postmigrace)
-  postMigrace?: boolean
+  postMigrace?: boolean | null
   // UUID Firmy (db: FirmaUUID) - UUID Firmy)
-  firmaUUID?: string
+  firmaUUID?: string | null
   // Povolit rezervaci do záporu (db: RezervovatZapor) - Povolit rezervaci do záporu)
-  rezervovatZapor?: boolean
-  // Typ (db: ZastupceTypK) - Typ)
-  zastupceTypK?: ZastupceTyp
-  // Kód (db: ZastupceKod) - Kód)
-  zastupceKod?: string
-  // Název právnické osoby (db: ZastupceNazev) - Název právnické osoby)
-  zastupceNazev?: string
-  // IČO právnické osoby (db: ZastupceIc) - IČO právnické osoby)
-  zastupceIc?: string
-  // Příjmení (db: ZastupcePrijmeni) - Příjmení)
-  zastupcePrijmeni?: string
-  // Jméno (db: ZastupceJmeno) - Jméno)
-  zastupceJmeno?: string
-  // Dat. nar. (db: ZastupceDatNar) - Dat. nar.)
-  zastupceDatNar?: Date
-  // Evid. číslo (db: ZastupceEvCislo) - Evid. číslo)
-  zastupceEvCislo?: string
+  rezervovatZapor?: boolean | null
+  // Typ (zástupce) (db: ZastupceTypK) - Typ)
+  zastupceTypK?: ZastupceTyp | null
+  // Kód (zástupce) (db: ZastupceKod) - Kód)
+  zastupceKod?: string | null
+  // Název právnické osoby (zástupce) (db: ZastupceNazev) - Název právnické osoby)
+  zastupceNazev?: string | null
+  // IČO právnické osoby (zástupce) (db: ZastupceIc) - IČO právnické osoby (zástupce))
+  zastupceIc?: string | null
+  // Příjmení (zástupce) (db: ZastupcePrijmeni) - Příjmení)
+  zastupcePrijmeni?: string | null
+  // Jméno (zástupce) (db: ZastupceJmeno) - Jméno)
+  zastupceJmeno?: string | null
+  // Dat. nar. (zástupce) (db: ZastupceDatNar) - Dat. nar. (zástupce))
+  zastupceDatNar?: Date | null
+  // Evid. číslo (zástupce) (db: ZastupceEvCislo) - Evid. číslo (zástupce))
+  zastupceEvCislo?: string | null
   // Počet dnů dovolené za den absence (do r. 2020) (db: MzdDnuDovolAbs) - Počet dnů dovolené za den absence (do r. 2020))
-  mzdDnuDovolAbs?: Big
+  mzdDnuDovolAbs?: Big | null
   // Krátit dovolenou za neomluvenou absenci (db: MzdKratitDovolAbs) - Krátit dovolenou za neomluvenou absenci)
-  mzdKratitDovolAbs?: boolean
+  mzdKratitDovolAbs?: boolean | null
   // Příspěvek na penzijní připojištění (db: MzdPenzPrip) - Příspěvek na penzijní připojištění)
-  mzdPenzPrip?: boolean
+  mzdPenzPrip?: boolean | null
   // Procento příspěvku na penzijní připojištění (db: MzdPenzPripProc) - Procento příspěvku na penzijní připojištění)
-  mzdPenzPripProc?: Big
-  // Dnů v týdnu (db: MzdSmenyDnuTydne) - Dnů v týdnu)
-  mzdSmenyDnuTydne?: number
-  // Hodin denně (db: MzdSmenyHodinDenne) - Hodin denně)
-  mzdSmenyHodinDenne?: Big
-  // Začátek pracovní doby (db: MzdSmenyPocPracDoby) - Začátek pracovní doby)
-  mzdSmenyPocPracDoby?: Big
-  // Výpočet náhrady za svátky z průměru (db: MzdSmenySvatkyPrum) - Výpočet náhrady za svátky z průměru)
-  mzdSmenySvatkyPrum?: boolean
+  mzdPenzPripProc?: Big | null
+  // Počet pracovních dnů v týdnu - úvazek (db: MzdSmenyDnuTydne) - Dnů v týdnu)
+  mzdSmenyDnuTydne?: number | null
+  // Počet hodin denně - úvazek (db: MzdSmenyHodinDenne) - Hodin denně)
+  mzdSmenyHodinDenne?: Big | null
+  // Začátek pracovní doby - úvazek (db: MzdSmenyPocPracDoby) - Začátek pracovní doby)
+  mzdSmenyPocPracDoby?: Big | null
+  // Výpočet náhrady za svátky z průměru - úvazek (db: MzdSmenySvatkyPrum) - Výpočet náhrady za svátky z průměru)
+  mzdSmenySvatkyPrum?: boolean | null
   // Automaticky nastavovat období proplacení nemoci (db: MzdNemocProplatAuto) - Automaticky nastavovat období proplacení nemoci)
-  mzdNemocProplatAuto?: boolean
+  mzdNemocProplatAuto?: boolean | null
   // Při výpočtu mezd upozornit na kontrolu období proplacení u nemocí (db: MzdNemocProplatVarov) - Při výpočtu mezd upozornit na kontrolu období proplacení u nemocí)
-  mzdNemocProplatVarov?: boolean
-  // Refundace 50% náhrady mzdy za nemoc (db: MzdRefundNahrNemoc) - Refundace 50% náhrady mzdy za nemoc)
-  mzdRefundNahrNemoc?: boolean
+  mzdNemocProplatVarov?: boolean | null
+  // Refundace 50% náhrady mzdy za nemoc (do r. 2013) (db: MzdRefundNahrNemoc) - Refundace 50% náhrady mzdy za nemoc (do r. 2013))
+  mzdRefundNahrNemoc?: boolean | null
   // Promile pro výpočet povinného pojištění (db: MzdPromilePovPojisteni) - Promile pro výpočet povinného pojištění)
-  mzdPromilePovPojisteni?: Big
+  mzdPromilePovPojisteni?: Big | null
   // Procento náhrady při kurzarbeitu (db: MzdProcentoKurzarbeit) - Procento náhrady při kurzarbeitu)
-  mzdProcentoKurzarbeit?: Big
-  // Sociální pojištění (db: MzdSplatSocPoj) - Sociální pojištění)
-  mzdSplatSocPoj?: number
-  // Zdravotní pojištění (db: MzdSplatZdravPoj) - Zdravotní pojištění)
-  mzdSplatZdravPoj?: number
-  // Daň zálohová (db: MzdSplatDanZal) - Daň zálohová)
-  mzdSplatDanZal?: number
-  // Daň srážková (db: MzdSplatDanSra) - Daň srážková)
-  mzdSplatDanSra?: number
-  // Daň rezident (db: MzdSplatDanRez) - Daň rezident)
-  mzdSplatDanRez?: number
-  // Dobírka (db: MzdSplatDobirka) - Dobírka)
-  mzdSplatDobirka?: number
-  // Příspěvky (db: MzdSplatPrispevky) - Příspěvky)
-  mzdSplatPrispevky?: number
+  mzdProcentoKurzarbeit?: Big | null
+  // Počet dnů splatnosti pro sociální pojištění (db: MzdSplatSocPoj) - Sociální pojištění)
+  mzdSplatSocPoj?: number | null
+  // Počet dnů splatnosti pro zdravotní pojištění (db: MzdSplatZdravPoj) - Zdravotní pojištění)
+  mzdSplatZdravPoj?: number | null
+  // Počet dnů splatnosti pro zálohovou daň (db: MzdSplatDanZal) - Daň zálohová)
+  mzdSplatDanZal?: number | null
+  // Počet dnů splatnosti pro srážkovou daň (db: MzdSplatDanSra) - Daň srážková)
+  mzdSplatDanSra?: number | null
+  // Počet dnů splatnosti pro daň rezidentů (db: MzdSplatDanRez) - Daň rezident)
+  mzdSplatDanRez?: number | null
+  // Počet dnů splatnosti pro dobírku (db: MzdSplatDobirka) - Dobírka)
+  mzdSplatDobirka?: number | null
+  // Počet dnů splatnosti pro příspěvky (db: MzdSplatPrispevky) - Příspěvky)
+  mzdSplatPrispevky?: number | null
   // Týdenní pracovní doba (db: MzdTydenPracDobaK) - Týdenní pracovní doba)
-  mzdTydenPracDobaK?: TydenPracDoba
+  mzdTydenPracDobaK?: TydenPracDoba | null
   // Denní kurz (db: DenniKurzK) - Denní kurz)
-  denniKurzK?: DenniKurz
+  denniKurzK?: DenniKurz | null
   // Měsíční/roční kurz (db: RocniKurzK) - Měsíční/roční kurz)
-  rocniKurzK?: RocniKurz
-  // Faktur vydaných (db: JakyTypFavK) - Faktur vydaných)
-  jakyTypFavK?: JakyTypDokl
-  // Pohledávek (db: JakyTypPhlK) - Pohledávek)
-  jakyTypPhlK?: JakyTypDokl
-  // Faktur přijatých (db: JakyTypFapK) - Faktur přijatých)
-  jakyTypFapK?: JakyTypDokl
-  // Závazků (db: JakyTypZavK) - Závazků)
-  jakyTypZavK?: JakyTypDokl
-  // Interních dokladů (db: JakyTypIntK) - Interních dokladů)
-  jakyTypIntK?: JakyTypDokl
-  // Poptávek přijatých (db: JakyTypPppK) - Poptávek přijatých)
-  jakyTypPppK?: JakyTypDokl
-  // Nabídek vydaných (db: JakyTypNavK) - Nabídek vydaných)
-  jakyTypNavK?: JakyTypDokl
-  // Objednávek přijatých (db: JakyTypObpK) - Objednávek přijatých)
-  jakyTypObpK?: JakyTypDokl
-  // Poptávek vydaných (db: JakyTypPpvK) - Poptávek vydaných)
-  jakyTypPpvK?: JakyTypDokl
-  // Nabídek přijatých (db: JakyTypNapK) - Nabídek přijatých)
-  jakyTypNapK?: JakyTypDokl
-  // Objednávek vydaných (db: JakyTypObvK) - Objednávek vydaných)
-  jakyTypObvK?: JakyTypDokl
-  // Příjemek/výdejek (db: JakyTypSklK) - Příjemek/výdejek)
-  jakyTypSklK?: JakyTypDokl
-  // Banky (db: JakyTypBanK) - Banky)
-  jakyTypBanK?: JakyTypDokl
-  // Pokladny (db: JakyTypPokK) - Pokladny)
-  jakyTypPokK?: JakyTypDokl
+  rocniKurzK?: RocniKurz | null
+  // Typ nově vytvářených dokladů pro faktury vydané (db: JakyTypFavK) - Faktury vydané)
+  jakyTypFavK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro pohledávky (db: JakyTypPhlK) - Pohledávky)
+  jakyTypPhlK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro faktury přijaté (db: JakyTypFapK) - Faktury přijaté)
+  jakyTypFapK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro závazky (db: JakyTypZavK) - Závazky)
+  jakyTypZavK?: JakyTypDokl | null
+  // Typ nově vytvářených interních dokladů (db: JakyTypIntK) - Interní doklady)
+  jakyTypIntK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro poptávky přijaté (db: JakyTypPppK) - Poptávky přijaté)
+  jakyTypPppK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro nabídky vydané (db: JakyTypNavK) - Nabídky vydané)
+  jakyTypNavK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro objednávky přijaté (db: JakyTypObpK) - Objednávky přijaté)
+  jakyTypObpK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro poptávky vydané (db: JakyTypPpvK) - Poptávky vydané)
+  jakyTypPpvK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro nabídky přijaté (db: JakyTypNapK) - Nabídky přijaté)
+  jakyTypNapK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro objednávky vydané (db: JakyTypObvK) - Objednávky vydané)
+  jakyTypObvK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro skladové příjemky a výdejky (db: JakyTypSklK) - Příjemky/výdejky)
+  jakyTypSklK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro banky (db: JakyTypBanK) - Banka)
+  jakyTypBanK?: JakyTypDokl | null
+  // Typ nově vytvářených dokladů pro pokladny (db: JakyTypPokK) - Pokladna)
+  jakyTypPokK?: JakyTypDokl | null
   // Při změně odběratele přepočítat ceny (db: PrepocetCenK) - Při změně odběratele přepočítat ceny)
-  prepocetCenK?: PrepocetCen
+  prepocetCenK?: PrepocetCen | null
   // Manuální přepis čísel dokladů (db: ManualCisDokl) - Umožnit manuální přepsání interních čísel dokladů)
-  manualCisDokl?: boolean
+  manualCisDokl?: boolean | null
   // Otočit typ pohybu a částku v modulu Banka při automatickém párování dobropisu (db: ParovaniOtoceniUhrady) - Otočit typ pohybu a částku v modulu Banka při automatickém párování dobropisu)
-  parovaniOtoceniUhrady?: boolean
-  // Přenášení střediska z firmy (db: PrenFirStred) - Automatické vyplnění střediska u dokladu podle střediska u firmy v adresáři)
-  prenFirStred?: boolean
+  parovaniOtoceniUhrady?: boolean | null
+  // Automatické vyplnění střediska u dokladu podle střediska u firmy v adresáři (db: PrenFirStred) - Automatické vyplnění střediska u dokladu podle střediska u firmy v adresáři)
+  prenFirStred?: boolean | null
   // Povolit odpočet neuhrazené vydané zálohy (db: OdpocNeuhrZalFav) - Povolit odpočet neuhrazené vydané zálohy)
-  odpocNeuhrZalFav?: boolean
+  odpocNeuhrZalFav?: boolean | null
   // Povolit odpočet neuhrazené přijaté zálohy (db: OdpocNeuhrZalFap) - Povolit odpočet neuhrazené přijaté zálohy)
-  odpocNeuhrZalFap?: boolean
+  odpocNeuhrZalFap?: boolean | null
   // Položky automatického zaokrouhlení dokladu nezahrnovat do DPH (individuální metoda zaokrouhlení) (db: ZaokrNulovaSazba) - Položky automatického zaokrouhlení dokladu nezahrnovat do DPH (individuální metoda zaokrouhlení))
-  zaokrNulovaSazba?: boolean
-  // Přev.činn.NACE (db: Nace) - Převažující činnost (kód NACE))
-  nace?: string
+  zaokrNulovaSazba?: boolean | null
+  // Kód převažující činnosti dle klasifikace NACE (db: Nace) - Převažující činnost (kód NACE))
+  nace?: string | null
   // Zvláštní režim DPH (db: OsobUpravaDph) - Zvláštní režim DPH)
-  osobUpravaDph?: boolean
+  osobUpravaDph?: boolean | null
   // Datum pro plnění data Uplatnit zdaň. pl. (db: FapDatProDuzpUctoK) - Datum pro plnění data Uplatnit zdaň. pl.)
-  fapDatProDuzpUctoK?: FapDatProDuzpUctoK
+  fapDatProDuzpUctoK?: FapDatProDuzpUctoK | null
   // Automaticky odesílat doklady mailem (db: AutoSendMailModK) - Automaticky odesílat doklady mailem)
-  autoSendMailModK?: AutoSendMailMod
+  autoSendMailModK?: AutoSendMailMod | null
   // Adresa skryté kopie (db: AutoSendMailBccEmail) - Adresa skryté kopie)
-  autoSendMailBccEmail?: string
+  autoSendMailBccEmail?: string | null
   // Způsob zobrazení (db: ZobrazWebModK) - Způsob zobrazení)
-  zobrazWebModK?: ZobrazWebKompMod
+  zobrazWebModK?: ZobrazWebKompMod | null
   // Chránit výplatní pásky heslem (db: SifrovaniPdf) - Chránit výplatní pásky heslem)
-  sifrovaniPdf?: boolean
+  sifrovaniPdf?: boolean | null
   // Verze pro cachování (db: VersionForCaching) - Verze)
-  versionForCaching?: number
+  versionForCaching?: number | null
   // Zpracování GDPR (db: ZpracovaniGdpr) - Zpracování GDPR)
-  zpracovaniGdpr?: boolean
+  zpracovaniGdpr?: boolean | null
   // Zobrazovat obrázkové přílohy ceníku (db: PolozkyCenikObrazky) - Zobrazovat obrázkové přílohy ceníku v editaci položek dokladů a na ceníku)
-  polozkyCenikObrazky?: boolean
+  polozkyCenikObrazky?: boolean | null
   // Začátek užití novely ZDPH 2019 (db: DatZacNovelyZdph19) - Začátek užití novely ZDPH 2019)
-  datZacNovelyZdph19?: Date
+  datZacNovelyZdph19?: Date | null
   // Stát legislativy (db: IdStatuLeg) - Stát legislativy)
-  statLegislativa?: AFStat
+  statLegislativa?: AFStat | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
   // Domácí měna (db: IdMeny) - Domácí měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Typ dokladu vydaných faktur pro obchod (db: IdTdObFav) - Vydané faktury)
-  tdObchodFav?: AFTypFakturyVydane
+  tdObchodFav?: AFTypFakturyVydane | null
   // Typ dokladu vydaných záloh pro obchod (db: IdTdObFavZal) - Vydané zálohy)
-  tdObchodFavZal?: AFTypFakturyVydane
+  tdObchodFavZal?: AFTypFakturyVydane | null
   // Typ dokladu přijatých faktur pro obchod (db: IdTdObFap) - Přijaté faktury)
-  tdObchodFap?: AFTypFakturyPrijate
+  tdObchodFap?: AFTypFakturyPrijate | null
   // Typ dokladu příjemek na sklad pro obchod (db: IdTdObSklPri) - Přijemky na sklad)
-  tdObchodSklPri?: AFTypSkladovyPohyb
-  // Typ dokladu výdejky ze skladu pro obchod (db: IdTdObSklVyd) - Výdejky ze skladu)
-  tdObchodSklVyd?: AFTypSkladovyPohyb
+  tdObchodSklPri?: AFTypSkladovyPohyb | null
+  // Typ dokladu výdejek ze skladu pro obchod (db: IdTdObSklVyd) - Výdejky ze skladu)
+  tdObchodSklVyd?: AFTypSkladovyPohyb | null
   // Typ dokladu nabídek vydaných pro obchod (db: IdTdObNav) - Nabídky vydané)
-  tdObchodNav?: AFTypNabidkyVydane
+  tdObchodNav?: AFTypNabidkyVydane | null
   // Typ dokladu objednávek přijatých pro obchod (db: IdTdObObp) - Objednávky přijaté)
-  tdObchodObp?: AFTypObjednavkyPrijate
+  tdObchodObp?: AFTypObjednavkyPrijate | null
   // Typ dokladu objednávek přijatých z EDI pro obchod (db: IdTdObObpEdi) - Objednávka přijatá z EDI)
-  tdObchodObpEdi?: AFTypObjednavkyPrijate
+  tdObchodObpEdi?: AFTypObjednavkyPrijate | null
   // Typ dokladu poptávek vydaných pro obchod (db: IdTdObPpv) - Poptávky vydané)
-  tdObchodPpv?: AFTypPoptavkyVydane
+  tdObchodPpv?: AFTypPoptavkyVydane | null
   // Typ dokladu nabídek přijatých pro obchod (db: IdTdObNap) - Nabídky přijaté)
-  tdObchodNap?: AFTypNabidkyPrijate
+  tdObchodNap?: AFTypNabidkyPrijate | null
   // Typ dokladu objednávek vydaných pro obchod (db: IdTdObObv) - Objednávky vydané)
-  tdObchodObv?: AFTypObjednavkyVydane
+  tdObchodObv?: AFTypObjednavkyVydane | null
   // Typ dokladu faktur vydaných pro ZDD (db: IdTdFavZdd) - Vydaný)
-  tdFavZalohovyDanDokl?: AFTypFakturyVydane
+  tdFavZalohovyDanDokl?: AFTypFakturyVydane | null
   // Typ dokladu faktur přijatých pro ZDD (db: IdTdFapZdd) - Přijatý)
-  tdFapZalohovyDanDokl?: AFTypFakturyPrijate
+  tdFapZalohovyDanDokl?: AFTypFakturyPrijate | null
   // Typ dokladu přijaté faktury z EDI (db: IdTdFapEdi) - Přijaté faktury z EDI)
-  tdFapEdi?: AFTypFakturyPrijate
+  tdFapEdi?: AFTypFakturyPrijate | null
   // Typ dokladu příjemky z EDI (db: IdTdSklEdi) - Typ příjemky z EDI)
-  tdSklEdi?: AFTypSkladovyPohyb
-  // Typ dokladu kurzových rozdílů - náklad (db: IdTdKurzRozNaklad) - Náklad)
-  tdKurzovyRozdilNaklad?: AFTypInternihoDokladu
-  // Typ dokladu kurzových rozdílů - výnos (db: IdTdKurzRozVynos) - Výnos)
-  tdKurzovyRozdilVynos?: AFTypInternihoDokladu
-  // Typ dokladu zbytek náklad (db: IdTdZbytekNaklad) - Náklad)
-  tdZbytekNaklad?: AFTypInternihoDokladu
-  // Typ dokladu zbytek výnos (db: IdTdZbytekVynos) - Výnos)
-  tdZbytekVynos?: AFTypInternihoDokladu
+  tdSklEdi?: AFTypSkladovyPohyb | null
+  // Typ dokladu kurzových rozdílů - Náklad (db: IdTdKurzRozNaklad) - Náklad)
+  tdKurzovyRozdilNaklad?: AFTypInternihoDokladu | null
+  // Typ dokladu kurzových rozdílů - Výnos (db: IdTdKurzRozVynos) - Výnos)
+  tdKurzovyRozdilVynos?: AFTypInternihoDokladu | null
+  // Typ dokladu pro zbytkové rozdíly - Náklad (db: IdTdZbytekNaklad) - Náklad)
+  tdZbytekNaklad?: AFTypInternihoDokladu | null
+  // Typ dokladu pro zbytkové rozdíly - Výnos (db: IdTdZbytekVynos) - Výnos)
+  tdZbytekVynos?: AFTypInternihoDokladu | null
   // Typ dokladu pro přeplatky pohledávek (db: IdTdPreplPhl) - Výnos)
-  tdPreplatekPhl?: AFTypPohledavky
+  tdPreplatekPhl?: AFTypPohledavky | null
   // Typ dokladu pro přeplatky závazků (db: IdTdPreplZav) - Náklad)
-  tdPreplatekZav?: AFTypZavazku
+  tdPreplatekZav?: AFTypZavazku | null
   // Typ dokladu pro pokladní doklady (db: IdTdEpPok) - ... pokladních dokladů)
-  tdEpGeneracePokladnichDokl?: AFTypPokladniPohyb
+  tdEpGeneracePokladnichDokl?: AFTypPokladniPohyb | null
   // Typ dokladu pro výdej ze skladu (db: IdTdEpSkl) - ... výdej ze skladu)
-  tdEpGeneraceVydejekZeSkladu?: AFTypPokladniPohyb
-  // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
-  // Stát (db: IdFaStatu) - Stát)
-  statFakturacniAdresy?: AFStat
-  // Stát (db: IdPostStatu) - Stát)
-  statPostovniAdresy?: AFStat
+  tdEpGeneraceVydejekZeSkladu?: AFTypPokladniPohyb | null
+  // Stát - Sídlo/Trv. bydliště (db: IdStatu) - Stát)
+  stat?: AFStat | null
+  // Stát - Fakturační adresa (db: IdFaStatu) - Stát)
+  statFakturacniAdresy?: AFStat | null
+  // Stát - Poštovní adresa (db: IdPostStatu) - Stát)
+  statPostovniAdresy?: AFStat | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // Kraj (db: IdFaRegion) - Kraj)
-  regionFakturacniAdresy?: AFRegion
+  regionFakturacniAdresy?: AFRegion | null
   // Kraj (db: IdPostRegion) - Kraj)
-  regionPostovniAdresy?: AFRegion
+  regionPostovniAdresy?: AFRegion | null
   // Duální měna (db: IdMenyDual) - Duální měna)
-  menaDual?: AFMena
-  // Náklad (db: IdUcetZaokrNaklad) - Náklad)
-  ucetZaokrNaklad?: AFUcet
-  // Výnos (db: IdUcetZaokrVynos) - Výnos)
-  ucetZaokrVynos?: AFUcet
-  // Náklad (db: IdUcetKrOdpoctuNaklad) - Náklad)
-  ucetKrOdpoctuNaklad?: AFUcet
-  // Výnos (db: IdUcetKrOdpoctuVynos) - Výnos)
-  ucetKrOdpoctuVynos?: AFUcet
+  menaDual?: AFMena | null
+  // Účet pro zaokrouhlovací rozdíl - Náklad (db: IdUcetZaokrNaklad) - Náklad)
+  ucetZaokrNaklad?: AFUcet | null
+  // Účet pro zaokrouhlovací rozdíl - Výnos (db: IdUcetZaokrVynos) - Výnos)
+  ucetZaokrVynos?: AFUcet | null
+  // Účet pro kurzový rozdíl odpočtu záloh - Náklad (db: IdUcetKrOdpoctuNaklad) - Náklad)
+  ucetKrOdpoctuNaklad?: AFUcet | null
+  // Účet pro kurzový rozdíl odpočtu záloh - Výnos (db: IdUcetKrOdpoctuVynos) - Výnos)
+  ucetKrOdpoctuVynos?: AFUcet | null
   // Krajský finanční úřad (db: IdFuKraj) - Krajský finanční úřad)
-  fuKraj?: AFAdresar
+  fuKraj?: AFAdresar | null
   // Územní pracoviště (db: IdFuUzemPrac) - Územní pracoviště)
-  fuUzemPrac?: AFAdresar
+  fuUzemPrac?: AFAdresar | null
   // Typ dokladu pro bankovní příjem (db: IdTdBanPrijem) - Bankovní příjem)
-  tdBanPrijem?: AFTypBanka
+  tdBanPrijem?: AFTypBanka | null
   // Typ dokladu pro bankovní výdej (db: IdTdBanVydej) - Bankovní výdej)
-  tdBanVydej?: AFTypBanka
-  // Adresa a bankovní spojení (db: IdMzdAdrSocPoj) - Adresa a bankovní spojení)
-  mzdAdrSocPoj?: AFAdresar
-  // Adresa (db: IdMzdAdrDan) - Adresa)
-  mzdAdrDan?: AFAdresar
-  // Bankovní spojení (db: IdMzdBanDanZal) - Bankovní spojení)
-  mzdBanDanZal?: AFAdresarBankovniUcet
-  // Bankovní spojení (db: IdMzdBanDanSra) - Bankovní spojení)
-  mzdBanDanSra?: AFAdresarBankovniUcet
-  // Bankovní spojení (db: IdMzdBanDanRez) - Bankovní spojení)
-  mzdBanDanRez?: AFAdresarBankovniUcet
+  tdBanVydej?: AFTypBanka | null
+  // Adresa a bankovní účet pro sociální pojištění (db: IdMzdAdrSocPoj) - Adresa a bankovní spojení)
+  mzdAdrSocPoj?: AFAdresar | null
+  // Adresa finančního úřadu (db: IdMzdAdrDan) - Adresa)
+  mzdAdrDan?: AFAdresar | null
+  // Bankovní účet pro platbu zálohové daně (db: IdMzdBanDanZal) - Bankovní spojení)
+  mzdBanDanZal?: AFAdresarBankovniUcet | null
+  // Bankovní účet pro platbu srážkové daně (db: IdMzdBanDanSra) - Bankovní spojení)
+  mzdBanDanSra?: AFAdresarBankovniUcet | null
+  // Bankovní účet pro platbu daně za rezidenty (db: IdMzdBanDanRez) - Bankovní spojení)
+  mzdBanDanRez?: AFAdresarBankovniUcet | null
   // Typ dokladu závazku sociálního pojištění pro mzdy (db: IdMzdTdZavSoc) - Typ závazku)
-  mzdTdZavSoc?: AFTypZavazku
-  // Předpis zaúčtování - zaměstnanec (db: IdMzdTuoZavSocZam) - Předpis zaúčtování - zaměstnanec)
-  mzdTuoZavSocZam?: AFPredpisZauctovani
-  // Předpis zaúčtování - zaměstnavatel (db: IdMzdTuoZavSocFir) - Předpis zaúčtování - zaměstnavatel)
-  mzdTuoZavSocFir?: AFPredpisZauctovani
+  mzdTdZavSoc?: AFTypZavazku | null
+  // Předpis zaúčtování sociálního pojištění za zaměstnance (db: IdMzdTuoZavSocZam) - Předpis zaúčtování - zaměstnanec)
+  mzdTuoZavSocZam?: AFPredpisZauctovani | null
+  // Předpis zaúčtování sociálního pojištění za zaměstnavatele (db: IdMzdTuoZavSocFir) - Předpis zaúčtování - zaměstnavatel)
+  mzdTuoZavSocFir?: AFPredpisZauctovani | null
   // Typ dokladu závazku zdravotního pojištění pro mzdy (db: IdMzdTdZavZdrav) - Typ závazku)
-  mzdTdZavZdrav?: AFTypZavazku
-  // Předpis zaúčtování - zaměstnanec (db: IdMzdTuoZavZdrZam) - Předpis zaúčtování - zaměstnanec)
-  mzdTuoZavZdrZam?: AFPredpisZauctovani
-  // Předpis zaúčtování - zaměstnavatel (db: IdMzdTuoZavZdrFir) - Předpis zaúčtování - zaměstnavatel)
-  mzdTuoZavZdrFir?: AFPredpisZauctovani
+  mzdTdZavZdrav?: AFTypZavazku | null
+  // Předpis zaúčtování zdravotního pojištění za zaměstnance (db: IdMzdTuoZavZdrZam) - Předpis zaúčtování - zaměstnanec)
+  mzdTuoZavZdrZam?: AFPredpisZauctovani | null
+  // Předpis zaúčtování zdravotního pojištění za zaměstnavatele (db: IdMzdTuoZavZdrFir) - Předpis zaúčtování - zaměstnavatel)
+  mzdTuoZavZdrFir?: AFPredpisZauctovani | null
   // Typ dokladu závazku daňové zálohy pro mzdy (db: IdMzdTdZavDanZal) - Typ závazku)
-  mzdTdZavDanZal?: AFTypZavazku
+  mzdTdZavDanZal?: AFTypZavazku | null
   // Typ dokladu závazku daňové srážky pro mzdy (db: IdMzdTdZavDanSra) - Typ závazku)
-  mzdTdZavDanSra?: AFTypZavazku
+  mzdTdZavDanSra?: AFTypZavazku | null
   // Typ dokladu závazku daňové rezervy pro mzdy (db: IdMzdTdZavDanRez) - Typ závazku)
-  mzdTdZavDanRez?: AFTypZavazku
+  mzdTdZavDanRez?: AFTypZavazku | null
   // Typ dokladu závazku záloh pro mzdy (db: IdMzdTdZavZaloha) - Typ závazku záloh)
-  mzdTdZavZaloha?: AFTypZavazku
+  mzdTdZavZaloha?: AFTypZavazku | null
   // Typ dokladu závazku srážek pro mzdy (db: IdMzdTdZavSrazka) - Typ závazku srážek)
-  mzdTdZavSrazka?: AFTypZavazku
+  mzdTdZavSrazka?: AFTypZavazku | null
   // Typ dokladu závazku dobírky pro mzdy (db: IdMzdTdZavDobirka) - Typ závazku dobírek)
-  mzdTdZavDobirka?: AFTypZavazku
+  mzdTdZavDobirka?: AFTypZavazku | null
   // Typ interního dokladu hrubé mzdy (db: IdMzdTdIntHruba) - Typ int.dokl. hrubé mzdy)
-  mzdTdIntHruba?: AFTypInternihoDokladu
+  mzdTdIntHruba?: AFTypInternihoDokladu | null
   // Typ interního dokladu náhrady mzdy (db: IdMzdTdIntNahrad) - Typ int.dokl. náhrady mzdy)
-  mzdTdIntNahrad?: AFTypInternihoDokladu
+  mzdTdIntNahrad?: AFTypInternihoDokladu | null
   // Typ interního dokladu cestovné do limitu pro mzdy (db: IdMzdTdIntCestDoLim) - do limitu)
-  mzdTdIntCestDoLim?: AFTypInternihoDokladu
+  mzdTdIntCestDoLim?: AFTypInternihoDokladu | null
   // Typ interního dokladu cestovné nad limit pro mzdy (db: IdMzdTdIntCestNadLim) - nad limit)
-  mzdTdIntCestNadLim?: AFTypDokladu
+  mzdTdIntCestNadLim?: AFTypDokladu | null
   // Typ interního dokladu stravenkového paušálu do limitu pro mzdy (db: IdMzdTdIntStravPausDoLim) - do limitu)
-  mzdTdIntStravPausDoLim?: AFTypInternihoDokladu
+  mzdTdIntStravPausDoLim?: AFTypInternihoDokladu | null
   // Typ interního dokladu stravenkového paušálu nad limit pro mzdy (db: IdMzdTdIntStravPausNadLim) - nad limit)
-  mzdTdIntStravPausNadLim?: AFTypDokladu
+  mzdTdIntStravPausNadLim?: AFTypDokladu | null
   // Typ interního dokladu homeoffice do limitu pro mzdy (db: IdMzdTdIntHomeofficeDoLim) - do limitu)
-  mzdTdIntHomeofficeDoLim?: AFTypDokladu
+  mzdTdIntHomeofficeDoLim?: AFTypDokladu | null
   // Typ interního dokladu homeoffice nad limitu pro mzdy (db: IdMzdTdIntHomeofficeNadLim) - nad limit)
-  mzdTdIntHomeofficeNadLim?: AFTypDokladu
+  mzdTdIntHomeofficeNadLim?: AFTypDokladu | null
   // Typ dokl. srážky stravenek (db: IdMzdTdSrazkaStrav) - Typ dokl. srážky stravenek)
-  mzdTdSrazkaStrav?: AFTypDokladu
+  mzdTdSrazkaStrav?: AFTypDokladu | null
   // Typ dokl. stravenky (db: IdMzdTdStravenka) - Typ dokl. stravenky)
-  mzdTdStravenka?: AFTypDokladu
-  // Předpis příspěvek zaměstnance (db: IdMzdTuoStravZam) - Předpis příspěvek zaměstnance)
-  mzdTuoStravZam?: AFPredpisZauctovani
-  // Předpis příspěvek firmy do limitu (db: IdMzdTuoStravFirDoLim) - Předpis příspěvek firmy do limitu)
-  mzdTuoStravFirDoLim?: AFPredpisZauctovani
-  // Předpis příspěvek firmy nad limit (db: IdMzdTuoStravFirNadLim) - Předpis příspěvek firmy nad limit)
-  mzdTuoStravFirNadLim?: AFPredpisZauctovani
+  mzdTdStravenka?: AFTypDokladu | null
+  // Předpis zaúčtování příspěvku na stravenky hrazený zaměstnancem (db: IdMzdTuoStravZam) - Předpis příspěvek zaměstnance)
+  mzdTuoStravZam?: AFPredpisZauctovani | null
+  // Předpis zaúčtování příspěvku firmy na stravenky hrazeného firmou do daňového limitu (db: IdMzdTuoStravFirDoLim) - Předpis příspěvek firmy do limitu)
+  mzdTuoStravFirDoLim?: AFPredpisZauctovani | null
+  // Předpis zaúčtování příspěvku na stravenky hrazeného firmou nad daňový limit (db: IdMzdTuoStravFirNadLim) - Předpis příspěvek firmy nad limit)
+  mzdTuoStravFirNadLim?: AFPredpisZauctovani | null
   // Typ int. dokl. příspěvků (db: IdMzdTdIntPrispevky) - Typ int. dokl. příspěvků)
-  mzdTdIntPrispevky?: AFTypDokladu
+  mzdTdIntPrispevky?: AFTypDokladu | null
   // Typ závazku příspěvků (db: IdMzdTdZavPrispevky) - Typ závazku příspěvků)
-  mzdTdZavPrispevky?: AFTypDokladu
+  mzdTdZavPrispevky?: AFTypDokladu | null
+  // Závazky - neuhrazené po splatnosti (db: IdTaxTdDanZav) - Závazky)
+  taxTdDanZav?: AFTypDokladu | null
 
 
 
@@ -2006,6 +2008,13 @@ export class AFNastaveni extends AFEntity {
     },
     mzdTdZavPrispevky : {
       key: 'mzdTdZavPrispevky',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFTypDokladu',
+      
+    },
+    taxTdDanZav : {
+      key: 'taxTdDanZav',
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFTypDokladu',

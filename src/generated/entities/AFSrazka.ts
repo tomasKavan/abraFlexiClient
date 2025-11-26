@@ -16,55 +16,55 @@ export class AFSrazka extends AFEntity {
   static EntityType: string = 'SRAZKA'
 
   // ID (db: IdSrazka) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Přednostní srážka (db: Prednostni) - Přednostní srážka)
-  prednostni?: boolean
+  prednostni?: boolean | null
   // Pořadí srážky (db: Poradi) - Pořadí srážky)
-  poradi?: number
+  poradi?: number | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Typ složky (db: TypSlozkyK) - Typ složky)
-  typSlozkyK?: TypSlozky
+  typSlozkyK?: TypSlozky | null
   // Skupina složky (db: SkupSlozkyK) - Skupina složky)
-  skupSlozkyK?: SkupinaSlozky
+  skupSlozkyK?: SkupinaSlozky | null
   // Srážet od (db: SrazkaOd) - Srážet od)
-  srazkaOd?: Date
+  srazkaOd?: Date | null
   // Srážet do (db: SrazkaDo) - Srážet do)
-  srazkaDo?: Date
+  srazkaDo?: Date | null
   // Deponovat do (db: DeponovatDo) - Deponovat do)
-  deponovatDo?: Date
+  deponovatDo?: Date | null
   // Procento / konstanta (db: ProcMzd) - Procento / konstanta)
-  procMzd?: Big
+  procMzd?: Big | null
   // Způsob platby (db: ZpusobPlatbyK) - Způsob platby)
-  zpusobPlatbyK?: ZpusobPlatby
+  zpusobPlatbyK?: ZpusobPlatby | null
   // Částka (db: Castka) - Částka)
-  castka?: Big
+  castka?: Big | null
   // Počáteční stav (db: Pocatek) - Počáteční stav)
-  pocatek?: Big
+  pocatek?: Big | null
   // Celkem (db: Celkem) - Celkem)
-  celkem?: Big
+  celkem?: Big | null
   // Zbývá (db: Zbyva) - Zbývá)
-  zbyva?: Big
+  zbyva?: Big | null
   // K datu (db: Kdatu) - K datu)
-  kdatu?: Date
+  kdatu?: Date | null
   // Den splatnosti (db: Splatnost) - Den splatnosti)
-  splatnost?: number
+  splatnost?: number | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Druh srážky (db: IdCisMzdSloz) - Druh srážky)
-  cisMzdSloz?: AFCiselnikMzdovychSlozek
+  cisMzdSloz?: AFCiselnikMzdovychSlozek | null
   // Bankovní spojení (db: IdBanSpoj) - Bankovní spojení)
-  banSpoj?: AFMzdyBankovniSpojeni
+  banSpoj?: AFMzdyBankovniSpojeni | null
   // Typ závazku (db: IdTypOstZav) - Typ závazku)
-  typOstZav?: AFTypZavazku
+  typOstZav?: AFTypZavazku | null
   // Typ interního dokladu (db: IdTypIntDokl) - Typ interního dokladu)
-  typIntDokl?: AFTypInternihoDokladu
+  typIntDokl?: AFTypInternihoDokladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -12,39 +12,39 @@ export class AFUzivatelskyDotazVlastnost extends AFEntity {
   static EntityType: string = 'UZIVATELSKY_DOTAZ_VLASTNOST'
 
   // ID (db: IdDotazProp) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Typ (db: TypPropK) - Typ)
-  typPropK?: DatazTypParam
+  typPropK?: DatazTypParam | null
   // Skrýt sloupec (db: HideColumn) - Skrýt sloupec)
-  hideColumn?: boolean
+  hideColumn?: boolean | null
   // Klíč pro tabulku (db: BeanKeyOpen) - Klíč pro tabulku)
-  beanKeyOpen?: string
+  beanKeyOpen?: string | null
   // Šířka (db: Width) - Šířka)
-  width?: number
+  width?: number | null
   // Zdrojová tabulka (db: ResourceBeanKey) - Zdrojová tabulka)
-  resourceBeanKey?: string
+  resourceBeanKey?: string | null
   // Zdrojové pole (db: ResourcePropName) - Zdrojové pole)
-  resourcePropName?: string
+  resourcePropName?: string | null
   // Dotaz (db: IdDotaz) - Dotaz)
-  dotaz?: AFUzivatelskyDotaz
+  dotaz?: AFUzivatelskyDotaz | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

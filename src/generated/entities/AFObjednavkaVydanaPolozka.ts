@@ -21,121 +21,127 @@ export class AFObjednavkaVydanaPolozka extends AFEntity {
   static EntityType: string = 'OBJEDNAVKA_OUT_POLOZKA'
 
   // ID (db: IdPolObch) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Označení (db: Kod) - Označení)
-  declare kod?: string
+  declare kod?: string | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Typ položky (db: TypPolozkyK) - Typ položky)
-  typPolozkyK?: TypPolozky
+  typPolozkyK?: TypPolozky | null
   // Balení (db: BaleniId) - Balení)
-  baleniId?: number
+  baleniId?: number | null
   // Počet balení (db: MnozBaleni) - Počet balení)
-  mnozBaleni?: Big
+  mnozBaleni?: Big | null
   // Množství (db: MnozMj) - Množství)
-  mnozMj?: Big
+  mnozMj?: Big | null
   // Typ ceny (db: TypCenyDphK) - Typ ceny)
-  typCenyDphK?: TypCeny
+  typCenyDphK?: TypCeny | null
   // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // DPH [%] (db: SzbDph) - DPH [%])
-  szbDph?: Big
+  szbDph?: Big | null
   // Cena za MJ (db: CenaMj) - Cena za MJ)
-  cenaMj?: Big
+  cenaMj?: Big | null
   // Sleva položky[%] (db: SlevaPol) - Sleva položky)
-  slevaPol?: Big
-  // ? sleva hlav. (db: UplSlevaDokl) - uplatnit slevu z dokladu)
-  uplSlevaDokl?: boolean
+  slevaPol?: Big | null
+  // Uplatnit slevu z dokladu (db: UplSlevaDokl) - Uplatnit slevu z dokladu)
+  uplSlevaDokl?: boolean | null
   // Základ [Kč] (db: SumZkl) - Základ [Kč])
-  sumZkl?: Big
+  sumZkl?: Big | null
   // DPH [Kč] (db: SumDph) - DPH [Kč])
-  sumDph?: Big
+  sumDph?: Big | null
   // Celkem [Kč] (db: sumZkl + sumDph) - Celkem [Kč])
-  sumCelkem?: Big
+  sumCelkem?: Big | null
   // Základ [měna] (db: SumZklMen) - Základ [měna])
-  sumZklMen?: Big
+  sumZklMen?: Big | null
   // DPH [měna] (db: SumDphMen) - DPH [měna])
-  sumDphMen?: Big
+  sumDphMen?: Big | null
   // Celkem [měna] (db: sumZklMen + sumDphMen) - Celkem [měna])
-  sumCelkemMen?: Big
+  sumCelkemMen?: Big | null
   // Objem (db: Objem) - Objem)
-  objem?: Big
+  objem?: Big | null
   // Cen. jednotka (db: CenJednotka) - Cen. jednotka)
-  cenJednotka?: Big
-  // Objednat u dod. (db: ObjednatK) - Objednat u dodavatele)
-  objednatK?: Objednat
+  cenJednotka?: Big | null
+  // Objednat u dodavatele (db: ObjednatK) - Objednat u dodavatele)
+  objednatK?: Objednat | null
   // Plán MJ (db: MnozMjPlan) - Plánované množství)
-  mnozMjPlan?: Big
+  mnozMjPlan?: Big | null
   // Real. MJ (db: MnozMjReal) - Realizované množství)
-  mnozMjReal?: Big
+  mnozMjReal?: Big | null
   // Auto. pol. (db: Autogen) - Autogen)
-  autogen?: boolean
+  autogen?: boolean | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Sleva [%] (db: SlevaDokl) - Sleva [%])
-  slevaDokl?: Big
+  slevaDokl?: Big | null
   // Datum vyst. (db: DatVyst) - Vystaveno)
-  datVyst?: Date
+  datVyst?: Date | null
   // Kopírovat zakázku (db: KopZakazku) - Kopírovat zakázku)
-  kopZakazku?: boolean
+  kopZakazku?: boolean | null
   // Kopírovat středisko (db: KopStred) - Kopírovat středisko)
-  kopStred?: boolean
+  kopStred?: boolean | null
   // Kopírovat činnost (db: KopCinnost) - Kopírovat činnost)
-  kopCinnost?: boolean
+  kopCinnost?: boolean | null
   // Kopírovat štítky (db: KopKlice) - Kopírovat štítky)
-  kopKlice?: boolean
+  kopKlice?: boolean | null
   // Storno (db: Storno) - Storno)
-  storno?: boolean
+  storno?: boolean | null
   // Storno položky (db: StornoPol) - Storno položky)
-  stornoPol?: boolean
+  stornoPol?: boolean | null
   // Sklad (db: IdBspSkl) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Dodavatel (db: IdFirmy) - Dodavatel)
-  dodavatel?: AFAdresar
+  dodavatel?: AFAdresar | null
   // Kód z ceníku (db: IdCenik) - Kód z ceníku)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // MJ (db: IdMj) - MJ)
-  mj?: AFMernaJednotka
+  mj?: AFMernaJednotka | null
   // MJ objemu (db: IdMjObjem) - MJ objemu)
-  mjObjem?: AFMernaJednotka
+  mjObjem?: AFMernaJednotka | null
   // Sazba DPH (db: IdSazbyDph) - Sazba DPH)
-  sazbaDph?: AFSazbaDph
+  sazbaDph?: AFSazbaDph | null
   // Zdrojová položka objednávky (db: IdPolObchZdroj) - Zdrojová položka objednávky)
-  idPolObchZdroj?: number
+  idPolObchZdroj?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Zdroj (db: Source) - Zdroj)
-  source?: string
+  source?: string | null
   // Stav skladu (db: ) - Stav skladu)
-  stavSkladu?: Big
+  stavSkladu?: Big | null
   // Obchodní doklad (db: IdDoklObch) - Obchodní doklad)
-  doklObch?: AFObjednavkaVydana
+  doklObch?: AFObjednavkaVydana | null
   // Poplatek k položce (db: IdPolObchPoplatek) - Poplatek k položce)
-  poplatekParentPolObch?: AFObjednavkaVydanaPolozka
+  poplatekParentPolObch?: AFObjednavkaVydanaPolozka | null
   // Termín (db: DatTermin) - Termín)
-  datTermin?: Date
+  datTermin?: Date | null
   // Kopírovat termín (db: KopDatTermin) - Kopírovat termín)
-  kopDatTermin?: boolean
+  kopDatTermin?: boolean | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -151,6 +157,28 @@ export class AFObjednavkaVydanaPolozka extends AFEntity {
     },
     lastUpdate : {
       key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdDate : {
+      key: 'createdDate',
       type: PropertyType.DateTime,
       isArray: false,
       

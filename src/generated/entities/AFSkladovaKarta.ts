@@ -16,91 +16,91 @@ export class AFSkladovaKarta extends AFEntity {
   static EntityType: string = 'SKLADOVA_KARTA'
 
   // ID (db: IdKarty) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Průměrná cena [Kč] (db: PrumCenaTuz) - Průměrná cena [Kč])
-  prumCenaTuz?: Big
+  prumCenaTuz?: Big | null
   // Průměrná cena [měna] (db: PrumCenaMen) - Průměrná cena [měna])
-  prumCenaMen?: Big
+  prumCenaMen?: Big | null
   // Stav zásob v MJ (db: StavMJ) - Stav zásob v MJ)
-  stavMJ?: Big
+  stavMJ?: Big | null
   // Stav zásob [Kč] (db: StavTuz) - Stav zásob [Kč])
-  stavTuz?: Big
+  stavTuz?: Big | null
   // Stav zásob [měna] (db: StavMen) - Stav zásob [měna])
-  stavMen?: Big
+  stavMen?: Big | null
   // Datum posl. pohybu (db: DatPosl) - Datum posl. pohybu)
-  datPosl?: Date
+  datPosl?: Date | null
   // Počátek MJ (db: PocatMJ) - Počátek MJ)
-  pocatMJ?: Big
+  pocatMJ?: Big | null
   // Počátek [Kč] (db: PocatTuz) - Počátek [Kč])
-  pocatTuz?: Big
+  pocatTuz?: Big | null
   // Počátek [měna] (db: PocatMen) - Počátek [měna])
-  pocatMen?: Big
+  pocatMen?: Big | null
   // Min. zásoba MJ (db: MinMJ) - Min. zásoba MJ)
-  minMJ?: Big
+  minMJ?: Big | null
   // Maximum (db: MaxMJ) - Max. zásoba MJ)
-  maxMJ?: Big
+  maxMJ?: Big | null
   // Rezervováno MJ (db: RezervMJ) - Rezervováno MJ)
-  rezervMJ?: Big
+  rezervMJ?: Big | null
   // Stav k datu MJ (db: DatStavMJ) - Stav k datu MJ)
-  datStavMJ?: Big
+  datStavMJ?: Big | null
   // Stav k datu [Kč] (db: DatStavTuz) - Stav k datu [Kč])
-  datStavTuz?: Big
+  datStavTuz?: Big | null
   // Stav k datu [měna] (db: DatStavMen) - Stav k datu [měna])
-  datStavMen?: Big
+  datStavMen?: Big | null
   // Poslední cena [Kč] (db: PoslCenaTuz) - Poslední cena [Kč])
-  poslCenaTuz?: Big
+  poslCenaTuz?: Big | null
   // Poslední cena [měna] (db: PoslCenaMen) - Poslední cena [měna])
-  poslCenaMen?: Big
+  poslCenaMen?: Big | null
   // Výdej dle expirace (db: VydExpir) - Výdej dle expirace)
-  vydExpir?: boolean
+  vydExpir?: boolean | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Popis EN (db: PopisA) - Popis EN)
-  popisA?: string
+  popisA?: string | null
   // Popis DE (db: PopisB) - Popis DE)
-  popisB?: string
+  popisB?: string | null
   // Popis FR (db: PopisC) - Popis FR)
-  popisC?: string
+  popisC?: string | null
   // Poznámka (db: PoznamVelka) - Poznámka)
-  poznamVelka?: string
+  poznamVelka?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Ceník - popis (db: CenPopis) - Ceník - popis)
-  cenPopis?: string
+  cenPopis?: string | null
   // Ceník - popis EN (db: CenPopisA) - Ceník - popis EN)
-  cenPopisA?: string
+  cenPopisA?: string | null
   // Ceník - popis DE (db: CenPopisB) - Ceník - popis DE)
-  cenPopisB?: string
+  cenPopisB?: string | null
   // Ceník - popis FR (db: CenPopisC) - Ceník - popis FR)
-  cenPopisC?: string
+  cenPopisC?: string | null
   // Ceník - poznámka (db: CenPoznam) - Ceník - poznámka)
-  cenPoznam?: string
+  cenPoznam?: string | null
   // Požadavky MJ (db: PozadavkyMj) - Požadavky MJ)
-  pozadavkyMj?: Big
+  pozadavkyMj?: Big | null
   // Stav zásob v MJ s požadavky (db: StavMjSPozadavky) - Stav zásob v MJ s požadavky)
-  stavMjSPozadavky?: Big
+  stavMjSPozadavky?: Big | null
   // Dostupné množství (db: stavMjSPozadavky - rezervMJ) - Dostupné množství)
-  dostupMj?: Big
+  dostupMj?: Big | null
   // Účetní období (db: IdUcetObdobi) - Účetní období)
-  ucetObdobi?: AFUcetniObdobi
+  ucetObdobi?: AFUcetniObdobi | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Sklad (db: IdSkladu) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Místnost (db: IdMistnost) - Místnost)
-  mistnost?: AFUmisteniVeSkladu
+  mistnost?: AFUmisteniVeSkladu | null
   // Regál (db: IdRegal) - Regál)
-  regal?: AFUmisteniVeSkladu
+  regal?: AFUmisteniVeSkladu | null
   // Police (db: IdPolice) - Police)
-  police?: AFUmisteniVeSkladu
+  police?: AFUmisteniVeSkladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

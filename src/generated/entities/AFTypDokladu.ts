@@ -17,53 +17,53 @@ export class AFTypDokladu extends AFEntity {
   static EntityType: string = 'TYP_DOKLADU'
 
   // ID (db: IdTypDokl) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Platí od roku (db: PlatiOd) - Platí od roku)
-  platiOd?: number
+  platiOd?: number | null
   // Platí do roku (db: PlatiDo) - Platí do roku)
-  platiDo?: number
+  platiDo?: number | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Splatnost [dny] (db: SplatDny) - Splatnost [dny])
-  splatDny?: number
+  splatDny?: number | null
   // Popis pro doklad (db: PopisDoklad) - Popis pro doklad)
-  popisDoklad?: string
+  popisDoklad?: string | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Aut. tisk (db: TiskAutomat) - Automaticky tisknout při vytvoření nového dokladu)
-  tiskAutomat?: boolean
+  tiskAutomat?: boolean | null
   // Řazení položek pro tisk (db: RazeniProTiskK) - Řazení položek pro tisk)
-  razeniProTiskK?: RazeniProTisk
+  razeniProTiskK?: RazeniProTisk | null
   // Primární typ dokladu (db: Primarni) - Primární typ dokladu)
-  primarni?: boolean
+  primarni?: boolean | null
   // Text pro odesílání dokladu e-mailem (db: EmailTxt) - Text pro odesílání dokladu e-mailem)
-  emailTxt?: string
+  emailTxt?: string | null
   // Šablona e-mail (db: IdSablonaMail) - Šablona e-mail)
-  sablonaMail?: AFSablonaMail
+  sablonaMail?: AFSablonaMail | null
 
   // Automatický tisk (type: AUTOTISK) - autoTisky)
   autoTisky?: AFAutotisk[]

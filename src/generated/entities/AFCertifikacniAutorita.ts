@@ -11,19 +11,19 @@ export class AFCertifikacniAutorita extends AFEntity {
   static EntityType: string = 'CERTIFIKACNI_AUTORITA'
 
   // ID (db: IdAutCert) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Poznámka (db: UzivNazev) - Poznámka)
-  uzivNazev?: string
+  uzivNazev?: string | null
   // Název certifikátu (db: CertNazev) - Název certifikátu)
-  certNazev?: string
+  certNazev?: string | null
   // Organizace certifikátu (db: CertOrgan) - Organizace certifikátu)
-  certOrgan?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  certOrgan?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -17,45 +17,45 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
   static EntityType: string = 'MZDY_BANKOVNI_SPOJENI'
 
   // ID (db: IdBanSpoj) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Název banky (db: NazBanky) - Název)
-  nazBanky?: string
+  nazBanky?: string | null
   // Číslo bank. účtu (db: Buc) - Číslo účtu)
-  buc?: string
+  buc?: string | null
   // IBAN (db: Iban) - IBAN)
-  iban?: string
+  iban?: string | null
   // BIC (db: Bic) - BIC)
-  bic?: string
+  bic?: string | null
   // Specifický symbol (db: SpecSym) - Specifický symbol)
-  specSym?: string
+  specSym?: string | null
   // Variabilní symbol (db: VarSym) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Primární (db: Primarni) - Primární)
-  primarni?: boolean
+  primarni?: boolean | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Kód banky (db: IdSmerKod) - Kód banky)
-  smerKod?: AFPenezniUstav
+  smerKod?: AFPenezniUstav | null
   // Konstantní symbol (db: IdKonSym) - Konstantní symbol)
-  konSym?: AFKonstSymbol
+  konSym?: AFKonstSymbol | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -13,23 +13,23 @@ export class AFStandardniPredpis extends AFEntity {
   static EntityType: string = 'STD_PREDPIS_SESTAVY'
 
   // ID (db: IdSesStdPred) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Druh účtu (db: DruhUctuK) - Druh účtu)
-  druhUctuK?: DruhUctu
+  druhUctuK?: DruhUctu | null
   // Sloupec sestavy (db: CisSloup) - Sloupec sestavy)
-  cisSloup?: number
+  cisSloup?: number | null
   // Způsob výpočtu (db: ZpusobVypK) - Způsob výpočtu)
-  zpusobVypK?: ZpusobVypo
+  zpusobVypK?: ZpusobVypo | null
   // Převrátit znaménko (db: PrevratZnam) - Převrátit znaménko)
-  prevratZnam?: boolean
+  prevratZnam?: boolean | null
   // Uvažovat jen kladné hodnoty (db: JenKladne) - Uvažovat jen kladné hodnoty)
-  jenKladne?: boolean
+  jenKladne?: boolean | null
   // Řádek (db: IdSesRadky) - Řádek)
-  radek?: AFRadekSestavy
+  radek?: AFRadekSestavy | null
   // Číslo účtu syntetické (db: IdStdUcet) - Číslo účtu syntetické)
-  cisloUctuSyn?: AFUcetniOsnova
+  cisloUctuSyn?: AFUcetniOsnova | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

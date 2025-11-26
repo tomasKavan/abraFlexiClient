@@ -12,39 +12,39 @@ export class AFCleneniKontrolniHlaseni extends AFEntity {
   static EntityType: string = 'CLEN_KON_VYK_DPH'
 
   // ID (db: IdClenKonVykDPH) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Vyplňovat číselný kód zboží (db: VyplnCisKod) - Vyplňovat číselný kód zboží)
-  vyplnCisKod?: boolean
+  vyplnCisKod?: boolean | null
   // Vyplňovat druh zboží (db: VyplnDruh) - Vyplňovat druh zboží)
-  vyplnDruh?: boolean
+  vyplnDruh?: boolean | null
   // Zkratka XML transakce (db: KodTransakce) - Zkratka XML transakce)
-  kodTransakce?: string
+  kodTransakce?: string | null
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
-  typPohybuK?: TypPohybu
+  typPohybuK?: TypPohybu | null
   // Uuid (db: Uuid) - Univerzální unikátní identifikátor)
-  uuid?: string
+  uuid?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

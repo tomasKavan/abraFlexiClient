@@ -12,43 +12,43 @@ export class AFStrom extends AFEntity {
   static EntityType: string = 'STROM'
 
   // ID (db: IdUzel) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Obrázek (db: Strobr) - Obrázek)
-  strobr?: string
+  strobr?: string | null
   // Hladina (db: Hladina) - Hladina)
-  hladina?: number
+  hladina?: number | null
   // Pořadí (db: Poradi) - Pořadí)
-  poradi?: number
+  poradi?: number | null
   // Cesta (db: Cesta) - Cesta)
-  cesta?: string
+  cesta?: string | null
   // Krátký popis (db: KratkyPopis) - Krátký popis)
-  kratkyPopis?: string
+  kratkyPopis?: string | null
   // Klíčová slova (db: KlicSlova) - Klíčová slova)
-  klicSlova?: string
+  klicSlova?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Text nad (db: TxtNad) - Text nad)
-  txtNad?: string
+  txtNad?: string | null
   // Text pod (db: TxtPod) - Text pod)
-  txtPod?: string
+  txtPod?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Strom (db: Idstrom) - Strom)
-  strom?: AFStromKoren
+  strom?: AFStromKoren | null
   // Nadřazený uzel (db: Idotec) - Nadřazený uzel)
-  otec?: AFStrom
+  otec?: AFStrom | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]

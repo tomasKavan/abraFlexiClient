@@ -12,17 +12,21 @@ export class AFOsobaHlavicka extends AFEntity {
   static EntityType: string = 'OSOBA_HLAVICKA'
 
   // ID (db: IdOsobaHlav) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Osobní číslo (db: OsbCis) - Osobní číslo)
-  osbCis?: string
+  osbCis?: string | null
   // Příjmení (db: Prijmeni) - Příjmení)
-  prijmeni?: string
+  prijmeni?: string | null
   // Jméno (db: Jmeno) - Jméno)
-  jmeno?: string
+  jmeno?: string | null
   // Titul (db: Titul) - Titul)
-  titul?: string
+  titul?: string | null
+  // Heslo (db: Password) - Heslo)
+  password?: string | null
+  // E-mail (db: Email) - E-mail)
+  email?: string | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
@@ -66,6 +70,20 @@ export class AFOsobaHlavicka extends AFEntity {
     },
     titul : {
       key: 'titul',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },
+    password : {
+      key: 'password',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
+      
+    },
+    email : {
+      key: 'email',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,

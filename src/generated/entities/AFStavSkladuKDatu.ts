@@ -13,27 +13,27 @@ export class AFStavSkladuKDatu extends AFEntity {
   static EntityType: string = 'STAV_SKLADU_K_DATU'
 
   // Stav zásob v MJ (db: ) - Stav zásob v MJ)
-  stavMJ?: Big
+  stavMJ?: Big | null
   // Stav zásob v MJ s požadavky (db: ) - Stav zásob v MJ s požadavky)
-  stavMJPozad?: Big
+  stavMJPozad?: Big | null
   // Požadavky MJ (db: ) - Požadavky MJ)
-  pozadavkyMJ?: Big
+  pozadavkyMJ?: Big | null
   // V tuz. měně (db: ) - Stav v tuzemské měně)
-  tuz?: Big
+  tuz?: Big | null
   // Název (db: ) - Název)
-  nazev?: string
+  nazev?: string | null
   // EAN (db: ) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // Prům. cena (db: ) - Průměrná cena)
-  prumCena?: Big
+  prumCena?: Big | null
   // Ceník (db: ) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // MJ (db: ) - Měrná jednotka)
-  mj1?: AFMernaJednotka
+  mj1?: AFMernaJednotka | null
   // Skupina zboží (db: ) - Skupina zboží)
-  skupZboz?: AFSkupinaZbozi
+  skupZboz?: AFSkupinaZbozi | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
 
 
 

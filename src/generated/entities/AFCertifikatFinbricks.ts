@@ -1,6 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -12,23 +11,23 @@ export class AFCertifikatFinbricks extends AFEntity {
   static EntityType: string = 'CERTIFIKAT_FINBRICKS'
 
   // ID (db: IdOsCert) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Poznámka (db: UzivNazev) - Poznámka)
-  uzivNazev?: string
+  uzivNazev?: string | null
   // Název certifikátu (db: CertNazev) - Název certifikátu)
-  certNazev?: string
+  certNazev?: string | null
   // Organizace certifikátu (db: CertOrgan) - Organizace certifikátu)
-  certOrgan?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  certOrgan?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Účel certifikátu (db: UcelCertK) - Účel certifikátu)
-  ucelCertK?: UcelCertK
+  ucelCertK?: UcelCertK | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -85,7 +84,7 @@ export class AFCertifikatFinbricks extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

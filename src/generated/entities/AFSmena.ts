@@ -14,23 +14,23 @@ export class AFSmena extends AFEntity {
   static EntityType: string = 'SMENA'
 
   // ID (db: IdSmeny) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)
-  rok?: number
+  rok?: number | null
   // Měsíc (db: Mesic) - Měsíc)
-  mesic?: number
+  mesic?: number | null
   // Plánované směny (db: Planovane) - Plánované směny)
-  planovane?: string
+  planovane?: string | null
   // Skutečně odpracováno (db: Skutecne) - Skutečně odpracováno)
-  skutecne?: string
+  skutecne?: string | null
   // Skupina osob (db: IdSkupOsob) - Skupina osob)
-  skupOsob?: AFSkupinaOsob
+  skupOsob?: AFSkupinaOsob | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Pracovní poměr (db: IdPracPom) - Pracovní poměr)
-  pracPom?: AFPracovniPomerHlavicka
+  pracPom?: AFPracovniPomerHlavicka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

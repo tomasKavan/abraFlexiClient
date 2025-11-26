@@ -17,149 +17,149 @@ export class AFPracovniPomer extends AFEntity {
   static EntityType: string = 'PRACOVNI_POMER'
 
   // ID (db: IdPracPom) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  lastUpdate?: Date | null
+  // Platí od data (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do data (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Aktivní od (db: AktivniOd) - Aktivní od)
-  aktivniOd?: Date
+  aktivniOd?: Date | null
   // Aktivní do (db: AktivniDo) - Aktivní do)
-  aktivniDo?: Date
+  aktivniDo?: Date | null
   // Hlavní (db: Hlavni) - Hlavní)
-  hlavni?: boolean
+  hlavni?: boolean | null
   // Pracovní rozvrh (db: PracRozvrhK) - Pracovní rozvrh)
-  pracRozvrhK?: PracRozvrh
+  pracRozvrhK?: PracRozvrh | null
   // Plnění odpracované doby (db: PlneniOdprDobyK) - Plnění odpracované doby)
-  plneniOdprDobyK?: PlneniOdprDoby
+  plneniOdprDobyK?: PlneniOdprDoby | null
   // Typ mzdy (db: TypMzdyK) - Typ mzdy)
-  typMzdyK?: TypMzdy
+  typMzdyK?: TypMzdy | null
   // Měsíční mzda (db: MesicniMzda) - Měsíční mzda)
-  mesicniMzda?: Big
+  mesicniMzda?: Big | null
   // Hodinová mzda (db: HodinovaMzda) - Hodinová mzda)
-  hodinovaMzda?: Big
+  hodinovaMzda?: Big | null
   // Začátek poměru (db: Zacatek) - Začátek poměru)
-  zacatek?: Date
+  zacatek?: Date | null
   // Skutečný nástup (db: SkutecnyNastup) - Skutečný nástup)
-  skutecnyNastup?: Date
+  skutecnyNastup?: Date | null
   // Nástupu do práce (db: Nastup) - Nástupu do práce)
-  nastup?: Date
+  nastup?: Date | null
   // Tarifní třída (db: TarifTrida) - Tarifní třída)
-  tarifTrida?: string
+  tarifTrida?: string | null
   // Úvazek hodin [Týdně] (db: UvazHodTydne) - Úvazek hodin [Týdně])
-  uvazHodTydne?: Big
+  uvazHodTydne?: Big | null
   // Úvazek hodin [Denně] (db: UvazHodDenne) - Úvazek hodin [Denně])
-  uvazHodDenne?: Big
+  uvazHodDenne?: Big | null
   // Úvazek dnů [Týdně] (db: UvazDnuTydne) - Úvazek dnů [Týdně])
-  uvazDnuTydne?: number
+  uvazDnuTydne?: number | null
   // Začátek pracovní doby (db: ZacPracDoby) - Začátek pracovní doby)
-  zacPracDoby?: Big
+  zacPracDoby?: Big | null
   // Výpočet náhrady za svátky z průměru (db: SvatkyPrumer) - Výpočet náhrady za svátky z průměru)
-  svatkyPrumer?: boolean
+  svatkyPrumer?: boolean | null
   // Procento z minimální mzdy (db: ProcMinMzd) - Procento z minimální mzdy)
-  procMinMzd?: number
+  procMinMzd?: number | null
   // Pracovněprávní průměr [Kč/hod] (db: PredHrubPrijem) - Pracovněprávní průměr [Kč/hod])
-  predHrubPrijem?: Big
+  predHrubPrijem?: Big | null
   // Zaměstnání malého rozsahu (db: MalyRozsah) - Zaměstnání malého rozsahu)
-  malyRozsah?: boolean
+  malyRozsah?: boolean | null
   // Prominutí SP za firmu (db: ProminutiSPFirma) - Prominutí SP za firmu)
-  prominutiSPFirma?: boolean
+  prominutiSPFirma?: boolean | null
   // Sleva SP za firmu (db: SlevaSPFirma) - Sleva SP za firmu)
-  slevaSPFirma?: boolean
+  slevaSPFirma?: boolean | null
   // Důvod slevy SP za firmu (db: DuvodSlevaSPFirmaK) - Důvod slevy SP za firmu)
-  duvodSlevaSPFirmaK?: DuvodSlevaSpFirma
+  duvodSlevaSPFirmaK?: DuvodSlevaSpFirma | null
   // OZUSPOJ sleva od (db: SlevaSpFirmaOd) - OZUSPOJ sleva od)
-  slevaSpFirmaOd?: Date
+  slevaSpFirmaOd?: Date | null
   // OZUSPOJ sleva do (db: SlevaSpFirmaDo) - OZUSPOJ sleva do)
-  slevaSpFirmaDo?: Date
+  slevaSpFirmaDo?: Date | null
   // Konec poměru (db: KonecPomeru) - Konec poměru)
-  konecPomeru?: Date
+  konecPomeru?: Date | null
   // Konec zkušební doby (db: KonecZkusDoby) - Konec zkušební doby)
-  konecZkusDoby?: Date
+  konecZkusDoby?: Date | null
   // Konec určité doby (db: KonecUrciteDoby) - Konec určité doby)
-  konecUrciteDoby?: Date
+  konecUrciteDoby?: Date | null
   // Sdělení organizace (db: ZlistSdeleni) - Sdělení organizace)
-  zlistSdeleni?: string
+  zlistSdeleni?: string | null
   // Způsob ukončení (db: ZlistUkonceni) - Způsob ukončení)
-  zlistUkonceni?: string
+  zlistUkonceni?: string | null
   // Důvod ukončení (db: ZlistDuvod) - Důvod ukončení)
-  zlistDuvod?: string
+  zlistDuvod?: string | null
   // Kód ELDP (db: KodELDP) - Kód ELDP)
-  kodELDP?: string
+  kodELDP?: string | null
   // Kód PP pro ČSSZ (db: KodCsszPP) - Kód PP pro ČSSZ)
-  kodCsszPP?: string
+  kodCsszPP?: string | null
   // Dní dovolené ročně (db: DovoleneRocne) - Dní dovolené ročně)
-  dovoleneRocne?: Big
+  dovoleneRocne?: Big | null
   // Hodin dovolené ročně (db: DovoleneRocneHod) - Hodin dovolené ročně)
-  dovoleneRocneHod?: Big
+  dovoleneRocneHod?: Big | null
   // Tydenní pracovní doba (db: TydenPracDobaK) - Tydenní pracovní doba)
-  tydenPracDobaK?: TydenPracDoba
+  tydenPracDobaK?: TydenPracDoba | null
   // Pondělí (db: UvazPo) - Pondělí)
-  uvazPo?: boolean
+  uvazPo?: boolean | null
   // Úterý (db: UvazUt) - Úterý)
-  uvazUt?: boolean
+  uvazUt?: boolean | null
   // Středa (db: UvazSt) - Středa)
-  uvazSt?: boolean
+  uvazSt?: boolean | null
   // Čtvrtek (db: UvazCt) - Čtvrtek)
-  uvazCt?: boolean
+  uvazCt?: boolean | null
   // Pátek (db: UvazPa) - Pátek)
-  uvazPa?: boolean
+  uvazPa?: boolean | null
   // Sobota (db: UvazSo) - Sobota)
-  uvazSo?: boolean
+  uvazSo?: boolean | null
   // Neděle (db: UvazNe) - Neděle)
-  uvazNe?: boolean
+  uvazNe?: boolean | null
   // Nárok na odstupné (db: NarokOdstupne) - Nárok na odstupné)
-  narokOdstupne?: boolean
+  narokOdstupne?: boolean | null
   // Odstupné vyplaceno v plné výši (db: OdstupnePlnaVyse) - Odstupné vyplaceno v plné výši)
-  odstupnePlnaVyse?: boolean
+  odstupnePlnaVyse?: boolean | null
   // Odstupné - násobek (db: OdstupneNasobek) - Odstupné - násobek)
-  odstupneNasobek?: number
+  odstupneNasobek?: number | null
   // Důvod ukončení prac. poměru (db: DuvodUkonceniCsszK) - Důvod ukončení prac. poměru)
-  duvodUkonceniCsszK?: CsszDuvodUkonceni
+  duvodUkonceniCsszK?: CsszDuvodUkonceni | null
   // Důvod neposkytnutí podkladů (db: DuvodNeposkytnutiCsszK) - Důvod neposkytnutí podkladů)
-  duvodNeposkytnutiCsszK?: CsszDuvodNeposkytnuti
+  duvodNeposkytnutiCsszK?: CsszDuvodNeposkytnuti | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Hlavička pracovního poměru (db: IdPracPomHlav) - Hlavička pracovního poměru)
-  pracPomHlav?: AFPracovniPomerHlavicka
+  pracPomHlav?: AFPracovniPomerHlavicka | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Typ pracovního poměru (db: IdTypPracPom) - Typ pracovního poměru)
-  typPracPom?: AFTypPracovnihoPomeru
+  typPracPom?: AFTypPracovnihoPomeru | null
   // Typ interního dokladu pro hrubou mzdy (db: IdTdIntHruba) - Typ interního dokladu pro hrubou mzdy)
-  tdIntHruba?: AFTypInternihoDokladu
+  tdIntHruba?: AFTypInternihoDokladu | null
   // Typ interního dokladu náhrady mzdy za prac.neschopnost (db: IdTdIntNahrad) - Typ interního dokladu náhrady mzdy za prac.neschopnost)
-  tdIntNahrad?: AFTypInternihoDokladu
+  tdIntNahrad?: AFTypInternihoDokladu | null
   // Typ interního dokladu pro cestovné do limitu (db: IdTdIntCestDoLim) - do limitu)
-  tdIntCestDoLim?: AFTypInternihoDokladu
+  tdIntCestDoLim?: AFTypInternihoDokladu | null
   // Typ interního dokladu pro cestovné nad limit (db: IdTdIntCestNadLim) - nad limit)
-  tdIntCestNadLim?: AFTypDokladu
+  tdIntCestNadLim?: AFTypDokladu | null
   // Typ interního dokladu pro strav. paušál do limitu (db: IdTdIntStravPausDoLim) - do limitu)
-  tdIntStravPausDoLim?: AFTypInternihoDokladu
+  tdIntStravPausDoLim?: AFTypInternihoDokladu | null
   // Typ interního dokladu pro strav. paušál nad limit (db: IdTdIntStravPausNadLim) - nad limit)
-  tdIntStravPausNadLim?: AFTypDokladu
+  tdIntStravPausNadLim?: AFTypDokladu | null
   // Typ interního dokladu pro homeoffice do limitu (db: IdTdIntHomeofficeDoLim) - do limitu)
-  tdIntHomeofficeDoLim?: AFTypDokladu
+  tdIntHomeofficeDoLim?: AFTypDokladu | null
   // Typ interního dokladu pro homeoffice nad limit (db: IdTdIntHomeofficeNadLim) - nad limit)
-  tdIntHomeofficeNadLim?: AFTypDokladu
+  tdIntHomeofficeNadLim?: AFTypDokladu | null
   // Předpis zaúčtování soc. zaměstnanec (db: IdTuoZavSocZam) - Sociální pojištění zaměstnanec)
-  tuoZavSocZam?: AFPredpisZauctovani
+  tuoZavSocZam?: AFPredpisZauctovani | null
   // Předpis zaúčtování soc. firma (db: IdTuoZavSocFir) - Sociální pojištění zaměstnavatel)
-  tuoZavSocFir?: AFPredpisZauctovani
+  tuoZavSocFir?: AFPredpisZauctovani | null
   // Předpis zaúčtování zdr. zaměstnanec (db: IdTuoZavZdrZam) - Zdravotní pojištění zaměstnanec)
-  tuoZavZdrZam?: AFPredpisZauctovani
+  tuoZavZdrZam?: AFPredpisZauctovani | null
   // Předpis zaúčtování zdr. firma (db: IdTuoZavZdrFir) - Zdravotní pojištění zaměstnavatel)
-  tuoZavZdrFir?: AFPredpisZauctovani
+  tuoZavZdrFir?: AFPredpisZauctovani | null
   // Předpis zaúčtování daň (db: IdTuoZavDan) - Předpis zaúčtování daň)
-  tuoZavDan?: AFPredpisZauctovani
+  tuoZavDan?: AFPredpisZauctovani | null
   // Typ dokladu pro srážku stravenek (db: IdTdSrazkaStrav) - Typ dokladu pro srážku stravenek)
-  tdSrazkaStrav?: AFTypDokladu
+  tdSrazkaStrav?: AFTypDokladu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -15,37 +15,37 @@ export class AFAtribut extends AFEntity {
   static EntityType: string = 'ATRIBUT'
 
   // ID (db: IdAtribut) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Logická hodnota (db: ValBoolean) - Logická hodnota)
-  valBoolean?: boolean
+  valBoolean?: boolean | null
   // Celé číslo (db: ValInteger) - Celé číslo)
-  valInteger?: number
+  valInteger?: number | null
   // Desetinné číslo (db: ValNumeric) - Desetinné číslo)
-  valNumeric?: Big
+  valNumeric?: Big | null
   // Řetězec (db: ValString) - Řetězec)
-  valString?: string
+  valString?: string | null
   // Datum (db: ValDatCas) - Datum)
-  valDatCas?: Date
+  valDatCas?: Date | null
   // Hodnota (db: Hodnota) - Hodnota)
-  hodnota?: string
+  hodnota?: string | null
   // MJ (db: ) - MJ)
-  mj?: string
+  mj?: string | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Obchodní doklad (db: IdDoklObch) - Obchodní doklad)
-  doklObch?: any
+  doklObch?: any | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
-  doklFak?: any
+  doklFak?: any | null
   // Příjemka/výdejka (db: IdDoklSklad) - Příjemka/výdejka)
-  doklSklad?: AFSkladovyPohyb
+  doklSklad?: AFSkladovyPohyb | null
   // Interní doklad (db: IdDoklInt) - Interní doklad)
-  doklInt?: any
+  doklInt?: any | null
   // Adresář (db: IdAdresar) - Adresář)
-  adresar?: AFAdresar
+  adresar?: AFAdresar | null
   // Typ atributu (db: IdTypAtribut) - Typ atributu)
-  typAtributu?: AFTypAtributu
+  typAtributu?: AFTypAtributu | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

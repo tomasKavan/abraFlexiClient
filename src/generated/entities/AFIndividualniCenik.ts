@@ -13,45 +13,45 @@ export class AFIndividualniCenik extends AFEntity {
   static EntityType: string = 'INDIVIDUALNI_CENIK'
 
   // ID (db: ) - ID)
-  declare id?: number
+  declare id?: number | null
   // Zkratka (db: ) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: ) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: ) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: ) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: ) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Prodejní cena (db: ) - Prodejní cena)
-  cenaZakl?: Big
+  cenaZakl?: Big | null
   // Cena 2 (db: ) - Cena 2)
-  cena2?: Big
+  cena2?: Big | null
   // Cena 3 (db: ) - Cena 3)
-  cena3?: Big
+  cena3?: Big | null
   // Cena 4 (db: ) - Cena 4)
-  cena4?: Big
+  cena4?: Big | null
   // Cena 5 (db: ) - Cena 5)
-  cena5?: Big
+  cena5?: Big | null
   // Limit MJ 2 (db: ) - Množ. limit 2)
-  limMnoz2?: Big
+  limMnoz2?: Big | null
   // Limit MJ 3 (db: ) - Množ. limit 3)
-  limMnoz3?: Big
+  limMnoz3?: Big | null
   // Limit MJ 4 (db: ) - Množ. limit 4)
-  limMnoz4?: Big
+  limMnoz4?: Big | null
   // Limit MJ 5 (db: ) - Množ. limit 5)
-  limMnoz5?: Big
+  limMnoz5?: Big | null
   // Typ ceny (db: ) - Typ ceny)
-  typCenyDphK?: any
+  typCenyDphK?: any | null
   // Sazba DPH (db: ) - Sazba DPH)
-  typSzbDphK?: any
+  typSzbDphK?: any | null
   // Ceník (db: ) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Cenová úroveň (db: ) - Cenová úroveň)
-  cenHlad?: AFCenovaUroven
+  cenHlad?: AFCenovaUroven | null
   // Skupina zboží (db: ) - Skupina zboží)
-  skupZboz?: AFSkupinaZbozi
+  skupZboz?: AFSkupinaZbozi | null
 
 
 

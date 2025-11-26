@@ -16,49 +16,49 @@ export class AFTypMajetku extends AFEntity {
   static EntityType: string = 'MAJETEK_TYP'
 
   // ID (db: IdTypMaj) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Majetek je odpisován (db: JeOdpis) - Majetek je odpisován)
-  jeOdpis?: boolean
+  jeOdpis?: boolean | null
   // Druh (db: DruhK) - Druh)
-  druhK?: DruhMaj
+  druhK?: DruhMaj | null
   // Zahájit workflow při založení dokladu (db: WorkFlow) - Zahájit workflow při založení dokladu)
-  workFlow?: boolean
+  workFlow?: boolean | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Účet majetku (db: IdPrimUcet) - Účet majetku)
-  primarniUcet?: AFUcet
+  primarniUcet?: AFUcet | null
   // Účet zařazení (db: IdProtiUcetZar) - Účet zařazení)
-  protiUcetZarazeni?: AFUcet
+  protiUcetZarazeni?: AFUcet | null
   // Účet oprávek (db: IdOpravUcet) - Účet oprávek)
-  opravnyUcet?: AFUcet
+  opravnyUcet?: AFUcet | null
   // Účet odpisu (db: IdOdpUcet) - Účet odpisu)
-  odpisovyUcet?: AFUcet
+  odpisovyUcet?: AFUcet | null
   // Účet zůstatku vyřazení (db: IdZustVyrazUcet) - Účet zůstatku vyřazení)
-  zustVyrazUcet?: AFUcet
+  zustVyrazUcet?: AFUcet | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -15,37 +15,37 @@ export class AFUcetniOdpis extends AFEntity {
   static EntityType: string = 'UCETNI_ODPIS'
 
   // ID (db: IdUcetOdpisu) - ID)
-  declare id?: number
+  declare id?: number | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Uživ. změn. (db: Zmena) - Uživatelsky změněno)
-  zmena?: boolean
+  zmena?: boolean | null
   // Datum vyst. (db: DatVyst) - Vystaveno)
-  datVyst?: Date
+  datVyst?: Date | null
   // Účet. odpis [Kč] (db: SumZkl) - Účet. odpis [Kč])
-  sumZkl?: Big
+  sumZkl?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Číslo dokladu (db: Kod) - Číslo dokladu)
-  declare kod?: string
+  declare kod?: string | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Zámek (db: Zamek) - Zámek)
-  zamek?: boolean
+  zamek?: boolean | null
   // Zůstatek [Kč] (db: ZustPoOdp) - Zůstatek [Kč])
-  zustPoOdp?: Big
-  // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
-  datUcto?: Date
+  zustPoOdp?: Big | null
+  // Datum zaúčtování (db: DatUcto) - Datum zaúčtování)
+  datUcto?: Date | null
   // Majetek (db: IdMajetku) - Majetek)
-  majetek?: AFMajetek
+  majetek?: AFMajetek | null
   // Účet MD (db: IdZklMdUcet) - Účet MD odpisu)
-  zklMdUcet?: AFUcet
+  zklMdUcet?: AFUcet | null
   // Účet DAL (db: IdZklDalUcet) - Účet DAL odpisu)
-  zklDalUcet?: AFUcet
+  zklDalUcet?: AFUcet | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

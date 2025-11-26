@@ -11,21 +11,21 @@ export class AFCustomButton extends AFEntity {
   static EntityType: string = 'CUSTOM_BUTTON'
 
   // ID (db: Idwcustbutton) - ID)
-  declare id?: number
+  declare id?: number | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Url (db: Url) - Url)
-  url?: string
+  url?: string | null
   // Název (db: Title) - Název)
-  title?: string
+  title?: string | null
   // Popis (db: Description) - Popis)
-  description?: string
+  description?: string | null
   // Evidence (db: Evidence) - Evidence)
-  evidence?: string
+  evidence?: string | null
   // Umístění (db: Location) - Umístění)
-  location?: string
+  location?: string | null
   // Volba prohlížeče (db: Browser) - Volba prohlížeče)
-  browser?: string
+  browser?: string | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

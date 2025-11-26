@@ -12,15 +12,15 @@ export class AFPrislustenstvi extends AFEntity {
   static EntityType: string = 'PRISLUSENSTVI'
 
   // ID (db: IdPrislusenstvi) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Ceníková položka (db: IdCenikOtec) - Ceníková položka)
-  cenikOtec?: AFCenik
+  cenikOtec?: AFCenik | null
   // Příslušenství (db: IdCenik) - Příslušenství)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

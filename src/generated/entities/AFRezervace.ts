@@ -3,7 +3,6 @@ import { AFEntity } from '../../abra/AFEntity'
 import { AFAdresar } from './AFAdresar'
 import { AFCenik } from './AFCenik'
 import { AFSklad } from './AFSklad'
-import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -15,29 +14,29 @@ export class AFRezervace extends AFEntity {
   static EntityType: string = 'REZERVACE'
 
   // ID (db: IdRezervace) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Datum vzniku (db: DatumOd) - Datum vzniku)
-  datumOd?: Date
+  datumOd?: Date | null
   // Datum zániku (db: DatumDo) - Datum zániku)
-  datumDo?: Date
+  datumDo?: Date | null
   // Množství (db: Mnozstvi) - Množství)
-  mnozstvi?: Big
+  mnozstvi?: Big | null
   // Na skladě (db: SkladMj) - Na skladě)
-  skladMj?: Big
+  skladMj?: Big | null
   // Poznámka (db: Poznamka) - Poznámka)
-  poznamka?: string
+  poznamka?: string | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Sklad (db: IdSklad) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Obchodní položka (db: IdPolObch) - Obchodní položka)
-  polObch?: any
+  polObch?: any | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -122,7 +121,7 @@ export class AFRezervace extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

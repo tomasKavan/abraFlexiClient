@@ -19,225 +19,227 @@ export class AFOsoba extends AFEntity {
   static EntityType: string = 'OSOBA'
 
   // ID (db: IdOsoba) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  lastUpdate?: Date | null
+  // Platí od data (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do data (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Osobní číslo (db: OsbCis) - Osobní číslo)
-  osbCis?: string
+  osbCis?: string | null
   // Alternativní osobní číslo (db: OsbCisAlter) - Alternativní osobní číslo)
-  osbCisAlter?: string
+  osbCisAlter?: string | null
   // Příjmení (db: Prijmeni) - Příjmení)
-  prijmeni?: string
+  prijmeni?: string | null
   // Jméno (db: Jmeno) - Jméno)
-  jmeno?: string
+  jmeno?: string | null
   // Titul (db: Titul) - Titul)
-  titul?: string
+  titul?: string | null
   // Datum narození (db: DatNaroz) - Datum narození)
-  datNaroz?: Date
+  datNaroz?: Date | null
   // Rodné číslo (db: RodCis) - Rodné číslo)
-  rodCis?: string
+  rodCis?: string | null
   // Pohlaví (db: PohlaviK) - Pohlaví)
-  pohlaviK?: Pohlavi
+  pohlaviK?: Pohlavi | null
   // Kvalifikace (db: Kvalifikace) - Kvalifikace)
-  kvalifikace?: string
+  kvalifikace?: string | null
   // Funkce (db: Funkce) - Funkce)
-  funkce?: string
+  funkce?: string | null
   // Typ vztahu k firmě (db: TypVztahuK) - Typ vztahu k firmě)
-  typVztahuK?: TypVztahuOsoba
+  typVztahuK?: TypVztahuOsoba | null
   // Rodné příjmení (db: PrijmeniRod) - Rodné příjmení)
-  prijmeniRod?: string
+  prijmeniRod?: string | null
   // Předchozí příjmení (db: PrijmeniPred) - Předchozí příjmení)
-  prijmeniPred?: string
+  prijmeniPred?: string | null
   // Místo narození (db: MistoNaroz) - Místo narození)
-  mistoNaroz?: string
+  mistoNaroz?: string | null
   // Rodinný stav (db: RodStavK) - Rodinný stav)
-  rodStavK?: RodStav
+  rodStavK?: RodStav | null
   // Starobní důchod (db: StarobniDuch) - Starobní důchod)
-  starobniDuch?: boolean
+  starobniDuch?: boolean | null
   // Předčasný starobní důchod (db: StarobniPredDuch) - Předčasný starobní důchod)
-  starobniPredDuch?: boolean
+  starobniPredDuch?: boolean | null
   // Vdovský/vdovecký důchod (db: VdovskyDuch) - Vdovský/vdovecký důchod)
-  vdovskyDuch?: boolean
+  vdovskyDuch?: boolean | null
   // Sirotčí důchod (db: SirotciDuch) - Sirotčí důchod)
-  sirotciDuch?: boolean
+  sirotciDuch?: boolean | null
   // Důchod pobírán v zahraničí (db: ZahranicniDuch) - Důchod pobírán v zahraničí)
-  zahranicniDuch?: boolean
+  zahranicniDuch?: boolean | null
   // Důchod od (db: DuchodOd) - Důchod od)
-  duchodOd?: Date
+  duchodOd?: Date | null
   // Nezaopatřený partner (db: NezPartner) - Nezaopatřený partner)
-  nezPartner?: boolean
+  nezPartner?: boolean | null
   // Nez.p. ZTP/P (db: NezZTP) - ZTP/P)
-  nezZTP?: boolean
+  nezZTP?: boolean | null
   // Nez.p. ZTP/P od (db: NezZTPOd) - ZTP/P platí od)
-  nezZTPOd?: Date
+  nezZTPOd?: Date | null
   // Nez.p. ZTP/P do (db: NezZTPDo) - ZTP/P platí do)
-  nezZTPDo?: Date
+  nezZTPDo?: Date | null
   // Nez.p. příjmení (db: NezPrijmeni) - Příjmení)
-  nezPrijmeni?: string
+  nezPrijmeni?: string | null
   // Nez.p. jméno (db: NezJmeno) - Jméno)
-  nezJmeno?: string
+  nezJmeno?: string | null
   // Nez.p. rodné příjmení (db: NezPrijmeniRod) - Rodné příjmení)
-  nezPrijmeniRod?: string
+  nezPrijmeniRod?: string | null
   // Nez.p. titul (db: NezTitul) - Titul)
-  nezTitul?: string
+  nezTitul?: string | null
   // Nez.p. datum narození (db: NezDatNaroz) - Datum narození)
-  nezDatNaroz?: Date
+  nezDatNaroz?: Date | null
   // Nez.p. RČ (db: NezRodCis) - Rodné číslo)
-  nezRodCis?: string
+  nezRodCis?: string | null
   // Nez.p. pohlaví (db: NezPohlaviK) - Pohlaví)
-  nezPohlaviK?: Pohlavi
+  nezPohlaviK?: Pohlavi | null
   // Nez.p. od (db: NezOd) - Platí od)
-  nezOd?: Date
+  nezOd?: Date | null
   // Nez.p. do (db: NezDo) - Platí do)
-  nezDo?: Date
+  nezDo?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Číslo domu (db: CisDomu) - Číslo domu)
-  cisDomu?: string
+  cisDomu?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Pošta (db: Posta) - Pošta)
-  posta?: string
+  posta?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // Ulice kontaktní (db: UliceKon) - Ulice kontaktní)
-  uliceKon?: string
+  uliceKon?: string | null
   // Číslo domu kontaktní (db: CisDomuKon) - Číslo domu kontaktní)
-  cisDomuKon?: string
+  cisDomuKon?: string | null
   // PSČ kontaktní (db: PscKon) - PSČ kontaktní)
-  pscKon?: string
+  pscKon?: string | null
   // Pošta kontaktní (db: PostaKon) - Pošta kontaktní)
-  postaKon?: string
+  postaKon?: string | null
   // Město kontaktní (db: MestoKon) - Město kontaktní)
-  mestoKon?: string
+  mestoKon?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
+  email?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Telefon (db: Telefon) - Telefon)
-  telefon?: string
+  telefon?: string | null
   // Ulice kon.tuz. (db: UliceKonTuz) - Ulice kon.tuz.)
-  uliceKonTuz?: string
+  uliceKonTuz?: string | null
   // Číslo domu kon.tuz. (db: CisDomuKonTuz) - Číslo domu kon.tuz.)
-  cisDomuKonTuz?: string
+  cisDomuKonTuz?: string | null
   // PSČ kon.tuz. (db: PscKonTuz) - PSČ kon.tuz.)
-  pscKonTuz?: string
+  pscKonTuz?: string | null
   // Pošta kon.tuz. (db: PostaKonTuz) - Pošta kon.tuz.)
-  postaKonTuz?: string
+  postaKonTuz?: string | null
   // Město kon.tuz. (db: MestoKonTuz) - Město kon.tuz.)
-  mestoKonTuz?: string
+  mestoKonTuz?: string | null
   // Způsob platby (db: ZpusPlatbyK) - Způsob platby)
-  zpusPlatbyK?: ZpusobPlatby
+  zpusPlatbyK?: ZpusobPlatby | null
   // Podpis prohlášeni k dani (db: PodpisProhl) - Podpis prohlášeni k dani)
-  podpisProhl?: boolean
+  podpisProhl?: boolean | null
   // Daňový nerezident (db: DanNerezid) - Daňový nerezident)
-  danNerezid?: boolean
+  danNerezid?: boolean | null
   // Zdravotní pojištění - doplatek do minimálního vyměřovacího základu (db: ZdrPojDoplat) - Zdravotní pojištění - doplatek do minimálního vyměřovacího základu)
-  zdrPojDoplat?: boolean
+  zdrPojDoplat?: boolean | null
   // Rozdělit mezi firmu a zaměstnance (db: ZdrPojDoplatRozdel) - Rozdělit mezi firmu a zaměstnance)
-  zdrPojDoplatRozdel?: boolean
+  zdrPojDoplatRozdel?: boolean | null
   // Číslo pojištěnce (db: CisPojist) - Číslo pojištěnce)
-  cisPojist?: string
+  cisPojist?: string | null
   // Držitel průkazu ZTP/P (db: PrukazZTP) - Držitel průkazu ZTP/P)
-  prukazZTP?: boolean
+  prukazZTP?: boolean | null
   // Číslo průkazu (db: CisPrukaz) - Číslo průkazu)
-  cisPrukaz?: string
+  cisPrukaz?: string | null
   // Odpracovaných roků při nástupu (db: OdpracRokuPred) - Odpracovaných roků při nástupu)
-  odpracRokuPred?: number
+  odpracRokuPred?: number | null
   // Odpracovaných dnů při nástupu (db: OdpracDnuPred) - Odpracovaných dnů při nástupu)
-  odpracDnuPred?: number
+  odpracDnuPred?: number | null
   // Pojistné (sociální)z min.zaměst (db: MinuleSoc) - Pojistné (sociální)z min.zaměst)
-  minuleSoc?: Big
+  minuleSoc?: Big | null
   // Pojistné (zdravotní)z min.zaměst (db: MinuleZdrav) - Pojistné (zdravotní)z min.zaměst)
-  minuleZdrav?: Big
+  minuleZdrav?: Big | null
   // Invalidita 1.a 2.stupně (db: InvalCast) - Invalidita 1.a 2.stupně)
-  invalCast?: boolean
+  invalCast?: boolean | null
   // Invalidita 3.stupně (db: InvalPlna) - Invalidita 3.stupně)
-  invalPlna?: boolean
+  invalPlna?: boolean | null
   // Invalidita od (db: InvalOd) - Invalidita od)
-  invalOd?: Date
+  invalOd?: Date | null
   // Student (db: Student) - Student)
-  student?: boolean
+  student?: boolean | null
   // Sleva na poplatníka (db: SlevaPoplat) - Sleva na poplatníka)
-  slevaPoplat?: boolean
+  slevaPoplat?: boolean | null
   // Dětí pro odpočet (db: ) - Dětí pro odpočet)
-  odpocetDeti?: number
+  odpocetDeti?: number | null
   // Počet třetích a dalších dětí pro odpočet (db: ) - Počet třetích a dalších dětí pro odpočet)
-  odpocetDeti3?: number
+  odpocetDeti3?: number | null
   // Dětí ZTP pro odpočet (db: ) - Dětí ZTP pro odpočet)
-  odpocetDetiZtp?: number
+  odpocetDetiZtp?: number | null
   // První dítě pro odpočet je ZTP (db: ) - První dítě pro odpočet je ZTP)
-  odpocetDite1Ztp?: boolean
+  odpocetDite1Ztp?: boolean | null
   // Druhé dítě pro odpočet je ZTP (db: ) - Druhé dítě pro odpočet je ZTP)
-  odpocetDite2Ztp?: boolean
+  odpocetDite2Ztp?: boolean | null
   // Sníž. vym. zákl. ZP (db: SnizVymZaklZp) - Snížení vyměřovacího základu ZP (Zákon č. 592/1992 Sb., § 3 - Vyměřovací základ, odstavec 7))
-  snizVymZaklZp?: boolean
+  snizVymZaklZp?: boolean | null
+  // Heslo (db: Password) - Heslo)
+  password?: string | null
   // Předchozí nem.poj. mimo ČSSZ (db: PredNemPoj) - Předchozí nem.poj. mimo ČSSZ)
-  predNemPoj?: string
+  predNemPoj?: string | null
   // Současný nem.poj. mimo ČSSZ (db: SoucNemPoj) - Současný nem.poj. mimo ČSSZ)
-  soucNemPoj?: string
+  soucNemPoj?: string | null
   // Je účasten důchodového spoření (db: UcastnikDuchSpor) - Je účasten důchodového spoření)
-  ucastnikDuchSpor?: boolean
+  ucastnikDuchSpor?: boolean | null
   // Číslo účastníka důchodového spoření (db: CisUcastDuchSpor) - Číslo účastníka důchodového spoření)
-  cisUcastDuchSpor?: string
+  cisUcastDuchSpor?: string | null
   // Sleva SP pro pracující důchodce (db: SlevaSpPracDuchodce) - Sleva SP pro pracující důchodce)
-  slevaSpPracDuchodce?: boolean
+  slevaSpPracDuchodce?: boolean | null
   // Název ciz.poj. (db: CizPojNazev) - Název ciz.poj.)
-  cizPojNazev?: string
+  cizPojNazev?: string | null
   // Specifikace ciz.poj. (db: CizPojSpec) - Specifikace ciz.poj.)
-  cizPojSpec?: string
+  cizPojSpec?: string | null
   // Ulice ciz.poj. (db: CizPojUlice) - Ulice ciz.poj.)
-  cizPojUlice?: string
+  cizPojUlice?: string | null
   // Číslo domu ciz.poj. (db: CizPojCisDomu) - Číslo domu ciz.poj.)
-  cizPojCisDomu?: string
+  cizPojCisDomu?: string | null
   // Město ciz.poj. (db: CizPojMesto) - Město ciz.poj.)
-  cizPojMesto?: string
+  cizPojMesto?: string | null
   // PSČ ciz.poj. (db: CizPojPsc) - PSČ ciz.poj.)
-  cizPojPsc?: string
+  cizPojPsc?: string | null
   // Číslo ciz.poj. (db: CizPojCislo) - Číslo ciz.poj.)
-  cizPojCislo?: string
+  cizPojCislo?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Osoba (db: IdOsobaHlav) - Osoba)
-  osobaHlav?: AFOsobaHlavicka
+  osobaHlav?: AFOsobaHlavicka | null
   // Skupina osob (db: IdSkupOsob) - Skupina osob)
-  skupOsob?: AFSkupinaOsob
+  skupOsob?: AFSkupinaOsob | null
   // Nadřízený (db: IdNadzizeny) - Nadřízený)
-  nadzizeny?: AFOsobaHlavicka
+  nadzizeny?: AFOsobaHlavicka | null
   // Stát narození (db: IdStatuNaroz) - Stát narození)
-  statNaroz?: AFStat
+  statNaroz?: AFStat | null
   // Státní občanství (db: IdStatuObcan) - Státní občanství)
-  statObcan?: AFStat
+  statObcan?: AFStat | null
   // Středisko (db: IdStredisko) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Stát kontaktní (db: IdStatuKon) - Stát kontaktní)
-  statKon?: AFStat
+  statKon?: AFStat | null
   // Stát kon.tuz. (db: IdStatuKonTuz) - Stát kon.tuz.)
-  statKonTuz?: AFStat
+  statKonTuz?: AFStat | null
   // Zdr.poj. (db: IdZdravPoj) - Zdravotní pojišťovna)
-  zdravPoj?: AFAdresar
+  zdravPoj?: AFAdresar | null
   // Stát ciz.poj. (db: IdCizPojStatu) - Stát ciz.poj.)
-  cizPojStat?: AFStat
+  cizPojStat?: AFStat | null
   // Typ závazku dobírky (db: IdTdDobirka) - Typ závazku dobírky)
-  tdDobirka?: AFTypZavazku
+  tdDobirka?: AFTypZavazku | null
   // Typ závazku zálohy (db: IdTdZaloha) - Typ závazku zálohy)
-  tdZaloha?: AFTypZavazku
+  tdZaloha?: AFTypZavazku | null
   // 1. dítě pro odpočet (db: IdDiteOdpoc1) - 1. dítě pro odpočet)
-  diteOdpoc1?: AFDite
+  diteOdpoc1?: AFDite | null
   // 2. dítě pro odpočet (db: IdDiteOdpoc2) - 2. dítě pro odpočet)
-  diteOdpoc2?: AFDite
+  diteOdpoc2?: AFDite | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
@@ -785,6 +787,13 @@ export class AFOsoba extends AFEntity {
       key: 'snizVymZaklZp',
       type: PropertyType.Logic,
       isArray: false,
+      
+    },
+    password : {
+      key: 'password',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 255,
       
     },
     predNemPoj : {

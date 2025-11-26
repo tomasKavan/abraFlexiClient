@@ -7,20 +7,20 @@ import { AFEntity } from '../../abra/AFEntity'
 export class AFSouhrnneHlaseniDph extends AFEntity {
   static EntityPath: string = 'souhrnne-hlaseni-dph'
   static EntityName: string = 'Souhrnné hlášení k DPH'
-  static EntityType: string = 'SOUHRNNE_HLASENI'
+  static EntityType: string = 'SOUHRNNE_HLASENI_DPH'
 
   // Kód země (db: ) - Kód země)
-  kodStatu?: string
+  kodStatu?: string | null
   // Kód země (DPH) (db: ) - Kód země (DPH))
-  kodDphStatu?: string
+  kodDphStatu?: string | null
   // DIČ (db: ) - DIČ)
-  dic?: string
+  dic?: string | null
   // Kód plnění (db: ) - Kód plnění)
-  kodPlneni?: string
+  kodPlneni?: string | null
   // Počet plnění (db: ) - Počet plnění)
-  pocetPlneni?: number
+  pocetPlneni?: number | null
   // Základ [Kč] (db: ) - Základ [Kč])
-  sumZkl?: Big
+  sumZkl?: Big | null
 
 
 

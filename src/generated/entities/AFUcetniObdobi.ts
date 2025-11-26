@@ -10,25 +10,25 @@ export class AFUcetniObdobi extends AFEntity {
   static EntityType: string = 'UCETNI_OBDOBI'
 
   // ID (db: IdUcetObdobi) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Platí od data (db: PlatiOdData) - Platí od data)
-  platiOdData?: Date
+  platiOdData?: Date | null
   // Platí do data (db: PlatiDoData) - Platí do data)
-  platiDoData?: Date
+  platiDoData?: Date | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Změna po uzávěrce (db: ZmenaZaver) - Změna po uzávěrce)
-  zmenaZaver?: boolean
+  zmenaZaver?: boolean | null
   // Chyba při přecenění (db: ChybaPreceneni) - Chyba při přecenění)
-  chybaPreceneni?: boolean
+  chybaPreceneni?: boolean | null
   // Kód roku pro řadu (db: RokProRadu) - Kód roku pro řadu)
-  rokProRadu?: number
+  rokProRadu?: number | null
 
 
 

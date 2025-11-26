@@ -15,17 +15,17 @@ export class AFMapovaniSkladu extends AFEntity {
   static EntityType: string = 'MAPOVANI_SKLADU'
 
   // ID (db: IdMapSklad) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Skupina zboží (db: IdSkupZboz) - Skupina zboží)
-  skupZboz?: AFSkupinaZbozi
+  skupZboz?: AFSkupinaZbozi | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Sklad (db: IdSklad) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

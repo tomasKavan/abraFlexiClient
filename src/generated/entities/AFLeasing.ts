@@ -6,7 +6,6 @@ import { AFUcet } from './AFUcet'
 import { AFAdresar } from './AFAdresar'
 import { AFStredisko } from './AFStredisko'
 import { AFZakazka } from './AFZakazka'
-import { AFUzivatel } from './AFUzivatel'
 import { AFSplatkovyKalendar } from './AFSplatkovyKalendar'
 import { AFPriloha } from './AFPriloha'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
@@ -22,99 +21,99 @@ export class AFLeasing extends AFEntity {
   static EntityType: string = 'LEASING'
 
   // ID (db: IdLeasing) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // EAN kód (db: EanKod) - EAN kód)
-  eanKod?: string
+  eanKod?: string | null
   // Druh (db: DruhK) - Druh)
-  druhK?: DruhLeas
+  druhK?: DruhLeas | null
   // Cena [Kč] (db: Cena) - Cena [Kč])
-  cena?: Big
+  cena?: Big | null
   // Číslo smlouvy (db: CidPoriz) - Číslo smlouvy)
-  cidPoriz?: string
+  cidPoriz?: string | null
   // Zahájení (db: DatKoupe) - Datum zahájení leasingu)
-  datKoupe?: Date
+  datKoupe?: Date | null
   // Vyrobeno (db: DatVyroby) - Datum výroby)
-  datVyroby?: Date
+  datVyroby?: Date | null
   // Výrobní číslo (db: VyrCis) - Výrobní číslo)
-  vyrCis?: string
+  vyrCis?: string | null
   // MJ záruky (db: MjZarukyK) - MJ záruky)
-  mjZarukyK?: MjZaruky
+  mjZarukyK?: MjZaruky | null
   // Záruka (db: Zaruka) - Záruka)
-  zaruka?: number
+  zaruka?: number | null
   // Zámek (db: Zamek) - Zámek)
-  zamek?: boolean
+  zamek?: boolean | null
   // ? splátek (db: PocetSplatek) - Počet splátek)
-  pocetSplatek?: number
+  pocetSplatek?: number | null
   // ? daň.nákl (db: PocetDanNakl) - Počet daňových nákladů [v měsících])
-  pocetDanNakl?: number
+  pocetDanNakl?: number | null
   // Frekv.daň.nákl. (db: FrekDanNaklK) - Frekvence daňových nákladů)
-  frekDanNaklK?: FrDanNakl
+  frekDanNaklK?: FrDanNakl | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Číslo (db: VozCislo) - Číslo)
-  vozCislo?: string
+  vozCislo?: string | null
   // SPZ (db: VozSpz) - SPZ)
-  vozSpz?: string
+  vozSpz?: string | null
   // Značka (db: VozZnacka) - Značka)
-  vozZnacka?: string
+  vozZnacka?: string | null
   // Model (db: VozModel) - Model)
-  vozModel?: string
+  vozModel?: string | null
   // Typ vozidla (db: VozTyp) - Typ vozidla)
-  vozTyp?: string
+  vozTyp?: string | null
   // Objem (db: VozObjem) - Objem)
-  vozObjem?: Big
+  vozObjem?: Big | null
   // Havarijní pojištění (db: VozHavar) - Havarijní pojištění)
-  vozHavar?: string
+  vozHavar?: string | null
   // Výše havarijního pojištění (db: VozHavarVyse) - Výše havarijního pojištění)
-  vozHavarVyse?: Big
+  vozHavarVyse?: Big | null
   // Výbava (db: VozVybava) - Výbava)
-  vozVybava?: string
+  vozVybava?: string | null
   // Typ (db: IdTypLeas) - Typ)
-  typLeasingu?: AFTypLeasingu
+  typLeasingu?: AFTypLeasingu | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Úč.čas.rozl. (db: IdCasUcet) - Účet časového rozlišení nákladů)
-  casUcet?: AFUcet
+  casUcet?: AFUcet | null
   // Úč.závazku (db: IdZavazUcet) - Účet závazku)
-  zavazUcet?: AFUcet
+  zavazUcet?: AFUcet | null
   // Úč.daň.nákl. (db: IdNaklUcet) - Účet daňových nákladů)
-  naklUcet?: AFUcet
+  naklUcet?: AFUcet | null
   // Úč.DPH sníž. (db: IdDphZaklUcet) - Účet DPH - základní sazba)
-  dphZaklUcet?: AFUcet
+  dphZaklUcet?: AFUcet | null
   // Úč.DPH zákl. (db: IdDphSnizUcet) - Účet DPH - snížená sazba)
-  dphSnizUcet?: AFUcet
+  dphSnizUcet?: AFUcet | null
   // Dodavatel (db: IdFirmyDod) - Dodavatel)
-  dodavatel?: AFAdresar
+  dodavatel?: AFAdresar | null
   // Výrobce (db: IdFirmyVyr) - Výrobce)
-  vyrobce?: AFAdresar
+  vyrobce?: AFAdresar | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
 
   // Splátkový kalendář (type: SPLATKOVY_KALENDAR) - splatkove-kalendare)
   'splatkove-kalendare'?: AFSplatkovyKalendar[]
@@ -463,7 +462,7 @@ export class AFLeasing extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

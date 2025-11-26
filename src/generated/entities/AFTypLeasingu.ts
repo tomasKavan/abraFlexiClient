@@ -16,47 +16,47 @@ export class AFTypLeasingu extends AFEntity {
   static EntityType: string = 'LEASING_TYP'
 
   // ID (db: IdTypLeas) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Druh (db: DruhK) - Druh)
-  druhK?: DruhLeas
+  druhK?: DruhLeas | null
   // Zahájit workflow při založení dokladu (db: WorkFlow) - Zahájit workflow při založení dokladu)
-  workFlow?: boolean
-  // Účet DPH sníž. (db: IdDphSnizUcet) - DPH snížená)
-  dphSnizUcet?: AFUcet
-  // Účet DPH zákl. (db: IdDphZaklUcet) - DPH základní)
-  dphZaklUcet?: AFUcet
+  workFlow?: boolean | null
+  // Účet DPH snížená sazba (db: IdDphSnizUcet) - DPH snížená)
+  dphSnizUcet?: AFUcet | null
+  // Účet DPH základní sazba (db: IdDphZaklUcet) - DPH základní)
+  dphZaklUcet?: AFUcet | null
   // Úč.závaz. (db: IdZavazUcet) - Účet závazku)
-  zavazUcet?: AFUcet
+  zavazUcet?: AFUcet | null
   // Úč.čas.rozl. (db: IdCasUcet) - Účet časového rozlišení nákladů)
-  casUcet?: AFUcet
+  casUcet?: AFUcet | null
   // Úč.daň.nakl. (db: IdNaklUcet) - Účet daňových nákladů)
-  naklUcet?: AFUcet
+  naklUcet?: AFUcet | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

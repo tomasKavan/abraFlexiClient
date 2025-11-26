@@ -1,7 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
-import { AFRole } from './AFRole'
 import { AFStredisko } from './AFStredisko'
 import { AFBankovniUcetSkladPokladna } from './AFBankovniUcetSkladPokladna'
 import { AFTypDokladu } from './AFTypDokladu'
@@ -19,31 +17,33 @@ export class AFParametr extends AFEntity {
   static EntityType: string = 'PARAM'
 
   // ID (db: IdParam) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Parametr (db: ParamK) - Parametr)
-  paramK?: any
+  paramK?: any | null
   // Hodnota (db: Hodnota) - Hodnota)
-  hodnota?: string
+  hodnota?: string | null
   // Kód reportu (db: KodReportu) - Kód reportu)
-  kodReportu?: string
+  kodReportu?: string | null
+  // Zapnutí pokročilých parametrů (db: Enabled) - Zapnutí pokročilých parametrů)
+  enabled?: boolean | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Role uživatele (db: IdRole) - Role uživatele)
-  role?: AFRole
+  role?: any | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Banka/pokladna/sklad (db: IdBsp) - Banka/pokladna/sklad)
-  bsp?: AFBankovniUcetSkladPokladna
+  bsp?: AFBankovniUcetSkladPokladna | null
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
-  typDokl?: AFTypDokladu
+  typDokl?: AFTypDokladu | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Skupina (db: IdSkupFir) - Skupina)
-  skupFir?: AFSkupinaFirem
+  skupFir?: AFSkupinaFirem | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -83,11 +83,17 @@ export class AFParametr extends AFEntity {
       maxLength: 255,
       
     },
+    enabled : {
+      key: 'enabled',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
     uzivatel : {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -95,7 +101,7 @@ export class AFParametr extends AFEntity {
       key: 'role',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFRole',
+      afClass: 'AFEntity',
       
     },
     stredisko : {

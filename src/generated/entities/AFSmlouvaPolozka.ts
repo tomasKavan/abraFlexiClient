@@ -24,97 +24,97 @@ export class AFSmlouvaPolozka extends AFEntity {
   static EntityType: string = 'SMLOUVA_POLOZKA'
 
   // ID (db: IdPolSml) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Označení (db: Kod) - Označení)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Platnost od (db: PlatiOdData) - Platnost od)
-  platiOdData?: Date
+  platiOdData?: Date | null
   // Platnost do (db: PlatiDoData) - Platnost do)
-  platiDoData?: Date
+  platiDoData?: Date | null
   // Frekvence fakturace (db: FrekFakt) - Frekvence fakturace)
-  frekFakt?: number
+  frekFakt?: number | null
   // Obrátkový den (db: Den) - Obrátkový den)
-  den?: number
+  den?: number | null
   // Obrátkový měsíc (db: Mesic) - Obrátkový měsíc)
-  mesic?: number
+  mesic?: number | null
   // Způsob fakturace (db: ZpusFaktK) - Způsob fakturace)
-  zpusFaktK?: ZpusobFakt
+  zpusFaktK?: ZpusobFakt | null
   // Fakturovat dní předem/po (db: DnyFakt) - Fakturovat dní předem/po)
-  dnyFakt?: number
+  dnyFakt?: number | null
   // Variabilní symbol (db: VarSym) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Cena ručně (db: CenaRucne) - Cena ručně)
-  cenaRucne?: boolean
+  cenaRucne?: boolean | null
   // Cena za MJ (db: CenaMj) - Cena za MJ)
-  cenaMj?: Big
+  cenaMj?: Big | null
   // Množství (db: MnozMj) - Množství)
-  mnozMj?: Big
+  mnozMj?: Big | null
   // Cena celkem (db: CenaCelkem) - Cena celkem)
-  cenaCelkem?: Big
+  cenaCelkem?: Big | null
   // DPH ručně (db: DphRucne) - DPH ručně)
-  dphRucne?: boolean
+  dphRucne?: boolean | null
   // Typ ceny (db: TypCenyDphK) - Typ ceny)
-  typCenyDphK?: TypCeny
+  typCenyDphK?: TypCeny | null
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // Sleva (db: Sleva) - Sleva)
-  sleva?: Big
+  sleva?: Big | null
   // Ext. gener. (db: ExtGener) - Ext. gener.)
-  extGener?: boolean
+  extGener?: boolean | null
   // Konec posl. fakt. období (db: DatPoslFaktObd) - Konec posl. fakt. období)
-  datPoslFaktObd?: Date
+  datPoslFaktObd?: Date | null
   // Generovat položku faktury (db: AutoGen) - Generovat položku faktury)
-  autoGen?: boolean
+  autoGen?: boolean | null
   // Valorizovat (db: Valorizovat) - Valorizovat)
-  valorizovat?: boolean
+  valorizovat?: boolean | null
   // Valorizovat k měsíci (db: ValorizovatMesic) - Valorizovat k měsíci)
-  valorizovatMesic?: number
+  valorizovatMesic?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Číslo došlé (db: CisDosle) - Číslo došlé)
-  cisDosle?: string
+  cisDosle?: string | null
   // Smlouva (db: IdSmlouvy) - Smlouva)
-  smlouva?: AFSmlouva
+  smlouva?: AFSmlouva | null
   // Kód z ceníku (db: IdCenik) - Kód z ceníku)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Sklad (db: IdBspSkl) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Místo (db: IdMisto) - Místo)
-  misto?: AFMistoUrceni
+  misto?: AFMistoUrceni | null
   // Předpis zaúčtování (db: IdTypUcOp) - Předpis zaúčtování)
-  typUcOp?: AFPredpisZauctovani
+  typUcOp?: AFPredpisZauctovani | null
   // Typ faktury (db: IdTypDokl) - Typ faktury)
-  typDoklFak?: AFTypFakturyVydane
+  typDoklFak?: AFTypFakturyVydane | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Číslo účtu (db: IdBanSpoj) - Číslo účtu)
-  banSpoj?: AFAdresarBankovniUcet
+  banSpoj?: AFAdresarBankovniUcet | null
   // Fakturovat firmě (db: IdFirmyFakt) - Fakturovat firmě)
-  firmaFakt?: AFAdresar
+  firmaFakt?: AFAdresar | null
   // Valorizační položka (db: IdValorPolSml) - Valorizační položka)
-  valorPolSml?: AFSmlouvaPolozka
+  valorPolSml?: AFSmlouvaPolozka | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]

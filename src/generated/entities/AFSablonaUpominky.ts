@@ -11,67 +11,67 @@ export class AFSablonaUpominky extends AFEntity {
   static EntityType: string = 'UPOMINKA_SABLONA'
 
   // ID (db: IdSablony) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Datum (db: Datum) - Datum)
-  datum?: string
+  datum?: string | null
   // Datum EN (db: Datuma) - Datum EN)
-  datuma?: string
+  datuma?: string | null
   // Datum DE (db: Datumb) - Datum DE)
-  datumb?: string
+  datumb?: string | null
   // Datum FR (db: Datumc) - Datum FR)
-  datumc?: string
+  datumc?: string | null
   // Hlavička dopisu (db: Hlavicka) - Hlavička dopisu)
-  hlavicka?: string
+  hlavicka?: string | null
   // Hlavička dopisu EN (db: Hlavickaa) - Hlavička dopisu EN)
-  hlavickaa?: string
+  hlavickaa?: string | null
   // Hlavička dopisu DE (db: Hlavickab) - Hlavička dopisu DE)
-  hlavickab?: string
+  hlavickab?: string | null
   // Hlavička dopisu FR (db: Hlavickac) - Hlavička dopisu FR)
-  hlavickac?: string
+  hlavickac?: string | null
   // Odběratel (db: Odberatel) - Odběratel)
-  odberatel?: string
+  odberatel?: string | null
   // Odběratel EN (db: Odberatela) - Odběratel EN)
-  odberatela?: string
+  odberatela?: string | null
   // Odběratel DE (db: Odberatelb) - Odběratel DE)
-  odberatelb?: string
+  odberatelb?: string | null
   // Odběratel FR (db: Odberatelc) - Odběratel FR)
-  odberatelc?: string
+  odberatelc?: string | null
   // Úvodní text (db: Uvod) - Úvodní text)
-  uvod?: string
+  uvod?: string | null
   // Úvodní text EN (db: Uvoda) - Úvodní text EN)
-  uvoda?: string
+  uvoda?: string | null
   // Úvodní text DE (db: Uvodb) - Úvodní text DE)
-  uvodb?: string
+  uvodb?: string | null
   // Úvodní text FR (db: Uvodc) - Úvodní text FR)
-  uvodc?: string
+  uvodc?: string | null
   // Text nad fakturami (db: TextNad) - Text nad fakturami)
-  textNad?: string
+  textNad?: string | null
   // Text nad fakturami EN (db: TextNada) - Text nad fakturami EN)
-  textNada?: string
+  textNada?: string | null
   // Text nad fakturami DE (db: TextNadb) - Text nad fakturami DE)
-  textNadb?: string
+  textNadb?: string | null
   // Text nad fakturami FR (db: TextNadc) - Text nad fakturami FR)
-  textNadc?: string
+  textNadc?: string | null
   // Text pod fakturami (db: TextPod) - Text pod fakturami)
-  textPod?: string
+  textPod?: string | null
   // Text pod fakturami EN (db: TextPoda) - Text pod fakturami EN)
-  textPoda?: string
+  textPoda?: string | null
   // Text pod fakturami DE (db: TextPodb) - Text pod fakturami DE)
-  textPodb?: string
+  textPodb?: string | null
   // Text pod fakturami FR (db: TextPodc) - Text pod fakturami FR)
-  textPodc?: string
+  textPodc?: string | null
   // Konec dopisu (db: Zapati) - Konec dopisu)
-  zapati?: string
+  zapati?: string | null
   // Konec dopisu EN (db: Zapatia) - Konec dopisu EN)
-  zapatia?: string
+  zapatia?: string | null
   // Konec dopisu DE (db: Zapatib) - Konec dopisu DE)
-  zapatib?: string
+  zapatib?: string | null
   // Konec dopisu FR (db: Zapatic) - Konec dopisu FR)
-  zapatic?: string
+  zapatic?: string | null
   // Typ šablony (db: TypSablonyK) - Typ šablony)
-  typSablonyK?: TypSablony
+  typSablonyK?: TypSablony | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

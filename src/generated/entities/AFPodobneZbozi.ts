@@ -12,15 +12,15 @@ export class AFPodobneZbozi extends AFEntity {
   static EntityType: string = 'PODOBNE_ZBOZI'
 
   // ID (db: IdPodobne) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Ceníková položka (db: IdCenikOtec) - Ceníková položka)
-  cenikOtec?: AFCenik
+  cenikOtec?: AFCenik | null
   // Podobné (db: IdCenik) - Podobné)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -1,6 +1,5 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFUzivatelskyDotazParametr } from './AFUzivatelskyDotazParametr'
 import { AFUzivatelskyDotazVlastnost } from './AFUzivatelskyDotazVlastnost'
@@ -14,37 +13,37 @@ export class AFUzivatelskyDotaz extends AFEntity {
   static EntityType: string = 'UZIVATELSKY_DOTAZ'
 
   // ID (db: IdDotaz) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Dotaz (db: Dotaz) - Dotaz)
-  dotaz?: string
+  dotaz?: string | null
   // Primární formulář (db: MasterBeanKey) - Primární formulář)
-  masterBeanKey?: string
+  masterBeanKey?: string | null
   // Privátní (db: Privatni) - Privátní)
-  privatni?: boolean
+  privatni?: boolean | null
   // Report (db: Report) - Report)
-  report?: string
+  report?: string | null
   // Uuid (db: Uuid) - Univerzální unikátní identifikátor)
-  uuid?: string
+  uuid?: string | null
   // ID primární evidence (db: ) - ID primární evidence)
-  masterFormId?: number
+  masterFormId?: number | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -158,7 +157,7 @@ export class AFUzivatelskyDotaz extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

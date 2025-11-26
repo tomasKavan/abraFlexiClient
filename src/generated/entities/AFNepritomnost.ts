@@ -15,43 +15,43 @@ export class AFNepritomnost extends AFEntity {
   static EntityType: string = 'NEPRITOMNOST'
 
   // ID (db: IdNepritomnost) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Začátek (db: PlatiOd) - Začátek)
-  platiOd?: Date
+  platiOd?: Date | null
   // Konec (db: PlatiDo) - Konec)
-  platiDo?: Date
+  platiDo?: Date | null
   // Trvání potvrzeno (db: Trvani) - Trvání potvrzeno)
-  trvani?: Date
+  trvani?: Date | null
   // Hodiny nepřítomnosti první den (db: Hodin1Den) - Hodiny nepřítomnosti první den)
-  hodin1Den?: Big
+  hodin1Den?: Big | null
   // Hodiny nepřítomnosti poslední den (db: HodinXDen) - Hodiny nepřítomnosti poslední den)
-  hodinXDen?: Big
+  hodinXDen?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Číslo rozhodnutí (db: CisloRozhodnuti) - Číslo rozhodnutí)
-  cisloRozhodnuti?: string
+  cisloRozhodnuti?: string | null
   // Důvod ošetřovného (db: CsszDuvodOsetrovneK) - Důvod ošetřovného)
-  csszDuvodOsetrovneK?: CsszDuvodOsetrovne
+  csszDuvodOsetrovneK?: CsszDuvodOsetrovne | null
   // Název školy (db: CsszNazevSkoly) - Název školy)
-  csszNazevSkoly?: string
+  csszNazevSkoly?: string | null
   // IČO školy (db: CsszIcSkoly) - IČO školy)
-  csszIcSkoly?: string
+  csszIcSkoly?: string | null
   // Důvod otcovské (db: CsszDuvodOtcovskeK) - Důvod otcovské)
-  csszDuvodOtcovskeK?: CsszDuvodOtcovske
+  csszDuvodOtcovskeK?: CsszDuvodOtcovske | null
   // Důvod převzetí (db: CsszDuvodPrevzetiPpmK) - Důvod převzetí)
-  csszDuvodPrevzetiPpmK?: CsszDuvodPrevzeti
+  csszDuvodPrevzetiPpmK?: CsszDuvodPrevzeti | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Osoba (db: IdOsoba) - Osoba)
-  osoba?: AFOsobaHlavicka
+  osoba?: AFOsobaHlavicka | null
   // Důvod nepřítomnosti (db: IdCisMzdSloz) - Důvod nepřítomnosti)
-  cisMzdSloz?: AFCiselnikMzdovychSlozek
+  cisMzdSloz?: AFCiselnikMzdovychSlozek | null
   // Pracovní poměr (db: IdPracPom) - Pracovní poměr)
-  pracPom?: AFPracovniPomerHlavicka
+  pracPom?: AFPracovniPomerHlavicka | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]

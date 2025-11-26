@@ -12,23 +12,23 @@ export class AFSubjekt extends AFEntity {
   static EntityType: string = 'SUBJEKT'
 
   // ID (db: Idsubjekt) - ID)
-  declare id?: number
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  declare id?: number | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Typ vztahu (db: TypVztahuK) - Typ vztahu)
-  typVztahuK?: GdprTypVztahu
+  typVztahuK?: GdprTypVztahu | null
   // Definice (db: Definice) - Definice)
-  definice?: string
+  definice?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Údaje jsou předávány do třetí země (db: TretiZeme) - Údaje jsou předávány do třetí země)
-  tretiZeme?: boolean
+  tretiZeme?: boolean | null
   // Adresář (db: Idadresar) - Adresář)
-  adresar?: AFAdresar
+  adresar?: AFAdresar | null
   // Definice účelu (db: Iddefiniceucelu) - Definice účelu)
-  definiceUcel?: any
+  definiceUcel?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

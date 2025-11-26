@@ -11,51 +11,51 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 export class AFDodavatel extends AFEntity {
   static EntityPath: string = 'dodavatel'
-  static EntityName: string = 'Dodavatelé'
+  static EntityName: string = 'Nákupní ceny'
   static EntityType: string = 'DODAVATEL'
 
   // ID (db: IdDodavatel) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Kód zboží/materiálu (db: KodIndi) - Kód zboží/materiálu)
-  kodIndi?: string
+  kodIndi?: string | null
   // Nákupní cena (db: NakupCena) - Nákupní cena)
-  nakupCena?: Big
+  nakupCena?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Primární (db: Primarni) - primární dodavatel)
-  primarni?: boolean
+  primarni?: boolean | null
   // Stav skladu (db: StavMJ) - Stav skladu)
-  stavMJ?: Big
+  stavMJ?: Big | null
   // Dodací lhůta (db: DodaciLhuta) - Dodací lhůta)
-  dodaciLhuta?: Big
+  dodaciLhuta?: Big | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Limit MJ 2 (db: LimMnoz2) - Množ. limit 2)
-  limMnoz2?: Big
+  limMnoz2?: Big | null
   // Limit MJ 3 (db: LimMnoz3) - Množ. limit 3)
-  limMnoz3?: Big
+  limMnoz3?: Big | null
   // Limit MJ 4 (db: LimMnoz4) - Množ. limit 4)
-  limMnoz4?: Big
+  limMnoz4?: Big | null
   // Limit MJ 5 (db: LimMnoz5) - Množ. limit 5)
-  limMnoz5?: Big
+  limMnoz5?: Big | null
   // Nákupní cena 2 (db: NakupCena2) - Nákupní cena 2)
-  nakupCena2?: Big
+  nakupCena2?: Big | null
   // Nákupní cena 3 (db: NakupCena3) - Nákupní cena 3)
-  nakupCena3?: Big
+  nakupCena3?: Big | null
   // Nákupní cena 4 (db: NakupCena4) - Nákupní cena 4)
-  nakupCena4?: Big
+  nakupCena4?: Big | null
   // Nákupní cena 5 (db: NakupCena5) - Nákupní cena 5)
-  nakupCena5?: Big
+  nakupCena5?: Big | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Firma (db: IdFirmy) - Firma)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // MJ Dodací lhůty (db: IdMjDodaciLhuta) - MJ Dodací lhůty)
-  mjDodaciLhuta?: AFMernaJednotka
+  mjDodaciLhuta?: AFMernaJednotka | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

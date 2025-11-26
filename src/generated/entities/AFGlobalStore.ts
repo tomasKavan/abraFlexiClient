@@ -10,11 +10,11 @@ export class AFGlobalStore extends AFEntity {
   static EntityType: string = 'GLOBAL_SETTING'
 
   // ID (db: IdSetting) - ID)
-  declare id?: number
+  declare id?: number | null
   // Klíč (db: Klic) - Klíč)
-  klic?: string
+  klic?: string | null
   // Hodnota (db: Hodnota) - Hodnota)
-  hodnota?: string
+  hodnota?: string | null
 
 
 

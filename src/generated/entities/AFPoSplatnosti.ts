@@ -10,16 +10,16 @@ export class AFPoSplatnosti extends AFEntity {
   static EntityName: string = 'Neuhrazené pohledávky/závazky po splatnosti'
   static EntityType: string = 'PO_SPLATNOSTI'
 
-  //  (db: ) - )
-  fakturovano?: Big
-  //  (db: ) - )
-  sumCelkemAkt?: Big
-  //  (db: ) - )
-  uhrazeno?: Big
-  //  (db: ) - )
-  symbolSplatnostiK?: any
+  // Fakturováno (db: ) - Fakturováno)
+  fakturovano?: Big | null
+  // Suma celkem aktuální (db: ) - Suma celkem aktuální)
+  sumCelkemAkt?: Big | null
+  // Uhrazeno (db: ) - Uhrazeno)
+  uhrazeno?: Big | null
+  // Symbol splatnosti (db: ) - Symbol splatnosti)
+  symbolSplatnostiK?: any | null
   // Zkratka firmy (db: ) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
 
 
 

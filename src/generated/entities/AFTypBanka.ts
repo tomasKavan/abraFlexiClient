@@ -21,73 +21,73 @@ export class AFTypBanka extends AFEntity {
   static EntityType: string = 'BANKA_TYP'
 
   // ID (db: IdTypDokl) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Platí od roku (db: PlatiOd) - Platí od roku)
-  platiOd?: number
+  platiOd?: number | null
   // Platí do roku (db: PlatiDo) - Platí do roku)
-  platiDo?: number
+  platiDo?: number | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
-  typPohybuK?: TypPohybu
+  typPohybuK?: TypPohybu | null
   // Druh (db: TypDoklK) - Druh)
-  typDoklK?: TypBanUctu
+  typDoklK?: TypBanUctu | null
   // Splatnost [dny] (db: SplatDny) - Splatnost [dny])
-  splatDny?: number
+  splatDny?: number | null
   // Popis pro doklad (db: PopisDoklad) - Popis pro doklad)
-  popisDoklad?: string
+  popisDoklad?: string | null
   // Řada pro příjem (db: IdRadyPrijem) - Řada pro příjem)
-  radaPrijem?: AFRadaBanka
+  radaPrijem?: AFRadaBanka | null
   // Řada pro výdej (db: IdRadyVydej) - Řada pro výdej)
-  radaVydej?: AFRadaBanka
+  radaVydej?: AFRadaBanka | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Bank.účet (db: IdBsp) - Bank.účet)
-  bsp?: AFBankovniUcet
+  bsp?: AFBankovniUcet | null
   // Předpis zaúčtování - příjem [DAL] (db: IdTypUcOpP) - pro příjem [DAL])
-  typUcOpPrijem?: AFPredpisZauctovani
+  typUcOpPrijem?: AFPredpisZauctovani | null
   // Předpis zaúčtování - výdej [MD] (db: IdTypUcOpV) - pro výdej [MD])
-  typUcOpVydej?: AFPredpisZauctovani
+  typUcOpVydej?: AFPredpisZauctovani | null
   // Stát DPH (db: IdStatDph) - Stát DPH)
-  statDph?: AFStatDph
+  statDph?: AFStatDph | null
   // Aut. tisk (db: TiskAutomat) - Automaticky tisknout při vytvoření nového dokladu)
-  tiskAutomat?: boolean
+  tiskAutomat?: boolean | null
   // Řazení položek pro tisk (db: RazeniProTiskK) - Řazení položek pro tisk)
-  razeniProTiskK?: RazeniProTisk
+  razeniProTiskK?: RazeniProTisk | null
   // Primární typ dokladu (db: Primarni) - Primární typ dokladu)
-  primarni?: boolean
+  primarni?: boolean | null
   // Zápočet (db: Zapocet) - Zápočet)
-  zapocet?: boolean
+  zapocet?: boolean | null
   // Text pro odesílání dokladu e-mailem (db: EmailTxt) - Text pro odesílání dokladu e-mailem)
-  emailTxt?: string
+  emailTxt?: string | null
   // Řádek kontrolního hlášení DPH (db: IdClenKonVykDph) - Řádek kontrolního hlášení DPH)
-  clenKonVykDph?: AFCleneniKontrolniHlaseni
+  clenKonVykDph?: AFCleneniKontrolniHlaseni | null
   // Šablona e-mail (db: IdSablonaMail) - Šablona e-mail)
-  sablonaMail?: AFSablonaMail
+  sablonaMail?: AFSablonaMail | null
 
   // Automatický tisk (type: AUTOTISK) - autoTisky)
   autoTisky?: AFAutotisk[]

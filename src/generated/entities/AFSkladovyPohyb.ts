@@ -17,7 +17,6 @@ import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
 import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
 import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
 import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
-import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFRadaSkladovyPohyb } from './AFRadaSkladovyPohyb'
 import { AFFormaDopravy } from './AFFormaDopravy'
@@ -38,173 +37,181 @@ export class AFSkladovyPohyb extends AFEntity {
   static EntityType: string = 'SKLADOVY_POHYB'
 
   // ID (db: IdDoklSklad) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: idUziv) - Vytvořil)
+  createdBy?: any | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Interní číslo (db: Kod) - Interní číslo)
-  declare kod?: string
+  declare kod?: string | null
   // Zámek (db: ZamekK) - Zámek)
-  zamekK?: Zamek
+  zamekK?: Zamek | null
   // Typ pohybu (db: TypPohybuK) - Typ pohybu)
-  typPohybuK?: TypPohybu
+  typPohybuK?: TypPohybu | null
   // Variabilní symbol (db: VarSym) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Číslo objednávky (db: CisObj) - Číslo objednávky)
-  cisObj?: string
+  cisObj?: string | null
   // Dodací list (db: CisDodak) - Dodací list)
-  cisDodak?: string
+  cisDodak?: string | null
   // Doprava a vyskladnění (db: Doprava) - Doprava a vyskladnění)
-  doprava?: string
+  doprava?: string | null
   // Datum vystavení (db: DatVyst) - Datum vystavení)
-  datVyst?: Date
+  datVyst?: Date | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Úvodní text (tiskne se před položkami) (db: UvodTxt) - Úvodní text (tiskne se před položkami))
-  uvodTxt?: string
+  uvodTxt?: string | null
   // Závěrečný text (tiskne se za položkami) (db: ZavTxt) - Závěrečný text (tiskne se za položkami))
-  zavTxt?: string
+  zavTxt?: string | null
   // Osvob., bez DPH [Kč] (db: SumOsv) - 0 %)
-  sumOsv?: Big
+  sumOsv?: Big | null
   // Základ celkem [Kč] (db: sumOsv + sumZklSniz + sumZklSniz2 + sumZklZakl) - Základ)
-  sumZklCelkem?: Big
+  sumZklCelkem?: Big | null
   // Celkem [Kč] (db: SumCelkem) - Celkem [Kč])
-  sumCelkem?: Big
+  sumCelkem?: Big | null
   // Osvob., bez DPH [měna] (db: SumOsvMen) - 0 %)
-  sumOsvMen?: Big
+  sumOsvMen?: Big | null
   // Základ celkem [měna] (db: sumOsvMen + sumZklSnizMen + sumZklSniz2Men + sumZklZaklMen) - Základ)
-  sumZklCelkemMen?: Big
+  sumZklCelkemMen?: Big | null
   // Celkem [měna] (db: SumCelkemMen) - Celkem [měna])
-  sumCelkemMen?: Big
+  sumCelkemMen?: Big | null
   // Kurz (db: Kurz) - Kurz)
-  kurz?: Big
+  kurz?: Big | null
   // Kurz. množství (db: KurzMnozstvi) - Kurz. množství)
-  kurzMnozstvi?: Big
+  kurzMnozstvi?: Big | null
   // Název firmy nebo jméno osoby (db: NazFirmy) - Název firmy - jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
   // Název firmy - druhá řádka (db: ) - Název firmy - druhá řádka)
-  faNazev2?: string
+  faNazev2?: string | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // Pošt. kraj (db: Idfaregion) - Kraj)
-  faRegion?: AFRegion
+  faRegion?: AFRegion | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // IČO (db: Ic) - IČO)
-  ic?: string
+  ic?: string | null
   // DIČ (db: Dic) - DIČ)
-  dic?: string
+  dic?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Poštovní adresa je shodná se sídlem (db: PostovniShodna) - Poštovní adresa je shodná se sídlem)
-  postovniShodna?: boolean
+  postovniShodna?: boolean | null
   // Pošt. jméno firmy (db: FaNazev) - Firma)
-  faNazev?: string
+  faNazev?: string | null
   // Pošt. ulice (db: FaUlice) - Ulice)
-  faUlice?: string
+  faUlice?: string | null
   // Pošt. město (db: FaMesto) - Město)
-  faMesto?: string
+  faMesto?: string | null
   // Pošt. PSČ (db: FaPsc) - PSČ)
-  faPsc?: string
+  faPsc?: string | null
   // Pošt. stát (db: IdFaStatu) - Stát)
-  faStat?: AFStat
+  faStat?: AFStat | null
   // Pošt. EAN (db: FaEanKod) - EAN)
-  faEanKod?: string
-  // Bezpol. dokl. (db: BezPolozek) - bezpoložkový doklad)
-  bezPolozek?: boolean
+  faEanKod?: string | null
+  // Bezpoložkový doklad (db: BezPolozek) - bezpoložkový doklad)
+  bezPolozek?: boolean | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Zaúčtováno (db: Zuctovano) - Stav zaúčtování)
-  zuctovano?: boolean
-  // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
-  datUcto?: Date
+  zuctovano?: boolean | null
+  // Datum zaúčtování (db: DatUcto) - Datum zaúčtování)
+  datUcto?: Date | null
   // Storno (db: Storno) - Storno)
-  storno?: boolean
+  storno?: boolean | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Hrom. fakturace (db: HromFakt) - Hrom. fakturace)
-  hromFakt?: boolean
+  hromFakt?: boolean | null
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
-  typDokl?: AFTypSkladovyPohyb
+  typDokl?: AFTypSkladovyPohyb | null
   // Sklad (db: IdBsp) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Místo určení (db: IdMur) - Místo určení)
-  mistUrc?: AFMistoUrceni
+  mistUrc?: AFMistoUrceni | null
   // Předpis zaúčtování (db: IdTypUcOp) - Předpis zaúčtování)
-  typUcOp?: AFPredpisZauctovani
+  typUcOp?: AFPredpisZauctovani | null
   // Účet skladu (db: IdPrimUcet) - Účet skladu)
-  primUcet?: AFUcet
+  primUcet?: AFUcet | null
   // Protiúčet (db: IdProtiUcet) - Protiúčet)
-  protiUcet?: AFUcet
+  protiUcet?: AFUcet | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Stát odesl. (db: IdStatOdesl) - Stát odesl.)
-  statOdesl?: AFStat
+  statOdesl?: AFStat | null
   // Stát určení (db: IdStatUrc) - Stát určení)
-  statUrc?: AFStat
+  statUrc?: AFStat | null
   // Stát původu (db: IdStatPuvod) - Stát původu)
-  statPuvod?: AFStat
+  statPuvod?: AFStat | null
   // Podmínky dodání (db: IdDodPodm) - Podmínky dodání)
-  dodPodm?: AFIntrastatDodaciPodminky
+  dodPodm?: AFIntrastatDodaciPodminky | null
   // Transakce (db: IdObchTrans) - Transakce)
-  obchTrans?: AFIntrastatObchodniTransakce
+  obchTrans?: AFIntrastatObchodniTransakce | null
   // Druh dopravy (db: IdDruhDopr) - Druh dopravy)
-  druhDopr?: AFIntrastatDruhDopravy
+  druhDopr?: AFIntrastatDruhDopravy | null
   // Zvláštní pohyby (db: IdZvlPoh) - Zvláštní pohyby)
-  zvlPoh?: AFIntrastatZvlastniPohyb
+  zvlPoh?: AFIntrastatZvlastniPohyb | null
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
-  krajUrc?: AFIntrastatKrajUrceni
+  krajUrc?: AFIntrastatKrajUrceni | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: AFUzivatel
+  zodpOsoba?: any | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
-  kontaktOsoba?: AFKontakt
+  kontaktOsoba?: AFKontakt | null
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
-  kontaktJmeno?: string
-  // Kontaktní email (db: KontaktEmail) - Email)
-  kontaktEmail?: string
+  kontaktJmeno?: string | null
+  // Kontaktní e-mail (db: KontaktEmail) - E-mail)
+  kontaktEmail?: string | null
   // Kontaktní telefon (db: KontaktTel) - Telefon)
-  kontaktTel?: string
+  kontaktTel?: string | null
   // Čís. řada (db: IdRady) - Čís. řada)
-  rada?: AFRadaSkladovyPohyb
+  rada?: AFRadaSkladovyPohyb | null
   // Zdroj pro faktury (db: ZdrojProFak) - Zdroj pro faktury)
-  zdrojProFak?: boolean
+  zdrojProFak?: boolean | null
   // Stav dokladu (db: StavSkladK) - Stav dokladu)
-  stavSkladK?: StavSklad
+  stavSkladK?: StavSklad | null
   // Typ pohybu + upřesnění (db: TypPohybuSkladK) - Typ pohybu + upřesnění)
-  typPohybuSkladK?: TypPohybuSklad
+  typPohybuSkladK?: TypPohybuSklad | null
+  // Typ skladového dokladu (db: IdTypDoklSkl) - Typ skladového dokladu)
+  typDoklSkl?: AFTypSkladovyPohyb | null
   // Forma dopravy (db: IdFormaDopravy) - Forma dopravy)
-  formaDopravy?: AFFormaDopravy
+  formaDopravy?: AFFormaDopravy | null
   // Uuid (db: Uuid) - Univerzální unikátní identifikátor)
-  uuid?: string
+  uuid?: string | null
   // Zdroj (db: Source) - Zdroj)
-  source?: string
+  source?: string | null
   // Vynechat ze salda (db: VyloucitSaldo) - Vynechat ze salda)
-  vyloucitSaldo?: boolean
+  vyloucitSaldo?: boolean | null
   // Sklad cíl (db: IdSkladCil) - Sklad cíl)
-  skladCil?: AFSklad
+  skladCil?: AFSklad | null
   // Inventura (db: IdInventura) - Inventura)
-  inventura?: AFInventura
+  inventura?: AFInventura | null
   // ID výdejního místa (db: BranchId) - ID výdejního místa)
-  branchId?: string
+  branchId?: string | null
 
   // Navázané doklady (type: VAZEBNI_DOKLAD) - vazebni-doklady)
   'vazebni-doklady'?: AFVazebniDoklad[]
@@ -231,6 +238,28 @@ export class AFSkladovyPohyb extends AFEntity {
     },
     lastUpdate : {
       key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdDate : {
+      key: 'createdDate',
       type: PropertyType.DateTime,
       isArray: false,
       
@@ -692,7 +721,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -700,7 +729,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -761,6 +790,13 @@ export class AFSkladovyPohyb extends AFEntity {
       maxLength: 50,
       enumName: 'TypPohybuSklad',
       enum: TypPohybuSklad,
+      
+    },
+    typDoklSkl : {
+      key: 'typDoklSkl',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFTypSkladovyPohyb',
       
     },
     formaDopravy : {

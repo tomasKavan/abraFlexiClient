@@ -33,221 +33,229 @@ export class AFCenik extends AFEntity {
   static EntityType: string = 'CENIK'
 
   // ID (db: IdCenik) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Kód/zkratka (db: Kod) - Kód/zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // Kód PLU (db: KodPlu) - Kód PLU)
-  kodPlu?: string
+  kodPlu?: string | null
   // Typ ceny (db: TypCenyDphK) - Typ ceny)
-  typCenyDphK?: TypCeny
+  typCenyDphK?: TypCeny | null
   // %Zakl (db: ProcZakl) - %Zakl)
-  procZakl?: Big
+  procZakl?: Big | null
   // Individuální cenotvorba (db: IndividCena) - Individuální cenotvorba)
-  individCena?: boolean
+  individCena?: boolean | null
   // Limit MJ 2 (db: LimMnoz2) - Množ. limit 2)
-  limMnoz2?: Big
+  limMnoz2?: Big | null
   // Limit MJ 3 (db: LimMnoz3) - Množ. limit 3)
-  limMnoz3?: Big
+  limMnoz3?: Big | null
   // Limit MJ 4 (db: LimMnoz4) - Množ. limit 4)
-  limMnoz4?: Big
+  limMnoz4?: Big | null
   // Limit MJ 5 (db: LimMnoz5) - Množ. limit 5)
-  limMnoz5?: Big
+  limMnoz5?: Big | null
   // %2 (db: Procento2) - % 2)
-  procento2?: Big
+  procento2?: Big | null
   // %3 (db: Procento3) - %3)
-  procento3?: Big
+  procento3?: Big | null
   // %4 (db: Procento4) - %4)
-  procento4?: Big
+  procento4?: Big | null
   // %5 (db: Procento5) - %5)
-  procento5?: Big
+  procento5?: Big | null
   // Cena 2 (db: Cena2) - Množstevní)
-  cena2?: Big
+  cena2?: Big | null
   // Cena 3 (db: Cena3) - Cena 3)
-  cena3?: Big
+  cena3?: Big | null
   // Cena 4 (db: Cena4) - Cena 4)
-  cena4?: Big
+  cena4?: Big | null
   // Cena 5 (db: Cena5) - Cena 5)
-  cena5?: Big
+  cena5?: Big | null
   // Způsob zaokr. (db: ZaokrJakK) - Způsob zaokr.)
-  zaokrJakK?: ZaokrJak
+  zaokrJakK?: ZaokrJak | null
   // Řád zaokrouhlení (db: ZaokrNaK) - Řád zaokrouhlení)
-  zaokrNaK?: ZaokrNa
+  zaokrNaK?: ZaokrNa | null
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // Počet desetin MJ (db: DesetinMj) - Počet desetin MJ)
-  desetinMj?: number
+  desetinMj?: number | null
   // Nákupní cena (db: NakupCena) - Nákupní cena)
-  nakupCena?: Big
+  nakupCena?: Big | null
   // Počet MJ v ceně (db: CenJednotka) - Počet MJ v ceně)
-  cenJednotka?: Big
+  cenJednotka?: Big | null
   // Výchozí cena (db: TypCenyVychoziK) - Výchozí cena)
-  typCenyVychoziK?: TypCenyVychozi
+  typCenyVychoziK?: TypCenyVychozi | null
   // Způsob výpočtu (db: TypVypCenyK) - Způsob výpočtu)
-  typVypCenyK?: TypVypCeny
+  typVypCenyK?: TypVypCeny | null
   // Výchozí cena pro množ. slevy (db: TypCenyVychozi25K) - Výchozí cena)
-  typCenyVychozi25K?: TypCenyVychozi
+  typCenyVychozi25K?: TypCenyVychozi | null
   // Způsob výpočtu pro množ. slevy (db: TypVypCeny25K) - Způsob výpočtu)
-  typVypCeny25K?: TypVypCeny
-  // Evid. výr. čís. (db: EvidVyrCis) - Evidovat výrobní čísla)
-  evidVyrCis?: boolean
-  // Unik. výr. čís. (db: UnikVyrCis) - Výr. čís. musí být unikátní)
-  unikVyrCis?: boolean
+  typVypCeny25K?: TypVypCeny | null
+  // Evidovat výrobní čísla (db: EvidVyrCis) - Evidovat výrobní čísla)
+  evidVyrCis?: boolean | null
+  // Výr. čís. musí být unikátní (db: UnikVyrCis) - Výr. čís. musí být unikátní)
+  unikVyrCis?: boolean | null
   // Záruka (db: Zaruka) - Záruka)
-  zaruka?: number
+  zaruka?: number | null
   // MJ záruky (db: MjZarukyK) - MJ záruky)
-  mjZarukyK?: MjZaruky
+  mjZarukyK?: MjZaruky | null
   // MJ2 / MJ1 (db: MjKoef2) - MJ2 / MJ1)
-  mjKoef2?: Big
+  mjKoef2?: Big | null
   // MJ3 / MJ1 (db: MjKoef3) - MJ3 / MJ1)
-  mjKoef3?: Big
+  mjKoef3?: Big | null
   // Prodávat násobky MJ (db: ProdejMj) - Prodávat násobky MJ)
-  prodejMj?: Big
+  prodejMj?: Big | null
   // Hmotnost (netto) (db: HmotMj) - Hmotnost (netto))
-  hmotMj?: Big
+  hmotMj?: Big | null
   // Hmotnost obalu (db: HmotObal) - Hmotnost obalu)
-  hmotObal?: Big
+  hmotObal?: Big | null
   // Objem (db: Objem) - Objem)
-  objem?: Big
+  objem?: Big | null
   // Zatřídění (db: Zatrid) - Zatřídění)
-  zatrid?: string
+  zatrid?: string | null
   // Skladové (db: Skladove) - Skladové zboží)
-  skladove?: boolean
+  skladove?: boolean | null
   // Typ zásoby (db: TypZasobyK) - Typ zásoby)
-  typZasobyK?: TypZasoby
+  typZasobyK?: TypZasoby | null
   // Balení 1 - Kód nebo název (db: BaleniNazev1) - Kód nebo název)
-  baleniNazev1?: string
+  baleniNazev1?: string | null
   // Balení 2 - Kód nebo název (db: BaleniNazev2) - Kód nebo název)
-  baleniNazev2?: string
+  baleniNazev2?: string | null
   // Balení 3 - Kód nebo název (db: BaleniNazev3) - Kód nebo název)
-  baleniNazev3?: string
+  baleniNazev3?: string | null
   // Balení 4 - Kód nebo název (db: BaleniNazev4) - Kód nebo název)
-  baleniNazev4?: string
+  baleniNazev4?: string | null
   // Balení 5 - Kód nebo název (db: BaleniNazev5) - Kód nebo název)
-  baleniNazev5?: string
+  baleniNazev5?: string | null
   // Balení 1 - Počet MJ (db: BaleniMj1) - Počet MJ)
-  baleniMj1?: Big
+  baleniMj1?: Big | null
   // Balení 2 - Počet MJ (db: BaleniMj2) - Počet MJ)
-  baleniMj2?: Big
+  baleniMj2?: Big | null
   // Balení 3 - Počet MJ (db: BaleniMj3) - Počet MJ)
-  baleniMj3?: Big
+  baleniMj3?: Big | null
   // Balení 4 - Počet MJ (db: BaleniMj4) - Počet MJ)
-  baleniMj4?: Big
+  baleniMj4?: Big | null
   // Balení 5 - Počet MJ (db: BaleniMj5) - Počet MJ)
-  baleniMj5?: Big
+  baleniMj5?: Big | null
   // Balení 1 - EAN (db: BaleniEan1) - EAN)
-  baleniEan1?: string
+  baleniEan1?: string | null
   // Balení 2 - EAN (db: BaleniEan2) - EAN)
-  baleniEan2?: string
+  baleniEan2?: string | null
   // Balení 3 - EAN (db: BaleniEan3) - EAN)
-  baleniEan3?: string
+  baleniEan3?: string | null
   // Balení 4 - EAN (db: BaleniEan4) - EAN)
-  baleniEan4?: string
+  baleniEan4?: string | null
   // Balení 5 - EAN (db: BaleniEan5) - EAN)
-  baleniEan5?: string
+  baleniEan5?: string | null
   // Evidovat Intrastat (db: InEvid) - Evidovat Intrastat)
-  inEvid?: boolean
+  inEvid?: boolean | null
   // Koeficient pro MJ (db: InKoefMj) - Koeficient pro MJ)
-  inKoefMj?: Big
+  inKoefMj?: Big | null
   // Koeficient pro statistickou hodnotu (db: InKoefStat) - Koeficient pro statistickou hodnotu)
-  inKoefStat?: Big
+  inKoefStat?: Big | null
   // Kód sledovanosti druhu zboží (db: InKodSled) - Kód sledovanosti druhu zboží)
-  inKodSled?: string
+  inKodSled?: string | null
   // Popis EN (db: PopisA) - Popis EN)
-  popisA?: string
+  popisA?: string | null
   // Popis DE (db: PopisB) - Popis DE)
-  popisB?: string
+  popisB?: string | null
   // Popis FR (db: PopisC) - Popis FR)
-  popisC?: string
+  popisC?: string | null
   // Běžná cena (db: CenaBezna) - Běžná cena)
-  cenaBezna?: Big
+  cenaBezna?: Big | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Export na E-shop (db: ExportNaEshop) - Exportovat na internetový obchod)
-  exportNaEshop?: boolean
-  // Individuální minimální marže (db: MinMarzeCenik) - Individuální minimální marže)
-  minMarzeCenik?: boolean
-  // Minimální marže (db: MinMarze) - Minimální marže)
-  minMarze?: Big
-  // Evid. šar. (db: EvidSarze) - Evidovat šarže)
-  evidSarze?: boolean
-  // Evid. exp. (db: EvidExpir) - Evidovat expirace)
-  evidExpir?: boolean
+  exportNaEshop?: boolean | null
+  // Hlídat minimální cenový rozdíl (db: MinMarzeCenik) - Hlídat minimální cenový rozdíl)
+  minMarzeCenik?: boolean | null
+  // Minimální cenový rozdíl [%] (db: MinMarze) - Minimální cenový rozdíl [%])
+  minMarze?: Big | null
+  // Typ min. cen. rozdílu (db: TypVypoctuHlidatMinK) - Typ hlídaného minimálního cenového rozdílu)
+  typVypoctuHlidatMinK?: TypVypCeny | null
+  // Evidovat šarže (db: EvidSarze) - Evidovat šarže)
+  evidSarze?: boolean | null
+  // Evidovat expirace (db: EvidExpir) - Evidovat expirace)
+  evidExpir?: boolean | null
   // Sada (db: Sada) - Sada)
-  sada?: boolean
+  sada?: boolean | null
   // Trvanlivost je X dní po expiraci (db: DnyTrvanPoExpir) - Trvanlivost je X dní po expiraci)
-  dnyTrvanPoExpir?: number
-  // Neseskupovat na OBV (db: NeseskupovatObj) - Neseskupovat položky při vytváření objednávky vydané)
-  neseskupovatObj?: boolean
+  dnyTrvanPoExpir?: number | null
+  // Neseskupovat položky při vytváření objednávky vydané (db: NeseskupovatObj) - Neseskupovat položky při vytváření objednávky vydané)
+  neseskupovatObj?: boolean | null
   // Krátký popis (db: KratkyPopis) - Krátký popis)
-  kratkyPopis?: string
+  kratkyPopis?: string | null
   // Klíčová slova (db: KlicSlova) - Klíčová slova)
-  klicSlova?: string
+  klicSlova?: string | null
   // Technické parametry (db: TechParam) - Technické parametry)
-  techParam?: string
+  techParam?: string | null
   // Dodací lhůta (db: DodaciLhuta) - Dodací lhůta)
-  dodaciLhuta?: Big
+  dodaciLhuta?: Big | null
   // Umožnit prodej na kase (db: ProdejKasa) - Umožnit prodej na kase)
-  prodejKasa?: boolean
+  prodejKasa?: boolean | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Skupina zboží (db: IdSkupZboz) - Skupina zboží)
-  skupZboz?: AFSkupinaZbozi
+  skupZboz?: AFSkupinaZbozi | null
   // MJ (db: IdMj1) - Měrná jednotka)
-  mj1?: AFMernaJednotka
+  mj1?: AFMernaJednotka | null
   // MJ č. 2 (db: IdMj2) - MJ č. 2)
-  mj2?: AFMernaJednotka
+  mj2?: AFMernaJednotka | null
   // MJ č. 3 (db: IdMj3) - MJ č. 3)
-  mj3?: AFMernaJednotka
+  mj3?: AFMernaJednotka | null
   // MJ hmotnosti (db: IdMjHmot) - MJ hmotnosti)
-  mjHmot?: AFMernaJednotka
+  mjHmot?: AFMernaJednotka | null
   // MJ objemu (db: IdMjObj) - MJ objemu)
-  mjObj?: AFMernaJednotka
+  mjObj?: AFMernaJednotka | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Nomenklatura (db: IdNomen) - Nomenklatura)
-  nomen?: AFIntrastatKodNomenklatury
+  nomen?: AFIntrastatKodNomenklatury | null
   // Dodavatel (db: IdDodavatel) - Dodavatel)
-  dodavatel?: AFAdresar
+  dodavatel?: AFAdresar | null
   // Výrobce (db: IdVyrobce) - Výrobce)
-  vyrobce?: AFAdresar
+  vyrobce?: AFAdresar | null
   // Kód přenesení DPH (db: IdDphPren) - Kód přenesení DPH)
-  dphPren?: AFPreneseniDph
+  dphPren?: AFPreneseniDph | null
   // MJ Dodací lhůty (db: IdMjDodaciLhuta) - MJ Dodací lhůty)
-  mjDodaciLhuta?: AFMernaJednotka
+  mjDodaciLhuta?: AFMernaJednotka | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: any | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: any | null
   // Stav skladu (db: ) - Stav skladu)
-  sumStavMj?: Big
+  sumStavMj?: Big | null
   // Rezervováno (db: ) - Rezervováno)
-  sumRezerMj?: Big
+  sumRezerMj?: Big | null
   // Požadavky (db: ) - Požadavky)
-  sumPozadavkyMj?: Big
+  sumPozadavkyMj?: Big | null
   // Dostupné (db: ) - Dostupné)
-  sumDostupMj?: Big
+  sumDostupMj?: Big | null
   // Prodejní cena bez DPH (db: ) - bez DPH)
-  cenaZaklBezDph?: Big
-  // Prodejní cena vč. DPH (db: ) - s DPH)
-  cenaZaklVcDph?: Big
+  cenaZaklBezDph?: Big | null
+  // Prodejní cena včetně DPH (db: ) - s DPH)
+  cenaZaklVcDph?: Big | null
   // Prodejní cena (db: CenaZakl) - Prodejní cena)
-  cenaZakl?: Big
+  cenaZakl?: Big | null
 
   // Prodejní ceny (type: ODBERATEL) - odberatele)
   odberatele?: AFOdberatel[]
@@ -845,6 +853,15 @@ export class AFCenik extends AFEntity {
       digits: 6,
       
     },
+    typVypoctuHlidatMinK : {
+      key: 'typVypoctuHlidatMinK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'TypVypCeny',
+      enum: TypVypCeny,
+      
+    },
     evidSarze : {
       key: 'evidSarze',
       type: PropertyType.Logic,
@@ -904,6 +921,12 @@ export class AFCenik extends AFEntity {
     prodejKasa : {
       key: 'prodejKasa',
       type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
       isArray: false,
       
     },
@@ -991,6 +1014,22 @@ export class AFCenik extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFMernaJednotka',
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
       
     },
     sumStavMj : {

@@ -12,17 +12,17 @@ export class AFKurzProPreceneni extends AFEntity {
   static EntityType: string = 'KURZ_PRO_PRECENENI'
 
   // ID (db: IdKurzy) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Datum (db: PlatiOdData) - Datum)
-  platiOdData?: Date
+  platiOdData?: Date | null
   // Kurz (db: NbStred) - Kurz)
-  nbStred?: Big
+  nbStred?: Big | null
   // Množství (db: KurzMnozstvi) - Množství)
-  kurzMnozstvi?: Big
+  kurzMnozstvi?: Big | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

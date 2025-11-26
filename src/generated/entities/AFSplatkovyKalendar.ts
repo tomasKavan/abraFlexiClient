@@ -17,59 +17,59 @@ export class AFSplatkovyKalendar extends AFEntity {
   static EntityType: string = 'SPLATKOVY_KALENDAR'
 
   // ID (db: IdSplatKal) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Členění splátky (db: ClenSplK) - Členění splátky)
-  clenSplK?: ClenSpl
+  clenSplK?: ClenSpl | null
   // Typ splátky (db: TypSplK) - Typ splátky)
-  typSplK?: TypSpl
+  typSplK?: TypSpl | null
   // Datum splátky (db: DatVyst) - Datum splátky)
-  datVyst?: Date
+  datVyst?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // DPH [Kč] (db: SumDph) - DPH [Kč])
-  sumDph?: Big
+  sumDph?: Big | null
   // DPH [měna] (db: SumDphMen) - DPH [měna])
-  sumDphMen?: Big
+  sumDphMen?: Big | null
   // DPH [%] (db: SzbDph) - DPH [%])
-  szbDph?: Big
+  szbDph?: Big | null
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // Základ [Kč] (db: SumZkl) - Základ [Kč])
-  sumZkl?: Big
+  sumZkl?: Big | null
   // Základ [měna] (db: SumZklMen) - Základ [měna])
-  sumZklMen?: Big
+  sumZklMen?: Big | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Čís.dokl. (db: Kod) - Číslo dokladu)
-  declare kod?: string
-  // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
-  datUcto?: Date
+  declare kod?: string | null
+  // Datum zaúčtování (db: DatUcto) - Datum zaúčtování)
+  datUcto?: Date | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Leasingový majetek (db: IdLeasing) - Leasingový majetek)
-  leasing?: AFLeasing
+  leasing?: AFLeasing | null
   // Úč.MD zakl. (db: IdZklMdUcet) - Účet MD základu)
-  zklMdUcet?: AFUcet
+  zklMdUcet?: AFUcet | null
   // Úč.DAL zakl. (db: IdZklDalUcet) - Účet DAL základu)
-  zklDalUcet?: AFUcet
+  zklDalUcet?: AFUcet | null
   // Úč.MD DPH (db: IdDphMdUcet) - Účet MD DPH)
-  dphMdUcet?: AFUcet
+  dphMdUcet?: AFUcet | null
   // Úč.DAL DPH (db: IdDphDalUcet) - Účet DAL DPH)
-  dphDalUcet?: AFUcet
+  dphDalUcet?: AFUcet | null
   // Členění DPH (db: IdClenDph) - Členění DPH)
-  clenDph?: AFCleneniDph
+  clenDph?: AFCleneniDph | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Závazek (db: IdDoklFak) - Závazek)
-  zavazek?: any
+  zavazek?: any | null
   // Stát DPH (db: IdStatDph) - Stát DPH)
-  statDph?: AFStatDph
+  statDph?: AFStatDph | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

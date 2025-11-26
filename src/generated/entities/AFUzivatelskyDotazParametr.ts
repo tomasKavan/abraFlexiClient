@@ -12,37 +12,37 @@ export class AFUzivatelskyDotazParametr extends AFEntity {
   static EntityType: string = 'UZIVATELSKY_DOTAZ_PARAMETR'
 
   // ID (db: IdDotazParam) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Typ (db: TypParamK) - Typ)
-  typParamK?: DatazTypParam
+  typParamK?: DatazTypParam | null
   // Výchozí hodnota (db: Vychozi) - Výchozí hodnota)
-  vychozi?: string
+  vychozi?: string | null
   // Mohutnost N (db: MohutnostN) - Mohutnost N)
-  mohutnostN?: boolean
+  mohutnostN?: boolean | null
   // Výběr z (db: BeanKey) - Výběr z)
-  beanKey?: string
+  beanKey?: string | null
   // Povinný (db: Povinny) - Povinný)
-  povinny?: boolean
+  povinny?: boolean | null
   // Dotaz (db: IdDotaz) - Dotaz)
-  dotaz?: AFUzivatelskyDotaz
+  dotaz?: AFUzivatelskyDotaz | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

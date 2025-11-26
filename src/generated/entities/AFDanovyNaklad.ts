@@ -15,35 +15,35 @@ export class AFDanovyNaklad extends AFEntity {
   static EntityType: string = 'DANOVY_NAKLAD'
 
   // ID (db: IdDanNakl) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Datum účtování (db: DatVyst) - Datum účtování)
-  datVyst?: Date
+  datVyst?: Date | null
   // Základ [Kč] (db: SumZkl) - Základ [Kč])
-  sumZkl?: Big
+  sumZkl?: Big | null
   // Základ [měna] (db: SumZklMen) - Základ [měna])
-  sumZklMen?: Big
+  sumZklMen?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Číslo dokladu (db: Kod) - Číslo dokladu)
-  declare kod?: string
-  // Datum zaúčt. (db: DatUcto) - Datum zaúčtování)
-  datUcto?: Date
+  declare kod?: string | null
+  // Datum zaúčtování (db: DatUcto) - Datum zaúčtování)
+  datUcto?: Date | null
   // Leasingový majetek (db: IdLeasing) - Leasingový majetek)
-  leasing?: AFLeasing
+  leasing?: AFLeasing | null
   // Účet MD základu (db: IdZklMdUcet) - Účet MD základu)
-  zklMdUcet?: AFUcet
+  zklMdUcet?: AFUcet | null
   // Účet DAL základu (db: IdZklDalUcet) - Účet DAL základu)
-  zklDalUcet?: AFUcet
+  zklDalUcet?: AFUcet | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

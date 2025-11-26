@@ -13,45 +13,45 @@ export class AFStatDph extends AFEntity {
   static EntityType: string = 'STAT_DPH'
 
   // ID (db: IdStatu) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Kód (ISO 3166-1) (db: Kod) - alpha-2)
-  declare kod?: string
+  declare kod?: string | null
   // Název státu (db: Nazev) - Název státu)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Kód (DPH) (db: KodDph) - Kód (DPH))
-  kodDph?: string
+  kodDph?: string | null
   // Kód (ISO 3166-1 - číselný) (db: KodNum) - numeric)
-  kodNum?: string
+  kodNum?: string | null
   // Kód (ISO 3166-1 - alpha-3) (db: KodAlpha3) - alpha-3)
-  kodAlpha3?: string
+  kodAlpha3?: string | null
   // Název státu zkrácený (db: NazZemeC25) - Název státu zkrácený)
-  nazZemeC25?: string
+  nazZemeC25?: string | null
   // Člen EU (db: ClenEu) - Člen EU)
-  clenEu?: boolean
+  clenEu?: boolean | null
   // Mezinárodní tel. předvolba (db: TelPredvolba) - Mezinárodní tel. předvolba)
-  telPredvolba?: string
+  telPredvolba?: string | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Krajský finanční úřad (db: Idfukraj) - Krajský finanční úřad)
-  fuKraj?: AFAdresar
+  fuKraj?: AFAdresar | null
   // Územní pracoviště (db: Idfuuzprac) - Územní pracoviště)
-  fuUzPrac?: AFAdresar
+  fuUzPrac?: AFAdresar | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

@@ -8,7 +8,6 @@ import { AFStredisko } from './AFStredisko'
 import { AFFakturaPrijata } from './AFFakturaPrijata'
 import { AFAdresar } from './AFAdresar'
 import { AFUcet } from './AFUcet'
-import { AFUzivatel } from './AFUzivatel'
 import { AFDanovyOdpis } from './AFDanovyOdpis'
 import { AFPriloha } from './AFPriloha'
 import { AFUcetniOdpis } from './AFUcetniOdpis'
@@ -25,141 +24,141 @@ export class AFMajetek extends AFEntity {
   static EntityType: string = 'MAJETEK'
 
   // ID (db: IdMajetku) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Inv.čís. (db: Kod) - Inventární číslo)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Cena (db: Cena) - Cena při zařazení [Kč])
-  cena?: Big
+  cena?: Big | null
   // Kusů (db: KusySoubor) - Kusů v souboru)
-  kusySoubor?: number
+  kusySoubor?: number | null
   // Druh (db: DruhK) - Druh)
-  druhK?: DruhMaj
+  druhK?: DruhMaj | null
   // Doklad (db: CidPoriz) - Doklad pořízení)
-  cidPoriz?: string
+  cidPoriz?: string | null
   // Způs.poř. (db: ZpusPor) - Způsob pořízení)
-  zpusPor?: string
+  zpusPor?: string | null
   // Koupeno (db: DatKoupe) - Datum koupě)
-  datKoupe?: Date
+  datKoupe?: Date | null
   // Vyrobeno (db: DatVyroby) - Datum výroby)
-  datVyroby?: Date
+  datVyroby?: Date | null
   // Výrobní číslo (db: VyrCis) - Výrobní číslo)
-  vyrCis?: string
+  vyrCis?: string | null
   // MJ záruky (db: MjZarukyK) - MJ záruky)
-  mjZarukyK?: MjZaruky
+  mjZarukyK?: MjZaruky | null
   // Záruka (db: Zaruka) - Záruka)
-  zaruka?: number
+  zaruka?: number | null
   // Zařazeno (db: DatZar) - Datum zařazení)
-  datZar?: Date
+  datZar?: Date | null
   // Odepsáno měs. (db: StariPor) - Odepsáno při zař. [měsíce])
-  stariPor?: number
+  stariPor?: number | null
   // Zůst.účet. (db: ZustUcet) - Zůstatek účetní [Kč])
-  zustUcet?: Big
+  zustUcet?: Big | null
   // Zůst.daň. (db: ZustDan) - Zůstatek daňový [Kč])
-  zustDan?: Big
+  zustDan?: Big | null
   // Tech.zh. (db: TechZhod) - Před zařazením bylo tech. zhod.)
-  techZhod?: boolean
+  techZhod?: boolean | null
   // Zač.daň.odp (db: DatZacDan) - Začátek daňových odpisů)
-  datZacDan?: Date
+  datZacDan?: Date | null
   // Zač.uč.odp. (db: DatZacUcet) - Začátek účetních odpisů)
-  datZacUcet?: Date
+  datZacUcet?: Date | null
   // Způs.odp. (db: ZpusOdpK) - Způsob odpisování)
-  zpusOdpK?: ZpusobOdp
+  zpusOdpK?: ZpusobOdp | null
   // Zvýš.1.rok (db: ZvysZrychK) - Zvýšení odpisu v 1. roce)
-  zvysZrychK?: ZvysZrych
+  zvysZrychK?: ZvysZrych | null
   // Účetní odp.? (db: NahrUcetOdpK) - Vytvářet úč. odpisy)
-  nahrUcetOdpK?: NahrUcet
+  nahrUcetOdpK?: NahrUcet | null
   // Doba úč.odp. (db: PredpisUcetOdp) - Počet měsíců odpisování)
-  predpisUcetOdp?: Big
+  predpisUcetOdp?: Big | null
   // EAN (db: EanKod) - EAN)
-  eanKod?: string
+  eanKod?: string | null
   // Účtovat zařazení (db: ) - Účtovat zařazení)
-  uctovatZar?: boolean
+  uctovatZar?: boolean | null
   // Stáří tech.zh. (db: StariTechZhod) - Stáří tech. zhod. [měsíce])
-  stariTechZhod?: number
+  stariTechZhod?: number | null
   // Zařazeno (db: DatUdalZar) - Datum události zařazení)
-  datUdalZar?: Date
+  datUdalZar?: Date | null
   // Vyřazeno (db: DatUdalVyr) - Datum události vyřazení)
-  datUdalVyr?: Date
+  datUdalVyr?: Date | null
   // Zámek (db: ZamekK) - Zámek)
-  zamekK?: Zamek
+  zamekK?: Zamek | null
   // SKP (db: Skp) - Standardní klasifikace produkce)
-  skp?: string
+  skp?: string | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Katastrální území (db: KatastrUzemi) - Katastrální území)
-  katastrUzemi?: string
+  katastrUzemi?: string | null
   // Parcela (db: Parcela) - Parcela)
-  parcela?: string
+  parcela?: string | null
   // Číslo (db: VozCislo) - Číslo)
-  vozCislo?: string
+  vozCislo?: string | null
   // SPZ (db: VozSpz) - SPZ)
-  vozSpz?: string
+  vozSpz?: string | null
   // Značka (db: VozZnacka) - Značka)
-  vozZnacka?: string
+  vozZnacka?: string | null
   // Model (db: VozModel) - Model)
-  vozModel?: string
+  vozModel?: string | null
   // Typ vozidla (db: VozTyp) - Typ vozidla)
-  vozTyp?: string
+  vozTyp?: string | null
   // Objem (db: VozObjem) - Objem)
-  vozObjem?: Big
+  vozObjem?: Big | null
   // Havarijní pojištění (db: VozHavar) - Havarijní pojištění)
-  vozHavar?: string
+  vozHavar?: string | null
   // Výše havarijního pojištění (db: VozHavarVyse) - Výše havarijního pojištění)
-  vozHavarVyse?: Big
+  vozHavarVyse?: Big | null
   // Výbava (db: VozVybava) - Výbava)
-  vozVybava?: string
+  vozVybava?: string | null
   // Odp.skup. (db: IdSazby) - Odpisová skupina)
-  sazba?: AFOdpisovaSkupina
+  sazba?: AFOdpisovaSkupina | null
   // Místnost (db: IdUmisMist) - Místnost)
-  mistnost?: AFUmisteni
+  mistnost?: AFUmisteni | null
   // Sekce (db: IdUmisSekce) - Sekce)
-  sekce?: AFUmisteni
+  sekce?: AFUmisteni | null
   // Objekt (db: IdUmisObj) - Objekt)
-  objekt?: AFUmisteni
+  objekt?: AFUmisteni | null
   // Typ (db: IdTypMaj) - Typ)
-  typMajetku?: AFTypMajetku
+  typMajetku?: AFTypMajetku | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
-  doklFak?: AFFakturaPrijata
+  doklFak?: AFFakturaPrijata | null
   // Dodavatel (db: IdFirmyDod) - Dodavatel)
-  dodavatel?: AFAdresar
+  dodavatel?: AFAdresar | null
   // Výrobce (db: IdFirmyVyr) - Výrobce)
-  vyrobce?: AFAdresar
+  vyrobce?: AFAdresar | null
   // Prim.účet (db: IdPrimUcet) - Primární účet)
-  primarniUcet?: AFUcet
+  primarniUcet?: AFUcet | null
   // Protiúč.zař. (db: IdProtiUcetZar) - Protiúčet zařazení)
-  protiUcetZarazeni?: AFUcet
+  protiUcetZarazeni?: AFUcet | null
   // Účet opr. (db: IdOpravUcet) - Účet oprávek)
-  opravnyUcet?: AFUcet
+  opravnyUcet?: AFUcet | null
   // Účet odp. (db: IdOdpUcet) - Účet odpisu)
-  odpisovyUcet?: AFUcet
+  odpisovyUcet?: AFUcet | null
   // Účet zůstatku vyřazení (db: IdZustVyrazUcet) - Účet zůstatku vyřazení)
-  zustVyrazUcet?: AFUcet
+  zustVyrazUcet?: AFUcet | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
 
   // Daňové odpisy (type: DANOVY_ODPIS) - danove-odpisy)
   'danove-odpisy'?: AFDanovyOdpis[]
@@ -656,7 +655,7 @@ export class AFMajetek extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

@@ -13,29 +13,29 @@ export class AFInventura extends AFEntity {
   static EntityType: string = 'INVENTURA'
 
   // ID (db: IdInventura) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Popis inventury (db: PopisInventury) - Popis inventury)
-  popisInventury?: string
+  popisInventury?: string | null
   // Typ inventury (db: TypInventury) - Typ inventury)
-  typInventury?: string
+  typInventury?: string | null
   // Datum zahájení (db: DatZahaj) - Datum zahájení)
-  datZahaj?: Date
+  datZahaj?: Date | null
   // Datum ukončení (db: DatKonec) - Datum ukončení)
-  datKonec?: Date
+  datKonec?: Date | null
   // Vedoucí (db: Vedouci) - Vedoucí)
-  vedouci?: string
+  vedouci?: string | null
   // Osoby (db: Osoby) - Osoby)
-  osoby?: string
+  osoby?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Stav inventury (db: StavK) - Stav inventury)
-  stavK?: StavInventury
+  stavK?: StavInventury | null
   // Sklad (db: IdSklad) - Sklad)
-  sklad?: AFSklad
+  sklad?: AFSklad | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

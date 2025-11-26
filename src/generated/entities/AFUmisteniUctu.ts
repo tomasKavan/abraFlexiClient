@@ -12,9 +12,9 @@ export class AFUmisteniUctu extends AFEntity {
   static EntityType: string = 'UMISTENI_UCTU'
 
   // Účet (db: ) - Účet)
-  ucet?: AFUcet
+  ucet?: AFUcet | null
   // Vybraný řádek (db: ) - Vybraný řádek)
-  vybranyRadek?: AFRadekSestavy
+  vybranyRadek?: AFRadekSestavy | null
 
 
 

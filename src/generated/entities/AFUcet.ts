@@ -15,41 +15,41 @@ export class AFUcet extends AFEntity {
   static EntityType: string = 'UCET'
 
   // ID (db: IdUcet) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Účet (db: Kod) - Číslo účtu)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Daňový (db: Danovy) - Daňový)
-  danovy?: boolean
+  danovy?: boolean | null
   // Saldo (db: Saldo) - Saldo)
-  saldo?: boolean
+  saldo?: boolean | null
   // Typ účtu (db: TypUctuK) - Typ účtu)
-  typUctuK?: TypUctu
+  typUctuK?: TypUctu | null
   // Druh účtu (db: DruhUctuK) - Druh účtu)
-  druhUctuK?: DruhUctu
+  druhUctuK?: DruhUctu | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Syntetický účet (db: IdStdUcet) - Syntetický účet)
-  stdUcet?: AFUcetniOsnova
+  stdUcet?: AFUcetniOsnova | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

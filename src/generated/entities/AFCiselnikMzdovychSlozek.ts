@@ -11,121 +11,121 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
   static EntityType: string = 'CISELNIK_MZDOVYCH_SLOZEK'
 
   // ID (db: IdCisMzdSloz) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: Date
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: Date
+  popis?: string | null
+  // Platí od data (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do data (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Pořadí (db: CisRad) - Pořadí)
-  cisRad?: number
+  cisRad?: number | null
   // Typ složky (db: TypSlozkyK) - Typ složky)
-  typSlozkyK?: TypSlozky
+  typSlozkyK?: TypSlozky | null
   // Skupina složky (db: SkupSlozkyK) - Skupina složky)
-  skupSlozkyK?: SkupinaSlozky
+  skupSlozkyK?: SkupinaSlozky | null
   // Společná pro všechny pracovní poměry osoby (db: NaOsobu) - Společná pro všechny pracovní poměry osoby)
-  naOsobu?: boolean
+  naOsobu?: boolean | null
   // x Počáteční datum (db: VsDatOd) - x Počáteční datum)
-  vsDatOd?: boolean
+  vsDatOd?: boolean | null
   // x Koncové datum (db: VsDatDo) - x Koncové datum)
-  vsDatDo?: boolean
+  vsDatDo?: boolean | null
   // x Dny kalendářní (db: VsDnyKal) - x Dny kalendářní)
-  vsDnyKal?: boolean
+  vsDnyKal?: boolean | null
   // x Dny pracovní (db: VsDnyPrac) - x Dny pracovní)
-  vsDnyPrac?: boolean
+  vsDnyPrac?: boolean | null
   // x Dny ve svátek (db: VsDnySvatek) - x Dny ve svátek)
-  vsDnySvatek?: boolean
+  vsDnySvatek?: boolean | null
   // x Hodiny (db: VsHodiny) - x Hodiny)
-  vsHodiny?: boolean
+  vsHodiny?: boolean | null
   // x Hodiny ve svátek (db: VsHodinySvatek) - x Hodiny ve svátek)
-  vsHodinySvatek?: boolean
+  vsHodinySvatek?: boolean | null
   // x Částka za hodinu (db: VsCastNaHod) - x Částka za hodinu)
-  vsCastNaHod?: boolean
+  vsCastNaHod?: boolean | null
   // x Částka za den (db: VsCastNaDen) - x Částka za den)
-  vsCastNaDen?: boolean
+  vsCastNaDen?: boolean | null
   // x Procento / konstanta (db: VsProcMzd) - x Procento / konstanta)
-  vsProcMzd?: boolean
+  vsProcMzd?: boolean | null
   // x Základ (db: VsZaklMzd) - x Základ)
-  vsZaklMzd?: boolean
+  vsZaklMzd?: boolean | null
   // x Základ je krácen úvazkem (db: VsZaklJeKracen) - x Základ je krácen úvazkem)
-  vsZaklJeKracen?: boolean
+  vsZaklJeKracen?: boolean | null
   // x Částka (db: VsCastMzd) - x Částka)
-  vsCastMzd?: boolean
+  vsCastMzd?: boolean | null
   // x Uživatelská změna částky (db: VsZmenaCastMzd) - x Uživatelská změna částky)
-  vsZmenaCastMzd?: boolean
+  vsZmenaCastMzd?: boolean | null
   // x Počet měsíců za které složka platí (db: VsPocetMes) - x Počet měsíců za které složka platí)
-  vsPocetMes?: boolean
+  vsPocetMes?: boolean | null
   // x Číslo dokladu (pro nemoc) (db: VsCisDoklNem) - x Číslo dokladu (pro nemoc))
-  vsCisDoklNem?: boolean
+  vsCisDoklNem?: boolean | null
   // x Doplatek do zdravotního pojištění (db: VsDoplatZdrPoj) - x Doplatek do zdravotního pojištění)
-  vsDoplatZdrPoj?: boolean
+  vsDoplatZdrPoj?: boolean | null
   // x Denní průměr (db: VsPrumNaDenNem) - x Denní průměr)
-  vsPrumNaDenNem?: boolean
+  vsPrumNaDenNem?: boolean | null
   // x Hodinový průměr (db: VsPrumNaHodNem) - x Hodinový průměr)
-  vsPrumNaHodNem?: boolean
+  vsPrumNaHodNem?: boolean | null
   // Význam (db: VyznamK) - Význam)
-  vyznamK?: VyznamSlozky
+  vyznamK?: VyznamSlozky | null
   // Dny pr. (db: DnyPrac) - Dny pracovní)
-  dnyPrac?: Big
+  dnyPrac?: Big | null
   // Dny kal. (db: DnyKal) - Dny kalendářní)
-  dnyKal?: Big
+  dnyKal?: Big | null
   // Dny sv. (db: DnySvatek) - Dny ve svátek)
-  dnySvatek?: Big
+  dnySvatek?: Big | null
   // Hodiny (db: Hodiny) - Hodiny)
-  hodiny?: Big
+  hodiny?: Big | null
   // Kč/hod. (db: CastkaHod) - Částka za hodinu)
-  castkaHod?: Big
+  castkaHod?: Big | null
   // Kč/den (db: CastkaDen) - Částka za den)
-  castkaDen?: Big
+  castkaDen?: Big | null
   // % / konst. (db: ProcMzd) - Procento / konstanta)
-  procMzd?: Big
+  procMzd?: Big | null
   // Základ (db: ZaklMzd) - Základ mzdy)
-  zaklMzd?: Big
+  zaklMzd?: Big | null
   // x Základ je krácen úvazkem (db: ZaklJeKracen) - x Základ je krácen úvazkem)
-  zaklJeKracen?: boolean
+  zaklJeKracen?: boolean | null
   // Částka (db: CastMzd) - Částka)
-  castMzd?: Big
+  castMzd?: Big | null
   // Uživ.zm. (db: ZmenaCastMzd) - Uživatelská změna částky)
-  zmenaCastMzd?: boolean
+  zmenaCastMzd?: boolean | null
   // Platí (db: PocetMes) - Počet měsíců za které složka platí)
-  pocetMes?: number
+  pocetMes?: number | null
   // Doklad (db: CisDoklNem) - Číslo dokladu (pro nemoc))
-  cisDoklNem?: number
+  cisDoklNem?: number | null
   // Denní průměr (db: PrumNaDenNem) - Denní průměr)
-  prumNaDenNem?: Big
+  prumNaDenNem?: Big | null
   // Hodinový průměr (db: PrumNaHodNem) - Hodinový průměr)
-  prumNaHodNem?: Big
+  prumNaHodNem?: Big | null
   // Dopl.ZP (db: DoplatZdravK) - Doplatek do zdravotního pojištění)
-  doplatZdravK?: any
+  doplatZdravK?: any | null
   // Pracovní složka (nezobrazuje se) (db: Pracovni) - Pracovní složka (nezobrazuje se))
-  pracovni?: boolean
+  pracovni?: boolean | null
   // Ukládat nulové (db: UkladatNulove) - Ukládat nulové)
-  ukladatNulove?: boolean
+  ukladatNulove?: boolean | null
   // Malá páska (db: PaskaMala) - Malá páska)
-  paskaMala?: boolean
+  paskaMala?: boolean | null
   // Velká páska (db: PaskaVelka) - Velká páska)
-  paskaVelka?: boolean
+  paskaVelka?: boolean | null
   // Viditelná pole (db: PaskaPole) - Viditelná pole)
-  paskaPole?: string
+  paskaPole?: string | null
   // Zápočtový list (db: ZapoctovyList) - Zápočtový list)
-  zapoctovyList?: boolean
+  zapoctovyList?: boolean | null
   // UUID (db: Uuid) - UUID)
-  uuid?: string
+  uuid?: string | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

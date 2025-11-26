@@ -10,31 +10,31 @@ export class AFDoklad extends AFEntity {
   static EntityType: string = 'DOKLAD_VIEW'
 
   // ID (náhled) (db: ) - ID (náhled))
-  idDokladView?: number
+  idDokladView?: number | null
   // ID dokladu (db: ) - ID dokladu)
-  idDokl?: number
+  idDokl?: number | null
   // Zkratka (db: ) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Popis (db: ) - Popis)
-  popis?: string
+  popis?: string | null
   // Variabilní symbol (db: ) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Celkem [Kč] (db: ) - Celkem [Kč])
-  sumCelkem?: Big
+  sumCelkem?: Big | null
   // Název firmy nebo jméno osoby (db: ) - Název firmy - jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
   // IČO (db: ) - IČO)
-  ic?: string
+  ic?: string | null
   // DIČ (db: ) - DIČ)
-  dic?: string
+  dic?: string | null
   // Pošt. jméno firmy (db: ) - Firma)
-  faNazev?: string
+  faNazev?: string | null
   // Modul (db: ) - Modul)
-  modul?: string
+  modul?: string | null
   // Název evidence (db: ) - Název evidence)
-  evdName?: string
+  evdName?: string | null
   // Podmodul (zápočet, prodejka) (db: ) - Podmodul (zápočet, prodejka))
-  subModul?: boolean
+  subModul?: boolean | null
 
 
 

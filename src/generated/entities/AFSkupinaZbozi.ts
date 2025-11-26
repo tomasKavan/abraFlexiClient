@@ -13,81 +13,83 @@ export class AFSkupinaZbozi extends AFEntity {
   static EntityType: string = 'SKUPINA_ZBOZI'
 
   // ID (db: IdSkupZboz) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Typ ceny (db: TypCenyDphK) - Typ ceny)
-  typCenyDphK?: TypCeny
+  typCenyDphK?: TypCeny | null
   // Výchozí cena (db: TypCenyVychoziK) - Výchozí cena)
-  typCenyVychoziK?: TypCenyVychozi
+  typCenyVychoziK?: TypCenyVychozi | null
   // Způsob výpočtu (db: TypVypCenyK) - Způsob výpočtu)
-  typVypCenyK?: TypVypCeny
-  // Marže / Rabat / Sleva [%] (db: ProcZakl) - Marže / Rabat / Sleva [%])
-  procZakl?: Big
+  typVypCenyK?: TypVypCeny | null
+  // Marže / Přirážka / Rabat / Sleva [%] (db: ProcZakl) - Marže / Přirážka / Rabat / Sleva [%])
+  procZakl?: Big | null
   // Výchozí cena pro množ. slevy (db: TypCenyVychozi25K) - Výchozí cena)
-  typCenyVychozi25K?: TypCenyVychozi
+  typCenyVychozi25K?: TypCenyVychozi | null
   // Způsob výpočtu pro množ. slevy (db: TypVypCeny25K) - Způsob výpočtu)
-  typVypCeny25K?: TypVypCeny
+  typVypCeny25K?: TypVypCeny | null
   // Limit MJ 2 (db: LimMnoz2) - Množ. limit 2)
-  limMnoz2?: Big
+  limMnoz2?: Big | null
   // Limit MJ 3 (db: LimMnoz3) - Množ. limit 3)
-  limMnoz3?: Big
+  limMnoz3?: Big | null
   // Limit MJ 4 (db: LimMnoz4) - Množ. limit 4)
-  limMnoz4?: Big
+  limMnoz4?: Big | null
   // Limit MJ 5 (db: LimMnoz5) - Množ. limit 5)
-  limMnoz5?: Big
+  limMnoz5?: Big | null
   // %2 (db: Procento2) - % 2)
-  procento2?: Big
+  procento2?: Big | null
   // %3 (db: Procento3) - %3)
-  procento3?: Big
+  procento3?: Big | null
   // %4 (db: Procento4) - %4)
-  procento4?: Big
+  procento4?: Big | null
   // %5 (db: Procento5) - %5)
-  procento5?: Big
-  // Způsob zaokr. ceny (db: ZaokrJakK) - Způsob)
-  zaokrJakK?: ZaokrJak
-  // Řád zaokr. ceny (db: ZaokrNaK) - Řád)
-  zaokrNaK?: ZaokrNa
-  // Hlídat minimální marži (db: HlidatMinMarzi) - Min. marže [%])
-  hlidatMinMarzi?: boolean
-  // Minimální marže (db: MinMarze) - Minimální marže)
-  minMarze?: Big
+  procento5?: Big | null
+  // Způsob zaokrouhlení - Cena (db: ZaokrJakK) - Způsob)
+  zaokrJakK?: ZaokrJak | null
+  // Řád zaokrouhlení - Cena (db: ZaokrNaK) - Řád)
+  zaokrNaK?: ZaokrNa | null
+  // Hlídat min. cen. rozdíl (db: HlidatMinMarzi) - Hlídat minimální cenový rozdíl)
+  hlidatMinMarzi?: boolean | null
+  // Minimální cenový rozdíl (db: MinMarze) - Minimální cenový rozdíl [%])
+  minMarze?: Big | null
+  // Typ min. cen. rozdílu (db: TypVypoctuHlidatMinK) - Typ hlídaného minimálního cenového rozdílu)
+  typVypoctuHlidatMinK?: TypVypCeny | null
   // Zahájit workflow při založení dokladu (db: WorkFlow) - Zahájit workflow při založení dokladu)
-  workFlow?: boolean
+  workFlow?: boolean | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
-  // účet přijaté f. (db: IdProtiUcetPfa) - pro přijaté faktury / pokladna - výdej)
-  ucetProtiPfa?: AFUcet
+  declare stitky?: string | null
+  // účet přijaté faktury (db: IdProtiUcetPfa) - pro přijaté faktury / pokladna - výdej)
+  ucetProtiPfa?: AFUcet | null
   // účet vydané f. (db: IdProtiUcetVfa) - pro vydané faktury / pokladna - příjem)
-  ucetProtiVfa?: AFUcet
+  ucetProtiVfa?: AFUcet | null
   // účet skl. - P (db: IdProtiUcetSklP) - pro příjem na sklad)
-  ucetProtiSklp?: AFUcet
+  ucetProtiSklp?: AFUcet | null
   // účet skl. - V k faktuře (db: IdProtiUcetSklV) - pro výdejku k faktuře)
-  ucetProtiSklv?: AFUcet
+  ucetProtiSklv?: AFUcet | null
   // účet skl. - holý V (db: IdProtiUcetSklHolyV) - pro holou výdejku)
-  ucetProtiSklHolyv?: AFUcet
+  ucetProtiSklHolyv?: AFUcet | null
   // účet skl. - převodka V (db: IdProtiUcetSklPrevV) - pro převodku výdej)
-  ucetProtiSklPrevv?: AFUcet
+  ucetProtiSklPrevv?: AFUcet | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -303,6 +305,15 @@ export class AFSkupinaZbozi extends AFEntity {
       type: PropertyType.Numeric,
       isArray: false,
       digits: 6,
+      
+    },
+    typVypoctuHlidatMinK : {
+      key: 'typVypoctuHlidatMinK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'TypVypCeny',
+      enum: TypVypCeny,
       
     },
     workFlow : {

@@ -33,139 +33,139 @@ export class AFTypFakturyVydane extends AFEntity {
   static EntityType: string = 'FAKTURA_OUT_TYP'
 
   // ID (db: IdTypDokl) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Platí od roku (db: PlatiOd) - Platí od roku)
-  platiOd?: number
+  platiOd?: number | null
   // Platí do roku (db: PlatiDo) - Platí do roku)
-  platiDo?: number
+  platiDo?: number | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
-  ucetni?: boolean
+  ucetni?: boolean | null
   // Druh (db: TypDoklK) - Druh)
-  typDoklK?: TypDokladu
+  typDoklK?: TypDokladu | null
   // Sleva [%] (db: SlevaDokl) - Sleva [%])
-  slevaDokl?: Big
-  // Způsob zaokr. Celkem (db: ZaokrJakSumK) - Celkem (způsob))
-  zaokrJakSumK?: ZaokrJak
-  // Řád zaokr. Celkem (db: ZaokrNaSumK) - Celkem (řády))
-  zaokrNaSumK?: ZaokrNa
-  // Způsob zaokr. DPH (db: ZaokrJakDphK) - DPH (způsob))
-  zaokrJakDphK?: ZaokrJak
-  // Řád zaokr. DPH (db: ZaokrNaDphK) - DPH (řády))
-  zaokrNaDphK?: ZaokrNa
+  slevaDokl?: Big | null
+  // Způsob zaokrouhlení - Celkem (db: ZaokrJakSumK) - Celkem (způsob))
+  zaokrJakSumK?: ZaokrJak | null
+  // Řád zaokrouhlení - Celkem (db: ZaokrNaSumK) - Celkem (řády))
+  zaokrNaSumK?: ZaokrNa | null
+  // Způsob zaokrouhlení - DPH (db: ZaokrJakDphK) - DPH (způsob))
+  zaokrJakDphK?: ZaokrJak | null
+  // Řád zaokrouhlení - DPH (db: ZaokrNaDphK) - DPH (řády))
+  zaokrNaDphK?: ZaokrNa | null
   // Metoda zaokrouhlení (db: MetodaZaokrDoklK) - Metoda zaokrouhlení)
-  metodaZaokrDoklK?: MetodaZaokr
+  metodaZaokrDoklK?: MetodaZaokr | null
   // Korekce DPH (db: VytvaretKorPol) - Korekce DPH)
-  vytvaretKorPol?: boolean
+  vytvaretKorPol?: boolean | null
   // Zaokrouhlit po odpočtu (db: ZaokrouhlitPoOdpoctu) - Zaokrouhlit po odpočtu)
-  zaokrouhlitPoOdpoctu?: boolean
+  zaokrouhlitPoOdpoctu?: boolean | null
   // Splatnost [dny] (db: SplatDny) - Splatnost [dny])
-  splatDny?: number
+  splatDny?: number | null
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
-  formaUhradyCis?: AFFormaUhrady
+  formaUhradyCis?: AFFormaUhrady | null
   // Doprava a vyskladnění (db: Doprava) - Doprava a vyskladnění)
-  doprava?: string
+  doprava?: string | null
   // Popis pro doklad (db: PopisDoklad) - Popis pro doklad)
-  popisDoklad?: string
+  popisDoklad?: string | null
   // Úvodní text (tiskne se před položkami) (db: UvodTxt) - Úvodní text (tiskne se před položkami))
-  uvodTxt?: string
+  uvodTxt?: string | null
   // Závěrečný text (tiskne se za položkami) (db: ZavTxt) - Závěrečný text (tiskne se za položkami))
-  zavTxt?: string
+  zavTxt?: string | null
   // Dokladová řada (db: IdRadyPrijem) - Dokladová řada)
-  radaPrijem?: AFRadaFakturyVydane
+  radaPrijem?: AFRadaFakturyVydane | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: IdCinnost) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Bankovní účet (db: IdBspBan) - Bankovní účet)
-  bspBan?: AFBankovniUcet
+  bspBan?: AFBankovniUcet | null
   // Typ příjemky (db: IdTypProtiDokladuPrijem) - Typ příjemky)
-  typProtiDokladuPrijem?: AFTypSkladovyPohyb
+  typProtiDokladuPrijem?: AFTypSkladovyPohyb | null
   // Typ výdejky (db: IdTypProtiDokladuVydej) - Typ výdejky)
-  typProtiDokladuVydej?: AFTypSkladovyPohyb
+  typProtiDokladuVydej?: AFTypSkladovyPohyb | null
   // Konstantní symbol (db: IdKonSym) - Konstantní symbol)
-  konSym?: AFKonstSymbol
+  konSym?: AFKonstSymbol | null
   // Účet MD odběratele (db: IdPrimUcet) - Účet MD)
-  primUcet?: AFUcet
+  primUcet?: AFUcet | null
   // Předpis zaúčtování [DAL] (db: IdTypUcOpP) - Předpis zaúčtování [DAL])
-  typUcOpPrijem?: AFPredpisZauctovani
+  typUcOpPrijem?: AFPredpisZauctovani | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Stát DPH (db: IdStatDph) - Stát DPH)
-  statDph?: AFStatDph
+  statDph?: AFStatDph | null
   // Aut. tisk (db: TiskAutomat) - Automaticky tisknout při vytvoření nového dokladu)
-  tiskAutomat?: boolean
+  tiskAutomat?: boolean | null
   // Stát odesl. (db: IdStatOdesl) - Stát odesl.)
-  statOdesl?: AFStat
+  statOdesl?: AFStat | null
   // Stát určení (db: IdStatUrc) - Stát určení)
-  statUrc?: AFStat
+  statUrc?: AFStat | null
   // Stát původu (db: IdStatPuvod) - Stát původu)
-  statPuvod?: AFStat
+  statPuvod?: AFStat | null
   // Podmínky dodání (db: IdDodPodm) - Podmínky dodání)
-  dodPodm?: AFIntrastatDodaciPodminky
+  dodPodm?: AFIntrastatDodaciPodminky | null
   // Zvláštní pohyby (db: IdZvlPoh) - Zvláštní pohyby)
-  zvlPoh?: AFIntrastatZvlastniPohyb
+  zvlPoh?: AFIntrastatZvlastniPohyb | null
   // Transakce (db: IdObchTrans) - Transakce)
-  obchTrans?: AFIntrastatObchodniTransakce
+  obchTrans?: AFIntrastatObchodniTransakce | null
   // Druh dopravy (db: IdDruhDopr) - Druh dopravy)
-  druhDopr?: AFIntrastatDruhDopravy
+  druhDopr?: AFIntrastatDruhDopravy | null
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
-  krajUrc?: AFIntrastatKrajUrceni
+  krajUrc?: AFIntrastatKrajUrceni | null
   // Generovat sklad (db: GenerovatSkl) - Automaticky generovat skladové doklady a vyžadovat zadání výrobních čísel.)
-  generovatSkl?: boolean
+  generovatSkl?: boolean | null
   // Řazení položek pro tisk (db: RazeniProTiskK) - Řazení položek pro tisk)
-  razeniProTiskK?: RazeniProTisk
+  razeniProTiskK?: RazeniProTisk | null
   // Primární typ dokladu (db: Primarni) - Primární typ dokladu)
-  primarni?: boolean
+  primarni?: boolean | null
   // Prodejka (db: Prodejka) - Prodejka)
-  prodejka?: boolean
+  prodejka?: boolean | null
   // Automaticky hradit (db: UhrAuto) - Automaticky hradit nezaúčtovanými přeplatky v bance a pokladně)
-  uhrAuto?: boolean
+  uhrAuto?: boolean | null
   // Automatický zápočet (db: ZapAuto) - Použít na automatizovaný vzájemný zápočet)
-  zapAuto?: boolean
+  zapAuto?: boolean | null
   // Automaticky posílat e-mailem klientovi (db: AutoMail) - Automaticky posílat e-mailem klientovi)
-  autoMail?: boolean
+  autoMail?: boolean | null
   // Forma dopravy (db: IdFormaDopravy) - Forma dopravy)
-  formaDopravy?: AFFormaDopravy
+  formaDopravy?: AFFormaDopravy | null
   // Text pro odesílání dokladu e-mailem (db: EmailTxt) - Text pro odesílání dokladu e-mailem)
-  emailTxt?: string
+  emailTxt?: string | null
   // Výkaz EkoKom (db: EkokomK) - Výkaz EkoKom)
-  ekokomK?: Ekokom
+  ekokomK?: Ekokom | null
   // VS z čís.obj. (db: VsCisObj) - Variabilní symbol primárně z čísla objednávky)
-  vsCisObj?: boolean
+  vsCisObj?: boolean | null
   // Řádek kontrolního hlášení DPH (db: IdClenKonVykDph) - Řádek kontrolního hlášení DPH)
-  clenKonVykDph?: AFCleneniKontrolniHlaseni
+  clenKonVykDph?: AFCleneniKontrolniHlaseni | null
   // Automaticky odpočítávat (db: OdpocAuto) - Povolit automatický odpočet dokladů tohoto typu)
-  odpocAuto?: boolean
+  odpocAuto?: boolean | null
   // Šablona e-mail (db: IdSablonaMail) - Šablona e-mail)
-  sablonaMail?: AFSablonaMail
+  sablonaMail?: AFSablonaMail | null
   // Vytvářet recyklační poplatky (db: GenerovatRecyklacniPoplatky) - Vytvářet recyklační poplatky)
-  generovatRecyklacniPoplatky?: boolean
+  generovatRecyklacniPoplatky?: boolean | null
   // Preferovat na dokladech (db: StatDphTd) - Preferovat na dokladech)
-  statDphTd?: boolean
+  statDphTd?: boolean | null
   // ISDOC v e-mailu (db: IsdocPrilohaMailu) - ISDOC v e-mailu)
-  isdocPrilohaMailu?: boolean
+  isdocPrilohaMailu?: boolean | null
 
   // Automatický tisk (type: AUTOTISK) - autoTisky)
   autoTisky?: AFAutotisk[]

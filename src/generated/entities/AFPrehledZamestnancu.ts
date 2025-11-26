@@ -13,47 +13,47 @@ export class AFPrehledZamestnancu extends AFEntity {
   static EntityType: string = 'PREHLED_ZAMESTNANCU'
 
   // ID (db: ) - ID)
-  idPrehledZamestnancu?: number
+  idPrehledZamestnancu?: number | null
   // Rok (db: ) - Rok)
-  rok?: number
+  rok?: number | null
   // Osobní číslo (db: ) - Osobní číslo)
-  osbCis?: string
+  osbCis?: string | null
   // Příjmení a jméno (db: ) - Příjmení a jméno)
-  jmeno?: string
+  jmeno?: string | null
   // Funkce (db: ) - Funkce)
-  funkce?: string
+  funkce?: string | null
   // Datum narození (db: ) - Datum narození)
-  datNaroz?: Date
+  datNaroz?: Date | null
   // Odpočet dětí (db: ) - Odpočet dětí)
-  odpocetDeti?: number
+  odpocetDeti?: number | null
   // Počátek prac.poměru (db: ) - Počátek prac.poměru)
-  zacatek?: Date
+  zacatek?: Date | null
   // Konec prac.poměru (db: ) - Konec prac.poměru)
-  konecPomeru?: Date
+  konecPomeru?: Date | null
   // Konec zkušební doby (db: ) - Konec zkušební doby)
-  konecZkusDoby?: Date
+  konecZkusDoby?: Date | null
   // Konec určité doby (db: ) - Konec určité doby)
-  konecUrciteDoby?: Date
+  konecUrciteDoby?: Date | null
   // Úvazek hodin/týden (db: ) - Úvazek hodin/týden)
-  uvazHodTydne?: Big
+  uvazHodTydne?: Big | null
   // Úvazek koeficient (db: ) - Úvazek koeficient)
-  uvazKoef?: Big
+  uvazKoef?: Big | null
   // Dovolená počátek (hod) (db: ) - Dovolená počátek (hod))
-  dovolPocatek?: Big
+  dovolPocatek?: Big | null
   // Čerpaná dovolená od počátku roku (hod) (db: ) - Čerpaná dovolená od počátku roku (hod))
-  dovolVybrano?: Big
-  // Dovolená zbývá (hod) (db: ) - Dovolená zbývá (hod))
-  dovolZbyva?: Big
+  dovolVybrano?: Big | null
+  // Dovolená zbývá nárok aktuální (hod) (db: ) - Dovolená zbývá nárok aktuální (hod))
+  dovolZbyva?: Big | null
   // Prac.právní průměr (db: ) - Prac.právní průměr)
-  pracPravPrum?: Big
+  pracPravPrum?: Big | null
   // Odpracovaná doba (db: ) - Odpracovaná doba)
-  dobaOdpr?: Big
+  dobaOdpr?: Big | null
   // Osoba (db: ) - Osoba)
-  osoba?: AFOsoba
+  osoba?: AFOsoba | null
   // Pracovní poměr (db: ) - Pracovní poměr)
-  pracPom?: AFPracovniPomer
+  pracPom?: AFPracovniPomer | null
   // Typ pracovního poměru (db: ) - Typ pracovního poměru)
-  typPracPom?: AFTypPracovnihoPomeru
+  typPracPom?: AFTypPracovnihoPomeru | null
 
 
 

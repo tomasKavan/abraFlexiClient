@@ -2,7 +2,6 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFTypDokladu } from './AFTypDokladu'
 import { AFMena } from './AFMena'
-import { AFUzivatel } from './AFUzivatel'
 
 
 import { TypVazbyDokl, ModulUcetni } from '../AFEntityEnums'
@@ -13,57 +12,57 @@ export class AFVazebniDoklad extends AFEntity {
   static EntityType: string = 'VAZEBNI_DOKLAD'
 
   // ID (db: ) - ID)
-  idVazebniDoklad?: number
+  idVazebniDoklad?: number | null
   // ID vazby (db: ) - ID vazby)
-  idVazby?: number
+  idVazby?: number | null
   // Typ vazby (db: ) - Typ vazby)
-  typVazbyK?: TypVazbyDokl
+  typVazbyK?: TypVazbyDokl | null
   // Storno (db: ) - Storno)
-  storno?: boolean
+  storno?: boolean | null
   // ID dokladu (db: ) - ID dokladu)
-  idDokl?: number
+  idDokl?: number | null
   // Modul (db: ) - Modul)
-  modul?: string
+  modul?: string | null
   // Název modulu (db: ) - Název modulu)
-  modulK?: ModulUcetni
+  modulK?: ModulUcetni | null
   // Interní číslo (db: ) - Interní číslo)
-  declare kod?: string
+  declare kod?: string | null
   // Variabilní symbol (db: ) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Datum vyst. (db: ) - Vystaveno)
-  datVyst?: Date
-  // Datum zaúčt. (db: ) - Datum zaúčtování)
-  datUcto?: Date
+  datVyst?: Date | null
+  // Datum zaúčtování (db: ) - Datum zaúčtování)
+  datUcto?: Date | null
   // Celkem [Kč] (db: ) - Celkem [Kč])
-  sumCelkem?: Big
+  sumCelkem?: Big | null
   // Celkem [měna] (db: ) - Celkem [měna])
-  sumCelkemMen?: Big
+  sumCelkemMen?: Big | null
   // Popis (db: ) - Popis)
-  popis?: string
+  popis?: string | null
   // Poznámka (db: ) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Vzdálenost (db: ) - Vzdálenost)
-  uroven?: number
+  uroven?: number | null
   // Stav dokladu (db: ) - Stav dokladu)
-  stavK?: any
+  stavK?: any | null
   // Typ dokladu (db: ) - Typ dokladu)
-  typDokl?: AFTypDokladu
+  typDokl?: AFTypDokladu | null
   // Měna (db: ) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Uživatel (db: ) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Název firmy nebo jméno osoby (db: ) - Název firmy - jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
   // Město (db: ) - Město)
-  mesto?: string
+  mesto?: string | null
   // Již uhrazeno [Kč] (db: ) - Již uhrazeno [Kč])
-  juhSum?: Big
+  juhSum?: Big | null
   // Již uhrazeno [měna] (db: ) - Již uhrazeno [měna])
-  juhSumMen?: Big
+  juhSumMen?: Big | null
   // Zbývá uhradit [Kč] (db: ) - Zbývá uhradit [Kč])
-  zbyvaUhradit?: Big
+  zbyvaUhradit?: Big | null
   // Zbývá uhradit [měna] (db: ) - Zbývá uhradit [měna])
-  zbyvaUhraditMen?: Big
+  zbyvaUhraditMen?: Big | null
 
 
 
@@ -197,7 +196,7 @@ export class AFVazebniDoklad extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

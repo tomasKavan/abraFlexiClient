@@ -17,80 +17,108 @@ export class AFAnalyzaZakazky extends AFEntity {
   static EntityName: string = 'Účetní analýza zakázky'
   static EntityType: string = 'ANALYZA_ZAKAZKY'
 
+  // Poslední změna (db: ) - Poslední změna)
+  lastUpdate?: Date | null
+  // Upravil (db: ) - Upravil)
+  updatedBy?: any | null
   // Řádky DPH (db: ) - Řádky DPH)
-  clenDph?: AFCleneniDph
+  clenDph?: AFCleneniDph | null
   // Datum splatnosti (db: ) - Datum splatnosti)
-  datSplat?: Date
+  datSplat?: Date | null
   // Datum úhrady (db: ) - Datum úhrady)
-  datUhr?: Date
+  datUhr?: Date | null
   // Datum vyst. (db: ) - Vystaveno)
-  datVyst?: Date
+  datVyst?: Date | null
   // Int.čís.dokladu (db: ) - Interní číslo dokladu)
-  doklad?: string
+  doklad?: string | null
   // Uplatnit zdaň. plnění (db: ) - Uplatnit zdaň. plnění)
-  duzpUcto?: Date
-  // Datum zaúčt. (db: ) - Datum zaúčtování)
-  datUcto?: Date
+  duzpUcto?: Date | null
+  // Datum zaúčtování (db: ) - Datum zaúčtování)
+  datUcto?: Date | null
+  // Období zaúčtování (db: ) - Období zaúčtování)
+  postingPeriod?: Date | null
   // Zkratka firmy (db: ) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // ID (db: ) - ID)
-  idUcetniDenik?: number
+  idUcetniDenik?: number | null
   // Kurz (db: ) - Kurz)
-  kurz?: Big
+  kurz?: Big | null
+  // Kurz. množství (db: ) - Kurz. množství)
+  kurzMnozstvi?: Big | null
   // Kód měny (db: ) - Kód měny)
-  mena?: AFMena
+  mena?: AFMena | null
   // Modul (db: ) - Modul)
-  modul?: string
+  modul?: string | null
   // Název firmy nebo jméno osoby (db: ) - Název firmy - jméno)
-  nazFirmy?: string
+  nazFirmy?: string | null
+  // DIČ (db: ) - DIČ)
+  dic?: string | null
   // Popis (db: ) - Popis)
-  popis?: string
+  popis?: string | null
   // Protiúčet (db: ) - Protiúčet)
-  protiUcet?: AFUcet
+  protiUcet?: AFUcet | null
   // Stát DPH (db: ) - Stát DPH)
-  statDph?: AFStatDph
+  statDph?: AFStatDph | null
   // Stav úhrady (db: ) - Stav úhrady)
-  stavUhrK?: StavUhr
+  stavUhrK?: StavUhr | null
   // Uživatelský stav (db: ) - Uživatelský stav)
-  stavUzivK?: StavUziv
+  stavUzivK?: StavUziv | null
   // Název modulu (db: ) - Název modulu)
-  modulK?: ModulUcetni
+  modulK?: ModulUcetni | null
   // Středisko (db: ) - Středisko)
-  stredisko?: AFStredisko
-  // DAL v měně (db: ) - Částka DAL v měně)
-  sumMenDal?: Big
-  // MD v měně (db: ) - Částka MD v měně)
-  sumMenMd?: Big
-  // DAL v Kč (db: ) - Částka DAL [Kč])
-  sumTuzDal?: Big
-  // MD v Kč (db: ) - Částka MD [Kč])
-  sumTuzMd?: Big
+  stredisko?: AFStredisko | null
+  // DAL [měna] (db: ) - Částka DAL [měna])
+  sumMenDal?: Big | null
+  // MD [měna] (db: ) - Částka MD [měna])
+  sumMenMd?: Big | null
+  // DAL [Kč] (db: ) - Částka DAL [Kč])
+  sumTuzDal?: Big | null
+  // MD [Kč] (db: ) - Částka MD [Kč])
+  sumTuzMd?: Big | null
   // DPH [%] (db: ) - DPH [%])
-  szbDph?: Big
+  szbDph?: Big | null
   // Sazba DPH (db: ) - Sazba DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // Účet (db: ) - Účet)
-  ucet?: AFUcet
+  ucet?: AFUcet | null
   // Variabilní symbol (db: ) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Zakázka (db: ) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // ID dokladu (db: ) - ID dokladu)
-  idDokl?: number
+  idDokl?: number | null
   // Zaúčtováno (db: ) - Stav zaúčtování)
-  zuctovano?: boolean
+  zuctovano?: boolean | null
   // Párovací symbol (db: ) - Párovací symbol)
-  parSymbol?: string
+  parSymbol?: string | null
   // Činnost (db: ) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
   // Název účtu (db: ) - Název účtu)
-  nazevUctu?: string
+  nazevUctu?: string | null
   // Vynechat ze salda (db: ) - Vynechat ze salda)
-  vyloucitSaldo?: boolean
+  vyloucitSaldo?: boolean | null
+  // Položka pro DPH částku (db: ) - Položka pro DPH částku)
+  vatItem?: boolean | null
+  // Převrácení stran účtování (db: ) - Převrácení stran účtování)
+  accountsSwapped?: boolean | null
 
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
+    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFEntity',
+      maxLength: 254,
+      
+    },
     clenDph : {
       key: 'clenDph',
       type: PropertyType.Relation,
@@ -134,6 +162,12 @@ export class AFAnalyzaZakazky extends AFEntity {
       isArray: false,
       
     },
+    postingPeriod : {
+      key: 'postingPeriod',
+      type: PropertyType.YearMonth,
+      isArray: false,
+      
+    },
     firma : {
       key: 'firma',
       type: PropertyType.Relation,
@@ -150,6 +184,13 @@ export class AFAnalyzaZakazky extends AFEntity {
     },
     kurz : {
       key: 'kurz',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 19,
+      
+    },
+    kurzMnozstvi : {
+      key: 'kurzMnozstvi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
@@ -174,6 +215,13 @@ export class AFAnalyzaZakazky extends AFEntity {
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
+      
+    },
+    dic : {
+      key: 'dic',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
       
     },
     popis : {
@@ -330,6 +378,18 @@ export class AFAnalyzaZakazky extends AFEntity {
     },
     vyloucitSaldo : {
       key: 'vyloucitSaldo',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    vatItem : {
+      key: 'vatItem',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    accountsSwapped : {
+      key: 'accountsSwapped',
       type: PropertyType.Logic,
       isArray: false,
       

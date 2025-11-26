@@ -21,115 +21,115 @@ export class AFBankovniUcet extends AFEntity {
   static EntityType: string = 'BANKOVNI_UCET'
 
   // ID (db: IdBsp) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Platí od roku (db: PlatiOd) - Platí od roku)
-  platiOd?: number
+  platiOd?: number | null
   // Platí do roku (db: PlatiDo) - Platí do roku)
-  platiDo?: number
+  platiDo?: number | null
   // Modul (db: Modul) - Modul)
-  modul?: string
+  modul?: string | null
   // Číslo bank. účtu (db: Buc) - Číslo účtu)
-  buc?: string
+  buc?: string | null
   // Specifický symbol (db: SpecSym) - Specifický symbol)
-  specSym?: string
+  specSym?: string | null
   // IBAN (db: Iban) - IBAN)
-  iban?: string
+  iban?: string | null
   // BIC (db: Bic) - BIC)
-  bic?: string
+  bic?: string | null
   // Název banky (db: NazBanky) - Název)
-  nazBanky?: string
+  nazBanky?: string | null
   // Název klienta (db: ZkrKlienta) - Název klienta)
-  zkrKlienta?: string
+  zkrKlienta?: string | null
   // výpisy (db: SloVypis) - výpisy)
-  sloVypis?: string
+  sloVypis?: string | null
   // příkazy (db: SloPrikaz) - příkazy)
-  sloPrikaz?: string
-  // Příp. výpisu (db: PriVypis) - přípona)
-  priVypis?: string
-  // Příp. přík. (db: PriPrikaz) - přípona)
-  priPrikaz?: string
+  sloPrikaz?: string | null
+  // Přípona výpisu (db: PriVypis) - přípona)
+  priVypis?: string | null
+  // Přípona příkazu (db: PriPrikaz) - přípona)
+  priPrikaz?: string | null
   // Příp. zahr. přík. (db: PriPrikazZahr) - příp.zahr.)
-  priPrikazZahr?: string
+  priPrikazZahr?: string | null
   // Název protistrany v textu příkazu (db: PrikPopKlient) - Název protistrany v textu příkazu)
-  prikPopKlient?: boolean
+  prikPopKlient?: boolean | null
   // Popis dokladu v textu příkazu (db: PrikPopPopis) - Popis dokladu v textu příkazu)
-  prikPopPopis?: boolean
+  prikPopPopis?: boolean | null
   // Kontrolovat duplicitu výpisů (db: VypisDuplicitaK) - Kontrolovat duplicitu výpisů)
-  vypisDuplicitaK?: ElVypisDuplicita
+  vypisDuplicitaK?: ElVypisDuplicita | null
   // Token pro příkazy (db: TokenPrikaz) - Token pro příkazy)
-  tokenPrikaz?: string
+  tokenPrikaz?: string | null
   // Token pro příkazy - platnost do (db: TokenPrikazPlatiDo) - Token pro příkazy - platnost do)
-  tokenPrikazPlatiDo?: Date
+  tokenPrikazPlatiDo?: Date | null
   // Token pro výpisy (db: TokenVypis) - Token pro výpisy)
-  tokenVypis?: string
+  tokenVypis?: string | null
   // Token pro výpisy - platnost do (db: TokenVypisPlatiDo) - Token pro výpisy - platnost do)
-  tokenVypisPlatiDo?: Date
+  tokenVypisPlatiDo?: Date | null
   // Prim. ban. účet (db: BucPrimarni) - Primární účet)
-  bucPrimarni?: boolean
+  bucPrimarni?: boolean | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Telefon (db: Tel) - Telefon)
-  tel?: string
+  tel?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
+  email?: string | null
   // WWW (db: Www) - WWW)
-  www?: string
+  www?: string | null
   // Vytvářet přecenění (db: VytvaretPreceneni) - Vytvářet přecenění při inicializaci účetního období)
-  vytvaretPreceneni?: boolean
+  vytvaretPreceneni?: boolean | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
   // Řada pro příjem (db: IdRadyPrijem) - Řada pro příjem)
-  radaPrijem?: AFRadaBanka
+  radaPrijem?: AFRadaBanka | null
   // Řada pro výdej (db: IdRadyVydej) - Řada pro výdej)
-  radaVydej?: AFRadaBanka
+  radaVydej?: AFRadaBanka | null
   // Středisko (db: IdStred) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Kód banky (db: IdSmerKod) - Kód banky)
-  smerKod?: AFPenezniUstav
+  smerKod?: AFPenezniUstav | null
   // Účet banky (db: IdPrimUcet) - Účet banky)
-  primUcet?: AFUcet
+  primUcet?: AFUcet | null
   // Měna (db: IdMeny) - Měna)
-  mena?: AFMena
-  // Formát el. bank. pro výpisy (db: IdElBanFormat) - Formát výpisy)
-  elBanFormatVypis?: AFFormatElektronickehoBankovnictvi
-  // Formát el. bank. pro příkazy (db: IdElBanFormatPrikaz) - Formát příkazy)
-  elBanFormatPrikaz?: AFFormatElektronickehoPrikazu
+  mena?: AFMena | null
+  // Formát el. bank. pro výpisy (db: IdElBanFormat) - Formát - výpisy)
+  elBanFormatVypis?: AFFormatElektronickehoBankovnictvi | null
+  // Formát el. bank. pro příkazy (db: IdElBanFormatPrikaz) - Formát - příkazy)
+  elBanFormatPrikaz?: AFFormatElektronickehoPrikazu | null
   // Stahovat výpisy od (db: StahovatVypisOd) - Stahovat výpisy od)
-  stahovatVypisOd?: Date
+  stahovatVypisOd?: Date | null
   // Měna banky (db: IdMenaBanky) - Měna banky)
-  menaBanky?: AFMena
+  menaBanky?: AFMena | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

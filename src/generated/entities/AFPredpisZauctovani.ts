@@ -13,61 +13,63 @@ export class AFPredpisZauctovani extends AFEntity {
   static EntityType: string = 'PREDPIS_ZAUCTOVANI'
 
   // ID (db: IdTypUcOp) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Platí od (db: IdUcetObdobiOd) - Platí od)
-  ucetObdobiOd?: AFUcetniObdobi
+  ucetObdobiOd?: AFUcetniObdobi | null
   // Platí do (db: IdUcetObdobiDo) - Platí do)
-  ucetObdobiDo?: AFUcetniObdobi
+  ucetObdobiDo?: AFUcetniObdobi | null
   // Faktury vydané (db: ModulFav) - vydané)
-  modulFav?: boolean
+  modulFav?: boolean | null
   // Faktury přijaté (db: ModulFap) - přijaté)
-  modulFap?: boolean
-  // Ost. pohledávky (db: ModulPhl) - pohledávky)
-  modulPhl?: boolean
-  // Ost. závazky (db: ModulZav) - závazky)
-  modulZav?: boolean
+  modulFap?: boolean | null
+  // Ostatní pohledávky (db: ModulPhl) - pohledávky)
+  modulPhl?: boolean | null
+  // Ostatní závazky (db: ModulZav) - závazky)
+  modulZav?: boolean | null
+  // Uplatnění daně - závazky (db: ModulTxz) - závazky)
+  modulTxz?: boolean | null
   // Banka - příjem (db: ModulBanP) - příjem)
-  modulBanP?: boolean
+  modulBanP?: boolean | null
   // Banka - výdej (db: ModulBanV) - výdej)
-  modulBanV?: boolean
+  modulBanV?: boolean | null
   // Pokladna - příjem (db: ModulPokP) - příjem)
-  modulPokP?: boolean
+  modulPokP?: boolean | null
   // Pokladna - výdej (db: ModulPokV) - výdej)
-  modulPokV?: boolean
+  modulPokV?: boolean | null
   // Sklad - příjem (db: ModulSklP) - příjem)
-  modulSklP?: boolean
+  modulSklP?: boolean | null
   // Sklad - výdej (db: ModulSklV) - výdej)
-  modulSklV?: boolean
+  modulSklV?: boolean | null
   // Interní doklady (db: ModulInt) - Interní doklady)
-  modulInt?: boolean
+  modulInt?: boolean | null
   // Kód plnění pro DPH (db: KodPlneniK) - Kód plnění pro DPH)
-  kodPlneniK?: KodPlneni
+  kodPlneniK?: KodPlneni | null
   // Účet pro příjem [DAL] (db: IdProtiUcetP) - Účet pro příjem [DAL])
-  protiUcetPrijem?: AFUcet
+  protiUcetPrijem?: AFUcet | null
   // Účet pro výdej [MD] (db: IdProtiUcetV) - Účet pro výdej [MD])
-  protiUcetVydej?: AFUcet
-  // Účet DPH sníž. (db: IdDphSnizUcet) - DPH snížená)
-  dphSnizUcet?: AFUcet
-  // Účet DPH 2. sníž. (db: IdDphSniz2Ucet) - DPH 2. snížená)
-  dphSniz2Ucet?: AFUcet
-  // Účet DPH zákl. (db: IdDphZaklUcet) - DPH základní)
-  dphZaklUcet?: AFUcet
+  protiUcetVydej?: AFUcet | null
+  // Účet DPH snížená sazba (db: IdDphSnizUcet) - DPH snížená)
+  dphSnizUcet?: AFUcet | null
+  // Účet DPH 2. snížená sazba (db: IdDphSniz2Ucet) - DPH 2. snížená)
+  dphSniz2Ucet?: AFUcet | null
+  // Účet DPH základní sazba (db: IdDphZaklUcet) - DPH základní)
+  dphZaklUcet?: AFUcet | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -168,6 +170,12 @@ export class AFPredpisZauctovani extends AFEntity {
     },
     modulZav : {
       key: 'modulZav',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    modulTxz : {
+      key: 'modulTxz',
       type: PropertyType.Logic,
       isArray: false,
       

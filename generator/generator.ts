@@ -362,9 +362,10 @@ function generateType(def: PropertyDef): string {
     case PropertyType.Date: return 'Date'
     case PropertyType.DateTime: return 'Date'
     case PropertyType.Blob: return 'Buffer'
+    case PropertyType.YearMonth: return 'Date'
     case PropertyType.Relation: return def.tsClassName || 'any'
     case PropertyType.Select: return def.enumName || 'any'
-    case PropertyType.Array: return (def.itemType || 'any') + []
+    case PropertyType.Array: return (def.itemType || 'any') + '[]'
   }
   return 'any'
 }

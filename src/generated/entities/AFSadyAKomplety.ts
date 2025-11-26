@@ -12,17 +12,17 @@ export class AFSadyAKomplety extends AFEntity {
   static EntityType: string = 'SADY_A_KOMPLETY'
 
   // ID (db: IdSady) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Množství (db: MnozMj) - Množství)
-  mnozMj?: Big
+  mnozMj?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Sada (db: IdCenikSada) - Sada)
-  cenikSada?: AFCenik
+  cenikSada?: AFCenik | null
   // Ceníková položka (db: IdCenik) - Ceníková položka)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

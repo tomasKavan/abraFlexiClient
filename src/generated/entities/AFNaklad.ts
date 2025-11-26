@@ -2,7 +2,6 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFTypNakladu } from './AFTypNakladu'
 import { AFCenik } from './AFCenik'
-import { AFUzivatel } from './AFUzivatel'
 import { AFUdalost } from './AFUdalost'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -15,29 +14,29 @@ export class AFNaklad extends AFEntity {
   static EntityType: string = 'NAKLAD'
 
   // ID (db: IdNaklAkt) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Fakturované množství (db: FaktMnoz) - Fakturované množství)
-  faktMnoz?: Big
+  faktMnoz?: Big | null
   // Fakturovat (db: Fakturovat) - Fakturovat)
-  fakturovat?: boolean
+  fakturovat?: boolean | null
   // Fakturováno (db: Fakturovano) - Fakturováno)
-  fakturovano?: boolean
+  fakturovano?: boolean | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Realizované množství (db: RealMnoz) - Realizované množství)
-  realMnoz?: Big
+  realMnoz?: Big | null
   // Čas nákladu (db: Termin) - Čas nákladu)
-  termin?: Date
+  termin?: Date | null
   // Typ nákladu na aktivitu (db: IdTypNaklAkt) - Typ nákladu na aktivitu)
-  typNaklAkt?: AFTypNakladu
+  typNaklAkt?: AFTypNakladu | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: AFUzivatel
+  zodpPrac?: any | null
   // Událost (db: IdAdrUdalost) - Událost)
-  adrUdalost?: AFUdalost
+  adrUdalost?: AFUdalost | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -115,7 +114,7 @@ export class AFNaklad extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },

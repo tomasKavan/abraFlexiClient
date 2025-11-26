@@ -12,15 +12,15 @@ export class AFSumaceSestavy extends AFEntity {
   static EntityType: string = 'SUMACE_SESTAVY'
 
   // ID (db: IdSesSumace) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Převrátit znaménko (db: PrevratZnam) - Převrátit znaménko)
-  prevratZnam?: boolean
+  prevratZnam?: boolean | null
   // Řádek (db: IdSesRadky) - Řádek)
-  radek?: AFRadekSestavy
+  radek?: AFRadekSestavy | null
   // Přičíst řádek (db: IdSesRadkySum) - Přičíst řádek)
-  radekSum?: AFRadekSestavy
+  radekSum?: AFRadekSestavy | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

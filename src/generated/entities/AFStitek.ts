@@ -12,67 +12,71 @@ export class AFStitek extends AFEntity {
   static EntityType: string = 'STITEK'
 
   // ID (db: IdVybKlice) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Adresář (db: VsbAdr) - Adresář)
-  vsbAdr?: boolean
+  vsbAdr?: boolean | null
   // Ceník (db: VsbKatalog) - Ceník)
-  vsbKatalog?: boolean
+  vsbKatalog?: boolean | null
   // Sklad (db: VsbSkl) - Sklad)
-  vsbSkl?: boolean
+  vsbSkl?: boolean | null
   // Vydané faktury (db: VsbFav) - Vydané faktury)
-  vsbFav?: boolean
+  vsbFav?: boolean | null
   // Pohledávky (db: VsbPhl) - Pohledávky)
-  vsbPhl?: boolean
+  vsbPhl?: boolean | null
   // Přijaté faktury (db: VsbFap) - Přijaté faktury)
-  vsbFap?: boolean
+  vsbFap?: boolean | null
   // Závazky (db: VsbZav) - Závazky)
-  vsbZav?: boolean
+  vsbZav?: boolean | null
+  // Uplatnění daně - pohledávky (db: VsbTxp) - Uplatnění daně - pohledávky)
+  vsbTxp?: boolean | null
+  // Uplatnění daně - závazky (db: VsbTxz) - Uplatnění daně - závazky)
+  vsbTxz?: boolean | null
   // Banka (db: VsbBan) - Banka)
-  vsbBan?: boolean
+  vsbBan?: boolean | null
   // Pokladna (db: VsbPok) - Pokladna)
-  vsbPok?: boolean
+  vsbPok?: boolean | null
   // Interní doklady (db: VsbInt) - Interní doklady)
-  vsbInt?: boolean
+  vsbInt?: boolean | null
   // Majetek (db: VsbMaj) - Majetek)
-  vsbMaj?: boolean
+  vsbMaj?: boolean | null
   // Objednávky přijaté (db: VsbObp) - Objednávky přijaté)
-  vsbObp?: boolean
+  vsbObp?: boolean | null
   // Nabídky vydané (db: VsbNav) - Nabídky vydané)
-  vsbNav?: boolean
+  vsbNav?: boolean | null
   // Poptávky přijaté (db: VsbPpp) - Poptávky přijaté)
-  vsbPpp?: boolean
+  vsbPpp?: boolean | null
   // Objednávky vydané (db: VsbObv) - Objednávky vydané)
-  vsbObv?: boolean
+  vsbObv?: boolean | null
   // Nabídky přijaté (db: VsbNap) - Nabídky přijaté)
-  vsbNap?: boolean
+  vsbNap?: boolean | null
   // Poptávky vydané (db: VsbPpv) - Poptávky vydané)
-  vsbPpv?: boolean
+  vsbPpv?: boolean | null
   // Mzdy (db: VsbMzd) - Mzdy)
-  vsbMzd?: boolean
+  vsbMzd?: boolean | null
   // Číselníky (db: VsbCis) - Číselníky)
-  vsbCis?: boolean
+  vsbCis?: boolean | null
   // Skupina štítků (db: IdSkupVybKlic) - Skupina štítků)
-  skupVybKlic?: AFSkupinaStitku
+  skupVybKlic?: AFSkupinaStitku | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -189,6 +193,18 @@ export class AFStitek extends AFEntity {
     },
     vsbZav : {
       key: 'vsbZav',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    vsbTxp : {
+      key: 'vsbTxp',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    vsbTxz : {
+      key: 'vsbTxz',
       type: PropertyType.Logic,
       isArray: false,
       

@@ -1,12 +1,10 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
 import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFNastaveni } from './AFNastaveni'
 import { AFCenik } from './AFCenik'
 import { AFAdresar } from './AFAdresar'
 import { AFKontakt } from './AFKontakt'
-import { AFReport } from './AFReport'
 import { AFZakazka } from './AFZakazka'
 import { AFSmlouva } from './AFSmlouva'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
@@ -23,73 +21,73 @@ export class AFPriloha extends AFEntity {
   static EntityType: string = 'PRILOHA'
 
   // ID (db: IdPriloha) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Název souboru (db: NazSoub) - Název souboru)
-  nazSoub?: string
+  nazSoub?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Typ dat (db: ContentType) - Typ dat)
-  contentType?: string
+  contentType?: string | null
   // Typ přílohy (db: TypK) - Typ přílohy)
-  typK?: TypPrilohy
+  typK?: TypPrilohy | null
   // Přiložit (db: Prilozit) - Přiložit)
-  prilozit?: boolean
+  prilozit?: boolean | null
   // Poměr stran (db: PictureRate) - Poměr stran obrázku)
-  pictureRate?: Big
+  pictureRate?: Big | null
   // Velikost (db: DataSize) - Velikost)
-  dataSize?: number
+  dataSize?: number | null
   // Export na E-shop (db: ExportNaEshop) - Export na E-shop)
-  exportNaEshop?: boolean
+  exportNaEshop?: boolean | null
   // Odkaz (db: Link) - Odkaz)
-  link?: string
+  link?: string | null
   // Odkaz na obrázek (db: LinkPicture) - Odkaz na obrázek)
-  linkPicture?: boolean
+  linkPicture?: boolean | null
   // Hlavní příloha (db: MainAttachment) - Hlavní příloha)
-  mainAttachment?: boolean
+  mainAttachment?: boolean | null
   // Otisk dat přílohy (MD5 součet) (db: DataHash) - Otisk dat přílohy (MD5 součet))
-  dataHash?: string
+  dataHash?: string | null
   // Šířka obrázku (db: PictureWidth) - Šířka obrázku)
-  pictureWidth?: number
+  pictureWidth?: number | null
   // Výška obrázku (db: PictureHeight) - Výška obrázku)
-  pictureHeight?: number
+  pictureHeight?: number | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: AFUzivatel
+  uzivatel?: any | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
-  doklFak?: any
+  doklFak?: any | null
   // Interní doklad (db: IdDoklInt) - Interní doklad)
-  doklInt?: any
+  doklInt?: any | null
   // Obchodní doklad (db: IdDoklObch) - Obchodní doklad)
-  doklObch?: any
+  doklObch?: any | null
   // Příjemka/výdejka (db: IdDoklSklad) - Příjemka/výdejka)
-  doklSklad?: AFSkladovyPohyb
+  doklSklad?: AFSkladovyPohyb | null
   // Nastavení (db: IdNastav) - Nastavení)
-  nastaveni?: AFNastaveni
+  nastaveni?: AFNastaveni | null
   // Ceník (db: IdCenik) - Ceník)
-  cenik?: AFCenik
+  cenik?: AFCenik | null
   // Adresář (db: IdAdresar) - Adresář)
-  adresar?: AFAdresar
+  adresar?: AFAdresar | null
   // Kontakt (db: IdKontakt) - Kontakt)
-  kontakt?: AFKontakt
+  kontakt?: AFKontakt | null
   // Konektor (db: IdKonektor) - Konektor)
-  konektor?: any
+  konektor?: any | null
   // Report (db: IdReport) - Report)
-  report?: AFReport
+  report?: any | null
   // Zakázka (db: IdZakazky) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Smlouva (db: IdSmlouvy) - Smlouva)
-  smlouva?: AFSmlouva
+  smlouva?: AFSmlouva | null
   // Pol. smlouvy (db: IdPolSml) - Pol. smlouvy)
-  polSmlouvy?: AFSmlouvaPolozka
+  polSmlouvy?: AFSmlouvaPolozka | null
   // Strom (db: IdUzel) - Strom)
-  uzel?: AFStrom
+  uzel?: AFStrom | null
   // Požadavek (db: IdPozadavek) - Požadavek)
-  pozadavek?: any
+  pozadavek?: any | null
   // Událost (db: IdAdrUdalost) - Událost)
-  adrUdalost?: AFUdalost
+  adrUdalost?: AFUdalost | null
   // Obsah (db: ) - Obsah)
-  content?: Buffer
+  content?: Buffer | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -204,7 +202,7 @@ export class AFPriloha extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFUzivatel',
+      afClass: 'AFEntity',
       maxLength: 254,
       
     },
@@ -276,7 +274,7 @@ export class AFPriloha extends AFEntity {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFReport',
+      afClass: 'AFEntity',
       
     },
     zakazka : {

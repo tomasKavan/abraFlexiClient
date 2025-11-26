@@ -13,19 +13,19 @@ export class AFCisloBaliku extends AFEntity {
   static EntityType: string = 'CISLO_BALIKU'
 
   // ID (db: IdCisloBal) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Číslo (db: Cislo) - Číslo)
-  cislo?: string
+  cislo?: string | null
   // Forma dopravy (db: IdFormaDopravy) - Forma dopravy)
-  formaDopravy?: AFFormaDopravy
+  formaDopravy?: AFFormaDopravy | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
-  doklFak?: any
+  doklFak?: any | null
   // Příjemka/výdejka (db: IdDoklSklad) - Příjemka/výdejka)
-  doklSklad?: AFSkladovyPohyb
+  doklSklad?: AFSkladovyPohyb | null
   // Obchodní doklad (db: IdDoklObch) - Obchodní doklad)
-  doklObch?: any
+  doklObch?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

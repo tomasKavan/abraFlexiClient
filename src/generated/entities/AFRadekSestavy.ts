@@ -14,43 +14,43 @@ export class AFRadekSestavy extends AFEntity {
   static EntityType: string = 'RADEK_SESTAVY'
 
   // ID (db: IdSesRadky) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Číslo řádku (db: CisRad) - Číslo řádku)
-  cisRad?: number
+  cisRad?: number | null
   // Kód řádku (db: KodRad) - Kód řádku)
-  kodRad?: string
+  kodRad?: string | null
   // Číslo řádku pro XML (db: CisRadXml) - Číslo řádku pro XML)
-  cisRadXml?: number
+  cisRadXml?: number | null
   // Označení (db: Oznaceni) - Označení)
-  oznaceni?: string
+  oznaceni?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Hodnota 1 (db: Hod1) - Hodnota 1)
-  hod1?: Big
+  hod1?: Big | null
   // Hodnota 2 (db: Hod2) - Hodnota 2)
-  hod2?: Big
+  hod2?: Big | null
   // Hodnota 3 (db: Hod3) - Hodnota 3)
-  hod3?: Big
+  hod3?: Big | null
   // Hodnota 4 (db: Hod4) - Hodnota 4)
-  hod4?: Big
+  hod4?: Big | null
   // Hodnota 5 (db: Hod5) - Hodnota 5)
-  hod5?: Big
+  hod5?: Big | null
   // Hodnota 6 (db: Hod6) - Hodnota 6)
-  hod6?: Big
+  hod6?: Big | null
   // Účetní sestava (db: IdSestavy) - Účetní sestava)
-  ucetniSestava?: AFSestava
+  ucetniSestava?: AFSestava | null
 
   // Standardní předpis sestavy (type: STD_PREDPIS_SESTAVY) - stdPredpisy)
   stdPredpisy?: AFStandardniPredpis[]

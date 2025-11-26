@@ -13,37 +13,37 @@ export class AFHlavniKniha extends AFEntity {
   static EntityType: string = 'HLAVNI_KNIHA'
 
   // ID (db: ) - ID)
-  idObratovaPredvaha?: number
+  idObratovaPredvaha?: number | null
   // Účet (db: ) - Účet)
-  ucet?: AFUcet
+  ucet?: AFUcet | null
   // Měna (db: ) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Účetní období (db: ) - Účetní období)
-  ucetniObdobi?: AFUcetniObdobi
+  ucetniObdobi?: AFUcetniObdobi | null
   // Název účtu (db: ) - Název účtu)
-  nazevUctu?: string
+  nazevUctu?: string | null
   // Počátek vše (db: ) - Počátek vše)
-  pocatek?: Big
+  pocatek?: Big | null
   // Počátek MD za vybr. obd. (db: ) - Počátek MD za vybr. obd.)
-  pocatekMd?: Big
+  pocatekMd?: Big | null
   // Počátek DAL za vybr. obd. (db: ) - Počátek DAL za vybr. obd.)
-  pocatekDal?: Big
+  pocatekDal?: Big | null
   // Počátek za vybr. obd. (db: ) - Počátek za vybr. obd.)
-  pocatekMesic?: Big
+  pocatekMesic?: Big | null
   // Zůstatek za vybr. obd. (db: ) - Zůstatek za vybr. obd.)
-  zustatek?: Big
+  zustatek?: Big | null
   // Zůstatek MD za vybr. obd. (db: ) - Zůstatek MD za vybr. obd.)
-  zustatekMd?: Big
+  zustatekMd?: Big | null
   // Zůstatek DAL za vybr. obd. (db: ) - Zůstatek DAL za vybr. obd.)
-  zustatekDal?: Big
+  zustatekDal?: Big | null
   // Obrat MD vše (db: ) - Obrat MD vše)
-  obratMdVse?: Big
+  obratMdVse?: Big | null
   // Obrat DAL vše (db: ) - Obrat DAL vše)
-  obratDalVse?: Big
+  obratDalVse?: Big | null
   // Obrat MD za vybr. obd. (db: ) - Obrat MD za vybrané období)
-  obratMdVyb?: Big
+  obratMdVyb?: Big | null
   // Obrat DAL za vybr. obd. (db: ) - Obrat DAL za vybrané období)
-  obratDalVyb?: Big
+  obratDalVyb?: Big | null
 
 
 

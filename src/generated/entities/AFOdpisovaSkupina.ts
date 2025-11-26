@@ -11,49 +11,49 @@ export class AFOdpisovaSkupina extends AFEntity {
   static EntityType: string = 'ODPISOVE_SKUPINY'
 
   // ID (db: IdSazby) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Způsob odp. (db: TypOdpK) - Způsob odp.)
-  typOdpK?: TypOdp
+  typOdpK?: TypOdp | null
   // Doba (db: DobaOdp) - Doba odpisu)
-  dobaOdp?: number
+  dobaOdp?: number | null
   // Min. doba odpisu (db: MinDobaOdp) - Min. doba odpisu)
-  minDobaOdp?: number
+  minDobaOdp?: number | null
   // 1.rok zrych. (db: KoefZrOdp1) - První rok)
-  koefZrOdp1?: number
+  koefZrOdp1?: number | null
   // Další r.zrych. (db: KoefZrOdpDalsi) - Další roky)
-  koefZrOdpDalsi?: number
+  koefZrOdpDalsi?: number | null
   // Zvýšení zrych. (db: KoefZrOdpZvCeny) - Zvýšení vst. ceny)
-  koefZrOdpZvCeny?: number
+  koefZrOdpZvCeny?: number | null
   // 1.rok rovn. (db: PrcRoOdp1) - První rok)
-  prcRoOdp1?: Big
+  prcRoOdp1?: Big | null
   // Další r.rovn. (db: PrcRoOdpDalsi) - Další roky)
-  prcRoOdpDalsi?: Big
+  prcRoOdpDalsi?: Big | null
   // Zvýšení rovn. (db: PrcRoOdpZvCeny) - Zvýšení vst.ceny)
-  prcRoOdpZvCeny?: Big
+  prcRoOdpZvCeny?: Big | null
   // Zámek (db: Zamek) - Zámek)
-  zamek?: boolean
+  zamek?: boolean | null
   // Vytvořena už. (db: Zmena) - Vytvořena uživatelem)
-  zmena?: boolean
+  zmena?: boolean | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
