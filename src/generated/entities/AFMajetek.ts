@@ -8,6 +8,7 @@ import { AFStredisko } from './AFStredisko'
 import { AFFakturaPrijata } from './AFFakturaPrijata'
 import { AFAdresar } from './AFAdresar'
 import { AFUcet } from './AFUcet'
+import { AFUzivatel } from './AFUzivatel'
 import { AFDanovyOdpis } from './AFDanovyOdpis'
 import { AFPriloha } from './AFPriloha'
 import { AFUcetniOdpis } from './AFUcetniOdpis'
@@ -158,7 +159,7 @@ export class AFMajetek extends AFEntity {
   // Účet zůstatku vyřazení (db: IdZustVyrazUcet) - Účet zůstatku vyřazení)
   zustVyrazUcet?: AFUcet | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
 
   // Daňové odpisy (type: DANOVY_ODPIS) - danove-odpisy)
   'danove-odpisy'?: AFDanovyOdpis[]
@@ -655,7 +656,7 @@ export class AFMajetek extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

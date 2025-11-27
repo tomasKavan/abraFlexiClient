@@ -5,6 +5,7 @@ import { AFMistoUrceni } from './AFMistoUrceni'
 import { AFStredisko } from './AFStredisko'
 import { AFStavZakazky } from './AFStavZakazky'
 import { AFTypZakazky } from './AFTypZakazky'
+import { AFUzivatel } from './AFUzivatel'
 import { AFHodnoceniZakazky } from './AFHodnoceniZakazky'
 import { AFKontakt } from './AFKontakt'
 import { AFMena } from './AFMena'
@@ -91,7 +92,7 @@ export class AFZakazka extends AFEntity {
   // Typ zakázky (db: Idtypzakazky) - Typ zakázky)
   typZakazky?: AFTypZakazky | null
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any | null
+  zodpPrac?: AFUzivatel | null
   // Vyhodnocení zakázky (db: IdVyhZakazky) - Vyhodnocení zakázky)
   vyhZakazky?: AFHodnoceniZakazky | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
@@ -99,9 +100,9 @@ export class AFZakazka extends AFEntity {
   // Měna (db: IdMena) - Měna)
   mena?: AFMena | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: IdCreatedBy) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
@@ -348,7 +349,7 @@ export class AFZakazka extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -378,7 +379,7 @@ export class AFZakazka extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -386,7 +387,7 @@ export class AFZakazka extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

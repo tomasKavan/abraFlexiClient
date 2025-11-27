@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFAdresar } from './AFAdresar'
 import { AFMena } from './AFMena'
@@ -20,7 +21,7 @@ export class AFSaldo extends AFEntity {
   // Poslední změna (db: ) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: ) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Řádky DPH (db: ) - Řádky DPH)
   clenDph?: AFCleneniDph | null
   // Datum splatnosti (db: ) - Datum splatnosti)
@@ -115,7 +116,7 @@ export class AFSaldo extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

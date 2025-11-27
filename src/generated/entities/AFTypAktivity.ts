@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -39,7 +40,7 @@ export class AFTypAktivity extends AFEntity {
   // Štítky (db: ) - Štítky)
   declare stitky?: string | null
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any | null
+  zodpPrac?: AFUzivatel | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -143,7 +144,7 @@ export class AFTypAktivity extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

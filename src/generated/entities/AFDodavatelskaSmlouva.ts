@@ -9,6 +9,7 @@ import { AFKonstSymbol } from './AFKonstSymbol'
 import { AFStavSmlouvy } from './AFStavSmlouvy'
 import { AFCinnost } from './AFCinnost'
 import { AFBankovniUcet } from './AFBankovniUcet'
+import { AFUzivatel } from './AFUzivatel'
 import { AFKontakt } from './AFKontakt'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
 import { AFPriloha } from './AFPriloha'
@@ -124,7 +125,7 @@ export class AFDodavatelskaSmlouva extends AFEntity {
   // Typ faktury - Bankovní účet (db: ) - Typ faktury - Bankovní účet)
   typDoklFakBspBan?: AFBankovniUcet | null
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any | null
+  zodpOsoba?: AFUzivatel | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt | null
 
@@ -471,7 +472,7 @@ export class AFDodavatelskaSmlouva extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

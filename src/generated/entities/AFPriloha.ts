@@ -1,10 +1,12 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFNastaveni } from './AFNastaveni'
 import { AFCenik } from './AFCenik'
 import { AFAdresar } from './AFAdresar'
 import { AFKontakt } from './AFKontakt'
+import { AFReport } from './AFReport'
 import { AFZakazka } from './AFZakazka'
 import { AFSmlouva } from './AFSmlouva'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
@@ -53,7 +55,7 @@ export class AFPriloha extends AFEntity {
   // Výška obrázku (db: PictureHeight) - Výška obrázku)
   pictureHeight?: number | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
   doklFak?: any | null
   // Interní doklad (db: IdDoklInt) - Interní doklad)
@@ -73,7 +75,7 @@ export class AFPriloha extends AFEntity {
   // Konektor (db: IdKonektor) - Konektor)
   konektor?: any | null
   // Report (db: IdReport) - Report)
-  report?: any | null
+  report?: AFReport | null
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka | null
   // Smlouva (db: IdSmlouvy) - Smlouva)
@@ -202,7 +204,7 @@ export class AFPriloha extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -274,7 +276,7 @@ export class AFPriloha extends AFEntity {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFReport',
       
     },
     zakazka : {

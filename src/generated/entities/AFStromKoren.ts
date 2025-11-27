@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 
 
 
@@ -38,7 +39,7 @@ export class AFStromKoren extends AFEntity {
   // ID záznamu (db: Idzaznamu) - ID záznamu)
   idzaznamu?: number | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
 
 
 
@@ -137,7 +138,7 @@ export class AFStromKoren extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

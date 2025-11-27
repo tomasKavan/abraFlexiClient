@@ -22,6 +22,7 @@ import { AFIntrastatObchodniTransakce } from './AFIntrastatObchodniTransakce'
 import { AFIntrastatDruhDopravy } from './AFIntrastatDruhDopravy'
 import { AFIntrastatZvlastniPohyb } from './AFIntrastatZvlastniPohyb'
 import { AFIntrastatKrajUrceni } from './AFIntrastatKrajUrceni'
+import { AFUzivatel } from './AFUzivatel'
 import { AFRada } from './AFRada'
 import { AFSazbaDph } from './AFSazbaDph'
 import { AFCinnost } from './AFCinnost'
@@ -273,9 +274,9 @@ export class AFNeuhrazenePoSplatnosti extends AFEntity {
   // Kraj odesílatele (db: ) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni | null
   // Uživatel (db: ) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Zodpovědná osoba (db: ) - Zodpovědná osoba)
-  zodpOsoba?: any | null
+  zodpOsoba?: AFUzivatel | null
   // Čís. řada (db: ) - Čís. řada)
   rada?: AFRada | null
   // Osvobozená sazba DPH (db: ) - Osvobozená sazba DPH)
@@ -1152,7 +1153,7 @@ export class AFNeuhrazenePoSplatnosti extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1160,7 +1161,7 @@ export class AFNeuhrazenePoSplatnosti extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

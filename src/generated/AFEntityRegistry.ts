@@ -98,8 +98,12 @@ import { AFRadaFakturyVydane } from './entities/AFRadaFakturyVydane'
 import { AFProdejka } from './entities/AFProdejka'
 import { AFTypProdejky } from './entities/AFTypProdejky'
 import { AFProdejkaPlatba } from './entities/AFProdejkaPlatba'
+import { AFUzivatel } from './entities/AFUzivatel'
+import { AFRole } from './entities/AFRole'
 import { AFPravoViditelnosti } from './entities/AFPravoViditelnosti'
 import { AFNastaveni } from './entities/AFNastaveni'
+import { AFReport } from './entities/AFReport'
+import { AFZamek } from './entities/AFZamek'
 import { AFKurz } from './entities/AFKurz'
 import { AFUcet } from './entities/AFUcet'
 import { AFMena } from './entities/AFMena'
@@ -248,6 +252,8 @@ import { AFPohybNaUctech } from './entities/AFPohybNaUctech'
 import { AFUcetniDenik } from './entities/AFUcetniDenik'
 import { AFUmisteniUctu } from './entities/AFUmisteniUctu'
 import { AFPricteniRozdilu } from './entities/AFPricteniRozdilu'
+import { AFUcetniDenikZjednoduseny } from './entities/AFUcetniDenikZjednoduseny'
+import { AFObratPolozky } from './entities/AFObratPolozky'
 import { AFSaldo } from './entities/AFSaldo'
 import { AFRozvahaPoUctech } from './entities/AFRozvahaPoUctech'
 import { AFVysledovkaPoUctech } from './entities/AFVysledovkaPoUctech'
@@ -369,8 +375,12 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFProdejka,
   AFTypProdejky,
   AFProdejkaPlatba,
+  AFUzivatel,
+  AFRole,
   AFPravoViditelnosti,
   AFNastaveni,
+  AFReport,
+  AFZamek,
   AFKurz,
   AFUcet,
   AFMena,
@@ -519,6 +529,8 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFUcetniDenik,
   AFUmisteniUctu,
   AFPricteniRozdilu,
+  AFUcetniDenikZjednoduseny,
+  AFObratPolozky,
   AFSaldo,
   AFRozvahaPoUctech,
   AFVysledovkaPoUctech,

@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFAdresar } from './AFAdresar'
 import { AFMena } from './AFMena'
@@ -17,61 +18,75 @@ export class AFUcetniDenikZjednoduseny extends AFEntity {
   static EntityType: string = 'UCETNI_DENIK_ZJEDNODUSENY'
 
   // ID (db: ) - ID)
-  idUcetniDenik?: number
+  idUcetniDenik?: number | null
+  // Poslední změna (db: ) - Poslední změna)
+  lastUpdate?: Date | null
+  // Upravil (db: ) - Upravil)
+  updatedBy?: AFUzivatel | null
   // Řádky DPH (db: ) - Řádky DPH)
-  clenDph?: AFCleneniDph
+  clenDph?: AFCleneniDph | null
   // Datum splatnosti (db: ) - Datum splatnosti)
-  datSplat?: Date
+  datSplat?: Date | null
   // Datum úhrady (db: ) - Datum úhrady)
-  datUhr?: Date
+  datUhr?: Date | null
   // Dat. vyst. dokladu (db: ) - Datum vystavení dokladu)
-  datVyst?: Date
-  // Datum zaúčt. (db: ) - Datum zaúčtování)
-  datUcto?: Date
+  datVyst?: Date | null
+  // Datum zaúčtování (db: ) - Datum zaúčtování)
+  datUcto?: Date | null
+  // Období zaúčtování (db: ) - Období zaúčtování)
+  postingPeriod?: Date | null
   // Int.čís.dokladu (db: ) - Interní číslo dokladu)
-  doklad?: string
+  doklad?: string | null
   // Datum zdan. plnění (db: ) - Datum zdan. plnění)
-  duzpUcto?: Date
+  duzpUcto?: Date | null
   // Zkratka firmy (db: ) - Zkratka firmy)
-  firma?: AFAdresar
+  firma?: AFAdresar | null
   // Kurz (db: ) - Kurz)
-  kurz?: Big
+  kurz?: Big | null
+  // Kurz. množství (db: ) - Kurz. množství)
+  kurzMnozstvi?: Big | null
   // Měna (db: ) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Modul (db: ) - Modul)
-  modul?: string
+  modul?: string | null
   // Název modulu (db: ) - Název modulu)
-  modulK?: ModulUcetni
+  modulK?: ModulUcetni | null
   // Název firmy (db: ) - Název firmy)
-  nazFirmy?: string
+  nazFirmy?: string | null
+  // DIČ (db: ) - DIČ)
+  dic?: string | null
   // Popis (db: ) - Popis)
-  popis?: string
+  popis?: string | null
   // Variabilní symbol (db: ) - Variabilní symbol)
-  varSym?: string
+  varSym?: string | null
   // Sazba DPH (db: ) - Sazba DPH)
-  typSzbDphK?: TypSzbDph
+  typSzbDphK?: TypSzbDph | null
   // Hodnota DPH (db: ) - Hodnota DPH)
-  szbDph?: Big
-  // Částka v Kč (db: ) - Částka v Kč)
-  sumTuz?: Big
-  // Částka v měně (db: ) - Částka v měně)
-  sumMen?: Big
+  szbDph?: Big | null
+  // Částka [Kč] (db: ) - Částka [Kč])
+  sumTuz?: Big | null
+  // Částka [měna] (db: ) - Částka [měna])
+  sumMen?: Big | null
   // Stav dokladu (db: ) - Stav dokladu)
-  stavUzivK?: StavUziv
+  stavUzivK?: StavUziv | null
   // Středisko (db: ) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Účet MD (db: ) - Účet MD)
-  mdUcet?: AFUcet
+  mdUcet?: AFUcet | null
   // Účet DAL (db: ) - Účet DAL)
-  dalUcet?: AFUcet
+  dalUcet?: AFUcet | null
   // ID dokladu (db: ) - ID dokladu)
-  idDokl?: number
+  idDokl?: number | null
   // Zaúčtováno (db: ) - Stav zaúčtování)
-  zuctovano?: boolean
+  zuctovano?: boolean | null
+  // Položka pro DPH částku (db: ) - Položka pro DPH částku)
+  vatItem?: boolean | null
+  // Převrácení stran účtování (db: ) - Převrácení stran účtování)
+  accountsSwapped?: boolean | null
   // Zakázka (db: ) - Zakázka)
-  zakazka?: AFZakazka
+  zakazka?: AFZakazka | null
   // Činnost (db: ) - Činnost)
-  cinnost?: AFCinnost
+  cinnost?: AFCinnost | null
 
 
 
@@ -80,6 +95,20 @@ export class AFUcetniDenikZjednoduseny extends AFEntity {
       key: 'idUcetniDenik',
       type: PropertyType.Integer,
       isArray: false,
+      
+    },
+    lastUpdate : {
+      key: 'lastUpdate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFUzivatel',
+      maxLength: 254,
       
     },
     clenDph : {
@@ -113,6 +142,12 @@ export class AFUcetniDenikZjednoduseny extends AFEntity {
       isArray: false,
       
     },
+    postingPeriod : {
+      key: 'postingPeriod',
+      type: PropertyType.YearMonth,
+      isArray: false,
+      
+    },
     doklad : {
       key: 'doklad',
       type: PropertyType.String,
@@ -135,6 +170,13 @@ export class AFUcetniDenikZjednoduseny extends AFEntity {
     },
     kurz : {
       key: 'kurz',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 19,
+      
+    },
+    kurzMnozstvi : {
+      key: 'kurzMnozstvi',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,
@@ -165,6 +207,13 @@ export class AFUcetniDenikZjednoduseny extends AFEntity {
       key: 'nazFirmy',
       type: PropertyType.String,
       isArray: false,
+      
+    },
+    dic : {
+      key: 'dic',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
       
     },
     popis : {
@@ -247,6 +296,18 @@ export class AFUcetniDenikZjednoduseny extends AFEntity {
     },
     zuctovano : {
       key: 'zuctovano',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    vatItem : {
+      key: 'vatItem',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    accountsSwapped : {
+      key: 'accountsSwapped',
       type: PropertyType.Logic,
       isArray: false,
       

@@ -12,22 +12,22 @@ export class AFObratPolozky extends AFEntity {
   static EntityName: string = 'Položky obratů'
   static EntityType: string = 'OBRAT_POLOZKA_VIEW'
 
-  //  (db: ) - )
-  idObratPolozkaView?: number
+  // Id obratu (db: ) - Id obratu)
+  idObratPolozkaView?: number | null
   // Středisko (db: ) - Středisko)
-  stredisko?: AFStredisko
+  stredisko?: AFStredisko | null
   // Činnost (db: ) - Činnost)
-  cinnost?: Date
+  cinnost?: Date | null
   // Měna (db: ) - Měna)
-  mena?: AFMena
+  mena?: AFMena | null
   // Účet (db: ) - Účet)
-  ucet?: AFUcet
+  ucet?: AFUcet | null
   // Obrat MD (db: ) - Obrat MD)
-  obrMd?: Big
+  obrMd?: Big | null
   // Obrat Dal (db: ) - Obrat Dal)
-  obrDal?: Big
-  // Datum zaúčt. (db: ) - Datum zaúčtování)
-  datUcto?: Date
+  obrDal?: Big | null
+  // Datum zaúčtování (db: ) - Datum zaúčtování)
+  datUcto?: Date | null
 
 
 

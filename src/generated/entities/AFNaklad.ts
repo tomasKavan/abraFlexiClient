@@ -2,6 +2,7 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFTypNakladu } from './AFTypNakladu'
 import { AFCenik } from './AFCenik'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUdalost } from './AFUdalost'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -34,7 +35,7 @@ export class AFNaklad extends AFEntity {
   // Ceník (db: IdCenik) - Ceník)
   cenik?: AFCenik | null
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any | null
+  zodpPrac?: AFUzivatel | null
   // Událost (db: IdAdrUdalost) - Událost)
   adrUdalost?: AFUdalost | null
 
@@ -114,7 +115,7 @@ export class AFNaklad extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

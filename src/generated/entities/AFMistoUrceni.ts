@@ -4,6 +4,7 @@ import { AFStat } from './AFStat'
 import { AFRegion } from './AFRegion'
 import { AFAdresar } from './AFAdresar'
 import { AFKontakt } from './AFKontakt'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -61,9 +62,9 @@ export class AFMistoUrceni extends AFEntity {
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: IdCreatedBy) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -229,7 +230,7 @@ export class AFMistoUrceni extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -237,7 +238,7 @@ export class AFMistoUrceni extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

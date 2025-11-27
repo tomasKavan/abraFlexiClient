@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFRegion } from './AFRegion'
 import { AFStat } from './AFStat'
 import { AFTypSkladovyPohyb } from './AFTypSkladovyPohyb'
@@ -41,9 +42,9 @@ export class AFSkladovyPohyb extends AFEntity {
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: idUziv) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
   // Interní číslo (db: Kod) - Interní číslo)
@@ -177,9 +178,9 @@ export class AFSkladovyPohyb extends AFEntity {
   // Kraj odesílatele (db: IdKrajUrc) - Kraj odesílatele)
   krajUrc?: AFIntrastatKrajUrceni | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any | null
+  zodpOsoba?: AFUzivatel | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt | null
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -246,7 +247,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -254,7 +255,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -721,7 +722,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -729,7 +730,7 @@ export class AFSkladovyPohyb extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

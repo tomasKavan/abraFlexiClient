@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -41,7 +42,7 @@ export class AFDashboardPanel extends AFEntity {
   // Standardní přehled (db: Standard) - Standardní přehled)
   standard?: boolean | null
   // Vytvořil (db: Idauthor) - Vytvořil)
-  author?: any | null
+  author?: AFUzivatel | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -151,7 +152,7 @@ export class AFDashboardPanel extends AFEntity {
       key: 'author',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

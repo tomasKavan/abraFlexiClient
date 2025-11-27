@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFCleneniDph } from './AFCleneniDph'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
@@ -33,7 +34,7 @@ export class AFRadekPriznaniDph extends AFEntity {
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
   typSzbDphK?: TypSzbDph | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Řádky DPH (db: IdClenDph) - Řádky DPH)
   clenDph?: AFCleneniDph | null
   // Stát (db: IdStat) - Stát)
@@ -117,7 +118,7 @@ export class AFRadekPriznaniDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

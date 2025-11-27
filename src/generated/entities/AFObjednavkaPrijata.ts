@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFTypObjednavkyPrijate } from './AFTypObjednavkyPrijate'
 import { AFMena } from './AFMena'
 import { AFKonstSymbol } from './AFKonstSymbol'
@@ -41,9 +42,9 @@ export class AFObjednavkaPrijata extends AFEntity {
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: idUziv) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
   // Interní číslo (db: Kod) - Interní číslo)
@@ -223,9 +224,9 @@ export class AFObjednavkaPrijata extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any | null
+  zodpOsoba?: AFUzivatel | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt | null
   // Kontaktní jméno (db: KontaktJmeno) - Jméno)
@@ -304,7 +305,7 @@ export class AFObjednavkaPrijata extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -312,7 +313,7 @@ export class AFObjednavkaPrijata extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -946,7 +947,7 @@ export class AFObjednavkaPrijata extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -954,7 +955,7 @@ export class AFObjednavkaPrijata extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

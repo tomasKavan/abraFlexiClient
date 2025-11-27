@@ -2,10 +2,12 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFAdresar } from './AFAdresar'
 import { AFTypAktivity } from './AFTypAktivity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFZakazka } from './AFZakazka'
 import { AFSkladovyPohyb } from './AFSkladovyPohyb'
 import { AFCenik } from './AFCenik'
 import { AFKontakt } from './AFKontakt'
+import { AFReport } from './AFReport'
 import { AFSmlouva } from './AFSmlouva'
 import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
 import { AFMajetek } from './AFMajetek'
@@ -60,9 +62,9 @@ export class AFUdalost extends AFEntity {
   // Typ aktivity (db: IdTypAkt) - Typ aktivity)
   typAkt?: AFTypAktivity | null
   // Zodpovědný pracovník (db: IdUzivatel) - Zodpovědný pracovník)
-  zodpPrac?: any | null
+  zodpPrac?: AFUzivatel | null
   // Uživatel (db: IdUzivatelVytvoril) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka | null
   // Doklad faktury (db: IdDoklFak) - Doklad faktury)
@@ -80,18 +82,20 @@ export class AFUdalost extends AFEntity {
   // Konektor (db: IdKonektor) - Konektor)
   konektor?: any | null
   // Report (db: IdReport) - Report)
-  report?: any | null
+  report?: AFReport | null
   // Smlouva (db: IdSmlouvy) - Smlouva)
   smlouva?: AFSmlouva | null
   // Pol. smlouvy (db: IdPolSml) - Pol. smlouvy)
   polSmlouvy?: AFSmlouvaPolozka | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Majetek (db: IdMajetek) - Majetek)
   majetek?: AFMajetek | null
   // Vytvořil (db: idUzivatelVytvoril) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
 
+  // Uživatelé (type: UZIVATELE) - osoby)
+  osoby?: AFUzivatel[]
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
@@ -235,7 +239,7 @@ export class AFUdalost extends AFEntity {
       key: 'zodpPrac',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -243,7 +247,7 @@ export class AFUdalost extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -309,7 +313,7 @@ export class AFUdalost extends AFEntity {
       key: 'report',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFReport',
       
     },
     smlouva : {
@@ -332,7 +336,7 @@ export class AFUdalost extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -348,11 +352,17 @@ export class AFUdalost extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
 
+    osoby : {
+      key: 'osoby',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: 'AFUzivatel'
+    },
     prilohy : {
       key: 'prilohy',
       type: PropertyType.Relation,

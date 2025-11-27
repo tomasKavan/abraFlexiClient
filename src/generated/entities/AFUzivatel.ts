@@ -11,65 +11,71 @@ import { Jazyk } from '../AFEntityEnums'
 
 export class AFUzivatel extends AFEntity {
   static EntityPath: string = 'uzivatel'
-  static EntityName: string = 'Osoby a uživatelé'
+  static EntityName: string = 'Uživatelé ve firmě'
   static EntityType: string = 'UZIVATELE'
 
   // ID (db: IdUzivatel) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)
-  ulice?: string
+  ulice?: string | null
   // Město (db: Mesto) - Město)
-  mesto?: string
+  mesto?: string | null
   // PSČ (db: Psc) - PSČ)
-  psc?: string
+  psc?: string | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Kraj (db: Idregion) - Kraj)
-  region?: AFRegion
+  region?: AFRegion | null
   // Přihlašovací jméno (db: Kod) - Přihlašovací jméno)
-  declare kod?: string
+  declare kod?: string | null
   // Příjmení (db: Prijmeni) - Příjmení)
-  prijmeni?: string
+  prijmeni?: string | null
   // Jméno (db: Jmeno) - Jméno)
-  jmeno?: string
+  jmeno?: string | null
   // Titul (db: Titul) - Titul)
-  titul?: string
+  titul?: string | null
   // Titul za jménem (db: TitulZa) - Titul za jménem)
-  titulZa?: string
+  titulZa?: string | null
   // Funkce (db: Funkce) - Funkce)
-  funkce?: string
+  funkce?: string | null
   // Telefon (db: Tel) - Telefon)
-  tel?: string
+  tel?: string | null
   // Mobil (db: Mobil) - Mobil)
-  mobil?: string
+  mobil?: string | null
   // Fax (db: Fax) - Fax)
-  fax?: string
+  fax?: string | null
   // E-mail (db: Email) - E-mail)
-  email?: string
+  email?: string | null
   // WWW (db: Www) - WWW)
-  www?: string
+  www?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
-  // Platí od (db: PlatiOd) - Platí od)
-  platiOd?: number
-  // Platí do (db: PlatiDo) - Platí do)
-  platiDo?: number
+  popis?: string | null
+  // Platí od roku (db: PlatiOd) - Platí od)
+  platiOd?: number | null
+  // Platí do roku (db: PlatiDo) - Platí do)
+  platiDo?: number | null
   // Jazyk (db: JazykK) - Jazyk)
-  jazykK?: Jazyk
-  // Zamykání (db: Ucetni) - Právo zamykat doklady a období)
-  pravoZamykat?: boolean
+  jazykK?: Jazyk | null
+  // Právo zamykat doklady a období (db: Ucetni) - Právo zamykat doklady a období)
+  pravoZamykat?: boolean | null
   // Přidávat uživatele z jiné firmy (db: AddUser) - Přidávat uživatele z jiné firmy)
-  addUser?: boolean
+  addUser?: boolean | null
   // Databázové jméno uživatele (db: DbUserName) - Databázové jméno uživatele)
-  dbUserName?: string
+  dbUserName?: string | null
   // Štítky (db: ) - Štítky)
-  declare stitky?: string
+  declare stitky?: string | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
   // Role uživatele (db: IdRole) - Role uživatele)
-  role?: AFRole
+  role?: AFRole | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: AFUzivatel | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: AFUzivatel | null
 
   // Události (type: ADR_UDALOST) - udalosti)
   udalosti?: AFUdalost[]
@@ -262,12 +268,34 @@ export class AFUzivatel extends AFEntity {
       isArray: false,
       
     },
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
+      isArray: false,
+      
+    },
     role : {
       key: 'role',
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFRole',
       maxLength: 20,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFUzivatel',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFUzivatel',
+      maxLength: 254,
       
     },
 

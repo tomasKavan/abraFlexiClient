@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFSklad } from './AFSklad'
 import { AFStredisko } from './AFStredisko'
 import { AFCinnost } from './AFCinnost'
@@ -32,9 +33,9 @@ export class AFFakturaPrijataPolozka extends AFEntity {
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: IdCreatedBy) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
   // Úč. pol. (db: Ucetni) - Položka je účetní)
@@ -264,7 +265,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -272,7 +273,7 @@ export class AFFakturaPrijataPolozka extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

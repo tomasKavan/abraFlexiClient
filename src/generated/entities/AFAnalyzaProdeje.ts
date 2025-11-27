@@ -10,6 +10,7 @@ import { AFSkupinaZbozi } from './AFSkupinaZbozi'
 import { AFStredisko } from './AFStredisko'
 import { AFZakazka } from './AFZakazka'
 import { AFMernaJednotka } from './AFMernaJednotka'
+import { AFUzivatel } from './AFUzivatel'
 
 
 
@@ -124,9 +125,9 @@ export class AFAnalyzaProdeje extends AFEntity {
   // MJ (db: ) - MJ)
   mj?: AFMernaJednotka | null
   // Zodpovědná osoba z dokladu (db: ) - Zodpovědná osoba z dokladu)
-  zodpOsoba?: any | null
+  zodpOsoba?: AFUzivatel | null
   // Zodpovědná osoba z adresáře (db: ) - Zodpovědná osoba z adresáře)
-  zodpOsobaAdresar?: any | null
+  zodpOsobaAdresar?: AFUzivatel | null
 
 
 
@@ -504,7 +505,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -512,7 +513,7 @@ export class AFAnalyzaProdeje extends AFEntity {
       key: 'zodpOsobaAdresar',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

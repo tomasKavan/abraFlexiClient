@@ -101,12 +101,12 @@ export type AFURelResult<T> = {
 
 export type AFURelMinimal = AFEntity & {
   'uzivatelske-vazby'?: {
-    evidenceType?: string,
-    objectId?: number,
+    evidenceType?: string | null,
+    objectId?: number | null,
     object?: any,
     vazbaTyp?: {
-      kod?: string
-    }
+      kod?: string | null
+    } | null
   }[]
 }
 
@@ -117,4 +117,27 @@ export type AFSaveOptions = {
 
 export type AFDeleteOptions = {
   abortController?: AbortController
+}
+
+export type AFSessionConfig = {
+  url: string,
+  username: string,
+  password?: string,
+  authSessionId?: string,
+  keepAlive?: boolean | number
+  autoLogin?: boolean
+}
+
+export type AFCompany = {
+  id: number,
+  nazev: string,
+  urlComponent: string,
+  created: Date
+}
+
+export enum AFSessionStatus {
+  Offline = 'offline',
+  LogingIn = 'logingin',
+  Online = 'online',
+  LogingOut = 'logingout',
 }

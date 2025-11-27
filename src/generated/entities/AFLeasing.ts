@@ -6,6 +6,7 @@ import { AFUcet } from './AFUcet'
 import { AFAdresar } from './AFAdresar'
 import { AFStredisko } from './AFStredisko'
 import { AFZakazka } from './AFZakazka'
+import { AFUzivatel } from './AFUzivatel'
 import { AFSplatkovyKalendar } from './AFSplatkovyKalendar'
 import { AFPriloha } from './AFPriloha'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
@@ -113,7 +114,7 @@ export class AFLeasing extends AFEntity {
   // Zakázka (db: IdZakazky) - Zakázka)
   zakazka?: AFZakazka | null
   // Uživatel (db: IdUziv) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
 
   // Splátkový kalendář (type: SPLATKOVY_KALENDAR) - splatkove-kalendare)
   'splatkove-kalendare'?: AFSplatkovyKalendar[]
@@ -462,7 +463,7 @@ export class AFLeasing extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

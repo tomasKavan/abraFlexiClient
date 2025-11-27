@@ -291,16 +291,6 @@ export enum DoporuceniCil {
   uhrazeno = 'doporuceniCil.uhrazeno',
   zaokrouhleno = 'doporuceniCil.zaokrouhleno',
 }
-export enum TypUcJednotky {
-  mikro = 'typUcJednotky.mikro',
-  mala = 'typUcJednotky.mala',
-  velka = 'typUcJednotky.velka',
-}
-export enum ZobrLogo {
-  zachovVelikost = 'zobrLogo.zachovVelikost',
-  prizFormatPomeryStran = 'zobrLogo.prizFormatPomeryStran',
-  prizFormat = 'zobrLogo.prizFormat',
-}
 export enum Jazyk {
   cs = 'jazyk.cs',
   sk = 'jazyk.sk',
@@ -313,6 +303,28 @@ export enum Jazyk {
   pl = 'jazyk.pl',
   ro = 'jazyk.ro',
   ru = 'jazyk.ru',
+}
+export enum TypPrav {
+  admin = 'typPrav.admin',
+  superUzivatel = 'typPrav.superUzivatel',
+  uzivatel = 'typPrav.uzivatel',
+  obchodnik = 'typPrav.obchodnik',
+  ucetni = 'typPrav.ucetni',
+  mzdovyUcetni = 'typPrav.mzdovyUcetni',
+  skladnik = 'typPrav.skladnik',
+  skladnikSPokladnou = 'typPrav.skladnikSPokladnou',
+  jenCist = 'typPrav.jenCist',
+  zablokovan = 'typPrav.zablokovan',
+}
+export enum TypUcJednotky {
+  mikro = 'typUcJednotky.mikro',
+  mala = 'typUcJednotky.mala',
+  velka = 'typUcJednotky.velka',
+}
+export enum ZobrLogo {
+  zachovVelikost = 'zobrLogo.zachovVelikost',
+  prizFormatPomeryStran = 'zobrLogo.prizFormatPomeryStran',
+  prizFormat = 'zobrLogo.prizFormat',
 }
 export enum LogoPozice {
   nahore = 'logoPozice.nahore',
@@ -367,6 +379,10 @@ export enum AutoSendMailMod {
 export enum ZobrazWebKompMod {
   auto = 'zobrazWebKompMod.auto',
   browser = 'zobrazWebKompMod.browser',
+}
+export enum PredvybranyPocet {
+  aktualni = 'predvybranyPocet.aktualni',
+  vsechny = 'predvybranyPocet.vsechny',
 }
 export enum TypUctu {
   rozvahovy = 'typUctu.rozvahovy',

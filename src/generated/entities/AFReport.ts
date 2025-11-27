@@ -15,37 +15,37 @@ export class AFReport extends AFEntity {
   static EntityType: string = 'REPORT'
 
   // ID (db: IdReport) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Kód formuláře (db: FormInfoCode) - Kód formuláře)
-  formInfoCode?: string
+  formInfoCode?: string | null
   // Název pro přílohy (db: NazevPrilohy) - Název pro přílohy)
-  nazevPrilohy?: string
+  nazevPrilohy?: string | null
   // Rozšířená verze (db: Rozsiritelny) - Umožnit rozšířenou verzi)
-  rozsiritelny?: boolean
+  rozsiritelny?: boolean | null
   // Sumovaná verze (db: Sumovany) - Umožnit sumační řádky)
-  sumovany?: boolean
+  sumovany?: boolean | null
   // Řazení (db: Ordering) - Řazení)
-  ordering?: string
+  ordering?: string | null
   // Přídavné jazyky (db: AddonLocales) - Přídavné jazyky)
-  addonLocales?: string
+  addonLocales?: string | null
   // Záznamy (db: PredvybranyPocetK) - Předvybraný počet záznamů)
-  predvybranyPocetK?: PredvybranyPocet
+  predvybranyPocetK?: PredvybranyPocet | null
   // Přílohy (db: PocetPriloh) - Přílohy)
-  pocetPriloh?: number
+  pocetPriloh?: number | null
   // Verze pro cachování (db: VersionForCaching) - Verze)
-  versionForCaching?: number
+  versionForCaching?: number | null
   // Konfigurovatelný (db: Configurable) - Konfigurovatelný)
-  configurable?: boolean
+  configurable?: boolean | null
   // Stát (db: IdStatu) - Stát)
-  stat?: AFStat
+  stat?: AFStat | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
-  typOrganizace?: AFTypOrganizace
+  typOrganizace?: AFTypOrganizace | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]

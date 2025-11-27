@@ -4,6 +4,7 @@ import { AFStat } from './AFStat'
 import { AFRegion } from './AFRegion'
 import { AFSkupinaFirem } from './AFSkupinaFirem'
 import { AFStredisko } from './AFStredisko'
+import { AFUzivatel } from './AFUzivatel'
 import { AFCenikovaSkupina } from './AFCenikovaSkupina'
 import { AFFormaUhrady } from './AFFormaUhrady'
 import { AFOdberatel } from './AFOdberatel'
@@ -152,15 +153,15 @@ export class AFAdresar extends AFEntity {
   // Pošt. kraj (db: Idfaregion) - Kraj)
   faRegion?: AFRegion | null
   // Zodpovědná osoba (db: IdZodpOsoba) - Zodpovědná osoba)
-  zodpOsoba?: any | null
+  zodpOsoba?: AFUzivatel | null
   // Ceníková skupina (db: IdSkupCen) - Ceníková skupina)
   skupCen?: AFCenikovaSkupina | null
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
   formaUhradyCis?: AFFormaUhrady | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: IdCreatedBy) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
 
   // Prodejní ceny (type: ODBERATEL) - odberatele)
   odberatele?: AFOdberatel[]
@@ -616,7 +617,7 @@ export class AFAdresar extends AFEntity {
       key: 'zodpOsoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -638,7 +639,7 @@ export class AFAdresar extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -646,7 +647,7 @@ export class AFAdresar extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

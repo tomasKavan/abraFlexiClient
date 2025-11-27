@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -28,7 +29,7 @@ export class AFUlozenePriznaniKonVykDph extends AFEntity {
   // XML (db: Xml) - XML)
   xml?: string | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Stát (db: IdStat) - Stát)
   stat?: AFStat | null
 
@@ -93,7 +94,7 @@ export class AFUlozenePriznaniKonVykDph extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

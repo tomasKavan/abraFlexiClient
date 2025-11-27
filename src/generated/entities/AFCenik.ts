@@ -6,6 +6,7 @@ import { AFStat } from './AFStat'
 import { AFIntrastatKodNomenklatury } from './AFIntrastatKodNomenklatury'
 import { AFAdresar } from './AFAdresar'
 import { AFPreneseniDph } from './AFPreneseniDph'
+import { AFUzivatel } from './AFUzivatel'
 import { AFOdberatel } from './AFOdberatel'
 import { AFCenikObal } from './AFCenikObal'
 import { AFAtribut } from './AFAtribut'
@@ -239,9 +240,9 @@ export class AFCenik extends AFEntity {
   // MJ Dodací lhůty (db: IdMjDodaciLhuta) - MJ Dodací lhůty)
   mjDodaciLhuta?: AFMernaJednotka | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: IdCreatedBy) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
   // Stav skladu (db: ) - Stav skladu)
   sumStavMj?: Big | null
   // Rezervováno (db: ) - Rezervováno)
@@ -1020,7 +1021,7 @@ export class AFCenik extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -1028,7 +1029,7 @@ export class AFCenik extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

@@ -3,6 +3,7 @@ import { AFEntity } from '../../abra/AFEntity'
 import { AFStat } from './AFStat'
 import { AFRegion } from './AFRegion'
 import { AFAdresar } from './AFAdresar'
+import { AFUzivatel } from './AFUzivatel'
 import { AFPriloha } from './AFPriloha'
 import { AFUdalost } from './AFUdalost'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
@@ -92,9 +93,9 @@ export class AFKontakt extends AFEntity {
   // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
   firma?: AFAdresar | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: IdCreatedBy) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
@@ -359,7 +360,7 @@ export class AFKontakt extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -367,7 +368,7 @@ export class AFKontakt extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

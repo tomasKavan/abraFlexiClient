@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
 
@@ -25,7 +26,7 @@ export class AFCertifikat extends AFEntity {
   // Platí do roku (db: PlatiDo) - Platí do)
   platiDo?: Date | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Účel certifikátu (db: UcelCertK) - Účel certifikátu)
   ucelCertK?: UcelCertK | null
 
@@ -84,7 +85,7 @@ export class AFCertifikat extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

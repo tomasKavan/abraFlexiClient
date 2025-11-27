@@ -2,6 +2,7 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFTypDokladu } from './AFTypDokladu'
 import { AFMena } from './AFMena'
+import { AFUzivatel } from './AFUzivatel'
 
 
 import { TypVazbyDokl, ModulUcetni } from '../AFEntityEnums'
@@ -50,7 +51,7 @@ export class AFVazebniDoklad extends AFEntity {
   // Měna (db: ) - Měna)
   mena?: AFMena | null
   // Uživatel (db: ) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
   // Název firmy nebo jméno osoby (db: ) - Název firmy - jméno)
   nazFirmy?: string | null
   // Město (db: ) - Město)
@@ -196,7 +197,7 @@ export class AFVazebniDoklad extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

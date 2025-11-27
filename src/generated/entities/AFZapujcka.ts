@@ -2,6 +2,7 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
 import { AFMajetek } from './AFMajetek'
 import { AFLeasing } from './AFLeasing'
+import { AFUzivatel } from './AFUzivatel'
 import { AFStat } from './AFStat'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -50,13 +51,13 @@ export class AFZapujcka extends AFEntity {
   // Leasing (db: IdLeasing) - Leasing)
   leasing?: AFLeasing | null
   // Osoba (db: IdOsoby) - Osoba)
-  osoba?: any | null
+  osoba?: AFUzivatel | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null
   // Upravil (db: IdUpdatedBy) - Upravil)
-  updatedBy?: any | null
+  updatedBy?: AFUzivatel | null
   // Vytvořil (db: IdCreatedBy) - Vytvořil)
-  createdBy?: any | null
+  createdBy?: AFUzivatel | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -190,7 +191,7 @@ export class AFZapujcka extends AFEntity {
       key: 'osoba',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -206,7 +207,7 @@ export class AFZapujcka extends AFEntity {
       key: 'updatedBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
@@ -214,7 +215,7 @@ export class AFZapujcka extends AFEntity {
       key: 'createdBy',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

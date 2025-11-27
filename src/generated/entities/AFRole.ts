@@ -11,29 +11,29 @@ export class AFRole extends AFEntity {
   static EntityType: string = 'ROLE'
 
   // ID (db: IdRole) - ID)
-  declare id?: number
+  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
-  lastUpdate?: Date
+  lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string
+  declare kod?: string | null
   // Název (db: Nazev) - Název)
-  nazev?: string
+  nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
-  nazevA?: string
+  nazevA?: string | null
   // Název DE (db: NazevB) - Název DE)
-  nazevB?: string
+  nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
-  nazevC?: string
+  nazevC?: string | null
   // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string
+  poznam?: string | null
   // Popis (db: Popis) - Popis)
-  popis?: string
+  popis?: string | null
   // Zobrazovat (db: Show) - Zobrazovat)
-  visible?: boolean
+  visible?: boolean | null
   // Standardní role (db: Standard) - Standardní role)
-  standard?: boolean
+  standard?: boolean | null
   // Přístup (db: PristupK) - Přístup)
-  pristupK?: TypPrav
+  pristupK?: TypPrav | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

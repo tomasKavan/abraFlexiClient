@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFDashboardPanel } from './AFDashboardPanel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 
@@ -18,7 +19,7 @@ export class AFDashboardSharing extends AFEntity {
   // Pořadí (db: Priority) - Pořadí)
   priority?: number | null
   // Uživatel (db: Iduser) - Uživatel)
-  user?: any | null
+  user?: AFUzivatel | null
   // Dashboard panel (db: Iddashboardpanel) - Dashboard panel)
   dashboardpanel?: AFDashboardPanel | null
 
@@ -50,7 +51,7 @@ export class AFDashboardSharing extends AFEntity {
       key: 'user',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },

@@ -80,3 +80,8 @@ export function composeRelations(
 
   return relations.length ? relations.join(',') : null
 }
+
+export function extractServer(inUrl: string): string {
+  const url = new URL(inUrl)
+  return url.protocol + '//' + url.host
+}

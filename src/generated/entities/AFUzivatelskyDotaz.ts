@@ -1,5 +1,6 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
 import { AFEntity } from '../../abra/AFEntity'
+import { AFUzivatel } from './AFUzivatel'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
 import { AFUzivatelskyDotazParametr } from './AFUzivatelskyDotazParametr'
 import { AFUzivatelskyDotazVlastnost } from './AFUzivatelskyDotazVlastnost'
@@ -43,7 +44,7 @@ export class AFUzivatelskyDotaz extends AFEntity {
   // ID primární evidence (db: ) - ID primární evidence)
   masterFormId?: number | null
   // Uživatel (db: IdUzivatel) - Uživatel)
-  uzivatel?: any | null
+  uzivatel?: AFUzivatel | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -157,7 +158,7 @@ export class AFUzivatelskyDotaz extends AFEntity {
       key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFEntity',
+      afClass: 'AFUzivatel',
       maxLength: 254,
       
     },
