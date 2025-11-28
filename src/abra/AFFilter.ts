@@ -60,6 +60,21 @@ class AFCODE extends AFFilter {
   }
 }
 
+class AFEXT extends AFFilter {
+  constructor(ext: string) {
+    super(ext)
+  }
+
+  toString(): string {
+    return 'ext:' + this._template
+  }
+
+  toUrlComponent(): string {
+    return '/' + this.toString()
+  }
+}
+
 export const Filter = (tpl: string, vars?: Record<string, any>) => new AFFilter(tpl, vars)
 export const ID = (id: number) => new AFID(id)
 export const CODE = (code: string) => new AFCODE(code)
+export const EXT = (ext: string) => new AFEXT(ext)

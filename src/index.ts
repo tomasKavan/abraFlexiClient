@@ -1,4 +1,5 @@
 export { AFApiClient } from './abra/AFApiClient'
+export { AFApiSession } from './abra/AFApiSession'
 export { 
   AFApiConfig, 
   NO_LIMIT,
@@ -8,11 +9,19 @@ export {
   AFURelOptions,
   AFPopulateOptions,
   AFURelResult,
-  StitkyCacheStrategy
+  StitkyCacheStrategy,
+  AFSessionConfig,
+  AFCompany,
+  AFSessionStatus
 } from './abra/AFTypes'
-export { AFFilter, Filter, ID, CODE } from './abra/AFFilter'
+export { AFFilter, Filter, ID, CODE, EXT } from './abra/AFFilter'
 
 export * from './generated/entities/index'
 export * from './generated/AFEntityEnums'
 export { AFEntity } from './abra/AFEntity'
 export { EntityByName } from './generated/AFEntityRegistry'
+
+import { extractServer, extractCompany, extractEvidence } from './abra/AFApiUrlHelper'
+export const urlHelpers = {
+  extractServer, extractCompany, extractEvidence
+}

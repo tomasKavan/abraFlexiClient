@@ -85,3 +85,17 @@ export function extractServer(inUrl: string): string {
   const url = new URL(inUrl)
   return url.protocol + '//' + url.host
 }
+
+export function extractCompany(inUrl: string): string {
+  const url = new URL(inUrl)
+  const split = url.pathname.split('/')
+  if (split.length < 3) throw new AFError(AFErrorCode.PATH_WITHOUT_COMPANY, `Path ${url.pathname} is without company id after /c/`)
+  return split[2]
+}
+
+export function extractEvidence(inUrl: string): string {
+  const url = new URL(inUrl)
+  const split = url.pathname.split('/')
+  if (split.length < 4) throw new AFError(AFErrorCode.PATH_WITHOUT_EVIDENCE, `Path ${url.pathname} is without evidence after /c/<company>/`)
+  return split[3]
+}
