@@ -21,3 +21,5 @@ export { AFEntity } from './abra/AFEntity.js'
 export { EntityByName } from './generated/AFEntityRegistry.js'
 
 export { extractServer, extractCompany, extractEvidence } from './abra/AFApiUrlHelper.js'
+
+export { AFError, AFErrorCode } from './abra/AFError.js'
