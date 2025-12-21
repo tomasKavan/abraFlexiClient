@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka'
-import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek'
-import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka'
-import { AFPriloha } from './AFPriloha'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
+import { AFCiselnikMzdovychSlozek } from './AFCiselnikMzdovychSlozek.js'
+import { AFPracovniPomerHlavicka } from './AFPracovniPomerHlavicka.js'
+import { AFPriloha } from './AFPriloha.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { CsszDuvodOsetrovne, CsszDuvodOtcovske, CsszDuvodPrevzeti } from '../AFEntityEnums'
+import { CsszDuvodOsetrovne, CsszDuvodOtcovske, CsszDuvodPrevzeti } from '../AFEntityEnums.js'
 
 export class AFNepritomnost extends AFEntity {
   static EntityPath: string = 'nepritomnost'

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+
+    "declaration": true,
+    "declarationMap": true,
+  },
+  "include": ["src"],
+  "exclude": ["generator", "dist", "node_modules"]
+}

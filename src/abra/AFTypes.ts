@@ -1,5 +1,5 @@
-import { AFEntity } from "./AFEntity"
-import { AFFilter } from "./AFFilter"
+import { AFEntity } from "./AFEntity.js"
+import { AFFilter } from "./AFFilter.js"
 
 export enum PropertyType {
   Integer = 'integer',
@@ -75,7 +75,10 @@ export type AFQueryOptions = {
   dryRun?: boolean,
   noSimpleMode?: boolean,
   noValidityCheck?: boolean,
-  noUpdateStitkyCache?: boolean
+  noUpdateStitkyCache?: boolean,
+  ucetniObdobi?: string,
+  koncovyMesicRok?: string,
+  pocetMesicu?: number
 
   abortController?: AbortController
 }

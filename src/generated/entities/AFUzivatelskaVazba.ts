@@ -1,6 +1,6 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFTypUzivatelskeVazby } from './AFTypUzivatelskeVazby'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFTypUzivatelskeVazby } from './AFTypUzivatelskeVazby.js'
 
 
 
@@ -49,6 +49,7 @@ export class AFUzivatelskaVazba extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFTypUzivatelskeVazby',
+      maxLength: 20,
       
     },
     modul : {
@@ -61,7 +62,7 @@ export class AFUzivatelskaVazba extends AFEntity {
       key: 'kod',
       type: PropertyType.String,
       isArray: false,
-      maxLength: 20,
+      maxLength: 255,
       
     },
     nazev : {

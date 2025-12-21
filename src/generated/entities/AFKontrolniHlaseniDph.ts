@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
-import { AFCleneniDph } from './AFCleneniDph'
-import { AFPreneseniDph } from './AFPreneseniDph'
-import { AFMernaJednotka } from './AFMernaJednotka'
-import { AFStat } from './AFStat'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
+import { AFCleneniDph } from './AFCleneniDph.js'
+import { AFPreneseniDph } from './AFPreneseniDph.js'
+import { AFMernaJednotka } from './AFMernaJednotka.js'
+import { AFStat } from './AFStat.js'
 
 
-import { TypSzbDph } from '../AFEntityEnums'
+import { TypSzbDph } from '../AFEntityEnums.js'
 
 export class AFKontrolniHlaseniDph extends AFEntity {
   static EntityPath: string = 'kontrolni-hlaseni-dph'

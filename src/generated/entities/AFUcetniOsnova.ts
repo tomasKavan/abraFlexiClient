@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFTypOrganizace } from './AFTypOrganizace'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFTypOrganizace } from './AFTypOrganizace.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { DruhUctu, TypUctu } from '../AFEntityEnums'
+import { DruhUctu, TypUctu } from '../AFEntityEnums.js'
 
 export class AFUcetniOsnova extends AFEntity {
   static EntityPath: string = 'ucetni-osnova'

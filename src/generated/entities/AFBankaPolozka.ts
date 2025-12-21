@@ -1,25 +1,25 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
-import { AFStredisko } from './AFStredisko'
-import { AFCinnost } from './AFCinnost'
-import { AFMena } from './AFMena'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani'
-import { AFUcet } from './AFUcet'
-import { AFZakazka } from './AFZakazka'
-import { AFCleneniDph } from './AFCleneniDph'
-import { AFSazbaDph } from './AFSazbaDph'
-import { AFBanka } from './AFBanka'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
-import { AFPreneseniDph } from './AFPreneseniDph'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFCinnost } from './AFCinnost.js'
+import { AFMena } from './AFMena.js'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
+import { AFUcet } from './AFUcet.js'
+import { AFZakazka } from './AFZakazka.js'
+import { AFCleneniDph } from './AFCleneniDph.js'
+import { AFSazbaDph } from './AFSazbaDph.js'
+import { AFBanka } from './AFBanka.js'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
+import { AFPreneseniDph } from './AFPreneseniDph.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { TypSzbDph } from '../AFEntityEnums'
+import { TypSzbDph } from '../AFEntityEnums.js'
 
 export class AFBankaPolozka extends AFEntity {
   static EntityPath: string = 'banka-polozka'
-  static EntityName: string = 'Položky vzájemných zápočtů'
+  static EntityName: string = 'Položky banky a vzájemných zápočtů'
   static EntityType: string = 'BANKA_POLOZKA'
 
   // ID (db: IdPolInt) - ID)
@@ -34,8 +34,6 @@ export class AFBankaPolozka extends AFEntity {
   createdDate?: Date | null
   // Úč. pol. (db: Ucetni) - Položka je účetní)
   ucetni?: boolean | null
-  // Modul (db: Modul) - Modul)
-  modul?: string | null
   // Název (db: Nazev) - Název)
   nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
@@ -176,12 +174,6 @@ export class AFBankaPolozka extends AFEntity {
     ucetni : {
       key: 'ucetni',
       type: PropertyType.Logic,
-      isArray: false,
-      
-    },
-    modul : {
-      key: 'modul',
-      type: PropertyType.String,
       isArray: false,
       
     },

@@ -1,7 +1,6 @@
 import { Big } from 'big.js'
-import { PropertyType, TypeAnnotation } from './AFTypes'
-import { AFEntity } from './AFEntity';
-import { AFError, AFErrorCode } from './AFError';
+import { PropertyType, TypeAnnotation } from './AFTypes.js'
+import { AFError, AFErrorCode } from './AFError.js'
 
 type PropertyTypeMap = {
   [PropertyType.Integer]: number;

@@ -1,8 +1,8 @@
-import { AFStitek } from "../generated/entities/AFStitek"
-import { AFSkupinaStitku } from "../generated/entities/AFSkupinaStitku"
-import { AFQueryDetail, AFQueryOptions, NO_LIMIT, StitkyCacheStrategy } from "./AFTypes"
-import type { AFApiClient } from "./AFApiClient"
-import { Filter } from "./AFFilter"
+import { AFStitek } from '../generated/entities/AFStitek.js'
+import { AFSkupinaStitku } from '../generated/entities/AFSkupinaStitku.js'
+import { AFQueryDetail, AFQueryOptions, NO_LIMIT, StitkyCacheStrategy } from './AFTypes.js'
+import type { AFApiClient } from './AFApiClient.js'
+import { Filter } from './AFFilter.js'
 
 const DEBOUNCE_MS = 5 * 1000 // 10 sec
 

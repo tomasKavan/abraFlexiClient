@@ -1,7 +1,7 @@
-import { AFApiClient } from './AFApiClient'
-import { extractServer } from './AFApiUrlHelper'
-import { AFError, AFErrorCode } from './AFError'
-import { AFSessionConfig, AFCompany, AFSessionStatus, AFApiFetch } from './AFTypes'
+import { AFApiClient } from './AFApiClient.js'
+import { extractServer } from './AFApiUrlHelper.js'
+import { AFError, AFErrorCode } from './AFError.js'
+import { AFSessionConfig, AFCompany, AFSessionStatus, AFApiFetch } from './AFTypes.js'
 
 const LOGIN_PATH = '/login-logout/login.json'
 const KEEP_ALIVE_PATH = '/login-logout/session-keep-alive.json'

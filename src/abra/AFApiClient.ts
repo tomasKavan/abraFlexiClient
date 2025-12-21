@@ -1,7 +1,7 @@
-import { parsePropertyValue, serializePropertyValue } from "./AFDataType"
-import { AFEntity } from "./AFEntity"
-import { AFError, AFErrorCode } from "./AFError"
-import { Filter, ID } from "./AFFilter"
+import { parsePropertyValue, serializePropertyValue } from "./AFDataType.js"
+import { AFEntity } from "./AFEntity.js"
+import { AFError, AFErrorCode } from "./AFError.js"
+import { Filter, ID } from "./AFFilter.js"
 import { 
   AFApiConfig, 
   AFApiFetch, 
@@ -15,11 +15,11 @@ import {
   AFSaveOptions,
   AFDeleteOptions,
   StitkyCacheStrategy
-} from "./AFTypes"
-import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry"
-import { addParamToUrl } from "../helpers/urlHelper"
-import { composeDetail, composeIncludes, composeRelations } from "./AFApiUrlHelper"
-import { AFStitkyCache } from "./AFStitkyCache"
+} from "./AFTypes.js"
+import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
+import { addParamToUrl } from "../helpers/urlHelper.js"
+import { composeDetail, composeIncludes, composeRelations } from "./AFApiUrlHelper.js"
+import { AFStitkyCache } from "./AFStitkyCache.js"
 
 const ABRA_API_FORMAT = 'json'
 
@@ -71,7 +71,11 @@ export class AFApiClient {
     url = addParamToUrl(url, 'noSimpleMode', options.noSimpleMode)
     url = addParamToUrl(url, 'noValidityCheck', options.noValidityCheck)
 
-    // TODO - remove
+    // Specific to "ucetni vystupy"
+    url = addParamToUrl(url, 'ucetniObdobi', options.ucetniObdobi)
+    url = addParamToUrl(url, 'koncovyMesicRok', options.koncovyMesicRok)
+    url = addParamToUrl(url, 'pocetMesicu', options.pocetMesicu)
+
     console.log(url)
 
     try {

@@ -1,9 +1,9 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { TypUmisteniSklad } from '../AFEntityEnums'
+import { TypUmisteniSklad } from '../AFEntityEnums.js'
 
 export class AFUmisteniVeSkladu extends AFEntity {
   static EntityPath: string = 'umisteni-ve-skladu'

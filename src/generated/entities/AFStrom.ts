@@ -1,7 +1,7 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFStromKoren } from './AFStromKoren'
-import { AFPriloha } from './AFPriloha'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFStromKoren } from './AFStromKoren.js'
+import { AFPriloha } from './AFPriloha.js'
 
 
 

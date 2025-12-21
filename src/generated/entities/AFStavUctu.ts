@@ -1,8 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUcet } from './AFUcet'
-import { AFMena } from './AFMena'
-import { AFUcetniObdobi } from './AFUcetniObdobi'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUcet } from './AFUcet.js'
+import { AFMena } from './AFMena.js'
+import { AFUcetniObdobi } from './AFUcetniObdobi.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFCinnost } from './AFCinnost.js'
 
 
 
@@ -20,6 +22,10 @@ export class AFStavUctu extends AFEntity {
   ucetniObdobi?: AFUcetniObdobi | null
   // Název účtu (db: ) - Název účtu)
   nazevUctu?: string | null
+  // Středisko (db: ) - Středisko)
+  stredisko?: AFStredisko | null
+  // Činnost (db: ) - Činnost)
+  cinnost?: AFCinnost | null
   // Počátek (db: ) - Počátek)
   pocatek?: Big | null
   // Počátek MD (db: ) - Počátek MD)
@@ -289,6 +295,21 @@ export class AFStavUctu extends AFEntity {
       key: 'nazevUctu',
       type: PropertyType.String,
       isArray: false,
+      
+    },
+    stredisko : {
+      key: 'stredisko',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFStredisko',
+      maxLength: 20,
+      
+    },
+    cinnost : {
+      key: 'cinnost',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFCinnost',
       
     },
     pocatek : {

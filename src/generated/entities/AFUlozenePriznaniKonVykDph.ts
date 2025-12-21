@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
-import { AFStat } from './AFStat'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel.js'
+import { AFStat } from './AFStat.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { StavPriznaniKonVykDph } from '../AFEntityEnums'
+import { StavPriznaniKonVykDph } from '../AFEntityEnums.js'
 
 export class AFUlozenePriznaniKonVykDph extends AFEntity {
   static EntityPath: string = 'ulozene-priznani-kon-vyk-dph'

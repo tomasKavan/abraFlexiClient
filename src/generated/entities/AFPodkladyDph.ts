@@ -1,16 +1,16 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFCleneniDph } from './AFCleneniDph'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
-import { AFAdresar } from './AFAdresar'
-import { AFUcet } from './AFUcet'
-import { AFZakazka } from './AFZakazka'
-import { AFStredisko } from './AFStredisko'
-import { AFStatDph } from './AFStatDph'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFCleneniDph } from './AFCleneniDph.js'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
+import { AFAdresar } from './AFAdresar.js'
+import { AFUcet } from './AFUcet.js'
+import { AFZakazka } from './AFZakazka.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFStatDph } from './AFStatDph.js'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
 
 
-import { ModulUcetni, TypSzbDph, StavUziv, TypPlneni } from '../AFEntityEnums'
+import { ModulUcetni, TypSzbDph, StavUziv, TypPlneni } from '../AFEntityEnums.js'
 
 export class AFPodkladyDph extends AFEntity {
   static EntityPath: string = 'podklady-dph'

@@ -1,21 +1,21 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
-import { AFSkladovyPohyb } from './AFSkladovyPohyb'
-import { AFNastaveni } from './AFNastaveni'
-import { AFCenik } from './AFCenik'
-import { AFAdresar } from './AFAdresar'
-import { AFKontakt } from './AFKontakt'
-import { AFReport } from './AFReport'
-import { AFZakazka } from './AFZakazka'
-import { AFSmlouva } from './AFSmlouva'
-import { AFSmlouvaPolozka } from './AFSmlouvaPolozka'
-import { AFStrom } from './AFStrom'
-import { AFUdalost } from './AFUdalost'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel.js'
+import { AFSkladovyPohyb } from './AFSkladovyPohyb.js'
+import { AFNastaveni } from './AFNastaveni.js'
+import { AFCenik } from './AFCenik.js'
+import { AFAdresar } from './AFAdresar.js'
+import { AFKontakt } from './AFKontakt.js'
+import { AFReport } from './AFReport.js'
+import { AFZakazka } from './AFZakazka.js'
+import { AFSmlouva } from './AFSmlouva.js'
+import { AFSmlouvaPolozka } from './AFSmlouvaPolozka.js'
+import { AFStrom } from './AFStrom.js'
+import { AFUdalost } from './AFUdalost.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { TypPrilohy } from '../AFEntityEnums'
+import { TypPrilohy } from '../AFEntityEnums.js'
 
 export class AFPriloha extends AFEntity {
   static EntityPath: string = 'priloha'
@@ -72,8 +72,6 @@ export class AFPriloha extends AFEntity {
   adresar?: AFAdresar | null
   // Kontakt (db: IdKontakt) - Kontakt)
   kontakt?: AFKontakt | null
-  // Konektor (db: IdKonektor) - Konektor)
-  konektor?: any | null
   // Report (db: IdReport) - Report)
   report?: AFReport | null
   // Zakázka (db: IdZakazky) - Zakázka)
@@ -84,8 +82,6 @@ export class AFPriloha extends AFEntity {
   polSmlouvy?: AFSmlouvaPolozka | null
   // Strom (db: IdUzel) - Strom)
   uzel?: AFStrom | null
-  // Požadavek (db: IdPozadavek) - Požadavek)
-  pozadavek?: any | null
   // Událost (db: IdAdrUdalost) - Událost)
   adrUdalost?: AFUdalost | null
   // Obsah (db: ) - Obsah)
@@ -265,13 +261,6 @@ export class AFPriloha extends AFEntity {
       afClass: 'AFKontakt',
       
     },
-    konektor : {
-      key: 'konektor',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFEntity',
-      
-    },
     report : {
       key: 'report',
       type: PropertyType.Relation,
@@ -308,13 +297,6 @@ export class AFPriloha extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFStrom',
-      
-    },
-    pozadavek : {
-      key: 'pozadavek',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFEntity',
       
     },
     adrUdalost : {

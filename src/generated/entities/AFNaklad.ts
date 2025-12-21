@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFTypNakladu } from './AFTypNakladu'
-import { AFCenik } from './AFCenik'
-import { AFUzivatel } from './AFUzivatel'
-import { AFUdalost } from './AFUdalost'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFTypNakladu } from './AFTypNakladu.js'
+import { AFCenik } from './AFCenik.js'
+import { AFUzivatel } from './AFUzivatel.js'
+import { AFUdalost } from './AFUdalost.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
 

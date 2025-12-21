@@ -73,6 +73,7 @@ export interface PropertyDef {
   maxLength?: number,
   enumName?: string,
   itemType?: PropertyType,
+  itemTypeName?: string,
 
   // to 1 relations
   fkName?: string,

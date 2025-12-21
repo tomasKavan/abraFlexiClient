@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFStat } from './AFStat'
-import { AFRegion } from './AFRegion'
-import { AFRole } from './AFRole'
-import { AFUdalost } from './AFUdalost'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFStat } from './AFStat.js'
+import { AFRegion } from './AFRegion.js'
+import { AFRole } from './AFRole.js'
+import { AFUdalost } from './AFUdalost.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { Jazyk } from '../AFEntityEnums'
+import { Jazyk } from '../AFEntityEnums.js'
 
 export class AFUzivatel extends AFEntity {
   static EntityPath: string = 'uzivatel'
@@ -68,6 +68,8 @@ export class AFUzivatel extends AFEntity {
   dbUserName?: string | null
   // Štítky (db: ) - Štítky)
   declare stitky?: string | null
+  // Přístup do firmy (db: ) - Přístup do firmy)
+  hasCompanyAccess?: boolean | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
   // Role uživatele (db: IdRole) - Role uživatele)
@@ -265,6 +267,12 @@ export class AFUzivatel extends AFEntity {
     stitky : {
       key: 'stitky',
       type: PropertyType.String,
+      isArray: false,
+      
+    },
+    hasCompanyAccess : {
+      key: 'hasCompanyAccess',
+      type: PropertyType.Logic,
       isArray: false,
       
     },

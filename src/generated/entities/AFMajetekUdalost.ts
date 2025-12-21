@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFMajetek } from './AFMajetek'
-import { AFStredisko } from './AFStredisko'
-import { AFUcet } from './AFUcet'
-import { AFZakazka } from './AFZakazka'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFMajetek } from './AFMajetek.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFUcet } from './AFUcet.js'
+import { AFZakazka } from './AFZakazka.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { TypUdal, NahrUcet } from '../AFEntityEnums'
+import { TypUdal, NahrUcet } from '../AFEntityEnums.js'
 
 export class AFMajetekUdalost extends AFEntity {
   static EntityPath: string = 'majetek-udalost'

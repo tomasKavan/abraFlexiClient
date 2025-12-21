@@ -13,5 +13,5 @@
     "noEmitOnError": true,
   },
   "include": ["generator/**/*"],
-  "exclude": ["node_modules", "bin"]
+  "exclude": ["node_modules", "bin", "dist", "src"]
 }

@@ -1,11 +1,11 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFOsobaHlavicka } from './AFOsobaHlavicka'
-import { AFOsoba } from './AFOsoba'
-import { AFSkupinaOsob } from './AFSkupinaOsob'
-import { AFStredisko } from './AFStredisko'
-import { AFAdresar } from './AFAdresar'
-import { AFPracovniPomer } from './AFPracovniPomer'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
+import { AFOsoba } from './AFOsoba.js'
+import { AFSkupinaOsob } from './AFSkupinaOsob.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFAdresar } from './AFAdresar.js'
+import { AFPracovniPomer } from './AFPracovniPomer.js'
 
 
 

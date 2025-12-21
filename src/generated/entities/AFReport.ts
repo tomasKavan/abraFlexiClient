@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFStat } from './AFStat'
-import { AFTypOrganizace } from './AFTypOrganizace'
-import { AFPriloha } from './AFPriloha'
-import { AFUdalost } from './AFUdalost'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFStat } from './AFStat.js'
+import { AFTypOrganizace } from './AFTypOrganizace.js'
+import { AFPriloha } from './AFPriloha.js'
+import { AFUdalost } from './AFUdalost.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { PredvybranyPocet } from '../AFEntityEnums'
+import { PredvybranyPocet } from '../AFEntityEnums.js'
 
 export class AFReport extends AFEntity {
   static EntityPath: string = 'report'

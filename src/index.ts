@@ -1,27 +1,23 @@
-export { AFApiClient } from './abra/AFApiClient'
-export { AFApiSession } from './abra/AFApiSession'
-export { 
+export { AFApiClient } from './abra/AFApiClient.js'
+export { AFApiSession } from './abra/AFApiSession.js'
+export { NO_LIMIT, AFSessionStatus, AFQueryDetail } from './abra/AFTypes.js'
+
+export type { 
   AFApiConfig, 
-  NO_LIMIT,
   NO_LIMIT_T, 
-  AFQueryDetail, 
   AFQueryOptions,
   AFURelOptions,
   AFPopulateOptions,
   AFURelResult,
   StitkyCacheStrategy,
   AFSessionConfig,
-  AFCompany,
-  AFSessionStatus
-} from './abra/AFTypes'
-export { AFFilter, Filter, ID, CODE, EXT } from './abra/AFFilter'
+  AFCompany
+} from './abra/AFTypes.js'
+export { AFFilter, Filter, ID, CODE, EXT } from './abra/AFFilter.js'
 
-export * from './generated/entities/index'
-export * from './generated/AFEntityEnums'
-export { AFEntity } from './abra/AFEntity'
-export { EntityByName } from './generated/AFEntityRegistry'
+export * from './generated/entities/index.js'
+export * from './generated/AFEntityEnums.js'
+export { AFEntity } from './abra/AFEntity.js'
+export { EntityByName } from './generated/AFEntityRegistry.js'
 
-import { extractServer, extractCompany, extractEvidence } from './abra/AFApiUrlHelper'
-export const urlHelpers = {
-  extractServer, extractCompany, extractEvidence
-}
+export { extractServer, extractCompany, extractEvidence } from './abra/AFApiUrlHelper.js'

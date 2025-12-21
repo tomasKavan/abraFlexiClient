@@ -1,10 +1,10 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFAdresar } from './AFAdresar'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFAdresar } from './AFAdresar.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { GdprTypVztahu } from '../AFEntityEnums'
+import { GdprTypVztahu } from '../AFEntityEnums.js'
 
 export class AFSubjekt extends AFEntity {
   static EntityPath: string = 'subjekt'
@@ -27,8 +27,6 @@ export class AFSubjekt extends AFEntity {
   tretiZeme?: boolean | null
   // Adresář (db: Idadresar) - Adresář)
   adresar?: AFAdresar | null
-  // Definice účelu (db: Iddefiniceucelu) - Definice účelu)
-  definiceUcel?: any | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -86,13 +84,6 @@ export class AFSubjekt extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFAdresar',
-      
-    },
-    definiceUcel : {
-      key: 'definiceUcel',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFEntity',
       
     },
 

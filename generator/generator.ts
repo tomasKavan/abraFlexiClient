@@ -99,7 +99,7 @@ function parseProperties(input: any, evidences: EvidenceDef[]): PropertyDef[] {
   }
 
   for (const prIn of input.properties.property) {
-    const prOut = {
+    const prOut: PropertyDef = {
       propertyName: prIn.propertyName,
       dbName: prIn.dbName,
       name: prIn.name,
@@ -133,6 +133,7 @@ function parseProperties(input: any, evidences: EvidenceDef[]): PropertyDef[] {
       digits: parseIntOrUndef(prIn.digits),
       decimals: parseIntOrUndef(prIn.decimals),
       maxLength: parseIntOrUndef(prIn.maxLength),
+      itemType: prIn.itemType ? parsePropertyType(prIn.itemType) : undefined,
     
       // to 1 relations
       fkName: prIn.fkName,
@@ -140,6 +141,7 @@ function parseProperties(input: any, evidences: EvidenceDef[]): PropertyDef[] {
       fkEvidenceType: prIn.fkEvidenceType,
       url: prIn.url
     }
+
     out.push(bindRelationTypeToProperty(prOut, evidences))
   }
   return out
@@ -244,6 +246,7 @@ async function generateEntityClass(
   // Generate type
   properties.forEach(p => p.genType = generateType(p))
   properties.forEach(p => p.typeName = getEnumKey(PropertyType, p.type))
+  properties.forEach(p => p.itemTypeName = p.itemType ? getEnumKey(PropertyType, p.itemType) : 'Any')
 
   const vars: any = {
     imports: [],
@@ -353,8 +356,9 @@ function generateClassIndex(evidences: EvidenceDef[]): Promise<string> {
   return p
 }
 
-function generateType(def: PropertyDef): string {
-  switch (def.type) {
+function generateType(def: PropertyDef, forItem?: boolean): string {
+  const type = forItem ? def.itemType : def.type
+  switch (type) {
     case PropertyType.String: return 'string'
     case PropertyType.Integer: return 'number'
     case PropertyType.Numeric: return 'Big'
@@ -365,7 +369,7 @@ function generateType(def: PropertyDef): string {
     case PropertyType.YearMonth: return 'Date'
     case PropertyType.Relation: return def.tsClassName || 'any'
     case PropertyType.Select: return def.enumName || 'any'
-    case PropertyType.Array: return (def.itemType || 'any') + '[]'
+    case PropertyType.Array: return (generateType(def, true) || 'any') + '[]'
   }
   return 'any'
 }

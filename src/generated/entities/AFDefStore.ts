@@ -1,22 +1,20 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
 import { AFEntity } from '../../abra/AFEntity.js'
-import { AFMernaJednotka } from './AFMernaJednotka.js'
+import { AFUzivatel } from './AFUzivatel.js'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { TypAtribut } from '../AFEntityEnums.js'
+import { DefinitionType } from '../AFEntityEnums.js'
 
-export class AFTypAtributu extends AFEntity {
-  static EntityPath: string = 'typ-atributu'
-  static EntityName: string = 'Typy atributů'
-  static EntityType: string = 'TYP_ATRIBUTU'
+export class AFDefStore extends AFEntity {
+  static EntityPath: string = 'def-store'
+  static EntityName: string = 'Úložiště definic'
+  static EntityType: string = 'DEF_STORE'
 
-  // ID (db: IdTypAtribut) - ID)
+  // ID (db: Iddefstore) - ID)
   declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
-  // Zkratka (db: Kod) - Zkratka)
-  declare kod?: string | null
   // Název (db: Nazev) - Název)
   nazev?: string | null
   // Název EN (db: NazevA) - Název EN)
@@ -25,26 +23,24 @@ export class AFTypAtributu extends AFEntity {
   nazevB?: string | null
   // Název FR (db: NazevC) - Název FR)
   nazevC?: string | null
-  // Poznámka (db: Poznam) - Poznámka)
-  poznam?: string | null
-  // Popis (db: Popis) - Popis)
-  popis?: string | null
-  // Zobrazovat (db: Show) - Zobrazovat)
-  visible?: boolean | null
-  // Platí od roku (db: PlatiOd) - Platí od)
-  platiOd?: number | null
-  // Platí do roku (db: PlatiDo) - Platí do)
-  platiDo?: number | null
-  // Typ atributu (db: TypAtributK) - Typ atributu)
-  typAtributK?: TypAtribut | null
-  // Místa použití (db: BeanKeysA) - Místa použití)
-  beanKeysA?: string | null
-  // Standartní (db: Standard) - Standartní)
-  standard?: boolean | null
-  // Uuid (db: Uuid) - Univerzální unikátní identifikátor)
-  uuid?: string | null
-  // MJ (db: IdMj) - MJ)
-  mj?: AFMernaJednotka | null
+  // Privátní (db: Privatni) - Privátní)
+  privatni?: boolean | null
+  // Data (db: Data) - Data)
+  data?: string | null
+  // Klíč (db: Klic) - Klíč)
+  klic?: string | null
+  // Místa použití (db: ShowBeanKeys) - Místa použití)
+  showBeanKeys?: string | null
+  // Typ definice (db: DefinitionTypeK) - Typ definice)
+  definitionTypeK?: DefinitionType | null
+  // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
+  createdDate?: Date | null
+  // Vlastník definice (db: Uzivatel) - Vlastník definice)
+  uzivatel?: AFUzivatel | null
+  // Upravil (db: IdUpdatedBy) - Upravil)
+  updatedBy?: AFUzivatel | null
+  // Vytvořil (db: IdCreatedBy) - Vytvořil)
+  createdBy?: AFUzivatel | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -62,13 +58,6 @@ export class AFTypAtributu extends AFEntity {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
       isArray: false,
-      
-    },
-    kod : {
-      key: 'kod',
-      type: PropertyType.String,
-      isArray: false,
-      maxLength: 20,
       
     },
     nazev : {
@@ -99,69 +88,66 @@ export class AFTypAtributu extends AFEntity {
       maxLength: 255,
       
     },
-    poznam : {
-      key: 'poznam',
-      type: PropertyType.String,
-      isArray: false,
-      
-    },
-    popis : {
-      key: 'popis',
-      type: PropertyType.String,
-      isArray: false,
-      
-    },
-    visible : {
-      key: 'visible',
+    privatni : {
+      key: 'privatni',
       type: PropertyType.Logic,
       isArray: false,
       
     },
-    platiOd : {
-      key: 'platiOd',
-      type: PropertyType.Integer,
+    data : {
+      key: 'data',
+      type: PropertyType.String,
       isArray: false,
       
     },
-    platiDo : {
-      key: 'platiDo',
-      type: PropertyType.Integer,
+    klic : {
+      key: 'klic',
+      type: PropertyType.String,
       isArray: false,
       
     },
-    typAtributK : {
-      key: 'typAtributK',
+    showBeanKeys : {
+      key: 'showBeanKeys',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },
+    definitionTypeK : {
+      key: 'definitionTypeK',
       type: PropertyType.Select,
       isArray: false,
-      maxLength: 50,
-      enumName: 'TypAtribut',
-      enum: TypAtribut,
+      enumName: 'DefinitionType',
+      enum: DefinitionType,
       
     },
-    beanKeysA : {
-      key: 'beanKeysA',
-      type: PropertyType.String,
+    createdDate : {
+      key: 'createdDate',
+      type: PropertyType.DateTime,
       isArray: false,
       
     },
-    standard : {
-      key: 'standard',
-      type: PropertyType.Logic,
-      isArray: false,
-      
-    },
-    uuid : {
-      key: 'uuid',
-      type: PropertyType.String,
-      isArray: false,
-      maxLength: 50,
-      
-    },
-    mj : {
-      key: 'mj',
+    uzivatel : {
+      key: 'uzivatel',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFMernaJednotka',
+      afClass: 'AFUzivatel',
+      maxLength: 254,
+      
+    },
+    updatedBy : {
+      key: 'updatedBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFUzivatel',
+      maxLength: 254,
+      
+    },
+    createdBy : {
+      key: 'createdBy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFUzivatel',
+      maxLength: 254,
       
     },
 

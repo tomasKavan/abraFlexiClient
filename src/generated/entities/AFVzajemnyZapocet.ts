@@ -1,34 +1,35 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
-import { AFTypVzajemnychZapoctu } from './AFTypVzajemnychZapoctu'
-import { AFMena } from './AFMena'
-import { AFKonstSymbol } from './AFKonstSymbol'
-import { AFAdresar } from './AFAdresar'
-import { AFStat } from './AFStat'
-import { AFRegion } from './AFRegion'
-import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet'
-import { AFPredpisZauctovani } from './AFPredpisZauctovani'
-import { AFUcet } from './AFUcet'
-import { AFPenezniUstav } from './AFPenezniUstav'
-import { AFStatDph } from './AFStatDph'
-import { AFCleneniDph } from './AFCleneniDph'
-import { AFStredisko } from './AFStredisko'
-import { AFCinnost } from './AFCinnost'
-import { AFZakazka } from './AFZakazka'
-import { AFKontakt } from './AFKontakt'
-import { AFRadaBanka } from './AFRadaBanka'
-import { AFSazbaDph } from './AFSazbaDph'
-import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni'
-import { AFVazebniDoklad } from './AFVazebniDoklad'
-import { AFBankaPolozka } from './AFBankaPolozka'
-import { AFPriloha } from './AFPriloha'
-import { AFUdalost } from './AFUdalost'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
-import { AFVazba } from './AFVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel.js'
+import { AFTypVzajemnychZapoctu } from './AFTypVzajemnychZapoctu.js'
+import { AFMena } from './AFMena.js'
+import { AFKonstSymbol } from './AFKonstSymbol.js'
+import { AFAdresar } from './AFAdresar.js'
+import { AFStat } from './AFStat.js'
+import { AFRegion } from './AFRegion.js'
+import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
+import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
+import { AFUcet } from './AFUcet.js'
+import { AFPenezniUstav } from './AFPenezniUstav.js'
+import { AFStatDph } from './AFStatDph.js'
+import { AFCleneniDph } from './AFCleneniDph.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFCinnost } from './AFCinnost.js'
+import { AFZakazka } from './AFZakazka.js'
+import { AFKontakt } from './AFKontakt.js'
+import { AFRadaBanka } from './AFRadaBanka.js'
+import { AFSazbaDph } from './AFSazbaDph.js'
+import { AFCleneniKontrolniHlaseni } from './AFCleneniKontrolniHlaseni.js'
+import { AFVazebniDoklad } from './AFVazebniDoklad.js'
+import { AFBankaPolozka } from './AFBankaPolozka.js'
+import { AFPriloha } from './AFPriloha.js'
+import { AFUdalost } from './AFUdalost.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { AFVazba } from './AFVazba.js'
+import { AFDokladKUhrade } from './AFDokladKUhrade.js'
 
 
-import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums'
+import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums.js'
 
 export class AFVzajemnyZapocet extends AFEntity {
   static EntityPath: string = 'vzajemny-zapocet'
@@ -268,6 +269,12 @@ export class AFVzajemnyZapocet extends AFEntity {
   get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
   // Vazby mezi doklady (type: VAZBA_MEZI_DOKLADY) - vazby)
   vazby?: AFVazba[]
+  // Doklady faktur (type: DOKLAD_K_UHRADE) - doklady-k-uhrade)
+  'doklady-k-uhrade'?: AFDokladKUhrade[]
+  get dokladyKUhrade(): AFDokladKUhrade[] | undefined { return this['doklady-k-uhrade']}
+  // Doklady faktur (type: DOKLAD_K_UHRADE) - doklady-k-uhrade-bez-filtrovani-firmy)
+  'doklady-k-uhrade-bez-filtrovani-firmy'?: AFDokladKUhrade[]
+  get dokladyKUhradeBezFiltrovaniFirmy(): AFDokladKUhrade[] | undefined { return this['doklady-k-uhrade-bez-filtrovani-firmy']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -1073,6 +1080,18 @@ export class AFVzajemnyZapocet extends AFEntity {
       type: PropertyType.Relation,
       isArray: true,
       afClass: 'AFVazba'
+    },
+    'doklady-k-uhrade' : {
+      key: 'doklady-k-uhrade',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: 'AFDokladKUhrade'
+    },
+    'doklady-k-uhrade-bez-filtrovani-firmy' : {
+      key: 'doklady-k-uhrade-bez-filtrovani-firmy',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: 'AFDokladKUhrade'
     },
 
   }

@@ -1,16 +1,16 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFUzivatel } from './AFUzivatel'
-import { AFCleneniDph } from './AFCleneniDph'
-import { AFAdresar } from './AFAdresar'
-import { AFMena } from './AFMena'
-import { AFStredisko } from './AFStredisko'
-import { AFUcet } from './AFUcet'
-import { AFZakazka } from './AFZakazka'
-import { AFCinnost } from './AFCinnost'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFUzivatel } from './AFUzivatel.js'
+import { AFCleneniDph } from './AFCleneniDph.js'
+import { AFAdresar } from './AFAdresar.js'
+import { AFMena } from './AFMena.js'
+import { AFStredisko } from './AFStredisko.js'
+import { AFUcet } from './AFUcet.js'
+import { AFZakazka } from './AFZakazka.js'
+import { AFCinnost } from './AFCinnost.js'
 
 
-import { ModulUcetni, TypSzbDph, StavUziv } from '../AFEntityEnums'
+import { ModulUcetni, TypSzbDph, StavUziv } from '../AFEntityEnums.js'
 
 export class AFUcetniDenikZjednoduseny extends AFEntity {
   static EntityPath: string = 'ucetni-denik-zjednoduseny'

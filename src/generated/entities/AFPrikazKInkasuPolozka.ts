@@ -1,13 +1,13 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFPrikazKUhrade } from './AFPrikazKUhrade'
-import { AFStat } from './AFStat'
-import { AFMena } from './AFMena'
-import { AFPenezniUstav } from './AFPenezniUstav'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFPrikazKUhrade } from './AFPrikazKUhrade.js'
+import { AFStat } from './AFStat.js'
+import { AFMena } from './AFMena.js'
+import { AFPenezniUstav } from './AFPenezniUstav.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { ElPrikazPoplatek } from '../AFEntityEnums'
+import { ElPrikazPoplatek } from '../AFEntityEnums.js'
 
 export class AFPrikazKInkasuPolozka extends AFEntity {
   static EntityPath: string = 'prikaz-k-inkasu-polozka'

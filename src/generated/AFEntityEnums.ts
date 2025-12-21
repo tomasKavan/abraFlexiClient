@@ -177,6 +177,14 @@ export enum KodPlneni {
   knihy = 'kodPlneni.knihy',
   neuhrazeneFak = 'kodPlneni.neuhrazeneFak',
 }
+export enum DefinitionType {
+  aggregation = 'definitionType.aggregation',
+  filter = 'definitionType.filter',
+  form = 'definitionType.form',
+  grid = 'definitionType.grid',
+  other = 'definitionType.other',
+  view = 'definitionType.view',
+}
 export enum JakUhrazeno {
   rucne1 = 'jakUhrazeno.rucne1',
   rucneN = 'jakUhrazeno.rucneN',

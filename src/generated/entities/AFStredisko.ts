@@ -1,8 +1,8 @@
-import { TypeAnnotation, PropertyType } from '../../abra/AFTypes'
-import { AFEntity } from '../../abra/AFEntity'
-import { AFStat } from './AFStat'
-import { AFRegion } from './AFRegion'
-import { AFUzivatelskaVazba } from './AFUzivatelskaVazba'
+import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
+import { AFEntity } from '../../abra/AFEntity.js'
+import { AFStat } from './AFStat.js'
+import { AFRegion } from './AFRegion.js'
+import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
 
