@@ -1,5 +1,3 @@
-debugger
-
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 import { withBasicAuth } from './helpers/basciAuth'
@@ -33,24 +31,13 @@ const run = async () => {
   const COMPANY = 'ALZACZ'
 
   const invoice = await api.create(AFFakturaVydana)
-
-  const typDokl = await api.queryOne(AFTypFakturyVydane, { detail: ['kod'], filter: CODE(INVOICE_TYPE_KOD) })
-  if (!typDokl) throw new Error(`Unable to fetch document type ${INVOICE_TYPE_KOD}`)
-
-  invoice.typDokl = typDokl
-
-  const company = await api.queryOne(AFAdresar, { detail: ['kod'], filter: CODE(COMPANY) })
-  if (!company) throw new Error(`Unable to fetch company ${INVOICE_TYPE_KOD}`)
-
-  invoice.firma = company
+  invoice.typDokl = await api.createIdStub(AFTypFakturyVydane, { kod: INVOICE_TYPE_KOD })
+  invoice.firma = await api.createIdStub(AFAdresar, { kod: COMPANY })
 
   const item = await api.create(AFFakturaVydanaPolozka)
   invoice.polozkyDokladu = [item]
 
-  const cenik = await api.queryOne(AFCenik, { detail: ['kod'], filter: CODE(CENIK_KOD) })
-  if (!cenik) throw new Error(`Unable to fetch cenik with code ${CENIK_KOD}`)
-
-  item.cenik = cenik
+  item.cenik = await api.createIdStub(AFCenik, { kod: CENIK_KOD })
   item.cenaMj = new Big(200)
   item.mnozMj = new Big(2.5)
   item.objem = new Big(-2)
