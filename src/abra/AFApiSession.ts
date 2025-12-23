@@ -221,7 +221,7 @@ export class AFApiSession {
   }
 
   client(company: string | AFCompany): AFApiClient {
-    const companyUrlComponent = (typeof company === 'string') ? company : company.toString()
+    const companyUrlComponent = (typeof company === 'string') ? company : company.urlComponent
     
     return new AFApiClient({
       url: this._serverUrl,
@@ -256,7 +256,7 @@ export class AFApiSession {
   private _establish(sessionId: string) {
     this._loginPromise = (async () => {
       try {
-        this._keepaliveTick(true)
+        await this._keepaliveTick(true)
       } finally {
         this._loginPromise = null
       }

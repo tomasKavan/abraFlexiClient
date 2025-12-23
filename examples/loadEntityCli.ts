@@ -1,6 +1,6 @@
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
-import { addBasicAtuh } from './helpers/basciAuth'
+import { withBasicAuth } from './helpers/basciAuth'
 
 import { 
   AFApiClient, 
@@ -31,7 +31,7 @@ const apiOpts: AFApiConfig = {
 
 if (argv.u && argv.p) {
   apiOpts.fetch = (input, init) => {
-    return fetch(input, addBasicAtuh(argv.u || '', argv.p || ''))
+    return fetch(input, withBasicAuth(init, argv.u || '', argv.p || ''))
   }
 }
 

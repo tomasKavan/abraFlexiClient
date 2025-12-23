@@ -14,7 +14,8 @@ import {
   AFURelMinimal,
   AFSaveOptions,
   AFDeleteOptions,
-  StitkyCacheStrategy
+  StitkyCacheStrategy,
+  IdStub
 } from "./AFTypes.js"
 import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
 import { addParamToUrl } from "../helpers/urlHelper.js"
@@ -223,7 +224,10 @@ export class AFApiClient {
         fetchBy.push(['kod', en.kod || ''])
         continue
       }
-      throw new AFError(AFErrorCode.MISSING_ID_IN_POPULATE, `Can't populate entity withoud id or kod set. It's not possible to fetch data. Entity: ${en}`)
+      throw new AFError(
+        AFErrorCode.MISSING_ID, 
+        `Can't populate entity withoud id or kod set. It's not possible to fetch data. Entity: ${en}`
+      )
     }
     
     // Nothing was requested to populate
@@ -292,6 +296,19 @@ export class AFApiClient {
     return new entity(this._stitkyCache) as InstanceType<T>
   }
 
+  public async createIdStub<T extends typeof AFEntity>(
+    entity: T,
+    id: IdStub 
+  ): Promise<InstanceType<T>> {
+    if (typeof id.id !== 'number' && (!id.kod || !id.kod.length) && (!id.ext || !id.ext.length)) {
+      throw new AFError(AFErrorCode.MISSING_ID, `Requesting id stub for ${entity.EntityName} but no id is pprovided.`)
+    }
+    const ent = new entity(this._stitkyCache) as InstanceType<T>
+    if (id.id) ent.id = id.id
+    if (id.kod) ent.kod = id.kod
+    return ent
+  }
+
   async saveRaw(
     entityPath: string,
     data: any,
@@ -305,10 +322,15 @@ export class AFApiClient {
 
     console.log(url)
 
+    console.log(data)
+
     try {
       const raw = await this._fetch(url, {
         signal: options.abortController?.signal,
-        method: 'POST',
+        method: 'PUT',
+        headers: {
+          'Content-Type' : 'application/json'
+        },
         body: JSON.stringify({
           winstrom: [{
             [entityPath] : data
@@ -317,11 +339,12 @@ export class AFApiClient {
       })
 
       if (raw.status >= 400 && raw.status < 600) {
+        console.log(JSON.stringify(await raw.json(), null, '\n'))
         throw new AFError(AFErrorCode.ABRA_FLEXI_ERROR, `${raw.status} ${raw.statusText}`)
       }
 
       const json = await raw.json()
-      console.log(json)
+      console.log(JSON.stringify(json))
 
       const jres = json.winstrom
       if (jres['success'] === 'true') {
@@ -359,12 +382,17 @@ export class AFApiClient {
 
   async deleteRaw(
     entityPath: string,
-    id: string | number,
+    id: string | number | undefined | null,
     options: AFSaveOptions
   ): Promise<any> {
     if (!this.company || !this.company.length) {
       throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `Can't query AFApiClient without providing company path component first.`)
     }
+
+    if ((!id && typeof id !== 'number') || id === '') throw new AFError(
+      AFErrorCode.MISSING_ID,
+      `Can't delete entity without knowing it's id.`
+    )
 
     let url = this._url + '/c/' + this.company + '/' + entityPath + '/' + id + '.' + ABRA_API_FORMAT
 
@@ -403,7 +431,7 @@ export class AFApiClient {
   ): Promise<boolean> {
     if (entity.isNew) return true
 
-    const res = this.saveRaw((entity.constructor as typeof AFEntity).EntityPath, entity.id, options)
+    const res = this.deleteRaw((entity.constructor as typeof AFEntity).EntityPath, entity.id, options)
 
     try {
       await res
@@ -450,6 +478,7 @@ export class AFApiClient {
     for (const key of keys) {
       this._encodeProperty(entity, key, out)
     }
+    return out
   }
 
   private _decodeProperty<T extends AFEntity>(entity: T, key: string, obj: any) {

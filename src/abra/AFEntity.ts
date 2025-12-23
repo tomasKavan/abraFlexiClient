@@ -43,46 +43,59 @@ export class AFEntity {
     return !this.id
   }
 
+  protected getCotr(): typeof AFEntity {
+    return this.constructor as typeof AFEntity
+  }
+
   hasChanged(key?: string): boolean {
     if (key) {
-      const annot = AFEntity.propAnnotations[key]
+      const self = (this as any)
+      const v = self[key]
+      const origV = self._orig[key]
+
+      const annot = this.getCotr().propAnnotations[key]
       if (!annot) 
         throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `Property ${key} not found on entity ${AFEntity.EntityName}.`)
 
       // First deal with undefined and null
-      if ((this as any)[key] === undefined) return false
-      if (this._orig[key] === (this as any)[key] === null) return false
+      if (v === undefined) return false
+      if (origV === v === null) return false
 
       // In case of collections we need to investigate further. It's change if:
       // - array is reordered or changed in length
       // - any item has any change key
       if (annot.type === PropertyType.Relation && annot.isArray) {
-        if (!arraysEqual(this._orig[key], (this as any)[key])) return true
+        if (!origV) return true
+        if (!arraysEqual(origV, v)) return true
 
-        for (const it of ((this as any)[key] as AFEntity[])) {
+        for (const it of (v as AFEntity[])) {
           if (it.hasChanged()) return true
         }
 
         return false
       }
-      return this._orig[key] === (this as any)[key]
+
+      // Else it's scalar - simple equality
+      return origV !== v
     }
-    for (const key of Object.keys(AFEntity.propAnnotations)) {
+
+    // If key is not defined - we are checking the whole entity (all keys)
+    for (const key of Object.keys(this.getCotr().propAnnotations)) {
       if (this.hasChanged(key)) return true
     }
     return false
   }
 
   wasLoaded(key: string): boolean {
-    if (!AFEntity.propAnnotations[key]) 
-      throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `Property ${key} not found on entity ${AFEntity.EntityName}.`)
+    if (!this.getCotr().propAnnotations[key]) 
+      throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `Property ${key} not found on entity ${this.getCotr().EntityName}.`)
 
     return !!this._orig[key]
   }
 
   changedKeys(): string[] {
     const keys: string[] = []
-    for (const key of Object.keys(AFEntity.propAnnotations)) {
+    for (const key of Object.keys(this.getCotr().propAnnotations)) {
        if (this.hasChanged(key)) keys.push(key)
     }
     return keys
@@ -90,7 +103,7 @@ export class AFEntity {
 
   reset(key: keyof this | boolean): void {
     if (!key) {
-      throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `To reset all properties on entity ${AFEntity.EntityName} use force (1st arg set tu true).`)
+      throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `To reset all properties on entity ${this.getCotr().EntityName} use force (1st arg set tu true).`)
     }
     
     if (typeof key === 'string') {
@@ -98,7 +111,7 @@ export class AFEntity {
       return
     }
 
-    for (const keyin of Object.keys(AFEntity.propAnnotations)) {
+    for (const keyin of Object.keys(this.getCotr().propAnnotations)) {
       this.reset(keyin as keyof this)
     }
   }

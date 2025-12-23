@@ -1,6 +1,6 @@
 {
   "name": "abra-flexi",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "ABRA Flexi API Typescript client. Automaticly generated from API json annotations.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -51,6 +51,7 @@
     "ts-node": "^10.9.2",
     "tsc-watch": "^6.2.1",
     "tsdown": "^0.18.1",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "yargs": "^17.7.2"
   },

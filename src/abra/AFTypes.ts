@@ -144,3 +144,9 @@ export enum AFSessionStatus {
   Online = 'online',
   LogingOut = 'logingout',
 }
+
+export type IdStub = {
+  id?: number,
+  kod?: string,
+  ext?: string[]
+}
