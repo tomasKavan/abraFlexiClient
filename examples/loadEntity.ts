@@ -27,7 +27,7 @@ if (argv.u && argv.p) {
 // ##### Play with query options here: #####
 const queryOpts: AFQueryOptions = {
   detail: ['id', 'kod', 'typDokl', ['uzivatelske-vazby', ['id', 'evidenceType', 'objectId', 'vazbaTyp']]],
-  filter: Filter(`typDokl = '::td'`, { td: 'INT.ICO.REVAL.IN'})
+  filter: Filter(`typDokl = 'code:td'`, { td: 'INT.ICO.REVAL.IN'})
 } 
 
 const api = new AFApiClient(apiOpts)

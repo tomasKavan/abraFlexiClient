@@ -53,8 +53,11 @@ export class AFApiClient {
 
     const detail = options.detail || AFQueryDetail.SUMMARY
 
+    let furl = options.filter?.toUrlComponent()
+    if (furl && !furl.length) furl = undefined
+
     let url = this._url + '/c/' + this.company + '/' + entityPath
-    url += options.filter ? options.filter.toUrlComponent() : ''
+    url += furl ? ('/' + furl) : ''
     url += '.' + ABRA_API_FORMAT
     url = addParamToUrl(url, 'detail', composeDetail(detail))
     url = addParamToUrl(url, 'includes', composeIncludes(detail, entityPath))

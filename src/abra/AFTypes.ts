@@ -60,10 +60,10 @@ export enum AFQueryDetail {
   SUMMARY = 'summary'
 }
 
-export type NestedDetail = (string | [string, NestedDetail])[]
+export type AFNestedDetail = (string | [string, AFNestedDetail])[]
 
 export type AFQueryOptions = { 
-  detail?: NestedDetail | AFQueryDetail,
+  detail?: AFNestedDetail | AFQueryDetail,
   filter?: AFFilter,
   limit?: number | NO_LIMIT_T,
   start?: number,
@@ -84,7 +84,7 @@ export type AFQueryOptions = {
 }
 
 export type AFURelOptions = {
-  detail?: NestedDetail | AFQueryDetail,
+  detail?: AFNestedDetail | AFQueryDetail,
   vazbaTyp?: string | string[],
   noUpdateStitkyCache?: boolean
 
@@ -92,7 +92,7 @@ export type AFURelOptions = {
 }
 
 export type AFPopulateOptions = {
-  detail?: NestedDetail | AFQueryDetail,
+  detail?: AFNestedDetail | AFQueryDetail,
   abortController?: AbortController,
   noUpdateStitkyCache?: boolean
 }

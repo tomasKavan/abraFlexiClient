@@ -1,10 +1,15 @@
 export { AFApiClient } from './abra/AFApiClient.js'
 export { AFApiSession } from './abra/AFApiSession.js'
-export { NO_LIMIT, AFSessionStatus, AFQueryDetail } from './abra/AFTypes.js'
+export { 
+  NO_LIMIT, 
+  AFSessionStatus, 
+  AFQueryDetail
+} from './abra/AFTypes.js'
 
 export type { 
   AFApiConfig, 
   NO_LIMIT_T, 
+  AFNestedDetail,
   AFQueryOptions,
   AFURelOptions,
   AFPopulateOptions,
@@ -13,7 +18,7 @@ export type {
   AFSessionConfig,
   AFCompany
 } from './abra/AFTypes.js'
-export { AFFilter, Filter, ID, CODE, EXT } from './abra/AFFilter.js'
+export { AFFilter, Filter, ID, CODE, EXT, Brkt, NotBrkt } from './abra/AFFilter.js'
 
 export * from './generated/entities/index.js'
 export * from './generated/AFEntityEnums.js'

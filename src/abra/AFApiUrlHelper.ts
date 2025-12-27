@@ -1,23 +1,23 @@
 import { EntityByName, EntityByPath } from '../generated/AFEntityRegistry.js'
 import { AFEntity, GetPropertyTypeAnnotation } from './AFEntity.js'
 import { AFError, AFErrorCode } from './AFError.js'
-import { AFQueryDetail, NestedDetail } from './AFTypes.js'
+import { AFQueryDetail, AFNestedDetail } from './AFTypes.js'
 
 export function composeDetail(
-  level: NestedDetail | AFQueryDetail
+  level: AFNestedDetail | AFQueryDetail
 ): string | null{
   if (level === AFQueryDetail.FULL) return 'full'
   if (level === AFQueryDetail.ID) return 'id'
   if (level === AFQueryDetail.SUMMARY) return null
   
-  const levProc = (inp: NestedDetail): string => {
+  const levProc = (inp: AFNestedDetail): string => {
     let out = ''
     for (const ndi of inp) {
       if (out.length) out += ','
       if (typeof ndi === 'string') {
         out += ndi
       } else if (ndi instanceof Array) {
-        out += ndi[0] as string + '(' + levProc(ndi[1] as NestedDetail) + ')'
+        out += ndi[0] as string + '(' + levProc(ndi[1] as AFNestedDetail) + ')'
       }
     }
     return out
@@ -28,7 +28,7 @@ export function composeDetail(
 }
 
 export function composeIncludes(
-  level: NestedDetail | AFQueryDetail, 
+  level: AFNestedDetail | AFQueryDetail, 
   entityPath: string
 ): string | null {
   if (level === AFQueryDetail.FULL) return null
@@ -38,12 +38,12 @@ export function composeIncludes(
   const includes: string[] = []
   const cls = EntityByPath(entityPath)
 
-  const levProc = (inp: NestedDetail, base:string, entity: typeof AFEntity) => {
+  const levProc = (inp: AFNestedDetail, base:string, entity: typeof AFEntity) => {
     for (const ndi of inp) {
       if (typeof ndi === 'string') continue
       if (ndi instanceof Array) {
         const key = ndi[0] as string
-        const list = ndi[1] as NestedDetail
+        const list = ndi[1] as AFNestedDetail
         const annot = GetPropertyTypeAnnotation(entity, key)
         if (!annot || !annot.afClass) throw new AFError(AFErrorCode.QUERY_DETAIL_UNKNOWN_KEY, `[AFError].QUERY_DETAIL_UNKNOWN_KEY: Requested unknown key ${key} on entity ${(typeof entity)}. Or it has't type annotation set.`)
         const relEnt = EntityByName(annot.afClass)
@@ -59,7 +59,7 @@ export function composeIncludes(
 }
 
 export function composeRelations(
-  level: NestedDetail | AFQueryDetail
+  level: AFNestedDetail | AFQueryDetail
 ): string | null {
   if (level === AFQueryDetail.FULL) return null
   if (level === AFQueryDetail.ID) return null
@@ -67,7 +67,7 @@ export function composeRelations(
 
   const relations: string[] = []
 
-  const levProc = (inp: NestedDetail) => {
+  const levProc = (inp: AFNestedDetail) => {
     for (const ndi of inp) {
       if (typeof ndi === 'string') continue
       const key = ndi[0] as string
