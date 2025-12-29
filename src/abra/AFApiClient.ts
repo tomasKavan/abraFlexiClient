@@ -315,11 +315,13 @@ export class AFApiClient {
   async saveRaw(
     entityPath: string,
     data: any,
-    options: AFSaveOptions
+    options?: AFSaveOptions
   ): Promise<any> {
     if (!this.company || !this.company.length) {
       throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `Can't query AFApiClient without providing company path component first.`)
     }
+
+    if (!options) options = {}
 
     let url = this._url + '/c/' + this.company + '/' + entityPath + '.' + ABRA_API_FORMAT
 
@@ -365,7 +367,7 @@ export class AFApiClient {
 
   public async save<T extends typeof AFEntity = typeof AFEntity>(
     entity: InstanceType<T>, 
-    options: AFSaveOptions
+    options?: AFSaveOptions
   ): Promise<InstanceType<T>> {
     const obj = this._encodeEntity(entity)
     const res = this.saveRaw((entity.constructor as typeof AFEntity).EntityPath, obj, options)
