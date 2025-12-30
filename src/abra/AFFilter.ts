@@ -1,4 +1,5 @@
-import { formatValue, Params, Raw } from "./AFFilterHelper";
+import { AFEntity } from "./AFEntity";
+import { applyCodePrefix, formatValue, normalizeParamForFilter, Params, ParamValue, Raw, raw, resolveParamPath } from "./AFFilterHelper";
 
 export class AFFilter {
   
@@ -14,14 +15,40 @@ export class AFFilter {
     let missingOrUndefined = false
 
     const replaced = expr.replace(
-      /:([a-zA-Z_][a-zA-Z0-9_]*)/g,
-      (_, name: string) => {
-        if (!(name in params) || params[name] == null) {
-          // any missing/undefined param ⇒ skip entire condition
+      // Matches :key, ::key, :a.b.c, ::a.b.c, etc.
+      /(:{1,2})([A-Za-z_][A-Za-z0-9_]*(?:\.[A-Za-z_][A-Za-z0-9_]*)*)/g,
+      (match, colons: string, path: string) => {
+        const { value: rawVal, found } = resolveParamPath(params, path)
+
+        if (!found) {
+          // missing path → drop whole condition
           missingOrUndefined = true
           return ''
         }
-        return formatValue(params[name]!)
+
+        const { value: normalized, isEntityPath } = normalizeParamForFilter(rawVal)
+
+        if (normalized == null) {
+          // entity without id/kod or fully empty array
+          missingOrUndefined = true
+          return ''
+        }
+
+        let finalVal: ParamValue = normalized
+
+        const isDoubleColon = colons.length === 2
+
+        // ::placeholder on non-entity paths → prefix with code:
+        if (isDoubleColon && !isEntityPath) {
+          finalVal = applyCodePrefix(finalVal)
+          if (finalVal == null) {
+            missingOrUndefined = true
+            return ''
+          }
+        }
+
+        // Delegate final formatting (scalar/array/Raw/Date/etc.)
+        return formatValue(finalVal)
       }
     )
 
@@ -64,6 +91,12 @@ export class AFFilter {
     const otherStr = other.toString().trim()
     if (!otherStr) return this
     return this.withAdded(op, otherStr)
+  }
+
+  useNot(other: AFFilter, op: 'and' | 'or' = 'and'): AFFilter {
+    const otherStr = other.toString().trim()
+    if (!otherStr) return this
+    return this.withAdded(op, `(not ${otherStr})`)
   }
 
   /** Final Flexi filter string */
@@ -134,28 +167,6 @@ export const Filter = (expr?: string, params?: Params): AFFilter => {
 export const ID = (id: number) => new AFID(id)
 export const CODE = (code: string) => new AFCODE(code)
 export const EXT = (ext: string) => new AFEXT(ext)
-
-/**
- * Brackets: build a grouped expression.
- */
-export const Brkt = (cb: (f: AFFilter) => AFFilter): string => {
-  let innerBuilder = AFFilter.empty()
-  innerBuilder = cb(innerBuilder)
-  const inner = innerBuilder.toString().trim()
-  if (!inner) return ''
-  return inner
-}
-
-/**
- * NotBrackets: negated group.
- */
-export const NotBrkt = (cb: (f: AFFilter) => AFFilter): string => {
-  let innerBuilder = AFFilter.empty()
-  innerBuilder = cb(innerBuilder)
-  const inner = innerBuilder.toString().trim()
-  if (!inner) return ''
-  return `(not ${inner})`
-}
 
 export const AFFilterFn: Record<string, Raw> = {
   Now: { __raw: 'now()' },

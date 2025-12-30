@@ -40,7 +40,7 @@ export class AFEntity {
   }
 
   get isNew(): boolean {
-    return !this.id
+    return !this.id && !this.kod
   }
 
   protected getCotr(): typeof AFEntity {

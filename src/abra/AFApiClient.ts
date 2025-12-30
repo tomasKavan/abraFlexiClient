@@ -546,11 +546,18 @@ export class AFApiClient {
       // It's to 1 relation
       if (!entity.hasChanged(key)) return
       // If null set to ""
-      if (val === null ) obj[key] = ""
+      if (val === null ) {
+        obj[key] = ""
+        return
+      }
       if (!(val instanceof AFEntity)) throw new AFError(AFErrorCode.UNKNOWN, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) referencing not AFEntity instance`)
       // Check if related object has ID, if no - throw
       if (val.isNew) throw new AFError(AFErrorCode.RELATED_INSTANCE_NOT_SAVED, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) referencing not saved (new) instance - missing 'id' in it`)
-      obj[key] = val.id
+      if (typeof val.id === 'undefined') {
+        obj[key] = `code:${val.kod}`
+      } else {
+        obj[key] = val.id
+      }
       return
     }
 
