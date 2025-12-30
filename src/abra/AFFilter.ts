@@ -138,9 +138,9 @@ export const EXT = (ext: string) => new AFEXT(ext)
 /**
  * Brackets: build a grouped expression.
  */
-export const Brkt = (cb: (f: AFFilter) => void): string => {
-  const innerBuilder = AFFilter.empty()
-  cb(innerBuilder)
+export const Brkt = (cb: (f: AFFilter) => AFFilter): string => {
+  let innerBuilder = AFFilter.empty()
+  innerBuilder = cb(innerBuilder)
   const inner = innerBuilder.toString().trim()
   if (!inner) return ''
   return inner
@@ -150,8 +150,8 @@ export const Brkt = (cb: (f: AFFilter) => void): string => {
  * NotBrackets: negated group.
  */
 export const NotBrkt = (cb: (f: AFFilter) => AFFilter): string => {
-  const innerBuilder = AFFilter.empty()
-  cb(innerBuilder)
+  let innerBuilder = AFFilter.empty()
+  innerBuilder = cb(innerBuilder)
   const inner = innerBuilder.toString().trim()
   if (!inner) return ''
   return `(not ${inner})`
