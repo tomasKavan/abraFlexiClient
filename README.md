@@ -57,10 +57,12 @@ npm run build:cli
 Složka `examples` obsahuje příklady použití knihovny. Prozatím jsem připravil 
 - jednoduchý CLI nástroj pro načtení konkrétní evidence (loadEntityCli.ts)
 - soubor s příkladem volání více typů dotazů (loadEntity.ts)
+- příklad vytvoŕení nové faktury. Nutno nastavit konstanty na řádku 29-31 (createAndSave.ts)
 Příkaldy je možné spustit pomocí nástroje `ts-node`:
 ```
 ts-node examples/loadEntityCli.ts -h #vypíše nápovědu k příkazu
 ts-node examples/loadEntity.ts -s https://muj.server.cz -c moje-firma -u uzivatel1 -h heslo1
+ts-node examples/createAndSave.ts -s https://muj.server.cz -c moje-firma -u uzivatel1 -h heslo1
 ```
 
 ## Použití
@@ -72,7 +74,7 @@ V návodu se používají pojmy
 ### Import a inicializace knihovny
 
 ```typescript 
-import { AFApiClient } from 'aftc'
+import { AFApiClient } from 'abra-flexi'
 
 const apiOpts: AFApiConfig = {
   url: '<doplnte_server>',
@@ -88,13 +90,24 @@ Pro dotazování instancí jsou k dispozici metody `query` (vrací kolekci insta
 
 Parametrech dotazu může být uveden požadovaný detail. Detail se zapisuje formou pole vlastností evidencí formou textových řetězců. Detaily relací je možné vkládat pomocí pole o 2 prvcích, kde prvním je název vlastnosti relace v evidenci a druhým opět pole vlastností v napojené evidenci. Jasněji je to patrné z příkladu níže.
 
-Filtrování je možné vkládat pomocí metod `Filter`, `ID` nebo `CODE`. Metoda `Filter` akceptuje textovou šablonu, ve které budou všechny návěstí nahrazeny hodnotami předanými ve druhém argumentu. Návěstí mohou být:
+Pozor! Vnořené M:N či 1:N relací knihovna zatím podporuje pouze na základní úrovni. Například detail `faktura-vydana-polozka.cenik.atributy.typAtributu` se načte pouze po instanci ceníku. Bude řešeno v dalších verzích.
+
+Filtrování je možné vkládat pomocí metod `Filter(expr, params)`, `ID(id)` nebo `CODE(code)`. Metoda `Filter` akceptuje textovou šablonu (`expr`), ve které budou všechny návěstí nahrazeny hodnotami předanými ve druhém argumentu (`params`). Návěstí mohou být:
 - `:key` se nahradí textovou hodnotou klíče `key` ve druhém argumentu,
 - `::mujKod` se nahradí textovou hodnotou klíče `mujKod` ve druhém argumentu a prefixuje se předponou `code:`,
-- `:...kolekce` očekává, že klíč `kolekce` bude typu `Array`. Návěstí se nahradí výsledkem `kolekce.join(',')`. 
+
+Obě návěští podporují kolekce. Návěstí se pak nahradí výsledkem `kolekce.join(',')`. Pokud je hodnotou instance evidence (podtřída AFEntity), ignoruje se typ návěští a použije se číselné id resp. kód, není-li číselné id vyplněno/načteno. 
+
+Metoda `Filter` vrací objekt s mající následující metody:
+- `use(filter, op)` - přidá jiný objekt filtru do stávajícího. Atribut `op` určuje operátor pro spojení se stávajícím filtrem (`and` nebo `or`, defaultní je `or`). Filtr je vložen v závorkách.
+- `useNot(filter, op)` - stojné jako `use()`, ale před závorku je vložen operátor `not`
+- `or(expr, params)` - připojí na konec filtru, za operátor `or` výraz `expr`. Bez závorek.
+- `and(expr, params)` - připojí na konec filtru, za operátor `and` výraz `expr`. Bez závorek.
+
+Všechny metody vrací vždy novou instanci filtru. Filtry si tedy můžete předpřipravit a následně spojivat pomocí `use()`/`useNot()`.
 
 ```typescript 
-import { AFInterniDoklad, Filter } from 'aftc'
+import { AFInterniDoklad, Filter } from 'abra-flexi'
 
 const queryOpts: AFQueryOptions = {
   detail: ['id', 'kod', 'typDokl', ['uzivatelske-vazby', ['id', 'evidenceType', 'objectId', 'vazbaTyp']]],
@@ -166,9 +179,13 @@ run()
 
 ```
 
+### Práce se štítky
+
+*TODO: Přidat popis*
+
 ### Vytváření, změna a odstraňování instancí
 
-*TODO: Zatím neimplementováno*
+*TODO: Přidat popis*
 
 ## Task list pro vydání stabilní verze
 
@@ -178,7 +195,7 @@ run()
 - [X] Refersh již načtených dat
 - [X] Pohodlná práce se štítky
 - [ ] Jednotný handling identifikátorů záznamů
-- [ ] Vytváření, mazání a změna záznamů v REST API
+- [x] Vytváření, mazání a změna záznamů v REST API
 - [ ] Lokální keš a společné instance pro jedno ID
 - [ ] Battle tested - reálné nasazení, úprava rozhraní dle reálného použití
 - [ ] Verzování, npm balíčkování
