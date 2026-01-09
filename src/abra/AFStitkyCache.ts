@@ -83,6 +83,7 @@ export class AFStitkyCache {
     }
     if (typeof groupFilter === 'string') {
       groupFilter = this._stitekSkupiny.find(ss => ss.kod === groupFilter)
+      if (!groupFilter) return []
     }
     for (const key of keys) {
       const stitek = this._stitky.find(s => s.kod === key)
