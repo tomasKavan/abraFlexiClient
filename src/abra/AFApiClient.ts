@@ -406,7 +406,7 @@ export class AFApiClient {
     try {
       const raw = await this._fetch(url, {
         signal: options.abortController?.signal,
-        method: 'DELTE'
+        method: 'DELETE'
       })
 
       if (raw.status >= 400 && raw.status < 600) {
