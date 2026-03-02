@@ -254,9 +254,23 @@ export class AFApiSession {
   }
 
   private _establish(sessionId: string) {
+    if (this.status === AFSessionStatus.LogingOut) {
+      throw new AFError(AFErrorCode.LOGOUT_UNDERWAY, `[AFApiSession] Can't establish while logout attempt is underway.`)
+    }
+    if (this.status === AFSessionStatus.LogingIn) {
+      return this._loginPromise
+    }
+
+    this._sessionError = null
+    this._authSessionId = sessionId
+    
     this._loginPromise = (async () => {
       try {
         await this._keepaliveTick(true)
+        this._enableKeepalive()
+      } catch (e) {
+        this._authSessionId = null
+        throw e
       } finally {
         this._loginPromise = null
       }
@@ -269,10 +283,9 @@ export class AFApiSession {
     if (!this._keepAliveIntervalMs) return
     if (this._keepAliveHandler) this._disableKeepalive()
     
-    this._keepAliveHandler = setInterval(
-      this._notifyStatusChange.bind(this), 
-      this._keepAliveIntervalMs
-    )
+    this._keepAliveHandler = setInterval(() => {
+      this._keepaliveTick(false)
+    }, this._keepAliveIntervalMs)
   }
 
   private _disableKeepalive() {
@@ -287,7 +300,6 @@ export class AFApiSession {
     try {
       const url = new URL(KEEP_ALIVE_PATH, this._serverUrl)
       resp = await fetch(url)
-
       body = await resp.json()
 
       if (!(typeof body === 'object' && body !== null && body.success)) {
