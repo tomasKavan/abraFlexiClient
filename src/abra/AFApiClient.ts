@@ -450,6 +450,57 @@ export class AFApiClient {
     }
   }
 
+  public async deleteUserRelation(
+    entity: AFUzivatelskaVazba,
+    options: AFSaveOptions
+  ) {
+    if (!this.company || !this.company.length) {
+      throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `Can't query AFApiClient without providing company path component first.`)
+    }
+
+    const id = entity?.id
+    if ((!id && typeof id !== 'number')) throw new AFError(
+      AFErrorCode.MISSING_ID,
+      `Can't delete entity without knowing it's id.`
+    )
+
+    let url = this._url + '/c/' + this.company + '/' + AFUzivatelskaVazba.EntityPath + '.' + ABRA_API_FORMAT
+
+    try {
+      const raw = await this._fetch(url, {
+        signal: options.abortController?.signal,
+        method: 'PUT',
+        body: JSON.stringify({
+          winstrom: [{
+            [AFUzivatelskaVazba.EntityPath] : {
+              id: id,
+            },
+            [AFUzivatelskaVazba.EntityPath + '@action']: 'delete'
+          }]
+        })
+      })
+
+      if (raw.status >= 400 && raw.status < 600) {
+        throw new AFError(AFErrorCode.ABRA_FLEXI_ERROR, `${raw.status} ${raw.statusText}`)
+      }
+
+      const json = await raw.json()
+      console.log(json)
+
+      const jres = json.winstrom
+      if (jres['success'] === 'true') {
+        // TODO
+      }
+
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        console.log(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
+    }
+  }
+
   private _decodeEntityObj<T extends typeof AFEntity>(entity: T, obj: any): InstanceType<T>[] {
     if (!obj) return []
 
