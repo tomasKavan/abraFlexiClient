@@ -464,7 +464,8 @@ export class AFApiClient {
       `Can't delete entity without knowing it's id.`
     )
 
-    let url = this._url + '/c/' + this.company + '/' + AFUzivatelskaVazba.EntityPath + '.' + ABRA_API_FORMAT
+    const entityPath = (entity.constructor as typeof AFEntity).EntityPath
+    let url = this._url + '/c/' + this.company + '/' + entityPath + '.' + ABRA_API_FORMAT
 
     try {
       const raw = await this._fetch(url, {
@@ -472,10 +473,10 @@ export class AFApiClient {
         method: 'PUT',
         body: JSON.stringify({
           winstrom: [{
-            [AFUzivatelskaVazba.EntityPath] : {
+            [entityPath] : {
               id: id,
             },
-            [AFUzivatelskaVazba.EntityPath + '@action']: 'delete'
+            [entityPath + '@action']: 'delete'
           }]
         })
       })
