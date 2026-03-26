@@ -21,6 +21,8 @@ import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
 import { addParamToUrl } from "../helpers/urlHelper.js"
 import { composeDetail, composeIncludes, composeRelations } from "./AFApiUrlHelper.js"
 import { AFStitkyCache } from "./AFStitkyCache.js"
+import { AFUzivatelskaVazba } from '../generated/entities/AFUzivatelskaVazba.js'
+import { AFPriloha } from '../generated/entities/AFPriloha.js'
 
 const ABRA_API_FORMAT = 'json'
 
@@ -56,7 +58,7 @@ export class AFApiClient {
     let furl = options.filter?.toUrlComponent()
     if (furl && !furl.length) furl = undefined
 
-    let url = this._url + '/c/' + this.company + '/' + entityPath
+    let url = this._url + '/c/' + this.company + '/' + (options.entityPathPrefix ?? '') + entityPath
     url += furl ? ('/' + furl) : ''
     url += '.' + ABRA_API_FORMAT
     url = addParamToUrl(url, 'detail', composeDetail(detail))
@@ -79,6 +81,10 @@ export class AFApiClient {
     url = addParamToUrl(url, 'ucetniObdobi', options.ucetniObdobi)
     url = addParamToUrl(url, 'koncovyMesicRok', options.koncovyMesicRok)
     url = addParamToUrl(url, 'pocetMesicu', options.pocetMesicu)
+
+    // Specific to "individualni cenik"
+    url = addParamToUrl(url, 'date', options.date)
+    url = addParamToUrl(url, 'currency', options.currency)
 
     console.log(url)
 
@@ -328,6 +334,10 @@ export class AFApiClient {
     console.log(url)
 
     console.log(data)
+
+    if (options.removeStitky) {
+      data['stitky@removeAll'] = 'true'
+    }
 
     try {
       const raw = await this._fetch(url, {
@@ -616,5 +626,9 @@ export class AFApiClient {
     // It's scalar
     if (!obj) return
     obj[key] = serializePropertyValue(annot.type, annot, val)
+
+    if (entity instanceof AFPriloha && key === 'content') {
+      obj['content@encoding'] = 'base64'
+    }
   }
 }

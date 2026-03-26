@@ -76,9 +76,12 @@ export type AFQueryOptions = {
   noSimpleMode?: boolean,
   noValidityCheck?: boolean,
   noUpdateStitkyCache?: boolean,
+  entityPathPrefix?: string,
   ucetniObdobi?: string,
   koncovyMesicRok?: string,
   pocetMesicu?: number
+  date?: string
+  currency?: string
 
   abortController?: AbortController
 }
@@ -115,7 +118,8 @@ export type AFURelMinimal = AFEntity & {
 
 export type AFSaveOptions = {
   updateStrategy?: UpdateStrategy,
-  abortController?: AbortController
+  abortController?: AbortController,
+  removeStitky?: boolean
 }
 
 export type AFDeleteOptions = {
