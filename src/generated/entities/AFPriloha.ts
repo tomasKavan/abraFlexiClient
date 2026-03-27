@@ -85,7 +85,7 @@ export class AFPriloha extends AFEntity {
   // Událost (db: IdAdrUdalost) - Událost)
   adrUdalost?: AFUdalost | null
   // Obsah (db: ) - Obsah)
-  content?: Buffer | null
+  content?: Uint8Array | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]

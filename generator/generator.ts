@@ -365,7 +365,7 @@ function generateType(def: PropertyDef, forItem?: boolean): string {
     case PropertyType.Logic: return 'boolean'
     case PropertyType.Date: return 'Date'
     case PropertyType.DateTime: return 'Date'
-    case PropertyType.Blob: return 'Buffer'
+    case PropertyType.Blob: return 'Uint8Array'
     case PropertyType.YearMonth: return 'Date'
     case PropertyType.Relation: return def.tsClassName || 'any'
     case PropertyType.Select: return def.enumName || 'any'
