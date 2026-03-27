@@ -10,7 +10,7 @@ type PropertyTypeMap = {
   [PropertyType.Date]: Date;
   [PropertyType.Numeric]: Big;
   [PropertyType.Logic]: boolean;
-  [PropertyType.Blob]: Buffer;
+  [PropertyType.Blob]: Uint8Array;
   [PropertyType.Array]: any[]; // Must be inferred from typeAnnotation
 }
 
@@ -56,7 +56,7 @@ export function parsePropertyValue<T extends PropertyType>(
       return (obj.toLowerCase() === "true") as ParsedType<T>;
 
     case PropertyType.Blob:
-      return Buffer.from(obj, "base64") as ParsedType<T>;
+      return base64ToBytes(obj) as ParsedType<T>;
 
     case PropertyType.Array:
       if (!annot?.itemType) throw new AFError(AFErrorCode.ITEM_TYPE_MISSING, "itemType is required for Array");
@@ -106,7 +106,7 @@ export function serializePropertyValue<T extends PropertyType>(
       return !!val ? "true" : "false"
 
     case PropertyType.Blob:
-      return val.toString('base64')
+      return bytesToBase64(val as Uint8Array)
 
     case PropertyType.Array:
       if (!annot?.itemType) throw new AFError(AFErrorCode.ITEM_TYPE_MISSING, "itemType is required for Array");
@@ -144,6 +144,30 @@ function dateToLocalIso(date: Date): string {
   const om = pad(Math.abs(offset) % 60)
 
   return `${yyyy}-${mm}-${dd}T${hh}:${mi}:${ss}.${ms}${sign}${oh}:${om}`
+}
+
+function base64ToBytes(base64: string): Uint8Array {
+  if (typeof Buffer !== 'undefined') {
+    const buf = Buffer.from(base64, 'base64')
+    return new Uint8Array(buf.buffer, buf.byteOffset, buf.byteLength)
+  }
+  const binary = atob(base64)
+  const bytes = new Uint8Array(binary.length)
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i)
+  }
+  return bytes
+}
+
+function bytesToBase64(bytes: Uint8Array): string {
+  if (typeof Buffer !== 'undefined') {
+    return Buffer.from(bytes).toString('base64')
+  }
+  let binary = ''
+  for (let i = 0; i < bytes.byteLength; i++) {
+    binary += String.fromCharCode(bytes[i])
+  }
+  return btoa(binary)
 }
 
 export function arraysEqual<T>(a: T[], b: T[]): boolean {
