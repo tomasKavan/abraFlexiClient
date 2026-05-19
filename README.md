@@ -22,7 +22,7 @@ Místo npm použíjte přímo git repository a `npm link` (knihovnu mustí nejd�
 git checkout git@github.com:tomasKavan/abraFlexiClient.git
 cd abraFlexiClient
 npm install
-npm run build:lib
+npm run build
 npm link
 ```
 
@@ -32,13 +32,13 @@ Ve svém projektu potom:
 npm link abra-flexi
 ```
 
-### Gnerování evidenčních tříd
+### Generování evidenčních tříd
 
 Součástní repository knihovny je nástroj pro generování evidenčních tříd z metadat, které poskytuje API. Generátor dovoluje vybrat subset generovaných tříd. To je užitečné, pokud chcete udržet knihovnu co nejmenší a generovat pouze třídy pro Vámi použivané evidence.
 
 Generátor je třeba přeložit
 ```
-npm run build:cli
+npm run build:gen
 chmod a+x ./bin/index.js
 ```
 
@@ -49,7 +49,7 @@ a následně lze generování spustit například takto:
 
 knihovnu s vygenerovanými třídami lze přeložit
 ```
-npm run build:cli
+npm run build
 ```
 
 ### Příklady
@@ -69,19 +69,44 @@ ts-node examples/createAndSave.ts -s https://muj.server.cz -c moje-firma -u uziv
 
 V návodu se používají pojmy
 - **evidence** Typ evidence v systému ABRA Flexi, například Faktura přijatá či Položka faktury přijaté. Každá evidence je reprezentováná evidenční třídou, například `AFFakturaPrijata` či `AFPolozkaFakturyPrijate`.
-- **instance** Záznam v evidenci. Například faktura přijatá s kódem IV24.0001, identifikátorem 14 a dlšími hodnotami je instancí. Instance je v knihovně reprezentována instancí evidenční třídy, například: `const fp = new AFFakturaPrijata()`.
+- **instance** Záznam v evidenci. Například faktura přijatá s kódem IV24.0001, identifikátorem 14 a dlšími hodnotami je instancí. Instance je v knihovně reprezentována instancí evidenční třídy, například: `const fp = await api.create(AFFakturaPrijata)`.
 
 ### Import a inicializace knihovny
 
 ```typescript 
-import { AFApiClient } from 'abra-flexi'
+import { AFApiClient, AFApiConfig } from 'abra-flexi'
 
 const apiOpts: AFApiConfig = {
   url: '<doplnte_server>',
-  company: '<doplnte_spolecnost>
+  company: '<doplnte_spolecnost>'
 }
 
 const api = new AFApiClient(apiOpts)
+```
+
+### Logování
+
+Ve výchozím stavu je klient tichý (nevypisuje nic). Logování lze zapnout pomocí `logLevel`:
+
+```typescript
+const api = new AFApiClient({
+  url: '<server>',
+  company: '<spolecnost>',
+  logLevel: 'debug'   // 'none' | 'error' | 'warn' | 'info' | 'debug'
+})
+```
+
+Je možné také předat vlastní logger (např. Winston), který musí implementovat rozhraní `{ debug, info, warn, error }`:
+
+```typescript
+import winston from 'winston'
+
+const api = new AFApiClient({
+  url: '<server>',
+  company: '<spolecnost>',
+  logger: winston.createLogger({ ... }),
+  logLevel: 'info'   // pokud neuvedete, přeposílají se všechny úrovně
+})
 ```
 
 ### Dotazování instancí
@@ -92,7 +117,7 @@ Parametrech dotazu může být uveden požadovaný detail. Detail se zapisuje fo
 
 Pozor! Vnořené M:N či 1:N relací knihovna zatím podporuje pouze na základní úrovni. Například detail `faktura-vydana-polozka.cenik.atributy.typAtributu` se načte pouze po instanci ceníku. Bude řešeno v dalších verzích.
 
-Filtrování je možné vkládat pomocí metod `Filter(expr, params)`, `ID(id)` nebo `CODE(code)`. Metoda `Filter` akceptuje textovou šablonu (`expr`), ve které budou všechny návěstí nahrazeny hodnotami předanými ve druhém argumentu (`params`). Návěstí mohou být:
+Filtrování je možné vkládat pomocí metod `Filter(expr, params)`, `ID(id)`, `CODE(code)` nebo `EXT(ext)`. Metoda `Filter` akceptuje textovou šablonu (`expr`), ve které budou všechny návěstí nahrazeny hodnotami předanými ve druhém argumentu (`params`). Návěstí mohou být:
 - `:key` se nahradí textovou hodnotou klíče `key` ve druhém argumentu,
 - `::mujKod` se nahradí textovou hodnotou klíče `mujKod` ve druhém argumentu a prefixuje se předponou `code:`,
 
@@ -114,11 +139,9 @@ const queryOpts: AFQueryOptions = {
   filter: Filter(`typDokl = '::td'`, { td: 'MUJ_TYP_DOKLADU'})
 } 
 
-const query = api.query(AFInterniDoklad, queryOpts)
-
 const run = async () => {
   try {
-    const data = await query
+    const data = await api.query(AFInterniDoklad, queryOpts)
     console.log(data)
   } catch (e) {
     console.error(e)
@@ -139,11 +162,9 @@ const options = {
   detail: AFQueryDetail.FULL
 }
 
-const populate = api.populateOne(loadEntity)
-
 const run = async () => {
   try {
-    const populatedEntity = await populate
+    const populatedEntity = await api.populateOne(loadedEntity, options)
     console.log(populatedEntity)
     console.log(populatedEntity === loadedEntity) // Vypíše true
   } catch (e) {
@@ -156,20 +177,18 @@ run()
 
 ### Načtení instancí z uživatelských vazeb
 
-Instance entit odkazované pomocí uživatelských vazeb je možné načíst metodou `queryURel`. Metodě je třeba zaslat zdrojovou kolekci instancí. Instance neumsí být stejného typu (evidence), ale musí mít klíč `uzivatelske-vazby`. Metoda načítá vazby na kokrétní evidenci (vazby ostatních typů jsou vynechány). Vazby je možné filtrovat dle typu `typVazby`. Načtená data jsou přidána do vazeb zrojových instancí (vlastnost `object`). Data jsou dále vrácena jako kolekce párů `{ entity: zdrojova_entity, referencedFrom: načtená_entita }`.
+Instance entit odkazované pomocí uživatelských vazeb je možné načíst metodou `queryURels`. Metodě je třeba zaslat zdrojovou kolekci instancí. Instance neumsí být stejného typu (evidence), ale musí mít klíč `uzivatelske-vazby`. Metoda načítá vazby na kokrétní evidenci (vazby ostatních typů jsou vynechány). Vazby je možné filtrovat dle typu `typVazby`. Načtená data jsou přidána do vazeb zrojových instancí (vlastnost `object`). Data jsou dále vrácena jako kolekce párů `{ entity: zdrojova_entity, referencedFrom: načtená_entita }`.
 
-Načteny jsou pouze instance vazeb, které se již vyskytují ve zdrojové kolekci! Metoda `queryURel` tedy sama uživatelské vazby na jednotlivých zdrojových instancích nenačítá. Načítá pouze instance, na které vazba odkazuje.
+Načteny jsou pouze instance vazeb, které se již vyskytují ve zdrojové kolekci! Metoda `queryURels` tedy sama uživatelské vazby na jednotlivých zdrojových instancích nenačítá. Načítá pouze instance, na které vazba odkazuje.
 
 ```typescript 
 const soureEntities // Zde máme kolekci entit, pro které načítáme instance odkazované uživatelskou vazbou
 
-const query = api.queryURels(AFInterniDoklad, soureEntities, {
-  detail: ['id', 'kod', 'typDokl']
-})
-
 const run = async () => {
   try {
-    const pairs = await query
+    const pairs = await api.queryURels(AFInterniDoklad, soureEntities, {
+      detail: ['id', 'kod', 'typDokl']
+    })
     console.log(pairs)
   } catch (e) {
     console.error(e)
@@ -181,11 +200,103 @@ run()
 
 ### Práce se štítky
 
-*TODO: Přidat popis*
+Štítky (stitky) jsou na každé instanci dostupné jako textový řetězec ve vlastnosti `stitky`. Pro pohodlnější práci jsou k dispozici metody `getStitky()` a `getStitkyBySkupina(skup)`, které vrací pole instancí `AFStitek`.
+
+Knihovna udržuje interní cache štítků, která se průběžně aktualizuje. Strategii cache lze nastavit v konfiguraci klienta pomocí `stitkyCacheStrategy` (`None`, `Lazy` (výchozí), `Eager`).
 
 ### Vytváření, změna a odstraňování instancí
 
-*TODO: Přidat popis*
+#### Vytvoření nové instance
+
+Novou instanci evidence vytvoříte pomocí `api.create()`. **Nepoužívejte `new` přímo** — konstruktor vyžaduje interní závislosti, které správně injektuje pouze klient.
+
+```typescript
+import { AFFakturaVydana } from 'abra-flexi'
+
+const faktura = await api.create(AFFakturaVydana)
+faktura.popis = 'Testovací faktura'
+// ... nastavte další vlastnosti
+
+const saved = await api.save(faktura)
+console.log(saved.id)  // ID přidělené serverem je automaticky přiřazeno zpět na instanci
+```
+
+#### Odkaz na existující záznam bez načítání
+
+Pokud potřebujete odkázat na existující záznam (např. jako relaci na jiné entitě), ale nechcete ho načítat, použijte `createIdStub()`:
+
+```typescript
+const firma = await api.createIdStub(AFAdresar, { id: 123 })
+// nebo podle kódu:
+const firma = await api.createIdStub(AFAdresar, { kod: 'MOJE_FIRMA' })
+```
+
+Instance vytvořená přes `createIdStub()` je správně označena jako existující (`isNew === false`) a lze ji použít v relacích jiných entit.
+
+#### Uložení změn
+
+Metoda `save()` uloží jak novou instanci (POST/PUT), tak změny na existující. Na server se odesílají pouze změněné vlastnosti.
+
+```typescript
+const faktura = await api.queryOne(AFFakturaVydana, { filter: ID(42) })
+faktura.popis = 'Aktualizovaný popis'
+await api.save(faktura)
+```
+
+**Poznámka k uživatelským vazbám:** ABRA Flexi nepodporuje vytvoření nové entity společně s uživatelskými vazbami v jednom požadavku. Pokud entita obsahuje `uzivatelske-vazby`, je třeba ji nejdříve uložit bez vazeb a vazby přidat v samostatném volání `save()`.
+
+#### Smazání instance
+
+```typescript
+await api.delete(faktura)
+```
+
+Metoda funguje pro všechny typy evidencí, včetně `AFUzivatelskaVazba` (kde ABRA API nevystavuje standardní DELETE endpoint — knihovna to řeší automaticky).
+
+### Stahování souborů
+
+Metoda `queryFile()` slouží ke stažení dat v jiném formátu než JSON — například PDF, XML, CSV nebo ISDOC. Vrací objekt `{ blob, contentType, filename }`.
+
+```typescript
+import { AFFakturaVydana, ID } from 'abra-flexi'
+import fs from 'fs'
+
+// PDF faktury
+const pdf = await api.queryFile(AFFakturaVydana, 'pdf', { filter: ID(42) })
+fs.writeFileSync(pdf.filename ?? 'faktura.pdf', Buffer.from(await pdf.blob.arrayBuffer()))
+
+// XML
+const xml = await api.queryFile(AFFakturaVydana, 'xml', { filter: ID(42) })
+
+// CSV kolekce
+const csv = await api.queryFile(AFAdresar, 'csv', { limit: 100 })
+
+// ISDOC / ISDOCX a další rozšíření
+const isdocx = await api.queryFile(AFFakturaVydana, 'isdocx', { filter: ID(42) })
+```
+
+#### Tisk pomocí pojmenované sestavy
+
+Parametry `reportName` a `reportLang` umožňují zvolit konkrétní tiskovou sestavu:
+
+```typescript
+const pdf = await api.queryFile(AFFakturaVydana, 'pdf', {
+  filter: ID(42),
+  reportName: 'faktura-dph',
+  reportLang: 'cs'
+})
+```
+
+### Akce na instancích
+
+Pojmenované akce definované v ABRA Flexi (např. storno, uzavření dokladu) lze volat metodou `callEntityAction()`. Instance musí být uložená (mít přidělené `id`).
+
+```typescript
+import { AFFakturaVydana } from 'abra-flexi'
+
+const faktura = await api.createIdStub(AFFakturaVydana, { id: 2452 })
+await api.callEntityAction(faktura, 'storno')
+```
 
 ## Task list pro vydání stabilní verze
 
@@ -194,8 +305,10 @@ run()
 - [X] Načítání užviatelských relací 
 - [X] Refersh již načtených dat
 - [X] Pohodlná práce se štítky
+- [X] Vytváření, mazání a změna záznamů v REST API
+- [X] Stahování souborů (PDF, CSV, XML, ISDOC, ...)
+- [X] Akce na instancích
 - [ ] Jednotný handling identifikátorů záznamů
-- [x] Vytváření, mazání a změna záznamů v REST API
 - [ ] Lokální keš a společné instance pro jedno ID
 - [ ] Battle tested - reálné nasazení, úprava rozhraní dle reálného použití
 - [ ] Verzování, npm balíčkování
@@ -204,8 +317,8 @@ run()
 
 # English
 
-[ABRA Flexi]([https://www.abra.eu/flexi/](https://www.abra.eu/en/flexi/) is Czech ERP for small businesses, developer by [ABRA Software](https://www.abra.eu/en). To access data in ABRA Flexi there is a REST API with public documentation. 
+[ABRA Flexi](https://www.abra.eu/en/flexi/) is Czech ERP for small businesses, developed by [ABRA Software](https://www.abra.eu/en). To access data in ABRA Flexi there is a REST API with public documentation. 
 
-ABRA Flexi Typescript client (AFTC) is library to call ABRA Fflexi REST API. It's for browsers and server environments (Node.js). It provides methods for CRUD. 
+ABRA Flexi Typescript client (AFTC) is library to call ABRA Flexi REST API. It's for browsers and server environments (Node.js). It provides methods for CRUD. 
 
-Because ABRA Flexi is Czech software, it's expected to have mainly Czech developer audience. English version of the documentation will be finalized when the library API becomes stable. 
+Because ABRA Flexi is Czech software, it's expected to have mainly Czech developer audience. English version of the documentation will be finalized when the library API becomes stable.
