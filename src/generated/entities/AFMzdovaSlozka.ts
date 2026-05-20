@@ -18,7 +18,6 @@ export class AFMzdovaSlozka extends AFEntity {
   static EntityType: string = 'MZDOVA_SLOZKA'
 
   // ID (db: IdMzdSloz) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Pořadí (db: CisRad) - Pořadí)
@@ -112,12 +111,6 @@ export class AFMzdovaSlozka extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

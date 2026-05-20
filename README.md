@@ -151,6 +151,35 @@ run()
 
 ```
 
+### Stránkování a celkový počet záznamů
+
+Dotazy podporují parametry `limit` a `start` pro stránkování. Pro zjištění celkového počtu záznamů (nezávislého na velikosti stránky) předejte `addRowCount: true`. Výsledek metody `query()` je standardní pole, ale navíc obsahuje vlastnost `totalCount` s celkovým počtem nalezených záznamů na serveru.
+
+```typescript
+const PAGE_SIZE = 50
+
+const firstPage = await api.query(AFAdresar, {
+  detail: ['id', 'kod', 'nazev'],
+  limit: PAGE_SIZE,
+  start: 0,
+  addRowCount: true   // vyžádá @rowCount od serveru
+})
+
+console.log(firstPage.totalCount)  // např. 1234 — celkový počet, bez ohledu na limit
+console.log(firstPage.length)      // 50 — velikost stránky
+
+const totalPages = Math.ceil(firstPage.totalCount! / PAGE_SIZE)
+
+// Další stránky — addRowCount není třeba opakovat (zvyšuje zátěž serveru)
+const secondPage = await api.query(AFAdresar, {
+  detail: ['id', 'kod', 'nazev'],
+  limit: PAGE_SIZE,
+  start: PAGE_SIZE
+})
+```
+
+> **Poznámka:** `addRowCount: true` způsobí extra COUNT dotaz na straně serveru. Používejte ho pouze pro první stránku a hodnotu `totalCount` si uložte pro výpočet dalších stránek.
+
 ### Načtení většího detailu
 
 Pro načtení většího detailu či aktualizaci dříve načtených instancí můžete použít metody `populate` a `populateOne`. Detailem požadované vlastnosti se aktualizují na původní instanci.

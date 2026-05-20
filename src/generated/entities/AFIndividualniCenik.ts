@@ -13,7 +13,6 @@ export class AFIndividualniCenik extends AFEntity {
   static EntityType: string = 'INDIVIDUALNI_CENIK'
 
   // ID (db: ) - ID)
-  declare id?: number | null
   // Zkratka (db: ) - Zkratka)
   declare kod?: string | null
   // Název (db: ) - Název)
@@ -56,12 +55,6 @@ export class AFIndividualniCenik extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     kod : {
       key: 'kod',
       type: PropertyType.String,

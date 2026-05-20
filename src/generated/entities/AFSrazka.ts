@@ -16,7 +16,6 @@ export class AFSrazka extends AFEntity {
   static EntityType: string = 'SRAZKA'
 
   // ID (db: IdSrazka) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Přednostní srážka (db: Prednostni) - Přednostní srážka)
@@ -72,12 +71,6 @@ export class AFSrazka extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

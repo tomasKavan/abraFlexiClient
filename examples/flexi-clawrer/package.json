@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "abra-flexi": "file:../../",
     "@primeuix/themes": "^1.2.5",
     "@tailwindcss/vite": "^4.1.17",
     "primeicons": "^7.0.0",

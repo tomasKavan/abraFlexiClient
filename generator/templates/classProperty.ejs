@@ -1,2 +1,4 @@
+<% if (propertyName !== 'id') { -%>
   // <%= name %> (db: <%= dbName %>) - <%= title %>)
-  <% if (propertyName === 'id' || propertyName === 'kod' || propertyName === 'stitky') { %>declare <% } %><%= propertyName %>?: <%= genType %> | null
+  <% if (propertyName === 'kod' || propertyName === 'stitky') { %>declare <% } %><%= propertyName %>?: <%= genType %> | null
+<% } -%>

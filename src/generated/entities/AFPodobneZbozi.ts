@@ -12,7 +12,6 @@ export class AFPodobneZbozi extends AFEntity {
   static EntityType: string = 'PODOBNE_ZBOZI'
 
   // ID (db: IdPodobne) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Poznámka (db: Poznam) - Poznámka)
@@ -28,12 +27,6 @@ export class AFPodobneZbozi extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

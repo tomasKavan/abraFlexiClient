@@ -15,7 +15,6 @@ export class AFDanovyNaklad extends AFEntity {
   static EntityType: string = 'DANOVY_NAKLAD'
 
   // ID (db: IdDanNakl) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
@@ -51,12 +50,6 @@ export class AFDanovyNaklad extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

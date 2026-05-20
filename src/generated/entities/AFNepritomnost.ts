@@ -15,7 +15,6 @@ export class AFNepritomnost extends AFEntity {
   static EntityType: string = 'NEPRITOMNOST'
 
   // ID (db: IdNepritomnost) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Začátek (db: PlatiOd) - Začátek)
@@ -61,12 +60,6 @@ export class AFNepritomnost extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

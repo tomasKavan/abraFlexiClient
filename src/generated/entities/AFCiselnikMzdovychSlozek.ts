@@ -11,7 +11,6 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
   static EntityType: string = 'CISELNIK_MZDOVYCH_SLOZEK'
 
   // ID (db: IdCisMzdSloz) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
@@ -133,12 +132,6 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

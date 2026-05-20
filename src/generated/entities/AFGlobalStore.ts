@@ -10,7 +10,6 @@ export class AFGlobalStore extends AFEntity {
   static EntityType: string = 'GLOBAL_SETTING'
 
   // ID (db: IdSetting) - ID)
-  declare id?: number | null
   // Klíč (db: Klic) - Klíč)
   klic?: string | null
   // Hodnota (db: Hodnota) - Hodnota)
@@ -19,12 +18,6 @@ export class AFGlobalStore extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     klic : {
       key: 'klic',
       type: PropertyType.String,

@@ -10,7 +10,6 @@ export class AFPravoViditelnosti extends AFEntity {
   static EntityType: string = 'PRAVO_VIDITELNOSTI'
 
   // ID (db: IdDataPrava) - ID)
-  declare id?: number | null
   // uživatel (db: IdUzivatel) - uživatel)
   idUzivatel?: number | null
   // typ dat (db: TypDatK) - typ dat)
@@ -25,12 +24,6 @@ export class AFPravoViditelnosti extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     idUzivatel : {
       key: 'idUzivatel',
       type: PropertyType.Integer,

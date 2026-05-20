@@ -24,7 +24,13 @@ export enum AFErrorCode {
   // URL error
   PATH_WITHOUT_COMPANY = 'PATH_WITHOUT_COMPANY',
   PATH_WITHOUT_EVIDENCE = 'PATH_WITHOUT_EVIDENCE',
-  
+
+  // Entity identity redesign (issue #22)
+  INVALID_IDENTIFIER = 'INVALID_IDENTIFIER',   // malformed identifier string in resolveStubId
+  ID_MISMATCH = 'ID_MISMATCH',                 // resolve found a different id than already set
+  MISSING_IDENTIFIER = 'MISSING_IDENTIFIER',   // 'unknown' nested entity has no identifier to encode
+  UNRESOLVED_ENTITY = 'UNRESOLVED_ENTITY',     // Strict strategy: nested entity is 'unknown'
+
   UNKNOWN = 'UNKNOWN'
 }
 

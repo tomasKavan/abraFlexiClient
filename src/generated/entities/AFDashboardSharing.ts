@@ -13,7 +13,6 @@ export class AFDashboardSharing extends AFEntity {
   static EntityType: string = 'DASHBOARD_SHARING'
 
   // ID (db: Idwdashboardsharing) - ID)
-  declare id?: number | null
   // Skrytý (db: Hidden) - Skrytý)
   hidden?: boolean | null
   // Pořadí (db: Priority) - Pořadí)
@@ -29,12 +28,6 @@ export class AFDashboardSharing extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     hidden : {
       key: 'hidden',
       type: PropertyType.Logic,

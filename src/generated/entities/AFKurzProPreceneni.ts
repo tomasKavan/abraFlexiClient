@@ -12,7 +12,6 @@ export class AFKurzProPreceneni extends AFEntity {
   static EntityType: string = 'KURZ_PRO_PRECENENI'
 
   // ID (db: IdKurzy) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum (db: PlatiOdData) - Datum)
@@ -30,12 +29,6 @@ export class AFKurzProPreceneni extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

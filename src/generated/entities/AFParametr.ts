@@ -19,7 +19,6 @@ export class AFParametr extends AFEntity {
   static EntityType: string = 'PARAM'
 
   // ID (db: IdParam) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Parametr (db: ParamK) - Parametr)
@@ -53,12 +52,6 @@ export class AFParametr extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

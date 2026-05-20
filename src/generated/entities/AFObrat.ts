@@ -15,7 +15,6 @@ export class AFObrat extends AFEntity {
   static EntityType: string = 'OBRAT'
 
   // ID (db: IdObrat) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Měsíc (db: Obdobi) - Měsíc)
@@ -48,12 +47,6 @@ export class AFObrat extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

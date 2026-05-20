@@ -16,7 +16,6 @@ export class AFInventuraPolozka extends AFEntity {
   static EntityType: string = 'INVENTURA_POLOZKA'
 
   // ID (db: IdPolInventura) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Reálný stav (db: MnozMjReal) - Reálný stav)
@@ -70,12 +69,6 @@ export class AFInventuraPolozka extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

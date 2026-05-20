@@ -11,7 +11,6 @@ export class AFSmlouvaZurnal extends AFEntity {
   static EntityType: string = 'SMLOUVA_ZURNAL'
 
   // ID (db: IdZurnalSml) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum a čas (db: DatCas) - Datum a čas)
@@ -30,12 +29,6 @@ export class AFSmlouvaZurnal extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

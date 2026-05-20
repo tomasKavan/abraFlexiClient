@@ -25,7 +25,6 @@ export class AFSmlouva extends AFEntity {
   static EntityType: string = 'SMLOUVA'
 
   // ID (db: IdSmlouvy) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Číslo smlouvy (db: Kod) - Číslo smlouvy)
@@ -149,12 +148,6 @@ export class AFSmlouva extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

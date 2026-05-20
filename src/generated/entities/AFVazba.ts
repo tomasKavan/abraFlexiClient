@@ -10,7 +10,6 @@ export class AFVazba extends AFEntity {
   static EntityType: string = 'VAZBA_MEZI_DOKLADY'
 
   // ID (db: IdVazby) - ID)
-  declare id?: number | null
   // Typ vazby (db: TypVazbyK) - Typ vazby)
   typVazbyK?: TypVazbyDokl | null
   // Spárovaná částka (db: Castka) - Spárovaná částka)
@@ -21,12 +20,6 @@ export class AFVazba extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     typVazbyK : {
       key: 'typVazbyK',
       type: PropertyType.Select,

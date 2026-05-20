@@ -4,6 +4,10 @@ import type { AFStitek } from '../generated/entities/AFStitek.js'
 import { AFSkupinaStitku } from '../generated/entities/AFSkupinaStitku.js'
 import { AFError, AFErrorCode } from './AFError.js'
 import { arraysEqual } from './AFDataType.js'
+
+// Internal only — not exported from src/index.ts
+type AFEntityState = 'new' | 'unknown' | 'exists'
+
 export class AFEntity {
   static EntityPath: string = ''
   static EntityName: string = ''
@@ -13,20 +17,68 @@ export class AFEntity {
 
   private _stitkyCache: AFStitkyCache
 
-  id?: number | null
+  // ----- Identity fields ---------------------------------------------------
+
+  private _id?: number | null
+  private _state: AFEntityState = 'new'
+
+  /**
+   * Server-assigned internal id. Readonly — never set by application code.
+   * Use api.resolveStubId() or api.resolve() to obtain a confirmed id.
+   */
+  get id(): number | null | undefined {
+    return this._id
+  }
+
+  /**
+   * @internal — called only by AFApiClient. Do NOT call from application code.
+   * Sets the confirmed server id and transitions state to 'exists'.
+   */
+  _setId(id: number): void {
+    this._id = id
+    this._state = 'exists'
+  }
+
+  /**
+   * Pending unverified identifiers stored by the deprecated createIdStub().
+   * @internal
+   */
+  _stub?: {
+    id?: number
+    kod?: string
+    ext?: string[]
+  }
+
+  // ----- Other base fields -------------------------------------------------
+
   kod?: string | null
   stitky?: string | null
 
   _orig: Record<string, any> = {}
-  // True until the entity is confirmed to exist in Abra. Cleared by AFApiClient
-  // when the entity is decoded from a server response, returned from
-  // createIdStub(), or successfully saved. Setting `id` or `kod` manually does
-  // NOT clear this — use createIdStub() for referencing existing entities.
-  _isNew: boolean = true
+
+  // ----- State accessors ---------------------------------------------------
+
+  /**
+   * Returns the entity's existence state:
+   * - true      — definitely no server record ('new')
+   * - undefined — has identifiers but existence unconfirmed ('unknown')
+   * - false     — server existence confirmed ('exists')
+   */
+  get isNew(): boolean | undefined {
+    switch (this._state) {
+      case 'new':     return true
+      case 'unknown': return undefined
+      case 'exists':  return false
+    }
+  }
+
+  // ----- Constructor -------------------------------------------------------
 
   constructor(stitkyCache: AFStitkyCache) {
     this._stitkyCache = stitkyCache
   }
+
+  // ----- Stitky helpers ----------------------------------------------------
 
   getPropertyTypeAnnotation(key: string): TypeAnnotation | undefined {
     return (this.constructor as typeof AFEntity).propAnnotations[key]
@@ -40,12 +92,10 @@ export class AFEntity {
     return this._stitkyCache.stitkyWithString(this.stitky, skup)
   }
 
+  // ----- Dirty tracking ----------------------------------------------------
+
   get pristine(): boolean {
     return !this.hasChanged()
-  }
-
-  get isNew(): boolean {
-    return this._isNew
   }
 
   protected getCotr(): typeof AFEntity {
@@ -59,12 +109,12 @@ export class AFEntity {
       const origV = self._orig[key]
 
       const annot = this.getCotr().propAnnotations[key]
-      if (!annot) 
-        throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `Property ${key} not found on entity ${AFEntity.EntityName}.`)
+      if (!annot)
+        throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `Property ${key} not found on entity ${this.getCotr().EntityName}.`)
 
       // First deal with undefined and null
       if (v === undefined) return false
-      if (origV === v === null) return false
+      if (origV === v && v === null) return false
 
       // In case of collections we need to investigate further. It's change if:
       // - array is reordered or changed in length
@@ -80,6 +130,13 @@ export class AFEntity {
         return false
       }
 
+      // Non-array relation: check reference equality, then recursively check nested changes
+      if (annot.type === PropertyType.Relation) {
+        if (origV !== v) return true
+        if (v instanceof AFEntity && v.hasChanged()) return true
+        return false
+      }
+
       // Else it's scalar - simple equality
       return origV !== v
     }
@@ -92,7 +149,7 @@ export class AFEntity {
   }
 
   wasLoaded(key: string): boolean {
-    if (!this.getCotr().propAnnotations[key]) 
+    if (!this.getCotr().propAnnotations[key])
       throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `Property ${key} not found on entity ${this.getCotr().EntityName}.`)
 
     return !!this._orig[key]
@@ -108,11 +165,11 @@ export class AFEntity {
 
   reset(key: keyof this | boolean): void {
     if (!key) {
-      throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `To reset all properties on entity ${this.getCotr().EntityName} use force (1st arg set tu true).`)
+      throw new AFError(AFErrorCode.PROPERTY_NOT_FOUND, `To reset all properties on entity ${this.getCotr().EntityName} use force (1st arg set to true).`)
     }
-    
+
     if (typeof key === 'string') {
-      (this as any)[key] = this._orig || undefined
+      (this as any)[key] = this._orig[key] || undefined
       return
     }
 

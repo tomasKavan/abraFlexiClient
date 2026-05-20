@@ -15,7 +15,6 @@ export class AFAtribut extends AFEntity {
   static EntityType: string = 'ATRIBUT'
 
   // ID (db: IdAtribut) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Logická hodnota (db: ValBoolean) - Logická hodnota)
@@ -53,12 +52,6 @@ export class AFAtribut extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

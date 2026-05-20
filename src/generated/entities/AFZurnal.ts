@@ -10,7 +10,6 @@ export class AFZurnal extends AFEntity {
   static EntityType: string = 'ZURNAL'
 
   // ID (db: IdZurnal) - ID)
-  declare id?: number | null
   // Tabulka (db: Tabulka) - Tabulka)
   tabulka?: string | null
   // ID řádky (db: IdZaznamu) - ID řádky)
@@ -33,12 +32,6 @@ export class AFZurnal extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     tabulka : {
       key: 'tabulka',
       type: PropertyType.String,

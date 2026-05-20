@@ -12,7 +12,6 @@ export class AFCleneniKontrolniHlaseni extends AFEntity {
   static EntityType: string = 'CLEN_KON_VYK_DPH'
 
   // ID (db: IdClenKonVykDPH) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
@@ -52,12 +51,6 @@ export class AFCleneniKontrolniHlaseni extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

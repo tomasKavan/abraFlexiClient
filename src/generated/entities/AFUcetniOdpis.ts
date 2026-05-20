@@ -15,7 +15,6 @@ export class AFUcetniOdpis extends AFEntity {
   static EntityType: string = 'UCETNI_ODPIS'
 
   // ID (db: IdUcetOdpisu) - ID)
-  declare id?: number | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
   ucetni?: boolean | null
   // Uživ. změn. (db: Zmena) - Uživatelsky změněno)
@@ -53,12 +52,6 @@ export class AFUcetniOdpis extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     ucetni : {
       key: 'ucetni',
       type: PropertyType.Logic,

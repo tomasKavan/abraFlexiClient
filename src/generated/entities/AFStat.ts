@@ -13,7 +13,6 @@ export class AFStat extends AFEntity {
   static EntityType: string = 'STAT'
 
   // ID (db: IdStatu) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kód (ISO 3166-1) (db: Kod) - alpha-2)
@@ -59,12 +58,6 @@ export class AFStat extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

@@ -287,6 +287,39 @@ if (entity._state === 'new' && hasUzivatelskevazby(entity)) {
 }
 ```
 
+### Nested entity encoding — `NestedUnknownStrategy`
+
+Before the root entity body is serialised, every relation property is walked recursively.
+For each nested `AFEntity` encountered, its state determines encoding:
+
+| State | Encoding |
+|---|---|
+| `'exists'` (has `_id`) | `{ id: _id, ...changedFields }` — no extra fetch |
+| `'new'` | full object serialised inline — Flexi creates the sub-record |
+| `'unknown'` | depends on `options.nestedUnknown` (see below) |
+
+The `nestedUnknown` option (type `NestedUnknownStrategy`, default `Resolve`) controls what
+happens when a nested entity is in `'unknown'` state:
+
+**`NestedUnknownStrategy.Resolve` (default)**
+Call `_resolveId` on the nested entity before encoding. If it resolves → encode as `'exists'`
+with the confirmed id. If it does not resolve → fall through to `ByIdentifier` behaviour.
+May issue one GET per unresolved nested entity.
+
+**`NestedUnknownStrategy.ByIdentifier`**
+Encode using whatever identifier is available, without a network call:
+- Has `kod` or `_stub.kod` → `{ kod: "X" }` — Flexi resolves the reference server-side.
+- Has `ext` or `_stub.ext` → `{ ext: "X" }` using the first ext id.
+- Has neither → throw `AFError(AFErrorCode.MISSING_IDENTIFIER)` at encode time, before any
+  HTTP request is sent.
+
+**`NestedUnknownStrategy.Strict`**
+Throw `AFError(AFErrorCode.UNRESOLVED_ENTITY)` immediately if any nested entity is
+`'unknown'`. The caller is responsible for resolving all relations before calling `save()`.
+
+Nesting is handled depth-first. Each level uses the same `options` object, so the strategy
+applies uniformly to all levels of the object graph.
+
 ### `delete`
 
 - Entity has `id` → proceed (existing behaviour).
@@ -306,8 +339,10 @@ if (entity._state === 'new' && hasUzivatelskevazby(entity)) {
 ```typescript
 export enum AFErrorCode {
   // ... existing codes ...
-  INVALID_IDENTIFIER = 'INVALID_IDENTIFIER', // malformed identifier string in resolveStubId
-  ID_MISMATCH = 'ID_MISMATCH',               // resolve found a different id than already set
+  INVALID_IDENTIFIER = 'INVALID_IDENTIFIER',  // malformed identifier string in resolveStubId
+  ID_MISMATCH = 'ID_MISMATCH',                // resolve found a different id than already set
+  MISSING_IDENTIFIER = 'MISSING_IDENTIFIER',  // 'unknown' nested entity has no identifier to encode
+  UNRESOLVED_ENTITY = 'UNRESOLVED_ENTITY',    // Strict strategy: nested entity is 'unknown'
 }
 ```
 
@@ -315,11 +350,39 @@ export enum AFErrorCode {
 
 ## 9. `AFTypes` changes
 
+### `NestedUnknownStrategy` — new enum
+
+```typescript
+export enum NestedUnknownStrategy {
+  /** Resolve each 'unknown' nested entity via _resolveId before encoding.
+   *  Falls back to ByIdentifier if resolution returns null. (default) */
+  Resolve = 'resolve',
+
+  /** Encode using the available identifier (kod / ext) without a network call.
+   *  Throws MISSING_IDENTIFIER if no identifier is present. */
+  ByIdentifier = 'by-identifier',
+
+  /** Throw UNRESOLVED_ENTITY if any nested entity is still 'unknown' at encode time.
+   *  Caller must resolve all relations before calling save(). */
+  Strict = 'strict',
+}
+```
+
 ### `AFSaveOptions`
 
 Remove the internal-only `updateStrategy` (was `UpdateStrategy.Updated`, the only value).
-No change to the public surface — `onCreate`/`onUpdate` are handled implicitly now via
-the pre-flight logic.
+Add `nestedUnknown` to control how nested entities in `'unknown'` state are handled during
+serialisation (see section 7 — Nested entity encoding).
+
+```typescript
+export type AFSaveOptions = {
+  /** How to handle nested entities in 'unknown' state during serialisation.
+   *  @default NestedUnknownStrategy.Resolve */
+  nestedUnknown?: NestedUnknownStrategy,
+  abortController?: AbortController,
+  removeStitky?: boolean,
+}
+```
 
 ### `IdStub` — deprecated alongside `createIdStub`
 
@@ -337,13 +400,44 @@ export type IdStub = {
 ## 10. Exports (`src/index.ts`)
 
 - **Add** `resolve`, `resolveStubId` — they are already on `AFApiClient`, no separate export needed.
+- **Add** `NestedUnknownStrategy` — public enum, must be exported so callers can pass it to `save()`.
 - **Do not export** `_setId`, `_state`, `_stub`, `_resolveId` — internal only.
 - `CODE` and `EXT` are already exported. No change needed.
 - Mark `createIdStub` and `IdStub` with `@deprecated` in JSDoc. No removal yet.
 
 ---
 
-## 11. Breaking changes
+## 11. Generator changes (`generator/templates/classProperty.ejs`)
+
+The Flexi API metadata includes `id` as a property on every evidence. The generator
+currently special-cases `id`, `kod`, and `stitky` — all three are already declared on
+`AFEntity`, so the template emits `declare <prop>?:` instead of a fresh field definition,
+avoiding duplicate-declaration errors.
+
+After the redesign `id` becomes a getter. TypeScript does not allow `declare` to override
+an accessor in a subclass, so every generated file would fail to compile.
+
+The fix is to **skip `id` entirely** — emit nothing for it. The getter is inherited with
+the correct type (`number | null | undefined`) and there is nothing to narrow in subclasses.
+`kod` and `stitky` remain regular fields on `AFEntity`, so their `declare` pattern is
+unaffected.
+
+Change in `classProperty.ejs` (the only template file that needs updating):
+
+```ejs
+<%# id is a getter on AFEntity — skip, nothing to emit in subclasses %>
+<% if (propertyName === 'id') { /* skip */ } else { %>
+  // <%= name %> (db: <%= dbName %>) - <%= title %>)
+  <% if (propertyName === 'kod' || propertyName === 'stitky') { %>declare <% } %><%= propertyName %>?: <%= genType %> | null
+<% } %>
+```
+
+After this change, regenerating the entity classes (`npm run generate`) will produce files
+that compile cleanly against the new `AFEntity`.
+
+---
+
+## 12. Breaking changes
 
 | Change | Impact |
 |---|---|
@@ -353,7 +447,7 @@ export type IdStub = {
 
 ---
 
-## 12. Migration guide (for README / changelog)
+## 13. Migration guide (for README / changelog)
 
 ```typescript
 // BEFORE

@@ -16,7 +16,6 @@ export class AFOdberatel extends AFEntity {
   static EntityType: string = 'ODBERATEL'
 
   // ID (db: IdOdberatel) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kód zboží/materiálu (db: KodIndi) - Kód zboží/materiálu)
@@ -64,12 +63,6 @@ export class AFOdberatel extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

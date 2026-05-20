@@ -16,7 +16,6 @@ export class AFPrikazKInkasu extends AFEntity {
   static EntityType: string = 'PRIKAZ_K_INKASU'
 
   // ID (db: IdPrikazUhr) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum vytvoření (db: DatVytvor) - Datum vytvoření)
@@ -62,12 +61,6 @@ export class AFPrikazKInkasu extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

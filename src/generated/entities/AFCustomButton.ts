@@ -11,7 +11,6 @@ export class AFCustomButton extends AFEntity {
   static EntityType: string = 'CUSTOM_BUTTON'
 
   // ID (db: Idwcustbutton) - ID)
-  declare id?: number | null
   // Zkratka (db: Kod) - Zkratka)
   declare kod?: string | null
   // Url (db: Url) - Url)
@@ -33,12 +32,6 @@ export class AFCustomButton extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     kod : {
       key: 'kod',
       type: PropertyType.String,

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "outDir": "./dist-test",
+    "baseUrl": ".",
+    "types": ["node"]
+  },
+  "include": ["src", "tests"]
+}

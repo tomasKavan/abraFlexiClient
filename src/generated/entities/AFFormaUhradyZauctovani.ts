@@ -13,7 +13,6 @@ export class AFFormaUhradyZauctovani extends AFEntity {
   static EntityType: string = 'FORMA_UHRADY_ZAUCTOVANI'
 
   // ID (db: IdFormaUhradyZauc) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)
@@ -29,12 +28,6 @@ export class AFFormaUhradyZauctovani extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

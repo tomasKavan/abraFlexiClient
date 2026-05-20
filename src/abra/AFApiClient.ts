@@ -8,6 +8,7 @@ import {
   PropertyType,
   AFQueryDetail,
   AFQueryOptions,
+  AFQueryResult,
   AFURelOptions,
   AFURelResult,
   AFPopulateOptions,
@@ -21,7 +22,8 @@ import {
   AFLogLevel,
   AFResponseFormat,
   AFFileResult,
-  AFQueryFileOptions
+  AFQueryFileOptions,
+  NestedUnknownStrategy
 } from "./AFTypes.js"
 import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
 import { addParamToUrl } from "../helpers/urlHelper.js"
@@ -141,6 +143,14 @@ export class AFApiClient {
 
       let entityObj = json?.winstrom?.[entityPath]
 
+      // When addRowCount was requested, smuggle @rowCount onto the array so
+      // query() can surface it as `totalCount` on the typed AFQueryResult.
+      // Flexi returns @rowCount as a string (e.g. "1234"), not a number.
+      if (options.addRowCount && Array.isArray(entityObj)) {
+        const rc = json?.winstrom?.['@rowCount']
+        if (rc !== undefined) (entityObj as any).__rowCount = rc
+      }
+
       return entityObj
     } catch (e) {
       if (!(e instanceof AFError)) {
@@ -205,12 +215,19 @@ export class AFApiClient {
   public async query<T extends typeof AFEntity>(
     entity: T,
     options: AFQueryOptions = {}
-  ): Promise<InstanceType<T>[]> {
+  ): Promise<AFQueryResult<InstanceType<T>>> {
     const res = this.queryRaw(entity.EntityPath, options)
 
     try {
       const rawData = await res
-      const data = this._decodeEntityObj(entity, rawData)
+      const data = this._decodeEntityObj(entity, rawData) as AFQueryResult<InstanceType<T>>
+
+      // Populate totalCount when addRowCount was requested.
+      // queryRaw() attaches the raw @rowCount string as __rowCount on the
+      // intermediate array; we parse it here and expose it as a number.
+      if (options.addRowCount && (rawData as any)?.__rowCount !== undefined) {
+        data.totalCount = parseInt((rawData as any).__rowCount, 10)
+      }
 
       if (!options.noUpdateStitkyCache) {
         await this._stitkyCache.fetchTick()
@@ -368,7 +385,8 @@ export class AFApiClient {
         for (const okey of oKeys) {
           this._decodeProperty(en, okey, enQ)
         }
-        en._isNew = false
+        // Mark entity as confirmed existing with server-assigned id
+        if (enQ.id) en._setId(Number(enQ.id))
       }
 
       if (!options.noUpdateStitkyCache) {
@@ -400,17 +418,198 @@ export class AFApiClient {
     return new entity(this._stitkyCache) as InstanceType<T>
   }
 
+  // ---------------------------------------------------------------------------
+  // Identity resolution
+  // ---------------------------------------------------------------------------
+
+  /**
+   * Resolves the server-assigned id for an entity that may be in 'unknown' state.
+   * Priority order: confirmed _id → _stub.id → _stub.kod / entity.kod → _stub.ext
+   *
+   * Returns the resolved id (number), or null if the entity was not found.
+   * On a 404 response, the entity state is reset to 'new'.
+   * @internal
+   */
+  private async _resolveId(entity: AFEntity): Promise<number | null> {
+    // Fast path: already has a confirmed server id
+    if (entity.id !== undefined && entity.id !== null) {
+      return entity.id as number
+    }
+
+    // New entity with no identifiers — nothing to look up
+    if (entity.isNew === true && !(entity as any)._stub && !entity.kod) {
+      return null
+    }
+
+    const entityPath = (entity.constructor as typeof AFEntity).EntityPath
+    const stub = (entity as any)._stub as { id?: number; kod?: string; ext?: string[] } | undefined
+
+    // Determine the best identifier available (priority order per spec)
+    let identifier: string | number | undefined
+    if (stub?.id !== undefined) {
+      identifier = stub.id
+    } else if (stub?.kod) {
+      identifier = `code:${stub.kod}`
+    } else if (entity.kod) {
+      identifier = `code:${entity.kod}`
+    } else if (stub?.ext?.length) {
+      identifier = `ext:${stub.ext[0]}`
+    }
+
+    if (identifier === undefined) {
+      return null
+    }
+
+    const url = `${this._url}/c/${this._company}/${entityPath}/${identifier}.json?detail=id&no-ext-ids=true`
+    this._logger.debug(url)
+
+    try {
+      const raw = await this._fetch(url)
+
+      if (raw.status === 404) {
+        // Entity does not exist on the server — reset to new
+        ;(entity as any)._state = 'new'
+        ;(entity as any)._id = undefined
+        return null
+      }
+
+      if (raw.status >= 400) {
+        const json = await raw.json().catch(() => null)
+        const details = this._extractAbraErrors(json)
+        throw new AFError(
+          AFErrorCode.ABRA_FLEXI_ERROR,
+          `${raw.status}${details ? ` — ${details}` : ''}`
+        )
+      }
+
+      const json = await raw.json().catch(() => null)
+      const items = json?.winstrom?.[entityPath]
+      if (!Array.isArray(items) || !items.length) {
+        ;(entity as any)._state = 'new'
+        ;(entity as any)._id = undefined
+        return null
+      }
+
+      const resolvedId = Number(items[0].id)
+      if (!Number.isFinite(resolvedId)) {
+        ;(entity as any)._state = 'new'
+        return null
+      }
+
+      entity._setId(resolvedId)
+      return resolvedId
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        this._logger.error(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
+    }
+  }
+
+  /**
+   * Resolves an entity by a validated identifier string or numeric id.
+   * Accepted identifier forms:
+   *   - number   → looks up by internal id
+   *   - "code:X" → looks up by business code
+   *   - "ext:X"  → looks up by external id
+   * Throws INVALID_IDENTIFIER for any other string.
+   * Throws OBJECT_NOT_FOUND if the server returns 404.
+   */
+  public async resolveStubId<T extends typeof AFEntity>(
+    entity: T,
+    identifier: number | string
+  ): Promise<InstanceType<T>> {
+    // Validate identifier
+    if (typeof identifier === 'string') {
+      if (!identifier.length) {
+        throw new AFError(AFErrorCode.INVALID_IDENTIFIER, `Identifier must not be empty.`)
+      }
+      if (!identifier.startsWith('code:') && !identifier.startsWith('ext:')) {
+        throw new AFError(
+          AFErrorCode.INVALID_IDENTIFIER,
+          `Identifier "${identifier}" is not a valid Flexi identifier. Use a number, "code:<value>", or "ext:<value>".`
+        )
+      }
+    }
+
+    const ent = new entity(this._stitkyCache) as InstanceType<T>
+
+    // Set up the stub so _resolveId can build the right URL
+    if (typeof identifier === 'number') {
+      ;(ent as any)._stub = { id: identifier }
+    } else if (identifier.startsWith('code:')) {
+      ;(ent as any)._stub = { kod: identifier.slice(5) }
+    } else {
+      // ext:...
+      ;(ent as any)._stub = { ext: [identifier.slice(4)] }
+    }
+    ;(ent as any)._state = 'unknown'
+
+    const resolvedId = await this._resolveId(ent)
+    if (resolvedId === null) {
+      throw new AFError(
+        AFErrorCode.OBJECT_NOT_FOUND,
+        `${entity.EntityName} not found for identifier "${identifier}".`
+      )
+    }
+
+    return ent
+  }
+
+  /**
+   * Resolves an entity in-place — determines and sets its server id.
+   * Fast-path: if the entity already has a confirmed id, returns immediately.
+   * For 'unknown' state: calls _resolveId; if not found and throwIfNotFound is
+   * true, throws OBJECT_NOT_FOUND.
+   * Always returns the same entity instance.
+   */
+  public async resolve<T extends AFEntity>(
+    entity: T,
+    throwIfNotFound?: boolean
+  ): Promise<T> {
+    // Fast path: already has a confirmed server id
+    if (entity.id !== undefined && entity.id !== null) {
+      return entity
+    }
+
+    // New entity with no identifiers — nothing to resolve
+    if (entity.isNew === true && !(entity as any)._stub && !entity.kod) {
+      return entity
+    }
+
+    const resolvedId = await this._resolveId(entity)
+
+    if (resolvedId === null && throwIfNotFound) {
+      throw new AFError(
+        AFErrorCode.OBJECT_NOT_FOUND,
+        `${(entity.constructor as typeof AFEntity).EntityName} not found.`
+      )
+    }
+
+    return entity
+  }
+
+  /**
+   * @deprecated Use resolveStubId() or resolve() instead.
+   * Creates an entity instance in 'unknown' state with unverified identifiers.
+   */
   public async createIdStub<T extends typeof AFEntity>(
     entity: T,
     id: IdStub
   ): Promise<InstanceType<T>> {
     if (typeof id.id !== 'number' && (!id.kod || !id.kod.length) && (!id.ext || !id.ext.length)) {
-      throw new AFError(AFErrorCode.MISSING_ID, `Requesting id stub for ${entity.EntityName} but no id is pprovided.`)
+      throw new AFError(AFErrorCode.MISSING_ID, `Requesting id stub for ${entity.EntityName} but no id is provided.`)
     }
     const ent = new entity(this._stitkyCache) as InstanceType<T>
-    if (id.id) ent.id = id.id
-    if (id.kod) ent.kod = id.kod
-    ent._isNew = false
+    // Store unverified identifiers in the _stub bag
+    ;(ent as any)._stub = {
+      ...(typeof id.id === 'number' ? { id: id.id } : {}),
+      ...(id.kod ? { kod: id.kod } : {}),
+      ...(id.ext?.length ? { ext: id.ext } : {}),
+    }
+    // Transition to 'unknown' state — existence not yet confirmed
+    ;(ent as any)._state = 'unknown'
     return ent
   }
 
@@ -482,7 +681,8 @@ export class AFApiClient {
     entity: InstanceType<T>,
     options?: AFSaveOptions
   ): Promise<InstanceType<T>> {
-    if (entity.isNew) {
+    // Validate uzivatelske-vazby restriction for new entities (before any network call)
+    if (entity.isNew === true) {
       const uvs = (entity as any)['uzivatelske-vazby']
       if (Array.isArray(uvs) && uvs.length > 0) {
         throw new AFError(
@@ -492,13 +692,30 @@ export class AFApiClient {
       }
     }
 
-    const obj = this._encodeEntity(entity)
-    const res = this.saveRaw((entity.constructor as typeof AFEntity).EntityPath, obj, options)
+    // Pre-flight: resolve unknown top-level entity
+    if (entity.isNew === undefined) {
+      await this._resolveId(entity)
+      // After _resolveId: entity is now in 'new' or 'exists' state
+    }
+
+    // Determine create vs update intent based on current state
+    const isCreate = entity.isNew === true
 
     try {
-      const results = await res
+      const obj = await this._encodeEntity(entity, options)
+
+      // Include server id for updates
+      if (!isCreate && entity.id !== undefined && entity.id !== null) {
+        obj.id = entity.id
+      }
+
+      // Flexi API: @create / @update control upsert semantics
+      obj['@create'] = isCreate ? 'ok' : 'fail'
+      obj['@update'] = isCreate ? 'fail' : 'ok'
+
+      const entityPath = (entity.constructor as typeof AFEntity).EntityPath
+      const results = await this.saveRaw(entityPath, obj, options)
       this._applySaveResultToEntity(entity, results)
-      entity._isNew = false
       return entity
     } catch (e) {
       if (!(e instanceof AFError)) {
@@ -585,7 +802,17 @@ export class AFApiClient {
     entity: InstanceType<T>,
     options: AFDeleteOptions = {}
   ): Promise<boolean> {
-    if (entity.isNew) return true
+    // Definitely new — nothing to delete
+    if (entity.isNew === true) return true
+
+    // Unknown state: try to resolve before deleting
+    if (entity.isNew === undefined) {
+      const resolvedId = await this._resolveId(entity)
+      if (resolvedId === null) return true  // entity doesn't exist, nothing to delete
+    }
+
+    // At this point entity should have an id (either was 'exists' or just resolved)
+    if (entity.id === undefined || entity.id === null) return true
 
     const entityPath = (entity.constructor as typeof AFEntity).EntityPath
     const res = this.deleteRaw(entityPath, entity.id, {
@@ -680,11 +907,23 @@ export class AFApiClient {
     actionName: string,
     options: AFActionOptions = {}
   ): Promise<boolean> {
-    if (entity.isNew) {
+    // Can't call an action on an entity that has never been saved
+    if (entity.isNew === true) {
       throw new AFError(
         AFErrorCode.RELATED_INSTANCE_NOT_SAVED,
         `Can't call action '${actionName}' on an unsaved ${(entity.constructor as typeof AFEntity).EntityName}. Save it first.`
       )
+    }
+
+    // Unknown state: resolve before calling action
+    if (entity.isNew === undefined) {
+      const resolvedId = await this._resolveId(entity)
+      if (resolvedId === null) {
+        throw new AFError(
+          AFErrorCode.OBJECT_NOT_FOUND,
+          `Can't call action '${actionName}' on ${(entity.constructor as typeof AFEntity).EntityName}: entity not found on server.`
+        )
+      }
     }
 
     if (entity.id === undefined || entity.id === null) {
@@ -726,8 +965,7 @@ export class AFApiClient {
 
     const newId = typeof r.id === 'number' ? r.id : Number(r.id)
     if (Number.isFinite(newId)) {
-      entity.id = newId
-      entity._orig.id = newId
+      entity._setId(newId)
     }
   }
 
@@ -786,17 +1024,18 @@ export class AFApiClient {
       for (const okey of oKeys) {
         this._decodeProperty(ent, okey, o)
       }
-      ent._isNew = false
+      // Mark as existing with confirmed server id
+      if (o.id) ent._setId(Number(o.id))
       res.push(ent)
     }
     return res
   }
 
-  private _encodeEntity<T extends AFEntity>(entity: T): any {
-    const out = {}
+  private async _encodeEntity<T extends AFEntity>(entity: T, options?: AFSaveOptions): Promise<any> {
+    const out: any = {}
     const keys = entity.changedKeys()
     for (const key of keys) {
-      this._encodeProperty(entity, key, out)
+      await this._encodeProperty(entity, key, out, options)
     }
     return out
   }
@@ -804,6 +1043,7 @@ export class AFApiClient {
   private _decodeProperty<T extends AFEntity>(entity: T, key: string, obj: any) {
     const annot = entity.getPropertyTypeAnnotation(key)
     if (!annot) return
+    if (annot.key === 'id') return  // id is managed by _setId; never a settable property
 
     const v = obj[key]
     if (!v) return
@@ -827,13 +1067,30 @@ export class AFApiClient {
     }
 
     // Else set it as scalar type
-    //console.log(obj)
     if (!obj) return
     ;(entity as any)[annot.key] = parsePropertyValue(annot.type, annot, obj[annot.key])
     ;(entity as AFEntity)._orig[annot.key] = (entity as any)[annot.key]
   }
 
-  private _encodeProperty<T extends AFEntity>(entity: T, key: string, obj: any) {
+  /**
+   * Returns the best available identifier string for an entity, or undefined.
+   * Used for ByIdentifier and Resolve fallback strategies.
+   * Priority: _stub.kod > entity.kod > _stub.ext
+   */
+  private _getEntityIdentifierString(entity: AFEntity): string | undefined {
+    const stub = (entity as any)._stub as { id?: number; kod?: string; ext?: string[] } | undefined
+    if (stub?.kod) return `code:${stub.kod}`
+    if (entity.kod) return `code:${entity.kod}`
+    if (stub?.ext?.length) return `ext:${stub.ext[0]}`
+    return undefined
+  }
+
+  private async _encodeProperty<T extends AFEntity>(
+    entity: T,
+    key: string,
+    obj: any,
+    options?: AFSaveOptions
+  ): Promise<void> {
     const annot = entity.getPropertyTypeAnnotation(key)
     if (!annot) return
 
@@ -843,7 +1100,7 @@ export class AFApiClient {
     if (val === undefined) return
 
     if (annot.type === PropertyType.Relation) {
-      // It's collection
+      // It's a collection (isArray)
       if (annot.isArray) {
         obj[`${key}@removeAll`] = true
         obj[key] = []
@@ -852,26 +1109,83 @@ export class AFApiClient {
             if (!(a instanceof AFEntity)) {
               throw new AFError(AFErrorCode.UNKNOWN, `Collection '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) contain's non-AFEntity member ${a}`)
             }
-            obj[key].push(this._encodeEntity(a as AFEntity))
+            obj[key].push(await this._encodeEntity(a as AFEntity, options))
           }
         }
         return
       }
 
-      // It's to 1 relation
+      // It's a to-1 relation
       if (!entity.hasChanged(key)) return
-      // If null set to ""
-      if (val === null ) {
+
+      // Null means clear the relation
+      if (val === null) {
         obj[key] = ""
         return
       }
-      if (!(val instanceof AFEntity)) throw new AFError(AFErrorCode.UNKNOWN, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) referencing not AFEntity instance`)
-      // Check if related object has ID, if no - throw
-      if (val.isNew) throw new AFError(AFErrorCode.RELATED_INSTANCE_NOT_SAVED, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) references an unsaved instance. Save it first, or use createIdStub() to reference an existing entity by id/kod.`)
-      if (typeof val.id === 'undefined') {
-        obj[key] = `code:${val.kod}`
+
+      if (!(val instanceof AFEntity)) {
+        throw new AFError(AFErrorCode.UNKNOWN, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) referencing not AFEntity instance`)
+      }
+
+      // --- Tri-state handling for the nested entity ---
+
+      if (val.isNew === true) {
+        // Definitely new: embed the full object inline (no id)
+        obj[key] = await this._encodeEntity(val, options)
+        return
+      }
+
+      if (val.isNew === false) {
+        // Confirmed existing: send id only, or id + changed fields
+        if (!val.hasChanged()) {
+          obj[key] = val.id
+        } else {
+          const nested = await this._encodeEntity(val, options)
+          nested.id = val.id  // always include the id for updates
+          obj[key] = nested
+        }
+        return
+      }
+
+      // isNew === undefined → 'unknown' state: apply NestedUnknownStrategy
+      const strategy = options?.nestedUnknown ?? NestedUnknownStrategy.Resolve
+
+      if (strategy === NestedUnknownStrategy.Strict) {
+        throw new AFError(
+          AFErrorCode.UNRESOLVED_ENTITY,
+          `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName} references an unresolved entity. Call resolve() first or change nestedUnknown strategy.`
+        )
+      }
+
+      if (strategy === NestedUnknownStrategy.ByIdentifier) {
+        const ident = this._getEntityIdentifierString(val)
+        if (!ident) {
+          throw new AFError(
+            AFErrorCode.MISSING_IDENTIFIER,
+            `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName} has an unresolved entity with no identifier (no kod, no ext). Cannot encode with ByIdentifier strategy.`
+          )
+        }
+        obj[key] = ident
+        return
+      }
+
+      // NestedUnknownStrategy.Resolve (default)
+      // Capture fallback identifier BEFORE calling _resolveId (which changes state)
+      const fallbackIdent = this._getEntityIdentifierString(val)
+      const resolvedId = await this._resolveId(val)
+
+      if (resolvedId !== null) {
+        // Successfully resolved — encode as numeric id
+        obj[key] = resolvedId
+      } else if (fallbackIdent) {
+        // Not found on server — use identifier string as fallback
+        obj[key] = fallbackIdent
       } else {
-        obj[key] = val.id
+        throw new AFError(
+          AFErrorCode.MISSING_IDENTIFIER,
+          `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName} has an unresolved entity with no identifier. Cannot encode.`
+        )
       }
       return
     }

@@ -11,7 +11,6 @@ export class AFCertifikacniAutorita extends AFEntity {
   static EntityType: string = 'CERTIFIKACNI_AUTORITA'
 
   // ID (db: IdAutCert) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Poznámka (db: UzivNazev) - Poznámka)
@@ -31,12 +30,6 @@ export class AFCertifikacniAutorita extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

@@ -19,7 +19,6 @@ export class AFOsoba extends AFEntity {
   static EntityType: string = 'OSOBA'
 
   // ID (db: IdOsoba) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Platí od data (db: PlatiOd) - Platí od)
@@ -249,12 +248,6 @@ export class AFOsoba extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

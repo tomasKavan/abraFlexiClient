@@ -15,7 +15,6 @@ export class AFMajetekUdalost extends AFEntity {
   static EntityType: string = 'MAJETEK_UDALOST'
 
   // ID (db: IdUdalosti) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Je účetní (db: Ucetni) - Doklad je účetní)
@@ -71,12 +70,6 @@ export class AFMajetekUdalost extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

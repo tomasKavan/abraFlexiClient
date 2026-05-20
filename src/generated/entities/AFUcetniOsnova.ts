@@ -12,7 +12,6 @@ export class AFUcetniOsnova extends AFEntity {
   static EntityType: string = 'UCETNI_OSNOVA'
 
   // ID (db: IdStdUcet) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Účet (db: Kod) - Syntetický účet)
@@ -48,12 +47,6 @@ export class AFUcetniOsnova extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

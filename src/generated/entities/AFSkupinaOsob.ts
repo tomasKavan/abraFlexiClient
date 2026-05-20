@@ -14,7 +14,6 @@ export class AFSkupinaOsob extends AFEntity {
   static EntityType: string = 'SKUPINA_OSOB'
 
   // ID (db: IdSkupOsob) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
@@ -78,12 +77,6 @@ export class AFSkupinaOsob extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

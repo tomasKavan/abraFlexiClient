@@ -15,7 +15,6 @@ export class AFMapovaniSkladu extends AFEntity {
   static EntityType: string = 'MAPOVANI_SKLADU'
 
   // ID (db: IdMapSklad) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Středisko (db: IdStred) - Středisko)
@@ -33,12 +32,6 @@ export class AFMapovaniSkladu extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

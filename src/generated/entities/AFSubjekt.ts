@@ -12,7 +12,6 @@ export class AFSubjekt extends AFEntity {
   static EntityType: string = 'SUBJEKT'
 
   // ID (db: Idsubjekt) - ID)
-  declare id?: number | null
   // Platí od roku (db: PlatiOd) - Platí od)
   platiOd?: Date | null
   // Platí do roku (db: PlatiDo) - Platí do)
@@ -34,12 +33,6 @@ export class AFSubjekt extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     platiOd : {
       key: 'platiOd',
       type: PropertyType.Date,

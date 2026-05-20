@@ -15,7 +15,6 @@ export class AFRezervace extends AFEntity {
   static EntityType: string = 'REZERVACE'
 
   // ID (db: IdRezervace) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum vzniku (db: DatumOd) - Datum vzniku)
@@ -45,12 +44,6 @@ export class AFRezervace extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

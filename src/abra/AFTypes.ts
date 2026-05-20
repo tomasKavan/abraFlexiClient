@@ -34,12 +34,35 @@ export enum StitkyCacheStrategy {
   Eager
 }
 
+/** @deprecated — no longer used; will be removed in a future release. */
 export enum UpdateStrategy {
   Updated,
-  // TODO: Folowing will be added later
-  // Populated,
-  // All,
-  // Custom
+}
+
+/**
+ * Controls how nested entities in 'unknown' state are handled during
+ * serialisation in save(). See spec §7 — Nested entity encoding.
+ */
+export enum NestedUnknownStrategy {
+  /**
+   * Resolve each 'unknown' nested entity via _resolveId before encoding.
+   * Falls back to ByIdentifier behaviour if resolution returns null.
+   * This is the default.
+   */
+  Resolve = 'resolve',
+
+  /**
+   * Encode using the available identifier (kod / ext) without a network call.
+   * Throws AFError(MISSING_IDENTIFIER) if no identifier is present.
+   */
+  ByIdentifier = 'by-identifier',
+
+  /**
+   * Throw AFError(UNRESOLVED_ENTITY) immediately if any nested entity is
+   * still 'unknown' at encode time. The caller must resolve all relations
+   * before calling save().
+   */
+  Strict = 'strict',
 }
 
 export type AFApiFetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
@@ -90,6 +113,17 @@ export enum AFQueryDetail {
 }
 
 export type AFNestedDetail = (string | [string, AFNestedDetail])[]
+
+/**
+ * Return type of `api.query()`. A standard array of entity instances extended
+ * with an optional `totalCount` property that is populated when the query was
+ * made with `addRowCount: true`. The value reflects the total number of
+ * matching records on the server, independent of `limit`/`start`.
+ *
+ * Because this is still a plain array, all existing code that iterates or
+ * spreads the result continues to work without any changes.
+ */
+export type AFQueryResult<T> = T[] & { totalCount?: number }
 
 export type AFQueryOptions = {
   detail?: AFNestedDetail | AFQueryDetail,
@@ -164,7 +198,11 @@ export type AFURelMinimal = AFEntity & {
 }
 
 export type AFSaveOptions = {
-  updateStrategy?: UpdateStrategy,
+  /**
+   * How to handle nested entities in 'unknown' state during serialisation.
+   * @default NestedUnknownStrategy.Resolve
+   */
+  nestedUnknown?: NestedUnknownStrategy,
   abortController?: AbortController,
   removeStitky?: boolean
 }
@@ -205,6 +243,7 @@ export enum AFSessionStatus {
   LogingOut = 'logingout',
 }
 
+/** @deprecated Use api.resolveStubId() instead. */
 export type IdStub = {
   id?: number,
   kod?: string,

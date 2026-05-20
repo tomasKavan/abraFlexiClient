@@ -12,7 +12,6 @@ export class AFDefStore extends AFEntity {
   static EntityType: string = 'DEF_STORE'
 
   // ID (db: Iddefstore) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Název (db: Nazev) - Název)
@@ -48,12 +47,6 @@ export class AFDefStore extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

@@ -17,7 +17,6 @@ export class AFPracovniPomer extends AFEntity {
   static EntityType: string = 'PRACOVNI_POMER'
 
   // ID (db: IdPracPom) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Platí od data (db: PlatiOd) - Platí od)
@@ -167,12 +166,6 @@ export class AFPracovniPomer extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

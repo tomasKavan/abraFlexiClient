@@ -23,7 +23,6 @@ export class AFPriloha extends AFEntity {
   static EntityType: string = 'PRILOHA'
 
   // ID (db: IdPriloha) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Název souboru (db: NazSoub) - Název souboru)
@@ -93,12 +92,6 @@ export class AFPriloha extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

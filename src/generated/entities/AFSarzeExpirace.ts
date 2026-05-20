@@ -12,7 +12,6 @@ export class AFSarzeExpirace extends AFEntity {
   static EntityType: string = 'SARZE_EXPIRACE'
 
   // ID (db: IdPolSklad) - ID)
-  declare id?: number | null
   // Množství (db: Pocet) - Množství)
   pocet?: Big | null
   // Cena za MJ (db: CenaMj) - Cena za MJ)
@@ -39,12 +38,6 @@ export class AFSarzeExpirace extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     pocet : {
       key: 'pocet',
       type: PropertyType.Numeric,

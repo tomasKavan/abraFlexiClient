@@ -14,7 +14,6 @@ export class AFRadekSestavy extends AFEntity {
   static EntityType: string = 'RADEK_SESTAVY'
 
   // ID (db: IdSesRadky) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Číslo řádku (db: CisRad) - Číslo řádku)
@@ -62,12 +61,6 @@ export class AFRadekSestavy extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

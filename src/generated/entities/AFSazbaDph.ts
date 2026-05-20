@@ -12,7 +12,6 @@ export class AFSazbaDph extends AFEntity {
   static EntityType: string = 'SAZBA_DPH'
 
   // ID (db: IdSazbyDph) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)
@@ -36,12 +35,6 @@ export class AFSazbaDph extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

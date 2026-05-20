@@ -11,7 +11,6 @@ export class AFText extends AFEntity {
   static EntityType: string = 'TEXT'
 
   // ID (db: IdText) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Text (db: Popis) - Text)
@@ -71,12 +70,6 @@ export class AFText extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

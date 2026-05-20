@@ -14,7 +14,6 @@ export class AFVyrobniCislo extends AFEntity {
   static EntityType: string = 'VYROBNI_CISLA'
 
   // ID (db: Idvyrobnicislo) - ID)
-  declare id?: number | null
   // Výrobní číslo (db: Kod) - Výrobní číslo)
   declare kod?: string | null
   // Ceník (db: IdCenik) - Ceník)
@@ -51,12 +50,6 @@ export class AFVyrobniCislo extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     kod : {
       key: 'kod',
       type: PropertyType.String,

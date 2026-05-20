@@ -13,7 +13,6 @@ export class AFStandardniPredpis extends AFEntity {
   static EntityType: string = 'STD_PREDPIS_SESTAVY'
 
   // ID (db: IdSesStdPred) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Druh účtu (db: DruhUctuK) - Druh účtu)
@@ -37,12 +36,6 @@ export class AFStandardniPredpis extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

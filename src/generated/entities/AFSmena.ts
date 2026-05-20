@@ -14,7 +14,6 @@ export class AFSmena extends AFEntity {
   static EntityType: string = 'SMENA'
 
   // ID (db: IdSmeny) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)
@@ -38,12 +37,6 @@ export class AFSmena extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,

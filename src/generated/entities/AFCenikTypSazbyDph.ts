@@ -13,7 +13,6 @@ export class AFCenikTypSazbyDph extends AFEntity {
   static EntityType: string = 'TYP_SAZBY_DPH'
 
   // ID (db: IdTypSazbyDph) - ID)
-  declare id?: number | null
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)
@@ -35,12 +34,6 @@ export class AFCenikTypSazbyDph extends AFEntity {
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
-    id : {
-      key: 'id',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
     lastUpdate : {
       key: 'lastUpdate',
       type: PropertyType.DateTime,
