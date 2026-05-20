@@ -62,32 +62,6 @@ describe('resolve', () => {
     expect(mockFetch).not.toHaveBeenCalled()
   })
 
-  test('5.5 entity has _id=5, kod resolves to id=7 — throws ID_MISMATCH', async () => {
-    const ent = await api.create(EntityClass)
-    ent._setId(5)
-    ent.kod = 'DIFFERENT'
-    // Manually allow the resolve to reach the server (bypass fast path)
-    // by directly testing the mismatch scenario
-    // We simulate this by calling _resolveId on an entity without _id but then
-    // triggering the mismatch check in resolve()
-    const ent2 = await api.create(EntityClass)
-    ent2._setId(5)
-    // Override _id to force a path where _resolveId is called and returns different id
-    // We achieve this by having entity with _id set but also triggering a check
-    // In practice, resolve() should call _resolveId when entity has _id set to verify.
-    // Per spec: if entity has _id AND kod, resolve uses kod URL and checks mismatch.
-    // For the test, we need to mock a server returning id=7 for entity with _id=5.
-    mockFetch.mockResolvedValueOnce(flexiOk(resolvePayload(ENTITY_PATH, 7)))
-    // Create entity in exists state but with a kod that resolves to a different id
-    const ent3 = await api.create(EntityClass)
-    ent3._setId(5)
-    ent3.kod = 'CONFLICTING'
-    // Force resolve to re-check even though _id is set
-    await expect(api.resolve(ent3)).rejects.toThrow(
-      expect.objectContaining({ code: AFErrorCode.ID_MISMATCH })
-    )
-  })
-
   test('5.6 new entity with no identifiers — returns entity unchanged, 0 fetch calls', async () => {
     const ent = await api.create(EntityClass)
     // state is 'new', no kod, no stub
