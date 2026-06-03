@@ -35,7 +35,7 @@ export class AFPodkladyDph extends AFEntity {
   duzpPuv?: Date | null
   // Uplatnit zdaň. plnění (db: ) - Uplatnit zdaň. plnění)
   duzpUcto?: Date | null
-  // Zkratka firmy (db: ) - Zkratka firmy)
+  // Firma (db: ) - Firma)
   firma?: AFAdresar | null
   // Je DPH (db: ) - Je DPH)
   jeDph?: boolean | null
@@ -97,6 +97,8 @@ export class AFPodkladyDph extends AFEntity {
   typUcOp?: AFPredpisZauctovani | null
   // DIČ (db: ) - DIČ)
   dic?: string | null
+  // Číslo došlé (db: ) - Číslo došlé)
+  cisDosle?: string | null
   // Vyp. rozdíl DPH [měna] (db: ) - Vyp. rozdíl DPH [měna])
   vypRozdilDphMen?: Big | null
   // Vyp. rozdíl DPH [Kč] (db: ) - Vyp. rozdíl DPH [Kč])
@@ -390,6 +392,13 @@ export class AFPodkladyDph extends AFEntity {
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
+      
+    },
+    cisDosle : {
+      key: 'cisDosle',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 40,
       
     },
     vypRozdilDphMen : {

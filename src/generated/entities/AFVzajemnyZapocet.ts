@@ -31,12 +31,19 @@ import { AFDokladKUhrade } from './AFDokladKUhrade.js'
 
 import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums.js'
 
+export enum AFVzajemnyZapocetAction {
+  // Storno
+  Storno = 'storno',
+  // Automatické párování
+  AutomatickeParovani = 'automaticke-parovani',
+}
+
 export class AFVzajemnyZapocet extends AFEntity {
   static EntityPath: string = 'vzajemny-zapocet'
   static EntityName: string = 'Vzájemné zápočty'
   static EntityType: string = 'VZAJEMNY_ZAPOCET'
+  static Actions = AFVzajemnyZapocetAction
 
-  // ID (db: IdDoklInt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -179,7 +186,7 @@ export class AFVzajemnyZapocet extends AFEntity {
   mena?: AFMena | null
   // Konstantní symbol (db: IdKonSym) - Konstantní symbol)
   konSym?: AFKonstSymbol | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

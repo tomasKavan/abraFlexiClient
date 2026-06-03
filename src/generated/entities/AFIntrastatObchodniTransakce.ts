@@ -10,7 +10,6 @@ export class AFIntrastatObchodniTransakce extends AFEntity {
   static EntityName: string = 'Obchodní transakce'
   static EntityType: string = 'INTRASTAT_OBCHODNI_TRANSAKCE'
 
-  // ID (db: IdObchTrans) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

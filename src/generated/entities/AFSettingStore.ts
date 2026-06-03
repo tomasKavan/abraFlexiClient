@@ -9,7 +9,6 @@ export class AFSettingStore extends AFEntity {
   static EntityName: string = 'Úložiště nastavení'
   static EntityType: string = 'SETTING'
 
-  // ID (db: IdSetting) - ID)
   // Klíč (db: Klic) - Klíč)
   klic?: string | null
   // Hodnota (db: Hodnota) - Hodnota)

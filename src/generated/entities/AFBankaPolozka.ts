@@ -17,12 +17,17 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 import { TypSzbDph } from '../AFEntityEnums.js'
 
+export enum AFBankaPolozkaAction {
+  // Storno položky
+  Storno = 'storno',
+}
+
 export class AFBankaPolozka extends AFEntity {
   static EntityPath: string = 'banka-polozka'
   static EntityName: string = 'Položky banky a vzájemných zápočtů'
   static EntityType: string = 'BANKA_POLOZKA'
+  static Actions = AFBankaPolozkaAction
 
-  // ID (db: IdPolInt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)

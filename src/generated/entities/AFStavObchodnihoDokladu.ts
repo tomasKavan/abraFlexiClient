@@ -10,7 +10,6 @@ export class AFStavObchodnihoDokladu extends AFEntity {
   static EntityName: string = 'Stav obchodního dokladu'
   static EntityType: string = 'STAV_OBCHODNIHO_DOKLADU'
 
-  // ID (db: IdStavDoklObchCis) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

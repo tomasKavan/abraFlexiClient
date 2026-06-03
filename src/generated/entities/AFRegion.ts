@@ -11,7 +11,6 @@ export class AFRegion extends AFEntity {
   static EntityName: string = 'Kraje'
   static EntityType: string = 'REGION'
 
-  // ID (db: IdRegion) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

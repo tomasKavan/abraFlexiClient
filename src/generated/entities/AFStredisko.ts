@@ -12,7 +12,6 @@ export class AFStredisko extends AFEntity {
   static EntityName: string = 'Střediska'
   static EntityType: string = 'STREDISKO'
 
-  // ID (db: IdStred) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

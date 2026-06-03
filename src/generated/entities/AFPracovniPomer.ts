@@ -6,17 +6,17 @@ import { AFTypPracovnihoPomeru } from './AFTypPracovnihoPomeru.js'
 import { AFTypInternihoDokladu } from './AFTypInternihoDokladu.js'
 import { AFTypDokladu } from './AFTypDokladu.js'
 import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
+import { AFStat } from './AFStat.js'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti } from '../AFEntityEnums.js'
+import { PracRozvrh, PlneniOdprDoby, TypMzdy, DuvodSlevaSpFirma, TydenPracDoba, CsszDuvodUkonceni, CsszDuvodNeposkytnuti, MzdDuvodPredcasKonceZam, MzdPracRezim, MzdPrubehPrace, MzdNastrojAPZ, MzdyBlizsiUrceniPPV, MzdKatDosazVzdelani } from '../AFEntityEnums.js'
 
 export class AFPracovniPomer extends AFEntity {
   static EntityPath: string = 'pracovni-pomer'
   static EntityName: string = 'Pracovní poměr'
   static EntityType: string = 'PRACOVNI_POMER'
 
-  // ID (db: IdPracPom) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Platí od data (db: PlatiOd) - Platí od)
@@ -99,6 +99,8 @@ export class AFPracovniPomer extends AFEntity {
   dovoleneRocneHod?: Big | null
   // Tydenní pracovní doba (db: TydenPracDobaK) - Tydenní pracovní doba)
   tydenPracDobaK?: TydenPracDoba | null
+  // Stanovený fond pracovní doby (db: FondSta) - Stanovený fond)
+  fondSta?: Big | null
   // Pondělí (db: UvazPo) - Pondělí)
   uvazPo?: boolean | null
   // Úterý (db: UvazUt) - Úterý)
@@ -125,6 +127,52 @@ export class AFPracovniPomer extends AFEntity {
   duvodNeposkytnutiCsszK?: CsszDuvodNeposkytnuti | null
   // Štítky (db: ) - Štítky)
   declare stitky?: string | null
+  // Zaměstnání ukončeno smrtí (db: UkoncenoSmrti) - Zaměstnání ukončeno smrtí)
+  ukoncenoSmrti?: boolean | null
+  // Zaměstnanec nenastoupil (db: ZamNenastoupil) - Zaměstnanec nenastoupil)
+  zamNenastoupil?: boolean | null
+  // Důvod předčasného ukončení (db: CizDuvodPredcasUkonceniK) - Důvod předčasného ukončení)
+  cizDuvodPredcasUkonceniK?: MzdDuvodPredcasKonceZam | null
+  // ID PPV (db: IdPpv) - ID PPV)
+  idPpv?: string | null
+  // Pracovní režim (JMHZ) (db: PracovniRezimK) - Pracovní režim (JMHZ))
+  pracovniRezimK?: MzdPracRezim | null
+  // Nepřetržitý provoz (db: NepretrzityProvoz) - Nepřetržitý provoz)
+  nepretrzityProvoz?: boolean | null
+  // Práce probíhá převážně (chráněný trh práce) (db: PraceProbihaK) - Práce probíhá převážně (chráněný trh práce))
+  praceProbihaK?: MzdPrubehPrace | null
+  // Předpokládané místo výkonu práce (cizinci) (db: MistoVykPracePredpokl) - Předpokládané místo výkonu práce (cizinci))
+  mistoVykPracePredpokl?: string | null
+  // Místo výkonu práce (prac. smlouva) (db: MistoVykPracePracSmlouva) - Místo výkonu práce (prac. smlouva))
+  mistoVykPracePracSmlouva?: string | null
+  // Obec výkonu práce (prac. smlouva) (db: MistoVykPracePracSmlouvaObec) - Obec výkonu práce (prac. smlouva))
+  mistoVykPracePracSmlouvaObec?: string | null
+  // Obec výkonu práce (prac. smlouva) - kód (db: MistoVykPraceObecPracSmlouvaKod) - Obec výkonu práce (prac. smlouva) - kód)
+  mistoVykPraceObecPracSmlouvaKod?: string | null
+  // Obec výkonu práce (db: MistoVykPraceObec) - Obec výkonu práce)
+  mistoVykPraceObec?: string | null
+  // Obec výkonu práce - kód (db: MistoVykPraceObecKod) - Obec výkonu práce - kód)
+  mistoVykPraceObecKod?: string | null
+  // Mzdový příspěvek APZ (db: PrispevekApz) - Mzdový příspěvek APZ)
+  prispevekApz?: boolean | null
+  // Nástroj APZ (db: NastrojApzK) - Nástroj APZ)
+  nastrojApzK?: MzdNastrojAPZ | null
+  // Kód profese (db: ProfeseKod) - Kód profese)
+  profeseKod?: string | null
+  // Název pozice (db: PoziceNazev) - Název pozice)
+  poziceNazev?: string | null
+  // Vedoucí (db: VedouciPozice) - Vedoucí)
+  vedouciPozice?: boolean | null
+  // Bližší určení PPV (db: BlizsiUrceniPpvK) - Bližší určení PPV)
+  blizsiUrceniPpvK?: MzdyBlizsiUrceniPPV | null
+  // Vzdělání pro profesi (cizinci) (db: ProfeseMinVzdelaniK) - Vzdělání pro profesi (cizinci))
+  profeseMinVzdelaniK?: MzdKatDosazVzdelani | null
+  // Postavení v zaměstnání (db: PostaveniVZamestnani) - Postavení v zaměstnání)
+  postaveniVZamestnani?: string | null
+  // Práce v ovocnářství (db: DppOvocnarstvi) - Práce v ovocnářství)
+  dppOvocnarstvi?: boolean | null
+  // Spadá do 3. skupiny rizikových prací (db: RizikPrace3sk) - Spadá do 3. skupiny rizikových prací)
+  rizikPrace3sk?: boolean | null
   // Hlavička pracovního poměru (db: IdPracPomHlav) - Hlavička pracovního poměru)
   pracPomHlav?: AFPracovniPomerHlavicka | null
   // Osoba (db: IdOsoba) - Osoba)
@@ -159,6 +207,8 @@ export class AFPracovniPomer extends AFEntity {
   tuoZavDan?: AFPredpisZauctovani | null
   // Typ dokladu pro srážku stravenek (db: IdTdSrazkaStrav) - Typ dokladu pro srážku stravenek)
   tdSrazkaStrav?: AFTypDokladu | null
+  // Stát výkonu práce (db: IdStatMistoVykPrace) - Stát výkonu práce)
+  statMistoVykPrace?: AFStat | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -442,6 +492,13 @@ export class AFPracovniPomer extends AFEntity {
       enum: TydenPracDoba,
       
     },
+    fondSta : {
+      key: 'fondSta',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 6,
+      
+    },
     uvazPo : {
       key: 'uvazPo',
       type: PropertyType.Logic,
@@ -523,6 +580,168 @@ export class AFPracovniPomer extends AFEntity {
     stitky : {
       key: 'stitky',
       type: PropertyType.String,
+      isArray: false,
+      
+    },
+    ukoncenoSmrti : {
+      key: 'ukoncenoSmrti',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    zamNenastoupil : {
+      key: 'zamNenastoupil',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    cizDuvodPredcasUkonceniK : {
+      key: 'cizDuvodPredcasUkonceniK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdDuvodPredcasKonceZam',
+      enum: MzdDuvodPredcasKonceZam,
+      
+    },
+    idPpv : {
+      key: 'idPpv',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 50,
+      
+    },
+    pracovniRezimK : {
+      key: 'pracovniRezimK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdPracRezim',
+      enum: MzdPracRezim,
+      
+    },
+    nepretrzityProvoz : {
+      key: 'nepretrzityProvoz',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    praceProbihaK : {
+      key: 'praceProbihaK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdPrubehPrace',
+      enum: MzdPrubehPrace,
+      
+    },
+    mistoVykPracePredpokl : {
+      key: 'mistoVykPracePredpokl',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },
+    mistoVykPracePracSmlouva : {
+      key: 'mistoVykPracePracSmlouva',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },
+    mistoVykPracePracSmlouvaObec : {
+      key: 'mistoVykPracePracSmlouvaObec',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },
+    mistoVykPraceObecPracSmlouvaKod : {
+      key: 'mistoVykPraceObecPracSmlouvaKod',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 50,
+      
+    },
+    mistoVykPraceObec : {
+      key: 'mistoVykPraceObec',
+      type: PropertyType.String,
+      isArray: false,
+      
+    },
+    mistoVykPraceObecKod : {
+      key: 'mistoVykPraceObecKod',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 50,
+      
+    },
+    prispevekApz : {
+      key: 'prispevekApz',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    nastrojApzK : {
+      key: 'nastrojApzK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdNastrojAPZ',
+      enum: MzdNastrojAPZ,
+      
+    },
+    profeseKod : {
+      key: 'profeseKod',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 10,
+      
+    },
+    poziceNazev : {
+      key: 'poziceNazev',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 100,
+      
+    },
+    vedouciPozice : {
+      key: 'vedouciPozice',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    blizsiUrceniPpvK : {
+      key: 'blizsiUrceniPpvK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdyBlizsiUrceniPPV',
+      enum: MzdyBlizsiUrceniPPV,
+      
+    },
+    profeseMinVzdelaniK : {
+      key: 'profeseMinVzdelaniK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdKatDosazVzdelani',
+      enum: MzdKatDosazVzdelani,
+      
+    },
+    postaveniVZamestnani : {
+      key: 'postaveniVZamestnani',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 10,
+      
+    },
+    dppOvocnarstvi : {
+      key: 'dppOvocnarstvi',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    rizikPrace3sk : {
+      key: 'rizikPrace3sk',
+      type: PropertyType.Logic,
       isArray: false,
       
     },
@@ -643,6 +862,13 @@ export class AFPracovniPomer extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFTypDokladu',
+      
+    },
+    statMistoVykPrace : {
+      key: 'statMistoVykPrace',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFStat',
       
     },
 

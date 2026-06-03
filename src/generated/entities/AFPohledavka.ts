@@ -39,12 +39,19 @@ import { AFVazba } from './AFVazba.js'
 
 import { Zamek, StavUziv, StavUhr, StavOdp } from '../AFEntityEnums.js'
 
+export enum AFPohledavkaAction {
+  // Storno
+  Storno = 'storno',
+  // Uhradit vzájemným zápočtem
+  UhradZapoctem = 'uhrad-zapoctem',
+}
+
 export class AFPohledavka extends AFEntity {
   static EntityPath: string = 'pohledavka'
   static EntityName: string = 'Ostatní pohledávky'
   static EntityType: string = 'POHLEDAVKA'
+  static Actions = AFPohledavkaAction
 
-  // ID (db: IdDoklFak) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -201,7 +208,7 @@ export class AFPohledavka extends AFEntity {
   mena?: AFMena | null
   // Konst. sym. (db: IdKonSym) - Kon. sym.)
   konSym?: AFKonstSymbol | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

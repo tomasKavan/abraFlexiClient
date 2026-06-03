@@ -10,7 +10,6 @@ export class AFCustomButton extends AFEntity {
   static EntityName: string = 'Uživatelské tlačítko'
   static EntityType: string = 'CUSTOM_BUTTON'
 
-  // ID (db: Idwcustbutton) - ID)
   // Zkratka (db: Kod) - Zkratka)
   declare kod?: string | null
   // Url (db: Url) - Url)

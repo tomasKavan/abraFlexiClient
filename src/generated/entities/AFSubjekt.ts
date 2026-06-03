@@ -11,7 +11,6 @@ export class AFSubjekt extends AFEntity {
   static EntityName: string = 'Subjekt'
   static EntityType: string = 'SUBJEKT'
 
-  // ID (db: Idsubjekt) - ID)
   // Platí od roku (db: PlatiOd) - Platí od)
   platiOd?: Date | null
   // Platí do roku (db: PlatiDo) - Platí do)

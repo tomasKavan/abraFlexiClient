@@ -324,6 +324,34 @@ export enum TypPrav {
   jenCist = 'typPrav.jenCist',
   zablokovan = 'typPrav.zablokovan',
 }
+export enum TypPristPrav {
+  plny = 'typPristPrav.plny',
+  nepripustne = 'typPristPrav.nepripustne',
+  pouzeCist = 'typPristPrav.pouzeCist',
+  upresneni = 'typPristPrav.upresneni',
+}
+export enum PristupovePravoFeatureK {
+  pridavat = 'Pridavat',
+  menit = 'Menit',
+  mazat = 'Mazat',
+  export = 'Export',
+  import = 'Import',
+  oteviratDetail = 'OteviratDetail',
+  sloupce = 'Sloupce',
+  kusovnik = 'Kusovnik',
+  storno = 'Storno',
+  slevaZmenaCeny = 'SlevaZmenaCeny',
+  sumace = 'Sumace',
+  sluzby = 'Sluzby',
+  vazby = 'Vazby',
+  hromZmeny = 'HromZmeny',
+  nakupCena = 'NakupCena',
+  menitZauctovani = 'MenitZauctovani',
+  menitTuo = 'MenitTuo',
+  generovatZeSmluv = 'GenerovatZeSmluv',
+  podepsatFaktury = 'PodepsatFaktury',
+  prodejPodMinMarzi = 'ProdejPodMinMarzi',
+}
 export enum TypUcJednotky {
   mikro = 'typUcJednotky.mikro',
   mala = 'typUcJednotky.mala',
@@ -387,6 +415,20 @@ export enum AutoSendMailMod {
 export enum ZobrazWebKompMod {
   auto = 'zobrazWebKompMod.auto',
   browser = 'zobrazWebKompMod.browser',
+}
+export enum MzdKolSmlouva {
+  _0 = 'mzdKolSmlouva.0',
+  _1 = 'mzdKolSmlouva.1',
+  _2 = 'mzdKolSmlouva.2',
+  _3 = 'mzdKolSmlouva.3',
+  _4 = 'mzdKolSmlouva.4',
+  _5 = 'mzdKolSmlouva.5',
+}
+export enum MzdFormaKontroly {
+  _1 = 'mzdFormaKontroly.1',
+  _2 = 'mzdFormaKontroly.2',
+  _3 = 'mzdFormaKontroly.3',
+  _4 = 'mzdFormaKontroly.4',
 }
 export enum PredvybranyPocet {
   aktualni = 'predvybranyPocet.aktualni',
@@ -796,6 +838,92 @@ export enum ZpusobPlatby {
   adresa = 'zpusobPlatby.adresa',
   pokladna = 'zpusobPlatby.pokladna',
 }
+export enum MzdTypDanIdentifOsoba {
+  D = 'mzdTypDanIdentifOsoba.D',
+  R = 'mzdTypDanIdentifOsoba.R',
+  S = 'mzdTypDanIdentifOsoba.S',
+  J = 'mzdTypDanIdentifOsoba.J',
+}
+export enum MzdTypDokladuCiz {
+  I = 'mzdTypDokladuCiz.I',
+  P = 'mzdTypDokladuCiz.P',
+  O = 'mzdTypDokladuCiz.O',
+}
+export enum MzdTypZdravOmezeni {
+  _1 = 'mzdTypZdravOmezeni.1',
+  _2 = 'mzdTypZdravOmezeni.2',
+  _3 = 'mzdTypZdravOmezeni.3',
+  _4 = 'mzdTypZdravOmezeni.4',
+  _5 = 'mzdTypZdravOmezeni.5',
+}
+export enum MzdKatDosazVzdelani {
+  A = 'mzdKatDosazVzdelani.A',
+  B = 'mzdKatDosazVzdelani.B',
+  C = 'mzdKatDosazVzdelani.C',
+  D = 'mzdKatDosazVzdelani.D',
+  E = 'mzdKatDosazVzdelani.E',
+  H = 'mzdKatDosazVzdelani.H',
+  J = 'mzdKatDosazVzdelani.J',
+  K = 'mzdKatDosazVzdelani.K',
+  L = 'mzdKatDosazVzdelani.L',
+  M = 'mzdKatDosazVzdelani.M',
+  N = 'mzdKatDosazVzdelani.N',
+  P = 'mzdKatDosazVzdelani.P',
+  R = 'mzdKatDosazVzdelani.R',
+  T = 'mzdKatDosazVzdelani.T',
+  V = 'mzdKatDosazVzdelani.V',
+  Z = 'mzdKatDosazVzdelani.Z',
+}
+export enum MzdCizNositelPojisteni {
+  P = 'mzdCizNositelPojisteni.P',
+  S = 'mzdCizNositelPojisteni.S',
+  N = 'mzdCizNositelPojisteni.N',
+}
+export enum MzdCizVolnyTrhPrace {
+  _1 = 'mzdCizVolnyTrhPrace.1',
+  _2 = 'mzdCizVolnyTrhPrace.2',
+  _3 = 'mzdCizVolnyTrhPrace.3',
+  _4 = 'mzdCizVolnyTrhPrace.4',
+  _5 = 'mzdCizVolnyTrhPrace.5',
+  _6 = 'mzdCizVolnyTrhPrace.6',
+  _7 = 'mzdCizVolnyTrhPrace.7',
+  _8 = 'mzdCizVolnyTrhPrace.8',
+  _9 = 'mzdCizVolnyTrhPrace.9',
+  _10 = 'mzdCizVolnyTrhPrace.10',
+  _11 = 'mzdCizVolnyTrhPrace.11',
+  _12 = 'mzdCizVolnyTrhPrace.12',
+  _13 = 'mzdCizVolnyTrhPrace.13',
+  _14 = 'mzdCizVolnyTrhPrace.14',
+  _15 = 'mzdCizVolnyTrhPrace.15',
+  _16 = 'mzdCizVolnyTrhPrace.16',
+  _17 = 'mzdCizVolnyTrhPrace.17',
+  _18 = 'mzdCizVolnyTrhPrace.18',
+  _19 = 'mzdCizVolnyTrhPrace.19',
+  _20 = 'mzdCizVolnyTrhPrace.20',
+  _21 = 'mzdCizVolnyTrhPrace.21',
+}
+export enum MzdCizDruhPracOpravneni {
+  _1 = 'mzdCizDruhPracOpravneni.1',
+  _2 = 'mzdCizDruhPracOpravneni.2',
+  _3 = 'mzdCizDruhPracOpravneni.3',
+  _4 = 'mzdCizDruhPracOpravneni.4',
+}
+export enum MzdPobockaUP {
+  HMP = 'mzdPobockaUP.HMP',
+  JMK = 'mzdPobockaUP.JMK',
+  JCK = 'mzdPobockaUP.JCK',
+  HKK = 'mzdPobockaUP.HKK',
+  VYK = 'mzdPobockaUP.VYK',
+  KVK = 'mzdPobockaUP.KVK',
+  LBK = 'mzdPobockaUP.LBK',
+  OLK = 'mzdPobockaUP.OLK',
+  MSK = 'mzdPobockaUP.MSK',
+  PAK = 'mzdPobockaUP.PAK',
+  PMK = 'mzdPobockaUP.PMK',
+  SCK = 'mzdPobockaUP.SCK',
+  ULK = 'mzdPobockaUP.ULK',
+  ZLK = 'mzdPobockaUP.ZLK',
+}
 export enum CsszDuvodOsetrovne {
   onemocnela = 'csszDuvodOsetrovne.onemocnela',
   narizenaKaran = 'csszDuvodOsetrovne.narizenaKaran',
@@ -898,6 +1026,34 @@ export enum CsszDuvodNeposkytnuti {
   _02 = 'csszDuvodNeposkytnuti.02',
   _03 = 'csszDuvodNeposkytnuti.03',
 }
+export enum MzdDuvodPredcasKonceZam {
+  _1 = 'mzdDuvodPredcasKonceZam.1',
+  _2 = 'mzdDuvodPredcasKonceZam.2',
+  _3 = 'mzdDuvodPredcasKonceZam.3',
+}
+export enum MzdPracRezim {
+  _1 = 'mzdPracRezim.1',
+  _2 = 'mzdPracRezim.2',
+  _3 = 'mzdPracRezim.3',
+  _4 = 'mzdPracRezim.4',
+}
+export enum MzdPrubehPrace {
+  _1 = 'mzdPrubehPrace.1',
+  _2 = 'mzdPrubehPrace.2',
+  _3 = 'mzdPrubehPrace.3',
+  _4 = 'mzdPrubehPrace.4',
+}
+export enum MzdNastrojAPZ {
+  _1 = 'mzdNastrojAPZ.1',
+  _2 = 'mzdNastrojAPZ.2',
+  _3 = 'mzdNastrojAPZ.3',
+  _4 = 'mzdNastrojAPZ.4',
+}
+export enum MzdyBlizsiUrceniPPV {
+  _1 = 'mzdyBlizsiUrceniPPV.1',
+  _2 = 'mzdyBlizsiUrceniPPV.2',
+  _3 = 'mzdyBlizsiUrceniPPV.3',
+}
 export enum VyznamSlozky {
   dobaFond = 'vyznamSlozky.dobaFond',
   dobaNeodpr = 'vyznamSlozky.dobaNeodpr',
@@ -991,6 +1147,17 @@ export enum DashboardPanelVisibility {
   private = 'dashboardPanelVisibility.private',
   shared = 'dashboardPanelVisibility.shared',
   shared_all = 'dashboardPanelVisibility.shared-all',
+}
+export enum StatusDoplnku {
+  aktivni = 'statusDoplnku.aktivni',
+  neaktivni = 'statusDoplnku.neaktivni',
+  nefunkcni = 'statusDoplnku.nefunkcni',
+  cekajici = 'statusDoplnku.cekajici',
+  pozastaveny = 'statusDoplnku.pozastaveny',
+}
+export enum StatusIntegrace {
+  aktivni = 'statusIntegrace.aktivni',
+  cekajici = 'statusIntegrace.cekajici',
 }
 export enum TypSestavy {
   rozvaha = 'typSestavy.rozvaha',

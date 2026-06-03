@@ -11,7 +11,6 @@ export class AFTypStavuCeniku extends AFEntity {
   static EntityName: string = 'Stavy položek ceníku'
   static EntityType: string = 'TYP_STAVU_CENIKU'
 
-  // ID (db: IdStavCen) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

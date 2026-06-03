@@ -14,7 +14,6 @@ export class AFMapovaniSkladu extends AFEntity {
   static EntityName: string = 'Mapování skladů'
   static EntityType: string = 'MAPOVANI_SKLADU'
 
-  // ID (db: IdMapSklad) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Středisko (db: IdStred) - Středisko)

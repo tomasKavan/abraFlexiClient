@@ -15,7 +15,6 @@ export class AFPrikazKUhrade extends AFEntity {
   static EntityName: string = 'Příkaz k úhradě'
   static EntityType: string = 'PRIKAZ_K_UHRADE'
 
-  // ID (db: IdPrikazUhr) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum vytvoření (db: DatVytvor) - Datum vytvoření)

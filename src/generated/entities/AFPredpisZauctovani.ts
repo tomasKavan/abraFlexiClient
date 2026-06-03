@@ -12,7 +12,6 @@ export class AFPredpisZauctovani extends AFEntity {
   static EntityName: string = 'Předpisy zaúčtování'
   static EntityType: string = 'PREDPIS_ZAUCTOVANI'
 
-  // ID (db: IdTypUcOp) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

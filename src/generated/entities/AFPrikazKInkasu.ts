@@ -15,7 +15,6 @@ export class AFPrikazKInkasu extends AFEntity {
   static EntityName: string = 'Příkaz k inkasu'
   static EntityType: string = 'PRIKAZ_K_INKASU'
 
-  // ID (db: IdPrikazUhr) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum vytvoření (db: DatVytvor) - Datum vytvoření)

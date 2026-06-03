@@ -14,7 +14,6 @@ export class AFDodavatel extends AFEntity {
   static EntityName: string = 'Nákupní ceny'
   static EntityType: string = 'DODAVATEL'
 
-  // ID (db: IdDodavatel) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kód zboží/materiálu (db: KodIndi) - Kód zboží/materiálu)

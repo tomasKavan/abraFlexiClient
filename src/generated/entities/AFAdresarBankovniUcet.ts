@@ -15,7 +15,6 @@ export class AFAdresarBankovniUcet extends AFEntity {
   static EntityName: string = 'Bankovní spojení'
   static EntityType: string = 'ADR_BANKOVNI_UCET'
 
-  // ID (db: IdBanSpoj) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)
@@ -46,7 +45,7 @@ export class AFAdresarBankovniUcet extends AFEntity {
   varSym?: string | null
   // Prim. ban. spoj. (db: Primarni) - Primární ban. spojení)
   primarni?: boolean | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Kód banky (db: IdSmerKod) - Kód banky)
   smerKod?: AFPenezniUstav | null

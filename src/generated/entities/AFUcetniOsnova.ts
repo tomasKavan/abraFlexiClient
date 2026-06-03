@@ -11,7 +11,6 @@ export class AFUcetniOsnova extends AFEntity {
   static EntityName: string = 'Standardní účetní osnova'
   static EntityType: string = 'UCETNI_OSNOVA'
 
-  // ID (db: IdStdUcet) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Účet (db: Kod) - Syntetický účet)

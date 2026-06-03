@@ -18,7 +18,6 @@ export class AFTypPoptavkyVydane extends AFEntity {
   static EntityName: string = 'Typy vydaných poptávek'
   static EntityType: string = 'POPTAVKA_OUT_TYP'
 
-  // ID (db: IdTypDokl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

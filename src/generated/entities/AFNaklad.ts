@@ -14,7 +14,6 @@ export class AFNaklad extends AFEntity {
   static EntityName: string = 'Náklady na události / aktivity'
   static EntityType: string = 'NAKLAD'
 
-  // ID (db: IdNaklAkt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Fakturované množství (db: FaktMnoz) - Fakturované množství)

@@ -32,12 +32,19 @@ import { AFDokladKUhrade } from './AFDokladKUhrade.js'
 
 import { Zamek, TypPohybu, StavUziv, JakUhrazeno } from '../AFEntityEnums.js'
 
+export enum AFBankaAction {
+  // Storno
+  Storno = 'storno',
+  // Automatické párování
+  AutomatickeParovani = 'automaticke-parovani',
+}
+
 export class AFBanka extends AFEntity {
   static EntityPath: string = 'banka'
   static EntityName: string = 'Banka'
   static EntityType: string = 'BANKA'
+  static Actions = AFBankaAction
 
-  // ID (db: IdDoklInt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -182,7 +189,7 @@ export class AFBanka extends AFEntity {
   mena?: AFMena | null
   // Konstantní symbol (db: IdKonSym) - Konstantní symbol)
   konSym?: AFKonstSymbol | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

@@ -6,19 +6,18 @@ import { AFStat } from './AFStat.js'
 import { AFStredisko } from './AFStredisko.js'
 import { AFAdresar } from './AFAdresar.js'
 import { AFTypZavazku } from './AFTypZavazku.js'
-import { AFDite } from './AFDite.js'
+import { AFOsobaBlizkaHlav } from './AFOsobaBlizkaHlav.js'
 import { AFPriloha } from './AFPriloha.js'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
-import { Pohlavi, TypVztahuOsoba, RodStav, ZpusobPlatby } from '../AFEntityEnums.js'
+import { Pohlavi, TypVztahuOsoba, RodStav, ZpusobPlatby, MzdTypDanIdentifOsoba, MzdTypDokladuCiz, MzdTypZdravOmezeni, MzdKatDosazVzdelani, MzdCizNositelPojisteni, MzdCizVolnyTrhPrace, MzdCizDruhPracOpravneni, MzdPobockaUP } from '../AFEntityEnums.js'
 
 export class AFOsoba extends AFEntity {
   static EntityPath: string = 'osoba'
   static EntityName: string = 'Personalistika'
   static EntityType: string = 'OSOBA'
 
-  // ID (db: IdOsoba) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Platí od data (db: PlatiOd) - Platí od)
@@ -39,6 +38,8 @@ export class AFOsoba extends AFEntity {
   datNaroz?: Date | null
   // Rodné číslo (db: RodCis) - Rodné číslo)
   rodCis?: string | null
+  // EČP (db: Ecp) - EČP)
+  ecp?: string | null
   // Pohlaví (db: PohlaviK) - Pohlaví)
   pohlaviK?: Pohlavi | null
   // Kvalifikace (db: Kvalifikace) - Kvalifikace)
@@ -97,8 +98,6 @@ export class AFOsoba extends AFEntity {
   poznam?: string | null
   // Ulice (db: Ulice) - Ulice)
   ulice?: string | null
-  // Číslo domu (db: CisDomu) - Číslo domu)
-  cisDomu?: string | null
   // PSČ (db: Psc) - PSČ)
   psc?: string | null
   // Pošta (db: Posta) - Pošta)
@@ -107,8 +106,6 @@ export class AFOsoba extends AFEntity {
   mesto?: string | null
   // Ulice kontaktní (db: UliceKon) - Ulice kontaktní)
   uliceKon?: string | null
-  // Číslo domu kontaktní (db: CisDomuKon) - Číslo domu kontaktní)
-  cisDomuKon?: string | null
   // PSČ kontaktní (db: PscKon) - PSČ kontaktní)
   pscKon?: string | null
   // Pošta kontaktní (db: PostaKon) - Pošta kontaktní)
@@ -125,8 +122,6 @@ export class AFOsoba extends AFEntity {
   telefon?: string | null
   // Ulice kon.tuz. (db: UliceKonTuz) - Ulice kon.tuz.)
   uliceKonTuz?: string | null
-  // Číslo domu kon.tuz. (db: CisDomuKonTuz) - Číslo domu kon.tuz.)
-  cisDomuKonTuz?: string | null
   // PSČ kon.tuz. (db: PscKonTuz) - PSČ kon.tuz.)
   pscKonTuz?: string | null
   // Pošta kon.tuz. (db: PostaKonTuz) - Pošta kon.tuz.)
@@ -141,6 +136,8 @@ export class AFOsoba extends AFEntity {
   danNerezid?: boolean | null
   // Zdravotní pojištění - doplatek do minimálního vyměřovacího základu (db: ZdrPojDoplat) - Zdravotní pojištění - doplatek do minimálního vyměřovacího základu)
   zdrPojDoplat?: boolean | null
+  // Doplatek příjmy bez účasti na zdrav. poj. (db: ZdrPojDoplatVzdy) - Doplatek příjmy bez účasti na zdrav. poj.)
+  zdrPojDoplatVzdy?: boolean | null
   // Rozdělit mezi firmu a zaměstnance (db: ZdrPojDoplatRozdel) - Rozdělit mezi firmu a zaměstnance)
   zdrPojDoplatRozdel?: boolean | null
   // Číslo pojištěnce (db: CisPojist) - Číslo pojištěnce)
@@ -161,8 +158,6 @@ export class AFOsoba extends AFEntity {
   invalCast?: boolean | null
   // Invalidita 3.stupně (db: InvalPlna) - Invalidita 3.stupně)
   invalPlna?: boolean | null
-  // Invalidita od (db: InvalOd) - Invalidita od)
-  invalOd?: Date | null
   // Student (db: Student) - Student)
   student?: boolean | null
   // Sleva na poplatníka (db: SlevaPoplat) - Sleva na poplatníka)
@@ -171,12 +166,6 @@ export class AFOsoba extends AFEntity {
   odpocetDeti?: number | null
   // Počet třetích a dalších dětí pro odpočet (db: ) - Počet třetích a dalších dětí pro odpočet)
   odpocetDeti3?: number | null
-  // Dětí ZTP pro odpočet (db: ) - Dětí ZTP pro odpočet)
-  odpocetDetiZtp?: number | null
-  // První dítě pro odpočet je ZTP (db: ) - První dítě pro odpočet je ZTP)
-  odpocetDite1Ztp?: boolean | null
-  // Druhé dítě pro odpočet je ZTP (db: ) - Druhé dítě pro odpočet je ZTP)
-  odpocetDite2Ztp?: boolean | null
   // Sníž. vym. zákl. ZP (db: SnizVymZaklZp) - Snížení vyměřovacího základu ZP (Zákon č. 592/1992 Sb., § 3 - Vyměřovací základ, odstavec 7))
   snizVymZaklZp?: boolean | null
   // Heslo (db: Password) - Heslo)
@@ -193,12 +182,8 @@ export class AFOsoba extends AFEntity {
   slevaSpPracDuchodce?: boolean | null
   // Název ciz.poj. (db: CizPojNazev) - Název ciz.poj.)
   cizPojNazev?: string | null
-  // Specifikace ciz.poj. (db: CizPojSpec) - Specifikace ciz.poj.)
-  cizPojSpec?: string | null
   // Ulice ciz.poj. (db: CizPojUlice) - Ulice ciz.poj.)
   cizPojUlice?: string | null
-  // Číslo domu ciz.poj. (db: CizPojCisDomu) - Číslo domu ciz.poj.)
-  cizPojCisDomu?: string | null
   // Město ciz.poj. (db: CizPojMesto) - Město ciz.poj.)
   cizPojMesto?: string | null
   // PSČ ciz.poj. (db: CizPojPsc) - PSČ ciz.poj.)
@@ -209,6 +194,80 @@ export class AFOsoba extends AFEntity {
   pocetPriloh?: number | null
   // Štítky (db: ) - Štítky)
   declare stitky?: string | null
+  // OIČ (db: Oic) - OIČ)
+  oic?: string | null
+  // VČP (db: CizVcp) - VČP)
+  cizVcp?: string | null
+  // Typ daňové identifikace (db: CizTypDanIdentifK) - Typ daňové identifikace)
+  cizTypDanIdentifK?: MzdTypDanIdentifOsoba | null
+  // Daňový identifikátor ve státě rezidence (db: CizTaxIdRez) - Daňový identifikátor ve státě rezidence)
+  cizTaxIdRez?: string | null
+  // Typ dokladu (db: CizTypDokladuK) - Typ dokladu)
+  cizTypDokladuK?: MzdTypDokladuCiz | null
+  // Číslo dokladu (db: CizCisDoklTotoznosti) - Číslo dokladu)
+  cizCisDoklTotoznosti?: string | null
+  // Orgán, který vydal doklad v zahraničí (db: CizDoklTotoznostiVydal) - Orgán, který vydal doklad v zahraničí)
+  cizDoklTotoznostiVydal?: string | null
+  // Č. popisné (db: CisPopisne) - Č. popisné)
+  cisPopisne?: string | null
+  // Č. orientační (db: CisOrientacni) - Č. orientační)
+  cisOrientacni?: string | null
+  // Č. p. kontaktní (db: CisPopisneKon) - Č. p. kontaktní)
+  cisPopisneKon?: string | null
+  // Č. o. kontaktní (db: CisOrientacniKon) - Č. o. kontaktní)
+  cisOrientacniKon?: string | null
+  // Č. p. kon. tuz. (db: CisPopisneKonTuz) - Č. p. kon. tuz.)
+  cisPopisneKonTuz?: string | null
+  // Č. o. kon. tuz. (db: CisOrientacniKonTuz) - Č. o. kon. tuz.)
+  cisOrientacniKonTuz?: string | null
+  // Číslo popisné ciz. poj. (db: CizPojPopisneCis) - Číslo popisné ciz. poj.)
+  cizPojPopisneCis?: string | null
+  // Číslo orientační ciz. poj. (db: CizPojOrientacniCis) - Číslo orientační ciz. poj.)
+  cizPojOrientacniCis?: string | null
+  // Kód adresy v RUIAN (db: KodRuian) - Kód adresy v RUIAN)
+  kodRuian?: string | null
+  // Kód adresy v RUIAN kontaktní (db: KodRuianKon) - Kód adresy v RUIAN kontaktní)
+  kodRuianKon?: string | null
+  // Kód adresy v RUIAN kon. tuz. (db: KodRuianKonTuz) - Kód adresy v RUIAN kon. tuz.)
+  kodRuianKonTuz?: string | null
+  // Zdravotní omezení přiznané do (db: ) - Zdravotní omezení přiznané do)
+  zdravOmezeniDo?: Date | null
+  // Typ zdravotního omezení (db: TypZdravOmezeniK) - Typ zdravotního omezení)
+  typZdravOmezeniK?: MzdTypZdravOmezeni | null
+  // Nejvyšší dosažené vzdělání podle KKOV (db: NejvyssiVzdelaniK) - Nejvyšší dosažené vzdělání podle KKOV)
+  nejvyssiVzdelaniK?: MzdKatDosazVzdelani | null
+  // Specifikace (db: CizPojSpecK) - Specifikace)
+  cizPojSpecK?: MzdCizNositelPojisteni | null
+  // Volný přístup na trh práce (db: VolnyPristupTrhPrace) - Volný přístup na trh práce)
+  volnyPristupTrhPrace?: boolean | null
+  // Důvod pro volný přístup na trh práce (db: CizVolnyPristupTrhPraceDuvodK) - Důvod pro volný přístup na trh práce)
+  cizVolnyPristupTrhPraceDuvodK?: MzdCizVolnyTrhPrace | null
+  // Druh pracovního oprávnění (db: CizDruhPracOpravneniK) - Druh pracovního oprávnění)
+  cizDruhPracOpravneniK?: MzdCizDruhPracOpravneni | null
+  // Pracovní oprávnění vydal (db: PracOpravneniVydalK) - Pracovní oprávnění vydal)
+  pracOpravneniVydalK?: MzdPobockaUP | null
+  // ID pracovního oprávnění (db: IdPracOpravneni) - ID pracovního oprávnění)
+  idPracOpravneni?: string | null
+  // Oprávnění od (db: PracOpravneniOd) - Oprávnění od)
+  pracOpravneniOd?: Date | null
+  // Oprávnění do (db: PracOpravneniDo) - Oprávnění do)
+  pracOpravneniDo?: Date | null
+  // Podléhá cizím právním předpisům (db: CiziPravniPredpisy) - Podléhá cizím právním předpisům)
+  ciziPravniPredpisy?: boolean | null
+  // Snížený důchodový věk (db: SnizDuchVek) - Snížený důchodový věk)
+  snizDuchVek?: boolean | null
+  // Důchodový věk od (db: DuchVekOd) - Důchodový věk od)
+  duchVekOd?: Date | null
+  // Důchod mimo ČSSZ (db: DuchodMimoCssz) - Důchod mimo ČSSZ)
+  duchodMimoCssz?: boolean | null
+  // Důchod přiznán od jiného nositele pojištění (db: ) - Důchod přiznán od jiného nositele pojištění)
+  duchodJinyNositelPojisteniOd?: Date | null
+  // Děti vyživuje i jiná osoba (db: DetiVyzivujeJinaOsoba) - Děti vyživuje i jiná osoba)
+  detiVyzivujeJinaOsoba?: boolean | null
+  // Vyplněné heslo (db: ) - Vyplněné heslo)
+  hesloVyplneno?: boolean | null
+  // Nepobírá důchod v plné výši (db: NepobiraDuchodVPlneVysi) - Nepobírá důchod v plné výši)
+  nepobiraDuchodVPlneVysi?: boolean | null
   // Osoba (db: IdOsobaHlav) - Osoba)
   osobaHlav?: AFOsobaHlavicka | null
   // Skupina osob (db: IdSkupOsob) - Skupina osob)
@@ -236,9 +295,17 @@ export class AFOsoba extends AFEntity {
   // Typ závazku zálohy (db: IdTdZaloha) - Typ závazku zálohy)
   tdZaloha?: AFTypZavazku | null
   // 1. dítě pro odpočet (db: IdDiteOdpoc1) - 1. dítě pro odpočet)
-  diteOdpoc1?: AFDite | null
+  diteOdpoc1?: AFOsobaBlizkaHlav | null
   // 2. dítě pro odpočet (db: IdDiteOdpoc2) - 2. dítě pro odpočet)
-  diteOdpoc2?: AFDite | null
+  diteOdpoc2?: AFOsobaBlizkaHlav | null
+  // Osoba vyživující tytéž děti (db: IdOsobaVyzivDeti) - Osoba vyživující tytéž děti)
+  osobaVyzivDeti?: AFOsobaBlizkaHlav | null
+  // Stát rezidentství (db: IdStatRezidentstvi) - Stát rezidentství)
+  statRezidentstvi?: AFStat | null
+  // Stát, který vydal doklad (db: IdStatVydalDoklTotoznosti) - Stát, který vydal doklad)
+  statVydalDoklTotoznosti?: AFStat | null
+  // Stát cizích právních předpisů (db: IdStatCiziPravniPredpisy) - Stát cizích právních předpisů)
+  statCiziPravniPredpisy?: AFStat | null
 
   // Přílohy (type: PRILOHA) - prilohy)
   prilohy?: AFPriloha[]
@@ -309,6 +376,13 @@ export class AFOsoba extends AFEntity {
     },
     rodCis : {
       key: 'rodCis',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    ecp : {
+      key: 'ecp',
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
@@ -511,13 +585,6 @@ export class AFOsoba extends AFEntity {
       maxLength: 255,
       
     },
-    cisDomu : {
-      key: 'cisDomu',
-      type: PropertyType.String,
-      isArray: false,
-      maxLength: 20,
-      
-    },
     psc : {
       key: 'psc',
       type: PropertyType.String,
@@ -544,13 +611,6 @@ export class AFOsoba extends AFEntity {
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
-      
-    },
-    cisDomuKon : {
-      key: 'cisDomuKon',
-      type: PropertyType.String,
-      isArray: false,
-      maxLength: 20,
       
     },
     pscKon : {
@@ -609,13 +669,6 @@ export class AFOsoba extends AFEntity {
       maxLength: 255,
       
     },
-    cisDomuKonTuz : {
-      key: 'cisDomuKonTuz',
-      type: PropertyType.String,
-      isArray: false,
-      maxLength: 20,
-      
-    },
     pscKonTuz : {
       key: 'pscKonTuz',
       type: PropertyType.String,
@@ -660,6 +713,12 @@ export class AFOsoba extends AFEntity {
     },
     zdrPojDoplat : {
       key: 'zdrPojDoplat',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    zdrPojDoplatVzdy : {
+      key: 'zdrPojDoplatVzdy',
       type: PropertyType.Logic,
       isArray: false,
       
@@ -728,12 +787,6 @@ export class AFOsoba extends AFEntity {
       isArray: false,
       
     },
-    invalOd : {
-      key: 'invalOd',
-      type: PropertyType.Date,
-      isArray: false,
-      
-    },
     student : {
       key: 'student',
       type: PropertyType.Logic,
@@ -755,24 +808,6 @@ export class AFOsoba extends AFEntity {
     odpocetDeti3 : {
       key: 'odpocetDeti3',
       type: PropertyType.Integer,
-      isArray: false,
-      
-    },
-    odpocetDetiZtp : {
-      key: 'odpocetDetiZtp',
-      type: PropertyType.Integer,
-      isArray: false,
-      
-    },
-    odpocetDite1Ztp : {
-      key: 'odpocetDite1Ztp',
-      type: PropertyType.Logic,
-      isArray: false,
-      
-    },
-    odpocetDite2Ztp : {
-      key: 'odpocetDite2Ztp',
-      type: PropertyType.Logic,
       isArray: false,
       
     },
@@ -829,25 +864,11 @@ export class AFOsoba extends AFEntity {
       maxLength: 255,
       
     },
-    cizPojSpec : {
-      key: 'cizPojSpec',
-      type: PropertyType.String,
-      isArray: false,
-      maxLength: 255,
-      
-    },
     cizPojUlice : {
       key: 'cizPojUlice',
       type: PropertyType.String,
       isArray: false,
       maxLength: 255,
-      
-    },
-    cizPojCisDomu : {
-      key: 'cizPojCisDomu',
-      type: PropertyType.String,
-      isArray: false,
-      maxLength: 20,
       
     },
     cizPojMesto : {
@@ -880,6 +901,267 @@ export class AFOsoba extends AFEntity {
     stitky : {
       key: 'stitky',
       type: PropertyType.String,
+      isArray: false,
+      
+    },
+    oic : {
+      key: 'oic',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 10,
+      
+    },
+    cizVcp : {
+      key: 'cizVcp',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 9,
+      
+    },
+    cizTypDanIdentifK : {
+      key: 'cizTypDanIdentifK',
+      type: PropertyType.Select,
+      isArray: false,
+      enumName: 'MzdTypDanIdentifOsoba',
+      enum: MzdTypDanIdentifOsoba,
+      
+    },
+    cizTaxIdRez : {
+      key: 'cizTaxIdRez',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    cizTypDokladuK : {
+      key: 'cizTypDokladuK',
+      type: PropertyType.Select,
+      isArray: false,
+      enumName: 'MzdTypDokladuCiz',
+      enum: MzdTypDokladuCiz,
+      
+    },
+    cizCisDoklTotoznosti : {
+      key: 'cizCisDoklTotoznosti',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    cizDoklTotoznostiVydal : {
+      key: 'cizDoklTotoznostiVydal',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 100,
+      
+    },
+    cisPopisne : {
+      key: 'cisPopisne',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 12,
+      
+    },
+    cisOrientacni : {
+      key: 'cisOrientacni',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 12,
+      
+    },
+    cisPopisneKon : {
+      key: 'cisPopisneKon',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    cisOrientacniKon : {
+      key: 'cisOrientacniKon',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    cisPopisneKonTuz : {
+      key: 'cisPopisneKonTuz',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    cisOrientacniKonTuz : {
+      key: 'cisOrientacniKonTuz',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    cizPojPopisneCis : {
+      key: 'cizPojPopisneCis',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    cizPojOrientacniCis : {
+      key: 'cizPojOrientacniCis',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    kodRuian : {
+      key: 'kodRuian',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 9,
+      
+    },
+    kodRuianKon : {
+      key: 'kodRuianKon',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 9,
+      
+    },
+    kodRuianKonTuz : {
+      key: 'kodRuianKonTuz',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 9,
+      
+    },
+    zdravOmezeniDo : {
+      key: 'zdravOmezeniDo',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },
+    typZdravOmezeniK : {
+      key: 'typZdravOmezeniK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdTypZdravOmezeni',
+      enum: MzdTypZdravOmezeni,
+      
+    },
+    nejvyssiVzdelaniK : {
+      key: 'nejvyssiVzdelaniK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdKatDosazVzdelani',
+      enum: MzdKatDosazVzdelani,
+      
+    },
+    cizPojSpecK : {
+      key: 'cizPojSpecK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdCizNositelPojisteni',
+      enum: MzdCizNositelPojisteni,
+      
+    },
+    volnyPristupTrhPrace : {
+      key: 'volnyPristupTrhPrace',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    cizVolnyPristupTrhPraceDuvodK : {
+      key: 'cizVolnyPristupTrhPraceDuvodK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdCizVolnyTrhPrace',
+      enum: MzdCizVolnyTrhPrace,
+      
+    },
+    cizDruhPracOpravneniK : {
+      key: 'cizDruhPracOpravneniK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdCizDruhPracOpravneni',
+      enum: MzdCizDruhPracOpravneni,
+      
+    },
+    pracOpravneniVydalK : {
+      key: 'pracOpravneniVydalK',
+      type: PropertyType.Select,
+      isArray: false,
+      maxLength: 50,
+      enumName: 'MzdPobockaUP',
+      enum: MzdPobockaUP,
+      
+    },
+    idPracOpravneni : {
+      key: 'idPracOpravneni',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 20,
+      
+    },
+    pracOpravneniOd : {
+      key: 'pracOpravneniOd',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },
+    pracOpravneniDo : {
+      key: 'pracOpravneniDo',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },
+    ciziPravniPredpisy : {
+      key: 'ciziPravniPredpisy',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    snizDuchVek : {
+      key: 'snizDuchVek',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    duchVekOd : {
+      key: 'duchVekOd',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },
+    duchodMimoCssz : {
+      key: 'duchodMimoCssz',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    duchodJinyNositelPojisteniOd : {
+      key: 'duchodJinyNositelPojisteniOd',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },
+    detiVyzivujeJinaOsoba : {
+      key: 'detiVyzivujeJinaOsoba',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    hesloVyplneno : {
+      key: 'hesloVyplneno',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    nepobiraDuchodVPlneVysi : {
+      key: 'nepobiraDuchodVPlneVysi',
+      type: PropertyType.Logic,
       isArray: false,
       
     },
@@ -979,14 +1261,42 @@ export class AFOsoba extends AFEntity {
       key: 'diteOdpoc1',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFDite',
+      afClass: 'AFOsobaBlizkaHlav',
       
     },
     diteOdpoc2 : {
       key: 'diteOdpoc2',
       type: PropertyType.Relation,
       isArray: false,
-      afClass: 'AFDite',
+      afClass: 'AFOsobaBlizkaHlav',
+      
+    },
+    osobaVyzivDeti : {
+      key: 'osobaVyzivDeti',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFOsobaBlizkaHlav',
+      
+    },
+    statRezidentstvi : {
+      key: 'statRezidentstvi',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFStat',
+      
+    },
+    statVydalDoklTotoznosti : {
+      key: 'statVydalDoklTotoznosti',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFStat',
+      
+    },
+    statCiziPravniPredpisy : {
+      key: 'statCiziPravniPredpisy',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFStat',
       
     },
 

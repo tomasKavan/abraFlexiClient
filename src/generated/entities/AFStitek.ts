@@ -11,7 +11,6 @@ export class AFStitek extends AFEntity {
   static EntityName: string = 'Štítky'
   static EntityType: string = 'STITEK'
 
-  // ID (db: IdVybKlice) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
@@ -46,8 +45,6 @@ export class AFStitek extends AFEntity {
   vsbFap?: boolean | null
   // Závazky (db: VsbZav) - Závazky)
   vsbZav?: boolean | null
-  // Uplatnění daně - pohledávky (db: VsbTxp) - Uplatnění daně - pohledávky)
-  vsbTxp?: boolean | null
   // Uplatnění daně - závazky (db: VsbTxz) - Uplatnění daně - závazky)
   vsbTxz?: boolean | null
   // Banka (db: VsbBan) - Banka)
@@ -186,12 +183,6 @@ export class AFStitek extends AFEntity {
     },
     vsbZav : {
       key: 'vsbZav',
-      type: PropertyType.Logic,
-      isArray: false,
-      
-    },
-    vsbTxp : {
-      key: 'vsbTxp',
       type: PropertyType.Logic,
       isArray: false,
       

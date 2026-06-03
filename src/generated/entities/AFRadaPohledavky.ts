@@ -11,7 +11,6 @@ export class AFRadaPohledavky extends AFEntity {
   static EntityName: string = 'Dokladové řady - pohledávky'
   static EntityType: string = 'POHLEDAVKA_RADA'
 
-  // ID (db: IdRady) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

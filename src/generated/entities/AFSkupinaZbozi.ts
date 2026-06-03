@@ -12,7 +12,6 @@ export class AFSkupinaZbozi extends AFEntity {
   static EntityName: string = 'Skupiny zboží a materiálu'
   static EntityType: string = 'SKUPINA_ZBOZI'
 
-  // ID (db: IdSkupZboz) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

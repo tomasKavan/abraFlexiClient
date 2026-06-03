@@ -211,7 +211,7 @@ export class AFSaldoKDatu extends AFEntity {
   mena?: AFMena | null
   // Konstantní symbol (db: ) - Konstantní symbol)
   konSym?: AFKonstSymbol | null
-  // Zkratka firmy (db: ) - Zkratka firmy)
+  // Firma (db: ) - Firma)
   firma?: AFAdresar | null
   // Stát (db: ) - Stát)
   stat?: AFStat | null

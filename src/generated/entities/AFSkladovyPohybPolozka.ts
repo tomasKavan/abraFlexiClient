@@ -20,12 +20,17 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 import { TypCeny, TypSzbDph, TypVypCeny } from '../AFEntityEnums.js'
 
+export enum AFSkladovyPohybPolozkaAction {
+  // Storno položky
+  Storno = 'storno',
+}
+
 export class AFSkladovyPohybPolozka extends AFEntity {
   static EntityPath: string = 'skladovy-pohyb-polozka'
   static EntityName: string = 'Položky příjemky/výdejky'
   static EntityType: string = 'SKLADOVY_POHYB_POLOZKA'
+  static Actions = AFSkladovyPohybPolozkaAction
 
-  // ID (db: IdPolSklad) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)

@@ -11,7 +11,6 @@ export class AFPsc extends AFEntity {
   static EntityName: string = 'Poštovní směrovací čísla'
   static EntityType: string = 'PSC'
 
-  // ID (db: IdPsc) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

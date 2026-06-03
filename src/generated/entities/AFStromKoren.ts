@@ -10,7 +10,6 @@ export class AFStromKoren extends AFEntity {
   static EntityName: string = 'Obecný strom'
   static EntityType: string = 'STROM_KOREN'
 
-  // ID (db: IdStrom) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

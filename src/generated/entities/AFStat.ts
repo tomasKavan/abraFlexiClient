@@ -12,7 +12,6 @@ export class AFStat extends AFEntity {
   static EntityName: string = 'Státy'
   static EntityType: string = 'STAT'
 
-  // ID (db: IdStatu) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kód (ISO 3166-1) (db: Kod) - alpha-2)

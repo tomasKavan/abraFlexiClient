@@ -9,7 +9,6 @@ export class AFGlobalStore extends AFEntity {
   static EntityName: string = 'Úložiště globálního nastavení'
   static EntityType: string = 'GLOBAL_SETTING'
 
-  // ID (db: IdSetting) - ID)
   // Klíč (db: Klic) - Klíč)
   klic?: string | null
   // Hodnota (db: Hodnota) - Hodnota)

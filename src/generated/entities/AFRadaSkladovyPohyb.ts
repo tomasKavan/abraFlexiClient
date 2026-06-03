@@ -11,7 +11,6 @@ export class AFRadaSkladovyPohyb extends AFEntity {
   static EntityName: string = 'Dokladové řady - sklad'
   static EntityType: string = 'SKLADOVY_POHYB_RADA'
 
-  // ID (db: IdRady) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

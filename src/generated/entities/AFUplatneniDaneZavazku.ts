@@ -27,12 +27,17 @@ import { AFVazba } from './AFVazba.js'
 
 import { Zamek } from '../AFEntityEnums.js'
 
+export enum AFUplatneniDaneZavazkuAction {
+  // Storno
+  Storno = 'storno',
+}
+
 export class AFUplatneniDaneZavazku extends AFEntity {
   static EntityPath: string = 'uplatneni-dane-zavazku'
   static EntityName: string = 'Uplatnění daně - závazky'
   static EntityType: string = 'UPLATNENI_DANE_ZAV'
+  static Actions = AFUplatneniDaneZavazkuAction
 
-  // ID (db: IdDoklFak) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -161,7 +166,7 @@ export class AFUplatneniDaneZavazku extends AFEntity {
   typDokl?: AFTypUplatneniDaneZavazku | null
   // Měna (db: IdMeny) - Měna)
   mena?: AFMena | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

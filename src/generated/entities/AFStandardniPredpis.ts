@@ -12,7 +12,6 @@ export class AFStandardniPredpis extends AFEntity {
   static EntityName: string = 'Standardní předpis sestavy'
   static EntityType: string = 'STD_PREDPIS_SESTAVY'
 
-  // ID (db: IdSesStdPred) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Druh účtu (db: DruhUctuK) - Druh účtu)

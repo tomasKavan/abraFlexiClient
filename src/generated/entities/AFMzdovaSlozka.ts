@@ -17,7 +17,6 @@ export class AFMzdovaSlozka extends AFEntity {
   static EntityName: string = 'Mzdové složky - vstup a výběry'
   static EntityType: string = 'MZDOVA_SLOZKA'
 
-  // ID (db: IdMzdSloz) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Pořadí (db: CisRad) - Pořadí)

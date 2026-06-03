@@ -32,12 +32,19 @@ import { AFVazba } from './AFVazba.js'
 
 import { Zamek, TypPohybu, StavSklad, TypPohybuSklad } from '../AFEntityEnums.js'
 
+export enum AFSkladovyPohybAction {
+  // Storno
+  Storno = 'storno',
+  // Dokončit převodku
+  DokoncitPrevodku = 'dokoncit-prevodku',
+}
+
 export class AFSkladovyPohyb extends AFEntity {
   static EntityPath: string = 'skladovy-pohyb'
   static EntityName: string = 'Příjemky/výdejky'
   static EntityType: string = 'SKLADOVY_POHYB'
+  static Actions = AFSkladovyPohybAction
 
-  // ID (db: IdDoklSklad) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -142,7 +149,7 @@ export class AFSkladovyPohyb extends AFEntity {
   sklad?: AFSklad | null
   // Měna (db: IdMeny) - Měna)
   mena?: AFMena | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

@@ -23,7 +23,6 @@ export class AFSmlouvaPolozka extends AFEntity {
   static EntityName: string = 'Položky smluv'
   static EntityType: string = 'SMLOUVA_POLOZKA'
 
-  // ID (db: IdPolSml) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Označení (db: Kod) - Označení)

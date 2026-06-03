@@ -17,12 +17,17 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 import { TypPolozky, TypCeny, TypSzbDph, Objednat, TypVypCeny } from '../AFEntityEnums.js'
 
+export enum AFPoptavkaPrijataPolozkaAction {
+  // Storno položky
+  Storno = 'storno',
+}
+
 export class AFPoptavkaPrijataPolozka extends AFEntity {
   static EntityPath: string = 'poptavka-prijata-polozka'
   static EntityName: string = 'Položky přijatých poptávek'
   static EntityType: string = 'POPTAVKA_IN_POLOZKA'
+  static Actions = AFPoptavkaPrijataPolozkaAction
 
-  // ID (db: IdPolObch) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)

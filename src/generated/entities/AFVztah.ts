@@ -10,7 +10,6 @@ export class AFVztah extends AFEntity {
   static EntityName: string = 'Vztah'
   static EntityType: string = 'VZTAH'
 
-  // ID (db: Idvztah) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

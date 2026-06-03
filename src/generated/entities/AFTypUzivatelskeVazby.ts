@@ -10,7 +10,6 @@ export class AFTypUzivatelskeVazby extends AFEntity {
   static EntityName: string = 'Typy uživatelských vazeb'
   static EntityType: string = 'VAZBA_TYP'
 
-  // ID (db: IdVazbaTyp) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

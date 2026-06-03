@@ -13,6 +13,12 @@ export class AFEntity {
   static EntityName: string = ''
   static EntityType: string = ''
 
+  // Map of supported business actions for this entity (id → id), populated
+  // by the generator from /<evidencePath>/actions.json. Defaults to empty
+  // for entities with no real actions. Subclasses override with the
+  // concrete per-entity enum, e.g. `static Actions = AFFakturaPrijataAction`.
+  static Actions: Record<string, string> = {}
+
   static propAnnotations: Record<string, TypeAnnotation> = {}
 
   private _stitkyCache: AFStitkyCache

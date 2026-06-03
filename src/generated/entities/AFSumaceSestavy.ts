@@ -11,7 +11,6 @@ export class AFSumaceSestavy extends AFEntity {
   static EntityName: string = 'Sumace v sestavách'
   static EntityType: string = 'SUMACE_SESTAVY'
 
-  // ID (db: IdSesSumace) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Převrátit znaménko (db: PrevratZnam) - Převrátit znaménko)

@@ -12,7 +12,6 @@ export class AFFormaUhradyZauctovani extends AFEntity {
   static EntityName: string = 'Zaúčtování formy úhrady'
   static EntityType: string = 'FORMA_UHRADY_ZAUCTOVANI'
 
-  // ID (db: IdFormaUhradyZauc) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Forma úhrady (db: IdFormaUhradyCis) - Forma úhrady)

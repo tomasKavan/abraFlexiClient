@@ -10,7 +10,6 @@ export class AFStromCenik extends AFEntity {
   static EntityName: string = 'Vazba uzlu na objekt'
   static EntityType: string = 'STROM_CENIK'
 
-  // ID (db: Idvazuzel) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // ID Záznamu (db: Idzaznamu) - ID Záznamu)

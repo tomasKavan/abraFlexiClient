@@ -10,7 +10,6 @@ export class AFIntrastatDruhDopravy extends AFEntity {
   static EntityName: string = 'Druh dopravy'
   static EntityType: string = 'INTRASTAT_DRUH_DOPRAVY'
 
-  // ID (db: IdDruhDopr) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

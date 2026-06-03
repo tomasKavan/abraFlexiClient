@@ -15,7 +15,6 @@ export class AFTypLeasingu extends AFEntity {
   static EntityName: string = 'Typy leasingů'
   static EntityType: string = 'LEASING_TYP'
 
-  // ID (db: IdTypLeas) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

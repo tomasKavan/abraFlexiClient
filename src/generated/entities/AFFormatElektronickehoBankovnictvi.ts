@@ -9,7 +9,6 @@ export class AFFormatElektronickehoBankovnictvi extends AFEntity {
   static EntityName: string = 'Bankovní formáty'
   static EntityType: string = 'FORMAT_ELEKTRONICKEHO_BANKOVNICTVI'
 
-  // ID (db: IdElbanFormat) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

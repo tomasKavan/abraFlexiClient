@@ -10,7 +10,6 @@ export class AFSkupinaStitku extends AFEntity {
   static EntityName: string = 'Skupiny štítků'
   static EntityType: string = 'SKUPINA_STITKU'
 
-  // ID (db: IdSkupVybKlic) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

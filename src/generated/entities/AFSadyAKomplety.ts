@@ -11,13 +11,16 @@ export class AFSadyAKomplety extends AFEntity {
   static EntityName: string = 'Sady'
   static EntityType: string = 'SADY_A_KOMPLETY'
 
-  // ID (db: IdSady) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Množství (db: MnozMj) - Množství)
   mnozMj?: Big | null
   // Poznámka (db: Poznam) - Poznámka)
   poznam?: string | null
+  // Balení (db: BaleniId) - Balení)
+  baleniId?: number | null
+  // Počet balení (db: ) - Počet balení)
+  mnozBaleni?: Big | null
   // Sada (db: IdCenikSada) - Sada)
   cenikSada?: AFCenik | null
   // Ceníková položka (db: IdCenik) - Ceníková položka)
@@ -46,6 +49,20 @@ export class AFSadyAKomplety extends AFEntity {
       key: 'poznam',
       type: PropertyType.String,
       isArray: false,
+      
+    },
+    baleniId : {
+      key: 'baleniId',
+      type: PropertyType.Integer,
+      isArray: false,
+      digits: 1,
+      
+    },
+    mnozBaleni : {
+      key: 'mnozBaleni',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 19,
       
     },
     cenikSada : {

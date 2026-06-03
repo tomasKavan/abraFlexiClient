@@ -28,7 +28,6 @@ export class AFAdresar extends AFEntity {
   static EntityName: string = 'Adresy firem'
   static EntityType: string = 'ADRESAR'
 
-  // ID (db: IdFirmy) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

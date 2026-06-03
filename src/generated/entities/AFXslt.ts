@@ -10,7 +10,6 @@ export class AFXslt extends AFEntity {
   static EntityName: string = 'Uživatelské transformace'
   static EntityType: string = 'XSLT'
 
-  // ID (db: IdXslt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

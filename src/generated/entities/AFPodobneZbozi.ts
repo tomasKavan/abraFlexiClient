@@ -11,7 +11,6 @@ export class AFPodobneZbozi extends AFEntity {
   static EntityName: string = 'Podobné'
   static EntityType: string = 'PODOBNE_ZBOZI'
 
-  // ID (db: IdPodobne) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Poznámka (db: Poznam) - Poznámka)

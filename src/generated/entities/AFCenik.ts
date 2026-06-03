@@ -33,7 +33,6 @@ export class AFCenik extends AFEntity {
   static EntityName: string = 'Ceník'
   static EntityType: string = 'CENIK'
 
-  // ID (db: IdCenik) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kód/zkratka (db: Kod) - Kód/zkratka)
@@ -212,6 +211,8 @@ export class AFCenik extends AFEntity {
   dodaciLhuta?: Big | null
   // Umožnit prodej na kase (db: ProdejKasa) - Umožnit prodej na kase)
   prodejKasa?: boolean | null
+  // Kód je generovaný (db: ) - Kód je generovaný)
+  kodGenerated?: boolean | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
   // Skupina zboží (db: IdSkupZboz) - Skupina zboží)
@@ -914,6 +915,12 @@ export class AFCenik extends AFEntity {
     },
     prodejKasa : {
       key: 'prodejKasa',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    kodGenerated : {
+      key: 'kodGenerated',
       type: PropertyType.Logic,
       isArray: false,
       

@@ -19,12 +19,17 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 import { TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv } from '../AFEntityEnums.js'
 
+export enum AFUplatneniDaneZavazkuPolozkaAction {
+  // Storno položky
+  Storno = 'storno',
+}
+
 export class AFUplatneniDaneZavazkuPolozka extends AFEntity {
   static EntityPath: string = 'uplatneni-dane-zavazku-polozka'
   static EntityName: string = 'Položky uplatnění daně - závazky'
   static EntityType: string = 'UPLATNENI_DANE_ZAV_POLOZKA'
+  static Actions = AFUplatneniDaneZavazkuPolozkaAction
 
-  // ID (db: IdPolFak) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)

@@ -10,7 +10,6 @@ export class AFUzivatelskaVazba extends AFEntity {
   static EntityName: string = 'Uživatelské vazby'
   static EntityType: string = 'VAZBA'
 
-  // ID (db: IdVazba) - ID)
   // Typ vazby (db: IdVazbaTyp) - Typ vazby)
   vazbaTyp?: AFTypUzivatelskeVazby | null
   // Modul (db: ) - Modul)

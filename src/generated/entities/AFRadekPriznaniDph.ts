@@ -13,7 +13,6 @@ export class AFRadekPriznaniDph extends AFEntity {
   static EntityName: string = 'Řádky uloženého přiznání DPH'
   static EntityType: string = 'RADEK_PRIZNANI_DPH'
 
-  // ID (db: IdRadekPriznaniDph) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)

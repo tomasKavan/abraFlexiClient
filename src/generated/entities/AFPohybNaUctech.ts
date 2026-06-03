@@ -38,7 +38,7 @@ export class AFPohybNaUctech extends AFEntity {
   datUcto?: Date | null
   // Období zaúčtování (db: ) - Období zaúčtování)
   postingPeriod?: Date | null
-  // Zkratka firmy (db: ) - Zkratka firmy)
+  // Firma (db: ) - Firma)
   firma?: AFAdresar | null
   // ID (db: ) - ID)
   idUcetniDenik?: number | null
@@ -54,6 +54,8 @@ export class AFPohybNaUctech extends AFEntity {
   nazFirmy?: string | null
   // DIČ (db: ) - DIČ)
   dic?: string | null
+  // Číslo došlé (db: ) - Číslo došlé)
+  cisDosle?: string | null
   // Popis (db: ) - Popis)
   popis?: string | null
   // Protiúčet (db: ) - Protiúčet)
@@ -223,6 +225,13 @@ export class AFPohybNaUctech extends AFEntity {
       type: PropertyType.String,
       isArray: false,
       maxLength: 20,
+      
+    },
+    cisDosle : {
+      key: 'cisDosle',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 40,
       
     },
     popis : {

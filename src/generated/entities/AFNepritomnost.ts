@@ -14,7 +14,6 @@ export class AFNepritomnost extends AFEntity {
   static EntityName: string = 'Nepřítomnost'
   static EntityType: string = 'NEPRITOMNOST'
 
-  // ID (db: IdNepritomnost) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Začátek (db: PlatiOd) - Začátek)

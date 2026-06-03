@@ -16,7 +16,6 @@ export class AFSplatkovyKalendar extends AFEntity {
   static EntityName: string = 'Splátkový kalendář'
   static EntityType: string = 'SPLATKOVY_KALENDAR'
 
-  // ID (db: IdSplatKal) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Je účetní (db: Ucetni) - Doklad je účetní)

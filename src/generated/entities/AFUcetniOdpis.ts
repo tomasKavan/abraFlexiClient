@@ -14,7 +14,6 @@ export class AFUcetniOdpis extends AFEntity {
   static EntityName: string = 'Účetní odpisy'
   static EntityType: string = 'UCETNI_ODPIS'
 
-  // ID (db: IdUcetOdpisu) - ID)
   // Je účetní (db: Ucetni) - Doklad je účetní)
   ucetni?: boolean | null
   // Uživ. změn. (db: Zmena) - Uživatelsky změněno)

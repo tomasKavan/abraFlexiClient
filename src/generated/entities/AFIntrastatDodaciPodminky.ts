@@ -10,7 +10,6 @@ export class AFIntrastatDodaciPodminky extends AFEntity {
   static EntityName: string = 'Dodací podmínky'
   static EntityType: string = 'INTRASTAT_DODACI_PODMINKY'
 
-  // ID (db: IdDodPodm) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

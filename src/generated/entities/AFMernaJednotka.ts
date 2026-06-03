@@ -10,7 +10,6 @@ export class AFMernaJednotka extends AFEntity {
   static EntityName: string = 'Měrné jednotky '
   static EntityType: string = 'MERNA_JEDNOTKA'
 
-  // ID (db: IdMj) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

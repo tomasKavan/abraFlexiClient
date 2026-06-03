@@ -18,7 +18,6 @@ export class AFParametr extends AFEntity {
   static EntityName: string = 'Pokročilá parametrizace pomocí parametrů'
   static EntityType: string = 'PARAM'
 
-  // ID (db: IdParam) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Parametr (db: ParamK) - Parametr)
@@ -39,7 +38,7 @@ export class AFParametr extends AFEntity {
   bsp?: AFBankovniUcetSkladPokladna | null
   // Typ dokladu (db: IdTypDokl) - Typ dokladu)
   typDokl?: AFTypDokladu | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Skupina (db: IdSkupFir) - Skupina)
   skupFir?: AFSkupinaFirem | null

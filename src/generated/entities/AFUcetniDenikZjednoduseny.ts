@@ -39,7 +39,7 @@ export class AFUcetniDenikZjednoduseny extends AFEntity {
   doklad?: string | null
   // Datum zdan. plnění (db: ) - Datum zdan. plnění)
   duzpUcto?: Date | null
-  // Zkratka firmy (db: ) - Zkratka firmy)
+  // Firma (db: ) - Firma)
   firma?: AFAdresar | null
   // Kurz (db: ) - Kurz)
   kurz?: Big | null

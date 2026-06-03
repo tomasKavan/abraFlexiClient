@@ -12,7 +12,6 @@ export class AFFormaUhrady extends AFEntity {
   static EntityName: string = 'Formy úhrady'
   static EntityType: string = 'FORMA_UHRADY'
 
-  // ID (db: IdFormaUhradyCis) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

@@ -11,7 +11,6 @@ export class AFPracovniPomerHlavicka extends AFEntity {
   static EntityName: string = 'Pracovní poměr'
   static EntityType: string = 'PRACOVNI_POMER_HLAVICKA'
 
-  // ID (db: IdPracPomHlav) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Aktivní od (db: AktivniOd) - Aktivní od)
@@ -34,6 +33,8 @@ export class AFPracovniPomerHlavicka extends AFEntity {
   konecZkusDoby?: Date | null
   // Konec určité doby (db: KonecUrciteDoby) - Konec určité doby)
   konecUrciteDoby?: Date | null
+  // ID PPV (db: IdPpv) - ID PPV)
+  idPpv?: string | null
   // Osoba (db: IdOsoba) - Osoba)
   osoba?: AFOsobaHlavicka | null
 
@@ -109,6 +110,13 @@ export class AFPracovniPomerHlavicka extends AFEntity {
       key: 'konecUrciteDoby',
       type: PropertyType.Date,
       isArray: false,
+      
+    },
+    idPpv : {
+      key: 'idPpv',
+      type: PropertyType.String,
+      isArray: false,
+      maxLength: 50,
       
     },
     osoba : {

@@ -11,7 +11,6 @@ export class AFDashboardPanel extends AFEntity {
   static EntityName: string = 'Správa přehledů'
   static EntityType: string = 'DASHBOARD_PANEL'
 
-  // ID (db: Idwdashboardpanel) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

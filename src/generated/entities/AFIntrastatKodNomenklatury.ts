@@ -11,7 +11,6 @@ export class AFIntrastatKodNomenklatury extends AFEntity {
   static EntityName: string = 'Kódy nomenklatury'
   static EntityType: string = 'INTRASTAT_KOD_NOMENKLATURY'
 
-  // ID (db: IdNomen) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

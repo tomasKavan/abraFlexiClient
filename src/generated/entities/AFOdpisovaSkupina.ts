@@ -10,7 +10,6 @@ export class AFOdpisovaSkupina extends AFEntity {
   static EntityName: string = 'Odpisové skupiny'
   static EntityType: string = 'ODPISOVE_SKUPINY'
 
-  // ID (db: IdSazby) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

@@ -10,7 +10,6 @@ export class AFIntrastatZvlastniPohyb extends AFEntity {
   static EntityName: string = 'Zvláštní pohyby'
   static EntityType: string = 'INTRASTAT_ZVLASTNI_POHYB'
 
-  // ID (db: IdZvlPoh) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

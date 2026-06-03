@@ -21,7 +21,6 @@ export class AFLeasing extends AFEntity {
   static EntityName: string = 'Leasing'
   static EntityType: string = 'LEASING'
 
-  // ID (db: IdLeasing) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

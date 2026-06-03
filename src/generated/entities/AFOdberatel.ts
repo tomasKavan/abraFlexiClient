@@ -15,7 +15,6 @@ export class AFOdberatel extends AFEntity {
   static EntityName: string = 'Prodejní ceny'
   static EntityType: string = 'ODBERATEL'
 
-  // ID (db: IdOdberatel) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kód zboží/materiálu (db: KodIndi) - Kód zboží/materiálu)

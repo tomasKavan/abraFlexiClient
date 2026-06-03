@@ -28,12 +28,17 @@ import { AFVazba } from './AFVazba.js'
 
 import { Zamek, StavUziv } from '../AFEntityEnums.js'
 
+export enum AFInterniDokladAction {
+  // Storno
+  Storno = 'storno',
+}
+
 export class AFInterniDoklad extends AFEntity {
   static EntityPath: string = 'interni-doklad'
   static EntityName: string = 'Interní doklady'
   static EntityType: string = 'INTERNI_DOKLAD'
+  static Actions = AFInterniDokladAction
 
-  // ID (db: IdDoklInt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -168,7 +173,7 @@ export class AFInterniDoklad extends AFEntity {
   typDokl?: AFTypInternihoDokladu | null
   // Měna (db: IdMeny) - Měna)
   mena?: AFMena | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null
@@ -186,8 +191,6 @@ export class AFInterniDoklad extends AFEntity {
   dphZaklUcet?: AFUcet | null
   // Účet DPH MD (db: IdDphSnizUcet) - Účet DPH MD)
   dphSnizUcet?: AFUcet | null
-  // Účet DPH 2. snížená sazba (db: IdDphSniz2Ucet) - DPH 2. snížená)
-  dphSniz2Ucet?: AFUcet | null
   // Stát DPH (db: IdStatDph) - Stát DPH)
   statDph?: AFStatDph | null
   // Řádky DPH (db: IdClenDph) - Řádky DPH)
@@ -766,14 +769,6 @@ export class AFInterniDoklad extends AFEntity {
     },
     dphSnizUcet : {
       key: 'dphSnizUcet',
-      type: PropertyType.Relation,
-      isArray: false,
-      afClass: 'AFUcet',
-      maxLength: 6,
-      
-    },
-    dphSniz2Ucet : {
-      key: 'dphSniz2Ucet',
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFUcet',

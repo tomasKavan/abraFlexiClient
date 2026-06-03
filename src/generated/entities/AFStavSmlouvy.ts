@@ -10,7 +10,6 @@ export class AFStavSmlouvy extends AFEntity {
   static EntityName: string = 'Stavy smluv'
   static EntityType: string = 'STAV_SMLOUVY'
 
-  // ID (db: IdStavSml) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

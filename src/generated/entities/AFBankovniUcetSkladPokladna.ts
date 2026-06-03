@@ -13,7 +13,6 @@ export class AFBankovniUcetSkladPokladna extends AFEntity {
   static EntityName: string = 'Banky/pokladny/sklady'
   static EntityType: string = 'BANKOVNI_UCET_SKLAD_POKLADNA'
 
-  // ID (db: IdBsp) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

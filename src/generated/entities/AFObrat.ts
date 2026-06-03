@@ -14,7 +14,6 @@ export class AFObrat extends AFEntity {
   static EntityName: string = 'Obraty'
   static EntityType: string = 'OBRAT'
 
-  // ID (db: IdObrat) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Měsíc (db: Obdobi) - Měsíc)

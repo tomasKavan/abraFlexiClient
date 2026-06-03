@@ -21,7 +21,6 @@ export class AFTypVzajemnychZapoctu extends AFEntity {
   static EntityName: string = 'Typy zápočtů'
   static EntityType: string = 'VZAJEMNY_ZAPOCET_TYP'
 
-  // ID (db: IdTypDokl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

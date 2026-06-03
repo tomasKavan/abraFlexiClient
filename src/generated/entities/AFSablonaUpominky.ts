@@ -10,7 +10,6 @@ export class AFSablonaUpominky extends AFEntity {
   static EntityName: string = 'Upomínky'
   static EntityType: string = 'UPOMINKA_SABLONA'
 
-  // ID (db: IdSablony) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum (db: Datum) - Datum)

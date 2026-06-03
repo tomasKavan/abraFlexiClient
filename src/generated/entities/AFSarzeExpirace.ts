@@ -11,7 +11,6 @@ export class AFSarzeExpirace extends AFEntity {
   static EntityName: string = 'Šarže a expirace'
   static EntityType: string = 'SARZE_EXPIRACE'
 
-  // ID (db: IdPolSklad) - ID)
   // Množství (db: Pocet) - Množství)
   pocet?: Big | null
   // Cena za MJ (db: CenaMj) - Cena za MJ)

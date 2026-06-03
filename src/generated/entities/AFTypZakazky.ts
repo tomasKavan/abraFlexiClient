@@ -12,7 +12,6 @@ export class AFTypZakazky extends AFEntity {
   static EntityName: string = 'Typy zakázek'
   static EntityType: string = 'TYP_ZAKAZKY'
 
-  // ID (db: IdTypZakazky) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

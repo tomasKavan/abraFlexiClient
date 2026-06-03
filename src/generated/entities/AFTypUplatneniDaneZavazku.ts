@@ -21,7 +21,6 @@ export class AFTypUplatneniDaneZavazku extends AFEntity {
   static EntityName: string = 'Typy uplatnění daně - závazky'
   static EntityType: string = 'UPLATNENI_DANE_ZAV_TYP'
 
-  // ID (db: IdTypDokl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

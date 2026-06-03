@@ -26,12 +26,17 @@ import { AFVazba } from './AFVazba.js'
 
 import { Zamek, StavDoklObch } from '../AFEntityEnums.js'
 
+export enum AFObjednavkaVydanaAction {
+  // Storno
+  Storno = 'storno',
+}
+
 export class AFObjednavkaVydana extends AFEntity {
   static EntityPath: string = 'objednavka-vydana'
   static EntityName: string = 'Vydané objednávky'
   static EntityType: string = 'OBJEDNAVKA_OUT'
+  static Actions = AFObjednavkaVydanaAction
 
-  // ID (db: IdDoklObch) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -172,7 +177,7 @@ export class AFObjednavkaVydana extends AFEntity {
   typDokl?: AFTypObjednavkyVydane | null
   // Měna (db: IdMeny) - Měna)
   mena?: AFMena | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

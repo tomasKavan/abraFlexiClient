@@ -20,7 +20,6 @@ export class AFBankovniUcet extends AFEntity {
   static EntityName: string = 'Seznam bankovních účtů'
   static EntityType: string = 'BANKOVNI_UCET'
 
-  // ID (db: IdBsp) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

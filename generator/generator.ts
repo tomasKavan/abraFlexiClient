@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename)
 const EVIDENCE_LIST_FILE = 'evidence-list.json'
 const PROPERTIES_FILE = 'properties.json'
 const RELATIONS_FILE = 'relations.json'
+const ACTIONS_FILE = 'actions.json'
 const DEFAULT_DIR = './src/generated'
 
 const MAIN_TEMPLATE_CLASS_FILE = __dirname + '/templates/classFile.ejs'
@@ -24,7 +25,7 @@ const ENUM_FILE_OUT = 'AFEntityEnums'
 const REGISTRY_FILE_OUT = 'AFEntityRegistry'
 const INDEX_FILE_OUT = 'index'
 
-import { EnumDef, EvidenceDef, PropertyDef, PropertyType, RelationDef, ValueObj } from './types.js'
+import { ActionDef, EnumDef, EnumOptionDef, EvidenceDef, PropertyDef, PropertyType, RelationDef, ValueObj } from './types.js'
 
 const argv = yargs(hideBin(process.argv))
 .option('s', { alias: 'server', type: 'string', description: 'URL to ABRA Flexi server. With company path component, trailed by /.', demandOption: true})
@@ -171,6 +172,58 @@ function parseRelations(input: any, evidences: EvidenceDef[]): RelationDef[] {
   return out
 }
 
+// Fetches actions.json for an evidence. Returns null if the endpoint is
+// missing/404 — not every evidence exposes one. Network/JSON errors are
+// also treated as "no actions" rather than aborting the whole generation.
+async function fetchActions(url: string): Promise<any> {
+  try {
+    const res = await fetch(url, buildHeaders())
+    if (!res.ok) return null
+    return await res.json()
+  } catch {
+    return null
+  }
+}
+
+function parseActions(input: any): ActionDef[] {
+  if (!input || !input.actions) return []
+  let raw = input.actions.action
+  if (!raw) return []
+  if (!Array.isArray(raw)) raw = [raw]
+
+  const out: ActionDef[] = []
+  for (const a of raw) {
+    if (!a || typeof a.actionId !== 'string') continue
+    const def: ActionDef = {
+      actionId: a.actionId,
+      actionName: a.actionName ?? '',
+      needInstance: parseBool(a.needInstance),
+      actionMakesSense: a.actionMakesSense ?? '',
+      isRealAction: parseBool(a.isRealAction),
+      isService: a.isService ?? 'NO'
+    }
+    // Drop CRUD pseudo-actions (new/edit/delete/copy) — handled by
+    // dedicated client methods. Only keep "real" business actions.
+    if (!def.isRealAction) continue
+    def.enumKey = actionIdToEnumKey(def.actionId)
+    out.push(def)
+  }
+  return out
+}
+
+// Converts an actionId (typically lowercase, possibly kebab-case or with
+// underscores/digits) to a PascalCase TypeScript enum key. Prefixes `_`
+// if the result would start with a digit so it stays a valid identifier.
+function actionIdToEnumKey(actionId: string): string {
+  let key = actionId
+    .split(/[-_]/)
+    .filter(s => s.length)
+    .map(s => s.charAt(0).toUpperCase() + s.slice(1))
+    .join('')
+  if (!/^[a-zA-Z_]/.test(key)) key = '_' + key
+  return key
+}
+
 function parseBool(input: string): boolean {
   return input === 'true'
 }
@@ -257,7 +310,9 @@ async function generateEntityClass(
     tsClassName: evidence.tsClassName,
     evidencePath: evidence.evidencePath,
     evidenceType: evidence.evidenceType,
-    evidenceName: evidence.evidenceName
+    evidenceName: evidence.evidenceName,
+    actions: evidence.actions ?? [],
+    actionEnumName: evidence.actionEnumName ?? null
   }
 
   // Imports
@@ -286,28 +341,45 @@ async function generateEntityClass(
   // Enums
   for (const p of properties) {
     if (p.values && p.values.value && p.values.value.length) {
-      let enumKey = p.values.value[0]['@key'].split('.')[0]
-      enumKey = enumKey.charAt(0).toUpperCase() + enumKey.slice(1)
+      let enumKey: string
+      let options: EnumOptionDef[]
+
+      if (p.type === PropertyType.Array) {
+        // Array properties don't share a namespace prefix in their @key
+        // (values are bare names like 'Pridavat', 'Menit'). Synthesize a
+        // unique enum name from the entity + property name, and derive
+        // option keys by camel-casing the raw @key.
+        const entityShortName = evidence.tsClassName.replace(/^AF/, '')
+        const propPascal = p.propertyName.charAt(0).toUpperCase() + p.propertyName.slice(1)
+        enumKey = entityShortName + propPascal
+        options = p.values.value.map(i => {
+          let key = i['@key']
+            .split('-')
+            .map((w: string, idx: number) => idx === 0 ? w : w.charAt(0).toUpperCase() + w.slice(1))
+            .join('')
+          key = key.charAt(0).toLowerCase() + key.slice(1)
+          if (!(/^[a-zA-Z_]/.test(key))) key = '_' + key
+          return { key, value: i['@key'], comment: i['$'] }
+        })
+      } else {
+        enumKey = p.values.value[0]['@key'].split('.')[0]
+        enumKey = enumKey.charAt(0).toUpperCase() + enumKey.slice(1)
+        options = p.values.value.map(i => {
+          let key = i['@key'].split('.')[1].replace(/-/g, "_")
+          if (!(/^[a-zA-Z_]/.test(key))) key = '_' + key
+          return { key, value: i['@key'], comment: i['$'] }
+        })
+      }
+
       p.enumName = enumKey
       p.genType = generateType(p)
       if (enumList.find(le => le.key === enumKey)) {
         // TODO check if options mateches
       } else {
-        const uprop = p.propertyName.charAt(0).toUpperCase() + p.propertyName.slice(1)
         enumList.push({
           key: enumKey,
           file: ENUM_FILE_OUT,
-          options: p.values.value.map(i => {
-            let key = i['@key'].split('.')[1].replace(/-/g, "_")
-            if (!(/^[a-zA-Z_]/.test(key))){
-              key = '_' + key
-            } 
-            return {
-              key: key,
-              value: i['@key'],
-              comment: i['$']
-            }
-          })
+          options
         })
       }
       if (!vars.importEnums.includes(enumKey)) vars.importEnums.push(enumKey)
@@ -419,11 +491,18 @@ export async function main() {
     const propsIn = await fetchJson(urlBase + ev.evidencePath + '/' + PROPERTIES_FILE)
     console.log(`- Fetchin relations ...`)
     const relsIn = await fetchJson(urlBase + ev.evidencePath + '/' + RELATIONS_FILE)
+    console.log(`- Fetchin actions ...`)
+    const actionsIn = await fetchActions(urlBase + ev.evidencePath + '/' + ACTIONS_FILE)
 
     console.log(`- Parsing properties ...`)
     const props = parseProperties(propsIn, evidences)
     console.log(`- Parsing relations ...`)
     const refs = parseRelations(relsIn, evidences)
+    console.log(`- Parsing actions ...`)
+    ev.actions = parseActions(actionsIn)
+    if (ev.actions.length) {
+      ev.actionEnumName = ev.tsClassName + 'Action'
+    }
 
     console.log(`- Generating class ...`)
     const classCode = generateEntityClass(ev, props, refs, enumList)

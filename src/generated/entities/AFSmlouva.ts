@@ -19,12 +19,17 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 import { ZpusobFakt } from '../AFEntityEnums.js'
 
+export enum AFSmlouvaAction {
+  // Vygenerovat faktury
+  GenerovaniFaktur = 'generovani-faktur',
+}
+
 export class AFSmlouva extends AFEntity {
   static EntityPath: string = 'smlouva'
   static EntityName: string = 'Odběratelské smlouvy'
   static EntityType: string = 'SMLOUVA'
+  static Actions = AFSmlouvaAction
 
-  // ID (db: IdSmlouvy) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Číslo smlouvy (db: Kod) - Číslo smlouvy)
@@ -109,7 +114,7 @@ export class AFSmlouva extends AFEntity {
   firma_nazev?: string | null
   // Typ smlouvy (db: IdTypSml) - Typ smlouvy)
   typSml?: AFTypSmlouvy | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Fakturovat firmě (db: IdFirmyFakt) - Fakturovat firmě)
   firmaFakt?: AFAdresar | null

@@ -13,7 +13,6 @@ export class AFVyrobniCislo extends AFEntity {
   static EntityName: string = 'Výrobní čísla'
   static EntityType: string = 'VYROBNI_CISLA'
 
-  // ID (db: Idvyrobnicislo) - ID)
   // Výrobní číslo (db: Kod) - Výrobní číslo)
   declare kod?: string | null
   // Ceník (db: IdCenik) - Ceník)

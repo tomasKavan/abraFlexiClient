@@ -14,7 +14,6 @@ export class AFDanovyNaklad extends AFEntity {
   static EntityName: string = 'Daňové náklady'
   static EntityType: string = 'DANOVY_NAKLAD'
 
-  // ID (db: IdDanNakl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Je účetní (db: Ucetni) - Doklad je účetní)

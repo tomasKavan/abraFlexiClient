@@ -11,7 +11,6 @@ export class AFProdejkaPlatba extends AFEntity {
   static EntityName: string = 'Úhrada'
   static EntityType: string = 'PRODEJKA_PLATBA'
 
-  // ID (db: IdFormaUhrady) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kurz (db: Kurz) - Kurz)

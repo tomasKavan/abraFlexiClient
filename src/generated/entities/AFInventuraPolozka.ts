@@ -15,7 +15,6 @@ export class AFInventuraPolozka extends AFEntity {
   static EntityName: string = 'Položky inventur'
   static EntityType: string = 'INVENTURA_POLOZKA'
 
-  // ID (db: IdPolInventura) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Reálný stav (db: MnozMjReal) - Reálný stav)

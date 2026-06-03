@@ -11,7 +11,6 @@ export class AFCleneniDph extends AFEntity {
   static EntityName: string = 'Řádky přiznání DPH'
   static EntityType: string = 'CLENENI_DPH'
 
-  // ID (db: IdClenDPH) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

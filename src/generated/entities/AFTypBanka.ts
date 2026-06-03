@@ -20,7 +20,6 @@ export class AFTypBanka extends AFEntity {
   static EntityName: string = 'Typy bankovních dokladů'
   static EntityType: string = 'BANKA_TYP'
 
-  // ID (db: IdTypDokl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

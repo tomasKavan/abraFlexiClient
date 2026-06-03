@@ -12,7 +12,6 @@ export class AFRocniRada extends AFEntity {
   static EntityName: string = 'Roční položky dokladové řady'
   static EntityType: string = 'ROCNI_RADA'
 
-  // ID (db: IdRadyRok) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Délka čísla (db: CisDelka) - Délka čísla)

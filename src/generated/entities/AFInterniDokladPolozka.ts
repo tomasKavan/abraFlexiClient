@@ -19,12 +19,17 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 import { TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv } from '../AFEntityEnums.js'
 
+export enum AFInterniDokladPolozkaAction {
+  // Storno položky
+  Storno = 'storno',
+}
+
 export class AFInterniDokladPolozka extends AFEntity {
   static EntityPath: string = 'interni-doklad-polozka'
   static EntityName: string = 'Položky interních dokladů'
   static EntityType: string = 'INTERNI_DOKLAD_POLOZKA'
+  static Actions = AFInterniDokladPolozkaAction
 
-  // ID (db: IdPolInt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)

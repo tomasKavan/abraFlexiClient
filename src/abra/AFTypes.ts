@@ -67,17 +67,16 @@ export enum NestedUnknownStrategy {
 
 export type AFApiFetch = (input: RequestInfo | URL, init?: RequestInit | undefined) => Promise<Response>
 
-// Output formats supported by Abra Flexi (URL extension). The `(string & {})`
-// fallback keeps autocomplete on the literals while allowing other extensions
-// (e.g. 'isdocx') without changes to this type.
-export type AFResponseFormat =
-  | 'json'
-  | 'xml'
-  | 'pdf'
-  | 'html'
-  | 'csv'
-  | 'isdoc'
-  | (string & {})
+// Output formats supported by Abra Flexi (URL extension). To use a format
+// not listed here, extend this enum.
+export enum AFResponseFormat {
+  Json = 'json',
+  Xml = 'xml',
+  Pdf = 'pdf',
+  Html = 'html',
+  Csv = 'csv',
+  Isdoc = 'isdoc'
+}
 
 export type AFFileResult = {
   blob: Blob,
@@ -159,12 +158,57 @@ export type AFQueryOptions = {
 // Adds report-related parameters that Abra Flexi accepts on file endpoints
 // (e.g. PDF rendered from a named template in a specific language).
 export type AFQueryFileOptions = AFQueryOptions & {
-  // Maps to the `report-name` URL query parameter — name of the print
-  // template/report to use when rendering the file.
-  reportName?: string,
+  // Maps to the `report-name` URL query parameter — identifier of the
+  // print template/report to use when rendering the file. Accepts either
+  // a raw string (the report id, e.g. "DokladyFAP$$SUM") or an
+  // AFReportInfo descriptor (as returned by queryReports), in which case
+  // its `reportId` is used.
+  reportName?: string | AFReportInfo,
   // Maps to the `report-lang` URL query parameter — language code for the
-  // report (e.g. 'cs', 'en').
-  reportLang?: string
+  // report (e.g. 'cs', 'en'). Accepts either a raw string or an
+  // AFReportLanguage (as found in AFReportInfo.languages.language[]), in
+  // which case its `code` is used.
+  reportLang?: string | AFReportLanguage
+}
+
+export type AFReportLanguage = {
+  code: string,
+  name: string
+}
+
+// Descriptor of a single report available for a given entity, as returned
+// by `/<entityPath>/reports.json`. Pass the whole object (or its
+// `reportId`) as the `reportName` option of queryFile.
+//
+// Note: Abra returns boolean-like and numeric values as strings here
+// (e.g. isDefault: "true"); they are surfaced as-is.
+export type AFReportInfo = {
+  // Unique identifier of the report — this is the value passed as the
+  // `report-name` URL parameter (e.g. "DokladyFAP$$SUM"). Composed of
+  // `reportCode` and `sumKod`, so it's unique even when multiple reports
+  // share the same `reportCode`.
+  reportId: string,
+  // Human-readable label shown in Abra's UI (e.g. "Seznam přijatých
+  // faktur (na šířku)"). NOT the value to pass as `report-name`.
+  reportName: string,
+  reportDescription?: string,
+  // Base report code without the sumKod suffix (e.g. "DokladyFAP").
+  reportCode?: string,
+  // Summary mode discriminator (e.g. "SUM", "NES", "SUM_USERORDER").
+  sumKod?: string,
+  isDefault?: string,
+  rozsiritelna?: string,
+  sumovana?: string,
+  predvybranyPocet?: string,
+  autotiskReport?: string,
+  statCodes?: string,
+  languages?: {
+    language: AFReportLanguage[]
+  }
+}
+
+export type AFQueryReportsOptions = {
+  abortController?: AbortController
 }
 
 export type AFURelOptions = {

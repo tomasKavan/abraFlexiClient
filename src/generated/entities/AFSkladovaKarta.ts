@@ -15,7 +15,6 @@ export class AFSkladovaKarta extends AFEntity {
   static EntityName: string = 'Skladové karty'
   static EntityType: string = 'SKLADOVA_KARTA'
 
-  // ID (db: IdKarty) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Průměrná cena [Kč] (db: PrumCenaTuz) - Průměrná cena [Kč])

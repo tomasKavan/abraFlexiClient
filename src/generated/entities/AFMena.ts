@@ -11,7 +11,6 @@ export class AFMena extends AFEntity {
   static EntityName: string = 'Měny'
   static EntityType: string = 'MENA'
 
-  // ID (db: IdMeny) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

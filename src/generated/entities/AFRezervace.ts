@@ -14,7 +14,6 @@ export class AFRezervace extends AFEntity {
   static EntityName: string = 'Rezervace'
   static EntityType: string = 'REZERVACE'
 
-  // ID (db: IdRezervace) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum vzniku (db: DatumOd) - Datum vzniku)
@@ -27,7 +26,7 @@ export class AFRezervace extends AFEntity {
   skladMj?: Big | null
   // Poznámka (db: Poznamka) - Poznámka)
   poznamka?: string | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Ceník (db: IdCenik) - Ceník)
   cenik?: AFCenik | null

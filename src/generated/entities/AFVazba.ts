@@ -9,7 +9,6 @@ export class AFVazba extends AFEntity {
   static EntityName: string = 'Vazby dokladu'
   static EntityType: string = 'VAZBA_MEZI_DOKLADY'
 
-  // ID (db: IdVazby) - ID)
   // Typ vazby (db: TypVazbyK) - Typ vazby)
   typVazbyK?: TypVazbyDokl | null
   // Spárovaná částka (db: Castka) - Spárovaná částka)

@@ -1,20 +1,26 @@
 export { AFApiClient } from './abra/AFApiClient.js'
 export { AFApiSession } from './abra/AFApiSession.js'
-export { 
-  NO_LIMIT, 
-  AFSessionStatus, 
+export {
+  NO_LIMIT,
+  AFSessionStatus,
   AFQueryDetail
 } from './abra/AFTypes.js'
 
-export type { 
-  AFApiConfig, 
-  NO_LIMIT_T, 
+export type {
+  AFApiConfig,
+  NO_LIMIT_T,
   AFNestedDetail,
   AFQueryOptions,
   AFURelOptions,
   AFPopulateOptions,
   AFURelResult,
   StitkyCacheStrategy,
+  AFQueryFileOptions,
+  AFResponseFormat,
+  AFFileResult,
+  AFReportInfo,
+  AFReportLanguage,
+  AFQueryReportsOptions,
   AFSessionConfig,
   AFCompany
 } from './abra/AFTypes.js'

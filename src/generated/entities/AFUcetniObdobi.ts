@@ -9,7 +9,6 @@ export class AFUcetniObdobi extends AFEntity {
   static EntityName: string = 'Účetní období'
   static EntityType: string = 'UCETNI_OBDOBI'
 
-  // ID (db: IdUcetObdobi) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Platí od data (db: PlatiOdData) - Platí od data)

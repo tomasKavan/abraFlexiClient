@@ -101,10 +101,10 @@ import { AFTypProdejky } from './entities/AFTypProdejky.js'
 import { AFProdejkaPlatba } from './entities/AFProdejkaPlatba.js'
 import { AFUzivatel } from './entities/AFUzivatel.js'
 import { AFRole } from './entities/AFRole.js'
+import { AFPristupovePravo } from './entities/AFPristupovePravo.js'
 import { AFPravoViditelnosti } from './entities/AFPravoViditelnosti.js'
 import { AFNastaveni } from './entities/AFNastaveni.js'
 import { AFReport } from './entities/AFReport.js'
-import { AFZamek } from './entities/AFZamek.js'
 import { AFKurz } from './entities/AFKurz.js'
 import { AFUcet } from './entities/AFUcet.js'
 import { AFMena } from './entities/AFMena.js'
@@ -209,6 +209,7 @@ import { AFOsobaHlavicka } from './entities/AFOsobaHlavicka.js'
 import { AFSkupinaOsob } from './entities/AFSkupinaOsob.js'
 import { AFDite } from './entities/AFDite.js'
 import { AFOsobaBlizka } from './entities/AFOsobaBlizka.js'
+import { AFOsobaBlizkaHlav } from './entities/AFOsobaBlizkaHlav.js'
 import { AFNepritomnost } from './entities/AFNepritomnost.js'
 import { AFSrazka } from './entities/AFSrazka.js'
 import { AFTypPracovnihoPomeru } from './entities/AFTypPracovnihoPomeru.js'
@@ -238,6 +239,9 @@ import { AFGlobalStore } from './entities/AFGlobalStore.js'
 import { AFDashboardPanel } from './entities/AFDashboardPanel.js'
 import { AFDashboardSharing } from './entities/AFDashboardSharing.js'
 import { AFInsight } from './entities/AFInsight.js'
+import { AFDoplnek } from './entities/AFDoplnek.js'
+import { AFObjektDoplnku } from './entities/AFObjektDoplnku.js'
+import { AFIntegrace } from './entities/AFIntegrace.js'
 import { AFAutotisk } from './entities/AFAutotisk.js'
 import { AFXslt } from './entities/AFXslt.js'
 import { AFSablonaMail } from './entities/AFSablonaMail.js'
@@ -274,6 +278,7 @@ import { AFRadekPriznaniDph } from './entities/AFRadekPriznaniDph.js'
 import { AFUlozenePriznaniDph } from './entities/AFUlozenePriznaniDph.js'
 import { AFUlozenePriznaniKonVykDph } from './entities/AFUlozenePriznaniKonVykDph.js'
 import { AFZurnal } from './entities/AFZurnal.js'
+import { AFDefiniceSekvence } from './entities/AFDefiniceSekvence.js'
 
 
 const AFEntityRegistry: Record<string, typeof AFEntity> = {
@@ -379,10 +384,10 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFProdejkaPlatba,
   AFUzivatel,
   AFRole,
+  AFPristupovePravo,
   AFPravoViditelnosti,
   AFNastaveni,
   AFReport,
-  AFZamek,
   AFKurz,
   AFUcet,
   AFMena,
@@ -487,6 +492,7 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFSkupinaOsob,
   AFDite,
   AFOsobaBlizka,
+  AFOsobaBlizkaHlav,
   AFNepritomnost,
   AFSrazka,
   AFTypPracovnihoPomeru,
@@ -516,6 +522,9 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFDashboardPanel,
   AFDashboardSharing,
   AFInsight,
+  AFDoplnek,
+  AFObjektDoplnku,
+  AFIntegrace,
   AFAutotisk,
   AFXslt,
   AFSablonaMail,
@@ -552,6 +561,7 @@ const AFEntityRegistry: Record<string, typeof AFEntity> = {
   AFUlozenePriznaniDph,
   AFUlozenePriznaniKonVykDph,
   AFZurnal,
+  AFDefiniceSekvence,
 }
 
 export function EntityByName(name: string): typeof AFEntity {

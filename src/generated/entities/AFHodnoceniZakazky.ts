@@ -10,7 +10,6 @@ export class AFHodnoceniZakazky extends AFEntity {
   static EntityName: string = 'Vyhodnocení zakázek'
   static EntityType: string = 'HODNOCENI_ZAKAZKY'
 
-  // ID (db: IdVyhZakazky) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

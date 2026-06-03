@@ -11,7 +11,6 @@ export class AFUzivatelskyDotazParametr extends AFEntity {
   static EntityName: string = 'Parametry'
   static EntityType: string = 'UZIVATELSKY_DOTAZ_PARAMETR'
 
-  // ID (db: IdDotazParam) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

@@ -8,7 +8,25 @@ export interface EvidenceDef {
   extIdSupported: boolean,
   dbName: string,
 
-  tsClassName: string
+  tsClassName: string,
+
+  // Populated per-evidence after fetching /<evidencePath>/actions.json.
+  // Filtered to real business actions only (isRealAction === 'true');
+  // CRUD pseudo-actions like 'new'/'edit'/'delete'/'copy' are dropped
+  // since the client has dedicated methods for those.
+  actions?: ActionDef[],
+  actionEnumName?: string  // e.g. 'AFFakturaPrijataAction', only when actions exist
+}
+
+export interface ActionDef {
+  actionId: string,        // raw id used in API calls, e.g. 'uhrad-zapoctem'
+  actionName: string,      // human-readable label from Abra, used as a comment
+  needInstance: boolean,
+  actionMakesSense: string,
+  isRealAction: boolean,
+  isService: string,
+
+  enumKey?: string         // PascalCase identifier, e.g. 'UhradZapoctem'
 }
 
 export enum PropertyType {

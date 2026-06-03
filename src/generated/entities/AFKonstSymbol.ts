@@ -10,7 +10,6 @@ export class AFKonstSymbol extends AFEntity {
   static EntityName: string = 'Konstantní symboly'
   static EntityType: string = 'KONST_SYM'
 
-  // ID (db: IdKonSym) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

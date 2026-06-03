@@ -23,6 +23,8 @@ import {
   AFResponseFormat,
   AFFileResult,
   AFQueryFileOptions,
+  AFReportInfo,
+  AFQueryReportsOptions,
   NestedUnknownStrategy
 } from "./AFTypes.js"
 import { EntityByName, EntityByPath } from "../generated/AFEntityRegistry.js"
@@ -171,8 +173,14 @@ export class AFApiClient {
     }
 
     let url = this._buildQueryUrl(entityPath, format, options)
-    url = addParamToUrl(url, 'report-name', options.reportName)
-    url = addParamToUrl(url, 'report-lang', options.reportLang)
+    const reportName = typeof options.reportName === 'object' && options.reportName !== null
+      ? options.reportName.reportId
+      : options.reportName
+    const reportLang = typeof options.reportLang === 'object' && options.reportLang !== null
+      ? options.reportLang.code
+      : options.reportLang
+    url = addParamToUrl(url, 'report-name', reportName)
+    url = addParamToUrl(url, 'report-lang', reportLang)
     this._logger.debug(url)
 
     try {
@@ -210,6 +218,45 @@ export class AFApiClient {
     options: AFQueryFileOptions = {}
   ): Promise<AFFileResult> {
     return this.queryFileRaw(entity.EntityPath, format, options)
+  }
+
+  public async queryReports<T extends typeof AFEntity>(
+    entity: T,
+    options: AFQueryReportsOptions = {}
+  ): Promise<AFReportInfo[]> {
+    if (!this.company || !this.company.length) {
+      throw new AFError(AFErrorCode.MISSING_ABRA_COMPANY, `Can't query AFApiClient without providing company path component first.`)
+    }
+
+    const url = this._url + '/c/' + this.company + '/' + entity.EntityPath + '/reports.' + ABRA_API_FORMAT
+    this._logger.debug(url)
+
+    try {
+      const raw = await this._fetch(url, { signal: options.abortController?.signal })
+      const json = await raw.json().catch(() => null)
+
+      if (raw.status >= 400 && raw.status < 600) {
+        const details = this._extractAbraErrors(json)
+        throw new AFError(
+          AFErrorCode.ABRA_FLEXI_ERROR,
+          `${raw.status} ${raw.statusText}${details ? ` — ${details}` : ''}`
+        )
+      }
+
+      // The reports endpoint is unusual — its response is NOT wrapped in
+      // `winstrom`. Shape: { reports: { report: AFReportInfo | AFReportInfo[] } }.
+      // Abra collapses single-element arrays to a bare object, so we
+      // normalize to an array.
+      const report = json?.reports?.report
+      if (!report) return []
+      return Array.isArray(report) ? report : [report]
+    } catch (e) {
+      if (!(e instanceof AFError)) {
+        this._logger.error(e)
+        e = new AFError(AFErrorCode.UNKNOWN, (e as Error).toString())
+      }
+      throw e
+    }
   }
 
   public async query<T extends typeof AFEntity>(
@@ -836,7 +883,7 @@ export class AFApiClient {
   // the user-relation delete pattern: PUT to /entity.json with body
   // `{ winstrom: [{ <entityPath>: { id }, "<entityPath>@action": <actionName> }] }`.
   // Returns true on success; throws AFError on HTTP/Abra failure.
-  async callEntityActionRaw(
+  async actionRaw(
     entityPath: string,
     id: string | number,
     actionName: string,
@@ -902,16 +949,18 @@ export class AFApiClient {
     }
   }
 
-  public async callEntityAction<T extends typeof AFEntity = typeof AFEntity>(
+  public async action<T extends typeof AFEntity = typeof AFEntity>(
     entity: InstanceType<T>,
     actionName: string,
     options: AFActionOptions = {}
   ): Promise<boolean> {
+    const cls = entity.constructor as typeof AFEntity
+
     // Can't call an action on an entity that has never been saved
     if (entity.isNew === true) {
       throw new AFError(
         AFErrorCode.RELATED_INSTANCE_NOT_SAVED,
-        `Can't call action '${actionName}' on an unsaved ${(entity.constructor as typeof AFEntity).EntityName}. Save it first.`
+        `Can't call action '${actionName}' on an unsaved ${cls.EntityName}. Save it first.`
       )
     }
 
@@ -921,7 +970,7 @@ export class AFApiClient {
       if (resolvedId === null) {
         throw new AFError(
           AFErrorCode.OBJECT_NOT_FOUND,
-          `Can't call action '${actionName}' on ${(entity.constructor as typeof AFEntity).EntityName}: entity not found on server.`
+          `Can't call action '${actionName}' on ${cls.EntityName}: entity not found on server.`
         )
       }
     }
@@ -929,12 +978,22 @@ export class AFApiClient {
     if (entity.id === undefined || entity.id === null) {
       throw new AFError(
         AFErrorCode.MISSING_ID,
-        `Can't call action '${actionName}' on ${(entity.constructor as typeof AFEntity).EntityName} without id.`
+        `Can't call action '${actionName}' on ${cls.EntityName} without id.`
       )
     }
 
-    const entityPath = (entity.constructor as typeof AFEntity).EntityPath
-    return this.callEntityActionRaw(entityPath, entity.id, actionName, options)
+    // Validate against the per-entity Actions enum populated by the
+    // generator. Use the values (raw actionIds) so the caller can pass
+    // either an enum member or a literal string.
+    const supported = Object.values(cls.Actions)
+    if (!supported.includes(actionName)) {
+      throw new AFError(
+        AFErrorCode.UNKNOWN,
+        `Action '${actionName}' is not supported on ${cls.EntityName}. Supported: ${supported.length ? supported.join(', ') : '(none)'}`
+      )
+    }
+
+    return this.actionRaw(cls.EntityPath, entity.id, actionName, options)
   }
 
   // Applies the server-assigned id from a save response back to the entity.

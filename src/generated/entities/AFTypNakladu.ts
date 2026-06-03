@@ -11,7 +11,6 @@ export class AFTypNakladu extends AFEntity {
   static EntityName: string = 'Typy nákladů na události / aktivity'
   static EntityType: string = 'TYP_NAKLADU'
 
-  // ID (db: IdTypNaklAkt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

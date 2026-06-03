@@ -10,7 +10,6 @@ export class AFCiselnikMzdovychSlozek extends AFEntity {
   static EntityName: string = 'Číselník mzdových složek'
   static EntityType: string = 'CISELNIK_MZDOVYCH_SLOZEK'
 
-  // ID (db: IdCisMzdSloz) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

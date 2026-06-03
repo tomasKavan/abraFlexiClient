@@ -6,12 +6,19 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
 
+export enum AFKusovnikAction {
+  // #kusovnikPrepoctiNakupniCenu
+  PrepoctiNakupniCenu = 'prepocti-nakupni-cenu',
+  // #kusovnikPrepoctiProdejniCenu
+  PrepoctiProdejniCenu = 'prepocti-prodejni-cenu',
+}
+
 export class AFKusovnik extends AFEntity {
   static EntityPath: string = 'kusovnik'
   static EntityName: string = 'Kusovník'
   static EntityType: string = 'KUSOVNIK'
+  static Actions = AFKusovnikAction
 
-  // ID (db: IdKusovnik) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Název (db: Nazev) - Název)

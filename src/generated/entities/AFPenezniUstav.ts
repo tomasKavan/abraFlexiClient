@@ -10,7 +10,6 @@ export class AFPenezniUstav extends AFEntity {
   static EntityName: string = 'Peněžní ústavy'
   static EntityType: string = 'PENEZNI_USTAV'
 
-  // ID (db: IdSmerKod) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kód banky (db: Kod) - Kód banky)

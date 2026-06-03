@@ -10,7 +10,6 @@ export class AFCertifikacniAutorita extends AFEntity {
   static EntityName: string = 'Certifikační autority'
   static EntityType: string = 'CERTIFIKACNI_AUTORITA'
 
-  // ID (db: IdAutCert) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Poznámka (db: UzivNazev) - Poznámka)

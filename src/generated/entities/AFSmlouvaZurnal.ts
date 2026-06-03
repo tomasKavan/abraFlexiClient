@@ -10,7 +10,6 @@ export class AFSmlouvaZurnal extends AFEntity {
   static EntityName: string = 'Žurnál pro smlouvy'
   static EntityType: string = 'SMLOUVA_ZURNAL'
 
-  // ID (db: IdZurnalSml) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum a čas (db: DatCas) - Datum a čas)

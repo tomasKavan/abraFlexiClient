@@ -19,7 +19,6 @@ export class AFTypNabidkyVydane extends AFEntity {
   static EntityName: string = 'Typy vydaných nabídek'
   static EntityType: string = 'NABIDKA_OUT_TYP'
 
-  // ID (db: IdTypDokl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

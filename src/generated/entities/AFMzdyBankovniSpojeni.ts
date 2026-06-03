@@ -16,7 +16,6 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
   static EntityName: string = 'Bankovní spojení'
   static EntityType: string = 'MZDY_BANKOVNI_SPOJENI'
 
-  // ID (db: IdBanSpoj) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)
@@ -47,7 +46,7 @@ export class AFMzdyBankovniSpojeni extends AFEntity {
   varSym?: string | null
   // Primární (db: Primarni) - Primární)
   primarni?: boolean | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Kód banky (db: IdSmerKod) - Kód banky)
   smerKod?: AFPenezniUstav | null

@@ -15,7 +15,6 @@ export class AFTypMajetku extends AFEntity {
   static EntityName: string = 'Typy majetků'
   static EntityType: string = 'MAJETEK_TYP'
 
-  // ID (db: IdTypMaj) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

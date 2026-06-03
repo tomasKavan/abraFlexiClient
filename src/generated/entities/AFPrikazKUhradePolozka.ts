@@ -14,7 +14,6 @@ export class AFPrikazKUhradePolozka extends AFEntity {
   static EntityName: string = 'Položka příkazu k úhradě'
   static EntityType: string = 'PRIKAZ_K_UHRADE_POLOZKA'
 
-  // ID (db: IdPolPrikazUhr) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Číslo účtu příjemce (db: Buc) - Číslo účtu příjemce)

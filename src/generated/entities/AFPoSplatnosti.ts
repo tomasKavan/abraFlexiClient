@@ -18,7 +18,7 @@ export class AFPoSplatnosti extends AFEntity {
   uhrazeno?: Big | null
   // Symbol splatnosti (db: ) - Symbol splatnosti)
   symbolSplatnostiK?: any | null
-  // Zkratka firmy (db: ) - Zkratka firmy)
+  // Firma (db: ) - Firma)
   firma?: AFAdresar | null
 
 

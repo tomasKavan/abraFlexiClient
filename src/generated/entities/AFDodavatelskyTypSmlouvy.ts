@@ -11,7 +11,6 @@ export class AFDodavatelskyTypSmlouvy extends AFEntity {
   static EntityName: string = 'Typy dodavatelských smluv'
   static EntityType: string = 'DODAVATELSKY_TYP_SMLOUVY'
 
-  // ID (db: IdTypSml) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

@@ -18,7 +18,6 @@ export class AFStalaMzdovaSlozka extends AFEntity {
   static EntityName: string = 'Stálá mzdová složka'
   static EntityType: string = 'STALA_MZDOVA_SLOZKA'
 
-  // ID (db: IdStalaMzdSloz) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

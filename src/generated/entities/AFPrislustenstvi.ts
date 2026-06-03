@@ -11,7 +11,6 @@ export class AFPrislustenstvi extends AFEntity {
   static EntityName: string = 'Příslušenství'
   static EntityType: string = 'PRISLUSENSTVI'
 
-  // ID (db: IdPrislusenstvi) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Poznámka (db: Poznam) - Poznámka)

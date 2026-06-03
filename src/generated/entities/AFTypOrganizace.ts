@@ -10,7 +10,6 @@ export class AFTypOrganizace extends AFEntity {
   static EntityName: string = 'Typ organizace'
   static EntityType: string = 'TYP_ORGANIZACE'
 
-  // ID (db: IdTypOrg) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

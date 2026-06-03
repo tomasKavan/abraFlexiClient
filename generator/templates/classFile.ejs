@@ -2,14 +2,20 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
 import { AFEntity } from '../../abra/AFEntity.js'
 <% imports.forEach(imp => { %><%- include('./import.ejs', { tsClassName: imp }) %><% }) %>
 
-<% if (importEnums.length) { 
+<% if (importEnums.length) {
 %>import { <%= importEnums.join(', ') %> } from '../<%= enumFile %>.js'<% } %>
 
-export class <%= tsClassName %> extends AFEntity {
+<% if (actionEnumName) { %>export enum <%= actionEnumName %> {
+<% actions.forEach(a => { %>  // <%= a.actionName %>
+  <%= a.enumKey %> = '<%= a.actionId %>',
+<% }) %>}
+
+<% } %>export class <%= tsClassName %> extends AFEntity {
   static EntityPath: string = '<%= evidencePath %>'
   static EntityName: string = '<%= evidenceName %>'
   static EntityType: string = '<%= evidenceType %>'
-
+<% if (actionEnumName) { %>  static Actions = <%= actionEnumName %>
+<% } %>
 <% properties.forEach(property => { %><%- include('./classProperty.ejs', property) %><% }) %>
 <% relations.forEach(relation => { %><%- include('./classRelation.ejs', relation) %><% }) %>
 

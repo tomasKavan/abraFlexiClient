@@ -14,7 +14,6 @@ export class AFPrikazKInkasuPolozka extends AFEntity {
   static EntityName: string = 'Položka inkasa'
   static EntityType: string = 'PRIKAZ_K_INKASU_POLOZKA'
 
-  // ID (db: IdPolPrikazUhr) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Číslo účtu příjemce (db: Buc) - Číslo účtu příjemce)

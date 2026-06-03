@@ -19,26 +19,26 @@ import { AFRegion } from './AFRegion.js'
 import { AFUcet } from './AFUcet.js'
 import { AFAdresar } from './AFAdresar.js'
 import { AFTypBanka } from './AFTypBanka.js'
+import { AFDefiniceSekvence } from './AFDefiniceSekvence.js'
 import { AFAdresarBankovniUcet } from './AFAdresarBankovniUcet.js'
 import { AFPredpisZauctovani } from './AFPredpisZauctovani.js'
 import { AFTypDokladu } from './AFTypDokladu.js'
 
 
-import { TypUcJednotky, ZobrLogo, Jazyk, LogoPozice, RezimRezervaci, ZastupceTyp, TydenPracDoba, DenniKurz, RocniKurz, JakyTypDokl, PrepocetCen, FapDatProDuzpUctoK, AutoSendMailMod, ZobrazWebKompMod } from '../AFEntityEnums.js'
+import { TypUcJednotky, ZobrLogo, Jazyk, LogoPozice, RezimRezervaci, ZastupceTyp, TydenPracDoba, DenniKurz, RocniKurz, JakyTypDokl, PrepocetCen, FapDatProDuzpUctoK, AutoSendMailMod, ZobrazWebKompMod, MzdKolSmlouva, MzdFormaKontroly } from '../AFEntityEnums.js'
 
 export class AFNastaveni extends AFEntity {
   static EntityPath: string = 'nastaveni'
   static EntityName: string = 'Nastavení'
   static EntityType: string = 'NASTAVENI'
 
-  // ID (db: IdNastav) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Změny budou platné od data (db: PlatiOdData) - Změny budou platné od data)
   platiOdData?: Date | null
   // Jméno (db: NazFirmy) - Jméno)
   nazFirmy?: string | null
-  // IČO, DIČ (db: Ic) - IČO, DIČ)
+  // IČO (db: Ic) - IČO, DIČ)
   ic?: string | null
   // DIČ (db: Dic) - DIČ)
   dic?: string | null
@@ -246,6 +246,8 @@ export class AFNastaveni extends AFEntity {
   mzdSplatPrispevky?: number | null
   // Týdenní pracovní doba (db: MzdTydenPracDobaK) - Týdenní pracovní doba)
   mzdTydenPracDobaK?: TydenPracDoba | null
+  // Stanovený fond pracovní doby (db: MzdFondSta) - Stanovený fond)
+  mzdFondSta?: Big | null
   // Denní kurz (db: DenniKurzK) - Denní kurz)
   denniKurzK?: DenniKurz | null
   // Měsíční/roční kurz (db: RocniKurzK) - Měsíční/roční kurz)
@@ -314,6 +316,12 @@ export class AFNastaveni extends AFEntity {
   polozkyCenikObrazky?: boolean | null
   // Začátek užití novely ZDPH 2019 (db: DatZacNovelyZdph19) - Začátek užití novely ZDPH 2019)
   datZacNovelyZdph19?: Date | null
+  // Typ kolektivní smlouvy (db: MzdTypKolSmlouvaK) - Typ kolektivní smlouvy)
+  mzdTypKolSmlouvaK?: MzdKolSmlouva | null
+  // Forma hospodářské a finanční kontroly (db: MzdFormaKontrolyK) - Forma hospodářské a finanční kontroly)
+  mzdFormaKontrolyK?: MzdFormaKontroly | null
+  // Zaměstnavatel na chráněném trhu práce (db: MzdChranTrhPrace) - Zaměstnavatel na chráněném trhu práce)
+  mzdChranTrhPrace?: boolean | null
   // Stát legislativy (db: IdStatuLeg) - Stát legislativy)
   statLegislativa?: AFStat | null
   // Typ organizace (db: IdTypOrg) - Typ organizace)
@@ -396,6 +404,8 @@ export class AFNastaveni extends AFEntity {
   tdBanPrijem?: AFTypBanka | null
   // Typ dokladu pro bankovní výdej (db: IdTdBanVydej) - Bankovní výdej)
   tdBanVydej?: AFTypBanka | null
+  // Sekvence - Číslo produktu (db: IdSeqDefProduct) - Sekvence - Číslo produktu)
+  seqDefProduct?: AFDefiniceSekvence | null
   // Adresa a bankovní účet pro sociální pojištění (db: IdMzdAdrSocPoj) - Adresa a bankovní spojení)
   mzdAdrSocPoj?: AFAdresar | null
   // Adresa finančního úřadu (db: IdMzdAdrDan) - Adresa)
@@ -1195,6 +1205,13 @@ export class AFNastaveni extends AFEntity {
       enum: TydenPracDoba,
       
     },
+    mzdFondSta : {
+      key: 'mzdFondSta',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 6,
+      
+    },
     denniKurzK : {
       key: 'denniKurzK',
       type: PropertyType.Select,
@@ -1458,6 +1475,28 @@ export class AFNastaveni extends AFEntity {
     datZacNovelyZdph19 : {
       key: 'datZacNovelyZdph19',
       type: PropertyType.Date,
+      isArray: false,
+      
+    },
+    mzdTypKolSmlouvaK : {
+      key: 'mzdTypKolSmlouvaK',
+      type: PropertyType.Select,
+      isArray: false,
+      enumName: 'MzdKolSmlouva',
+      enum: MzdKolSmlouva,
+      
+    },
+    mzdFormaKontrolyK : {
+      key: 'mzdFormaKontrolyK',
+      type: PropertyType.Select,
+      isArray: false,
+      enumName: 'MzdFormaKontroly',
+      enum: MzdFormaKontroly,
+      
+    },
+    mzdChranTrhPrace : {
+      key: 'mzdChranTrhPrace',
+      type: PropertyType.Logic,
       isArray: false,
       
     },
@@ -1780,6 +1819,13 @@ export class AFNastaveni extends AFEntity {
       isArray: false,
       afClass: 'AFTypBanka',
       maxLength: 20,
+      
+    },
+    seqDefProduct : {
+      key: 'seqDefProduct',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFDefiniceSekvence',
       
     },
     mzdAdrSocPoj : {

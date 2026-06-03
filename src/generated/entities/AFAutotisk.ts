@@ -11,7 +11,6 @@ export class AFAutotisk extends AFEntity {
   static EntityName: string = 'Automatický tisk'
   static EntityType: string = 'AUTOTISK'
 
-  // ID (db: IdAutoTisk) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Kopií (db: Pocet) - Kopií)

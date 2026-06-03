@@ -11,7 +11,6 @@ export class AFRadaInternihoDokladu extends AFEntity {
   static EntityName: string = 'Dokladové řady - interní doklady'
   static EntityType: string = 'INTERNI_DOKLAD_RADA'
 
-  // ID (db: IdRady) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

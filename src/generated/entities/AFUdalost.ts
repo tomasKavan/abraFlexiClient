@@ -23,7 +23,6 @@ export class AFUdalost extends AFEntity {
   static EntityName: string = 'Události, aktivity'
   static EntityType: string = 'ADR_UDALOST'
 
-  // ID (db: IdUdalost) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Popis (db: Popis) - Popis)
@@ -54,7 +53,7 @@ export class AFUdalost extends AFEntity {
   declare stitky?: string | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Externí firma (db: IdFirmaExterni) - Externí firma)
   firmaExterni?: AFAdresar | null

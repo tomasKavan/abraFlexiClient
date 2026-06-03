@@ -11,7 +11,6 @@ export class AFCenikObal extends AFEntity {
   static EntityName: string = 'Evidence obalů EkoKom'
   static EntityType: string = 'CENIK_OBAL'
 
-  // ID (db: IdEkoKom) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Název (db: Nazev) - Název)

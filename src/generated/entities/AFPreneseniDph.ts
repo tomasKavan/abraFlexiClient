@@ -10,7 +10,6 @@ export class AFPreneseniDph extends AFEntity {
   static EntityName: string = 'Seznam zboží v režimu přenesení DPH'
   static EntityType: string = 'PRENESENI_DPH'
 
-  // ID (db: IdDphPren) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

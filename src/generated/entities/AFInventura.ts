@@ -12,7 +12,6 @@ export class AFInventura extends AFEntity {
   static EntityName: string = 'Inventury'
   static EntityType: string = 'INVENTURA'
 
-  // ID (db: IdInventura) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Popis inventury (db: PopisInventury) - Popis inventury)

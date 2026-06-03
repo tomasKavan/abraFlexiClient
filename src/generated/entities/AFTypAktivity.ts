@@ -11,7 +11,6 @@ export class AFTypAktivity extends AFEntity {
   static EntityName: string = 'Typy událostí / aktivit'
   static EntityType: string = 'TYP_AKTIVITY'
 
-  // ID (db: IdTypAkt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

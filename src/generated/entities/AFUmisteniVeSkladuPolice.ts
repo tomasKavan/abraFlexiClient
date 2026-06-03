@@ -10,7 +10,6 @@ export class AFUmisteniVeSkladuPolice extends AFEntity {
   static EntityName: string = 'Umístění ve skladu'
   static EntityType: string = 'UMISTENI_VE_SKLADU_POLICE'
 
-  // ID (db: IdUmisteni) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

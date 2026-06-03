@@ -13,7 +13,6 @@ export class AFSkupinaOsob extends AFEntity {
   static EntityName: string = 'Skupiny osob'
   static EntityType: string = 'SKUPINA_OSOB'
 
-  // ID (db: IdSkupOsob) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
@@ -36,6 +35,8 @@ export class AFSkupinaOsob extends AFEntity {
   platiDo?: Date | null
   // Tydenní pracovní doba (db: TydenPracDobaK) - Tydenní pracovní doba)
   tydenPracDobaK?: TydenPracDoba | null
+  // Stanovený fond pracovní doby (db: FondSta) - Stanovený fond)
+  fondSta?: Big | null
   // Zahájit workflow při založení dokladu (db: WorkFlow) - Zahájit workflow při založení dokladu)
   workFlow?: boolean | null
   // Typ hrubé mzdy (db: IdTdIntHruba) - Typ hrubé mzdy)
@@ -149,6 +150,13 @@ export class AFSkupinaOsob extends AFEntity {
       maxLength: 50,
       enumName: 'TydenPracDoba',
       enum: TydenPracDoba,
+      
+    },
+    fondSta : {
+      key: 'fondSta',
+      type: PropertyType.Numeric,
+      isArray: false,
+      digits: 6,
       
     },
     workFlow : {

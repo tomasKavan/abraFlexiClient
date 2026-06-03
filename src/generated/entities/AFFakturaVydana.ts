@@ -43,12 +43,21 @@ import { AFCastkyKOdpoctu } from './AFCastkyKOdpoctu.js'
 
 import { Zamek, StavUziv, ZaokrJak, ZaokrNa, MetodaZaokr, Ekokom, StavUhr, StavOdp, StavMail } from '../AFEntityEnums.js'
 
+export enum AFFakturaVydanaAction {
+  // Storno
+  Storno = 'storno',
+  // Uhradit z přeplatků v bance a pokladně
+  UhradPreplatky = 'uhrad-preplatky',
+  // Uhradit vzájemným zápočtem
+  UhradZapoctem = 'uhrad-zapoctem',
+}
+
 export class AFFakturaVydana extends AFEntity {
   static EntityPath: string = 'faktura-vydana'
   static EntityName: string = 'Vydané faktury'
   static EntityType: string = 'FAKTURA_OUT'
+  static Actions = AFFakturaVydanaAction
 
-  // ID (db: IdDoklFak) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -239,7 +248,7 @@ export class AFFakturaVydana extends AFEntity {
   mena?: AFMena | null
   // Konst. sym. (db: IdKonSym) - Kon. sym.)
   konSym?: AFKonstSymbol | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

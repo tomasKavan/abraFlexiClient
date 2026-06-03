@@ -39,7 +39,7 @@ export class AFUcetniDenik extends AFEntity {
   duzpUcto?: Date | null
   // Období zaúčtování (db: ) - Období zaúčtování)
   postingPeriod?: Date | null
-  // Zkratka firmy (db: ) - Zkratka firmy)
+  // Firma (db: ) - Firma)
   firma?: AFAdresar | null
   // Kurz (db: ) - Kurz)
   kurz?: Big | null

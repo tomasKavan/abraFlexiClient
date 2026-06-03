@@ -10,7 +10,6 @@ export class AFIntrastatKrajUrceni extends AFEntity {
   static EntityName: string = 'Kraje určení'
   static EntityType: string = 'INTRASTAT_KRAJ_URCENI'
 
-  // ID (db: IdKrajUrc) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

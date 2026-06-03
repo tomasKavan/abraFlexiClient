@@ -11,7 +11,6 @@ export class AFStrom extends AFEntity {
   static EntityName: string = 'Uzel stromu'
   static EntityType: string = 'STROM'
 
-  // ID (db: IdUzel) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

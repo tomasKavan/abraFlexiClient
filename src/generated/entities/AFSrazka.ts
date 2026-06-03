@@ -15,7 +15,6 @@ export class AFSrazka extends AFEntity {
   static EntityName: string = 'Srážka'
   static EntityType: string = 'SRAZKA'
 
-  // ID (db: IdSrazka) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Přednostní srážka (db: Prednostni) - Přednostní srážka)

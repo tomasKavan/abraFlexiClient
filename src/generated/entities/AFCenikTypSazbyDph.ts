@@ -12,7 +12,6 @@ export class AFCenikTypSazbyDph extends AFEntity {
   static EntityName: string = 'Typ sazby DPH'
   static EntityType: string = 'TYP_SAZBY_DPH'
 
-  // ID (db: IdTypSazbyDph) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Typ sazby DPH (db: TypSzbDphK) - Typ sazby DPH)

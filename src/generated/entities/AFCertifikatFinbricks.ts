@@ -11,7 +11,6 @@ export class AFCertifikatFinbricks extends AFEntity {
   static EntityName: string = 'Klíče Finbricks'
   static EntityType: string = 'CERTIFIKAT_FINBRICKS'
 
-  // ID (db: IdOsCert) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Poznámka (db: UzivNazev) - Poznámka)

@@ -1,5 +1,5 @@
 /**
- * Layer 2 — AFApiClient.callEntityAction pre-flight
+ * Layer 2 — AFApiClient.action pre-flight
  * Spec §7.
  */
 
@@ -10,7 +10,10 @@ import { AFError, AFErrorCode } from '../../src/abra/AFError.js'
 import { PropertyType } from '../../src/abra/AFTypes.js'
 
 const ENTITY_PATH = 'test-entity'
-const { EntityClass } = makeEntityClass({ name: PropertyType.String })
+const { EntityClass } = makeEntityClass(
+  { name: PropertyType.String },
+  { actions: { Storno: 'storno' } }
+)
 
 function actionOk(): Response {
   return {
@@ -21,7 +24,7 @@ function actionOk(): Response {
   } as unknown as Response
 }
 
-describe('callEntityAction pre-flight', () => {
+describe('action pre-flight', () => {
   let mockFetch: any
   let api: any
 
@@ -34,7 +37,7 @@ describe('callEntityAction pre-flight', () => {
     const ent = await api.create(EntityClass)
     ent._setId(5)
     mockFetch.mockResolvedValueOnce(actionOk())
-    const result = await api.callEntityAction(ent, 'storno')
+    const result = await api.action(ent, 'storno')
     expect(result).toBe(true)
     expect(mockFetch).toHaveBeenCalledTimes(1)
     const [, init] = mockFetch.mock.calls[0] as [string, RequestInit]
@@ -48,7 +51,7 @@ describe('callEntityAction pre-flight', () => {
     ent._state = 'unknown'
     mockFetch.mockResolvedValueOnce(flexiOk(resolvePayload(ENTITY_PATH, 7)))
     mockFetch.mockResolvedValueOnce(actionOk())
-    const result = await api.callEntityAction(ent, 'storno')
+    const result = await api.action(ent, 'storno')
     expect(result).toBe(true)
     expect(mockFetch).toHaveBeenCalledTimes(2)
   })
@@ -58,8 +61,17 @@ describe('callEntityAction pre-flight', () => {
     ent._stub = { kod: 'GHOST' }
     ent._state = 'unknown'
     mockFetch.mockResolvedValueOnce(flexi404())
-    await expect(api.callEntityAction(ent, 'storno')).rejects.toThrow(
+    await expect(api.action(ent, 'storno')).rejects.toThrow(
       expect.objectContaining({ code: AFErrorCode.OBJECT_NOT_FOUND })
     )
+  })
+
+  test('9.4 unsupported action — throws UNKNOWN, no action request sent', async () => {
+    const ent = await api.create(EntityClass)
+    ent._setId(5)
+    await expect(api.action(ent, 'not-a-real-action')).rejects.toThrow(
+      expect.objectContaining({ code: AFErrorCode.UNKNOWN })
+    )
+    expect(mockFetch).not.toHaveBeenCalled()
   })
 })

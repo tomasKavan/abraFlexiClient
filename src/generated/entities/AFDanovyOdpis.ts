@@ -14,7 +14,6 @@ export class AFDanovyOdpis extends AFEntity {
   static EntityName: string = 'Daňové odpisy'
   static EntityType: string = 'DANOVY_ODPIS'
 
-  // ID (db: IdDanOdpisu) - ID)
   // Je účetní (db: Ucetni) - Doklad je účetní)
   ucetni?: boolean | null
   // Uživ. změn. (db: Zmena) - Uživatelsky změněno)

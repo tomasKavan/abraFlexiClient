@@ -9,7 +9,6 @@ export class AFZurnal extends AFEntity {
   static EntityName: string = 'Žurnál'
   static EntityType: string = 'ZURNAL'
 
-  // ID (db: IdZurnal) - ID)
   // Tabulka (db: Tabulka) - Tabulka)
   tabulka?: string | null
   // ID řádky (db: IdZaznamu) - ID řádky)

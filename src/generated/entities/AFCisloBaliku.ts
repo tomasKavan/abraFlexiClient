@@ -12,7 +12,6 @@ export class AFCisloBaliku extends AFEntity {
   static EntityName: string = 'Čísla balíků'
   static EntityType: string = 'CISLO_BALIKU'
 
-  // ID (db: IdCisloBal) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Číslo (db: Cislo) - Číslo)

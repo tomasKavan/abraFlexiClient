@@ -11,7 +11,6 @@ export class AFCertifikat extends AFEntity {
   static EntityName: string = 'Certifikáty'
   static EntityType: string = 'CERTIFIKAT'
 
-  // ID (db: IdOsCert) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Poznámka (db: UzivNazev) - Poznámka)

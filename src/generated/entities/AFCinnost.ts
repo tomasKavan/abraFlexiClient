@@ -10,7 +10,6 @@ export class AFCinnost extends AFEntity {
   static EntityName: string = 'Činnost'
   static EntityType: string = 'CINNOST'
 
-  // ID (db: IdCinnost) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

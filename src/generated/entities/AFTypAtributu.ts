@@ -11,7 +11,6 @@ export class AFTypAtributu extends AFEntity {
   static EntityName: string = 'Typy atributů'
   static EntityType: string = 'TYP_ATRIBUTU'
 
-  // ID (db: IdTypAtribut) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

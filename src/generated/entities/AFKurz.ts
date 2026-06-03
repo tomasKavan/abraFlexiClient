@@ -11,13 +11,12 @@ export class AFKurz extends AFEntity {
   static EntityName: string = 'Kurzy'
   static EntityType: string = 'KURZ'
 
-  // ID (db: IdKurzy) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Datum (db: PlatiOdData) - Datum)
   platiOdData?: Date | null
-  // Kurz (db: NbStred) - Kurz)
-  nbStred?: Big | null
+  // Kurz (db: Kurz) - Kurz)
+  kurz?: Big | null
   // Množství (db: KurzMnozstvi) - Množství)
   kurzMnozstvi?: Big | null
   // Měna (db: IdMeny) - Měna)
@@ -41,8 +40,8 @@ export class AFKurz extends AFEntity {
       isArray: false,
       
     },
-    nbStred : {
-      key: 'nbStred',
+    kurz : {
+      key: 'kurz',
       type: PropertyType.Numeric,
       isArray: false,
       digits: 19,

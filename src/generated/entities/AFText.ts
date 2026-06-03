@@ -10,7 +10,6 @@ export class AFText extends AFEntity {
   static EntityName: string = 'Předdefinované texty'
   static EntityType: string = 'TEXT'
 
-  // ID (db: IdText) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Text (db: Popis) - Text)

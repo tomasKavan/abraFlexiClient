@@ -10,7 +10,6 @@ export class AFTypPracovnihoPomeru extends AFEntity {
   static EntityName: string = 'Typ pracovního poměru'
   static EntityType: string = 'TYP_PRACOVNIHO_POMERU'
 
-  // ID (db: IdTypPracPom) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

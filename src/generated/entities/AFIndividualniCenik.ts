@@ -12,7 +12,6 @@ export class AFIndividualniCenik extends AFEntity {
   static EntityName: string = 'Individuální ceník'
   static EntityType: string = 'INDIVIDUALNI_CENIK'
 
-  // ID (db: ) - ID)
   // Zkratka (db: ) - Zkratka)
   declare kod?: string | null
   // Název (db: ) - Název)

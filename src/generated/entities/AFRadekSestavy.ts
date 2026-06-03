@@ -13,7 +13,6 @@ export class AFRadekSestavy extends AFEntity {
   static EntityName: string = 'Řádek sestavy'
   static EntityType: string = 'RADEK_SESTAVY'
 
-  // ID (db: IdSesRadky) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Číslo řádku (db: CisRad) - Číslo řádku)

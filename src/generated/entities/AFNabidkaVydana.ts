@@ -27,12 +27,17 @@ import { AFVazba } from './AFVazba.js'
 
 import { Zamek, StavDoklObch } from '../AFEntityEnums.js'
 
+export enum AFNabidkaVydanaAction {
+  // Storno
+  Storno = 'storno',
+}
+
 export class AFNabidkaVydana extends AFEntity {
   static EntityPath: string = 'nabidka-vydana'
   static EntityName: string = 'Vydané nabídky'
   static EntityType: string = 'NABIDKA_OUT'
+  static Actions = AFNabidkaVydanaAction
 
-  // ID (db: IdDoklObch) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -171,7 +176,7 @@ export class AFNabidkaVydana extends AFEntity {
   typDokl?: AFTypNabidkyVydane | null
   // Měna (db: IdMeny) - Měna)
   mena?: AFMena | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

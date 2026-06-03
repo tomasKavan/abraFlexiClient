@@ -21,7 +21,6 @@ export class AFZakazka extends AFEntity {
   static EntityName: string = 'Zakázky'
   static EntityType: string = 'ZAKAZKA'
 
-  // ID (db: IdZakazky) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
@@ -80,7 +79,7 @@ export class AFZakazka extends AFEntity {
   datZaruky?: Date | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Místo určení (db: IdMur) - Místo určení)
   mistUrc?: AFMistoUrceni | null

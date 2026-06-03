@@ -1,6 +1,7 @@
 import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
 import { AFEntity } from '../../abra/AFEntity.js'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
+import { AFPristupovePravo } from './AFPristupovePravo.js'
 
 
 import { TypPrav } from '../AFEntityEnums.js'
@@ -10,7 +11,6 @@ export class AFRole extends AFEntity {
   static EntityName: string = 'Uživatelské role'
   static EntityType: string = 'ROLE'
 
-  // ID (db: IdRole) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)
@@ -33,10 +33,15 @@ export class AFRole extends AFEntity {
   standard?: boolean | null
   // Přístup (db: PristupK) - Přístup)
   pristupK?: TypPrav | null
+  // Odvozeno z role (db: IdOtecRole) - Odvozeno z role)
+  otecRole?: AFRole | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
   get uzivatelskeVazby(): AFUzivatelskaVazba[] | undefined { return this['uzivatelske-vazby']}
+  // Přístupová práva (type: PRISTUPOVE_PRAVO) - pristupova-prava)
+  'pristupova-prava'?: AFPristupovePravo[]
+  get pristupovaPrava(): AFPristupovePravo[] | undefined { return this['pristupova-prava']}
 
 
   static propAnnotations: Record<string, TypeAnnotation> = {
@@ -114,12 +119,26 @@ export class AFRole extends AFEntity {
       enum: TypPrav,
       
     },
+    otecRole : {
+      key: 'otecRole',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFRole',
+      maxLength: 20,
+      
+    },
 
     'uzivatelske-vazby' : {
       key: 'uzivatelske-vazby',
       type: PropertyType.Relation,
       isArray: true,
       afClass: 'AFUzivatelskaVazba'
+    },
+    'pristupova-prava' : {
+      key: 'pristupova-prava',
+      type: PropertyType.Relation,
+      isArray: true,
+      afClass: 'AFPristupovePravo'
     },
 
   }

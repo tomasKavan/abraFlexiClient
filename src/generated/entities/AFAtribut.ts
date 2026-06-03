@@ -14,7 +14,6 @@ export class AFAtribut extends AFEntity {
   static EntityName: string = 'Atributy'
   static EntityType: string = 'ATRIBUT'
 
-  // ID (db: IdAtribut) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Logická hodnota (db: ValBoolean) - Logická hodnota)

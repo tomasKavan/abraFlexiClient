@@ -14,7 +14,6 @@ export class AFUcet extends AFEntity {
   static EntityName: string = 'Účtový rozvrh'
   static EntityType: string = 'UCET'
 
-  // ID (db: IdUcet) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Účet (db: Kod) - Číslo účtu)

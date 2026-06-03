@@ -2,6 +2,7 @@ import { TypeAnnotation, PropertyType } from '../../abra/AFTypes.js'
 import { AFEntity } from '../../abra/AFEntity.js'
 import { AFOsobaHlavicka } from './AFOsobaHlavicka.js'
 import { AFVztah } from './AFVztah.js'
+import { AFOsobaBlizkaHlav } from './AFOsobaBlizkaHlav.js'
 import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 
@@ -9,10 +10,9 @@ import { Pohlavi } from '../AFEntityEnums.js'
 
 export class AFOsobaBlizka extends AFEntity {
   static EntityPath: string = 'osoba-blizka'
-  static EntityName: string = 'Ošetřovaná osoba'
+  static EntityName: string = 'Osoba blízká'
   static EntityType: string = 'OSOBA_BLIZKA'
 
-  // ID (db: IdDite) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Příjmení (db: Prijmeni) - Příjmení)
@@ -35,12 +35,20 @@ export class AFOsobaBlizka extends AFEntity {
   poznam?: string | null
   // Dítě (db: Dite) - Dítě)
   dite?: boolean | null
+  // Dítě vyživované dle § 35c odst. 6 (db: Student) - Dítě vyživované dle § 35c odst. 6)
+  student?: boolean | null
+  // Platí od data (db: PlatiOd) - Platí od)
+  platiOd?: Date | null
+  // Platí do data (db: PlatiDo) - Platí do)
+  platiDo?: Date | null
   // Štítky (db: ) - Štítky)
   declare stitky?: string | null
   // Osoba (db: IdOsoba) - Osoba)
   osoba?: AFOsobaHlavicka | null
   // Vztah (db: IdVztah) - Vztah)
   vztah?: AFVztah | null
+  // Hlavička osoby blízké (db: IdDiteHlav) - Hlavička osoby blízké)
+  osobaBlizkaHlav?: AFOsobaBlizkaHlav | null
 
   // Uživatelské vazby (type: VAZBA) - uzivatelske-vazby)
   'uzivatelske-vazby'?: AFUzivatelskaVazba[]
@@ -120,6 +128,24 @@ export class AFOsobaBlizka extends AFEntity {
       isArray: false,
       
     },
+    student : {
+      key: 'student',
+      type: PropertyType.Logic,
+      isArray: false,
+      
+    },
+    platiOd : {
+      key: 'platiOd',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },
+    platiDo : {
+      key: 'platiDo',
+      type: PropertyType.Date,
+      isArray: false,
+      
+    },
     stitky : {
       key: 'stitky',
       type: PropertyType.String,
@@ -138,6 +164,13 @@ export class AFOsobaBlizka extends AFEntity {
       type: PropertyType.Relation,
       isArray: false,
       afClass: 'AFVztah',
+      
+    },
+    osobaBlizkaHlav : {
+      key: 'osobaBlizkaHlav',
+      type: PropertyType.Relation,
+      isArray: false,
+      afClass: 'AFOsobaBlizkaHlav',
       
     },
 

@@ -10,7 +10,6 @@ export class AFSablonaMail extends AFEntity {
   static EntityName: string = 'Uživatelské e-mailové šablony'
   static EntityType: string = 'SABLONA_MAIL'
 
-  // ID (db: Idsablona) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

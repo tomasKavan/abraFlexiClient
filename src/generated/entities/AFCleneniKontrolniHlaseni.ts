@@ -11,7 +11,6 @@ export class AFCleneniKontrolniHlaseni extends AFEntity {
   static EntityName: string = 'Řádky kontrolního hlášení DPH'
   static EntityType: string = 'CLEN_KON_VYK_DPH'
 
-  // ID (db: IdClenKonVykDPH) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

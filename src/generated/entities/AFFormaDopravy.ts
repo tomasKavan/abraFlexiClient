@@ -11,7 +11,6 @@ export class AFFormaDopravy extends AFEntity {
   static EntityName: string = 'Formy dopravy'
   static EntityType: string = 'FORMA_DOPRAVY'
 
-  // ID (db: IdFormaDopravy) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

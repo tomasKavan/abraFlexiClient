@@ -22,7 +22,6 @@ export class AFPriloha extends AFEntity {
   static EntityName: string = 'Příloha'
   static EntityType: string = 'PRILOHA'
 
-  // ID (db: IdPriloha) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Název souboru (db: NazSoub) - Název souboru)

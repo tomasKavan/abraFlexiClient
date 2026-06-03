@@ -1,9 +1,9 @@
 # ABRA Flexi Typescript client
 **English version follows**
 
-[ABRA Flexi](https://www.abra.eu/flexi/) je český Ekonomický software pro malé a střední podniky vyvýjený společností [ABRA Software](https://www.abra.eu). ABRA Flexi poskytuje přístup k datům pomocí REST API s veřejnou dokumentací. 
+[ABRA Flexi](https://www.abra.eu/flexi/) je český Ekonomický software pro malé a střední podniky vyvýjený společností [ABRA Software](https://www.abra.eu). ABRA Flexi poskytuje přístup k datům pomocí REST API s veřejnou dokumentací.
 
-ABRA Flexi Typescript client (AFTC) je knihovna pro přístup k REST API ABRA Flexi. Použitelná v prohlížeči i na serveru (Node.js) a poskytující metody pro dotazování a mutaci dat. 
+ABRA Flexi Typescript client (AFTC) je knihovna pro přístup k REST API ABRA Flexi. Použitelná v prohlížeči i na serveru (Node.js) a poskytující metody pro dotazování a mutaci dat.
 
 AFTC obsahuje třídu pro každou z evidencí v ABRA Flexi. Vlastnosti těchto tříd zároveň modelují vztahy mezi evidencemi.
 
@@ -38,7 +38,7 @@ npm run build
 
 ### Příklady
 
-Složka `examples` obsahuje příklady použití knihovny. Prozatím jsem připravil 
+Složka `examples` obsahuje příklady použití knihovny. Prozatím jsem připravil
 - jednoduchý CLI nástroj pro načtení konkrétní evidence (loadEntityCli.ts)
 - soubor s příkladem volání více typů dotazů (loadEntity.ts)
 - příklad vytvoŕení nové faktury. Nutno nastavit konstanty na řádku 29-31 (createAndSave.ts)
@@ -57,7 +57,7 @@ V návodu se používají pojmy
 
 ### Import a inicializace knihovny
 
-```typescript 
+```typescript
 import { AFApiClient, AFApiConfig } from 'abra-flexi'
 
 const apiOpts: AFApiConfig = {
@@ -95,7 +95,7 @@ const api = new AFApiClient({
 
 ### Dotazování instancí
 
-Pro dotazování instancí jsou k dispozici metody `query` (vrací kolekci instancí evidenčních tříd) a `queryOne` (vrací jedu instanci). 
+Pro dotazování instancí jsou k dispozici metody `query` (vrací kolekci instancí evidenčních tříd) a `queryOne` (vrací jedu instanci).
 
 Parametrech dotazu může být uveden požadovaný detail. Detail se zapisuje formou pole vlastností evidencí formou textových řetězců. Detaily relací je možné vkládat pomocí pole o 2 prvcích, kde prvním je název vlastnosti relace v evidenci a druhým opět pole vlastností v napojené evidenci. Jasněji je to patrné z příkladu níže.
 
@@ -105,7 +105,7 @@ Filtrování je možné vkládat pomocí metod `Filter(expr, params)`, `ID(id)`,
 - `:key` se nahradí textovou hodnotou klíče `key` ve druhém argumentu,
 - `::mujKod` se nahradí textovou hodnotou klíče `mujKod` ve druhém argumentu a prefixuje se předponou `code:`,
 
-Obě návěští podporují kolekce. Návěstí se pak nahradí výsledkem `kolekce.join(',')`. Pokud je hodnotou instance evidence (podtřída AFEntity), ignoruje se typ návěští a použije se číselné id resp. kód, není-li číselné id vyplněno/načteno. 
+Obě návěští podporují kolekce. Návěstí se pak nahradí výsledkem `kolekce.join(',')`. Pokud je hodnotou instance evidence (podtřída AFEntity), ignoruje se typ návěští a použije se číselné id resp. kód, není-li číselné id vyplněno/načteno.
 
 Metoda `Filter` vrací objekt s mající následující metody:
 - `use(filter, op)` - přidá jiný objekt filtru do stávajícího. Atribut `op` určuje operátor pro spojení se stávajícím filtrem (`and` nebo `or`, defaultní je `or`). Filtr je vložen v závorkách.
@@ -115,13 +115,13 @@ Metoda `Filter` vrací objekt s mající následující metody:
 
 Všechny metody vrací vždy novou instanci filtru. Filtry si tedy můžete předpřipravit a následně spojivat pomocí `use()`/`useNot()`.
 
-```typescript 
+```typescript
 import { AFInterniDoklad, Filter } from 'abra-flexi'
 
 const queryOpts: AFQueryOptions = {
   detail: ['id', 'kod', 'typDokl', ['uzivatelske-vazby', ['id', 'evidenceType', 'objectId', 'vazbaTyp']]],
   filter: Filter(`typDokl = '::td'`, { td: 'MUJ_TYP_DOKLADU'})
-} 
+}
 
 const run = async () => {
   try {
@@ -168,7 +168,7 @@ const secondPage = await api.query(AFAdresar, {
 
 Pro načtení většího detailu či aktualizaci dříve načtených instancí můžete použít metody `populate` a `populateOne`. Detailem požadované vlastnosti se aktualizují na původní instanci.
 
-```typescript 
+```typescript
 const loadedEntity // Zde máme uloženou dříve načtenou instanci entity AFInterniDoklad
 
 const options = {
@@ -194,7 +194,7 @@ Instance entit odkazované pomocí uživatelských vazeb je možné načíst met
 
 Načteny jsou pouze instance vazeb, které se již vyskytují ve zdrojové kolekci! Metoda `queryURels` tedy sama uživatelské vazby na jednotlivých zdrojových instancích nenačítá. Načítá pouze instance, na které vazba odkazuje.
 
-```typescript 
+```typescript
 const soureEntities // Zde máme kolekci entit, pro které načítáme instance odkazované uživatelskou vazbou
 
 const run = async () => {
@@ -300,22 +300,43 @@ const pdf = await api.queryFile(AFFakturaVydana, 'pdf', {
 })
 ```
 
-### Akce na instancích
+#### Seznam dostupných sestav
 
-Pojmenované akce definované v ABRA Flexi (např. storno, uzavření dokladu) lze volat metodou `callEntityAction()`. Instance musí být uložená (mít přidělené `id`).
+Sestavy dostupné pro danou evidenci lze získat metodou `queryReports()`. Vrací pole `AFReportInfo` — každá obsahuje mimo jiné unikátní `reportId` (to je hodnota posílaná do `reportName`) a seznam podporovaných jazyků (`languages.language[]`).
+
+Objekt `AFReportInfo` (resp. `AFReportLanguage` z jeho `languages.language`) lze předat přímo do `reportName` / `reportLang` v `queryFile()` — knihovna z něj vytáhne správné hodnoty:
 
 ```typescript
-import { AFFakturaVydana } from 'abra-flexi'
+const reports = await api.queryReports(AFFakturaVydana)
+const reportDef = reports.find(r => r.isDefault === 'true') ?? reports[0]
 
-const faktura = await api.createIdStub(AFFakturaVydana, { id: 2452 })
-await api.callEntityAction(faktura, 'storno')
+const pdf = await api.queryFile(AFFakturaVydana, 'pdf', {
+  filter: ID(42),
+  reportName: reportDef, // → reportId
+  reportLang: reportDef.languages?.language.find(l => l.code === 'en') ?? 'cs'
+})
+```
+
+### Akce na instancích
+
+Pojmenované akce definované v ABRA Flexi (např. storno, uhrazení zápočtem) lze volat metodou `action()`. Instance musí být uložená (mít přidělené `id`) nebo v rozpoznatelném stavu — pokud má pouze `kod` / `ext`, klient si nejdříve dohledá `id`.
+
+Pro každou evidenci s reálnými business akcemi generátor vyrobí samostatný TypeScript enum (např. `AFFakturaPrijataAction`). CRUD pseudo-akce (`new`/`edit`/`delete`/`copy`) jsou vynechány — používají se přes dedikované metody `create()`, `save()` a `delete()`. Akce se validují podle metadat dané evidence; volání nepodporované akce skončí chybou ještě před jakýmkoli HTTP požadavkem.
+
+```typescript
+import { AFFakturaPrijata, AFFakturaPrijataAction } from 'abra-flexi'
+
+const faktura = await api.resolveStubId(AFFakturaPrijata, 2452)
+await api.action(faktura, AFFakturaPrijataAction.Storno)
+// nebo s textovou hodnotou:
+await api.action(faktura, 'uhrad-zapoctem')
 ```
 
 ## Task list pro vydání stabilní verze
 
 - [X] Generování evidenčních tříd dle metadat REST API
 - [X] Načítání kolekcí a jednotlivých instancí z REST API
-- [X] Načítání užviatelských relací 
+- [X] Načítání užviatelských relací
 - [X] Refersh již načtených dat
 - [X] Pohodlná práce se štítky
 - [X] Vytváření, mazání a změna záznamů v REST API
@@ -330,8 +351,8 @@ await api.callEntityAction(faktura, 'storno')
 
 # English
 
-[ABRA Flexi](https://www.abra.eu/en/flexi/) is Czech ERP for small businesses, developed by [ABRA Software](https://www.abra.eu/en). To access data in ABRA Flexi there is a REST API with public documentation. 
+[ABRA Flexi](https://www.abra.eu/en/flexi/) is Czech ERP for small businesses, developed by [ABRA Software](https://www.abra.eu/en). To access data in ABRA Flexi there is a REST API with public documentation.
 
-ABRA Flexi Typescript client (AFTC) is library to call ABRA Flexi REST API. It's for browsers and server environments (Node.js). It provides methods for CRUD. 
+ABRA Flexi Typescript client (AFTC) is library to call ABRA Flexi REST API. It's for browsers and server environments (Node.js). It provides methods for CRUD.
 
 Because ABRA Flexi is Czech software, it's expected to have mainly Czech developer audience. English version of the documentation will be finalized when the library API becomes stable.

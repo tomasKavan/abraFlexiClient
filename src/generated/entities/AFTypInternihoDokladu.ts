@@ -21,7 +21,6 @@ export class AFTypInternihoDokladu extends AFEntity {
   static EntityName: string = 'Typy interních dokladů'
   static EntityType: string = 'INTERNI_DOKLAD_TYP'
 
-  // ID (db: IdTypDokl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

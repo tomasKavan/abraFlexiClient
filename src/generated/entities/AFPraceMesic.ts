@@ -15,7 +15,6 @@ export class AFPraceMesic extends AFEntity {
   static EntityName: string = 'Práce pro střediska'
   static EntityType: string = 'PRACE_MESIC'
 
-  // ID (db: IdPraceStred) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)

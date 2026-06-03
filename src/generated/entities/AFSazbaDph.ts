@@ -11,7 +11,6 @@ export class AFSazbaDph extends AFEntity {
   static EntityName: string = 'Sazby DPH'
   static EntityType: string = 'SAZBA_DPH'
 
-  // ID (db: IdSazbyDph) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Sazba DPH (db: TypSzbDphK) - Sazba DPH)

@@ -12,7 +12,6 @@ export class AFUlozenePriznaniKonVykDph extends AFEntity {
   static EntityName: string = 'Uložené přiznání Kontrolního hlášení DPH'
   static EntityType: string = 'ULOZENE_PRIZNANI_KON_VYK_DPH'
 
-  // ID (db: IdPriznaniKonVykDph) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Rok (db: Rok) - Rok)

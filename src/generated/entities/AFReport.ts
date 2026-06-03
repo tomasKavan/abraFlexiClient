@@ -14,7 +14,6 @@ export class AFReport extends AFEntity {
   static EntityName: string = 'Uživatelské reporty'
   static EntityType: string = 'REPORT'
 
-  // ID (db: IdReport) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

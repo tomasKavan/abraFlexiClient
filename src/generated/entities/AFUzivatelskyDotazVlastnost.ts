@@ -11,7 +11,6 @@ export class AFUzivatelskyDotazVlastnost extends AFEntity {
   static EntityName: string = 'Vlastnosti'
   static EntityType: string = 'UZIVATELSKY_DOTAZ_VLASTNOST'
 
-  // ID (db: IdDotazProp) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

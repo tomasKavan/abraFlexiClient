@@ -11,7 +11,6 @@ export class AFPoplatek extends AFEntity {
   static EntityName: string = 'Poplatky'
   static EntityType: string = 'POPLATKY'
 
-  // ID (db: IdPoplatek) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Množství (db: MnozMj) - Množství)

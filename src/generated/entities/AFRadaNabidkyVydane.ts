@@ -11,7 +11,6 @@ export class AFRadaNabidkyVydane extends AFEntity {
   static EntityName: string = 'Dokladové řady - vydané nabídky'
   static EntityType: string = 'NABIDKA_OUT_RADA'
 
-  // ID (db: IdRady) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

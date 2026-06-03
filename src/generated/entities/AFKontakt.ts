@@ -16,7 +16,6 @@ export class AFKontakt extends AFEntity {
   static EntityName: string = 'Kontakty'
   static EntityType: string = 'ADR_KONTAKT'
 
-  // ID (db: IdKontakt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)
@@ -89,7 +88,7 @@ export class AFKontakt extends AFEntity {
   blockedText?: string | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Upravil (db: IdUpdatedBy) - Upravil)
   updatedBy?: AFUzivatel | null

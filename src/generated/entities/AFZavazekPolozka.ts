@@ -19,12 +19,17 @@ import { AFUzivatelskaVazba } from './AFUzivatelskaVazba.js'
 
 import { TypCeny, TypSzbDph, TypVypCeny, ZaokrJak, ZaokrNa, StavUziv } from '../AFEntityEnums.js'
 
+export enum AFZavazekPolozkaAction {
+  // Storno položky
+  Storno = 'storno',
+}
+
 export class AFZavazekPolozka extends AFEntity {
   static EntityPath: string = 'zavazek-polozka'
   static EntityName: string = 'Položky ostatních závazků'
   static EntityType: string = 'ZAVAZEK_POLOZKA'
+  static Actions = AFZavazekPolozkaAction
 
-  // ID (db: IdPolFak) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)

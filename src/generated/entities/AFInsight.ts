@@ -10,7 +10,6 @@ export class AFInsight extends AFEntity {
   static EntityName: string = 'Insight'
   static EntityType: string = 'INSIGHT'
 
-  // ID (db: IdInsight) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

@@ -14,7 +14,6 @@ export class AFUzivatel extends AFEntity {
   static EntityName: string = 'Uživatelé ve firmě'
   static EntityType: string = 'UZIVATELE'
 
-  // ID (db: IdUzivatel) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)

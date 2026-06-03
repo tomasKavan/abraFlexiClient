@@ -29,7 +29,6 @@ export class AFTypPohledavky extends AFEntity {
   static EntityName: string = 'Typy ostatních pohledávek'
   static EntityType: string = 'POHLEDAVKA_TYP'
 
-  // ID (db: IdTypDokl) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

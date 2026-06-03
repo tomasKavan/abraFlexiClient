@@ -11,7 +11,6 @@ export class AFDefStore extends AFEntity {
   static EntityName: string = 'Úložiště definic'
   static EntityType: string = 'DEF_STORE'
 
-  // ID (db: Iddefstore) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Název (db: Nazev) - Název)

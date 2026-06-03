@@ -41,12 +41,19 @@ import { AFVazba } from './AFVazba.js'
 
 import { TypPohybu, StavUziv, Zamek, ZaokrJak, ZaokrNa, Ekokom, StavUhr, StavOdp, StavMail, EetTyp, EetStav, MetodaZaokr } from '../AFEntityEnums.js'
 
+export enum AFDokladKUhradeAction {
+  // Storno
+  Storno = 'storno',
+  // Uhradit vzájemným zápočtem
+  UhradZapoctem = 'uhrad-zapoctem',
+}
+
 export class AFDokladKUhrade extends AFEntity {
   static EntityPath: string = 'doklad-k-uhrade'
   static EntityName: string = 'Doklady k úhradě'
   static EntityType: string = 'DOKLAD_K_UHRADE'
+  static Actions = AFDokladKUhradeAction
 
-  // ID (db: IdDoklFak) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Interní číslo (db: Kod) - Interní číslo)
@@ -255,7 +262,7 @@ export class AFDokladKUhrade extends AFEntity {
   mena?: AFMena | null
   // Konst. sym. (db: IdKonSym) - Kon. sym.)
   konSym?: AFKonstSymbol | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null

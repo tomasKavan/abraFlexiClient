@@ -14,7 +14,6 @@ export class AFZapujcka extends AFEntity {
   static EntityName: string = 'Zápůjčky'
   static EntityType: string = 'ZAPUJCKA'
 
-  // ID (db: IdZapujcky) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Jméno (db: Jmeno) - Jméno)

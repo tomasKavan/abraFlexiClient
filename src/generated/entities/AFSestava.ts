@@ -14,7 +14,6 @@ export class AFSestava extends AFEntity {
   static EntityName: string = 'Seznam sestav'
   static EntityType: string = 'SESTAVA'
 
-  // ID (db: IdSestavy) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

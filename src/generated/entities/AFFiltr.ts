@@ -11,7 +11,6 @@ export class AFFiltr extends AFEntity {
   static EntityName: string = 'Uživatelské filtry'
   static EntityType: string = 'FILTR'
 
-  // ID (db: IdFiltru) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Zkratka (db: Kod) - Zkratka)

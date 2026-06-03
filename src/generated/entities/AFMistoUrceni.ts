@@ -15,7 +15,6 @@ export class AFMistoUrceni extends AFEntity {
   static EntityName: string = 'Místa určení'
   static EntityType: string = 'MISTO_URCENI'
 
-  // ID (db: IdMur) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Ulice (db: Ulice) - Ulice)
@@ -56,7 +55,7 @@ export class AFMistoUrceni extends AFEntity {
   mistoPlneni?: boolean | null
   // Datum vytvoření (db: CreatedDate) - Datum vytvoření)
   createdDate?: Date | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Kontaktní osoba (db: IdKontaktOsoba) - Kontaktní osoba)
   kontaktOsoba?: AFKontakt | null

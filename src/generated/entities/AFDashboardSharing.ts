@@ -12,7 +12,6 @@ export class AFDashboardSharing extends AFEntity {
   static EntityName: string = 'Sdílení přehledů'
   static EntityType: string = 'DASHBOARD_SHARING'
 
-  // ID (db: Idwdashboardsharing) - ID)
   // Skrytý (db: Hidden) - Skrytý)
   hidden?: boolean | null
   // Pořadí (db: Priority) - Pořadí)

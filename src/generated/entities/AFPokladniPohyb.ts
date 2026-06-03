@@ -36,12 +36,19 @@ import { AFDokladKUhrade } from './AFDokladKUhrade.js'
 
 import { Zamek, TypPohybu, StavUziv, ZaokrJak, ZaokrNa, MetodaZaokr, Ekokom, JakUhrazeno } from '../AFEntityEnums.js'
 
+export enum AFPokladniPohybAction {
+  // Storno
+  Storno = 'storno',
+  // Automatické párování
+  AutomatickeParovani = 'automaticke-parovani',
+}
+
 export class AFPokladniPohyb extends AFEntity {
   static EntityPath: string = 'pokladni-pohyb'
   static EntityName: string = 'Pokladna'
   static EntityType: string = 'POKLADNI_POHYB'
+  static Actions = AFPokladniPohybAction
 
-  // ID (db: IdDoklInt) - ID)
   // Poslední změna (db: lastUpdate) - Poslední změna)
   lastUpdate?: Date | null
   // Upravil (db: IdUpdatedBy) - Upravil)
@@ -190,7 +197,7 @@ export class AFPokladniPohyb extends AFEntity {
   pokladna?: AFPokladna | null
   // Měna (db: IdMeny) - Měna)
   mena?: AFMena | null
-  // Zkratka firmy (db: IdFirmy) - Zkratka firmy)
+  // Firma (db: IdFirmy) - Firma)
   firma?: AFAdresar | null
   // Stát (db: IdStatu) - Stát)
   stat?: AFStat | null
