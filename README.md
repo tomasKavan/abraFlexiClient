@@ -16,22 +16,6 @@ Knihovna je distribuovaná jako npm balíček
 npm install abra-flexi
 ```
 
-**!! Zatím nedistribuováno !!**
-Místo npm použíjte přímo git repository a `npm link` (knihovnu mustí nejdříve přeložit).
-```
-git checkout git@github.com:tomasKavan/abraFlexiClient.git
-cd abraFlexiClient
-npm install
-npm run build
-npm link
-```
-
-Ve svém projektu potom:
-
-```
-npm link abra-flexi
-```
-
 ### Generování evidenčních tříd
 
 Součástní repository knihovny je nástroj pro generování evidenčních tříd z metadat, které poskytuje API. Generátor dovoluje vybrat subset generovaných tříd. To je užitečné, pokud chcete udržet knihovnu co nejmenší a generovat pouze třídy pro Vámi použivané evidence.
