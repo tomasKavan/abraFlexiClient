@@ -1085,6 +1085,74 @@ export class AFApiClient {
     return undefined
   }
 
+  /**
+   * Encodes a single related AFEntity for inclusion in a save request body.
+   * Centralizes tri-state (`isNew` true/false/undefined) handling and the
+   * NestedUnknownStrategy so both the to-1 relation branch and per-item
+   * array encoding share one implementation.
+   *
+   * Returns either a primitive (numeric id, "code:..." / "ext:..." string)
+   * or an object `{ id?, ...changedFields }`.
+   *
+   * `inCollection` controls one divergence: collection items always emit an
+   * object form for existing entities (so Flexi matches by id under
+   * `@removeAll: true`), while to-1 relations can collapse to a bare id
+   * reference when the nested entity has no field changes.
+   */
+  private async _encodeRelatedEntity(
+    related: AFEntity,
+    parent: AFEntity,
+    key: string,
+    inCollection: boolean,
+    options?: AFSaveOptions
+  ): Promise<any> {
+    if (related.isNew === true) {
+      return await this._encodeEntity(related, options)
+    }
+
+    if (related.isNew === false) {
+      if (!inCollection && !related.hasChanged()) return related.id
+      const encoded = await this._encodeEntity(related, options)
+      encoded.id = related.id
+      return encoded
+    }
+
+    // isNew === undefined → 'unknown' state: apply NestedUnknownStrategy
+    const parentName = (parent.constructor as typeof AFEntity).EntityName
+    const where = `${inCollection ? 'Collection' : 'Key'} '${key}' on ${parentName}`
+    const strategy = options?.nestedUnknown ?? NestedUnknownStrategy.Resolve
+
+    if (strategy === NestedUnknownStrategy.Strict) {
+      throw new AFError(
+        AFErrorCode.UNRESOLVED_ENTITY,
+        `${where} ${inCollection ? 'contains' : 'references'} an unresolved entity. Call resolve() first or change nestedUnknown strategy.`
+      )
+    }
+
+    if (strategy === NestedUnknownStrategy.ByIdentifier) {
+      const ident = this._getEntityIdentifierString(related)
+      if (!ident) {
+        throw new AFError(
+          AFErrorCode.MISSING_IDENTIFIER,
+          `${where} ${inCollection ? 'contains' : 'has'} an unresolved entity with no identifier (no kod, no ext). Cannot encode with ByIdentifier strategy.`
+        )
+      }
+      return ident
+    }
+
+    // NestedUnknownStrategy.Resolve (default)
+    // Capture fallback identifier BEFORE calling _resolveId (which mutates state).
+    const fallbackIdent = this._getEntityIdentifierString(related)
+    const resolvedId = await this._resolveId(related)
+    if (resolvedId !== null) return resolvedId
+    if (fallbackIdent) return fallbackIdent
+
+    throw new AFError(
+      AFErrorCode.MISSING_IDENTIFIER,
+      `${where} ${inCollection ? 'contains' : 'has'} an unresolved entity with no identifier. Cannot encode.`
+    )
+  }
+
   private async _encodeProperty<T extends AFEntity>(
     entity: T,
     key: string,
@@ -1109,7 +1177,7 @@ export class AFApiClient {
             if (!(a instanceof AFEntity)) {
               throw new AFError(AFErrorCode.UNKNOWN, `Collection '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) contain's non-AFEntity member ${a}`)
             }
-            obj[key].push(await this._encodeEntity(a as AFEntity, options))
+            obj[key].push(await this._encodeRelatedEntity(a, entity, key, true, options))
           }
         }
         return
@@ -1128,65 +1196,7 @@ export class AFApiClient {
         throw new AFError(AFErrorCode.UNKNOWN, `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName}(id: ${entity.id}) referencing not AFEntity instance`)
       }
 
-      // --- Tri-state handling for the nested entity ---
-
-      if (val.isNew === true) {
-        // Definitely new: embed the full object inline (no id)
-        obj[key] = await this._encodeEntity(val, options)
-        return
-      }
-
-      if (val.isNew === false) {
-        // Confirmed existing: send id only, or id + changed fields
-        if (!val.hasChanged()) {
-          obj[key] = val.id
-        } else {
-          const nested = await this._encodeEntity(val, options)
-          nested.id = val.id  // always include the id for updates
-          obj[key] = nested
-        }
-        return
-      }
-
-      // isNew === undefined → 'unknown' state: apply NestedUnknownStrategy
-      const strategy = options?.nestedUnknown ?? NestedUnknownStrategy.Resolve
-
-      if (strategy === NestedUnknownStrategy.Strict) {
-        throw new AFError(
-          AFErrorCode.UNRESOLVED_ENTITY,
-          `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName} references an unresolved entity. Call resolve() first or change nestedUnknown strategy.`
-        )
-      }
-
-      if (strategy === NestedUnknownStrategy.ByIdentifier) {
-        const ident = this._getEntityIdentifierString(val)
-        if (!ident) {
-          throw new AFError(
-            AFErrorCode.MISSING_IDENTIFIER,
-            `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName} has an unresolved entity with no identifier (no kod, no ext). Cannot encode with ByIdentifier strategy.`
-          )
-        }
-        obj[key] = ident
-        return
-      }
-
-      // NestedUnknownStrategy.Resolve (default)
-      // Capture fallback identifier BEFORE calling _resolveId (which changes state)
-      const fallbackIdent = this._getEntityIdentifierString(val)
-      const resolvedId = await this._resolveId(val)
-
-      if (resolvedId !== null) {
-        // Successfully resolved — encode as numeric id
-        obj[key] = resolvedId
-      } else if (fallbackIdent) {
-        // Not found on server — use identifier string as fallback
-        obj[key] = fallbackIdent
-      } else {
-        throw new AFError(
-          AFErrorCode.MISSING_IDENTIFIER,
-          `Key '${key}' on ${(entity.constructor as typeof AFEntity).EntityName} has an unresolved entity with no identifier. Cannot encode.`
-        )
-      }
+      obj[key] = await this._encodeRelatedEntity(val, entity, key, false, options)
       return
     }
 
