@@ -1,7 +1,7 @@
 import { parsePropertyValue, serializePropertyValue } from "./AFDataType.js"
 import { AFEntity } from "./AFEntity.js"
 import { AFError, AFErrorCode } from "./AFError.js"
-import { Filter, ID } from "./AFFilter.js"
+import { AFFilter, Filter, ID, AFSingleEntityID } from "./AFFilter.js"
 import {
   AFApiConfig,
   AFApiFetch,
@@ -557,16 +557,23 @@ export class AFApiClient {
   /**
    * Resolves an entity by a validated identifier string or numeric id.
    * Accepted identifier forms:
-   *   - number   → looks up by internal id
-   *   - "code:X" → looks up by business code
-   *   - "ext:X"  → looks up by external id
+   *   - number           → looks up by internal id
+   *   - "code:X"         → looks up by business code
+   *   - "ext:X"          → looks up by external id
+   *   - AFSingleEntityID → an ID()/CODE()/EXT() value (AFID/AFCODE/AFEXT)
    * Throws INVALID_IDENTIFIER for any other string.
    * Throws OBJECT_NOT_FOUND if the server returns 404.
    */
   public async resolveStubId<T extends typeof AFEntity>(
     entity: T,
-    identifier: number | string
+    identifier: number | string | AFSingleEntityID
   ): Promise<InstanceType<T>> {
+    // Normalize an AFSingleEntityID (ID()/CODE()/EXT()) to its primitive form.
+    if (identifier instanceof AFFilter) {
+      const rendered = identifier.toString()
+      identifier = /^\d+$/.test(rendered) ? Number(rendered) : rendered
+    }
+
     // Validate identifier
     if (typeof identifier === 'string') {
       if (!identifier.length) {

@@ -168,6 +168,8 @@ export const ID = (id: number) => new AFID(id)
 export const CODE = (code: string) => new AFCODE(code)
 export const EXT = (ext: string) => new AFEXT(ext)
 
+export type AFSingleEntityID = AFID | AFCODE | AFEXT
+
 export const AFFilterFn: Record<string, Raw> = {
   Now: { __raw: 'now()' },
   CurrentYear: { __raw: 'currentYear()' },
